@@ -1,0 +1,8 @@
+{
+"packageUrl":       "http://gdmj.coolgamebox.com:800/gdmj/1.0.002/",
+"remoteManifestUrl":"http://gdmj.coolgamebox.com:800/gdmj/1.0.003/project.manifest",
+"version":"1.0.003",
+"engineVersion":"3.0 beta",
+"assets":{
+   "1.0.003.zip":{"md5":"1469265979723","compressed":true}
+}}
