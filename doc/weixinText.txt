@@ -1,0 +1,6 @@
+03-24 13:45:09.592: I/weixin(27026): errCode==0
+03-24 13:45:09.812: I/weixin(27026): {"access_token":"OezXcEiiBSKSxW0eoylIeMLXuzEkouck1SMNrvI2e6wiBzXdEqQYLqpdmnYxxUgGZE0Ptg8VsrfUOTBEiLgNhloLawLveLO1PvhKD4E9wjaqAELntTlRqecrKV9_mS7GZZ24KCasX-FmOWkOnlRNMw","expires_in":7200,"refresh_token":"OezXcEiiBSKSxW0eoylIeMLXuzEkouck1SMNrvI2e6wiBzXdEqQYLqpdmnYxxUgGTrJIl7SA3jOg0hbi8fTCNGqSCaNwdFQS3Mx1NPRQm_4IOITUf8dNmz0tDe4UKX57N7GqoMEXIuZEayJbjnBCog","openid":"oOiLRs8lPYC9TG2RsW_JeG3g_o4o","scope":"snsapi_userinfo","unionid":"oC9_St9k-kG88Yv75eRCdIbuPe2o"}
+03-24 13:45:09.812: I/weixin(27026): strResult
+
+03-24 13:45:09.812: I/weixin(27026): onCreate
+03-24 15:33:37.562: I/weixin(18666): {"openid":"oOiLRs8lPYC9TG2RsW_JeG3g_o4o","nickname":"??-จจ????|e??ก่","sex":1,"language":"zh_CN","city":"Panjin","province":"Liaoning","country":"CN","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/dZoHs3MRGtIO8mWMbWtbqAmiaMIicwD9EZo059XBnI6j3neadjrHbrVvhcD5yD2PiboVAPIick8u0BiaYnB9dBKoYWyXvHka7nwTc\/0","privilege":[],"unionid":"oC9_St9k-kG88Yv75eRCdIbuPe2o"}uid
