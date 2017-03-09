@@ -124,6 +124,34 @@ function resetEffectFangui(card, cardBk)
 }
 
 
+//重置右上角鬼牌效果2
+function resetEffectFangui2(card1, card2, cardBk)
+{
+    var sData = jsclient.data.sData;
+
+    if(sData.tData.fanGui && sData.tData.twogui)
+    {
+        var guiTag1 = sData.tData.gui;
+        var guiTag2 = sData.tData.nextgui;
+        if(guiTag1 != 0 && guiTag2 != 0)
+        {
+            card1.visible = true;
+            card2.visible = true;
+            setCardPic(card1, guiTag1);
+            setCardPic(card2, guiTag2);
+
+            log("任意双鬼牌。。。。" + guiTag1 + "    " + guiTag2);
+        }
+        else
+        {
+            card1.visible = false;
+            card2.visible = false;
+        }
+
+        cardBk.visible = false;
+    }
+}
+
 //鬼牌特效
 function playAnimationByCard(cardNode, off)
 {
@@ -192,7 +220,7 @@ function playEffectFangui(selfCard, selfCardBk, selfArrowbk)
     }
 
     //翻鬼特效
-    log("播放翻鬼牌特效。。。。。。");
+    log("播放翻鬼牌特效1。。。。。。");
 
     if(guiTag < 30)
     {
@@ -268,6 +296,119 @@ function playEffectFangui(selfCard, selfCardBk, selfArrowbk)
     selfCardBk.scaleX = 0.8;
     selfCardBk.scaleY = 0.8;
     selfCardBk.runAction(actSeq);
+
+    selfArrowbk.visible = false;
+}
+
+//播放鬼牌效果2
+function playEffectFangui2(selfCard1, selfCard2, selfCardBk1, selfArrowbk)
+{
+    var guiTag1 = 0, guiTag2 = 0, showTag = 0;
+    if(jsclient.data.sData.tData.withZhong)
+        return;
+
+    if(jsclient.data.sData.tData.fanGui && jsclient.data.sData.tData.twogui)
+    {
+        guiTag1 = jsclient.data.sData.tData.gui;
+        guiTag2 = jsclient.data.sData.tData.nextgui;
+    };
+
+    if(guiTag1 == 0 || guiTag2 == 0)
+        return;
+
+    if(jsclient.sameGeogUI)
+        return;
+
+    if(selfCard1.visible && selfCard2.visible)
+    {
+        setCardPic(selfCard1, guiTag1);
+        setCardPic(selfCard2, guiTag2);
+        return;
+    }
+
+    //翻鬼特效
+    log("播放翻鬼牌特效2。。。。。。");
+
+    // if(guiTag1 < 30)
+    // {
+    //     //条万筒
+    //     if((guiTag1 - 1)%10 == 0)
+    //         showTag = guiTag1 + 8;
+    //     else
+    //         showTag = guiTag1 - 1;
+    // }
+    // else
+    // {
+    //     //风
+    //     if(guiTag1 == 31)
+    //         showTag = 91;
+    //     else
+    //         showTag = guiTag1 - 10;
+    // }
+    //
+    // setCardPic(selfCard1, showTag);
+
+    setCardPic(selfCard1, guiTag1);
+    setCardPic(selfCard2, guiTag2);
+
+    var startX = selfCardBk1.x;
+    var startY = selfCardBk1.y;
+
+    var onActionEnd = function ()
+    {
+        selfCard1.visible = true;
+        selfCardBk1.x = startX;
+        selfCardBk1.y = startY;
+        selfCardBk1.visible = false;
+
+        var onSetCardGui = function ()
+        {
+            setCardPic(selfCard1, guiTag1);
+            setCardPic(selfCard2, guiTag2);
+        };
+
+        var onFanGuiEnd = function ()
+        {
+            selfCard2.visible = true;
+            selfArrowbk.visible = true;
+        };
+
+        selfCard1.runAction(
+            cc.sequence(
+                cc.scaleTo(0.3, 0.8, 0.8),
+                cc.delayTime(1.0),
+                // cc.callFunc(onSetCardGui),
+                // cc.delayTime(0.5),
+                cc.moveTo(0.5, startX,startY),
+                cc.callFunc(onFanGuiEnd)));
+
+        selfCard1.runAction(
+            cc.sequence(
+                cc.delayTime(1.3),
+                cc.scaleTo(0.5, 0.45, 0.45)));
+    };
+    var actTime = cc.delayTime(0.5);
+    var actScale = cc.scaleTo(0.3, 0, 0.8);
+    var actCall = cc.callFunc(onActionEnd);
+    var actSeq = cc.sequence(actTime, actScale, actCall);
+    var size = jsclient.size;
+
+    var ctnpos = selfCardBk1.getParent().convertToNodeSpace(cc.p(size.width / 2, size.height / 2));
+
+    selfCard1.x = ctnpos.x;
+    selfCard1.y = ctnpos.y;
+    selfCard1.visible = false;
+    selfCard1.scaleX = 0;
+    selfCard1.scaleY = 0.8;
+
+    selfCard2.visible = false;
+
+    selfCardBk1.x = ctnpos.x;
+    selfCardBk1.y = ctnpos.y;
+    selfCardBk1.visible = true;
+    selfCardBk1.scaleX = 0.8;
+    selfCardBk1.scaleY = 0.8;
+    selfCardBk1.runAction(actSeq);
 
     selfArrowbk.visible = false;
 }
@@ -702,16 +843,28 @@ function CheckEatVisible(eat)
             {
                 if (
                     pl.isNew &&
-                    mj.canHu(!tData.canHu7, pl.mjhand, 0, tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui,tData.gui4Hu) > 0 &&
-                    mj.canHu(!tData.canHu7, pl.mjhand, 0, tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui,tData.gui4Hu) != 13
+                    mj.canHu(!tData.canHu7, pl.mjhand, 0, tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui,tData.gui4Hu,tData.nextgui) > 0 &&
+                    mj.canHu(!tData.canHu7, pl.mjhand, 0, tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui,tData.gui4Hu,tData.nextgui) != 13
                 )
                 {
                     vnode.push(eat.hu._node);
                 }
             }else{
-                if (pl.isNew && mj.canHu(!tData.canHu7, pl.mjhand, 0, tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui,tData.gui4Hu) > 0)
+                if(jsclient.data.sData.tData.gameType == 2)
                 {
-                    vnode.push(eat.hu._node);
+                    if (pl.isNew && mj.canHu(!tData.canHu7, pl.mjhand, 0, tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui,tData.gui4Hu) > 0
+                        &&  (mj.prejudgeHuType(pl) > 0 || (mj.prejudgeHuType(pl) == 0 && !tData.noCanJiHu))//鸡胡且可以鸡胡 或非鸡胡
+                    )
+                    {
+                        vnode.push(eat.hu._node);
+                    }
+                }
+                else
+                {
+                    if (pl.isNew && mj.canHu(!tData.canHu7, pl.mjhand, 0, tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui,tData.gui4Hu) > 0)
+                    {
+                        vnode.push(eat.hu._node);
+                    }
                 }
             }
 
@@ -726,33 +879,6 @@ function CheckEatVisible(eat)
 
             if ((jsclient.data.sData.tData.gameType == 3 || jsclient.data.sData.tData.gameType == 1) && jsclient.data.sData.tData.jiejieGao)
             {
-                //switch ( sData.players[tData.uids[tData.zhuang]].linkZhuang)
-                //{
-                //case 1:
-                //    //horse = horse + 2;
-                //    break;
-                //case 2:
-                //    horse = horse + 2;
-                //    break;
-                //case 3:
-                //    horse = horse + 4;
-                //    break;
-                //case 4:
-                //    horse = horse + 6;
-                //    break;
-                //case 5:
-                //    horse = horse + 8;
-                //    break;
-                //case 6:
-                //    horse = horse + 10;
-                //    break;
-                //case 7:
-                //    horse = horse + 12;
-                //    break;
-                //case 8:
-                //    horse = horse + 14;
-                //    break;
-                //}
                 //所有玩家中 连胡数不为0的数
                 for(var i=0;i<tData.maxPlayer;i++)
                 {
@@ -760,9 +886,7 @@ function CheckEatVisible(eat)
                     horse += (sData.players[tData.uids[i]].linkHu)*2;
                 }
 
-
             }
-           // if(horse >0) console.log("leftCard=========" + leftCard);
             if (horse > 0)
                 rtn = leftCard > (horse) ? mj.canGang1(pl.mjpeng, pl.mjhand, pl.mjpeng4) : [];
             else
@@ -792,7 +916,7 @@ function CheckEatVisible(eat)
 
         if (!IsMyTurn()) {
             var huType = mj.canHu(!tData.canHu7, pl.mjhand, tData.lastPut,
-                tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui,tData.gui4Hu);
+                tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui,tData.gui4Hu,tData.nextgui);
 
             if ((tData.gameType == 1 || tData.gameType == 3 ) && tData.putType == 4 )
                 huType = 0;
@@ -847,12 +971,16 @@ function CheckEatVisible(eat)
                     //	canHu=true;
                     //}
                     //if( (tData.putType==0 || tData.putType==4) && !isJiHu)
+                   // (majiang.prejudgeHuType(pl,tData.lastPut) > 0 || (majiang.prejudgeHuType(pl,tData.lastPut) == 0 && !tData.noCanJiHu))
                     if ((tData.putType == 0 || tData.putType == 4) && huizhouhuType > 0)
                     {
                         canHu = true;
                     }
-                    else if (tData.putType > 0 && tData.putType < 4)
+                    else if (tData.putType > 0 && tData.putType < 4
+                        //&& (tData.putType == 3 && ((mj.prejudgeHuType(pl,tData.lastPut) > 0 || (mj.prejudgeHuType(pl,tData.lastPut) == 0 && !tData.noCanJiHu))))
+                    )
                     {
+                        console.log("tData.putType =====" + tData.putType);
                         if (tData.canEatHu) {
                             if (tData.putType != 3 || huType == 13)
                             {
@@ -863,7 +991,11 @@ function CheckEatVisible(eat)
                             //if((huType == 13 || tData.putType != 3) && huizhouhuType > 0){
                             //    canHu = true;
                             //}
-                            if (tData.putType != 3 && tData.putType!= 1 || huType == 13) {
+                            if (tData.putType != 3 && tData.putType!= 1
+                                //&& tData.putType != 2
+                                && (huizhouhuType > 0 || (huizhouhuType == 0 && !tData.noCanJiHu))
+                                || huType == 13 ) {
+                                console.log("能胡--------------------------------------");
                                 canHu = true;
                             }
                         }
@@ -2590,14 +2722,17 @@ function RestoreCardLayout(node, off, endonepl) {
     uichi.sort(TagOrder);
     uistand.sort(TagOrder);
 
-    var guiTag = 0;
+    var guiTag1 = 0, guiTag2 = 0;
     if(jsclient.data.sData.tData.withZhong)
-        guiTag = 71;
+        guiTag1 = 71;
 
     if(jsclient.data.sData.tData.fanGui)
-        guiTag = jsclient.data.sData.tData.gui;
+        guiTag1 = jsclient.data.sData.tData.gui;
 
-    jsclient.majiang.toFontGuiPai(uistand, jsclient.data.sData.tData.withZhong, jsclient.data.sData.tData.fanGui, guiTag);
+    if(jsclient.data.sData.tData.twogui)
+        guiTag2 = jsclient.data.sData.tData.nextgui;
+
+    jsclient.majiang.toFontGuiPai(uistand);
 
     if (newC)
     {
@@ -2611,7 +2746,7 @@ function RestoreCardLayout(node, off, endonepl) {
         {
             var guiCard = uistand[z];
 
-            if(guiCard.tag == guiTag)
+            if(guiCard.tag == guiTag1 || guiCard.tag == guiTag2)
             {
                 playAnimationByCard(guiCard, off);
             }
@@ -2637,7 +2772,8 @@ function RestoreCardLayout(node, off, endonepl) {
 
         if (off % 2 == 0)
         {
-            if (i != 0) {
+            if (i != 0)
+            {
                 if (ci.name == orders[i - 1].name)
                 {
 
@@ -3021,14 +3157,17 @@ function HandleMJPut(node, msg, off, outNum) {
     }
 }
 
+//设置卡牌
 function setCardPic(node, cd)
 {
-    var imgName = "mj_" + cd + ".png";
+    var imgName = "res/MaJiangNew/mj_" + cd + ".png";
     // var callback = function ()
     // {
         var num = node.getChildByName("num");
+        // if (num != null)
+            // num.loadTexture(imgName, ccui.Widget.PLIST_TEXTURE);
         if (num != null)
-            num.loadTexture(imgName, ccui.Widget.PLIST_TEXTURE);
+            num.loadTexture(imgName);
     // };
     node.tag = cd;
     // node.stopAllActions();
@@ -4203,7 +4342,8 @@ function downAndPlayVoice(uid, filePath) {
 }
 
 
-var selfArrowbk, selfCardBk, selfCard;
+var selfArrowbk, playTips, selfCardBk, selfCard, selfCardBk1, selfCard1, selfCard2;
+
 var PlayLayer = cc.Layer.extend(
     {
         jsBind: {
@@ -4425,6 +4565,10 @@ var PlayLayer = cc.Layer.extend(
                 DelRoom: CheckDelRoomUI
             },
 
+            backimg:{
+                _layout: [[1.02, 1.02], [0.5, 0.5], [0, 0], true]
+            },
+
             roundnumImg: {
                 _layout: [[0.1, 0.1], [0.52, 0.5], [1, 0]]
                 , _event: {
@@ -4538,186 +4682,48 @@ var PlayLayer = cc.Layer.extend(
             },
 
             back: {
-                back: {_layout: [[1.02, 1.02], [0.5, 0.5], [0, 0], true]},
+                // back: {_layout: [[1.02, 1.02], [0.5, 0.5], [0, 0], true]},
                 clt: {
                     _layout: [[0.15, 0.15], [0, 1], [0.5, -0.5]],
 
-                    play: {
-                        canHu_hongzhong:
+                    canHu_hongzhong:
+                    {
+                        // _layout: [[0.15, 0.15], [0, 1], [0.5, -0.5]],
+
+                        _event:
                         {
-                            _visible: function ()
-                            {
-                                return (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui);
-                            },
-
-                            cardBk:
-                            {
-                                _run:function()
-                                {
-                                    this.visible = false;
-                                    selfCardBk = this;
-                                }
-                            },
-
-                            card:
-                            {
-                                _run:function ()
-                                {
-                                    this.visible = false;
-                                    selfCard = this;
-                                }
-                            }
-                        },
-
-                        withWind: {
-                            _visible: function () {
-                                return (jsclient.data.sData.tData.withWind
-                                && jsclient.data.sData.tData.gameType != 4
-                                && jsclient.data.sData.tData.gameType != 6);
-                            }
-                        },
-
-                        dahu:
-                        {
-                            _visible: function () {
-                                return (jsclient.data.sData.tData.canBigWin && jsclient.data.sData.tData.gameType == 6);
-                            }
-                        },
-
-                        nodahu:
-                        {
-                            _visible: function () {
-                                return (!jsclient.data.sData.tData.canBigWin && jsclient.data.sData.tData.gameType == 6);
-                            }
-                        },
-
-                        maima2: {
-                            _visible: function () {
-                                return (jsclient.data.sData.tData.horse == 2);
-                            },
-                        },
-
-                        maima4: {
-                            _visible: function () {
-                                return (jsclient.data.sData.tData.horse == 4);
-                            },
-                        },
-
-                        maima6: {
-                            _visible: function () {
-                                return (jsclient.data.sData.tData.horse == 6);
-                            },
-                        },
-
-                        mabaozha:
-                        {
-                            _visible: function () {
-                                return jsclient.data.sData.tData.baozhama;
-                            },
-                        },
-
-                        canHu7: {
-
-                            _run:function()
-                            {
-                                if(jsclient.data.sData.tData.jiejieGao)
-                                    this.y -= 45;
-                            },
-
-                            _visible: function ()
-                            {
-                                return (jsclient.data.sData.tData.canHu7
-                                && jsclient.data.sData.tData.gameType != 3
-                                && jsclient.data.sData.tData.gameType != 5
-                                && jsclient.data.sData.tData.gameType != 6);
-                            }
-                        },
-
-                        canFan7: {
-
-                            _run:function()
-                            {
-                                if(jsclient.data.sData.tData.jiejieGao)
-                                    this.y -= 45;
-                            },
-
-                            _visible: function ()
-                            {
-                                return jsclient.data.sData.tData.canFan7;
-                            }
-                        },
-
-                        jjg: {
-                            _visible: function () {
-                                return jsclient.data.sData.tData.jiejieGao;
-                            }
-                        },
-
-                        fan0: {
-                            _visible: function () {
-                                return (jsclient.data.sData.tData.fanNum == 0 && jsclient.data.sData.tData.gameType == 4);
-                            }
-                        },
-
-                        fan1: {
-                            _visible: function () {
-                                return (jsclient.data.sData.tData.fanNum == 1 && jsclient.data.sData.tData.gameType == 4);
-                            }
-                        },
-
-                        fan3: {
-                            _visible: function () {
-                                return (jsclient.data.sData.tData.fanNum == 3 && jsclient.data.sData.tData.gameType == 4);
-                            }
-                        },
-
-                        zhongisma: {
-                            _visible: function () {
-                                return jsclient.data.sData.tData.zhongIsMa;
-                            }
-                        },
-
-                        _event: {
-
                             playEffectFangui:function ()
                             {
                                 //判断首局执行
                                 var sData = jsclient.data.sData;
-                                if (sData.tData.roundNum ==  sData.tData.roundAll)
+                                if ((sData.tData.roundNum == sData.tData.roundAll) && (sData.tData.withZhong || sData.tData.fanGui) && (!sData.tData.twogui))
                                     playEffectFangui(selfCard, selfCardBk, selfArrowbk);
                             },
 
                             initSceneData: function (eD)
                             {
-                                resetEffectFangui(selfCard, selfCardBk);
-
-                                if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+                                var sData = jsclient.data.sData;
+                                if ((sData.tData.withZhong || sData.tData.fanGui) && (!sData.tData.twogui))
                                 {
-                                    this.y = 20;
-                                }
-                                else if (jsclient.data.sData.tData.withWind)
-                                {
-                                    this.y = 120;
+                                    this.visible = true;
+                                    resetEffectFangui(selfCard, selfCardBk);
                                 }
                                 else
-                                    this.y = 150;
-
-                                this.visible = true;
+                                    this.visible = false;
                             },
+
                             mjhand: function (eD)
                             {
-                                this.visible = CheckArrowVisible();
-
                                 //判断不是首局执行
                                 var sData = jsclient.data.sData;
-                                if (sData.tData.roundNum !=  sData.tData.roundAll)
+                                if ((sData.tData.roundNum != sData.tData.roundAll) && (sData.tData.withZhong || sData.tData.fanGui) && (!sData.tData.twogui))
                                     playEffectFangui(selfCard, selfCardBk, selfArrowbk);
                             },
 
                             roundEnd:function ()
                             {
                                 //鬼牌重置为不显示，则会继续播放翻牌特效
-
+                                selfCard.stopAllActions();
                                 selfCard.visible = false;
                                 selfCardBk.visible = false;
 
@@ -4725,19 +4731,310 @@ var PlayLayer = cc.Layer.extend(
                                     selfCard.visible = true;
                             },
 
-                            onlinePlayer: function (eD)
-                            {
-                                // this.visible = CheckArrowVisible();
+                        },
 
+                        _visible: function ()
+                        {
+                            return (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui) && (!jsclient.data.sData.tData.twogui);
+                        },
+
+                        cardBk:
+                        {
+                            _run:function()
+                            {
+                                this.visible = false;
+                                selfCardBk = this;
+                            }
+                        },
+
+                        card:
+                        {
+                            _run:function ()
+                            {
+                                this.visible = false;
+                                selfCard = this;
+                            }
+                        }
+                    },
+
+                    canHu_fangui:
+                    {
+                        _event:
+                        {
+                            playEffectFangui:function ()
+                            {
+                                //判断首局执行
+                                var sData = jsclient.data.sData;
+                                if (sData.tData.roundNum ==  sData.tData.roundAll && sData.tData.fanGui && sData.tData.twogui)
+                                {
+                                    playEffectFangui2(selfCard1, selfCard2, selfCardBk1, selfArrowbk);
+                                }
+                            },
+
+                            initSceneData: function (eD)
+                            {
+                                var sData = jsclient.data.sData;
+                                if (sData.tData.fanGui && sData.tData.twogui)
+                                {
+                                    this.visible = true;
+                                    resetEffectFangui2(selfCard1, selfCard2, selfCardBk1);
+                                }
+                                else
+                                    this.visible = false;
+                            },
+
+                            mjhand: function (eD)
+                            {
+                                //判断不是首局执行
+                                var sData = jsclient.data.sData;
+                                if (sData.tData.roundNum != sData.tData.roundAll && sData.tData.fanGui && sData.tData.twogui)
+                                    playEffectFangui2(selfCard1, selfCard2, selfCardBk1, selfArrowbk);
+                            },
+
+                            roundEnd:function ()
+                            {
+                                //鬼牌重置为不显示，则会继续播放翻牌特效
+                                selfCard1.stopAllActions();
+                                selfCard2.stopAllActions();
+                                selfCard1.visible = false;
+                                selfCard2.visible = false;
+                                selfCardBk.visible = false;
+                            },
+                        },
+
+                        _visible: function ()
+                        {
+                            return (jsclient.data.sData.tData.fanGui && jsclient.data.sData.tData.twogui);
+                        },
+
+                        cardBk1:
+                        {
+                            _run:function()
+                            {
+                                this.visible = false;
+                                selfCardBk1 = this;
+                            }
+                        },
+
+                        card1:
+                        {
+                            _run:function ()
+                            {
+                                this.visible = false;
+                                selfCard1 = this;
+                            }
+                        },
+
+                        card2:
+                        {
+                            _run:function ()
+                            {
+                                this.visible = false;
+                                selfCard2 = this;
                             }
                         }
                     }
                 },
-
                 clb: {_layout: [[0.15, 0.15], [0, 0], [0.5, 0.5]]},
                 crt: {_layout: [[0.15, 0.15], [1, 1], [-0.5, -0.5]]},
                 crb: {_layout: [[0.15, 0.15], [1, 0], [-0.5, 0.5]]},
-                barl: {_layout: [[0.01, 0.7], [0.005, 0.5], [0, 0], true]},
+                barl: {
+                    _layout: [[0.01, 0.7], [0.005, 0.5], [0, 0], true],
+
+                    playTips:
+                    {
+                        // _layout: [[0.25, 0.25], [0.065, 0.8], [0, 0]],
+
+                        _event:
+                        {
+                            initSceneData: function (eD)
+                            {
+                                if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+                                    this.y = 450;
+                                else
+                                    this.y = 550;
+
+                                var height = 50;
+                                var count = 0;
+                                var tipsImg = [];
+                                tipsImg[count] = this.getChildByName("tableImage");
+
+                                if(jsclient.data.sData.tData.withWind && jsclient.data.sData.tData.gameType != 4 && jsclient.data.sData.tData.gameType != 6)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("withWind");
+                                }
+                                if (jsclient.data.sData.tData.canBigWin && jsclient.data.sData.tData.gameType == 6)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("dahu");
+                                }
+                                if (!jsclient.data.sData.tData.canBigWin && jsclient.data.sData.tData.gameType == 6)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("nodahu");
+                                }
+                                if (jsclient.data.sData.tData.canHu7 && jsclient.data.sData.tData.gameType != 3 && jsclient.data.sData.tData.gameType != 5 && jsclient.data.sData.tData.gameType != 6)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("canHu7");
+                                }
+                                if (jsclient.data.sData.tData.canFan7)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("canFan7");
+                                }
+                                if (jsclient.data.sData.tData.jiejieGao)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("jjg");
+                                }
+                                if (jsclient.data.sData.tData.fanNum == 0 && jsclient.data.sData.tData.gameType == 4)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("fan0");
+                                }
+                                if (jsclient.data.sData.tData.fanNum == 1 && jsclient.data.sData.tData.gameType == 4)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("fan1");
+                                }
+                                if (jsclient.data.sData.tData.fanNum == 3 && jsclient.data.sData.tData.gameType == 4)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("fan3");
+                                }
+                                if (jsclient.data.sData.tData.zhongIsMa)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("zhongisma");
+                                }
+                                if(jsclient.data.sData.tData.maGenDi)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("magendi");
+                                }
+                                if(jsclient.data.sData.tData.maGenDiDuiDuiHu)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("genduiduihu");
+                                }
+                                if(jsclient.data.sData.tData.noCanJiHu)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("bukejihu");
+                                }
+                                if(jsclient.data.sData.tData.menQingJiaFen)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("menqingjiafen");
+                                }
+                                if (jsclient.data.sData.tData.baozhama)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("mabaozha");
+                                }
+                                if (jsclient.data.sData.tData.horse == 2)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("maima2");
+                                }
+                                if (jsclient.data.sData.tData.horse == 4)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("maima4");
+                                }
+                                if (jsclient.data.sData.tData.horse == 6)
+                                {
+                                    count++;
+                                    tipsImg[count] = this.getChildByName("maima6");
+                                }
+
+                                var tipsNodeArr = this.getChildren();
+                                for(var sprImg in tipsNodeArr)
+                                {
+                                    tipsNodeArr[sprImg].visible = false;
+                                }
+
+                                height = height + count * 40;
+                                this.setContentSize(cc.size(this.getContentSize().width, height));
+                                log("玩法提示框大小：" + height + "  玩法提示个数：" + count);
+
+                                for(var i = 0; i < tipsImg.length; i++)
+                                {
+                                    var nodeImg = tipsImg[i];
+                                    nodeImg.visible = true;
+                                    nodeImg.setPositionY(height - 35 * (i + 1));
+                                }
+
+                                var buttonOut = this.getChildByName("button_out");
+                                buttonOut.visible = false;
+                                buttonOut.y = height - height / 3;
+
+                                var buttonIn = this.getChildByName("button_in");
+                                buttonIn.visible = true;
+                                buttonIn.y = height - height / 3;
+                            },
+
+                            mjhand:function ()
+                            {
+                                //鬼牌重置为不显示，则会继续播放翻牌特效
+                                if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+                                    this.y = 450;
+                                else
+                                    this.y = 550;
+                                
+                            },
+                        },
+
+                        _run:function(){
+                            playTips = this;
+                        },
+
+                        button_in:
+                        {
+                            _click: function ()
+                            {
+                                var button_in = playTips.getChildByName("button_in");
+                                var button_out = playTips.getChildByName("button_out");
+
+                                var onActionEnd = function()
+                                {
+                                    button_in.setVisible(false);
+                                    button_in.setTouchEnabled(true);
+
+                                    button_out.visible = true;
+                                };
+
+                                button_in.setTouchEnabled(false);
+                                var action = cc.sequence(cc.moveTo(0.2, cc.p(90, playTips.y)), cc.callFunc(onActionEnd));
+                                playTips.runAction(action);
+                            }
+                        },
+
+                        button_out:
+                        {
+                            _click: function ()
+                            {
+                                var button_in = playTips.getChildByName("button_in");
+                                var button_out = playTips.getChildByName("button_out");
+
+                                var onActionEnd = function()
+                                {
+                                    button_out.setVisible(false);
+                                    button_out.setTouchEnabled(true);
+
+                                    button_in.visible = true;
+                                };
+
+                                button_out.setTouchEnabled(false);
+                                var action = cc.sequence(cc.moveTo(0.2, cc.p(-55, playTips.y)), cc.callFunc(onActionEnd));
+                                playTips.runAction(action);
+                            }
+                        }
+                    },
+                },
+                barl_0:{_layout: [[0.01, 0.7], [0.005, 0.5], [0, 0], true]},
                 barr: {_layout: [[0.01, 0.7], [0.995, 0.5], [0, 0], true]},
                 bart: {_layout: [[0.9, 0], [0.5, 0.99], [0, 0], true]},
                 barb: {_layout: [[0.9, 0], [0.5, 0.01], [0, 0], true]},
@@ -4993,6 +5290,7 @@ var PlayLayer = cc.Layer.extend(
                         var maBoom = tData.baozhama;
                         var roundNum = tData.roundNum;
                         var fanGui = tData.fanGui;
+                        var twogui = tData.twogui;
                         var jiejieGao = tData.jiejieGao;
                         var fanNum = tData.fanNum;
                         var maxPlayer = tData.maxPlayer;
@@ -5000,6 +5298,10 @@ var PlayLayer = cc.Layer.extend(
                         // var gui4huBeiNum = tData.gui4huBeiNum;
                         // var guiJiaMa = tData.guiJiaMa;
                         // var guiJiaBei = tData.guiJiaBei;
+                        var noCanJiHu = tData.noCanJiHu;
+                        var maGenDi = tData.maGenDi;
+                        var maGenDiDuiDuiHu = tData.maGenDiDuiDuiHu;
+                        var menQingJiaFen = tData.menQingJiaFen;
 
                         var gameTypeTips = "";
                         var withZhongTips = withZhong ? "红中鬼牌、" : "";
@@ -5016,10 +5318,19 @@ var PlayLayer = cc.Layer.extend(
                         // var gui4huBeiNumTips = gui4huBeiNum == 1 ? "" : "4鬼牌翻倍";
                         // var guiJiaMaTips = guiJiaMa ? "有鬼牌玩法时,胡牌时牌型中无鬼加2马" : "";
                         // var guiJiaBeiTips = guiJiaBei ? "有鬼牌玩法时,胡牌时牌型中无鬼翻1倍" : "";
+                        var noCanJiHuTips = noCanJiHu ? "不可鸡胡、" : "";
+                        var maGenDiTips = maGenDi ? "马跟底分、" : "";
+                        var maGenDiDuiDuiHuTips = maGenDiDuiDuiHu ? "对对胡、" : "";
+                        var menQingJiaFenTips = menQingJiaFen ? "门清加分、" : "";
 
                         if(maBoom)
                         {
-                            horseTips = "爆炸马、"
+                            horseTips = "爆炸马、";
+                        }
+
+                        if(twogui)
+                        {
+                            fanGuiTips = "翻双鬼、";
                         }
 
                         if (gameType == 1)
@@ -5047,6 +5358,8 @@ var PlayLayer = cc.Layer.extend(
                             "房间号:" + tableid + ","
                             + withZhongTips + zhongIsMaTips + canHu7Tips + canFan7Tips
                             + bigWinTips + fengTisp + horseTips + fanGuiTips
+                            + noCanJiHuTips + maGenDiTips + maGenDiDuiDuiHuTips
+                            + menQingJiaFenTips
                             + jiejieGaoTips + fanNumTips + roundNumTips
                             + "速度加入，只等你来【星悦麻将】");
                     }
@@ -6421,4 +6734,4 @@ var PlayLayer = cc.Layer.extend(
 
             return true;
         },
-    })
+    });

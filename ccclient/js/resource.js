@@ -18,8 +18,8 @@ var res =
 	ExtGame_json:"res/ExtGame.json",
 
 
-    PlayMJ_my_png:"res/MaJiangNew/z_mj.png",
-    PlayMJ_my_plist:"res/MaJiangNew/z_mj.plist",
+    // PlayMJ_my_png:"res/MaJiangNew/z_mj.png",
+    // PlayMJ_my_plist:"res/MaJiangNew/z_mj.plist",
 
 	PlayMJ_emoji_png:"res/playerchat/emoji_action_texture.png",
 	PlayMJ_emoji_plist:"res/playerchat/emoji_action_texture.plist",
@@ -43,11 +43,25 @@ var res =
     // Jiaruyouxi_plist:"res/animate/login/jiaruyouxi0.plist",
     // Jiaruyouxi_json:"res/animate/login/jiaruyouxi.ExportJson",
     //
-    Chuangjianfangjian_png:"res/animate/home/chuangjianfangjian0.png",
-    Chuangjianfangjian_plist:"res/animate/home/chuangjianfangjian0.plist",
-    Chuangjianfangjian_json:"res/animate/home/chuangjianfangjian.ExportJson",
+	Chuangjianfangjian_png:"res/animate/home/chuangjianfangjian0.png",
+	Chuangjianfangjian_plist:"res/animate/home/chuangjianfangjian0.plist",
+	Chuangjianfangjian_json:"res/animate/home/chuangjianfangjian.ExportJson",
 
-    
+	GameEndYing_png:"res/animate/endGame/ying0.png",
+	GameEndYing_plist:"res/animate/endGame/ying0.plist",
+	GameEndYing_json:"res/animate/endGame/ying.ExportJson",
+
+    GameEndShu_png:"res/animate/endGame/shu0.png",
+    GameEndShu_plist:"res/animate/endGame/shu0.plist",
+    GameEndShu_json:"res/animate/endGame/shu.ExportJson",
+
+    GameEndPing_png:"res/animate/endGame/ping0.png",
+    GameEndPing_plist:"res/animate/endGame/ping0.plist",
+    GameEndPing_json:"res/animate/endGame/ping.ExportJson",
+
+    GameEndHuang_png:"res/animate/endGame/huang0.png",
+    GameEndHuang_plist:"res/animate/endGame/huang0.plist",
+    GameEndHuang_json:"res/animate/endGame/huang.ExportJson",
 
 };
 
@@ -58,7 +72,7 @@ for (var i in res)
     // cc.log("预加载资源：" + res[i]);
 }
 
-cc.spriteFrameCache.addSpriteFrames(res.PlayMJ_my_plist);
+// cc.spriteFrameCache.addSpriteFrames(res.PlayMJ_my_plist);
 cc.spriteFrameCache.addSpriteFrames(res.PlayMJ_emoji_plist);
 
 // ccs.ArmatureDataManager:getInstance().removeArmatureFileInfo(res.Weixindenglu_json);
@@ -66,6 +80,11 @@ ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Weixindenglu_json)
 ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Guangdongmajiang_json);
 // ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Jiaruyouxi_json);
 ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Chuangjianfangjian_json);
+
+// ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.GameEndYing_json);
+// ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.GameEndShu_json);
+// ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.GameEndPing_json);
+// ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.GameEndHuang_json);
 
 
 var jsclient={};
@@ -90,6 +109,8 @@ var Activity_Invite;
 var ActivationCodeLayer;
 var AwardPrompt;
 var ErroPrompt;
+
+var TipsPanel;
 
 var ActivityType =
 {

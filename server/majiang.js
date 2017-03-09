@@ -329,11 +329,9 @@
         var ziYiSe = majiang.ziYiSe(pi);
         var shiSanYao = majiang.shiSanYao(pi);
         var quanYaoJiu = majiang.quanYaoJiu(pi);
-        console.log("quanYaoJiu ==== " + quanYaoJiu);
         if (shiSanYao) judge = majiang.HUI_ZHOU_HTYPE.SHISANYAO;
         if (sameColor) judge = majiang.HUI_ZHOU_HTYPE.QINGYISE;
         if (zaSe) judge = majiang.HUI_ZHOU_HTYPE.ZASE;
-        console.log("num3的值：" + num3);
         if (num3 == 1 || num3 == 2) {
             judge = majiang.HUI_ZHOU_HTYPE.PENGPENGHU;
             if (quanYaoJiu) judge = majiang.HUI_ZHOU_HTYPE.QUANYAOJIU;
@@ -343,15 +341,6 @@
             if (ziYiSe) judge = majiang.HUI_ZHOU_HTYPE.ZIYISE;
             if (qingYaoJiu) judge = majiang.HUI_ZHOU_HTYPE.QINGYAOJIU;
         }
-
-        //var handDes = "";
-        //for(var i=0;i<pi.mjhand.length;i++)
-        //{
-        //    handDes = handDes + pi.mjhand[i] + ",";
-        //}
-        //
-        //console.log("查看手牌：" + handDes);
-        //console.log("胡的类型："+judge);
         return judge;
 
     }
@@ -732,18 +721,18 @@
 
     //惠州预先判断胡的类型 不影响手牌
     majiang.prejudgeHuType = function (pi, cd) {
-        if (pi.mjhand.length == 14) return majiang.HUI_ZHOU_HTYPE.ERROR;
+        //if (pi.mjhand.length == 14) return majiang.HUI_ZHOU_HTYPE.ERROR;
         //var huType = canHuNoZhong(false,pi.mjhand,cd,false);
         //if(huType == 13) return majiang.HUI_ZHOU_HTYPE.SHISANYAO; //先判断13幺  暂时没有7对 有的话也要这样判断
-        if(cd != 0) pi.mjhand.push(cd);//不是13幺的情况  假设先push进 打出的那张牌
+        if(cd && cd != 0) pi.mjhand.push(cd);//不是13幺的情况  假设先push进 打出的那张牌
         var huType = majiang.getHuType(pi);
-        if(cd != 0) pi.mjhand.splice(pi.mjhand.indexOf(cd), 1);
+        if(cd && cd != 0) pi.mjhand.splice(pi.mjhand.indexOf(cd), 1);
         return huType;
     }
 
     //深圳 预测 胡类型
     majiang.prejudgeHuTypeForShenZhen = function (pi, cd) {
-        if (pi.mjhand.length == 14) return majiang.HUI_ZHOU_HTYPE.ERROR;
+        //if (pi.mjhand.length == 14) return majiang.HUI_ZHOU_HTYPE.ERROR;
         var huType1 = canHuNoZhong(false, pi.mjhand, cd, false);
         var qixiaodui = false;
         var haohuaqixiaodui = false;
@@ -758,9 +747,9 @@
             }
             // return majiang.SHEN_ZHEN_HUTYPE.QIXIAODUI;
         }
-        if(cd != 0) pi.mjhand.push(cd);// 假设先push进 打出的那张牌
+        if(cd && cd != 0) pi.mjhand.push(cd);// 假设先push进 打出的那张牌
         var huType = majiang.getHuTypeForShenZhen(pi);
-        if(cd != 0) pi.mjhand.splice(pi.mjhand.indexOf(cd), 1);
+        if(cd && cd != 0) pi.mjhand.splice(pi.mjhand.indexOf(cd), 1);
 
         if (haohuaqixiaodui && huType == majiang.SHEN_ZHEN_HUTYPE.HUNYISE) return majiang.SHEN_ZHEN_HUTYPE.HUNYISE_HAOHUAQIXIAODUI;
         if (haohuaqixiaodui && huType == majiang.SHEN_ZHEN_HUTYPE.QINGYISE) return majiang.SHEN_ZHEN_HUTYPE.QINGYISE_HAOHUAQIXIAODUI;
@@ -851,9 +840,9 @@
     }
     //鸡平胡 预测 胡类型
     majiang.prejudgeHuTypeForJiPingHu = function (pi, cd) {
-        if(cd != 0) pi.mjhand.push(cd);// 假设先push进 打出的那张牌
+        if(cd && cd != 0) pi.mjhand.push(cd);// 假设先push进 打出的那张牌
         var huType = majiang.getHuTypeForJiPingHu(pi);
-        if(cd != 0) pi.mjhand.splice(pi.mjhand.indexOf(cd), 1);
+        if(cd && cd != 0) pi.mjhand.splice(pi.mjhand.indexOf(cd), 1);
         return huType;
     }
 
@@ -1800,19 +1789,31 @@
     }
 
 
-    majiang.toFontGuiPai = function (cds, withZhong, isFanGui, gui) {
-        //console.log("进来排序手牌了==============鬼牌是："+gui);
+    majiang.toFontGuiPai = function (cds) {
+
+        var withZhong = jsclient.data.sData.tData.withZhong;
+        var isFanGui = jsclient.data.sData.tData.fanGui;
+        var twogui = jsclient.data.sData.tData.twogui;
+        var gui1 = jsclient.data.sData.tData.gui;
+        var gui2 = jsclient.data.sData.tData.nextgui;
+
         if (withZhong) {
             cds.sort(function (node1, node2) {
                 return node2.tag == 71;
             });
         }
-        if (isFanGui) {
+
+        if(twogui){
             cds.sort(function (node1, node2) {
-                return node2.tag == gui;
+                return node2.tag == gui2;
             });
         }
 
+        if (isFanGui) {
+            cds.sort(function (node1, node2) {
+                return node2.tag == gui1;
+            });
+        }
     };
 
     function is4SameGui(cds, cd, gui) {
@@ -1872,7 +1873,7 @@
     }
 
     //翻鬼的7对胡
-    function can_7_HuForFanGui(cds, cd, with258, withHun, gui) {
+    function can_7_HuForFanGui(cds, cd, with258, withHun, gui,nextgui) {
         var tmp = [];
         for (var i = 0; i < cds.length; i++) tmp.push(cds[i]);
         if (cd) tmp.push(cd);
@@ -1891,7 +1892,7 @@
         var ispair258 = false;
         for (i = 0; i < cds.length; i++) {
             if (withHun) {
-                if (gui == cds[i]) {
+                if (gui == cds[i] || nextgui == cds[i] ) {
                     hunCards.push(cds[i]);
                     continue;
                 }
@@ -1919,7 +1920,7 @@
                     } else
                         return true;
                 }
-                if(oddCards.length < hunCards.length && hunCards.length == 3 ){
+                if(oddCards.length < hunCards.length && (hunCards.length == 3 || hunCards.length == 5 || hunCards.length == 7)){
                     if (with258 && (ispair258 || isodd258)) {
                         return true;
                     } else
@@ -1927,7 +1928,7 @@
                 }
             }
         } else {
-            if (hunCards.length == 2 || hunCards.length == 4) {
+            if (hunCards.length == 2 || hunCards.length == 4 || hunCards.length == 6 || hunCards.length == 8) {
                 return true;
             } else if (with258) {
                 if (ispair258)
@@ -2116,7 +2117,7 @@
     }
 
     //新任意癞子护法
-    function canHunHuForFanGuiNew(no7, cds, cd, with258, withHun, gui,gui4Hu) {
+    function canHunHuForFanGuiNew(no7, cds, cd, with258, withHun, gui,gui4Hu,nextgui) {
         var cdsss = cds;
         //分牌，按类型：条，筒，万，红中，1,2,3,5
         //1.初始化
@@ -2138,7 +2139,7 @@
             return a - b
         });
         for (i = 0; i < cds.length; i++) {
-            if (gui == cds[i]) {
+            if (gui == cds[i] || nextgui == cds[i]) {
                 allCards[cardType.hun].push(cds[i]);
             } else if (isTiao(cds[i])) {
                 allCards[cardType.tiao].push(cds[i]);
@@ -2152,6 +2153,8 @@
         }
         var needHunNum = 0;
         var jiangNeedNum = 0;
+        if(nextgui != 0 ) MJPAI_HUNMAX = 8;
+        else MJPAI_HUNMAX = 4;
         needMinHunNum = MJPAI_HUNMAX;
         calNeedHunNumToBePu(allCards[cardType.wan], 0);
         var wanToPuNeedNum = needMinHunNum;
@@ -2210,13 +2213,14 @@
         //放置最后判断能否胡7对
         var isHu7 = false;
         if (!no7) {
-            isHu7 = can_7_HuForFanGui(cdsss, cd, with258, withHun, gui);
+            isHu7 = can_7_HuForFanGui(cdsss, cd, with258, withHun, gui,nextgui);
         }
         //胡七小对 及其他类型
         if(isHu7 && (isHu || isHu1 || isHu2 || isHu3)) return 8;
         if(isHu7 && (!isHu && !isHu1 && !isHu2 && !isHu3)) return 7;
         if(!isHu7 && (isHu || isHu1 || isHu2 || isHu3)) return 100;
         if (is4SameGui(cdsss, cd, gui) && gui4Hu) return 100;
+        if(nextgui != 0 && is4SameGui(cdsss, cd, nextgui) && gui4Hu) return 100;
         return 0;
     }
 
@@ -2440,15 +2444,16 @@
         return 0;
     }
 
-    majiang.canHu = function (no7, cds, cd, with258, withZhong, fanGui, gui,gui4Hu) {
+    majiang.canHu = function (no7, cds, cd, with258, withZhong, fanGui, gui,gui4Hu,nextgui) {
         if(myObject &&(myObject.tData.gameType == 6 ||myObject.tData.gameType == 1 || myObject.tData.gameType == 5 || myObject.tData.gameType == 3 ) )
-            return majiang.canHuNew(no7, cds, cd, with258, withZhong, fanGui, gui,gui4Hu);
+            return majiang.canHuNew(no7, cds, cd, with258, withZhong, fanGui, gui,gui4Hu,nextgui);
         else{
             //带红中癞子
             if (withZhong) {
                 return canHunHu(no7, cds, cd, with258, withZhong,gui4Hu);
             }
             else if (fanGui) {
+                if(nextgui && nextgui != 0) return majiang.canHuNew(no7, cds, cd, with258, withZhong, fanGui, gui,gui4Hu,nextgui);
                 return canHunHuForFanGui(no7, cds, cd, with258, fanGui, gui,gui4Hu);
             }
             else {
@@ -2458,13 +2463,13 @@
     }
 
     //新的canHu算法
-    majiang.canHuNew = function (no7, cds, cd, with258, withZhong, fanGui, gui,gui4Hu) {
+    majiang.canHuNew = function (no7, cds, cd, with258, withZhong, fanGui, gui,gui4Hu,nextgui) {
         //带红中癞子
         if (withZhong) {
             return canHunHuNew(no7, cds, cd, with258, withZhong,gui4Hu);
         }
         else if (fanGui) {
-            return canHunHuForFanGuiNew(no7, cds, cd, with258, fanGui, gui,gui4Hu);
+            return canHunHuForFanGuiNew(no7, cds, cd, with258, fanGui, gui,gui4Hu,nextgui);
         }
         else {
             return canHuNoZhong(no7, cds, cd, with258);
@@ -2935,18 +2940,25 @@
         return 2;
     }
 
+    //惠州 门清 胡牌时检测胡牌 是否无吃牌、碰牌和明杠 且必须是自模糊
+    majiang.isMenQing = function(pl)
+    {
+        if(pl.mjgang0.length == 0 && (pl.winType == 4 || pl.winType == 5 || pl.winType == 6) && pl.mjpeng.length == 0 && pl.mjchi.length == 0) return true;
+        return false;
+    }
+
     //判断手牌是否含有红中 或者 鬼
     majiang.isFindGuiForMjhand = function(mjhand)
     {
         if(myObject && myObject.tData.withZhong &&  mjhand.indexOf(71) != -1) return true;
-        if(myObject && myObject.tData.fanGui && mjhand.indexOf(myObject.tData.gui) != -1) return true;
+        if(myObject && myObject.tData.fanGui && (mjhand.indexOf(myObject.tData.gui) != -1 || (myObject.tData.twogui && mjhand.indexOf(myObject.tData.nextgui) != -1))) return true;
         return false;
     }
 
     majiang.isEqualHunCard = function(card)
     {
         if(myObject && myObject.tData.withZhong && card == 71) return true;
-        if(myObject && myObject.tData.fanGui && myObject.tData.gui == card) return true;
+        if(myObject && myObject.tData.fanGui && (myObject.tData.gui == card || ( myObject.tData.twogui && myObject.tData.nextgui == card))) return true;
         return false;
     }
 
@@ -3021,6 +3033,41 @@
         return pl.mjhand.length + (pl.mjpeng.length + pl.mjgang0.length + pl.mjgang1.length) * 3 + pl.mjchi.length == 14;
     }
 
+    majiang.nextGui = function (gui,isLianXu){
+        var next = 0;
+        if(myObject && myObject.tData.fanGui && gui != 0 && myObject.tData.twogui && isLianXu)
+        {
+            next = gui + 1;
+            if(gui % 10 == 9 && gui < 30 ) next = (gui + 2) - 10 ; //9条 9万 9筒
+            if(gui > 30 && gui<100) next =  gui + 10;
+            if(gui == 91) next = 31;
+        }
+        if(myObject && myObject.tData.fanGui && gui != 0 && myObject.tData.twogui && !isLianXu)
+        {
+            switch (myObject.tData.gameType)
+            {
+                case 1:
+                {
+                    next = majiang.getRandomGui(tData.withWind);
+                    while(next == gui)
+                    {
+                        next = majiang.getRandomGui(tData.withWind);
+                    }
+                }
+                    break;
+                default :
+                {
+                    next = majiang.getRandomGui(tData.withWind);
+                    while(next == gui)
+                    {
+                        next = majiang.getRandomGui(tData.withWind);
+                    }
+                }
+                    break;
+            }
+        }
+        return next;
+    }
     //鸡平胡
     //
 
@@ -3496,6 +3543,31 @@
         var isQingYaojiu = majiang.qingYaoJiu(pl);
         console.log("***"+isQingYaojiu);
     }
+
+    function testForHuiZhou()
+    {
+        var pl = {
+            //mjhand: [1,2,3,4,4,5,6,7,8,9,71,71,71,4],
+            mjhand: [2,2,2,4,4,4,12,12,12,14,16,16,16,14],
+            mjpeng: [],
+            mjgang0: [],
+            mjgang1: [],
+            mjchi: [],
+        }
+
+        // var isQingYaojiu = majiang.getHuType(pl);
+        var isQingYaojiu = majiang.prejudgeHuType(pl);
+        console.log("***"+isQingYaojiu);
+    }
+    //myObject = {};
+    //myObject.tData = {};
+    //myObject.tData.fanGui = true;
+    function testTwoGui()
+    {
+
+        var tt = majiang.nextGui(9,true);
+        console.log("------"+tt);
+    }
     function DoTest() {
         //testZiYiSe();
         //testHuWithHongZhong();
@@ -3528,6 +3600,8 @@
         //testHuForShenZhenOfGui();
         //testHuForLaiZi();
         //testForQingYaoJIu();
+        //testForHuiZhou();
+        //testTwoGui()
     }
 
     if (typeof(jsclient) != "undefined") {

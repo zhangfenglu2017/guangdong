@@ -1996,6 +1996,7 @@ function newReplayLayer()
         }
     }
 
+    var playTips;
     var rePlayLayer = cc.Layer.extend({
         jsBind: 
         {
@@ -2071,6 +2072,11 @@ function newReplayLayer()
                 },
                 // DelRoom: CheckDelRoomUI
             },
+
+            backimg:{
+                _layout: [[1.02, 1.02], [0.5, 0.5], [0, 0], true]
+            },
+
             roundnumImg: {
                 _layout: [[0.1, 0.1], [0.5, 0.5], [1, 0]]
                 , _event: {
@@ -2098,6 +2104,7 @@ function newReplayLayer()
                     }
                 }
             },
+
             cardNumImg: {
                 _layout: [[0.1, 0.1], [0.5, 0.5], [-1.1, 0]],
                 _event: {
@@ -2153,155 +2160,329 @@ function newReplayLayer()
             },
 
             back: {
-                back: {_layout: [[0, 1], [0.5, 0.5], [0, 0], true]},
+                // back: {_layout: [[0, 1], [0.5, 0.5], [0, 0], true]},
                 clt: {
                     _layout: [[0.15, 0.15], [0, 1], [0.5, -0.5]],
-                    play: {
+
+                    canHu_hongzhong:
+                    {
                         _visible: function ()
                         {
-                            return (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui);
+                            return (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui) && (!jsclient.data.sData.tData.twogui);
                         },
 
-                        canHu_hongzhong:
+                        card:
                         {
-
-                            _visible: function ()
+                            _run:function ()
                             {
-                                return (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui);
-                            },
-                            
-                            card:
-                            {
-                                _run:function ()
+                                if(jsclient.data.sData.tData.withZhong)
                                 {
-                                    if(jsclient.data.sData.tData.withZhong)
+                                    log("红中鬼牌。。。。");
+                                    this.visible = true;
+                                }
+                                else if(jsclient.data.sData.tData.fanGui)
+                                {
+                                    var guiTag = jsclient.data.sData.tData.gui;
+                                    if(guiTag != 0)
                                     {
-                                        log("红中鬼牌。。。。");
                                         this.visible = true;
+                                        setCardPic(this, guiTag);
                                     }
+                                    else
+                                        this.visible = false;
 
-                                    if(jsclient.data.sData.tData.fanGui)
-                                    {
-                                        var guiTag = jsclient.data.sData.tData.gui;
-                                        if(guiTag != 0)
-                                        {
-                                            this.visible = true;
-                                            setCardPic(this, guiTag);
-                                        }
-                                        else
-                                            this.visible = false;
+                                    log("任意鬼牌。。。。" + guiTag);
+                                }
 
-                                        log("任意鬼牌。。。。" + guiTag);
-                                    }
+                            },
+                        }
+                    },
 
-                                },
+                    canHu_fangui:
+                    {
+                        _visible: function ()
+                        {
+                            return (jsclient.data.sData.tData.fanGui && jsclient.data.sData.tData.twogui);
+                        },
+
+                        cardBk1:
+                        {
+                            _run:function()
+                            {
+                                this.visible = false;
                             }
                         },
 
-                    },
-                    _event: {
-                        initSceneData: function (eD) {
-                            this.visible = true;
+                        card1:
+                        {
+                            _run:function ()
+                            {
+                                var guiTag = jsclient.data.sData.tData.gui;
+                                if(guiTag != 0)
+                                {
+                                    this.visible = true;
+                                    setCardPic(this, guiTag);
+                                }
+                                else
+                                    this.visible = false;
+                            }
                         },
-                        mjhand: function (eD) {
-                            this.visible = CheckArrowVisible();
-                        },
-                        onlinePlayer: function (eD) {
-                            this.visible = CheckArrowVisible();
+
+                        card2:
+                        {
+                            _run:function ()
+                            {
+                                var guiTag = jsclient.data.sData.tData.nextgui;
+                                if(guiTag != 0)
+                                {
+                                    this.visible = true;
+                                    setCardPic(this, guiTag);
+                                }
+                                else
+                                    this.visible = false;
+                            }
                         }
                     }
 
                 },
-
-                gdmj: {
-                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
-                    _visible: function ()
-                    {
-                        if (jsclient.data.sData.tData.gameType == 1 && !IsThreeTable())
-                            return true;
-                        else
-                            return false;
-                    }
-                },
-
-                hzmj: {
-                    _layout: [[0.2, 0.2], [0.5, 0.5], [0, 1.2]],
-                    _visible: function () {
-                        if (jsclient.data.sData.tData.gameType == 2)
-                            return true;
-                        else
-                            return false;
-                    }
-                },
-
-                shzhmj: {
-                    _layout: [[0.2, 0.2], [0.5, 0.5], [0, 1.2]],
-                    _visible: function () {
-                        if (jsclient.data.sData.tData.gameType == 3)
-                            return true;
-                        else
-                            return false;
-                    }
-                },
-
-                jphmj: {
-                    _layout: [[0.2, 0.2], [0.5, 0.5], [0, 1.2]],
-                    _visible: function () {
-                        if (jsclient.data.sData.tData.gameType == 4)
-                            return true;
-                        else
-                            return false;
-                    }
-                },
-
-                dgmj: {
-                    _layout: [[0.2, 0.2], [0.5, 0.5], [0, 1.2]],
-                    _visible: function () {
-                        if (jsclient.data.sData.tData.gameType == 5)
-                            return true;
-                        else
-                            return false;
-                    }
-                },
-
-                ybzhmj: {
-                    _layout: [[0.2, 0.2], [0.5, 0.5], [0, 1.2]],
-                    _visible: function () {
-                        if (jsclient.data.sData.tData.gameType == 6)
-                            return true;
-                        else
-                            return false;
-                    }
-                },
-
-                srfmj: {
-                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
-                    _visible: function ()
-                    {
-                        if (jsclient.data.sData.tData.gameType == 1 && IsThreeTable())
-                            return true;
-                        else
-                            return false;
-                    }
-                },
-
-
-                sy_name_back: {
-                    _layout: [[0.2, 0.2], [0.5, 0.5], [0, 1.2]],
-                    _visible: function () {
-                        if (jsclient.data.sData.tData.gameType == 1)
-                            return true;
-                        else
-                            return false;
-                    }
-                },
                 clb: {_layout: [[0.15, 0.15], [0, 0], [0.5, 0.5]]},
                 crt: {_layout: [[0.15, 0.15], [1, 1], [-0.5, -0.5]]},
                 crb: {_layout: [[0.15, 0.15], [1, 0], [-0.5, 0.5]]},
-                barl: {_layout: [[0.01, 0.7], [0.01, 0.5], [0, 0], true]},
+                barl: {
+                    _layout: [[0.01, 0.7], [0.01, 0.5], [0, 0], true],
+
+                    playTips:
+                    {
+                        // _layout: [[0.25, 0.25], [0.065, 0.8], [0, 0]],
+
+                        _event:
+                        {
+                            initSceneData: function (eD)
+                            {
+
+                            },
+                        },
+
+                        _run:function(){
+                            playTips = this;
+
+                            if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+                                this.y = 450;
+                            else
+                                this.y = 550;
+
+                            var height = 50;
+                            var count = 0;
+                            var tipsImg = [];
+                            tipsImg[count] = this.getChildByName("tableImage");
+
+                            if(jsclient.data.sData.tData.withWind && jsclient.data.sData.tData.gameType != 4 && jsclient.data.sData.tData.gameType != 6)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("withWind");
+                            }
+                            if (jsclient.data.sData.tData.canBigWin && jsclient.data.sData.tData.gameType == 6)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("dahu");
+                            }
+                            if (!jsclient.data.sData.tData.canBigWin && jsclient.data.sData.tData.gameType == 6)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("nodahu");
+                            }
+                            if (jsclient.data.sData.tData.canHu7 && jsclient.data.sData.tData.gameType != 3 && jsclient.data.sData.tData.gameType != 5 && jsclient.data.sData.tData.gameType != 6)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("canHu7");
+                            }
+                            if (jsclient.data.sData.tData.canFan7)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("canFan7");
+                            }
+                            if (jsclient.data.sData.tData.jiejieGao)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("jjg");
+                            }
+                            if (jsclient.data.sData.tData.fanNum == 0 && jsclient.data.sData.tData.gameType == 4)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("fan0");
+                            }
+                            if (jsclient.data.sData.tData.fanNum == 1 && jsclient.data.sData.tData.gameType == 4)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("fan1");
+                            }
+                            if (jsclient.data.sData.tData.fanNum == 3 && jsclient.data.sData.tData.gameType == 4)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("fan3");
+                            }
+                            if (jsclient.data.sData.tData.zhongIsMa)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("zhongisma");
+                            }
+                            if(jsclient.data.sData.tData.maGenDi)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("magendi");
+                            }
+                            if(jsclient.data.sData.tData.maGenDiDuiDuiHu)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("genduiduihu");
+                            }
+                            if(jsclient.data.sData.tData.noCanJiHu)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("bukejihu");
+                            }
+                            if(jsclient.data.sData.tData.menQingJiaFen)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("menqingjiafen");
+                            }
+                            if (jsclient.data.sData.tData.baozhama)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("mabaozha");
+                            }
+                            if (jsclient.data.sData.tData.horse == 2)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("maima2");
+                            }
+                            if (jsclient.data.sData.tData.horse == 4)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("maima4");
+                            }
+                            if (jsclient.data.sData.tData.horse == 6)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("maima6");
+                            }
+
+                            var tipsNodeArr = this.getChildren();
+                            for(var sprImg in tipsNodeArr)
+                            {
+                                tipsNodeArr[sprImg].visible = false;
+                            }
+
+                            height = height + count * 40;
+                            this.setContentSize(cc.size(this.getContentSize().width, height));
+                            log("玩法提示框大小：" + height + "  玩法提示个数：" + count);
+
+                            for(var i = 0; i < tipsImg.length; i++)
+                            {
+                                var nodeImg = tipsImg[i];
+                                nodeImg.visible = true;
+                                nodeImg.setPositionY(height - 35 * (i + 1));
+                            }
+
+                            var buttonOut = this.getChildByName("button_out");
+                            buttonOut.visible = false;
+                            buttonOut.y = height - height / 3;
+
+                            var buttonIn = this.getChildByName("button_in");
+                            buttonIn.visible = true;
+                            buttonIn.y = height - height / 3;
+                        },
+
+                        button_in:
+                        {
+                            _click: function ()
+                            {
+                                var button_in = playTips.getChildByName("button_in");
+                                var button_out = playTips.getChildByName("button_out");
+
+                                var onActionEnd = function()
+                                {
+                                    button_in.setVisible(false);
+                                    button_in.setTouchEnabled(true);
+
+                                    button_out.visible = true;
+                                };
+
+                                button_in.setTouchEnabled(false);
+                                var action = cc.sequence(cc.moveTo(0.2, cc.p(90, playTips.y)), cc.callFunc(onActionEnd));
+                                playTips.runAction(action);
+                            }
+                        },
+
+                        button_out:
+                        {
+                            _click: function ()
+                            {
+                                var button_in = playTips.getChildByName("button_in");
+                                var button_out = playTips.getChildByName("button_out");
+
+                                var onActionEnd = function()
+                                {
+                                    button_out.setVisible(false);
+                                    button_out.setTouchEnabled(true);
+
+                                    button_in.visible = true;
+                                };
+
+                                button_out.setTouchEnabled(false);
+                                var action = cc.sequence(cc.moveTo(0.2, cc.p(-55, playTips.y)), cc.callFunc(onActionEnd));
+                                playTips.runAction(action);
+                            }
+                        }
+                    },
+                },
+                barl_0:{_layout: [[0.01, 0.7], [0.01, 0.5], [0, 0], true],},
                 barr: {_layout: [[0.01, 0.7], [0.99, 0.5], [0, 0], true]},
                 bart: {_layout: [[0.9, 0], [0.5, 0.99], [0, 0], true]},
                 barb: {_layout: [[0.9, 0], [0.5, 0.01], [0, 0], true]},
+
+                gdmj: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function () {
+                        return (jsclient.data.sData.tData.gameType == 1 && !IsThreeTable());
+                    }
+                },
+                hzmj: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function () {
+                        return jsclient.data.sData.tData.gameType == 2;
+                    }
+                },
+                shzhmj: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function () {
+                        return jsclient.data.sData.tData.gameType == 3
+                    }
+                },
+                jipinghu: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function () {
+                        return jsclient.data.sData.tData.gameType == 4
+                    }
+                },
+                dgmj: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function () {
+                        return jsclient.data.sData.tData.gameType == 5
+                    }
+                },
+                ybzhmj: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function () {
+                        return jsclient.data.sData.tData.gameType == 6
+                    }
+                },
+                srfmj: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function () {
+                        return (jsclient.data.sData.tData.gameType == 1 && IsThreeTable());
+                    }
+                }
             },
             
             banner: {

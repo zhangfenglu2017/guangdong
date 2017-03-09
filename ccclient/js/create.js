@@ -146,6 +146,7 @@
                         self1Nozhong: null,
                         self1Zhong: null,
                         self1FanGui:null,
+                        self1ShuangGui:null,
                         self1Nofeng: null,
                         self1Feng: null,
                         self1CanHu7: null,
@@ -176,6 +177,9 @@
                                     self1Nozhong.setTouchEnabled(false);
                                     self1FanGui.setSelected(false);
                                     self1FanGui.setTouchEnabled(true);
+
+                                    self1ShuangGui.setSelected(false);
+                                    self1ShuangGui.setTouchEnabled(true);
                                 }
                             },
 
@@ -191,6 +195,9 @@
                                     self1Nozhong.setTouchEnabled(true);
                                     self1FanGui.setSelected(false);
                                     self1FanGui.setTouchEnabled(true);
+
+                                    self1ShuangGui.setSelected(false);
+                                    self1ShuangGui.setTouchEnabled(true);
                                 }
                             },
 
@@ -206,6 +213,29 @@
                                     self1Nozhong.setTouchEnabled(true);
                                     self1FanGui.setSelected(true);
                                     self1FanGui.setTouchEnabled(false);
+
+                                    self1ShuangGui.setSelected(false);
+                                    self1ShuangGui.setTouchEnabled(true);
+                                }
+                            },
+
+                            shuanggui:{
+
+                                _run: function () {
+                                    self1ShuangGui = this;
+                                },
+
+                                _click: function () {
+
+                                    if(self1FanGui.isSelected() == false)
+                                    {
+                                        self1Zhong.setSelected(false);
+                                        self1Zhong.setTouchEnabled(true);
+                                        self1Nozhong.setSelected(false);
+                                        self1Nozhong.setTouchEnabled(true);
+                                        self1FanGui.setSelected(true);
+                                        self1FanGui.setTouchEnabled(false);
+                                    }
                                 }
                             },
 
@@ -429,16 +459,22 @@
                                         self1MaBom.isSelected(),   //爆炸马
                                         self1JJG.isSelected(),     //节节高
                                         self1FanGui.isSelected(),   //翻鬼
+                                        self1ShuangGui.isSelected(),//双鬼
                                         0,                          //番
                                         4,                         //人数
                                         false,                       //大胡
                                         true,                        //无鬼加码
                                         false,                        //无鬼翻倍
                                         true,                         //4鬼胡牌
-                                        1                             //4鬼加倍
+                                        1,                            //4鬼加倍
+                                        false,                        //不可鸡胡
+                                        false,                         //马跟底
+                                        false,                          //马跟底对对胡
+                                        false                          //门清加分
                                     );
                                 }
-                                else {
+                                else 
+                                {
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }
@@ -451,6 +487,10 @@
                         self2Nofeng: null,
                         self2Feng: null,
                         self2CanHu7: null,
+                        self2NoJiHu:null,
+                        self2MaDiFen:null,
+                        self2DuiDuiHu:null,
+                        self2MenQing:null,
                         self2Ma2: null,
                         self2Ma4: null,
                         self2Ma6: null,
@@ -509,6 +549,47 @@
                                 // }
                             },
 
+                            nojihu: {
+
+                                _run: function () {
+                                    self2NoJiHu = this;
+                                },
+                            },
+
+                            difenma: {
+
+                                _run: function () {
+                                    self2MaDiFen = this;
+                                },
+
+                                _click: function () {
+
+                                    if(self2DuiDuiHu.isSelected())
+                                        self2DuiDuiHu.setSelected(false);
+                                }
+                            },
+
+                            duiduihu:{
+
+                                _run: function () {
+                                    self2DuiDuiHu = this;
+                                },
+
+                                _click: function () {
+
+                                    if(!self2MaDiFen.isSelected())
+                                    {
+                                        self2MaDiFen.setSelected(true);
+                                    }
+                                }
+                            },
+
+                            menqing:{
+
+                                _run: function () {
+                                    self2MenQing = this;
+                                },
+                            }
                         },
 
                         horse: {
@@ -628,16 +709,22 @@
                                         false,                      //爆炸马
                                         false,                      //节节高
                                         false,                       //翻鬼
+                                        false,                      //双鬼
                                         0,                           //番
                                         4,                          //人数
                                         false,                       //大胡
                                         true,                        //无鬼加码
                                         false,                        //无鬼翻倍
                                         true,                         //4鬼胡牌
-                                        1                             //4鬼加倍
+                                        1,                             //4鬼加倍
+                                        self2NoJiHu.isSelected(),     //不可鸡胡
+                                        self2MaDiFen.isSelected(),    //马跟底
+                                        self2DuiDuiHu.isSelected(),   //马跟底对对胡
+                                        self2MenQing.isSelected()     //门清加分
                                     );
                                 }
-                                else {
+                                else
+                                {
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }
@@ -863,16 +950,22 @@
                                         false,                      //爆炸马
                                         self3JJG.isSelected(),      //节节高
                                         self3FanGui.isSelected(),    //翻鬼
+                                        false,                      //双鬼
                                         0,                            //番
                                         4,                            //人数
                                         false,                       //大胡
                                         true,                        //无鬼加码
                                         false,                        //无鬼翻倍
                                         true,                         //4鬼胡牌
-                                        1                             //4鬼加倍
+                                        1,                            //4鬼加倍
+                                        false,                        //不可鸡胡
+                                        false,                         //马跟底
+                                        false,                          //马跟底对对胡
+                                        false                          //门清加分
                                     );
                                 }
-                                else {
+                                else
+                                {
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }
@@ -1012,7 +1105,8 @@
                             {
                                 self4OK = this;
                             },
-                            _click: function (btn, evt) {
+                            _click: function (btn, evt)
+                            {
                                 var majiang = jsclient.data.gameInfo.gdmj;
                                 var isRound = self4Round4.isSelected();
                                 var needMoney = isRound ? majiang.round4 : majiang.round8;
@@ -1027,7 +1121,8 @@
                                     fannum = 3;
 
 
-                                if (haveMoney >= needMoney) {
+                                if (haveMoney >= needMoney)
+                                {
                                     jsclient.createRoom(
                                         4,                        //游戏类型
                                         isRound ? "round4" : "round8",//4局或8局
@@ -1044,16 +1139,22 @@
                                         false,                      //爆炸马
                                         false,                    //节节高
                                         false,                    //翻鬼
+                                        false,                      //双鬼
                                         fannum,                     //番
                                         4,                          //人数
                                         false,                       //大胡
                                         false,                        //无鬼加码
                                         false,                        //无鬼翻倍
                                         false,                         //4鬼胡牌
-                                        1                             //4鬼加倍
+                                        1,                             //4鬼加倍
+                                        false,                        //不可鸡胡
+                                        false,                         //马跟底
+                                        false,                          //马跟底对对胡
+                                        false                          //门清加分
                                     );
                                 }
-                                else {
+                                else
+                                {
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }
@@ -1443,13 +1544,18 @@
                                         false,                      //爆炸马
                                         false,                     //节节高
                                         self5FanGui.isSelected(),   //翻鬼
+                                        false,                      //双鬼
                                         0,                          //番
                                         4,                         //人数
                                         false,                       //大胡
                                         self5NoGuiMa.isSelected(),  //无鬼加码
                                         self5NoGuiBei.isSelected(), //无鬼加倍
                                         self5Gui4Hu.isSelected(),   //4鬼胡牌
-                                        gui4huBeiNum                //4鬼加倍
+                                        gui4huBeiNum,                //4鬼加倍
+                                        false,                        //不可鸡胡
+                                        false,                         //马跟底
+                                        false,                          //马跟底对对胡
+                                        false                          //门清加分
                                     );
                                 }
                                 else
@@ -1815,13 +1921,18 @@
                                         false,                      //爆炸马
                                         false,                     //节节高
                                         self6FanGui.isSelected(),   //翻鬼
+                                        false,                      //双鬼
                                         0,                          //番
                                         4,                            //人数
                                         self6DaHu.isSelected(),      //大胡
                                         self6NoGuiMa.isSelected(),  //无鬼加码
                                         self6NoGuiBei.isSelected(), //无鬼加倍
                                         self6Gui4Hu.isSelected(),   //4鬼胡牌
-                                        gui4huBeiNum                //4鬼加倍
+                                        gui4huBeiNum,                //4鬼加倍
+                                        false,                        //不可鸡胡
+                                        false,                         //马跟底
+                                        false,                          //马跟底对对胡
+                                        false                          //门清加分
                                     );
                                 }
                                 else
@@ -1838,6 +1949,7 @@
                         self7Nozhong: null,
                         self7Zhong: null,
                         self7FanGui:null,
+                        self7ShuangGui:null,
                         self7Nofeng: null,
                         self7Feng: null,
                         self7CanHu7: null,
@@ -1868,6 +1980,9 @@
                                     self7Nozhong.setTouchEnabled(false);
                                     self7FanGui.setSelected(false);
                                     self7FanGui.setTouchEnabled(true);
+
+                                    self7ShuangGui.setSelected(false);
+                                    self7ShuangGui.setTouchEnabled(true);
                                 }
                             },
 
@@ -1883,6 +1998,9 @@
                                     self7Nozhong.setTouchEnabled(true);
                                     self7FanGui.setSelected(false);
                                     self7FanGui.setTouchEnabled(true);
+
+                                    self7ShuangGui.setSelected(false);
+                                    self7ShuangGui.setTouchEnabled(true);
                                 }
                             },
 
@@ -1898,6 +2016,29 @@
                                     self7Nozhong.setTouchEnabled(true);
                                     self7FanGui.setSelected(true);
                                     self7FanGui.setTouchEnabled(false);
+
+                                    self7ShuangGui.setSelected(false);
+                                    self7ShuangGui.setTouchEnabled(true);
+                                }
+                            },
+
+                            shuanggui:{
+
+                                _run: function () {
+                                    self7ShuangGui = this;
+                                },
+
+                                _click: function () {
+
+                                    if(self7FanGui.isSelected() == false)
+                                    {
+                                        self7Zhong.setSelected(false);
+                                        self7Zhong.setTouchEnabled(true);
+                                        self7Nozhong.setSelected(false);
+                                        self7Nozhong.setTouchEnabled(true);
+                                        self7FanGui.setSelected(true);
+                                        self7FanGui.setTouchEnabled(false);
+                                    }
                                 }
                             },
 
@@ -2122,16 +2263,22 @@
                                         self7MaBom.isSelected(),   //爆炸马
                                         self7JJG.isSelected(),     //节节高
                                         self7FanGui.isSelected(),   //翻鬼
+                                        self7ShuangGui.isSelected(),//双鬼
                                         0,                          //番
                                         3,                         //人数
                                         false,                       //大胡
                                         true,                        //无鬼加码
                                         false,                        //无鬼翻倍
                                         true,                         //4鬼胡牌
-                                        1                             //4鬼加倍
+                                        1,                             //4鬼加倍
+                                        false,                        //不可鸡胡
+                                        false,                         //马跟底
+                                        false,                          //马跟底对对胡
+                                        false                          //门清加分
                                     );
                                 }
-                                else {
+                                else
+                                {
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }

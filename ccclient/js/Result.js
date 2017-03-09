@@ -1,4 +1,4 @@
-﻿var ZJHCode={  
+var ZJHCode={  
 
   //common for all games
    Success:0,

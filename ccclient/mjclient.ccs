@@ -560,6 +560,8 @@
           <Image Name="btn_voice_normal.png" />
           <Image Name="btn_voice_press.png" />
           <Image Name="budaifeng.png" />
+          <Image Name="bukejihu.png" />
+          <Image Name="chulai.png" />
           <Image Name="circleWind0.png" />
           <Image Name="daifeng.png" />
           <Image Name="dgmj.png" />
@@ -575,6 +577,7 @@
           <Image Name="floor_05.png" />
           <Image Name="floor_06.png" />
           <Image Name="floor_08.png" />
+          <Image Name="floor_09.png" />
           <Image Name="guangzhoumajiang.png" />
           <Image Name="huizhoumajiang.png" />
           <Image Name="icon_electricity_01.png" />
@@ -587,8 +590,13 @@
           <Image Name="icon_zhong.png" />
           <Image Name="icon_zhuang.png" />
           <Image Name="jiejiegao.png" />
+          <Image Name="jinqu.png" />
           <Image Name="jph.png" />
           <Image Name="kehu.png" />
+          <Image Name="kuang.png" />
+          <Image Name="maduiduihu.png" />
+          <Image Name="magendi.png" />
+          <Image Name="menqingjiafen.png" />
           <Image Name="pai_bottom.png" />
           <Image Name="penggang_bottom.png" />
           <Image Name="Photo_frame_01.png" />
@@ -612,6 +620,7 @@
           <Image Name="wudahu.png" />
           <Image Name="wufanqihu.png" />
           <Image Name="yifanqihu.png" />
+          <Image Name="yixuanwanfa.png" />
           <Image Name="youdahu.png" />
           <Image Name="Z_money_frame.png" />
           <Image Name="Z_zhunbeizhuangt.png" />
@@ -685,6 +694,7 @@
         <Project Name="ShowMa.csd" Type="Layer" />
         <Project Name="SkipHu.csd" Type="Node" />
         <Project Name="Update.csd" Type="Layer" />
+        <Project Name="UpdatePanel.csd" Type="Layer" />
         <Project Name="UserInfo.csd" Type="Layer" />
         <Project Name="WebView.csd" Type="Node" />
         <Project Name="WebView1.csd" Type="Node" />

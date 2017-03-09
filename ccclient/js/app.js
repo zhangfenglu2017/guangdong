@@ -328,8 +328,9 @@ jsclient.joinGame = function (tableid) {
 };
 
 jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7,canFan7,
-                                canHuWith258, withZhong, zhongIsMa, horse, baoZhaMa, jjg, fanGui, fanNum, maxPlayer,
-                                canBigWin, guiJiaMa, guiJiaBei, gui4Hu, gui4huBeiNum)
+                                canHuWith258, withZhong, zhongIsMa, horse, baoZhaMa, jjg, fanGui, twogui, fanNum, maxPlayer,
+                                canBigWin, guiJiaMa, guiJiaBei, gui4Hu, gui4huBeiNum, noCanJiHu, maGenDi,maGenDiDuiDuiHu,
+                                menQingJiaFen)
 {
     jsclient.block();
     jsclient.gamenet.request("pkplayer.handler.CreateVipTable", {
@@ -348,13 +349,18 @@ jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noB
             baozhama:baoZhaMa,
             jiejieGao: jjg,
             fanGui:fanGui,
+            twogui:twogui,
             fanNum:fanNum,
             maxPlayer:maxPlayer,
             canBigWin:canBigWin,
             guiJiaMa:guiJiaMa,
             guiJiaBei:guiJiaBei,
             gui4Hu:gui4Hu,
-            gui4huBeiNum:gui4huBeiNum
+            gui4huBeiNum:gui4huBeiNum,
+            noCanJiHu:noCanJiHu,
+            maGenDi:maGenDi,
+            maGenDiDuiDuiHu:maGenDiDuiDuiHu,
+            menQingJiaFen:menQingJiaFen,
         },
         function (rtn) {
             jsclient.unblock();
@@ -616,7 +622,7 @@ jsclient.netCallBack =
         for (var pty in info)
             pinfo[pty] = info[pty];
 
-        sendEvent("UpdateGiftFlag");
+        // sendEvent("UpdateGiftFlag");
         // sendEvent("updateArrowRotate");
     }],
 
@@ -738,10 +744,13 @@ jsclient.netCallBack =
             }
         }
         if(d.tData.fanGui) {
+
             sData.tData.fanGui = d.tData.fanGui;
             sData.tData.gui = d.tData.gui;
             jsclient.majiang.gui = sData.tData.gui;
-            console.log("翻出的鬼牌是===============================" + sData.tData.gui);
+
+            // console.log("翻出的鬼牌是===============================" + d.tData.gui);
+            // console.log("翻出的鬼牌是===============================" + d.tData.nextgui);
         }
         for (var uid in d.players) {
             var pl = d.players[uid];
@@ -911,14 +920,25 @@ jsclient.netCallBack =
     {
         var sData = jsclient.data.sData;
         sData.tData = d.tData;
-        for (var uid in d.players) {
+
+        var winone = false;
+
+        for (var uid in d.players)
+        {
             var pl = d.players[uid];
             var plLocal = sData.players[uid];
-            for (var pty in pl)  plLocal[pty] = pl[pty];
+            for (var pty in pl)
+                plLocal[pty] = pl[pty];
+
+            if(pl.winone != 0)
+                winone = true;
         }
 
-        if (sData.tData.winner >= 0) playEffect("nv/hu");
-        if (d.playInfo && jsclient.data.playLog) {
+        if (sData.tData.winner >= 0 && winone)
+            playEffect("nv/hu");
+
+        if (d.playInfo && jsclient.data.playLog)
+        {
             jsclient.data.playLog.logs.push(d.playInfo);
         }
     }],
@@ -1301,20 +1321,25 @@ var JSScene = cc.Scene.extend({
             },
 
             loginOK: function (rtn) {
+                
                 jsclient.data = rtn;
-                for (var netEvt in jsclient.netCallBack) {
+                for (var netEvt in jsclient.netCallBack) 
+                {
                     jsclient.gamenet.QueueNetMsgCallback(netEvt);
                 }
-                jsclient.gamenet.SetCallBack("disconnect", function () {
+                
+                jsclient.gamenet.SetCallBack("disconnect", function () 
+                {
                     sendEvent("disconnect", 6);
                 });
-                if (!jsclient.homeui) {
+                
+                if (!jsclient.homeui)
                     this.addChild(new HomeLayer());
-                }
-                if (rtn.vipTable > 0) {
+                
+                if (rtn.vipTable > 0)
                     jsclient.joinGame(rtn.vipTable);
-                }
-                else sendEvent("LeaveGame");
+                else 
+                    sendEvent("LeaveGame");
             },
 
             logout: function () {
@@ -1342,6 +1367,11 @@ var JSScene = cc.Scene.extend({
                 if (oldLen == 0)    this.startQueueNetMsg();
             },
 
+            cfgUpdate:function (changeValue)
+            {
+                if(changeValue && !changeValue.isShowed)
+                    this.addChild(new TipsPanel(), 9);
+            },
         },
 
         _keyboard:

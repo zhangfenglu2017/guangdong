@@ -21,7 +21,8 @@
      （注意：后台输入内容全部是字符串，想公告，重启提示等有指定换行格式需要的程序里面需要处理一下，“\n”后台输入的是两个字符，要在程序内换成一个转义字符）。
      循环请求：
      主要是比较文本差异，处理时间，找到需要更新的字段，然后发送消息“cfgUpdate”。*/
-    function startUpdateCfg(){
+    function startUpdateCfg()
+    {
         var updateCfgInterval = 10*60; //重复请求时间间隔
         var restartTime = -1; //重启弹出累计时间
         //字符串\n替换
@@ -111,16 +112,9 @@
         };
         //jsclient.Scene.runAction(cc.repeatForever(cc.sequence(cc.callFunc(updatecfg), cc.DelayTime(updateCfgInterval))));
         {
-            var iDelay = 0.1; // 秒 读取失败就立刻进行网络请求
-            if(jsclient.isCfgRead){ //读取成功就 延迟 请求,让用户尽快进入游戏,
-                iDelay = 20;
-            }
             jsclient.Scene.runAction(cc.repeatForever(cc.sequence(cc.callFunc(updatecfg), cc.DelayTime(updateCfgInterval))));
-
         }
     }
-
-
 
     var jindu = 1,isAlready = false;
     function upText()
@@ -137,6 +131,7 @@
                 GetRemoteCfg();
         }
     }
+
     function setProgressPercent(p)
     {
         if(p==100)
@@ -192,6 +187,7 @@
             {
                 jsclient.actionCfg = JSON.parse(xhr.responseText);
                 log("活动数据：" + JSON.stringify(jsclient.actionCfg));
+                sendEvent("UpdateGiftFlag", jsclient.actionCfg);
             }
         };
         xhr.send();
@@ -248,16 +244,14 @@
                 });
                 return;
             }
-            else remoteCfgName = "appstore.json";
+            else 
+                remoteCfgName = "appstore.json";
         }
         LoadConfig(remoteCfgName);
     }
 
     function GetRemoteCfg()
     {
-        LoadUpdateCfg("configuration.json");
-        LoadActionCfg("action.json");
-
         cc.loader.loadTxt("res/test.cfg", function (er, txt)
         {
             if (er || txt.length == 0)
@@ -270,6 +264,14 @@
                 sendEvent("updateFinish");
             }
         });
+
+        var onDelayCallback = function ()
+        {
+            LoadActionCfg("action.json");
+            LoadUpdateCfg("configuration.json");
+        };
+
+        jsclient.Scene.runAction(cc.sequence(cc.DelayTime(1), cc.callFunc(onDelayCallback)));
     }
 
     function GetRemoteIP()
@@ -308,29 +310,36 @@
     var manager, listener, loadTitle,barbk,bar;
 
     UpdateLayer = cc.Layer.extend({
-        jsBind: {
-            back: {
+        jsBind:
+        {
+            back:
+            {
                 _layout: [[1, 1], [0.5, 0.5], [0, 0],true],
 
-                _event: {
-                    connect: function () {
+                _event:
+                {
+                    connect: function ()
+                    {
                         jsclient.updateui.removeFromParent(true);
-                    }
-                    , AssetsManagerEvent: function (event) {
+                    },
 
-                        function updateFinish(upOK, code) {
+                    AssetsManagerEvent: function (event)
+                    {
+                        function updateFinish(upOK, code)
+                        {
                             cc.eventManager.removeListener(listener);
-                            if (upOK == 1) {
+                            if (upOK == 1)
+                            {
                                 jsclient.resVersion = manager.getLocalManifest().getVersion();
                                 GetRemoteIP();
                             }
-                            else if (upOK == 2) {
+                            else if (upOK == 2)
                                 jsclient.restartGame();
-                            }
-                            else  sendEvent("disconnect", 10 + code);
+                            else
+                                sendEvent("disconnect", 10 + code);
+
                             manager.release();
                         }
-
 
                         code = ["ERROR_NO_LOCAL_MANIFEST,", "ERROR_DOWNLOAD_MANIFEST", "ERROR_PARSE_MANIFEST", "NEW_VERSION_FOUND", "ALREADY_UP_TO_DATE",
                             "UPDATE_PROGRESSION", "ASSET_UPDATED", "ERROR_UPDATING", "UPDATE_FINISHED", "UPDATE_FAILED", "ERROR_DECOMPRESS"];
@@ -338,8 +347,8 @@
                         //var error=code[event.getEventCode()] + "|" + event.getMessage() + "|" + event.getAssetId() + "|" + event.getPercent();
                         //cc.log(error);
 
-                        switch (event.getEventCode()) {
-
+                        switch (event.getEventCode())
+                        {
                             case jsb.EventAssetsManager.ERROR_NO_LOCAL_MANIFEST:
                             case jsb.EventAssetsManager.ERROR_DOWNLOAD_MANIFEST:
                             case jsb.EventAssetsManager.ERROR_PARSE_MANIFEST:
@@ -348,9 +357,7 @@
                             case jsb.EventAssetsManager.UPDATE_FAILED:
 
                                 updateFinish(0, event.getEventCode());
-
                                 break;
-
                             case jsb.EventAssetsManager.NEW_VERSION_FOUND:
                                 break;
                             case jsb.EventAssetsManager.UPDATE_PROGRESSION:
@@ -361,8 +368,6 @@
                             case jsb.EventAssetsManager.ALREADY_UP_TO_DATE:
 
                                 updateFinish(1);
-
-
                                 break;
                             case jsb.EventAssetsManager.UPDATE_FINISHED:
                                 updateFinish(2);
@@ -370,31 +375,39 @@
                             default:
                                 break;
                         }
-
-
                     }
                 }
-
             },
+
             logo:
             {
                 _layout:[[0.35,0.35],[0.5,0.75],[0.08,0],true]
             },
-            barbk: {
+
+            barbk:
+            {
                 _layout: [[0.43, 0.07], [0.51, 0.2], [0,0],true],
-                _run:function(){barbk=this;},
-                bar: {
-                    _run: function () {
+                _run:function()
+                {
+                    barbk = this;
+                },
+
+                bar:
+                {
+                    _run: function ()
+                    {
                         bar = this;
                     }
                 },
-                loadTitle: {
-                    _run: function () {
+
+                loadTitle:
+                {
+                    _run: function ()
+                    {
                         loadTitle = this;
                     }
                 }
             }
-
         },
         ctor: function ()
         {
@@ -423,14 +436,13 @@
                 }
                 else
                 {
-                    listener = new jsb.EventListenerAssetsManager(manager, function (event) {
-
+                    listener = new jsb.EventListenerAssetsManager(manager, function (event)
+                    {
                         sendEvent("AssetsManagerEvent", event);
                     });
                     cc.eventManager.addListener(listener, 1);
                 }
             }
-
             //if(  cc.sys.OS_WINDOWS == cc.sys.os )  GetRemoteIP();	else
             UpdateResource();
         }

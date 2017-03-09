@@ -110,6 +110,27 @@ function newPlayerAwardTimer (dt)
     }
 }
 
+
+function showNwePlayerGift() {
+
+    if(jsclient.getGiftData() == null)
+    {
+        newPlayerAwardBtn.setVisible(false);
+        return;
+    }
+
+    var off = getTimeOff( jsclient.data.pinfo.sendTime, new Date().toUTCString());
+    newPlayerAwardLeftTime  = jsclient.getGiftData().actData.validTime * 3600 - off;
+
+    //时间没到24小时，没领过
+    var flag = jsclient.data.pinfo.recommendBy;
+    var isVisible = (flag == null || flag <= 0) && (newPlayerAwardLeftTime > 0);
+    if( isVisible )
+        newPlayerAwardBtn.schedule(newPlayerAwardTimer, 1.00 );
+
+    newPlayerAwardBtn.setVisible(isVisible);
+}
+
 var updateTishi, joinRoom, createRoom, updesc;
 var HomeLayer=cc.Layer.extend(
 {
@@ -124,105 +145,13 @@ var HomeLayer=cc.Layer.extend(
 					jsclient.homeui.removeFromParent(true);
 					delete jsclient.homeui;
 				}
-			}
+			},
 		},
 
         back:
         {
 			_layout:[[1,1],[0.5,0.5],[0,0],true],
 		},
-
-        updateTishi:
-        {
-            _layout:[[0, 0.8],[0.5,0.5],[0,0]],
-
-            _run:function()
-            {
-                this.zIndex = 9999;
-                updateTishi = this;
-
-                if(jsclient.changeValue.isShowed)
-                    return;
-
-                onActionEnd = function ()
-                {
-                    doLayout(updateTishi,[0,0],[0.5,0.5],[0,0] );
-                    updateTishi.runAction(cc.sequence(
-                        cc.delayTime(0.3),
-                        cc.callFunc(
-                            function ()
-                            {
-                                doLayout(updateTishi,[0,0.80],[0.5,0.5],[0,0] );
-                            }
-                        ),
-                        cc.delayTime(0.1),
-                        cc.callFunc(
-                            function ()
-                            {
-                                updateTishi.setScaleY(0.85);
-                                doLayout(updateTishi,[0,0.85],[0.5,0.5],[0,0] );
-                            }
-                        ),
-                        cc.delayTime(0.1),
-                        cc.callFunc(
-                            function ()
-                            {
-                                doLayout(updateTishi,[0,0.80],[0.5,0.5],[0,0] );
-                            }
-                        )
-                    ));
-                };
-
-                onActionEnd();
-                // jsclient.Scene.runAction(cc.sequence( cc.DelayTime(0.5) , cc.callFunc(onActionEnd)));
-            },
-
-            _visible: function ()
-            {
-                // 判断 有更新 有则显示出来 且只显示1次 否则 不显示
-                // var isUpdate = sys.localStorage.getItem("isUpdate");
-                // if(isUpdate && isUpdate == "1"){
-                //     sys.localStorage.setItem("isUpdate", "0");
-                //     return true;
-                // }
-                return !jsclient.changeValue.isShowed;
-            },
-
-            uptitle:
-            {
-                _text: function ()
-                {
-                    return jsclient.remoteCfg.uptitle;
-                }
-            },
-            upnexttitle:
-            {
-                _text: function ()
-                {
-                    return jsclient.remoteCfg.upnexttitle;
-                }
-            },
-            ScrollView:
-            {
-                updesc:
-                {
-                    _text: function ()
-                    {
-                        return jsclient.updateCfg.gameTip;
-                    }
-                }
-            },
-            close:
-            {
-                _touch: function (btn, eT)
-                {
-                    if (eT == 2)
-                        updateTishi.setVisible(false);
-                }
-            }
-
-
-        },
 
         title:
         {
@@ -328,8 +257,12 @@ var HomeLayer=cc.Layer.extend(
             _layout: [[0.09, 0.13], [0.05, 0.6], [0, 0]],
             _run : function()
             {
-                this.visible = false;
                 newPlayerAwardBtn = this;
+
+                // var flag = jsclient.data.pinfo.recommendBy;
+                // var isVisible = (flag == null || flag <= 0) && (newPlayerAwardLeftTime > 0);
+                // this.setVisible(isVisible);
+                showNwePlayerGift();
             },
             _click: function ()
             {
@@ -339,12 +272,9 @@ var HomeLayer=cc.Layer.extend(
 
             _event:
             {
-                UpdateGiftFlag: function ()
+                UpdateGiftFlag: function (actionCfg)
                 {
-                    //时间没到24小时，没领过
-                    var flag = jsclient.data.pinfo.recommendBy;
-                    var isVisible = (flag == null || flag <= 0) && (newPlayerAwardLeftTime > 0);
-                    this.setVisible(isVisible);
+                    showNwePlayerGift();
                 }
             }
         },
@@ -366,7 +296,7 @@ var HomeLayer=cc.Layer.extend(
             {
 				var settringLayer = new  SettingLayer();
 				settringLayer.setName("HomeClick");
-				jsclient.Scene.addChild(settringLayer); 
+				jsclient.Scene.addChild(settringLayer);
 			}
 		},
 
@@ -445,7 +375,7 @@ var HomeLayer=cc.Layer.extend(
 			_run:function()
 			{
                 doLayout(this,[0.5,0.5],[0.3,0.45],[0,0] );
-                
+
 				 // if(jsclient.remoteCfg.hideMoney)
 				 // {
 					//  doLayout(this,[0.5,0.5],[0.3,0.45],[0,0] );
@@ -461,7 +391,7 @@ var HomeLayer=cc.Layer.extend(
 			{
 				if(eT == 2)
 				{
-					if (!jsclient.data.sData) 
+					if (!jsclient.data.sData)
 					{
 						sendEvent("joinRoom");
 					}
@@ -469,7 +399,7 @@ var HomeLayer=cc.Layer.extend(
 					{
 						sendEvent("returnPlayerLayer");
 					}
-					
+
 				}
 			},
             _event:
@@ -505,7 +435,7 @@ var HomeLayer=cc.Layer.extend(
 			},
 			_click:function(btn,eT)
 			{
-				if (!jsclient.data.sData) 
+				if (!jsclient.data.sData)
 				{
 					sendEvent("createRoom");
 				}
@@ -552,18 +482,6 @@ var HomeLayer=cc.Layer.extend(
 		playMusic("bgMain");
 		initMJTexture(this);
 
-        var off = getTimeOff( jsclient.data.pinfo.sendTime, new Date().toUTCString());
-        newPlayerAwardLeftTime  = jsclient.getGiftData().actData.validTime * 3600 - off;
-
-        //时间没到24小时，没领过
-        var flag = jsclient.data.pinfo.recommendBy;
-        var isVisible = (flag == null || flag <= 0) && (newPlayerAwardLeftTime > 0);
-        if( isVisible )
-            newPlayerAwardBtn.schedule(newPlayerAwardTimer, 1.00 );
-
-        newPlayerAwardBtn.setVisible(isVisible);
-
-
         //播放特效
         var createRoomAnim = playAnimByJson("chuangjianfangjian", "chuangjianfangjian");
         homeui.node.addChild(createRoomAnim);
@@ -582,8 +500,7 @@ var HomeLayer=cc.Layer.extend(
 });
 
 //新手礼包
-(function()
-{
+(function() {
     var input;
     ChangeIDLayer = cc.Layer.extend({
         jsBind:
@@ -645,7 +562,102 @@ var HomeLayer=cc.Layer.extend(
             return true;
         }
     });
-})();
+}());
+
+//更细提示框
+
+var updateBack = null;
+var TipsPanel = cc.Layer.extend({
+    jsBind:
+    {
+        block:{_layout:[[1,1],[0.5,0.5],[0,0],true]},
+        back:
+        {
+            _layout:[[0, 0.8],[0.5,0.5],[0,0]],
+
+            _run:function()
+            {
+                // if(jsclient.changeValue == null || jsclient.changeValue.isShowed)
+                //     return;
+
+                updateBack = this;
+
+                doLayout(updateBack, [0,0],[0.5,0.5],[0,0] );
+                updateBack.runAction(cc.sequence(
+                    cc.delayTime(0.1),
+                    cc.callFunc(
+                        function ()
+                        {
+                            doLayout(updateBack,[0,0.9],[0.5,0.5],[0,0] );
+                        }
+                    ),
+                    cc.delayTime(0.1),
+                    cc.callFunc(
+                        function ()
+                        {
+                            doLayout(updateBack,[0,0.75],[0.5,0.5],[0,0] );
+                        }
+                    ),
+                    cc.delayTime(0.1),
+                    cc.callFunc(
+                        function ()
+                        {
+                            doLayout(updateBack,[0,0.80],[0.5,0.5],[0,0] );
+                        }
+                    )
+                ));
+            },
+
+            // _visible: function ()
+            // {
+            //     // 判断 有更新 有则显示出来 且只显示1次 否则 不显示
+            //     // var isUpdate = sys.localStorage.getItem("isUpdate");
+            //     // if(isUpdate && isUpdate == "1"){
+            //     //     sys.localStorage.setItem("isUpdate", "0");
+            //     //     return true;
+            //     // }
+            //     return (jsclient.changeValue == null || !jsclient.changeValue.isShowed);
+            // },
+
+            uptitle:
+            {
+                _text: function ()
+                {
+                    return jsclient.remoteCfg.uptitle;
+                }
+            },
+
+            ScrollView:
+            {
+                updesc:
+                {
+                    _text: function ()
+                    {
+                        return jsclient.updateCfg.gameTip;
+                    }
+                }
+            },
+
+            close:
+            {
+                _click:function(btn,eT)
+                {
+                    jsclient.tipsPanel.removeFromParent(true);
+                    jsclient.tipsPanel = null;
+                }
+            }
+        }
+    },
+    ctor: function ()
+    {
+        this._super();
+        var tipsui = ccs.load("res/UpdatePanel.json");
+        ConnectUI2Logic(tipsui.node, this.jsBind);
+        this.addChild(tipsui.node);
+        jsclient.tipsPanel = this;
+        return true;
+    }
+});
 
 (function()
 {

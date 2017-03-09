@@ -1,5 +1,5 @@
 {
-  "servers":"114.55.255.22:15010:15011"
+  "servers":"120.76.204.225:15010:15039,120.76.205.11:15010:15039"
   ,"serversSelect":[600,400]
   ,"wxShareUrl":"http://download.happyplaygame.net"
   ,"voiceUrl":"http://114.55.252.83:9109/symj/"

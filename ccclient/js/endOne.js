@@ -479,7 +479,8 @@ function setMjMa(node, off)
 var EndOneLayer = cc.Layer.extend(
     {
         jsBind: {
-            back: {
+            back:
+            {
                 _layout: [[0, 1], [0.5, 0.5], [0, 0]]
             },
 
@@ -984,6 +985,57 @@ var EndOneLayer = cc.Layer.extend(
                         SetEndOnePlayerUI(this, 3);
 
                 }
+            },
+
+            _run:function()
+            {
+                // var wintitle = this.getChildByName("wintitle");
+                // var losetitle = this.getChildByName("losetitle");
+                // var pingju = this.getChildByName("pingju");
+                // var huang = this.getChildByName("huang");
+                //
+                // var gameEndTableAnim = null;
+
+                // if(wintitle.visible)
+                // {
+                //     gameEndTableAnim = playAnimByJson("ying", "ying");
+                //     gameEndTableAnim.x = wintitle.x;
+                //     gameEndTableAnim.y = wintitle.y;
+                //     gameEndTableAnim.scale = wintitle.scale;
+                //     this.addChild(gameEndTableAnim);
+                //
+                //     log("单局结束...赢！！！")
+                // }
+                // else if(losetitle.visible)
+                // {
+                //     gameEndTableAnim = playAnimByJson("shu", "shu");
+                //     gameEndTableAnim.x = losetitle.x;
+                //     gameEndTableAnim.y = losetitle.y;
+                //     gameEndTableAnim.scale = losetitle.scale;
+                //     this.addChild(gameEndTableAnim);
+                //
+                //     log("单局结束...输！！！")
+                // }
+                // else if(pingju.visible)
+                // {
+                //     gameEndTableAnim = playAnimByJson("ping", "ping");
+                //     gameEndTableAnim.x = pingju.x;
+                //     gameEndTableAnim.y = pingju.y;
+                //     gameEndTableAnim.scale = pingju.scale;
+                //     this.addChild(gameEndTableAnim);
+                //
+                //     log("单局结束...平！！！")
+                // }
+                // else if(huang.visible)
+                // {
+                //     gameEndTableAnim = playAnimByJson("huang", "huang");
+                //     gameEndTableAnim.x = huang.x;
+                //     gameEndTableAnim.y = huang.y;
+                //     gameEndTableAnim.scale = huang.scale;
+                //     this.addChild(gameEndTableAnim);
+                //
+                //     log("单局结束...荒！！！")
+                // }
             }
         },
         ctor: function () {
@@ -1000,11 +1052,14 @@ var EndOneLayer = cc.Layer.extend(
             var zoff = (tData.zhuang + tData.maxPlayer - tData.uids.indexOf(selfUid)) % tData.maxPlayer;
             var zhuang = this.jsBind["head" + zoff].head.zhuang._node;
             var linkZhuang = this.jsBind["head" + zoff].head.linkZhuang._node;
-            if ((tData.gameType == 3 || tData.gameType == 1) && tData.jiejieGao) {
+
+            if ((tData.gameType == 3 || tData.gameType == 1) && tData.jiejieGao)
+            {
                 zhuang.visible = false;
                 linkZhuang.visible = true;
             }
-            else {
+            else
+            {
                 zhuang.visible = true;
                 linkZhuang.visible = false;
             }

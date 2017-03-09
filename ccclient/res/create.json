@@ -406,7 +406,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "选择玩法:",
+                    "LabelText": "玩法:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -467,8 +467,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 255.0,
-                          "Y": 20.0
+                          "X": 179.9999,
+                          "Y": 19.9996
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -477,21 +477,21 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.5938,
-                          "Y": 0.6061
+                          "X": 1.125,
+                          "Y": 0.606
                         },
                         "PreSize": {
-                          "X": 1.1437,
+                          "X": 0.75,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 163.5,
-                        "RightMargin": -186.5,
-                        "TopMargin": -6.5,
-                        "BottomMargin": 0.5,
+                        "LeftMargin": 119.9999,
+                        "RightMargin": -79.9999,
+                        "TopMargin": -6.4996,
+                        "BottomMargin": 0.4996,
                         "Tag": 271,
                         "ActionTag": -1999686810,
                         "Size": {
-                          "X": 183.0,
+                          "X": 120.0,
                           "Y": 39.0
                         },
                         "Name": "Image_1",
@@ -512,8 +512,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 475.0,
-                          "Y": 20.0003
+                          "X": 370.0001,
+                          "Y": 20.0
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -522,17 +522,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 2.9688,
+                          "X": 2.3125,
                           "Y": 0.6061
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 383.5,
-                        "RightMargin": -406.5,
-                        "TopMargin": -6.5003,
-                        "BottomMargin": 0.5003,
+                        "LeftMargin": 278.5001,
+                        "RightMargin": -301.5001,
+                        "TopMargin": -6.5,
+                        "BottomMargin": 0.5,
                         "Tag": 89,
                         "ActionTag": 1966498810,
                         "Size": {
@@ -557,8 +557,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 255.0,
-                          "Y": -45.0
+                          "X": 200.0,
+                          "Y": -45.0001
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -567,17 +567,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.5938,
+                          "X": 1.25,
                           "Y": -1.3636
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 163.5,
-                        "RightMargin": -186.5,
-                        "TopMargin": 58.5,
-                        "BottomMargin": -64.5,
+                        "LeftMargin": 108.5,
+                        "RightMargin": -131.5,
+                        "TopMargin": 58.5001,
+                        "BottomMargin": -64.5001,
                         "Tag": 181,
                         "ActionTag": 744129561,
                         "Size": {
@@ -602,7 +602,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 475.0,
+                          "X": 420.0,
                           "Y": -44.9997
                         },
                         "Scale": {
@@ -612,15 +612,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 2.9688,
+                          "X": 2.625,
                           "Y": -1.3636
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 383.5,
-                        "RightMargin": -406.5,
+                        "LeftMargin": 328.5,
+                        "RightMargin": -351.5,
                         "TopMargin": 58.4997,
                         "BottomMargin": -64.4997,
                         "Tag": 40,
@@ -647,8 +647,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 255.0,
-                          "Y": -110.0
+                          "X": 200.0,
+                          "Y": -110.0002
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -657,17 +657,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.5938,
+                          "X": 1.25,
                           "Y": -3.3333
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 163.5,
-                        "RightMargin": -186.5,
-                        "TopMargin": 123.5,
-                        "BottomMargin": -129.5,
+                        "LeftMargin": 108.5,
+                        "RightMargin": -131.5,
+                        "TopMargin": 123.5002,
+                        "BottomMargin": -129.5002,
                         "Tag": 272,
                         "ActionTag": 1361944211,
                         "Size": {
@@ -683,6 +683,7 @@
                           "Path": "createRoomNew/qiansediban.png",
                           "Plist": ""
                         },
+                        "Scale9Enable": true,
                         "Scale9OriginX": 60,
                         "Scale9OriginY": 12,
                         "Scale9Width": 63,
@@ -692,8 +693,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 685.0,
-                          "Y": 20.0003
+                          "X": 640.0013,
+                          "Y": 20.0002
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -702,21 +703,21 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 4.2812,
+                          "X": 4.0,
                           "Y": 0.6061
                         },
                         "PreSize": {
-                          "X": 1.1437,
+                          "X": 1.625,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 593.5,
-                        "RightMargin": -616.5,
-                        "TopMargin": -6.5003,
-                        "BottomMargin": 0.5003,
+                        "LeftMargin": 510.0013,
+                        "RightMargin": -610.0013,
+                        "TopMargin": -6.5002,
+                        "BottomMargin": 0.5002,
                         "Tag": 375,
                         "ActionTag": -139542591,
                         "Size": {
-                          "X": 183.0,
+                          "X": 260.0,
                           "Y": 39.0
                         },
                         "Name": "Image_6",
@@ -737,8 +738,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 684.9998,
-                          "Y": -109.9999
+                          "X": 640.0,
+                          "Y": -110.0002
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -747,17 +748,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 4.2812,
+                          "X": 4.0,
                           "Y": -3.3333
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 593.4998,
-                        "RightMargin": -616.4998,
-                        "TopMargin": 123.4999,
-                        "BottomMargin": -129.4999,
+                        "LeftMargin": 548.5,
+                        "RightMargin": -571.5,
+                        "TopMargin": 123.5002,
+                        "BottomMargin": -129.5002,
                         "Tag": 663,
                         "ActionTag": 1140075710,
                         "Size": {
@@ -782,8 +783,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 475.0,
-                          "Y": -109.9997
+                          "X": 420.0,
+                          "Y": -109.9998
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -792,17 +793,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 2.9688,
+                          "X": 2.625,
                           "Y": -3.3333
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 383.5,
-                        "RightMargin": -406.5,
-                        "TopMargin": 123.4997,
-                        "BottomMargin": -129.4997,
+                        "LeftMargin": 328.5,
+                        "RightMargin": -351.5,
+                        "TopMargin": 123.4998,
+                        "BottomMargin": -129.4998,
                         "Tag": 563,
                         "ActionTag": 2091649271,
                         "Size": {
@@ -844,7 +845,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 176.0,
+                          "X": 112.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -856,15 +857,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 1.1,
+                          "X": 0.7,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 146.0,
-                        "RightMargin": -46.0,
+                        "LeftMargin": 82.0,
+                        "RightMargin": 18.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 275,
@@ -889,7 +890,7 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 66.0,
+                              "X": 60.0,
                               "Y": 30.0
                             },
                             "Scale": {
@@ -905,15 +906,15 @@
                             "PositionPercentXEnabled": true,
                             "PositionPercentYEnabled": true,
                             "PrePosition": {
-                              "X": 1.1,
+                              "X": 1.0,
                               "Y": 0.5
                             },
                             "PreSize": {
                               "X": 2.0,
                               "Y": 0.5833
                             },
-                            "LeftMargin": 66.0,
-                            "RightMargin": -126.0,
+                            "LeftMargin": 60.0,
+                            "RightMargin": -120.0,
                             "TopMargin": 12.5,
                             "BottomMargin": 12.5,
                             "Tag": 276,
@@ -966,7 +967,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 392.0,
+                          "X": 288.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -978,15 +979,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 2.45,
+                          "X": 1.8,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 362.0,
-                        "RightMargin": -262.0,
+                        "LeftMargin": 258.0,
+                        "RightMargin": -158.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 36,
@@ -1088,7 +1089,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 608.0,
+                          "X": 512.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -1100,15 +1101,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 3.8,
+                          "X": 3.2,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 578.0,
-                        "RightMargin": -478.0,
+                        "LeftMargin": 482.0,
+                        "RightMargin": -382.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 373,
@@ -1133,7 +1134,7 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 66.0,
+                              "X": 60.0,
                               "Y": 30.0
                             },
                             "Scale": {
@@ -1149,15 +1150,15 @@
                             "PositionPercentXEnabled": true,
                             "PositionPercentYEnabled": true,
                             "PrePosition": {
-                              "X": 1.1,
+                              "X": 1.0,
                               "Y": 0.5
                             },
                             "PreSize": {
                               "X": 2.0,
                               "Y": 0.5833
                             },
-                            "LeftMargin": 66.0,
-                            "RightMargin": -126.0,
+                            "LeftMargin": 60.0,
+                            "RightMargin": -120.0,
                             "TopMargin": 12.5,
                             "BottomMargin": 12.5,
                             "Tag": 374,
@@ -1176,6 +1177,128 @@
                           "Y": 60.0
                         },
                         "Name": "fangui",
+                        "ctype": "CheckBoxObjectData"
+                      },
+                      {
+                        "NormalBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/fang.png",
+                          "Plist": ""
+                        },
+                        "PressedBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/fang.png",
+                          "Plist": ""
+                        },
+                        "DisableBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/fang.png",
+                          "Plist": ""
+                        },
+                        "NodeNormalFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/Duigou.png",
+                          "Plist": ""
+                        },
+                        "NodeDisableFileData": {
+                          "Type": "Default",
+                          "Path": "Default/CheckBoxNode_Disable.png",
+                          "Plist": ""
+                        },
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 664.0,
+                          "Y": 19.8
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 4.15,
+                          "Y": 0.6
+                        },
+                        "PreSize": {
+                          "X": 0.2125,
+                          "Y": 1.0606
+                        },
+                        "LeftMargin": 647.0,
+                        "RightMargin": -521.0,
+                        "TopMargin": -4.3,
+                        "BottomMargin": 2.3,
+                        "Tag": 894,
+                        "Children": [
+                          {
+                            "IsCustomSize": true,
+                            "FontSize": 30,
+                            "LabelText": "双鬼",
+                            "VerticalAlignmentType": "VT_Center",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 34.0,
+                              "Y": 14.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "R": 108,
+                              "G": 37,
+                              "B": 20
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 1.0,
+                              "Y": 0.4
+                            },
+                            "PreSize": {
+                              "X": 3.5294,
+                              "Y": 1.0
+                            },
+                            "LeftMargin": 34.0,
+                            "RightMargin": -120.0,
+                            "TopMargin": 3.5,
+                            "BottomMargin": -3.5,
+                            "Tag": 895,
+                            "ActionTag": -1746294856,
+                            "Size": {
+                              "X": 120.0,
+                              "Y": 35.0
+                            },
+                            "Name": "Text_1",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": 958842286,
+                        "Size": {
+                          "X": 34.0,
+                          "Y": 35.0
+                        },
+                        "Name": "shuanggui",
                         "ctype": "CheckBoxObjectData"
                       },
                       {
@@ -1210,7 +1333,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 176.0,
+                          "X": 112.0,
                           "Y": -49.5
                         },
                         "Scale": {
@@ -1222,15 +1345,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 1.1,
+                          "X": 0.7,
                           "Y": -1.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 146.0,
-                        "RightMargin": -46.0,
+                        "LeftMargin": 82.0,
+                        "RightMargin": 18.0,
                         "TopMargin": 52.5,
                         "BottomMargin": -79.5,
                         "Tag": 273,
@@ -1332,7 +1455,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 392.0,
+                          "X": 336.0,
                           "Y": -49.5
                         },
                         "Scale": {
@@ -1344,15 +1467,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 2.45,
+                          "X": 2.1,
                           "Y": -1.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 362.0,
-                        "RightMargin": -262.0,
+                        "LeftMargin": 306.0,
+                        "RightMargin": -206.0,
                         "TopMargin": 52.5,
                         "BottomMargin": -79.5,
                         "Tag": 38,
@@ -1454,7 +1577,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 392.0,
+                          "X": 336.0,
                           "Y": -115.5
                         },
                         "Scale": {
@@ -1466,15 +1589,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 2.45,
+                          "X": 2.1,
                           "Y": -3.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 362.0,
-                        "RightMargin": -262.0,
+                        "LeftMargin": 306.0,
+                        "RightMargin": -206.0,
                         "TopMargin": 118.5,
                         "BottomMargin": -145.5,
                         "Tag": 182,
@@ -1482,7 +1605,7 @@
                           {
                             "IsCustomSize": true,
                             "FontSize": 30,
-                            "LabelText": "胡七对",
+                            "LabelText": "可胡七对",
                             "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
                               "G": 0,
@@ -1519,17 +1642,17 @@
                               "Y": 0.5
                             },
                             "PreSize": {
-                              "X": 2.0,
+                              "X": 2.5,
                               "Y": 0.5833
                             },
                             "LeftMargin": 66.0,
-                            "RightMargin": -126.0,
+                            "RightMargin": -156.0,
                             "TopMargin": 12.5,
                             "BottomMargin": 12.5,
                             "Tag": 183,
                             "ActionTag": 93375243,
                             "Size": {
-                              "X": 120.0,
+                              "X": 150.0,
                               "Y": 35.0
                             },
                             "Name": "Text_1",
@@ -1576,7 +1699,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 608.0,
+                          "X": 560.0,
                           "Y": -115.5
                         },
                         "Scale": {
@@ -1588,15 +1711,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 3.8,
+                          "X": 3.5,
                           "Y": -3.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 578.0,
-                        "RightMargin": -478.0,
+                        "LeftMargin": 530.0,
+                        "RightMargin": -430.0,
                         "TopMargin": 118.5,
                         "BottomMargin": -145.5,
                         "Tag": 564,
@@ -1698,7 +1821,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 176.0,
+                          "X": 112.0,
                           "Y": -115.5
                         },
                         "Scale": {
@@ -1710,15 +1833,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 1.1,
+                          "X": 0.7,
                           "Y": -3.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 146.0,
-                        "RightMargin": -46.0,
+                        "LeftMargin": 82.0,
+                        "RightMargin": 18.0,
                         "TopMargin": 118.5,
                         "BottomMargin": -145.5,
                         "Tag": 661,
@@ -1800,7 +1923,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "买马数量：",
+                    "LabelText": "买马:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -1861,7 +1984,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 220.0,
+                          "X": 180.0,
                           "Y": 20.0
                         },
                         "Scale": {
@@ -1871,15 +1994,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.375,
+                          "X": 1.125,
                           "Y": 0.6061
                         },
                         "PreSize": {
                           "X": 0.75,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 160.0,
-                        "RightMargin": -120.0,
+                        "LeftMargin": 120.0,
+                        "RightMargin": -80.0,
                         "TopMargin": -6.5,
                         "BottomMargin": 0.5,
                         "Tag": 168,
@@ -1906,7 +2029,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 375.0,
+                          "X": 384.9998,
                           "Y": 19.9995
                         },
                         "Scale": {
@@ -1916,15 +2039,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 2.3438,
+                          "X": 2.4062,
                           "Y": 0.606
                         },
                         "PreSize": {
                           "X": 0.75,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 315.0,
-                        "RightMargin": -275.0,
+                        "LeftMargin": 324.9998,
+                        "RightMargin": -284.9998,
                         "TopMargin": -6.4995,
                         "BottomMargin": 0.4995,
                         "Tag": 179,
@@ -1951,7 +2074,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 535.0005,
+                          "X": 545.0005,
                           "Y": 20.0001
                         },
                         "Scale": {
@@ -1961,15 +2084,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 3.3438,
+                          "X": 3.4063,
                           "Y": 0.6061
                         },
                         "PreSize": {
                           "X": 0.75,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 475.0005,
-                        "RightMargin": -435.0005,
+                        "LeftMargin": 485.0005,
+                        "RightMargin": -445.0005,
                         "TopMargin": -6.5001,
                         "BottomMargin": 0.5001,
                         "Tag": 180,
@@ -2058,7 +2181,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 176.0,
+                          "X": 336.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -2070,15 +2193,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 1.1,
+                          "X": 2.1,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 146.0,
-                        "RightMargin": -46.0,
+                        "LeftMargin": 306.0,
+                        "RightMargin": -206.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 169,
@@ -2180,7 +2303,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 320.0,
+                          "X": 496.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -2192,15 +2315,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 2.0,
+                          "X": 3.1,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 290.0,
-                        "RightMargin": -190.0,
+                        "LeftMargin": 466.0,
+                        "RightMargin": -366.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 171,
@@ -2302,7 +2425,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 480.0,
+                          "X": 656.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -2314,15 +2437,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 3.0,
+                          "X": 4.1,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 450.0,
-                        "RightMargin": -350.0,
+                        "LeftMargin": 626.0,
+                        "RightMargin": -526.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 173,
@@ -2424,7 +2547,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 640.0,
+                          "X": 112.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -2436,15 +2559,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 4.0,
+                          "X": 0.7,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 610.0,
-                        "RightMargin": -510.0,
+                        "LeftMargin": 82.0,
+                        "RightMargin": 18.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 315,
@@ -2526,7 +2649,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "选择局数：",
+                    "LabelText": "局数:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -2587,7 +2710,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 255.0,
+                          "X": 200.0,
                           "Y": 20.0
                         },
                         "Scale": {
@@ -2597,15 +2720,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.5938,
+                          "X": 1.25,
                           "Y": 0.6061
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 163.5,
-                        "RightMargin": -186.5,
+                        "LeftMargin": 108.5,
+                        "RightMargin": -131.5,
                         "TopMargin": -6.5,
                         "BottomMargin": 0.5,
                         "Tag": 92,
@@ -2632,7 +2755,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 475.0,
+                          "X": 420.0,
                           "Y": 20.0
                         },
                         "Scale": {
@@ -2642,15 +2765,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 2.9688,
+                          "X": 2.625,
                           "Y": 0.6061
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 383.5,
-                        "RightMargin": -406.5,
+                        "LeftMargin": 328.5,
+                        "RightMargin": -351.5,
                         "TopMargin": -6.5,
                         "BottomMargin": 0.5,
                         "Tag": 91,
@@ -2694,7 +2817,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 392.0,
+                          "X": 336.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -2706,15 +2829,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 2.45,
+                          "X": 2.1,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 362.0,
-                        "RightMargin": -262.0,
+                        "LeftMargin": 306.0,
+                        "RightMargin": -206.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 29,
@@ -2816,7 +2939,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 176.0,
+                          "X": 112.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -2828,15 +2951,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 1.1,
+                          "X": 0.7,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 146.0,
-                        "RightMargin": -46.0,
+                        "LeftMargin": 82.0,
+                        "RightMargin": 18.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 31,
@@ -3272,6 +3395,142 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/qiansediban.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 60,
+                        "Scale9OriginY": 12,
+                        "Scale9Width": 63,
+                        "Scale9Height": 15,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 685.0,
+                          "Y": 20.0003
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 4.2812,
+                          "Y": 0.6061
+                        },
+                        "PreSize": {
+                          "X": 1.1437,
+                          "Y": 1.1818
+                        },
+                        "LeftMargin": 593.5,
+                        "RightMargin": -616.5,
+                        "TopMargin": -6.5003,
+                        "BottomMargin": 0.5003,
+                        "Tag": 331,
+                        "ActionTag": -253135831,
+                        "Size": {
+                          "X": 183.0,
+                          "Y": 39.0
+                        },
+                        "Name": "Image_3",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/qiansediban.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 60,
+                        "Scale9OriginY": 12,
+                        "Scale9Width": 63,
+                        "Scale9Height": 15,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 370.0001,
+                          "Y": -44.9998
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 2.3125,
+                          "Y": -1.3636
+                        },
+                        "PreSize": {
+                          "X": 2.5,
+                          "Y": 1.1818
+                        },
+                        "LeftMargin": 170.0001,
+                        "RightMargin": -410.0001,
+                        "TopMargin": 58.4998,
+                        "BottomMargin": -64.4998,
+                        "Tag": 334,
+                        "ActionTag": -708959829,
+                        "Size": {
+                          "X": 400.0,
+                          "Y": 39.0
+                        },
+                        "Name": "Image_4",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/qiansediban.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 60,
+                        "Scale9OriginY": 12,
+                        "Scale9Width": 63,
+                        "Scale9Height": 15,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 685.0021,
+                          "Y": -44.9984
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 4.2813,
+                          "Y": -1.3636
+                        },
+                        "PreSize": {
+                          "X": 1.1437,
+                          "Y": 1.1818
+                        },
+                        "LeftMargin": 593.5021,
+                        "RightMargin": -616.5021,
+                        "TopMargin": 58.4984,
+                        "BottomMargin": -64.4984,
+                        "Tag": 340,
+                        "ActionTag": -1104516117,
+                        "Size": {
+                          "X": 183.0,
+                          "Y": 39.0
+                        },
+                        "Name": "Image_6",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
                         "CheckedState": true,
                         "NormalBackFileData": {
                           "Type": "Normal",
@@ -3512,6 +3771,489 @@
                         },
                         "Name": "nofeng",
                         "ctype": "CheckBoxObjectData"
+                      },
+                      {
+                        "NormalBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "PressedBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "DisableBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "NodeNormalFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/Duigou.png",
+                          "Plist": ""
+                        },
+                        "NodeDisableFileData": {
+                          "Type": "Default",
+                          "Path": "Default/CheckBoxNode_Disable.png",
+                          "Plist": ""
+                        },
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 608.0,
+                          "Y": 16.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 3.8,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 0.375,
+                          "Y": 1.8182
+                        },
+                        "LeftMargin": 578.0,
+                        "RightMargin": -478.0,
+                        "TopMargin": -13.5,
+                        "BottomMargin": -13.5,
+                        "Tag": 329,
+                        "Children": [
+                          {
+                            "IsCustomSize": true,
+                            "FontSize": 30,
+                            "LabelText": "不可鸡胡",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 66.0,
+                              "Y": 30.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "R": 108,
+                              "G": 37,
+                              "B": 20
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 1.1,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 2.0,
+                              "Y": 0.5833
+                            },
+                            "LeftMargin": 66.0,
+                            "RightMargin": -126.0,
+                            "TopMargin": 12.5,
+                            "BottomMargin": 12.5,
+                            "Tag": 330,
+                            "ActionTag": -724877711,
+                            "Size": {
+                              "X": 120.0,
+                              "Y": 35.0
+                            },
+                            "Name": "Text_1",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": -699712761,
+                        "Size": {
+                          "X": 60.0,
+                          "Y": 60.0
+                        },
+                        "Name": "nojihu",
+                        "ctype": "CheckBoxObjectData"
+                      },
+                      {
+                        "NormalBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "PressedBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "DisableBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "NodeNormalFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/Duigou.png",
+                          "Plist": ""
+                        },
+                        "NodeDisableFileData": {
+                          "Type": "Default",
+                          "Path": "Default/CheckBoxNode_Disable.png",
+                          "Plist": ""
+                        },
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 176.0,
+                          "Y": -49.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 1.1,
+                          "Y": -1.5
+                        },
+                        "PreSize": {
+                          "X": 0.375,
+                          "Y": 1.8182
+                        },
+                        "LeftMargin": 146.0,
+                        "RightMargin": -46.0,
+                        "TopMargin": 52.5,
+                        "BottomMargin": -79.5,
+                        "Tag": 332,
+                        "Children": [
+                          {
+                            "IsCustomSize": true,
+                            "FontSize": 30,
+                            "LabelText": "马跟底分",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 66.0,
+                              "Y": 30.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "R": 108,
+                              "G": 37,
+                              "B": 20
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 1.1,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 2.0,
+                              "Y": 0.5833
+                            },
+                            "LeftMargin": 66.0,
+                            "RightMargin": -126.0,
+                            "TopMargin": 12.5,
+                            "BottomMargin": 12.5,
+                            "Tag": 333,
+                            "ActionTag": 1478990354,
+                            "Size": {
+                              "X": 120.0,
+                              "Y": 35.0
+                            },
+                            "Name": "Text_1",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": -1865025402,
+                        "Size": {
+                          "X": 60.0,
+                          "Y": 60.0
+                        },
+                        "Name": "difenma",
+                        "ctype": "CheckBoxObjectData"
+                      },
+                      {
+                        "NormalBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/fang.png",
+                          "Plist": ""
+                        },
+                        "PressedBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/fang.png",
+                          "Plist": ""
+                        },
+                        "DisableBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/fang.png",
+                          "Plist": ""
+                        },
+                        "NodeNormalFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/Duigou.png",
+                          "Plist": ""
+                        },
+                        "NodeDisableFileData": {
+                          "Type": "Default",
+                          "Path": "Default/CheckBoxNode_Disable.png",
+                          "Plist": ""
+                        },
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 376.0,
+                          "Y": -46.2
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 2.35,
+                          "Y": -1.4
+                        },
+                        "PreSize": {
+                          "X": 0.2125,
+                          "Y": 1.0606
+                        },
+                        "LeftMargin": 359.0,
+                        "RightMargin": -233.0,
+                        "TopMargin": 61.7,
+                        "BottomMargin": -63.7,
+                        "Tag": 335,
+                        "Children": [
+                          {
+                            "IsCustomSize": true,
+                            "FontSize": 26,
+                            "LabelText": "跟至对对胡",
+                            "VerticalAlignmentType": "VT_Center",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 37.4,
+                              "Y": 17.5
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "R": 108,
+                              "G": 37,
+                              "B": 20
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 1.1,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 4.4118,
+                              "Y": 1.0
+                            },
+                            "LeftMargin": 37.4,
+                            "RightMargin": -153.4,
+                            "Tag": 336,
+                            "ActionTag": 680606676,
+                            "Size": {
+                              "X": 150.0,
+                              "Y": 35.0
+                            },
+                            "Name": "Text_1",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": -527021407,
+                        "Size": {
+                          "X": 34.0,
+                          "Y": 35.0
+                        },
+                        "Name": "duiduihu",
+                        "ctype": "CheckBoxObjectData"
+                      },
+                      {
+                        "NormalBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "PressedBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "DisableBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "NodeNormalFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/Duigou.png",
+                          "Plist": ""
+                        },
+                        "NodeDisableFileData": {
+                          "Type": "Default",
+                          "Path": "Default/CheckBoxNode_Disable.png",
+                          "Plist": ""
+                        },
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 608.0,
+                          "Y": -49.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 3.8,
+                          "Y": -1.5
+                        },
+                        "PreSize": {
+                          "X": 0.375,
+                          "Y": 1.8182
+                        },
+                        "LeftMargin": 578.0,
+                        "RightMargin": -478.0,
+                        "TopMargin": 52.5,
+                        "BottomMargin": -79.5,
+                        "Tag": 338,
+                        "Children": [
+                          {
+                            "IsCustomSize": true,
+                            "FontSize": 30,
+                            "LabelText": "门清加分",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 66.0,
+                              "Y": 30.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "R": 108,
+                              "G": 37,
+                              "B": 20
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 1.1,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 2.0,
+                              "Y": 0.5833
+                            },
+                            "LeftMargin": 66.0,
+                            "RightMargin": -126.0,
+                            "TopMargin": 12.5,
+                            "BottomMargin": 12.5,
+                            "Tag": 339,
+                            "ActionTag": 1235482986,
+                            "Size": {
+                              "X": 120.0,
+                              "Y": 35.0
+                            },
+                            "Name": "Text_1",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": -267142272,
+                        "Size": {
+                          "X": 60.0,
+                          "Y": 60.0
+                        },
+                        "Name": "menqing",
+                        "ctype": "CheckBoxObjectData"
                       }
                     ],
                     "ActionTag": 347675210,
@@ -3525,7 +4267,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "买马数量：",
+                    "LabelText": "买马数量:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -3543,7 +4285,7 @@
                     },
                     "Position": {
                       "X": 297.25,
-                      "Y": -32.4012
+                      "Y": -116.7972
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3559,7 +4301,7 @@
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
                       "X": 1.45,
-                      "Y": -0.4154
+                      "Y": -1.4974
                     },
                     "PreSize": {
                       "X": 0.7805,
@@ -3567,8 +4309,8 @@
                     },
                     "LeftMargin": 217.25,
                     "RightMargin": -172.25,
-                    "TopMargin": 93.9012,
-                    "BottomMargin": -48.9012,
+                    "TopMargin": 178.2972,
+                    "BottomMargin": -133.2972,
                     "Tag": 356,
                     "Children": [
                       {
@@ -4099,7 +4841,7 @@
                     },
                     "Position": {
                       "X": 297.25,
-                      "Y": -139.0038
+                      "Y": -183.0972
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4115,7 +4857,7 @@
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
                       "X": 1.45,
-                      "Y": -1.7821
+                      "Y": -2.3474
                     },
                     "PreSize": {
                       "X": 0.7805,
@@ -4123,8 +4865,8 @@
                     },
                     "LeftMargin": 217.25,
                     "RightMargin": -172.25,
-                    "TopMargin": 200.5038,
-                    "BottomMargin": -155.5038,
+                    "TopMargin": 244.5972,
+                    "BottomMargin": -199.5972,
                     "Tag": 366,
                     "Children": [
                       {
@@ -4245,8 +4987,8 @@
                         },
                         "TouchEnable": true,
                         "AnchorPoint": {
-                          "ScaleX": 0.548,
-                          "ScaleY": 0.4265
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
                         },
                         "Position": {
                           "X": 392.0,
@@ -4268,10 +5010,10 @@
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 359.12,
-                        "RightMargin": -259.12,
-                        "TopMargin": -17.91,
-                        "BottomMargin": -9.09,
+                        "LeftMargin": 362.0,
+                        "RightMargin": -262.0,
+                        "TopMargin": -13.5,
+                        "BottomMargin": -13.5,
                         "Tag": 369,
                         "Children": [
                           {
@@ -4839,7 +5581,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 258.0,
+                          "X": 255.0,
                           "Y": -45.0
                         },
                         "Scale": {
@@ -4849,15 +5591,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.6125,
+                          "X": 1.5938,
                           "Y": -1.3636
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 166.5,
-                        "RightMargin": -189.5,
+                        "LeftMargin": 163.5,
+                        "RightMargin": -186.5,
                         "TopMargin": 58.5,
                         "BottomMargin": -64.5,
                         "Tag": 623,
@@ -5742,7 +6484,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "买马数量：",
+                    "LabelText": "买马数量:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -6404,7 +7146,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 475.9997,
+                          "X": 475.0,
                           "Y": 20.0
                         },
                         "Scale": {
@@ -6414,15 +7156,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 2.975,
+                          "X": 2.9688,
                           "Y": 0.6061
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 384.4997,
-                        "RightMargin": -407.4997,
+                        "LeftMargin": 383.5,
+                        "RightMargin": -406.5,
                         "TopMargin": -6.5,
                         "BottomMargin": 0.5,
                         "Tag": 648,
@@ -7298,7 +8040,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "起胡番数：",
+                    "LabelText": "起胡番数:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -8713,7 +9455,6 @@
                         },
                         "CColor": {},
                         "IconVisible": false,
-                        "PositionPercentXEnabled": true,
                         "PrePosition": {
                           "X": 4.0,
                           "Y": 0.6061
@@ -8759,7 +9500,6 @@
                         },
                         "CColor": {},
                         "IconVisible": false,
-                        "PositionPercentXEnabled": true,
                         "PrePosition": {
                           "X": 4.0,
                           "Y": -1.3636
@@ -10211,7 +10951,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "买马：",
+                    "LabelText": "买马:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -12970,7 +13710,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "买马：",
+                    "LabelText": "买马:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -14133,7 +14873,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "选择玩法:",
+                    "LabelText": "玩法:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -14194,7 +14934,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 255.0,
+                          "X": 180.0,
                           "Y": 20.0
                         },
                         "Scale": {
@@ -14204,21 +14944,21 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.5938,
+                          "X": 1.125,
                           "Y": 0.6061
                         },
                         "PreSize": {
-                          "X": 1.1437,
+                          "X": 0.75,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 163.5,
-                        "RightMargin": -186.5,
+                        "LeftMargin": 120.0,
+                        "RightMargin": -80.0,
                         "TopMargin": -6.5,
                         "BottomMargin": 0.5,
                         "Tag": 269,
                         "ActionTag": -1363897710,
                         "Size": {
-                          "X": 183.0,
+                          "X": 120.0,
                           "Y": 39.0
                         },
                         "Name": "Image_1",
@@ -14239,7 +14979,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 475.9997,
+                          "X": 370.0,
                           "Y": 20.0003
                         },
                         "Scale": {
@@ -14249,15 +14989,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 2.975,
+                          "X": 2.3125,
                           "Y": 0.6061
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 384.4997,
-                        "RightMargin": -407.4997,
+                        "LeftMargin": 278.5,
+                        "RightMargin": -301.5,
                         "TopMargin": -6.5003,
                         "BottomMargin": 0.5003,
                         "Tag": 270,
@@ -14284,7 +15024,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 255.0,
+                          "X": 200.0,
                           "Y": -45.0
                         },
                         "Scale": {
@@ -14294,15 +15034,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.5938,
+                          "X": 1.25,
                           "Y": -1.3636
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 163.5,
-                        "RightMargin": -186.5,
+                        "LeftMargin": 108.5,
+                        "RightMargin": -131.5,
                         "TopMargin": 58.5,
                         "BottomMargin": -64.5,
                         "Tag": 271,
@@ -14329,7 +15069,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 475.9997,
+                          "X": 420.0,
                           "Y": -44.9997
                         },
                         "Scale": {
@@ -14339,15 +15079,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 2.975,
+                          "X": 2.625,
                           "Y": -1.3636
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 384.4997,
-                        "RightMargin": -407.4997,
+                        "LeftMargin": 328.5,
+                        "RightMargin": -351.5,
                         "TopMargin": 58.4997,
                         "BottomMargin": -64.4997,
                         "Tag": 272,
@@ -14374,7 +15114,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 475.0,
+                          "X": 420.0,
                           "Y": -110.0
                         },
                         "Scale": {
@@ -14384,15 +15124,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 2.9688,
+                          "X": 2.625,
                           "Y": -3.3333
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 383.5,
-                        "RightMargin": -406.5,
+                        "LeftMargin": 328.5,
+                        "RightMargin": -351.5,
                         "TopMargin": 123.5,
                         "BottomMargin": -129.5,
                         "Tag": 273,
@@ -14410,6 +15150,7 @@
                           "Path": "createRoomNew/qiansediban.png",
                           "Plist": ""
                         },
+                        "Scale9Enable": true,
                         "Scale9OriginX": 60,
                         "Scale9OriginY": 12,
                         "Scale9Width": 63,
@@ -14419,7 +15160,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 685.0,
+                          "X": 640.0,
                           "Y": 20.0003
                         },
                         "Scale": {
@@ -14429,21 +15170,21 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 4.2812,
+                          "X": 4.0,
                           "Y": 0.6061
                         },
                         "PreSize": {
-                          "X": 1.1437,
+                          "X": 1.625,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 593.5,
-                        "RightMargin": -616.5,
+                        "LeftMargin": 510.0,
+                        "RightMargin": -610.0,
                         "TopMargin": -6.5003,
                         "BottomMargin": 0.5003,
                         "Tag": 274,
                         "ActionTag": 2010563280,
                         "Size": {
-                          "X": 183.0,
+                          "X": 260.0,
                           "Y": 39.0
                         },
                         "Name": "Image_6",
@@ -14464,7 +15205,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 685.0001,
+                          "X": 640.0,
                           "Y": -110.0
                         },
                         "Scale": {
@@ -14474,15 +15215,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 4.2813,
+                          "X": 4.0,
                           "Y": -3.3333
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 593.5001,
-                        "RightMargin": -616.5001,
+                        "LeftMargin": 548.5,
+                        "RightMargin": -571.5,
                         "TopMargin": 123.5,
                         "BottomMargin": -129.5,
                         "Tag": 658,
@@ -14509,7 +15250,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 255.0,
+                          "X": 200.0,
                           "Y": -110.0
                         },
                         "Scale": {
@@ -14519,15 +15260,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.5938,
+                          "X": 1.25,
                           "Y": -3.3333
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 163.5,
-                        "RightMargin": -186.5,
+                        "LeftMargin": 108.5,
+                        "RightMargin": -131.5,
                         "TopMargin": 123.5,
                         "BottomMargin": -129.5,
                         "Tag": 276,
@@ -14571,7 +15312,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 176.0,
+                          "X": 112.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -14583,15 +15324,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 1.1,
+                          "X": 0.7,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 146.0,
-                        "RightMargin": -46.0,
+                        "LeftMargin": 82.0,
+                        "RightMargin": 18.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 277,
@@ -14616,7 +15357,7 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 66.0,
+                              "X": 60.0,
                               "Y": 30.0
                             },
                             "Scale": {
@@ -14632,15 +15373,15 @@
                             "PositionPercentXEnabled": true,
                             "PositionPercentYEnabled": true,
                             "PrePosition": {
-                              "X": 1.1,
+                              "X": 1.0,
                               "Y": 0.5
                             },
                             "PreSize": {
                               "X": 2.0,
                               "Y": 0.5833
                             },
-                            "LeftMargin": 66.0,
-                            "RightMargin": -126.0,
+                            "LeftMargin": 60.0,
+                            "RightMargin": -120.0,
                             "TopMargin": 12.5,
                             "BottomMargin": 12.5,
                             "Tag": 278,
@@ -14693,7 +15434,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 392.0,
+                          "X": 288.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -14705,15 +15446,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 2.45,
+                          "X": 1.8,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 362.0,
-                        "RightMargin": -262.0,
+                        "LeftMargin": 258.0,
+                        "RightMargin": -158.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 279,
@@ -14815,7 +15556,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 608.0,
+                          "X": 512.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -14827,15 +15568,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 3.8,
+                          "X": 3.2,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 578.0,
-                        "RightMargin": -478.0,
+                        "LeftMargin": 482.0,
+                        "RightMargin": -382.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 281,
@@ -14860,7 +15601,7 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 66.0,
+                              "X": 60.0,
                               "Y": 30.0
                             },
                             "Scale": {
@@ -14876,15 +15617,15 @@
                             "PositionPercentXEnabled": true,
                             "PositionPercentYEnabled": true,
                             "PrePosition": {
-                              "X": 1.1,
+                              "X": 1.0,
                               "Y": 0.5
                             },
                             "PreSize": {
                               "X": 2.0,
                               "Y": 0.5833
                             },
-                            "LeftMargin": 66.0,
-                            "RightMargin": -126.0,
+                            "LeftMargin": 60.0,
+                            "RightMargin": -120.0,
                             "TopMargin": 12.5,
                             "BottomMargin": 12.5,
                             "Tag": 282,
@@ -14903,6 +15644,128 @@
                           "Y": 60.0
                         },
                         "Name": "fangui",
+                        "ctype": "CheckBoxObjectData"
+                      },
+                      {
+                        "NormalBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/fang.png",
+                          "Plist": ""
+                        },
+                        "PressedBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/fang.png",
+                          "Plist": ""
+                        },
+                        "DisableBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/fang.png",
+                          "Plist": ""
+                        },
+                        "NodeNormalFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/Duigou.png",
+                          "Plist": ""
+                        },
+                        "NodeDisableFileData": {
+                          "Type": "Default",
+                          "Path": "Default/CheckBoxNode_Disable.png",
+                          "Plist": ""
+                        },
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 664.0,
+                          "Y": 19.8
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 4.15,
+                          "Y": 0.6
+                        },
+                        "PreSize": {
+                          "X": 0.2125,
+                          "Y": 1.0606
+                        },
+                        "LeftMargin": 647.0,
+                        "RightMargin": -521.0,
+                        "TopMargin": -4.3,
+                        "BottomMargin": 2.3,
+                        "Tag": 334,
+                        "Children": [
+                          {
+                            "IsCustomSize": true,
+                            "FontSize": 30,
+                            "LabelText": "双鬼",
+                            "VerticalAlignmentType": "VT_Center",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 34.0,
+                              "Y": 14.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "R": 108,
+                              "G": 37,
+                              "B": 20
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 1.0,
+                              "Y": 0.4
+                            },
+                            "PreSize": {
+                              "X": 3.5294,
+                              "Y": 1.0
+                            },
+                            "LeftMargin": 34.0,
+                            "RightMargin": -120.0,
+                            "TopMargin": 3.5,
+                            "BottomMargin": -3.5,
+                            "Tag": 335,
+                            "ActionTag": 861097836,
+                            "Size": {
+                              "X": 120.0,
+                              "Y": 35.0
+                            },
+                            "Name": "Text_1",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": -1434761773,
+                        "Size": {
+                          "X": 34.0,
+                          "Y": 35.0
+                        },
+                        "Name": "shuanggui",
                         "ctype": "CheckBoxObjectData"
                       },
                       {
@@ -14937,7 +15800,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 176.0,
+                          "X": 112.0,
                           "Y": -49.5
                         },
                         "Scale": {
@@ -14949,15 +15812,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 1.1,
+                          "X": 0.7,
                           "Y": -1.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 146.0,
-                        "RightMargin": -46.0,
+                        "LeftMargin": 82.0,
+                        "RightMargin": 18.0,
                         "TopMargin": 52.5,
                         "BottomMargin": -79.5,
                         "Tag": 283,
@@ -15059,7 +15922,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 392.0,
+                          "X": 336.0,
                           "Y": -49.5
                         },
                         "Scale": {
@@ -15071,15 +15934,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 2.45,
+                          "X": 2.1,
                           "Y": -1.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 362.0,
-                        "RightMargin": -262.0,
+                        "LeftMargin": 306.0,
+                        "RightMargin": -206.0,
                         "TopMargin": 52.5,
                         "BottomMargin": -79.5,
                         "Tag": 285,
@@ -15181,7 +16044,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 392.0,
+                          "X": 336.0,
                           "Y": -115.5
                         },
                         "Scale": {
@@ -15193,15 +16056,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 2.45,
+                          "X": 2.1,
                           "Y": -3.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 362.0,
-                        "RightMargin": -262.0,
+                        "LeftMargin": 306.0,
+                        "RightMargin": -206.0,
                         "TopMargin": 118.5,
                         "BottomMargin": -145.5,
                         "Tag": 287,
@@ -15209,7 +16072,7 @@
                           {
                             "IsCustomSize": true,
                             "FontSize": 30,
-                            "LabelText": "胡七对",
+                            "LabelText": "可胡七对",
                             "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
                               "G": 0,
@@ -15246,17 +16109,17 @@
                               "Y": 0.5
                             },
                             "PreSize": {
-                              "X": 2.0,
+                              "X": 2.5,
                               "Y": 0.5833
                             },
                             "LeftMargin": 66.0,
-                            "RightMargin": -126.0,
+                            "RightMargin": -156.0,
                             "TopMargin": 12.5,
                             "BottomMargin": 12.5,
                             "Tag": 288,
                             "ActionTag": 687101234,
                             "Size": {
-                              "X": 120.0,
+                              "X": 150.0,
                               "Y": 35.0
                             },
                             "Name": "Text_1",
@@ -15303,7 +16166,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 608.0,
+                          "X": 560.0,
                           "Y": -115.5
                         },
                         "Scale": {
@@ -15315,15 +16178,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 3.8,
+                          "X": 3.5,
                           "Y": -3.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 578.0,
-                        "RightMargin": -478.0,
+                        "LeftMargin": 530.0,
+                        "RightMargin": -430.0,
                         "TopMargin": 118.5,
                         "BottomMargin": -145.5,
                         "Tag": 292,
@@ -15425,7 +16288,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 176.0,
+                          "X": 112.0,
                           "Y": -115.5
                         },
                         "Scale": {
@@ -15437,15 +16300,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 1.1,
+                          "X": 0.7,
                           "Y": -3.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 146.0,
-                        "RightMargin": -46.0,
+                        "LeftMargin": 82.0,
+                        "RightMargin": 18.0,
                         "TopMargin": 118.5,
                         "BottomMargin": -145.5,
                         "Tag": 659,
@@ -15527,7 +16390,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "买马数量：",
+                    "LabelText": "买马:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -15587,8 +16450,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 220.0,
-                          "Y": 20.0
+                          "X": 180.0,
+                          "Y": 20.0001
                         },
                         "Scale": {
                           "ScaleX": 0.9797,
@@ -15597,17 +16460,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.375,
+                          "X": 1.125,
                           "Y": 0.6061
                         },
                         "PreSize": {
                           "X": 0.75,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 160.0,
-                        "RightMargin": -120.0,
-                        "TopMargin": -6.5,
-                        "BottomMargin": 0.5,
+                        "LeftMargin": 120.0,
+                        "RightMargin": -80.0,
+                        "TopMargin": -6.5001,
+                        "BottomMargin": 0.5001,
                         "Tag": 295,
                         "ActionTag": 222692451,
                         "Size": {
@@ -15632,7 +16495,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 375.0,
+                          "X": 384.9999,
                           "Y": 20.0
                         },
                         "Scale": {
@@ -15642,15 +16505,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 2.3438,
+                          "X": 2.4062,
                           "Y": 0.6061
                         },
                         "PreSize": {
                           "X": 0.75,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 315.0,
-                        "RightMargin": -275.0,
+                        "LeftMargin": 324.9999,
+                        "RightMargin": -284.9999,
                         "TopMargin": -6.5,
                         "BottomMargin": 0.5,
                         "Tag": 296,
@@ -15677,7 +16540,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 535.0,
+                          "X": 544.9999,
                           "Y": 20.0
                         },
                         "Scale": {
@@ -15687,15 +16550,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 3.3438,
+                          "X": 3.4062,
                           "Y": 0.6061
                         },
                         "PreSize": {
                           "X": 0.75,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 475.0,
-                        "RightMargin": -435.0,
+                        "LeftMargin": 484.9999,
+                        "RightMargin": -444.9999,
                         "TopMargin": -6.5,
                         "BottomMargin": 0.5,
                         "Tag": 297,
@@ -15784,7 +16647,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 176.0,
+                          "X": 336.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -15796,15 +16659,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 1.1,
+                          "X": 2.1,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 146.0,
-                        "RightMargin": -46.0,
+                        "LeftMargin": 306.0,
+                        "RightMargin": -206.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 298,
@@ -15906,7 +16769,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 320.0,
+                          "X": 496.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -15918,15 +16781,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 2.0,
+                          "X": 3.1,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 290.0,
-                        "RightMargin": -190.0,
+                        "LeftMargin": 466.0,
+                        "RightMargin": -366.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 300,
@@ -16028,7 +16891,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 480.0,
+                          "X": 656.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -16040,15 +16903,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 3.0,
+                          "X": 4.1,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 450.0,
-                        "RightMargin": -350.0,
+                        "LeftMargin": 626.0,
+                        "RightMargin": -526.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 302,
@@ -16150,7 +17013,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 640.0,
+                          "X": 112.0,
                           "Y": 16.5
                         },
                         "Scale": {
@@ -16162,15 +17025,15 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 4.0,
+                          "X": 0.7,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 610.0,
-                        "RightMargin": -510.0,
+                        "LeftMargin": 82.0,
+                        "RightMargin": 18.0,
                         "TopMargin": -13.5,
                         "BottomMargin": -13.5,
                         "Tag": 594,
@@ -16252,7 +17115,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "选择局数：",
+                    "LabelText": "局数:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -16312,7 +17175,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 254.9999,
+                          "X": 200.0,
                           "Y": 20.0002
                         },
                         "Scale": {
@@ -16322,15 +17185,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.5937,
+                          "X": 1.25,
                           "Y": 0.6061
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 163.4999,
-                        "RightMargin": -186.4999,
+                        "LeftMargin": 108.5,
+                        "RightMargin": -131.5,
                         "TopMargin": -6.5002,
                         "BottomMargin": 0.5002,
                         "Tag": 305,
@@ -16357,7 +17220,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 475.9994,
+                          "X": 420.0,
                           "Y": 20.0002
                         },
                         "Scale": {
@@ -16367,15 +17230,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 2.975,
+                          "X": 2.625,
                           "Y": 0.6061
                         },
                         "PreSize": {
                           "X": 1.1437,
                           "Y": 1.1818
                         },
-                        "LeftMargin": 384.4994,
-                        "RightMargin": -407.4994,
+                        "LeftMargin": 328.5,
+                        "RightMargin": -351.5,
                         "TopMargin": -6.5002,
                         "BottomMargin": 0.5002,
                         "Tag": 306,
@@ -16419,8 +17282,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 392.0,
-                          "Y": 16.1997
+                          "X": 336.0,
+                          "Y": 16.5
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -16431,17 +17294,17 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 2.45,
-                          "Y": 0.4909
+                          "X": 2.1,
+                          "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 362.0,
-                        "RightMargin": -262.0,
-                        "TopMargin": -13.1997,
-                        "BottomMargin": -13.8003,
+                        "LeftMargin": 306.0,
+                        "RightMargin": -206.0,
+                        "TopMargin": -13.5,
+                        "BottomMargin": -13.5,
                         "Tag": 307,
                         "Children": [
                           {
@@ -16465,7 +17328,7 @@
                             },
                             "Position": {
                               "X": 66.0,
-                              "Y": 31.002
+                              "Y": 30.0
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -16481,7 +17344,7 @@
                             "PositionPercentYEnabled": true,
                             "PrePosition": {
                               "X": 1.1,
-                              "Y": 0.5167
+                              "Y": 0.5
                             },
                             "PreSize": {
                               "X": 2.0,
@@ -16489,8 +17352,8 @@
                             },
                             "LeftMargin": 66.0,
                             "RightMargin": -126.0,
-                            "TopMargin": 11.498,
-                            "BottomMargin": 13.502,
+                            "TopMargin": 12.5,
+                            "BottomMargin": 12.5,
                             "Tag": 308,
                             "ActionTag": -1197643507,
                             "Size": {
@@ -16541,8 +17404,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 176.0,
-                          "Y": 16.1997
+                          "X": 112.0,
+                          "Y": 16.5
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -16553,17 +17416,17 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 1.1,
-                          "Y": 0.4909
+                          "X": 0.7,
+                          "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 146.0,
-                        "RightMargin": -46.0,
-                        "TopMargin": -13.1997,
-                        "BottomMargin": -13.8003,
+                        "LeftMargin": 82.0,
+                        "RightMargin": 18.0,
+                        "TopMargin": -13.5,
+                        "BottomMargin": -13.5,
                         "Tag": 309,
                         "Children": [
                           {
@@ -16587,7 +17450,7 @@
                             },
                             "Position": {
                               "X": 66.0,
-                              "Y": 31.002
+                              "Y": 30.0
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -16603,7 +17466,7 @@
                             "PositionPercentYEnabled": true,
                             "PrePosition": {
                               "X": 1.1,
-                              "Y": 0.5167
+                              "Y": 0.5
                             },
                             "PreSize": {
                               "X": 2.0,
@@ -16611,8 +17474,8 @@
                             },
                             "LeftMargin": 66.0,
                             "RightMargin": -126.0,
-                            "TopMargin": 11.498,
-                            "BottomMargin": 13.502,
+                            "TopMargin": 12.5,
+                            "BottomMargin": 12.5,
                             "Tag": 310,
                             "ActionTag": -293900529,
                             "Size": {
