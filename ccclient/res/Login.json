@@ -1,0 +1,515 @@
+{
+  "ID": "13c5b26b-c8e9-4ac8-b4ea-0350d6f0d0cd",
+  "Version": "3.10.0.0",
+  "Name": "Login",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 4,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "login-yli/bac_01.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 422,
+            "Scale9OriginY": 237,
+            "Scale9Width": 436,
+            "Scale9Height": 246,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 6,
+            "ActionTag": -1453471211,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "back",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "update/logo_01.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 282,
+            "Scale9OriginY": 92,
+            "Scale9Width": 292,
+            "Scale9Height": 97,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 661.18,
+              "Y": 543.4751
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5165,
+              "Y": 0.7548
+            },
+            "PreSize": {
+              "X": 0.6687,
+              "Y": 0.3903
+            },
+            "LeftMargin": 233.18,
+            "RightMargin": 190.8201,
+            "TopMargin": 36.0249,
+            "BottomMargin": 402.9751,
+            "Tag": 282,
+            "ActionTag": -1046764534,
+            "Size": {
+              "X": 856.0,
+              "Y": 281.0
+            },
+            "Name": "logo",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "login-yli/btn_sign_in_press.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "login-yli/btn_sign_in_normal.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 239,
+            "Scale9Height": 79,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 520.7674,
+              "Y": 291.7118
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4068,
+              "Y": 0.4052
+            },
+            "PreSize": {
+              "X": 0.2102,
+              "Y": 0.1403
+            },
+            "LeftMargin": 386.2674,
+            "RightMargin": 624.7326,
+            "TopMargin": 377.7882,
+            "BottomMargin": 241.2118,
+            "Tag": 7,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "login-yli/ot-1.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 134,
+                "Scale9OriginY": 14,
+                "Scale9Width": 141,
+                "Scale9Height": 17,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 136.6115,
+                  "Y": -61.3141
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5078,
+                  "Y": -0.6071
+                },
+                "PreSize": {
+                  "X": 1.5204,
+                  "Y": 0.4455
+                },
+                "LeftMargin": -67.8885,
+                "RightMargin": -72.1115,
+                "TopMargin": 139.8141,
+                "BottomMargin": -83.8141,
+                "Tag": 9,
+                "ActionTag": -1657155349,
+                "Size": {
+                  "X": 409.0,
+                  "Y": 45.0
+                },
+                "Name": "Image_2",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "login-yli/agree.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "login-yli/agree.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 252,
+                "Scale9Height": 7,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5262,
+                  "ScaleY": 0.4545
+                },
+                "Position": {
+                  "X": 164.4113,
+                  "Y": -62.8585
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6112,
+                  "Y": -0.6224
+                },
+                "PreSize": {
+                  "X": 1.0483,
+                  "Y": 0.2871
+                },
+                "LeftMargin": 16.0229,
+                "RightMargin": -29.0229,
+                "TopMargin": 148.039,
+                "BottomMargin": -76.039,
+                "Tag": 37,
+                "ActionTag": -1482008010,
+                "Size": {
+                  "X": 282.0,
+                  "Y": 29.0
+                },
+                "Name": "legal",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "CheckedState": true,
+                "NormalBackFileData": {
+                  "Type": "Normal",
+                  "Path": "login-yli/lattice.png",
+                  "Plist": ""
+                },
+                "PressedBackFileData": {
+                  "Type": "Normal",
+                  "Path": "login-yli/lattice.png",
+                  "Plist": ""
+                },
+                "DisableBackFileData": {
+                  "Type": "Default",
+                  "Path": "Default/CheckBox_Disable.png",
+                  "Plist": ""
+                },
+                "NodeNormalFileData": {
+                  "Type": "Normal",
+                  "Path": "login-yli/Duigou.png",
+                  "Plist": ""
+                },
+                "NodeDisableFileData": {
+                  "Type": "Normal",
+                  "Path": "login-yli/Duigou.png",
+                  "Plist": ""
+                },
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": -23.8065,
+                  "Y": -57.2468
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": -0.0885,
+                  "Y": -0.5668
+                },
+                "PreSize": {
+                  "X": 0.1599,
+                  "Y": 0.4653
+                },
+                "LeftMargin": -45.3065,
+                "RightMargin": 271.3065,
+                "TopMargin": 134.7468,
+                "BottomMargin": -80.7468,
+                "Tag": 68,
+                "ActionTag": -1347122435,
+                "Size": {
+                  "X": 43.0,
+                  "Y": 47.0
+                },
+                "Name": "agree",
+                "ctype": "CheckBoxObjectData"
+              }
+            ],
+            "ActionTag": -36530676,
+            "Size": {
+              "X": 269.0,
+              "Y": 101.0
+            },
+            "Name": "wechatLogin",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "login-yli/btn_visitor_press.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "login-yli/btn_visitor_normal.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 239,
+            "Scale9Height": 79,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 824.1086,
+              "Y": 291.3139
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6438,
+              "Y": 0.4046
+            },
+            "PreSize": {
+              "X": 0.2102,
+              "Y": 0.1403
+            },
+            "LeftMargin": 689.6086,
+            "RightMargin": 321.3914,
+            "TopMargin": 378.1861,
+            "BottomMargin": 240.8139,
+            "Tag": 252,
+            "ActionTag": -1770387744,
+            "Size": {
+              "X": 269.0,
+              "Y": 101.0
+            },
+            "Name": "guestLogin",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "ver:000.0000",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1212.8018,
+              "Y": 17.8143
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9475,
+              "Y": 0.0247
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.0278
+            },
+            "LeftMargin": 1152.8018,
+            "RightMargin": 7.1982,
+            "TopMargin": 692.1857,
+            "BottomMargin": 7.8143,
+            "Tag": 12,
+            "ActionTag": -123771324,
+            "Size": {
+              "X": 120.0,
+              "Y": 20.0
+            },
+            "Name": "version",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1280.0,
+          "Y": 720.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "Default/Button_Disable.png",
+        "Default/CheckBox_Disable.png",
+        "login-yli/agree.png",
+        "login-yli/bac_01.png",
+        "login-yli/btn_sign_in_normal.png",
+        "login-yli/btn_sign_in_press.png",
+        "login-yli/btn_visitor_normal.png",
+        "login-yli/btn_visitor_press.png",
+        "login-yli/Duigou.png",
+        "login-yli/lattice.png",
+        "login-yli/ot-1.png",
+        "update/logo_01.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

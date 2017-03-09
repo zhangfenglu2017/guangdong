@@ -1,0 +1,554 @@
+{
+  "ID": "1274860c-1581-419a-b5ff-524cb66a416b",
+  "Version": "3.10.0.0",
+  "Name": "WebView",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 28,
+        "Children": [
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 178,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9OriginX": -22,
+            "Scale9OriginY": -19,
+            "Scale9Width": 44,
+            "Scale9Height": 38,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -640.0,
+            "RightMargin": -640.0,
+            "TopMargin": -360.0,
+            "BottomMargin": -360.0,
+            "Tag": 29,
+            "ActionTag": -297161110,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "block",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "playerchat/window-big.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 30,
+            "Scale9OriginY": 30,
+            "Scale9Width": 878,
+            "Scale9Height": 582,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -469.0,
+            "RightMargin": -469.0,
+            "TopMargin": -321.0,
+            "BottomMargin": -321.0,
+            "Tag": 11,
+            "Children": [
+              {
+                "CheckedState": true,
+                "NormalBackFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_news_press.png",
+                  "Plist": ""
+                },
+                "PressedBackFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_news_normal.png",
+                  "Plist": ""
+                },
+                "DisableBackFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_news_press.png",
+                  "Plist": ""
+                },
+                "NodeNormalFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_news_normal.png",
+                  "Plist": ""
+                },
+                "NodeDisableFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_news_press.png",
+                  "Plist": ""
+                },
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 159.9473,
+                  "Y": 559.1847
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1705,
+                  "Y": 0.871
+                },
+                "PreSize": {
+                  "X": 0.2313,
+                  "Y": 0.1199
+                },
+                "LeftMargin": 51.4473,
+                "RightMargin": 669.5527,
+                "TopMargin": 44.3153,
+                "BottomMargin": 520.6847,
+                "Tag": 105,
+                "ActionTag": -1000246441,
+                "Size": {
+                  "X": 217.0,
+                  "Y": 77.0
+                },
+                "Name": "message",
+                "ctype": "CheckBoxObjectData"
+              },
+              {
+                "NormalBackFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_contact_press.png",
+                  "Plist": ""
+                },
+                "PressedBackFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_contact_normal.png",
+                  "Plist": ""
+                },
+                "DisableBackFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_contact_press.png",
+                  "Plist": ""
+                },
+                "NodeNormalFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_contact_normal.png",
+                  "Plist": ""
+                },
+                "NodeDisableFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_contact_press.png",
+                  "Plist": ""
+                },
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 379.4041,
+                  "Y": 559.18
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4045,
+                  "Y": 0.871
+                },
+                "PreSize": {
+                  "X": 0.2313,
+                  "Y": 0.1199
+                },
+                "LeftMargin": 270.9041,
+                "RightMargin": 450.0959,
+                "TopMargin": 44.32,
+                "BottomMargin": 520.68,
+                "Tag": 106,
+                "ActionTag": 802659776,
+                "Size": {
+                  "X": 217.0,
+                  "Y": 77.0
+                },
+                "Name": "contact_us",
+                "ctype": "CheckBoxObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "webview/floor_12.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 273,
+                "Scale9OriginY": 122,
+                "Scale9Width": 283,
+                "Scale9Height": 127,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 470.9673,
+                  "Y": 290.7188
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5021,
+                  "Y": 0.4528
+                },
+                "PreSize": {
+                  "X": 0.8838,
+                  "Y": 0.7165
+                },
+                "LeftMargin": 56.4673,
+                "RightMargin": 52.5327,
+                "TopMargin": 121.2812,
+                "BottomMargin": 60.7188,
+                "Tag": 103,
+                "ActionTag": 1030761308,
+                "Size": {
+                  "X": 829.0,
+                  "Y": 460.0
+                },
+                "Name": "smalbg",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 34,
+                "LabelText": "亲爱的玩家：亲爱的玩家：",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 298.0,
+                  "Y": 461.0797
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 121,
+                  "G": 73,
+                  "B": 17
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.3177,
+                  "Y": 0.7182
+                },
+                "PreSize": {
+                  "X": 0.4606,
+                  "Y": 0.0561
+                },
+                "LeftMargin": 82.0,
+                "RightMargin": 424.0,
+                "TopMargin": 162.9203,
+                "BottomMargin": 443.0797,
+                "Tag": 32,
+                "ActionTag": 1641214746,
+                "Size": {
+                  "X": 432.0,
+                  "Y": 36.0
+                },
+                "Name": "title",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 32,
+                "LabelText": "最近有人担心皮皮麻将有游戏外挂，皮皮麻将在此声明：\n本游戏绝无外挂，请各位玩家放心娱乐,打着外挂名号的\napp经皮皮证实都抱着广告或窃取用户手机个人信息等不\n良目的，大家切勿上当受骗。健康娱乐，远离赌博。远离\n赌博远离赌博远离赌博远离赌博远离赌博",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 470.0396,
+                  "Y": 251.5828
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 121,
+                  "G": 73,
+                  "B": 17
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5011,
+                  "Y": 0.3919
+                },
+                "PreSize": {
+                  "X": 0.8316,
+                  "Y": 0.5607
+                },
+                "LeftMargin": 80.0396,
+                "RightMargin": 77.9604,
+                "TopMargin": 210.4172,
+                "BottomMargin": 71.5828,
+                "Tag": 33,
+                "ActionTag": -1416731411,
+                "Size": {
+                  "X": 780.0,
+                  "Y": 360.0
+                },
+                "Name": "des",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 36,
+                "LabelText": "祝您玩的愉快！产品建议或举报请联系：qq3446098400\n，我们将竭诚为您服务！",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 471.31,
+                  "Y": 219.04
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 121,
+                  "G": 73,
+                  "B": 17
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5025,
+                  "Y": 0.3412
+                },
+                "PreSize": {
+                  "X": 0.8316,
+                  "Y": 0.4673
+                },
+                "LeftMargin": 81.31,
+                "RightMargin": 76.69,
+                "TopMargin": 272.96,
+                "BottomMargin": 69.04,
+                "Tag": 34,
+                "ActionTag": 1990133175,
+                "Size": {
+                  "X": 780.0,
+                  "Y": 300.0
+                },
+                "VisibleForFrame": false,
+                "Name": "cont_us",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_close_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_close_normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 115,
+                "Scale9Height": 121,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 918.04,
+                  "Y": 621.33
+                },
+                "Scale": {
+                  "ScaleX": 0.75,
+                  "ScaleY": 0.75
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9787,
+                  "Y": 0.9678
+                },
+                "PreSize": {
+                  "X": 0.1546,
+                  "Y": 0.2227
+                },
+                "LeftMargin": 845.54,
+                "RightMargin": -52.54,
+                "TopMargin": -50.83,
+                "BottomMargin": 549.83,
+                "Tag": 104,
+                "ActionTag": 1716694919,
+                "Size": {
+                  "X": 145.0,
+                  "Y": 143.0
+                },
+                "Name": "close",
+                "ctype": "ButtonObjectData"
+              }
+            ],
+            "ActionTag": -528218928,
+            "Size": {
+              "X": 938.0,
+              "Y": 642.0
+            },
+            "Name": "back",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Default/Button_Disable.png",
+        "playerchat/window-big.png",
+        "webview/btn_close_normal.png",
+        "webview/btn_close_press.png",
+        "webview/btn_contact_normal.png",
+        "webview/btn_contact_press.png",
+        "webview/btn_news_normal.png",
+        "webview/btn_news_press.png",
+        "webview/floor_12.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

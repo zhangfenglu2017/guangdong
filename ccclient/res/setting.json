@@ -1,0 +1,719 @@
+{
+  "ID": "d493212b-58a5-48e9-9d9c-872318ea7201",
+  "Version": "3.10.0.0",
+  "Name": "setting",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 72,
+        "Children": [
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 204,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 26,
+            "ActionTag": 736875449,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Alpha": 204,
+            "Name": "block",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "set/window-small.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 169,
+            "Scale9OriginY": 141,
+            "Scale9Width": 357,
+            "Scale9Height": 196,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.543,
+              "Y": 0.6639
+            },
+            "LeftMargin": 292.5,
+            "RightMargin": 292.5,
+            "TopMargin": 121.0,
+            "BottomMargin": 121.0,
+            "Tag": 1144,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "set/bar_01.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 127,
+                "Scale9OriginY": 8,
+                "Scale9Width": 131,
+                "Scale9Height": 11,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 399.31,
+                  "Y": 212.8896
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5745,
+                  "Y": 0.4454
+                },
+                "PreSize": {
+                  "X": 0.554,
+                  "Y": 0.0565
+                },
+                "LeftMargin": 206.81,
+                "RightMargin": 103.19,
+                "TopMargin": 251.6104,
+                "BottomMargin": 199.3896,
+                "Tag": 232,
+                "ActionTag": 1634927670,
+                "Size": {
+                  "X": 385.0,
+                  "Y": 27.0
+                },
+                "Name": "sliderBg_0",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "set/bar_01.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 127,
+                "Scale9OriginY": 8,
+                "Scale9Width": 131,
+                "Scale9Height": 11,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 398.743,
+                  "Y": 314.5015
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5737,
+                  "Y": 0.658
+                },
+                "PreSize": {
+                  "X": 0.554,
+                  "Y": 0.0565
+                },
+                "LeftMargin": 206.243,
+                "RightMargin": 103.757,
+                "TopMargin": 149.9985,
+                "BottomMargin": 301.0015,
+                "Tag": 231,
+                "ActionTag": -1045778844,
+                "Size": {
+                  "X": 385.0,
+                  "Y": 27.0
+                },
+                "Name": "sliderBg",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "set/t_setting.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 33,
+                "Scale9OriginY": 13,
+                "Scale9Width": 496,
+                "Scale9Height": 44,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 347.5,
+                  "Y": 442.1022
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.9249
+                },
+                "PreSize": {
+                  "X": 0.8086,
+                  "Y": 0.1464
+                },
+                "LeftMargin": 66.5,
+                "RightMargin": 66.5,
+                "TopMargin": 0.8978,
+                "BottomMargin": 407.1022,
+                "Tag": 1147,
+                "ActionTag": -862792565,
+                "Size": {
+                  "X": 562.0,
+                  "Y": 70.0
+                },
+                "Name": "Image_tile",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "BackGroundData": {
+                  "Type": "Normal",
+                  "Path": "set/bar_01.png",
+                  "Plist": ""
+                },
+                "ProgressBarData": {
+                  "Type": "Normal",
+                  "Path": "set/bar_02.png",
+                  "Plist": ""
+                },
+                "BallNormalData": {
+                  "Type": "Normal",
+                  "Path": "set/slither.png",
+                  "Plist": ""
+                },
+                "BallPressedData": {
+                  "Type": "Normal",
+                  "Path": "set/slither.png",
+                  "Plist": ""
+                },
+                "BallDisabledData": {
+                  "Type": "Normal",
+                  "Path": "set/slither.png",
+                  "Plist": ""
+                },
+                "PercentInfo": 50,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 399.312,
+                  "Y": 313.7579
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5745,
+                  "Y": 0.6564
+                },
+                "PreSize": {
+                  "X": 0.554,
+                  "Y": 0.0565
+                },
+                "LeftMargin": 206.812,
+                "RightMargin": 103.188,
+                "TopMargin": 150.7421,
+                "BottomMargin": 300.2579,
+                "Tag": 1148,
+                "ActionTag": 929811148,
+                "Size": {
+                  "X": 385.0,
+                  "Y": 27.0
+                },
+                "Name": "Slider_effect",
+                "ctype": "SliderObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_close_press.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_close_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "webview/btn_close_normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 115,
+                "Scale9Height": 121,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 676.34,
+                  "Y": 453.64
+                },
+                "Scale": {
+                  "ScaleX": 0.75,
+                  "ScaleY": 0.75
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9732,
+                  "Y": 0.949
+                },
+                "PreSize": {
+                  "X": 0.2086,
+                  "Y": 0.2992
+                },
+                "LeftMargin": 603.84,
+                "RightMargin": -53.84,
+                "TopMargin": -47.14,
+                "BottomMargin": 382.14,
+                "Tag": 1149,
+                "ActionTag": 813085948,
+                "Size": {
+                  "X": 145.0,
+                  "Y": 143.0
+                },
+                "Name": "close",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "BackGroundData": {
+                  "Type": "Normal",
+                  "Path": "set/bar_01.png",
+                  "Plist": ""
+                },
+                "ProgressBarData": {
+                  "Type": "Normal",
+                  "Path": "set/bar_02.png",
+                  "Plist": ""
+                },
+                "BallNormalData": {
+                  "Type": "Normal",
+                  "Path": "set/slither.png",
+                  "Plist": ""
+                },
+                "BallPressedData": {
+                  "Type": "Normal",
+                  "Path": "set/slither.png",
+                  "Plist": ""
+                },
+                "BallDisabledData": {
+                  "Type": "Normal",
+                  "Path": "set/slither.png",
+                  "Plist": ""
+                },
+                "PercentInfo": 50,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 399.31,
+                  "Y": 212.9601
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5745,
+                  "Y": 0.4455
+                },
+                "PreSize": {
+                  "X": 0.554,
+                  "Y": 0.0565
+                },
+                "LeftMargin": 206.81,
+                "RightMargin": 103.19,
+                "TopMargin": 251.5399,
+                "BottomMargin": 199.4601,
+                "Tag": 1150,
+                "ActionTag": 1595288084,
+                "Size": {
+                  "X": 385.0,
+                  "Y": 27.0
+                },
+                "Name": "Slider_music",
+                "ctype": "SliderObjectData"
+              },
+              {
+                "FontSize": 36,
+                "ButtonText": "",
+                "TextColor": {},
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "set/btn_exit_login_press.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "set/btn_exit_login_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "set/btn_exit_login_normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 140,
+                "Scale9Height": 43,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 347.5,
+                  "Y": 95.6
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.2
+                },
+                "PreSize": {
+                  "X": 0.2446,
+                  "Y": 0.136
+                },
+                "LeftMargin": 262.5,
+                "RightMargin": 262.5,
+                "TopMargin": 349.9,
+                "BottomMargin": 63.1,
+                "Tag": 1151,
+                "ActionTag": -410361543,
+                "Size": {
+                  "X": 170.0,
+                  "Y": 65.0
+                },
+                "Name": "exitBtn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 36,
+                "ButtonText": "",
+                "TextColor": {},
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "set/btn_application_press.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "set/btn_application_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "set/btn_application_normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 197,
+                "Scale9Height": 43,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 347.5,
+                  "Y": 95.6
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.2
+                },
+                "PreSize": {
+                  "X": 0.3266,
+                  "Y": 0.136
+                },
+                "LeftMargin": 234.0,
+                "RightMargin": 234.0,
+                "TopMargin": 349.9,
+                "BottomMargin": 63.1,
+                "Tag": 1152,
+                "ActionTag": -2136444830,
+                "Size": {
+                  "X": 227.0,
+                  "Y": 65.0
+                },
+                "Name": "delBtn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "set/sound.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 39,
+                "Scale9OriginY": 17,
+                "Scale9Width": 42,
+                "Scale9Height": 18,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 137.9207,
+                  "Y": 313.2746
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1984,
+                  "Y": 0.6554
+                },
+                "PreSize": {
+                  "X": 0.1727,
+                  "Y": 0.1088
+                },
+                "LeftMargin": 77.9207,
+                "RightMargin": 497.0793,
+                "TopMargin": 138.7254,
+                "BottomMargin": 287.2746,
+                "Tag": 229,
+                "ActionTag": -544039351,
+                "Size": {
+                  "X": 120.0,
+                  "Y": 52.0
+                },
+                "Name": "effect",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "set/music.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 39,
+                "Scale9OriginY": 17,
+                "Scale9Width": 42,
+                "Scale9Height": 18,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 137.92,
+                  "Y": 212.7218
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1984,
+                  "Y": 0.445
+                },
+                "PreSize": {
+                  "X": 0.1727,
+                  "Y": 0.1088
+                },
+                "LeftMargin": 77.92,
+                "RightMargin": 497.08,
+                "TopMargin": 239.2782,
+                "BottomMargin": 186.7218,
+                "Tag": 230,
+                "ActionTag": -1400084152,
+                "Size": {
+                  "X": 120.0,
+                  "Y": 52.0
+                },
+                "Name": "music",
+                "ctype": "ImageViewObjectData"
+              }
+            ],
+            "ActionTag": -108244162,
+            "Size": {
+              "X": 695.0,
+              "Y": 478.0
+            },
+            "Name": "back",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1280.0,
+          "Y": 720.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "set/bar_01.png",
+        "set/bar_02.png",
+        "set/btn_application_normal.png",
+        "set/btn_application_press.png",
+        "set/btn_exit_login_normal.png",
+        "set/btn_exit_login_press.png",
+        "set/music.png",
+        "set/slither.png",
+        "set/sound.png",
+        "set/t_setting.png",
+        "set/window-small.png",
+        "webview/btn_close_normal.png",
+        "webview/btn_close_press.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

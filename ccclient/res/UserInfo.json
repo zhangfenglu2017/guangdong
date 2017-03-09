@@ -1,0 +1,763 @@
+{
+  "ID": "9885bfdc-7205-482e-86f9-1468213c6037",
+  "Version": "3.10.0.0",
+  "Name": "UserInfo",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 44,
+        "Children": [
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 178,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 480.0,
+              "Y": 320.0
+            },
+            "Scale": {
+              "ScaleX": 0.7566,
+              "ScaleY": 0.8937
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.3333,
+              "Y": 1.125
+            },
+            "LeftMargin": -160.0,
+            "RightMargin": -160.0,
+            "TopMargin": -40.0,
+            "BottomMargin": -40.0,
+            "Tag": 538,
+            "ActionTag": -1691697417,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Alpha": 204,
+            "Name": "block",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "set/window-small.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 169,
+            "Scale9OriginY": 141,
+            "Scale9Width": 357,
+            "Scale9Height": 196,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 491.616,
+              "Y": 306.048
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.5121,
+              "Y": 0.4782
+            },
+            "PreSize": {
+              "X": 0.724,
+              "Y": 0.7469
+            },
+            "LeftMargin": 144.116,
+            "RightMargin": 120.884,
+            "TopMargin": 94.952,
+            "BottomMargin": 67.048,
+            "Tag": 116,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "userinfo/line.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 187,
+                "Scale9OriginY": 95,
+                "Scale9Width": 193,
+                "Scale9Height": 99,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 352.5465,
+                  "Y": 230.1844
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5073,
+                  "Y": 0.4816
+                },
+                "PreSize": {
+                  "X": 0.8158,
+                  "Y": 0.6046
+                },
+                "LeftMargin": 69.0465,
+                "RightMargin": 58.9535,
+                "TopMargin": 103.3156,
+                "BottomMargin": 85.6844,
+                "Tag": 535,
+                "ActionTag": 1197917837,
+                "Size": {
+                  "X": 567.0,
+                  "Y": 289.0
+                },
+                "Name": "lin",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "userinfo/t_dissolution_01.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 185,
+                "Scale9OriginY": 23,
+                "Scale9Width": 192,
+                "Scale9Height": 24,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 345.0097,
+                  "Y": 441.8987
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4964,
+                  "Y": 0.9245
+                },
+                "PreSize": {
+                  "X": 0.8086,
+                  "Y": 0.1464
+                },
+                "LeftMargin": 64.0097,
+                "RightMargin": 68.9903,
+                "TopMargin": 1.1013,
+                "BottomMargin": 406.8987,
+                "Tag": 470,
+                "ActionTag": 671313381,
+                "Size": {
+                  "X": 562.0,
+                  "Y": 70.0
+                },
+                "Name": "table",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/btn_close_press.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/btn_close_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/btn_close_normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 115,
+                "Scale9Height": 121,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 676.34,
+                  "Y": 453.64
+                },
+                "Scale": {
+                  "ScaleX": 0.75,
+                  "ScaleY": 0.75
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9732,
+                  "Y": 0.949
+                },
+                "PreSize": {
+                  "X": 0.2086,
+                  "Y": 0.2992
+                },
+                "LeftMargin": 603.84,
+                "RightMargin": -53.84,
+                "TopMargin": -47.14,
+                "BottomMargin": 382.14,
+                "Tag": 118,
+                "ActionTag": 2142800651,
+                "Size": {
+                  "X": 145.0,
+                  "Y": 143.0
+                },
+                "Name": "close",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 32,
+                "LabelText": "程序员程序员",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 286.0271,
+                  "Y": 310.1791
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 228,
+                  "G": 192,
+                  "B": 112
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4115,
+                  "Y": 0.6489
+                },
+                "PreSize": {
+                  "X": 0.5525,
+                  "Y": 0.069
+                },
+                "LeftMargin": 286.0271,
+                "RightMargin": 24.9729,
+                "TopMargin": 151.3209,
+                "BottomMargin": 293.6791,
+                "Tag": 124,
+                "ActionTag": -435973507,
+                "Size": {
+                  "X": 384.0,
+                  "Y": 33.0
+                },
+                "Name": "name",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 32,
+                "LabelText": "ID:123213521551151",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 288.3321,
+                  "Y": 265.2147
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 228,
+                  "G": 192,
+                  "B": 112
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4149,
+                  "Y": 0.5548
+                },
+                "PreSize": {
+                  "X": 0.4144,
+                  "Y": 0.069
+                },
+                "LeftMargin": 288.3321,
+                "RightMargin": 118.6679,
+                "TopMargin": 196.2853,
+                "BottomMargin": 248.7147,
+                "Tag": 127,
+                "ActionTag": 1331507143,
+                "Size": {
+                  "X": 288.0,
+                  "Y": 33.0
+                },
+                "Name": "ID",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 32,
+                "LabelText": "IP:127.127.127.127",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 288.9528,
+                  "Y": 218.2932
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 228,
+                  "G": 192,
+                  "B": 112
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4158,
+                  "Y": 0.4567
+                },
+                "PreSize": {
+                  "X": 0.4144,
+                  "Y": 0.069
+                },
+                "LeftMargin": 288.9528,
+                "RightMargin": 118.0472,
+                "TopMargin": 243.2068,
+                "BottomMargin": 201.7932,
+                "Tag": 29,
+                "ActionTag": 390858896,
+                "Size": {
+                  "X": 288.0,
+                  "Y": 33.0
+                },
+                "Name": "IP",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "userinfo/Diamonds.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 7,
+                "Scale9OriginY": 6,
+                "Scale9Width": 8,
+                "Scale9Height": 7,
+                "AnchorPoint": {
+                  "ScaleX": 0.5287,
+                  "ScaleY": 0.705
+                },
+                "Position": {
+                  "X": 303.53,
+                  "Y": 174.3836
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4367,
+                  "Y": 0.3648
+                },
+                "PreSize": {
+                  "X": 0.0317,
+                  "Y": 0.0397
+                },
+                "LeftMargin": 291.8986,
+                "RightMargin": 381.1014,
+                "TopMargin": 298.0114,
+                "BottomMargin": 160.9886,
+                "Tag": 148,
+                "Children": [
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 32,
+                    "LabelText": ":999999999",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 25.676,
+                      "Y": 11.1767
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 228,
+                      "G": 192,
+                      "B": 112
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.1671,
+                      "Y": 0.5882
+                    },
+                    "PreSize": {
+                      "X": 7.2727,
+                      "Y": 1.7368
+                    },
+                    "LeftMargin": 25.676,
+                    "RightMargin": -163.676,
+                    "TopMargin": -8.6767,
+                    "BottomMargin": -5.3233,
+                    "Tag": 147,
+                    "ActionTag": -2088408713,
+                    "Size": {
+                      "X": 160.0,
+                      "Y": 33.0
+                    },
+                    "Name": "num",
+                    "ctype": "TextObjectData"
+                  }
+                ],
+                "ActionTag": -305619476,
+                "Size": {
+                  "X": 22.0,
+                  "Y": 19.0
+                },
+                "VisibleForFrame": false,
+                "Name": "coin",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "userinfo/Photo_frame_02.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 35,
+                "Scale9OriginY": 35,
+                "Scale9Width": 58,
+                "Scale9Height": 54,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 181.7551,
+                  "Y": 268.9472
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2615,
+                  "Y": 0.5627
+                },
+                "PreSize": {
+                  "X": 0.1842,
+                  "Y": 0.2594
+                },
+                "LeftMargin": 117.7551,
+                "RightMargin": 449.2449,
+                "TopMargin": 147.0528,
+                "BottomMargin": 206.9472,
+                "Tag": 120,
+                "ActionTag": -1754177170,
+                "Size": {
+                  "X": 128.0,
+                  "Y": 124.0
+                },
+                "Name": "headImg",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "userinfo/Photo_frame_04.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 35,
+                "Scale9OriginY": 35,
+                "Scale9Width": 58,
+                "Scale9Height": 54,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 181.76,
+                  "Y": 268.95
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2615,
+                  "Y": 0.5627
+                },
+                "PreSize": {
+                  "X": 0.1842,
+                  "Y": 0.2594
+                },
+                "LeftMargin": 117.76,
+                "RightMargin": 449.24,
+                "TopMargin": 147.05,
+                "BottomMargin": 206.95,
+                "Tag": 219,
+                "ActionTag": -786577488,
+                "Size": {
+                  "X": 128.0,
+                  "Y": 124.0
+                },
+                "Name": "headImgBg",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "userinfo/Diamonds.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 7,
+                "Scale9OriginY": 6,
+                "Scale9Width": 8,
+                "Scale9Height": 7,
+                "AnchorPoint": {
+                  "ScaleX": 0.5287,
+                  "ScaleY": 0.705
+                },
+                "Position": {
+                  "X": 298.2,
+                  "Y": 174.38
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4291,
+                  "Y": 0.3648
+                },
+                "PreSize": {
+                  "X": 0.0317,
+                  "Y": 0.0397
+                },
+                "LeftMargin": 286.5686,
+                "RightMargin": 386.4314,
+                "TopMargin": 298.015,
+                "BottomMargin": 160.985,
+                "Tag": 694,
+                "Children": [
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 32,
+                    "LabelText": ":999999999",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 25.676,
+                      "Y": 11.1767
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 228,
+                      "G": 192,
+                      "B": 112
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.1671,
+                      "Y": 0.5882
+                    },
+                    "PreSize": {
+                      "X": 9.0909,
+                      "Y": 1.7368
+                    },
+                    "LeftMargin": 25.676,
+                    "RightMargin": -203.676,
+                    "TopMargin": -8.6767,
+                    "BottomMargin": -5.3233,
+                    "Tag": 695,
+                    "ActionTag": -941195299,
+                    "Size": {
+                      "X": 200.0,
+                      "Y": 33.0
+                    },
+                    "Name": "num",
+                    "ctype": "TextObjectData"
+                  }
+                ],
+                "ActionTag": -72019194,
+                "Size": {
+                  "X": 22.0,
+                  "Y": 19.0
+                },
+                "Name": "money",
+                "ctype": "ImageViewObjectData"
+              }
+            ],
+            "ActionTag": 1692587304,
+            "Size": {
+              "X": 695.0,
+              "Y": 478.0
+            },
+            "Name": "back",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "createRoomNew/btn_close_normal.png",
+        "createRoomNew/btn_close_press.png",
+        "set/window-small.png",
+        "userinfo/Diamonds.png",
+        "userinfo/line.png",
+        "userinfo/Photo_frame_02.png",
+        "userinfo/Photo_frame_04.png",
+        "userinfo/t_dissolution_01.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

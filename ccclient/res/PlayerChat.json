@@ -1,0 +1,1435 @@
+{
+  "ID": "d7186d8e-0acc-4a65-a034-ed083ba45db9",
+  "Version": "3.10.0.0",
+  "Name": "PlayerChat",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 134,
+        "Children": [
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 178,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 641.327,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.501,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "LeftMargin": 1.327,
+            "RightMargin": -1.327,
+            "Tag": 170,
+            "ActionTag": 413411161,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Alpha": 204,
+            "Name": "block",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "playerchat/window-big.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 169,
+            "Scale9OriginY": 141,
+            "Scale9Width": 600,
+            "Scale9Height": 360,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 638.336,
+              "Y": 361.728
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.4987,
+              "Y": 0.5024
+            },
+            "PreSize": {
+              "X": 0.7328,
+              "Y": 0.8917
+            },
+            "LeftMargin": 169.336,
+            "RightMargin": 172.6641,
+            "TopMargin": 37.272,
+            "BottomMargin": 40.728,
+            "Tag": 161,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/floor_14.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 217,
+                "Scale9OriginY": 19,
+                "Scale9Width": 238,
+                "Scale9Height": 32,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 376.5918,
+                  "Y": 87.7893
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4015,
+                  "Y": 0.1367
+                },
+                "PreSize": {
+                  "X": 0.7164,
+                  "Y": 0.109
+                },
+                "LeftMargin": 40.5918,
+                "RightMargin": 225.4082,
+                "TopMargin": 519.2107,
+                "BottomMargin": 52.7893,
+                "Tag": 173,
+                "Children": [
+                  {
+                    "FontSize": 30,
+                    "IsCustomSize": true,
+                    "LabelText": "",
+                    "PlaceHolderText": "请输入文字",
+                    "MaxLengthEnable": true,
+                    "MaxLengthText": 20,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 336.3361,
+                      "Y": 25.2829
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 194,
+                      "G": 169,
+                      "B": 139
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5005,
+                      "Y": 0.3612
+                    },
+                    "PreSize": {
+                      "X": 0.939,
+                      "Y": 0.7143
+                    },
+                    "LeftMargin": 20.8361,
+                    "RightMargin": 20.1639,
+                    "TopMargin": 19.7171,
+                    "BottomMargin": 0.2829,
+                    "Tag": 172,
+                    "ActionTag": 1801553502,
+                    "Size": {
+                      "X": 631.0,
+                      "Y": 50.0
+                    },
+                    "Name": "input",
+                    "ctype": "TextFieldObjectData"
+                  }
+                ],
+                "ActionTag": -592319972,
+                "Size": {
+                  "X": 672.0,
+                  "Y": 70.0
+                },
+                "Name": "inputimg",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_send_press.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_send_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_send_normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 140,
+                "Scale9Height": 43,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 806.1065,
+                  "Y": 91.0135
+                },
+                "Scale": {
+                  "ScaleX": 1.05,
+                  "ScaleY": 1.05
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8594,
+                  "Y": 0.1418
+                },
+                "PreSize": {
+                  "X": 0.1812,
+                  "Y": 0.1012
+                },
+                "LeftMargin": 721.1065,
+                "RightMargin": 46.8935,
+                "TopMargin": 518.4865,
+                "BottomMargin": 58.5135,
+                "Tag": 174,
+                "ActionTag": 2046280070,
+                "Size": {
+                  "X": 170.0,
+                  "Y": 65.0
+                },
+                "Name": "send_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "NormalBackFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_expression_press.png",
+                  "Plist": ""
+                },
+                "PressedBackFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_expression_normal.png",
+                  "Plist": ""
+                },
+                "DisableBackFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_expression_press.png",
+                  "Plist": ""
+                },
+                "NodeNormalFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_expression_normal.png",
+                  "Plist": ""
+                },
+                "NodeDisableFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_expression_press.png",
+                  "Plist": ""
+                },
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 379.404,
+                  "Y": 562.8091
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4045,
+                  "Y": 0.8766
+                },
+                "PreSize": {
+                  "X": 0.2313,
+                  "Y": 0.1199
+                },
+                "LeftMargin": 270.904,
+                "RightMargin": 450.096,
+                "TopMargin": 40.6909,
+                "BottomMargin": 524.3091,
+                "Tag": 177,
+                "ActionTag": 447726356,
+                "Size": {
+                  "X": 217.0,
+                  "Y": 77.0
+                },
+                "Name": "emoji",
+                "ctype": "CheckBoxObjectData"
+              },
+              {
+                "CheckedState": true,
+                "NormalBackFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_phrase_press.png",
+                  "Plist": ""
+                },
+                "PressedBackFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_phrase_normal.png",
+                  "Plist": ""
+                },
+                "DisableBackFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_phrase_press.png",
+                  "Plist": ""
+                },
+                "NodeNormalFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_phrase_normal.png",
+                  "Plist": ""
+                },
+                "NodeDisableFileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/btn_phrase_press.png",
+                  "Plist": ""
+                },
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 157.9474,
+                  "Y": 562.1846
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1684,
+                  "Y": 0.8757
+                },
+                "PreSize": {
+                  "X": 0.2313,
+                  "Y": 0.1199
+                },
+                "LeftMargin": 49.4474,
+                "RightMargin": 671.5526,
+                "TopMargin": 41.3154,
+                "BottomMargin": 523.6846,
+                "Tag": 176,
+                "ActionTag": -1792542857,
+                "Size": {
+                  "X": 217.0,
+                  "Y": 77.0
+                },
+                "Name": "changyong",
+                "ctype": "CheckBoxObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/floor_12.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 263,
+                "Scale9OriginY": 113,
+                "Scale9Width": 303,
+                "Scale9Height": 145,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 468.91,
+                  "Y": 337.42
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4999,
+                  "Y": 0.5256
+                },
+                "PreSize": {
+                  "X": 0.8838,
+                  "Y": 0.5779
+                },
+                "LeftMargin": 54.41,
+                "RightMargin": 54.59,
+                "TopMargin": 119.08,
+                "BottomMargin": 151.92,
+                "Tag": 175,
+                "Children": [
+                  {
+                    "DirectionType": "Vertical",
+                    "IsBounceEnabled": true,
+                    "ScrollDirectionType": 0,
+                    "ClipAble": true,
+                    "BackColorAlpha": 0,
+                    "ComboBoxIndex": 1,
+                    "SingleColor": {},
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 150
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": -6.37,
+                      "Y": 25.23
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": -0.0077,
+                      "Y": 0.068
+                    },
+                    "PreSize": {
+                      "X": 0.9976,
+                      "Y": 0.841
+                    },
+                    "LeftMargin": -6.37,
+                    "RightMargin": 8.37,
+                    "TopMargin": 33.77,
+                    "BottomMargin": 25.23,
+                    "Tag": 242,
+                    "ActionTag": 1753859565,
+                    "Size": {
+                      "X": 827.0,
+                      "Y": 312.0
+                    },
+                    "Name": "list",
+                    "ctype": "ListViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/floor_13.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 25,
+                    "Scale9OriginY": 21,
+                    "Scale9Width": 758,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 409.6381,
+                      "Y": 296.5275
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4941,
+                      "Y": 0.7993
+                    },
+                    "PreSize": {
+                      "X": 0.9747,
+                      "Y": 0.1617
+                    },
+                    "LeftMargin": 5.6381,
+                    "RightMargin": 15.3619,
+                    "TopMargin": 44.4725,
+                    "BottomMargin": 266.5275,
+                    "Tag": 243,
+                    "Children": [
+                      {
+                        "FontSize": 30,
+                        "LabelText": "各位，真不好意思我得离开一会。真的不好意思",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 28.496,
+                          "Y": 22.5888
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 88,
+                          "G": 50,
+                          "B": 5
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.0353,
+                          "Y": 0.3765
+                        },
+                        "PreSize": {
+                          "X": 0.7797,
+                          "Y": 0.5
+                        },
+                        "LeftMargin": 28.496,
+                        "RightMargin": 149.504,
+                        "TopMargin": 22.4112,
+                        "BottomMargin": 7.5888,
+                        "Tag": 250,
+                        "ActionTag": 1374689268,
+                        "Size": {
+                          "X": 630.0,
+                          "Y": 30.0
+                        },
+                        "Name": "text",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "playerchat/floor_13.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 266,
+                        "Scale9OriginY": 14,
+                        "Scale9Width": 276,
+                        "Scale9Height": 15,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 404.8606,
+                          "Y": 24.578
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5011,
+                          "Y": 0.4096
+                        },
+                        "PreSize": {
+                          "X": 1.0,
+                          "Y": 0.7167
+                        },
+                        "LeftMargin": 0.8606,
+                        "RightMargin": -0.8606,
+                        "TopMargin": 13.922,
+                        "BottomMargin": 3.078,
+                        "Tag": 203,
+                        "ActionTag": 537271013,
+                        "Size": {
+                          "X": 808.0,
+                          "Y": 43.0
+                        },
+                        "Name": "itemfloor",
+                        "ctype": "ImageViewObjectData"
+                      }
+                    ],
+                    "ActionTag": -1452719448,
+                    "Size": {
+                      "X": 808.0,
+                      "Y": 60.0
+                    },
+                    "Name": "item",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 432771907,
+                "Size": {
+                  "X": 829.0,
+                  "Y": 371.0
+                },
+                "Name": "emoji_bg_chat",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/floor_12.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 263,
+                "Scale9OriginY": 113,
+                "Scale9Width": 303,
+                "Scale9Height": 145,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 468.91,
+                  "Y": 337.42
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4999,
+                  "Y": 0.5256
+                },
+                "PreSize": {
+                  "X": 0.8838,
+                  "Y": 0.5779
+                },
+                "LeftMargin": 54.41,
+                "RightMargin": 54.59,
+                "TopMargin": 119.08,
+                "BottomMargin": 151.92,
+                "Tag": 224,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/happy.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 36,
+                    "Scale9OriginY": 39,
+                    "Scale9Width": 16,
+                    "Scale9Height": 10,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 410.0,
+                      "Y": 300.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4946,
+                      "Y": 0.8086
+                    },
+                    "PreSize": {
+                      "X": 0.1062,
+                      "Y": 0.2372
+                    },
+                    "LeftMargin": 366.0,
+                    "RightMargin": 375.0,
+                    "TopMargin": 27.0,
+                    "BottomMargin": 256.0,
+                    "Tag": 281,
+                    "ActionTag": 1963491844,
+                    "Size": {
+                      "X": 88.0,
+                      "Y": 88.0
+                    },
+                    "Name": "happy",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/angry.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 36,
+                    "Scale9OriginY": 38,
+                    "Scale9Width": 18,
+                    "Scale9Height": 14,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 530.0,
+                      "Y": 300.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.6393,
+                      "Y": 0.8086
+                    },
+                    "PreSize": {
+                      "X": 0.1086,
+                      "Y": 0.2426
+                    },
+                    "LeftMargin": 485.0,
+                    "RightMargin": 254.0,
+                    "TopMargin": 26.0,
+                    "BottomMargin": 255.0,
+                    "Tag": 282,
+                    "ActionTag": -1950321938,
+                    "Size": {
+                      "X": 90.0,
+                      "Y": 90.0
+                    },
+                    "Name": "angry",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/smaile.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 40,
+                    "Scale9OriginY": 39,
+                    "Scale9Width": 8,
+                    "Scale9Height": 10,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 160.0,
+                      "Y": 300.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.193,
+                      "Y": 0.8086
+                    },
+                    "PreSize": {
+                      "X": 0.1062,
+                      "Y": 0.2372
+                    },
+                    "LeftMargin": 116.0,
+                    "RightMargin": 625.0,
+                    "TopMargin": 27.0,
+                    "BottomMargin": 256.0,
+                    "Tag": 283,
+                    "ActionTag": 1188038826,
+                    "Size": {
+                      "X": 88.0,
+                      "Y": 88.0
+                    },
+                    "Name": "smaile",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/han.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 37,
+                    "Scale9OriginY": 42,
+                    "Scale9Width": 14,
+                    "Scale9Height": 4,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 160.0,
+                      "Y": 200.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.193,
+                      "Y": 0.5391
+                    },
+                    "PreSize": {
+                      "X": 0.1062,
+                      "Y": 0.2372
+                    },
+                    "LeftMargin": 116.0,
+                    "RightMargin": 625.0,
+                    "TopMargin": 127.0,
+                    "BottomMargin": 156.0,
+                    "Tag": 284,
+                    "ActionTag": -677407057,
+                    "Size": {
+                      "X": 88.0,
+                      "Y": 88.0
+                    },
+                    "Name": "han",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/zhiya.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 36,
+                    "Scale9OriginY": 39,
+                    "Scale9Width": 16,
+                    "Scale9Height": 10,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 290.0,
+                      "Y": 300.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.3498,
+                      "Y": 0.8086
+                    },
+                    "PreSize": {
+                      "X": 0.1062,
+                      "Y": 0.2372
+                    },
+                    "LeftMargin": 246.0,
+                    "RightMargin": 495.0,
+                    "TopMargin": 27.0,
+                    "BottomMargin": 256.0,
+                    "Tag": 285,
+                    "ActionTag": 1409739287,
+                    "Size": {
+                      "X": 88.0,
+                      "Y": 88.0
+                    },
+                    "Name": "zhiya",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/shihua.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 35,
+                    "Scale9OriginY": 38,
+                    "Scale9Width": 18,
+                    "Scale9Height": 12,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 160.0,
+                      "Y": 90.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.193,
+                      "Y": 0.2426
+                    },
+                    "PreSize": {
+                      "X": 0.1062,
+                      "Y": 0.2372
+                    },
+                    "LeftMargin": 116.0,
+                    "RightMargin": 625.0,
+                    "TopMargin": 237.0,
+                    "BottomMargin": 46.0,
+                    "Tag": 286,
+                    "ActionTag": 1874160478,
+                    "Size": {
+                      "X": 88.0,
+                      "Y": 88.0
+                    },
+                    "Name": "shihua",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/jiong.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 29,
+                    "Scale9OriginY": 44,
+                    "Scale9Width": 30,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 650.0,
+                      "Y": 190.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7841,
+                      "Y": 0.5121
+                    },
+                    "PreSize": {
+                      "X": 0.1062,
+                      "Y": 0.2372
+                    },
+                    "LeftMargin": 606.0,
+                    "RightMargin": 135.0,
+                    "TopMargin": 137.0,
+                    "BottomMargin": 146.0,
+                    "Tag": 287,
+                    "ActionTag": -1413752591,
+                    "Size": {
+                      "X": 88.0,
+                      "Y": 88.0
+                    },
+                    "Name": "jiong",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/sleep.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 43,
+                    "Scale9OriginY": 45,
+                    "Scale9Width": 24,
+                    "Scale9Height": 20,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 540.0,
+                      "Y": 200.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.6514,
+                      "Y": 0.5391
+                    },
+                    "PreSize": {
+                      "X": 0.1327,
+                      "Y": 0.2965
+                    },
+                    "LeftMargin": 485.0,
+                    "RightMargin": 234.0,
+                    "TopMargin": 116.0,
+                    "BottomMargin": 145.0,
+                    "Tag": 288,
+                    "ActionTag": -500014315,
+                    "Size": {
+                      "X": 110.0,
+                      "Y": 110.0
+                    },
+                    "Name": "sleep",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/fennu.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 35,
+                    "Scale9OriginY": 46,
+                    "Scale9Width": 50,
+                    "Scale9Height": 28,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 410.0,
+                      "Y": 205.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4946,
+                      "Y": 0.5526
+                    },
+                    "PreSize": {
+                      "X": 0.1448,
+                      "Y": 0.3235
+                    },
+                    "LeftMargin": 350.0,
+                    "RightMargin": 359.0,
+                    "TopMargin": 106.0,
+                    "BottomMargin": 145.0,
+                    "Tag": 289,
+                    "ActionTag": 1160830327,
+                    "Size": {
+                      "X": 120.0,
+                      "Y": 120.0
+                    },
+                    "Name": "fennu",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/yun.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 42,
+                    "Scale9OriginY": 42,
+                    "Scale9Width": 8,
+                    "Scale9Height": 18,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 290.0,
+                      "Y": 90.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.3498,
+                      "Y": 0.2426
+                    },
+                    "PreSize": {
+                      "X": 0.111,
+                      "Y": 0.2749
+                    },
+                    "LeftMargin": 244.0,
+                    "RightMargin": 493.0,
+                    "TopMargin": 230.0,
+                    "BottomMargin": 39.0,
+                    "Tag": 290,
+                    "ActionTag": 470954650,
+                    "Size": {
+                      "X": 92.0,
+                      "Y": 102.0
+                    },
+                    "Name": "yun",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/lihai.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 29,
+                    "Scale9OriginY": 31,
+                    "Scale9Width": 38,
+                    "Scale9Height": 34,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 530.0,
+                      "Y": 90.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.6393,
+                      "Y": 0.2426
+                    },
+                    "PreSize": {
+                      "X": 0.1158,
+                      "Y": 0.2588
+                    },
+                    "LeftMargin": 482.0,
+                    "RightMargin": 251.0,
+                    "TopMargin": 233.0,
+                    "BottomMargin": 42.0,
+                    "Tag": 291,
+                    "ActionTag": -868759575,
+                    "Size": {
+                      "X": 96.0,
+                      "Y": 96.0
+                    },
+                    "Name": "lihai",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/touxiang.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 53,
+                    "Scale9OriginY": 38,
+                    "Scale9Width": 34,
+                    "Scale9Height": 54,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 625.0,
+                      "Y": 100.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7539,
+                      "Y": 0.2695
+                    },
+                    "PreSize": {
+                      "X": 0.1689,
+                      "Y": 0.3504
+                    },
+                    "LeftMargin": 555.0,
+                    "RightMargin": 134.0,
+                    "TopMargin": 206.0,
+                    "BottomMargin": 35.0,
+                    "Tag": 292,
+                    "ActionTag": -518082050,
+                    "Size": {
+                      "X": 140.0,
+                      "Y": 130.0
+                    },
+                    "Name": "touxiang",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/se.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 29,
+                    "Scale9OriginY": 52,
+                    "Scale9Width": 52,
+                    "Scale9Height": 6,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 410.0,
+                      "Y": 80.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4946,
+                      "Y": 0.2156
+                    },
+                    "PreSize": {
+                      "X": 0.1327,
+                      "Y": 0.2965
+                    },
+                    "LeftMargin": 355.0,
+                    "RightMargin": 364.0,
+                    "TopMargin": 236.0,
+                    "BottomMargin": 25.0,
+                    "Tag": 293,
+                    "ActionTag": 1544354999,
+                    "Size": {
+                      "X": 110.0,
+                      "Y": 110.0
+                    },
+                    "Name": "se",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/huaxiao.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 41,
+                    "Scale9OriginY": 40,
+                    "Scale9Width": 6,
+                    "Scale9Height": 8,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 650.0,
+                      "Y": 300.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7841,
+                      "Y": 0.8086
+                    },
+                    "PreSize": {
+                      "X": 0.1062,
+                      "Y": 0.2372
+                    },
+                    "LeftMargin": 606.0,
+                    "RightMargin": 135.0,
+                    "TopMargin": 27.0,
+                    "BottomMargin": 256.0,
+                    "Tag": 294,
+                    "ActionTag": 332183502,
+                    "Size": {
+                      "X": 88.0,
+                      "Y": 88.0
+                    },
+                    "Name": "huaxiao",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "playerchat/shaoxiang.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 39,
+                    "Scale9OriginY": 41,
+                    "Scale9Width": 10,
+                    "Scale9Height": 25,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 290.0,
+                      "Y": 210.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.3498,
+                      "Y": 0.566
+                    },
+                    "PreSize": {
+                      "X": 0.1062,
+                      "Y": 0.2884
+                    },
+                    "LeftMargin": 246.0,
+                    "RightMargin": 495.0,
+                    "TopMargin": 107.5,
+                    "BottomMargin": 156.5,
+                    "Tag": 295,
+                    "ActionTag": 1766733185,
+                    "Size": {
+                      "X": 88.0,
+                      "Y": 107.0
+                    },
+                    "Name": "shaoxiang",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 793373564,
+                "Size": {
+                  "X": 829.0,
+                  "Y": 371.0
+                },
+                "VisibleForFrame": false,
+                "Name": "emoji_bg",
+                "ctype": "ImageViewObjectData"
+              }
+            ],
+            "ActionTag": -422875379,
+            "Size": {
+              "X": 938.0,
+              "Y": 642.0
+            },
+            "Name": "back",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1280.0,
+          "Y": 720.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "playerchat/angry.png",
+        "playerchat/btn_expression_normal.png",
+        "playerchat/btn_expression_press.png",
+        "playerchat/btn_phrase_normal.png",
+        "playerchat/btn_phrase_press.png",
+        "playerchat/btn_send_normal.png",
+        "playerchat/btn_send_press.png",
+        "playerchat/fennu.png",
+        "playerchat/floor_12.png",
+        "playerchat/floor_13.png",
+        "playerchat/floor_14.png",
+        "playerchat/han.png",
+        "playerchat/happy.png",
+        "playerchat/huaxiao.png",
+        "playerchat/jiong.png",
+        "playerchat/lihai.png",
+        "playerchat/se.png",
+        "playerchat/shaoxiang.png",
+        "playerchat/shihua.png",
+        "playerchat/sleep.png",
+        "playerchat/smaile.png",
+        "playerchat/touxiang.png",
+        "playerchat/window-big.png",
+        "playerchat/yun.png",
+        "playerchat/zhiya.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

@@ -1,0 +1,36 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 1,
+    "showFPS" : false,
+    "frameRate" : 60,
+    "noCache" : false,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "engineDir":"frameworks/cocos2d-html5",
+
+    "modules" : ["cocos2d", "cocostudio"],
+
+    "jsList" : [
+        "src/pomelo/index.js",
+        "src/gamenet.js",
+		"src/Result.js",
+		"src/resource.js",
+		"src/majiang.js",
+        "src/Update.js",
+        "src/Loading.js",
+        "src/Login.js",
+        "src/Home.js",
+        "src/setting.js",
+        "src/create.js",
+        "src/enter.js",
+        "src/Play.js",
+		"src/Replay.js",
+        "src/endOne.js",
+        "src/endAll.js",
+        "src/app.js",
+		"src/PayLayer.js",
+		"src/userInfoLayer.js"
+
+    ]
+}

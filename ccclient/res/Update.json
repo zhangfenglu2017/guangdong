@@ -1,0 +1,269 @@
+{
+  "ID": "250640a5-e928-4b92-8392-8b0aa9aec5c3",
+  "Version": "3.10.0.0",
+  "Name": "Update",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 3,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "update/z_loading.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 422,
+            "Scale9OriginY": 237,
+            "Scale9Width": 436,
+            "Scale9Height": 246,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 7,
+            "ActionTag": 588231318,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "back",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "update/logo_01.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 282,
+            "Scale9OriginY": 92,
+            "Scale9Width": 292,
+            "Scale9Height": 97,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 661.18,
+              "Y": 543.4751
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5165,
+              "Y": 0.7548
+            },
+            "PreSize": {
+              "X": 0.6687,
+              "Y": 0.3903
+            },
+            "LeftMargin": 233.18,
+            "RightMargin": 190.8201,
+            "TopMargin": 36.0249,
+            "BottomMargin": 402.9751,
+            "Tag": 111,
+            "ActionTag": 1430267486,
+            "Size": {
+              "X": 856.0,
+              "Y": 281.0
+            },
+            "Name": "logo",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "update/loading_01.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 63,
+            "Scale9OriginY": 2,
+            "Scale9Width": 429,
+            "Scale9Height": 48,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 639.104,
+              "Y": 161.784
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.4993,
+              "Y": 0.2247
+            },
+            "PreSize": {
+              "X": 0.4336,
+              "Y": 0.0722
+            },
+            "LeftMargin": 361.604,
+            "RightMargin": 363.396,
+            "TopMargin": 532.216,
+            "BottomMargin": 135.784,
+            "Tag": 36,
+            "Children": [
+              {
+                "ProgressInfo": 0,
+                "ImageFileData": {
+                  "Type": "Normal",
+                  "Path": "update/loading_02.png",
+                  "Plist": ""
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 277.944,
+                  "Y": 26.026
+                },
+                "Scale": {
+                  "ScaleX": 1.03,
+                  "ScaleY": 1.23
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5008,
+                  "Y": 0.5005
+                },
+                "PercentWidthEnable": true,
+                "PercentHeightEnable": true,
+                "PercentWidthEnabled": true,
+                "PercentHeightEnabled": true,
+                "PreSize": {
+                  "X": 0.97,
+                  "Y": 0.81
+                },
+                "LeftMargin": 8.769,
+                "RightMargin": 7.881,
+                "TopMargin": 4.914,
+                "BottomMargin": 4.966,
+                "Tag": 76,
+                "ActionTag": -1526766623,
+                "Size": {
+                  "X": 538.35,
+                  "Y": 42.12
+                },
+                "Name": "bar",
+                "ctype": "LoadingBarObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 36,
+                "LabelText": "资源正在加载中...\t\t\t\t\t        ",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "G": 195,
+                  "B": 0
+                },
+                "ShadowOffsetX": 1.0,
+                "ShadowOffsetY": 1.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 123.5905,
+                  "Y": 80.5269
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "G": 244,
+                  "B": 225
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2227,
+                  "Y": 1.5486
+                },
+                "PreSize": {
+                  "X": 0.7568,
+                  "Y": 0.6923
+                },
+                "LeftMargin": 123.5905,
+                "RightMargin": 11.4095,
+                "TopMargin": -46.5269,
+                "BottomMargin": 62.5269,
+                "Tag": 127,
+                "ActionTag": -2142947971,
+                "Size": {
+                  "X": 420.0,
+                  "Y": 36.0
+                },
+                "Name": "loadTitle",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": 1076741238,
+            "Size": {
+              "X": 555.0,
+              "Y": 52.0
+            },
+            "Name": "barbk",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1280.0,
+          "Y": 720.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "update/loading_01.png",
+        "update/loading_02.png",
+        "update/logo_01.png",
+        "update/z_loading.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

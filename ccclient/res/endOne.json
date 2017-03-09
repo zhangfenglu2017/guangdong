@@ -1,0 +1,3836 @@
+{
+  "ID": "ba5d3ff2-2add-48a9-bcc6-f3e59cb9dc66",
+  "Version": "3.10.0.0",
+  "Name": "endOne",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 1208,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/bac-3.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 422,
+            "Scale9OriginY": 237,
+            "Scale9Width": 436,
+            "Scale9Height": 246,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 638.7199,
+              "Y": 360.0001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.499,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "LeftMargin": -1.2801,
+            "RightMargin": 1.28,
+            "TopMargin": -0.0001,
+            "BottomMargin": 0.0001,
+            "Tag": 1595,
+            "ActionTag": 755369775,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "back",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/ot-maima.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 65,
+            "Scale9OriginY": 19,
+            "Scale9Width": 67,
+            "Scale9Height": 20,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 112.2782,
+              "Y": 364.2079
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0877,
+              "Y": 0.5058
+            },
+            "PreSize": {
+              "X": 0.1539,
+              "Y": 0.0806
+            },
+            "LeftMargin": 13.7782,
+            "RightMargin": 1069.2218,
+            "TopMargin": 326.7921,
+            "BottomMargin": 335.2079,
+            "Tag": 115,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/Light.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 33,
+                "Scale9OriginY": 42,
+                "Scale9Width": 34,
+                "Scale9Height": 45,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 52.0004,
+                  "Y": -55.9975
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.264,
+                  "Y": -0.9655
+                },
+                "PreSize": {
+                  "X": 0.5076,
+                  "Y": 2.2241
+                },
+                "LeftMargin": 2.0004,
+                "RightMargin": 94.9996,
+                "TopMargin": 49.4975,
+                "BottomMargin": -120.4975,
+                "Tag": 78,
+                "ActionTag": 1099363115,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 129.0
+                },
+                "Name": "mjtx0",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/Light.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 33,
+                "Scale9OriginY": 42,
+                "Scale9Width": 34,
+                "Scale9Height": 45,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 129.0006,
+                  "Y": -57.998
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6548,
+                  "Y": -1.0
+                },
+                "PreSize": {
+                  "X": 0.5076,
+                  "Y": 2.2241
+                },
+                "LeftMargin": 79.0006,
+                "RightMargin": 17.9994,
+                "TopMargin": 51.498,
+                "BottomMargin": -122.498,
+                "Tag": 79,
+                "ActionTag": 681291460,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 129.0
+                },
+                "Name": "mjtx1",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/Light.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 33,
+                "Scale9OriginY": 42,
+                "Scale9Width": 34,
+                "Scale9Height": 45,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 54.0004,
+                  "Y": -158.9991
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2741,
+                  "Y": -2.7414
+                },
+                "PreSize": {
+                  "X": 0.5076,
+                  "Y": 2.2241
+                },
+                "LeftMargin": 4.0004,
+                "RightMargin": 92.9996,
+                "TopMargin": 152.4991,
+                "BottomMargin": -223.4991,
+                "Tag": 119,
+                "ActionTag": -2084276445,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 129.0
+                },
+                "Name": "mjtx2",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/Light.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 33,
+                "Scale9OriginY": 42,
+                "Scale9Width": 34,
+                "Scale9Height": 45,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 129.0007,
+                  "Y": -160.999
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6548,
+                  "Y": -2.7758
+                },
+                "PreSize": {
+                  "X": 0.5076,
+                  "Y": 2.2241
+                },
+                "LeftMargin": 79.0007,
+                "RightMargin": 17.9993,
+                "TopMargin": 154.499,
+                "BottomMargin": -225.499,
+                "Tag": 80,
+                "ActionTag": -198425050,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 129.0
+                },
+                "Name": "mjtx3",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg2.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 52.0005,
+                  "Y": -55.9995
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.264,
+                  "Y": -0.9655
+                },
+                "PreSize": {
+                  "X": 0.4975,
+                  "Y": 2.6207
+                },
+                "LeftMargin": 3.0005,
+                "RightMargin": 95.9995,
+                "TopMargin": 37.9995,
+                "BottomMargin": -131.9995,
+                "Tag": 114,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 26,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 50.0,
+                      "Y": 65.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5102,
+                      "Y": 0.4276
+                    },
+                    "PreSize": {
+                      "X": 0.7551,
+                      "Y": 0.6579
+                    },
+                    "LeftMargin": 13.0,
+                    "RightMargin": 11.0,
+                    "TopMargin": 37.0,
+                    "BottomMargin": 15.0,
+                    "Tag": 120,
+                    "ActionTag": -1668112558,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -669640222,
+                "Size": {
+                  "X": 98.0,
+                  "Y": 152.0
+                },
+                "Name": "mjbk1",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg2.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 129.0013,
+                  "Y": -57.9997
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6548,
+                  "Y": -1.0
+                },
+                "PreSize": {
+                  "X": 0.4975,
+                  "Y": 2.6207
+                },
+                "LeftMargin": 80.0013,
+                "RightMargin": 18.9987,
+                "TopMargin": 39.9997,
+                "BottomMargin": -133.9997,
+                "Tag": 116,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 26,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 50.0,
+                      "Y": 65.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5102,
+                      "Y": 0.4276
+                    },
+                    "PreSize": {
+                      "X": 0.7551,
+                      "Y": 0.6579
+                    },
+                    "LeftMargin": 13.0,
+                    "RightMargin": 11.0,
+                    "TopMargin": 37.0,
+                    "BottomMargin": 15.0,
+                    "Tag": 121,
+                    "ActionTag": 1431664812,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 1962663597,
+                "Size": {
+                  "X": 98.0,
+                  "Y": 152.0
+                },
+                "Name": "mjbk2",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg2.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 54.0005,
+                  "Y": -158.9991
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2741,
+                  "Y": -2.7414
+                },
+                "PreSize": {
+                  "X": 0.4975,
+                  "Y": 2.6207
+                },
+                "LeftMargin": 5.0005,
+                "RightMargin": 93.9995,
+                "TopMargin": 140.9991,
+                "BottomMargin": -234.9991,
+                "Tag": 117,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 26,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 50.0,
+                      "Y": 65.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5102,
+                      "Y": 0.4276
+                    },
+                    "PreSize": {
+                      "X": 0.7551,
+                      "Y": 0.6579
+                    },
+                    "LeftMargin": 13.0,
+                    "RightMargin": 11.0,
+                    "TopMargin": 37.0,
+                    "BottomMargin": 15.0,
+                    "Tag": 122,
+                    "ActionTag": 1510334181,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 229392980,
+                "Size": {
+                  "X": 98.0,
+                  "Y": 152.0
+                },
+                "Name": "mjbk3",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg2.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 129.0013,
+                  "Y": -160.9992
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6548,
+                  "Y": -2.7758
+                },
+                "PreSize": {
+                  "X": 0.4975,
+                  "Y": 2.6207
+                },
+                "LeftMargin": 80.0013,
+                "RightMargin": 18.9987,
+                "TopMargin": 142.9992,
+                "BottomMargin": -236.9992,
+                "Tag": 118,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 26,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 53.1104,
+                      "Y": 61.8897
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5419,
+                      "Y": 0.4072
+                    },
+                    "PreSize": {
+                      "X": 0.7551,
+                      "Y": 0.6579
+                    },
+                    "LeftMargin": 16.1104,
+                    "RightMargin": 7.8896,
+                    "TopMargin": 40.1103,
+                    "BottomMargin": 11.8897,
+                    "Tag": 123,
+                    "ActionTag": 639560994,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 395365063,
+                "Size": {
+                  "X": 98.0,
+                  "Y": 152.0
+                },
+                "Name": "mjbk4",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/mazz.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 52.0005,
+                  "Y": -55.9975
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.264,
+                  "Y": -0.9655
+                },
+                "PreSize": {
+                  "X": 0.533,
+                  "Y": 2.7241
+                },
+                "LeftMargin": -0.4995,
+                "RightMargin": 92.4995,
+                "TopMargin": 34.9975,
+                "BottomMargin": -134.9975,
+                "Tag": 279,
+                "ActionTag": 1334905655,
+                "Size": {
+                  "X": 105.0,
+                  "Y": 158.0
+                },
+                "Name": "mjzz1",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/mazz.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 129.0002,
+                  "Y": -57.998
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6548,
+                  "Y": -1.0
+                },
+                "PreSize": {
+                  "X": 0.533,
+                  "Y": 2.7241
+                },
+                "LeftMargin": 76.5002,
+                "RightMargin": 15.4998,
+                "TopMargin": 36.998,
+                "BottomMargin": -136.998,
+                "Tag": 280,
+                "ActionTag": 1383544573,
+                "Size": {
+                  "X": 105.0,
+                  "Y": 158.0
+                },
+                "Name": "mjzz2",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/mazz.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 54.0005,
+                  "Y": -158.9989
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2741,
+                  "Y": -2.7414
+                },
+                "PreSize": {
+                  "X": 0.533,
+                  "Y": 2.7241
+                },
+                "LeftMargin": 1.5005,
+                "RightMargin": 90.4995,
+                "TopMargin": 137.9989,
+                "BottomMargin": -237.9989,
+                "Tag": 281,
+                "ActionTag": 1733189702,
+                "Size": {
+                  "X": 105.0,
+                  "Y": 158.0
+                },
+                "Name": "mjzz3",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/mazz.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 129.0002,
+                  "Y": -160.9988
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6548,
+                  "Y": -2.7758
+                },
+                "PreSize": {
+                  "X": 0.533,
+                  "Y": 2.7241
+                },
+                "LeftMargin": 76.5002,
+                "RightMargin": 15.4998,
+                "TopMargin": 139.9988,
+                "BottomMargin": -239.9988,
+                "Tag": 282,
+                "ActionTag": 283270882,
+                "Size": {
+                  "X": 105.0,
+                  "Y": 158.0
+                },
+                "Name": "mjzz4",
+                "ctype": "ImageViewObjectData"
+              }
+            ],
+            "ActionTag": -2129940526,
+            "Size": {
+              "X": 197.0,
+              "Y": 58.0
+            },
+            "Name": "mjtips",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/t_huangzhuang.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 40,
+            "Scale9OriginY": 20,
+            "Scale9Width": 134,
+            "Scale9Height": 169,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 94.9999,
+              "Y": 607.9996
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0742,
+              "Y": 0.8444
+            },
+            "PreSize": {
+              "X": 0.1672,
+              "Y": 0.2903
+            },
+            "LeftMargin": -12.0001,
+            "RightMargin": 1078.0001,
+            "TopMargin": 7.5004,
+            "BottomMargin": 503.4996,
+            "Tag": 532,
+            "ActionTag": -986400089,
+            "Size": {
+              "X": 214.0,
+              "Y": 209.0
+            },
+            "Name": "huang",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/t_ping.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 40,
+            "Scale9OriginY": 20,
+            "Scale9Width": 134,
+            "Scale9Height": 169,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 94.9999,
+              "Y": 607.9996
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0742,
+              "Y": 0.8444
+            },
+            "PreSize": {
+              "X": 0.1672,
+              "Y": 0.2903
+            },
+            "LeftMargin": -12.0001,
+            "RightMargin": 1078.0001,
+            "TopMargin": 7.5004,
+            "BottomMargin": 503.4996,
+            "Tag": 193,
+            "ActionTag": 1363961579,
+            "Size": {
+              "X": 214.0,
+              "Y": 209.0
+            },
+            "Name": "pingju",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/t-win.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 83,
+            "Scale9OriginY": 20,
+            "Scale9Width": 48,
+            "Scale9Height": 169,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 94.9999,
+              "Y": 607.9996
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0742,
+              "Y": 0.8444
+            },
+            "PreSize": {
+              "X": 0.1672,
+              "Y": 0.2903
+            },
+            "LeftMargin": -12.0001,
+            "RightMargin": 1078.0001,
+            "TopMargin": 7.5004,
+            "BottomMargin": 503.4996,
+            "Tag": 32,
+            "ActionTag": 1532775348,
+            "Size": {
+              "X": 214.0,
+              "Y": 209.0
+            },
+            "Name": "wintitle",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/t_lost.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 83,
+            "Scale9OriginY": 20,
+            "Scale9Width": 48,
+            "Scale9Height": 169,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 94.9999,
+              "Y": 607.9996
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0742,
+              "Y": 0.8444
+            },
+            "PreSize": {
+              "X": 0.1672,
+              "Y": 0.2903
+            },
+            "LeftMargin": -12.0001,
+            "RightMargin": 1078.0001,
+            "TopMargin": 7.5004,
+            "BottomMargin": 503.4996,
+            "Tag": 33,
+            "ActionTag": -1220198537,
+            "Size": {
+              "X": 214.0,
+              "Y": 209.0
+            },
+            "Name": "losetitle",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/btn_share_press.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/btn_share_normal.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 140,
+            "Scale9Height": 43,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 507.9997,
+              "Y": 40.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3969,
+              "Y": 0.0556
+            },
+            "PreSize": {
+              "X": 0.1328,
+              "Y": 0.0903
+            },
+            "LeftMargin": 422.9997,
+            "RightMargin": 687.0003,
+            "TopMargin": 647.5,
+            "BottomMargin": 7.5,
+            "Tag": 1596,
+            "ActionTag": -600402216,
+            "Size": {
+              "X": 170.0,
+              "Y": 65.0
+            },
+            "Name": "share",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/btn_get_set_press.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/btn_get_set_normal.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 140,
+            "Scale9Height": 43,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 937.9996,
+              "Y": 40.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7328,
+              "Y": 0.0556
+            },
+            "PreSize": {
+              "X": 0.1328,
+              "Y": 0.0903
+            },
+            "LeftMargin": 852.9996,
+            "RightMargin": 257.0004,
+            "TopMargin": 647.5,
+            "BottomMargin": 7.5,
+            "Tag": 1597,
+            "ActionTag": 294184368,
+            "Size": {
+              "X": 170.0,
+              "Y": 65.0
+            },
+            "Name": "ready",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 7.0,
+              "Y": 4.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0055,
+              "Y": 0.0056
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 7.0,
+            "RightMargin": 1273.0,
+            "TopMargin": 716.0,
+            "BottomMargin": 4.0,
+            "Tag": 585,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/floor_11.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 348,
+                "Scale9OriginY": 45,
+                "Scale9Width": 360,
+                "Scale9Height": 49,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 730.0,
+                  "Y": 570.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 202.0,
+                "RightMargin": -1258.0,
+                "TopMargin": -639.5,
+                "BottomMargin": 500.5,
+                "Tag": 528,
+                "ActionTag": -608870531,
+                "Size": {
+                  "X": 1056.0,
+                  "Y": 139.0
+                },
+                "Name": "backbar",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "+100",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1060.0,
+                  "Y": 600.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 225,
+                  "G": 0,
+                  "B": 16
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 1030.0,
+                "RightMargin": -1090.0,
+                "TopMargin": -615.0,
+                "BottomMargin": 585.0,
+                "Tag": 1607,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/t-hu.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 47,
+                    "Scale9OriginY": 38,
+                    "Scale9Width": 162,
+                    "Scale9Height": 177,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 117.0,
+                      "Y": 14.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.4,
+                      "ScaleY": 0.4
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.95,
+                      "Y": 0.4667
+                    },
+                    "PreSize": {
+                      "X": 4.2667,
+                      "Y": 8.4333
+                    },
+                    "LeftMargin": -11.0,
+                    "RightMargin": -185.0,
+                    "TopMargin": -110.5,
+                    "BottomMargin": -112.5,
+                    "Tag": 203,
+                    "ActionTag": 1121187918,
+                    "Size": {
+                      "X": 256.0,
+                      "Y": 253.0
+                    },
+                    "Name": "hu",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -1168802329,
+                "Size": {
+                  "X": 60.0,
+                  "Y": 30.0
+                },
+                "Name": "winNum",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/Photo_frame_01.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 300.0,
+                  "Y": 590.0
+                },
+                "Scale": {
+                  "ScaleX": 0.8,
+                  "ScaleY": 0.8
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 236.0,
+                "RightMargin": -364.0,
+                "TopMargin": -652.0,
+                "BottomMargin": 528.0,
+                "Tag": 1598,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/Photo_frame_02.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 42,
+                    "Scale9OriginY": 40,
+                    "Scale9Width": 44,
+                    "Scale9Height": 44,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 65.0,
+                      "Y": 60.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5078,
+                      "Y": 0.4839
+                    },
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 1.0
+                    },
+                    "LeftMargin": 1.0,
+                    "RightMargin": -1.0,
+                    "TopMargin": 2.0,
+                    "BottomMargin": -2.0,
+                    "Tag": 805,
+                    "ActionTag": -1414129923,
+                    "Size": {
+                      "X": 128.0,
+                      "Y": 124.0
+                    },
+                    "Name": "headImg",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/icon_zhuang.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 33.01,
+                      "Y": 20.2267
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2579,
+                      "Y": 0.1631
+                    },
+                    "PreSize": {
+                      "X": 0.2734,
+                      "Y": 0.2823
+                    },
+                    "LeftMargin": 15.51,
+                    "RightMargin": 77.49,
+                    "TopMargin": 86.2733,
+                    "BottomMargin": 2.7267,
+                    "Tag": 172,
+                    "ActionTag": 107729654,
+                    "Size": {
+                      "X": 35.0,
+                      "Y": 35.0
+                    },
+                    "Name": "zhuang",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "姓名姓名",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 30.0,
+                      "Y": -20.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2344,
+                      "Y": -0.1613
+                    },
+                    "PreSize": {
+                      "X": 0.9375,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 30.0,
+                    "RightMargin": -22.0,
+                    "TopMargin": 132.0,
+                    "BottomMargin": -32.0,
+                    "Tag": 1599,
+                    "ActionTag": 2052780396,
+                    "Size": {
+                      "X": 120.0,
+                      "Y": 24.0
+                    },
+                    "Name": "name",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_bg1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 18,
+                    "Scale9Width": 76,
+                    "Scale9Height": 116,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 205.0,
+                      "Y": 24.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.6016,
+                      "Y": 0.1935
+                    },
+                    "PreSize": {
+                      "X": 0.7656,
+                      "Y": 1.2258
+                    },
+                    "LeftMargin": 156.0,
+                    "RightMargin": -126.0,
+                    "TopMargin": 24.0,
+                    "BottomMargin": -52.0,
+                    "Tag": 1604,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MaJiangNew/mj_91.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 32,
+                        "Scale9OriginY": 50,
+                        "Scale9Width": 10,
+                        "Scale9Height": 1,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 50.0,
+                          "Y": 85.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5102,
+                          "Y": 0.5592
+                        },
+                        "PreSize": {
+                          "X": 0.7551,
+                          "Y": 0.6579
+                        },
+                        "LeftMargin": 13.0,
+                        "RightMargin": 11.0,
+                        "TopMargin": 17.0,
+                        "BottomMargin": 35.0,
+                        "Tag": 1116,
+                        "ActionTag": 437047848,
+                        "Size": {
+                          "X": 74.0,
+                          "Y": 100.0
+                        },
+                        "Name": "num",
+                        "ctype": "ImageViewObjectData"
+                      }
+                    ],
+                    "ActionTag": 1475567104,
+                    "Size": {
+                      "X": 98.0,
+                      "Y": 152.0
+                    },
+                    "Name": "up",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FontSize": 24,
+                    "LabelText": "清一色清一色清一色",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 550.0,
+                      "Y": 95.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 4.2969,
+                      "Y": 0.7661
+                    },
+                    "PreSize": {
+                      "X": 1.6875,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 442.0,
+                    "RightMargin": -530.0,
+                    "TopMargin": 17.0,
+                    "BottomMargin": 83.0,
+                    "Tag": 1605,
+                    "ActionTag": 2026398694,
+                    "Size": {
+                      "X": 216.0,
+                      "Y": 24.0
+                    },
+                    "Name": "cardType",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FontSize": 24,
+                    "LabelText": "4番4番",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.4,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 750.0,
+                      "Y": 95.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 5.8594,
+                      "Y": 0.7661
+                    },
+                    "PreSize": {
+                      "X": 0.5625,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 721.2,
+                    "RightMargin": -665.2,
+                    "TopMargin": 17.0,
+                    "BottomMargin": 83.0,
+                    "Tag": 1606,
+                    "ActionTag": 1172032648,
+                    "Size": {
+                      "X": 72.0,
+                      "Y": 24.0
+                    },
+                    "Name": "winType",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_bg4.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 18,
+                    "Scale9OriginY": 27,
+                    "Scale9Width": 62,
+                    "Scale9Height": 98,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 295.0,
+                      "Y": 24.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 2.3047,
+                      "Y": 0.1935
+                    },
+                    "PreSize": {
+                      "X": 0.7656,
+                      "Y": 1.2258
+                    },
+                    "LeftMargin": 246.0,
+                    "RightMargin": -216.0,
+                    "TopMargin": 24.0,
+                    "BottomMargin": -52.0,
+                    "Tag": 195,
+                    "ActionTag": 1983946655,
+                    "Size": {
+                      "X": 98.0,
+                      "Y": 152.0
+                    },
+                    "Name": "down",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_bg1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 18,
+                    "Scale9OriginY": 27,
+                    "Scale9Width": 62,
+                    "Scale9Height": 98,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 385.0,
+                      "Y": 24.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 3.0078,
+                      "Y": 0.1935
+                    },
+                    "PreSize": {
+                      "X": 0.7656,
+                      "Y": 1.2258
+                    },
+                    "LeftMargin": 336.0,
+                    "RightMargin": -306.0,
+                    "TopMargin": 24.0,
+                    "BottomMargin": -52.0,
+                    "Tag": 199,
+                    "ActionTag": -1241378070,
+                    "Size": {
+                      "X": 98.0,
+                      "Y": 152.0
+                    },
+                    "Name": "stand",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -618578942,
+                "Size": {
+                  "X": 128.0,
+                  "Y": 124.0
+                },
+                "Name": "head",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -1640050335,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "head0",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 7.0,
+              "Y": 4.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0055,
+              "Y": 0.0056
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 7.0,
+            "RightMargin": 1273.0,
+            "TopMargin": 716.0,
+            "BottomMargin": 4.0,
+            "Tag": 586,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/floor_11.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 348,
+                "Scale9OriginY": 45,
+                "Scale9Width": 360,
+                "Scale9Height": 49,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 730.0,
+                  "Y": 429.9992
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 202.0,
+                "RightMargin": -1258.0,
+                "TopMargin": -499.4992,
+                "BottomMargin": 360.4992,
+                "Tag": 529,
+                "ActionTag": 1843330191,
+                "Size": {
+                  "X": 1056.0,
+                  "Y": 139.0
+                },
+                "Name": "backbar",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "+100",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1058.8153,
+                  "Y": 450.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 225,
+                  "G": 0,
+                  "B": 16
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 1028.8153,
+                "RightMargin": -1088.8153,
+                "TopMargin": -465.0,
+                "BottomMargin": 435.0,
+                "Tag": 587,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/t-hu.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 47,
+                    "Scale9OriginY": 38,
+                    "Scale9Width": 162,
+                    "Scale9Height": 177,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 117.0,
+                      "Y": 14.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.4,
+                      "ScaleY": 0.4
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.95,
+                      "Y": 0.4667
+                    },
+                    "PreSize": {
+                      "X": 4.2667,
+                      "Y": 8.4333
+                    },
+                    "LeftMargin": -11.0,
+                    "RightMargin": -185.0,
+                    "TopMargin": -110.5,
+                    "BottomMargin": -112.5,
+                    "Tag": 207,
+                    "ActionTag": 1584850004,
+                    "Size": {
+                      "X": 256.0,
+                      "Y": 253.0
+                    },
+                    "Name": "hu",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -1228956247,
+                "Size": {
+                  "X": 60.0,
+                  "Y": 30.0
+                },
+                "Name": "winNum",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/Photo_frame_01.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 300.0,
+                  "Y": 450.0
+                },
+                "Scale": {
+                  "ScaleX": 0.8,
+                  "ScaleY": 0.8
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 236.0,
+                "RightMargin": -364.0,
+                "TopMargin": -512.0,
+                "BottomMargin": 388.0,
+                "Tag": 588,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/Photo_frame_02.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 42,
+                    "Scale9OriginY": 40,
+                    "Scale9Width": 44,
+                    "Scale9Height": 44,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 65.0,
+                      "Y": 60.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5078,
+                      "Y": 0.4839
+                    },
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 1.0
+                    },
+                    "LeftMargin": 1.0,
+                    "RightMargin": -1.0,
+                    "TopMargin": 2.0,
+                    "BottomMargin": -2.0,
+                    "Tag": 806,
+                    "ActionTag": -911384629,
+                    "Size": {
+                      "X": 128.0,
+                      "Y": 124.0
+                    },
+                    "Name": "headImg",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/icon_zhuang.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 33.0099,
+                      "Y": 25.1711
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2579,
+                      "Y": 0.203
+                    },
+                    "PreSize": {
+                      "X": 0.2734,
+                      "Y": 0.2823
+                    },
+                    "LeftMargin": 15.5099,
+                    "RightMargin": 77.4901,
+                    "TopMargin": 81.3289,
+                    "BottomMargin": 7.6711,
+                    "Tag": 171,
+                    "ActionTag": 1701773708,
+                    "Size": {
+                      "X": 35.0,
+                      "Y": 35.0
+                    },
+                    "Name": "zhuang",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "姓名",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 30.0,
+                      "Y": -20.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2344,
+                      "Y": -0.1613
+                    },
+                    "PreSize": {
+                      "X": 0.9375,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 30.0,
+                    "RightMargin": -22.0,
+                    "TopMargin": 132.0,
+                    "BottomMargin": -32.0,
+                    "Tag": 589,
+                    "ActionTag": 1244931692,
+                    "Size": {
+                      "X": 120.0,
+                      "Y": 24.0
+                    },
+                    "Name": "name",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_bg1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 18,
+                    "Scale9Width": 76,
+                    "Scale9Height": 116,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 205.0,
+                      "Y": 24.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.6016,
+                      "Y": 0.1935
+                    },
+                    "PreSize": {
+                      "X": 0.7656,
+                      "Y": 1.2258
+                    },
+                    "LeftMargin": 156.0,
+                    "RightMargin": -126.0,
+                    "TopMargin": 24.0,
+                    "BottomMargin": -52.0,
+                    "Tag": 590,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MaJiangNew/mj_91.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 32,
+                        "Scale9OriginY": 50,
+                        "Scale9Width": 10,
+                        "Scale9Height": 1,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 50.0,
+                          "Y": 85.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5102,
+                          "Y": 0.5592
+                        },
+                        "PreSize": {
+                          "X": 0.7551,
+                          "Y": 0.6579
+                        },
+                        "LeftMargin": 13.0,
+                        "RightMargin": 11.0,
+                        "TopMargin": 17.0,
+                        "BottomMargin": 35.0,
+                        "Tag": 1114,
+                        "ActionTag": -884627909,
+                        "Size": {
+                          "X": 74.0,
+                          "Y": 100.0
+                        },
+                        "Name": "num",
+                        "ctype": "ImageViewObjectData"
+                      }
+                    ],
+                    "ActionTag": -1742457030,
+                    "Size": {
+                      "X": 98.0,
+                      "Y": 152.0
+                    },
+                    "Name": "up",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FontSize": 24,
+                    "LabelText": "清一色清一色清一色",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 550.0,
+                      "Y": 95.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 4.2969,
+                      "Y": 0.7661
+                    },
+                    "PreSize": {
+                      "X": 1.6875,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 442.0,
+                    "RightMargin": -530.0,
+                    "TopMargin": 17.0,
+                    "BottomMargin": 83.0,
+                    "Tag": 591,
+                    "ActionTag": -105439568,
+                    "Size": {
+                      "X": 216.0,
+                      "Y": 24.0
+                    },
+                    "Name": "cardType",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FontSize": 24,
+                    "LabelText": "4番4番",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.4,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 750.0,
+                      "Y": 95.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 5.8594,
+                      "Y": 0.7661
+                    },
+                    "PreSize": {
+                      "X": 0.5625,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 721.2,
+                    "RightMargin": -665.2,
+                    "TopMargin": 17.0,
+                    "BottomMargin": 83.0,
+                    "Tag": 592,
+                    "ActionTag": 881574935,
+                    "Size": {
+                      "X": 72.0,
+                      "Y": 24.0
+                    },
+                    "Name": "winType",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_bg4.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 18,
+                    "Scale9OriginY": 27,
+                    "Scale9Width": 62,
+                    "Scale9Height": 98,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 295.0,
+                      "Y": 24.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 2.3047,
+                      "Y": 0.1935
+                    },
+                    "PreSize": {
+                      "X": 0.7656,
+                      "Y": 1.2258
+                    },
+                    "LeftMargin": 246.0,
+                    "RightMargin": -216.0,
+                    "TopMargin": 24.0,
+                    "BottomMargin": -52.0,
+                    "Tag": 196,
+                    "ActionTag": -298987342,
+                    "Size": {
+                      "X": 98.0,
+                      "Y": 152.0
+                    },
+                    "Name": "down",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_bg1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 18,
+                    "Scale9OriginY": 27,
+                    "Scale9Width": 62,
+                    "Scale9Height": 98,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 385.0,
+                      "Y": 24.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 3.0078,
+                      "Y": 0.1935
+                    },
+                    "PreSize": {
+                      "X": 0.7656,
+                      "Y": 1.2258
+                    },
+                    "LeftMargin": 336.0,
+                    "RightMargin": -306.0,
+                    "TopMargin": 24.0,
+                    "BottomMargin": -52.0,
+                    "Tag": 200,
+                    "ActionTag": -1694160475,
+                    "Size": {
+                      "X": 98.0,
+                      "Y": 152.0
+                    },
+                    "Name": "stand",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 1386251049,
+                "Size": {
+                  "X": 128.0,
+                  "Y": 124.0
+                },
+                "Name": "head",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1581135791,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "head1",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 7.0,
+              "Y": 4.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0055,
+              "Y": 0.0056
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 7.0,
+            "RightMargin": 1273.0,
+            "TopMargin": 716.0,
+            "BottomMargin": 4.0,
+            "Tag": 593,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/floor_11.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 348,
+                "Scale9OriginY": 45,
+                "Scale9Width": 360,
+                "Scale9Height": 49,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 730.0,
+                  "Y": 290.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 202.0,
+                "RightMargin": -1258.0,
+                "TopMargin": -359.5,
+                "BottomMargin": 220.5,
+                "Tag": 530,
+                "ActionTag": 508552018,
+                "Size": {
+                  "X": 1056.0,
+                  "Y": 139.0
+                },
+                "Name": "backbar",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "+100",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1060.0,
+                  "Y": 300.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 225,
+                  "G": 0,
+                  "B": 16
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 1030.0,
+                "RightMargin": -1090.0,
+                "TopMargin": -315.0,
+                "BottomMargin": 285.0,
+                "Tag": 594,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/t-hu.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 47,
+                    "Scale9OriginY": 38,
+                    "Scale9Width": 162,
+                    "Scale9Height": 177,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 117.0,
+                      "Y": 14.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.4,
+                      "ScaleY": 0.4
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.95,
+                      "Y": 0.4667
+                    },
+                    "PreSize": {
+                      "X": 4.2667,
+                      "Y": 8.4333
+                    },
+                    "LeftMargin": -11.0,
+                    "RightMargin": -185.0,
+                    "TopMargin": -110.5,
+                    "BottomMargin": -112.5,
+                    "Tag": 208,
+                    "ActionTag": 613880730,
+                    "Size": {
+                      "X": 256.0,
+                      "Y": 253.0
+                    },
+                    "Name": "hu",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -2038878610,
+                "Size": {
+                  "X": 60.0,
+                  "Y": 30.0
+                },
+                "Name": "winNum",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/Photo_frame_01.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 300.0,
+                  "Y": 310.0
+                },
+                "Scale": {
+                  "ScaleX": 0.8,
+                  "ScaleY": 0.8
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 236.0,
+                "RightMargin": -364.0,
+                "TopMargin": -372.0,
+                "BottomMargin": 248.0,
+                "Tag": 595,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/Photo_frame_02.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 42,
+                    "Scale9OriginY": 40,
+                    "Scale9Width": 44,
+                    "Scale9Height": 44,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 65.0,
+                      "Y": 60.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5078,
+                      "Y": 0.4839
+                    },
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 1.0
+                    },
+                    "LeftMargin": 1.0,
+                    "RightMargin": -1.0,
+                    "TopMargin": 2.0,
+                    "BottomMargin": -2.0,
+                    "Tag": 807,
+                    "ActionTag": 954592373,
+                    "Size": {
+                      "X": 128.0,
+                      "Y": 124.0
+                    },
+                    "Name": "headImg",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/icon_zhuang.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 33.0098,
+                      "Y": 23.4484
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2579,
+                      "Y": 0.1891
+                    },
+                    "PreSize": {
+                      "X": 0.2734,
+                      "Y": 0.2823
+                    },
+                    "LeftMargin": 15.5098,
+                    "RightMargin": 77.4902,
+                    "TopMargin": 83.0516,
+                    "BottomMargin": 5.9484,
+                    "Tag": 170,
+                    "ActionTag": 392838381,
+                    "Size": {
+                      "X": 35.0,
+                      "Y": 35.0
+                    },
+                    "Name": "zhuang",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "姓名",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 30.0,
+                      "Y": -20.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2344,
+                      "Y": -0.1613
+                    },
+                    "PreSize": {
+                      "X": 0.9375,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 30.0,
+                    "RightMargin": -22.0,
+                    "TopMargin": 132.0,
+                    "BottomMargin": -32.0,
+                    "Tag": 596,
+                    "ActionTag": 2003753486,
+                    "Size": {
+                      "X": 120.0,
+                      "Y": 24.0
+                    },
+                    "Name": "name",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_bg1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 18,
+                    "Scale9Width": 76,
+                    "Scale9Height": 116,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 205.0,
+                      "Y": 24.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.6016,
+                      "Y": 0.1935
+                    },
+                    "PreSize": {
+                      "X": 0.7656,
+                      "Y": 1.2258
+                    },
+                    "LeftMargin": 156.0,
+                    "RightMargin": -126.0,
+                    "TopMargin": 24.0,
+                    "BottomMargin": -52.0,
+                    "Tag": 597,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MaJiangNew/mj_91.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 32,
+                        "Scale9OriginY": 50,
+                        "Scale9Width": 10,
+                        "Scale9Height": 1,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 50.0,
+                          "Y": 85.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5102,
+                          "Y": 0.5592
+                        },
+                        "PreSize": {
+                          "X": 0.7551,
+                          "Y": 0.6579
+                        },
+                        "LeftMargin": 13.0,
+                        "RightMargin": 11.0,
+                        "TopMargin": 17.0,
+                        "BottomMargin": 35.0,
+                        "Tag": 1113,
+                        "ActionTag": 1521056574,
+                        "Size": {
+                          "X": 74.0,
+                          "Y": 100.0
+                        },
+                        "Name": "num",
+                        "ctype": "ImageViewObjectData"
+                      }
+                    ],
+                    "ActionTag": -47469633,
+                    "Size": {
+                      "X": 98.0,
+                      "Y": 152.0
+                    },
+                    "Name": "up",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FontSize": 24,
+                    "LabelText": "清一色清一色清一色",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 550.0,
+                      "Y": 95.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 4.2969,
+                      "Y": 0.7661
+                    },
+                    "PreSize": {
+                      "X": 1.6875,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 442.0,
+                    "RightMargin": -530.0,
+                    "TopMargin": 17.0,
+                    "BottomMargin": 83.0,
+                    "Tag": 598,
+                    "ActionTag": -1368140419,
+                    "Size": {
+                      "X": 216.0,
+                      "Y": 24.0
+                    },
+                    "Name": "cardType",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FontSize": 24,
+                    "LabelText": "4番4番",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.4,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 750.0,
+                      "Y": 95.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 5.8594,
+                      "Y": 0.7661
+                    },
+                    "PreSize": {
+                      "X": 0.5625,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 721.2,
+                    "RightMargin": -665.2,
+                    "TopMargin": 17.0,
+                    "BottomMargin": 83.0,
+                    "Tag": 599,
+                    "ActionTag": -606057301,
+                    "Size": {
+                      "X": 72.0,
+                      "Y": 24.0
+                    },
+                    "Name": "winType",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_bg4.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 18,
+                    "Scale9OriginY": 27,
+                    "Scale9Width": 62,
+                    "Scale9Height": 98,
+                    "AnchorPoint": {
+                      "ScaleX": 0.4885,
+                      "ScaleY": 0.486
+                    },
+                    "Position": {
+                      "X": 295.0,
+                      "Y": 24.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 2.3047,
+                      "Y": 0.1935
+                    },
+                    "PreSize": {
+                      "X": 0.7656,
+                      "Y": 1.2258
+                    },
+                    "LeftMargin": 247.127,
+                    "RightMargin": -217.127,
+                    "TopMargin": 21.872,
+                    "BottomMargin": -49.872,
+                    "Tag": 197,
+                    "ActionTag": 347995951,
+                    "Size": {
+                      "X": 98.0,
+                      "Y": 152.0
+                    },
+                    "Name": "down",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_bg1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 18,
+                    "Scale9OriginY": 27,
+                    "Scale9Width": 62,
+                    "Scale9Height": 98,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 385.0,
+                      "Y": 24.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 3.0078,
+                      "Y": 0.1935
+                    },
+                    "PreSize": {
+                      "X": 0.7656,
+                      "Y": 1.2258
+                    },
+                    "LeftMargin": 336.0,
+                    "RightMargin": -306.0,
+                    "TopMargin": 24.0,
+                    "BottomMargin": -52.0,
+                    "Tag": 201,
+                    "ActionTag": -1848178920,
+                    "Size": {
+                      "X": 98.0,
+                      "Y": 152.0
+                    },
+                    "Name": "stand",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -1884823687,
+                "Size": {
+                  "X": 128.0,
+                  "Y": 124.0
+                },
+                "Name": "head",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -845467139,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "head2",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 7.0,
+              "Y": 4.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0055,
+              "Y": 0.0056
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 7.0,
+            "RightMargin": 1273.0,
+            "TopMargin": 716.0,
+            "BottomMargin": 4.0,
+            "Tag": 600,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/floor_11.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 348,
+                "Scale9OriginY": 45,
+                "Scale9Width": 360,
+                "Scale9Height": 49,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 730.0,
+                  "Y": 150.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 202.0,
+                "RightMargin": -1258.0,
+                "TopMargin": -219.5,
+                "BottomMargin": 80.5,
+                "Tag": 531,
+                "ActionTag": 1817010055,
+                "Size": {
+                  "X": 1056.0,
+                  "Y": 139.0
+                },
+                "Name": "backbar",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "+100",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1060.0,
+                  "Y": 150.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 225,
+                  "G": 0,
+                  "B": 16
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 1030.0,
+                "RightMargin": -1090.0,
+                "TopMargin": -165.0,
+                "BottomMargin": 135.0,
+                "Tag": 601,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/t-hu.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 47,
+                    "Scale9OriginY": 38,
+                    "Scale9Width": 162,
+                    "Scale9Height": 177,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 117.0,
+                      "Y": 14.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.4,
+                      "ScaleY": 0.4
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.95,
+                      "Y": 0.4667
+                    },
+                    "PreSize": {
+                      "X": 4.2667,
+                      "Y": 8.4333
+                    },
+                    "LeftMargin": -11.0,
+                    "RightMargin": -185.0,
+                    "TopMargin": -110.5,
+                    "BottomMargin": -112.5,
+                    "Tag": 209,
+                    "ActionTag": -1965314691,
+                    "Size": {
+                      "X": 256.0,
+                      "Y": 253.0
+                    },
+                    "Name": "hu",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 1781665316,
+                "Size": {
+                  "X": 60.0,
+                  "Y": 30.0
+                },
+                "Name": "winNum",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/Photo_frame_01.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 300.0,
+                  "Y": 170.0
+                },
+                "Scale": {
+                  "ScaleX": 0.8,
+                  "ScaleY": 0.8
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 236.0,
+                "RightMargin": -364.0,
+                "TopMargin": -232.0,
+                "BottomMargin": 108.0,
+                "Tag": 602,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/Photo_frame_02.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 42,
+                    "Scale9OriginY": 40,
+                    "Scale9Width": 44,
+                    "Scale9Height": 44,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 65.0,
+                      "Y": 60.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5078,
+                      "Y": 0.4839
+                    },
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 1.0
+                    },
+                    "LeftMargin": 1.0,
+                    "RightMargin": -1.0,
+                    "TopMargin": 2.0,
+                    "BottomMargin": -2.0,
+                    "Tag": 808,
+                    "ActionTag": -550582456,
+                    "Size": {
+                      "X": 128.0,
+                      "Y": 124.0
+                    },
+                    "Name": "headImg",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/icon_zhuang.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 21.8984,
+                      "Y": 22.8393
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.1711,
+                      "Y": 0.1842
+                    },
+                    "PreSize": {
+                      "X": 0.2734,
+                      "Y": 0.2823
+                    },
+                    "LeftMargin": 4.3984,
+                    "RightMargin": 88.6016,
+                    "TopMargin": 83.6607,
+                    "BottomMargin": 5.3393,
+                    "Tag": 1600,
+                    "ActionTag": -269314619,
+                    "Size": {
+                      "X": 35.0,
+                      "Y": 35.0
+                    },
+                    "Name": "zhuang",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "姓名",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5057
+                    },
+                    "Position": {
+                      "X": 30.0,
+                      "Y": -20.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2344,
+                      "Y": -0.1613
+                    },
+                    "PreSize": {
+                      "X": 0.9375,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 30.0,
+                    "RightMargin": -22.0,
+                    "TopMargin": 132.1368,
+                    "BottomMargin": -32.1368,
+                    "Tag": 603,
+                    "ActionTag": -1732873602,
+                    "Size": {
+                      "X": 120.0,
+                      "Y": 24.0
+                    },
+                    "Name": "name",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_bg1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 18,
+                    "Scale9Width": 76,
+                    "Scale9Height": 116,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 205.0,
+                      "Y": 24.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.6016,
+                      "Y": 0.1935
+                    },
+                    "PreSize": {
+                      "X": 0.7656,
+                      "Y": 1.2258
+                    },
+                    "LeftMargin": 156.0,
+                    "RightMargin": -126.0,
+                    "TopMargin": 24.0,
+                    "BottomMargin": -52.0,
+                    "Tag": 604,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MaJiangNew/mj_91.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 32,
+                        "Scale9OriginY": 50,
+                        "Scale9Width": 10,
+                        "Scale9Height": 1,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 50.0,
+                          "Y": 85.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5102,
+                          "Y": 0.5592
+                        },
+                        "PreSize": {
+                          "X": 0.7551,
+                          "Y": 0.6579
+                        },
+                        "LeftMargin": 13.0,
+                        "RightMargin": 11.0,
+                        "TopMargin": 17.0,
+                        "BottomMargin": 35.0,
+                        "Tag": 1105,
+                        "ActionTag": -1096268435,
+                        "Size": {
+                          "X": 74.0,
+                          "Y": 100.0
+                        },
+                        "Name": "num",
+                        "ctype": "ImageViewObjectData"
+                      }
+                    ],
+                    "ActionTag": 841615867,
+                    "Size": {
+                      "X": 98.0,
+                      "Y": 152.0
+                    },
+                    "Name": "up",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FontSize": 24,
+                    "LabelText": "清一色清一色清一色",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 550.0,
+                      "Y": 95.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 4.2969,
+                      "Y": 0.7661
+                    },
+                    "PreSize": {
+                      "X": 1.6875,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 442.0,
+                    "RightMargin": -530.0,
+                    "TopMargin": 17.0,
+                    "BottomMargin": 83.0,
+                    "Tag": 605,
+                    "ActionTag": -1079109547,
+                    "Size": {
+                      "X": 216.0,
+                      "Y": 24.0
+                    },
+                    "Name": "cardType",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FontSize": 24,
+                    "LabelText": "4番4番",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.4,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 750.0,
+                      "Y": 95.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 5.8594,
+                      "Y": 0.7661
+                    },
+                    "PreSize": {
+                      "X": 0.5625,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 721.2,
+                    "RightMargin": -665.2,
+                    "TopMargin": 17.0,
+                    "BottomMargin": 83.0,
+                    "Tag": 606,
+                    "ActionTag": 822435224,
+                    "Size": {
+                      "X": 72.0,
+                      "Y": 24.0
+                    },
+                    "Name": "winType",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_bg4.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 18,
+                    "Scale9OriginY": 27,
+                    "Scale9Width": 62,
+                    "Scale9Height": 98,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 295.0,
+                      "Y": 24.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 2.3047,
+                      "Y": 0.1935
+                    },
+                    "PreSize": {
+                      "X": 0.7656,
+                      "Y": 1.2258
+                    },
+                    "LeftMargin": 246.0,
+                    "RightMargin": -216.0,
+                    "TopMargin": 24.0,
+                    "BottomMargin": -52.0,
+                    "Tag": 198,
+                    "ActionTag": 756446126,
+                    "Size": {
+                      "X": 98.0,
+                      "Y": 152.0
+                    },
+                    "Name": "down",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_bg1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 18,
+                    "Scale9OriginY": 27,
+                    "Scale9Width": 62,
+                    "Scale9Height": 98,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 385.0,
+                      "Y": 24.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 3.0078,
+                      "Y": 0.1935
+                    },
+                    "PreSize": {
+                      "X": 0.7656,
+                      "Y": 1.2258
+                    },
+                    "LeftMargin": 336.0,
+                    "RightMargin": -306.0,
+                    "TopMargin": 24.0,
+                    "BottomMargin": -52.0,
+                    "Tag": 202,
+                    "ActionTag": 2048992563,
+                    "Size": {
+                      "X": 98.0,
+                      "Y": 152.0
+                    },
+                    "Name": "stand",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -864628463,
+                "Size": {
+                  "X": 128.0,
+                  "Y": 124.0
+                },
+                "Name": "head",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -167718535,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "head3",
+            "ctype": "SingleNodeObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1280.0,
+          "Y": 720.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "Default/Button_Disable.png",
+        "gameEndNew/bac-3.png",
+        "gameEndNew/btn_get_set_normal.png",
+        "gameEndNew/btn_get_set_press.png",
+        "gameEndNew/btn_share_normal.png",
+        "gameEndNew/btn_share_press.png",
+        "gameEndNew/floor_11.png",
+        "gameEndNew/Light.png",
+        "gameEndNew/mazz.png",
+        "gameEndNew/ot-maima.png",
+        "gameEndNew/Photo_frame_01.png",
+        "gameEndNew/Photo_frame_02.png",
+        "gameEndNew/t_huangzhuang.png",
+        "gameEndNew/t_lost.png",
+        "gameEndNew/t_ping.png",
+        "gameEndNew/t-hu.png",
+        "gameEndNew/t-win.png",
+        "MaJiangNew/mj_91.png",
+        "MaJiangNew/mj_bg1.png",
+        "MaJiangNew/mj_bg2.png",
+        "MaJiangNew/mj_bg4.png",
+        "play-yli/icon_zhuang.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}
