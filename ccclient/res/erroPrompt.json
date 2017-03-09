@@ -1,0 +1,362 @@
+{
+  "ID": "14faece2-a2b4-4395-ac50-bd5eb803c07c",
+  "Version": "3.10.0.0",
+  "Name": "erroPrompt",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 134,
+        "Children": [
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 153,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 170,
+            "ActionTag": 413411161,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "block",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "set/window-small.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 169,
+            "Scale9OriginY": 90,
+            "Scale9Width": 357,
+            "Scale9Height": 298,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.543,
+              "Y": 0.6639
+            },
+            "LeftMargin": 292.5,
+            "RightMargin": 292.5,
+            "TopMargin": 121.0,
+            "BottomMargin": 121.0,
+            "Tag": 161,
+            "Children": [
+              {
+                "ClipAble": false,
+                "BackColorAlpha": 0,
+                "SingleColor": {},
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "TouchEnable": true,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 98.6439,
+                  "Y": 142.3721
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 228,
+                  "G": 192,
+                  "B": 112
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1419,
+                  "Y": 0.2978
+                },
+                "PreSize": {
+                  "X": 0.6791,
+                  "Y": 0.3347
+                },
+                "LeftMargin": 98.6439,
+                "RightMargin": 124.3561,
+                "TopMargin": 175.6279,
+                "BottomMargin": 142.3721,
+                "Tag": 15,
+                "ActionTag": -1797133559,
+                "Size": {
+                  "X": 472.0,
+                  "Y": 160.0
+                },
+                "Name": "inner",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 30,
+                "LabelText": "是京东卡手机看卡死了肯定就是坑登记卡实际上大家加速快乐",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 350.0,
+                  "Y": 220.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 228,
+                  "G": 192,
+                  "B": 112
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5036,
+                  "Y": 0.4603
+                },
+                "PreSize": {
+                  "X": 0.6763,
+                  "Y": 0.3138
+                },
+                "LeftMargin": 115.0,
+                "RightMargin": 110.0,
+                "TopMargin": 183.0,
+                "BottomMargin": 145.0,
+                "Tag": 16,
+                "ActionTag": 446273134,
+                "Size": {
+                  "X": 470.0,
+                  "Y": 150.0
+                },
+                "Name": "content",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "dissolveRoomNew/t_dissolution_06.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 99,
+                "Scale9OriginY": 20,
+                "Scale9Width": 364,
+                "Scale9Height": 30,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 350.0,
+                  "Y": 440.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5036,
+                  "Y": 0.9205
+                },
+                "PreSize": {
+                  "X": 0.8086,
+                  "Y": 0.1464
+                },
+                "LeftMargin": 69.0,
+                "RightMargin": 64.0,
+                "TopMargin": 3.0,
+                "BottomMargin": 405.0,
+                "Tag": 15,
+                "ActionTag": -1896440957,
+                "Size": {
+                  "X": 562.0,
+                  "Y": 70.0
+                },
+                "Name": "title",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 18,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "dissolveRoomNew/btn_confirm_press.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "dissolveRoomNew/btn_confirm_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "dissolveRoomNew/btn_confirm_normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 140,
+                "Scale9Height": 43,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 350.0,
+                  "Y": 72.0
+                },
+                "Scale": {
+                  "ScaleX": 1.05,
+                  "ScaleY": 1.05
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5036,
+                  "Y": 0.1506
+                },
+                "PreSize": {
+                  "X": 0.2446,
+                  "Y": 0.136
+                },
+                "LeftMargin": 265.0,
+                "RightMargin": 260.0,
+                "TopMargin": 373.5,
+                "BottomMargin": 39.5,
+                "Tag": 174,
+                "ActionTag": 2046280070,
+                "Size": {
+                  "X": 170.0,
+                  "Y": 65.0
+                },
+                "Name": "close",
+                "ctype": "ButtonObjectData"
+              }
+            ],
+            "ActionTag": -422875379,
+            "Size": {
+              "X": 695.0,
+              "Y": 478.0
+            },
+            "Name": "back",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1280.0,
+          "Y": 720.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "dissolveRoomNew/btn_confirm_normal.png",
+        "dissolveRoomNew/btn_confirm_press.png",
+        "dissolveRoomNew/t_dissolution_06.png",
+        "set/window-small.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

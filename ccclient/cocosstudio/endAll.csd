@@ -163,7 +163,7 @@
                 <FileData Type="Normal" Path="gameEndNew/t_big_win.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="hunum" ActionTag="-2028214615" Tag="42" IconVisible="False" LeftMargin="419.9997" RightMargin="-512.9996" TopMargin="30.7500" BottomMargin="59.2500" FontSize="34" LabelText="胡牌次数：888" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="hunum" ActionTag="-2028214615" Tag="42" IconVisible="False" LeftMargin="419.9997" RightMargin="-512.9997" TopMargin="30.7500" BottomMargin="59.2500" FontSize="34" LabelText="胡牌次数：888" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="221.0000" Y="34.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="419.9997" Y="76.2500" />
@@ -185,7 +185,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gang1num" ActionTag="257844322" Tag="44" IconVisible="False" LeftMargin="419.9997" RightMargin="-512.9996" TopMargin="70.7500" BottomMargin="19.2500" FontSize="34" LabelText="暗杠次数：888" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="gang1num" ActionTag="257844322" Tag="44" IconVisible="False" LeftMargin="419.9997" RightMargin="-512.9997" TopMargin="70.7500" BottomMargin="19.2500" FontSize="34" LabelText="暗杠次数：888" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="221.0000" Y="34.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="419.9997" Y="36.2500" />
@@ -431,7 +431,7 @@
                 <Position X="420.0000" Y="76.2499" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="3.2812" Y="0.6149" />
+                <PrePosition X="3.2813" Y="0.6149" />
                 <PreSize X="1.7266" Y="0.2742" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -453,7 +453,7 @@
                 <Position X="420.0000" Y="36.2500" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="3.2812" Y="0.2923" />
+                <PrePosition X="3.2813" Y="0.2923" />
                 <PreSize X="1.7266" Y="0.2742" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -556,7 +556,7 @@
                 <FileData Type="Normal" Path="gameEndNew/t_big_win.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="hunum" ActionTag="-572230648" Tag="54" IconVisible="False" LeftMargin="420.0003" RightMargin="-513.0002" TopMargin="30.7505" BottomMargin="59.2495" FontSize="34" LabelText="胡牌次数：888" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="hunum" ActionTag="-572230648" Tag="54" IconVisible="False" LeftMargin="420.0003" RightMargin="-513.0003" TopMargin="30.7505" BottomMargin="59.2495" FontSize="34" LabelText="胡牌次数：888" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="221.0000" Y="34.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="420.0003" Y="76.2495" />
@@ -578,7 +578,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gang1num" ActionTag="-2137017939" Tag="56" IconVisible="False" LeftMargin="420.0003" RightMargin="-513.0002" TopMargin="70.7499" BottomMargin="19.2501" FontSize="34" LabelText="暗杠次数：888" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="gang1num" ActionTag="-2137017939" Tag="56" IconVisible="False" LeftMargin="420.0003" RightMargin="-513.0003" TopMargin="70.7499" BottomMargin="19.2501" FontSize="34" LabelText="暗杠次数：888" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="221.0000" Y="34.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="420.0003" Y="36.2501" />

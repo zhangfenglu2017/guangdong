@@ -16,13 +16,13 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="gameEndNew/bac-3.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="close" ActionTag="685128733" Tag="54" IconVisible="False" LeftMargin="1171.7898" RightMargin="38.2102" TopMargin="-2.7475" BottomMargin="650.7475" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="close" ActionTag="685128733" Tag="54" IconVisible="False" LeftMargin="1165.0000" RightMargin="45.0000" TopMargin="4.0000" BottomMargin="644.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="70.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1206.7898" Y="686.7475" />
+            <Position X="1200.0000" Y="680.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9428" Y="0.9538" />
+            <PrePosition X="0.9375" Y="0.9444" />
             <PreSize X="0.0547" Y="0.1000" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Normal" Path="createRoomNew/guanbi-press.png" Plist="" />

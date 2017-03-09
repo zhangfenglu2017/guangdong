@@ -1,0 +1,485 @@
+{
+  "ID": "14faece2-a2b4-4395-ac50-bd5eb803c07c",
+  "Version": "3.10.0.0",
+  "Name": "activationCodeLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 134,
+        "Children": [
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 153,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 639.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4992,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "LeftMargin": -1.0,
+            "RightMargin": 1.0,
+            "Tag": 170,
+            "ActionTag": 413411161,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "block",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "set/window-small.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 169,
+            "Scale9OriginY": 90,
+            "Scale9Width": 357,
+            "Scale9Height": 298,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.543,
+              "Y": 0.6639
+            },
+            "LeftMargin": 292.5,
+            "RightMargin": 292.5,
+            "TopMargin": 121.0,
+            "BottomMargin": 121.0,
+            "Tag": 161,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "activity/invite/invite_btn_xinshoulibao.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 99,
+                "Scale9OriginY": 20,
+                "Scale9Width": 364,
+                "Scale9Height": 30,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 350.0,
+                  "Y": 440.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5036,
+                  "Y": 0.9205
+                },
+                "PreSize": {
+                  "X": 0.8086,
+                  "Y": 0.1464
+                },
+                "LeftMargin": 69.0,
+                "RightMargin": 64.0,
+                "TopMargin": 3.0,
+                "BottomMargin": 405.0,
+                "Tag": 15,
+                "ActionTag": -1896440957,
+                "Size": {
+                  "X": 562.0,
+                  "Y": 70.0
+                },
+                "Name": "title",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "activity/invite/invite_zuanshishu.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 38,
+                "Scale9OriginY": 10,
+                "Scale9Width": 460,
+                "Scale9Height": 18,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 349.6233,
+                  "Y": 253.4908
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5031,
+                  "Y": 0.5303
+                },
+                "PreSize": {
+                  "X": 0.5036,
+                  "Y": 0.1213
+                },
+                "LeftMargin": 174.6233,
+                "RightMargin": 170.3767,
+                "TopMargin": 195.5092,
+                "BottomMargin": 224.4908,
+                "Tag": 173,
+                "Children": [
+                  {
+                    "FontSize": 40,
+                    "IsCustomSize": true,
+                    "LabelText": "",
+                    "PlaceHolderText": "请输入邀请码",
+                    "MaxLengthEnable": true,
+                    "MaxLengthText": 10,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 173.1424,
+                      "Y": 28.581
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 228,
+                      "G": 192,
+                      "B": 112
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4947,
+                      "Y": 0.4928
+                    },
+                    "PreSize": {
+                      "X": 0.8571,
+                      "Y": 0.6897
+                    },
+                    "LeftMargin": 23.1424,
+                    "RightMargin": 26.8576,
+                    "TopMargin": 9.419,
+                    "BottomMargin": 8.581,
+                    "Tag": 172,
+                    "ActionTag": 1801553502,
+                    "Size": {
+                      "X": 300.0,
+                      "Y": 40.0
+                    },
+                    "Name": "input",
+                    "ctype": "TextFieldObjectData"
+                  }
+                ],
+                "ActionTag": -592319972,
+                "Size": {
+                  "X": 350.0,
+                  "Y": 58.0
+                },
+                "Alpha": 159,
+                "Name": "inputimg",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 18,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "activity/invite/invite_btn_lingqu_h.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "activity/invite/invite_btn_lingqu.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 140,
+                "Scale9Height": 43,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 350.0002,
+                  "Y": 122.0001
+                },
+                "Scale": {
+                  "ScaleX": 1.05,
+                  "ScaleY": 1.05
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5036,
+                  "Y": 0.2552
+                },
+                "PreSize": {
+                  "X": 0.2446,
+                  "Y": 0.136
+                },
+                "LeftMargin": 265.0002,
+                "RightMargin": 259.9998,
+                "TopMargin": 323.4999,
+                "BottomMargin": 89.5001,
+                "Tag": 174,
+                "ActionTag": 2046280070,
+                "Size": {
+                  "X": 170.0,
+                  "Y": 65.0
+                },
+                "Name": "send_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 30,
+                "LabelText": "新手礼包包含99钻石",
+                "HorizontalAlignmentType": "HT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 349.9999,
+                  "Y": 60.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 228,
+                  "G": 192,
+                  "B": 112
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5036,
+                  "Y": 0.1255
+                },
+                "PreSize": {
+                  "X": 0.7194,
+                  "Y": 0.0628
+                },
+                "LeftMargin": 99.9999,
+                "RightMargin": 95.0001,
+                "TopMargin": 403.0,
+                "BottomMargin": 45.0,
+                "Tag": 16,
+                "ActionTag": 968140696,
+                "Size": {
+                  "X": 500.0,
+                  "Y": 30.0
+                },
+                "Name": "tips",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/btn_close_press.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/btn_close_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/btn_close_normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 115,
+                "Scale9Height": 121,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 675.0,
+                  "Y": 465.0
+                },
+                "Scale": {
+                  "ScaleX": 0.75,
+                  "ScaleY": 0.75
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9712,
+                  "Y": 0.9728
+                },
+                "PreSize": {
+                  "X": 0.2086,
+                  "Y": 0.2992
+                },
+                "LeftMargin": 602.5,
+                "RightMargin": -52.5,
+                "TopMargin": -58.5,
+                "BottomMargin": 393.5,
+                "Tag": 681,
+                "ActionTag": 375650805,
+                "Size": {
+                  "X": 145.0,
+                  "Y": 143.0
+                },
+                "Name": "close",
+                "ctype": "ButtonObjectData"
+              }
+            ],
+            "ActionTag": -422875379,
+            "Size": {
+              "X": 695.0,
+              "Y": 478.0
+            },
+            "Name": "back",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1280.0,
+          "Y": 720.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "activity/invite/invite_btn_lingqu.png",
+        "activity/invite/invite_btn_lingqu_h.png",
+        "activity/invite/invite_btn_xinshoulibao.png",
+        "activity/invite/invite_zuanshishu.png",
+        "createRoomNew/btn_close_normal.png",
+        "createRoomNew/btn_close_press.png",
+        "Default/Button_Disable.png",
+        "set/window-small.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

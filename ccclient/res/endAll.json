@@ -802,7 +802,7 @@
                   "Y": 0.2742
                 },
                 "LeftMargin": 419.9997,
-                "RightMargin": -512.9996,
+                "RightMargin": -512.9997,
                 "TopMargin": 30.75,
                 "BottomMargin": 59.25,
                 "Tag": 42,
@@ -906,7 +906,7 @@
                   "Y": 0.2742
                 },
                 "LeftMargin": 419.9997,
-                "RightMargin": -512.9996,
+                "RightMargin": -512.9997,
                 "TopMargin": 70.75,
                 "BottomMargin": 19.25,
                 "Tag": 44,
@@ -1980,7 +1980,7 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 3.2812,
+                  "X": 3.2813,
                   "Y": 0.6149
                 },
                 "PreSize": {
@@ -2084,7 +2084,7 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 3.2812,
+                  "X": 3.2813,
                   "Y": 0.2923
                 },
                 "PreSize": {
@@ -2581,7 +2581,7 @@
                   "Y": 0.2742
                 },
                 "LeftMargin": 420.0003,
-                "RightMargin": -513.0002,
+                "RightMargin": -513.0003,
                 "TopMargin": 30.7505,
                 "BottomMargin": 59.2495,
                 "Tag": 54,
@@ -2685,7 +2685,7 @@
                   "Y": 0.2742
                 },
                 "LeftMargin": 420.0003,
-                "RightMargin": -513.0002,
+                "RightMargin": -513.0003,
                 "TopMargin": 70.7499,
                 "BottomMargin": 19.2501,
                 "Tag": 56,

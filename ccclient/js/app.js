@@ -1,4 +1,12 @@
 
+// time1, time2 的差值(单位秒),使用的是格林威治标准
+function getTimeOff ( time1, time2, maxOff ) {
+    var d1  = Date.parse(time1)/ 1000;
+    var d2  = Date.parse(time2)/ 1000;
+    var off = d2 - d1;
+    return off ;
+}
+
 function stopEffect(id) {
     cc.audioEngine.stopEffect(id);
 }
@@ -85,8 +93,11 @@ function loadDefaultHead(node, posx, posy, scale, zindex, name, tag) {
 
 //裁剪头像
 function ClipHead(node, url, posx, posy, scale, zindex, name, tag) {
-    cc.loader.loadImg(url, {isCrossOrigin: true}, function (err, texture) {
-        if (!err && texture) {
+    
+    cc.loader.loadImg(url, {isCrossOrigin: true}, function (err, texture) 
+    {
+        if (!err && texture) 
+        {
             var stencil = new cc.Sprite("res/play-yli/Photo_frame_05.png");   //可以是精灵，也可以DrawNode画的各种图形
 
             //1.创建裁剪节点
@@ -151,7 +162,8 @@ jsclient.showPlayerInfo = function (info) {
     jsclient.Scene.addChild(new UserInfoLayer());
 };
 
-jsclient.restartGame = function () {
+jsclient.restartGame = function ()
+{
     if (jsclient.gamenet)
         jsclient.gamenet.disconnect();
 
@@ -159,6 +171,7 @@ jsclient.restartGame = function () {
 };
 
 jsclient.changeIdLayer = function () {
+    
     if (!ChangeIDLayer)
         return;
 
@@ -168,6 +181,7 @@ jsclient.changeIdLayer = function () {
 };
 
 jsclient.exportDataLayer = function () {
+    
     if (!ExportDataLayer)
         return;
 
@@ -177,6 +191,7 @@ jsclient.exportDataLayer = function () {
 };
 
 jsclient.leaveGame = function () {
+    
     jsclient.block();
     jsclient.gamenet.request("pkplayer.handler.LeaveGame", {}, function (rtn) {
         cc.log("leaveGame------callback,result:" + rtn.result);
@@ -358,6 +373,69 @@ jsclient.delRoom = function (yes)
         jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "DelRoom", yes: yes});
 };
 
+//获取邀请奖励
+jsclient.getInviteReward = function (rewIndex) {
+
+    jsclient.block();
+
+    var data = jsclient.getInviteData();
+    cc.log("获取邀请奖励： " + JSON.stringify(data));
+
+    jsclient.gamenet.request("pkplayer.handler.doActivity", {actId : data._id, actType : data.actType, rewIndex : rewIndex}, function (rtn)
+    {
+        jsclient.unblock();
+        if (rtn.result == 0) {
+
+            sendEvent("actData", {index:rewIndex, num:rtn.reward[1]});
+
+        }
+    });
+};
+
+//获取新手奖励
+jsclient.getNewPlayerReward = function ( data ) {
+
+    jsclient.block();
+    jsclient.gamenet.request("pkplayer.handler.doActivity", data, function (rtn) {
+
+        jsclient.unblock();
+        if (rtn.result == 0) {
+            var diamondNum  = rtn.reward;
+            jsclient.Scene.addChild( new AwardPrompt( diamondNum[1] ) );
+            if( newPlayerAwardBtn  ){
+                newPlayerAwardBtn.removeFromParent( true );
+            }
+            if( jsclient.activationCodeLayer ){
+                jsclient.activationCodeLayer.removeFromParent( true );
+            }
+        }else{
+            jsclient.Scene.addChild( new ErroPrompt("领取失败") );
+        }
+    });
+};
+
+//获取邀请数据
+jsclient.getInviteData = function () {
+
+    for(var index in jsclient.actionCfg)
+    {
+        var data = jsclient.actionCfg[index];
+        if(data.actType == ActivityType.invite)
+            return data
+    }
+};
+
+//获取礼包数据
+jsclient.getGiftData = function () {
+
+    for(var index in jsclient.actionCfg)
+    {
+        var data = jsclient.actionCfg[index];
+        if(data.actType == ActivityType.newPlayer)
+            return data
+    }
+};
+
 //地理位置
 jsclient.geographicalPos = function (latitude, longitude) {
     if (jsclient.gamenet)
@@ -416,8 +494,13 @@ jsclient.netCallBack =
     }],
 
     updateInfo: [0, function (info) {
+
         var pinfo = jsclient.data.pinfo;
-        for (var pty in info) pinfo[pty] = info[pty];
+        for (var pty in info)
+            pinfo[pty] = info[pty];
+
+        sendEvent("UpdateGiftFlag");
+        // sendEvent("updateArrowRotate");
     }],
 
     moveHead: [1, function () {
@@ -1013,8 +1096,10 @@ jsclient.native =
 
 
 var JSScene = cc.Scene.extend({
-    jsBind: {
-        _event: {
+    jsBind:
+    {
+        _event:
+        {
             openWeb: function (type) {
                 // jsclient.uiPara = para;
 
@@ -1142,12 +1227,15 @@ var JSScene = cc.Scene.extend({
 
         },
 
-        _keyboard: {
-            onKeyPressed: function (key, event) {
+        _keyboard:
+        {
+            onKeyPressed: function (key, event)
+            {
 
             },
 
-            onKeyReleased: function (key, event) {
+            onKeyReleased: function (key, event)
+            {
                 if (cc.sys.OS_WINDOWS != cc.sys.os)
                     return;
 
@@ -1155,7 +1243,7 @@ var JSScene = cc.Scene.extend({
                     jsclient.restartGame();
                 if (key == 73 && jsclient.homeui)
                     jsclient.changeIdLayer();
-                if (key == 67 && jsclient.homeui)
+                if (key == 86 && jsclient.homeui)
                     jsclient.exportDataLayer();
 
                 cc.log("Key with keycode %d released", key);
@@ -1164,9 +1252,11 @@ var JSScene = cc.Scene.extend({
 
     },
 
-    startQueueNetMsg: function () {
+    startQueueNetMsg: function ()
+    {
         var sce = this;
-        if (jsclient.NetMsgQueue.length > 0) {
+        if (jsclient.NetMsgQueue.length > 0)
+        {
             var ed = jsclient.NetMsgQueue[0];
             var dh = jsclient.netCallBack[ed[0]];
 
@@ -1174,14 +1264,16 @@ var JSScene = cc.Scene.extend({
             var handleData = dh[1](ed[1]);
             sce.runAction(cc.sequence(
                 cc.delayTime(0.0001),
-                cc.callFunc(function () {
+                cc.callFunc(function ()
+                {
                     cc.log("uievent " + ed[0]);
                     if (handleData != -1)
                         sendEvent(ed[0], ed[1]);
                     cc.log("netdelay " + dh[0]);
                 }),
                 cc.delayTime(dh[0]),
-                cc.callFunc(function () {
+                cc.callFunc(function ()
+                {
                     jsclient.NetMsgQueue.splice(0, 1);
                     if (jsclient.NetMsgQueue.length > 0)
                         sce.startQueueNetMsg();

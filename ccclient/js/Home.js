@@ -94,6 +94,22 @@ function initMJTexture(node)
 	}
 }
 
+
+var newPlayerAwardBtn = null, newPlayerAwardLeftTime = 99999 ;
+//新手礼包倒计时，只需设置newPlayerAwardLeftTime即可
+function newPlayerAwardTimer (dt)
+{
+    --newPlayerAwardLeftTime;
+    if( newPlayerAwardLeftTime <= 0 )
+    {
+        newPlayerAwardBtn.setVisible(false);
+        newPlayerAwardBtn.unscheduleAllCallbacks();
+        newPlayerAwardBtn.removeFromParent(true);
+        newPlayerAwardBtn = null;
+        newPlayerAwardLeftTime  = 0;
+    }
+}
+
 var updateTishi;
 var HomeLayer=cc.Layer.extend(
 {
@@ -108,7 +124,7 @@ var HomeLayer=cc.Layer.extend(
 					jsclient.homeui.removeFromParent(true);
 					delete jsclient.homeui;
 				}
-			}
+			},
 		},
 
         back:
@@ -267,6 +283,37 @@ var HomeLayer=cc.Layer.extend(
             }
         },
 
+        xslb:
+        {
+            _layout: [[0.09, 0.13], [0.95, 0.78], [0, 0]],
+            _run : function()
+            {
+                newPlayerAwardBtn = this;
+                var isGot = jsclient.data.pinfo.recommendBy ? false : true;
+                //时间没到24小时，没领过
+                var isVisible = isGot && newPlayerAwardLeftTime > 0;
+                if( isVisible )
+                    this.schedule( newPlayerAwardTimer, 1.00 );
+
+                this.setVisible(isVisible);
+            },
+            _click: function ()
+            {
+                jsclient.activationCodeLayer = new ActivationCodeLayer();
+                jsclient.Scene.addChild( jsclient.activationCodeLayer );
+            },
+
+            _event:
+            {
+                UpdateGiftFlag: function ()
+                {
+                    var isGot = jsclient.data.pinfo.recommendBy ? false : true;
+                    //时间没到24小时，没领过
+                    var isVisible = isGot && newPlayerAwardLeftTime > 0;
+                    this.setVisible(isVisible);
+                }
+            }
+        },
 
 		setting:
         {
@@ -328,6 +375,20 @@ var HomeLayer=cc.Layer.extend(
 				jsclient.Scene.addChild(new PayLayer());
 			}
 		},
+
+        activity:
+        {
+            _layout:[[0.125,0.125],[0.45,0.07],[0,0]],
+            _click:function()
+            {
+                jsclient.Scene.addChild(new Activity());
+            }
+        },
+
+        noticeImg:
+        {
+            _layout:[[0.5,0.5],[0.5,0.17],[0,0]],
+        },
 
 		joinRoom:
         {
@@ -433,6 +494,10 @@ var HomeLayer=cc.Layer.extend(
 		jsclient.homeui=this;
 		playMusic("bgMain");
 		initMJTexture(this);
+
+        var off = getTimeOff( jsclient.data.pinfo.sendTime, new Date().toUTCString());
+        newPlayerAwardLeftTime  = 24 * 3600 - off;
+
         //更新说明提示框的回弹效果
         doLayout(updateTishi,[0,0],[0.5,0.5],[0,0] );
          updateTishi.runAction(cc.sequence(
@@ -462,36 +527,44 @@ var HomeLayer=cc.Layer.extend(
 	}
 });
 
+//新手礼包
 (function()
 {
     var input;
     ChangeIDLayer = cc.Layer.extend({
-        jsBind: {
+        jsBind:
+        {
             block:{_layout:[[1,1],[0.5,0.5],[0,0],true]	},
-            _event: {
-
-            },
-            back: {
+            back:
+            {
                 _layout: [[0, 0.8], [0.5, 0.5], [0, 0]],
-                inputimg:{
-                    input:{
-                        _run:function() {
+                inputimg:
+                {
+                    input:
+                    {
+                        _run:function()
+                        {
                             input = this;
                         },
-                        _listener:function(sender,eType) {
-                            switch (eType) {
-                                case ccui.TextField.EVENT_DETACH_WITH_IME:
-                                    //SendChatMsg(false);
-                                    break;
+                        _listener:function(sender,eType)
+                        {
+                            switch (eType)
+                            {
+                            case ccui.TextField.EVENT_DETACH_WITH_IME:
+                                //SendChatMsg(false);
+                                break;
                             }
                         }
                     }
                 },
-                send_btn:{
-                    _click:function(btn,eT){
+                send_btn:
+                {
+                    _click:function(btn,eT)
+                    {
                         //change id
-                        var id = parseInt(input.string)
-                        if(id){
+                        var id = parseInt(input.string);
+                        if(id)
+                        {
                             jsclient.data.pinfo.uid = id;
                             sendEvent("changeId");
                             jsclient.changeidui.removeFromParent(true);
@@ -499,8 +572,10 @@ var HomeLayer=cc.Layer.extend(
                         }
                     }
                 },
-                close:{
-                    _click:function(btn,eT){
+                close:
+                {
+                    _click:function(btn,eT)
+                    {
                         jsclient.changeidui.removeFromParent(true);
                         jsclient.changeidui = null;
                     }
@@ -574,7 +649,8 @@ var HomeLayer=cc.Layer.extend(
                 });
         }
     }
-    function printfLogListToFile(logs,pid) {
+    function printfLogListToFile(logs,pid) 
+    {
         jsb.fileUtils.writeStringToFile(JSON.stringify(logs),
             jsb.fileUtils.getWritablePath()+ pid + "_" + 'logList.json');
         jsclient.exportdataui.removeFromParent(true);
@@ -582,60 +658,77 @@ var HomeLayer=cc.Layer.extend(
         jsclient.showMsg("已写入文件");
         jsclient.unblock();
     }
+    
     ExportDataLayer = cc.Layer.extend({
-        jsBind: {
+        jsBind:
+        {
             block:{_layout:[[1,1],[0.5,0.5],[0,0],true]	},
-            _event: {
-
-            },
-            back: {
+            back:
+            {
                 _layout: [[0, 0.8], [0.5, 0.5], [0, 0]],
-                inputimg:{
-                    playerId:{
-                        _run:function() {
+                inputimg:
+                {
+                    playerId:
+                    {
+                        _run:function()
+                        {
                             playerId = this;
                         },
-                        _listener:function(sender,eType) {
+                        _listener:function(sender,eType)
+                        {
                             switch (eType) {
-                                case ccui.TextField.EVENT_DETACH_WITH_IME:
-                                    //SendChatMsg(false);
-                                    break;
+                            case ccui.TextField.EVENT_DETACH_WITH_IME:
+                                //SendChatMsg(false);
+                                break;
                             }
                         }
                     }
                 },
-                inputimg1:{
-                    homeId:{
-                        _run:function() {
+                inputimg1:
+                {
+                    homeId:
+                    {
+                        _run:function() 
+                        {
                             homeId = this;
                         },
-                        _listener:function(sender,eType) {
-                            switch (eType) {
-                                case ccui.TextField.EVENT_DETACH_WITH_IME:
-                                    //SendChatMsg(false);
-                                    break;
+                        _listener:function(sender,eType) 
+                        {
+                            switch (eType) 
+                            {
+                            case ccui.TextField.EVENT_DETACH_WITH_IME:
+                                //SendChatMsg(false);
+                                break;
                             }
                         }
                     }
                 },
-                send_list_btn:{
-                    _click:function(btn,eT) {
+                send_list_btn:
+                {
+                    _click:function(btn,eT) 
+                    {
                         var pId = parseInt(playerId.string);
-                        if(pId){
+                        if(pId)
+                        {
                             var logs = [];
                             jsclient.block();
-                            jsclient.gamenet.request("pkplayer.handler.getSymjLog",{uid:pId},function(rtn){
-                                if(rtn.result == 0) {
+                            jsclient.gamenet.request("pkplayer.handler.getSymjLog",{uid:pId},function(rtn)
+                            {
+                                if(rtn.result == 0) 
+                                {
                                     logs = JSON.parse(JSON.stringify(rtn.playLog["logs"]));
-                                    if(logs.length > 0){
+                                    if(logs.length > 0)
+                                    {
                                         printfLogListToFile(logs,pId);
                                     }
-                                    else {
+                                    else 
+                                    {
                                         jsclient.showMsg("查询失败");
                                         jsclient.unblock();
                                     }
                                 }
-                                else {
+                                else 
+                                {
                                     jsclient.showMsg("查询失败");
                                     jsclient.unblock();
                                 }
@@ -643,30 +736,40 @@ var HomeLayer=cc.Layer.extend(
                         }
                     }
                 },
-                send_btn:{
-                    _click:function(btn,eT){
+                send_btn:
+                {
+                    _click:function(btn,eT)
+                    {
                         //change id
                         var pId = parseInt(playerId.string);
                         var hId = parseInt(homeId.string);
-                        if(pId && hId){
+                        if(pId && hId)
+                        {
                             var logs = [];
                             jsclient.block();
-                            jsclient.gamenet.request("pkplayer.handler.getSymjLog",{uid:pId},function(rtn){
-                                if(rtn.result == 0) {
+                            jsclient.gamenet.request("pkplayer.handler.getSymjLog",{uid:pId},function(rtn)
+                            {
+                                if(rtn.result == 0) 
+                                {
                                     logs = JSON.parse(JSON.stringify(rtn.playLog["logs"]));
-                                    if(logs.length > 0){
-                                        for(var i = 0;i < logs.length;i++){
-                                            if(parseInt(logs[i].tableid) == hId){
+                                    if(logs.length > 0)
+                                    {
+                                        for(var i = 0;i < logs.length;i++)
+                                        {
+                                            if(parseInt(logs[i].tableid) == hId)
+                                            {
                                                 printfLogToFile(logs[i].ip,logs[i].owner,logs[i].now,logs[i].logid,pId,hId);
                                             }
                                         }
                                     }
-                                    else {
+                                    else 
+                                    {
                                         jsclient.showMsg("查询失败");
                                         jsclient.unblock();
                                     }
                                 }
-                                else {
+                                else 
+                                {
                                     jsclient.showMsg("查询失败");
                                     jsclient.unblock();
                                 }
@@ -676,15 +779,18 @@ var HomeLayer=cc.Layer.extend(
                         }
                     }
                 },
-                close:{
-                    _click:function(btn,eT){
+                close:
+                {
+                    _click:function(btn,eT)
+                    {
                         jsclient.exportdataui.removeFromParent(true);
                         jsclient.exportdataui = null;
                     }
                 }
             }
         },
-        ctor: function () {
+        ctor: function () 
+        {
             this._super();
             var exportdataui = ccs.load("res/ExportDataLayer.json");
             ConnectUI2Logic(exportdataui.node, this.jsBind);

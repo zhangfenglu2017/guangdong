@@ -374,12 +374,6 @@ window.ChatLayer = cc.Layer.extend({
 })();
 
 
-
-
-
-
-
-
 var ExitGameLayer = cc.Layer.extend({
 	jsBind:
 	{

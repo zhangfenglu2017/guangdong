@@ -1,0 +1,1879 @@
+{
+  "ID": "00a4b24a-bb3a-4fd6-83f2-5498341fd3bd",
+  "Version": "3.10.0.0",
+  "Name": "Activity_Invite",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 28,
+        "Children": [
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 0,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -640.0,
+            "RightMargin": -640.0,
+            "TopMargin": -360.0,
+            "BottomMargin": -360.0,
+            "Tag": 162,
+            "Children": [
+              {
+                "ClipAble": false,
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 309.83,
+                  "Y": 98.29
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2421,
+                  "Y": 0.1365
+                },
+                "PreSize": {
+                  "X": 0.7031,
+                  "Y": 0.6944
+                },
+                "LeftMargin": 309.83,
+                "RightMargin": 70.17,
+                "TopMargin": 121.71,
+                "BottomMargin": 98.29,
+                "Tag": 72,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_guizeshuoming.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 47,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 51,
+                    "Scale9Height": 13,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 424.89,
+                      "Y": 445.4666
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PrePosition": {
+                      "X": 0.4721,
+                      "Y": 0.8909
+                    },
+                    "PreSize": {
+                      "X": 0.2222,
+                      "Y": 0.1
+                    },
+                    "LeftMargin": 324.89,
+                    "RightMargin": 375.11,
+                    "TopMargin": 29.5334,
+                    "BottomMargin": 420.4666,
+                    "Tag": 74,
+                    "ActionTag": -2046977084,
+                    "Size": {
+                      "X": 200.0,
+                      "Y": 50.0
+                    },
+                    "Name": "table",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "1: 邀请的好友下载并登陆《星悦广东麻将》,在新手礼包输入您发送的邀请码。\n2: 被邀请的好友玩满4局，您即可获得钻石奖励。",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 10.0,
+                      "Y": 350.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0111,
+                      "Y": 0.7
+                    },
+                    "PreSize": {
+                      "X": 0.9744,
+                      "Y": 0.12
+                    },
+                    "LeftMargin": 10.0,
+                    "RightMargin": 13.0,
+                    "TopMargin": 90.0,
+                    "BottomMargin": 350.0,
+                    "Tag": 75,
+                    "ActionTag": 925743881,
+                    "Size": {
+                      "X": 877.0,
+                      "Y": 60.0
+                    },
+                    "Name": "tips",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 40,
+                    "LabelText": "邀请的好友(15/20)",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 450.0,
+                      "Y": 321.7795
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.6436
+                    },
+                    "PreSize": {
+                      "X": 0.5556,
+                      "Y": 0.08
+                    },
+                    "LeftMargin": 200.0,
+                    "RightMargin": 200.0,
+                    "TopMargin": 158.2205,
+                    "BottomMargin": 301.7795,
+                    "Tag": 78,
+                    "ActionTag": -42668348,
+                    "Size": {
+                      "X": 500.0,
+                      "Y": 40.0
+                    },
+                    "Name": "inviteNum",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "IsBounceEnabled": true,
+                    "ScrollDirectionType": 0,
+                    "ClipAble": true,
+                    "BackColorAlpha": 0,
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_jianbiantiao.png",
+                      "Plist": ""
+                    },
+                    "ComboBoxIndex": 2,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 150
+                    },
+                    "FirstColor": {},
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 0.0
+                    },
+                    "Scale9OriginX": 169,
+                    "Scale9OriginY": 36,
+                    "Scale9Width": 601,
+                    "Scale9Height": 59,
+                    "TouchEnable": true,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 50.3551,
+                      "Y": 164.301
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.056,
+                      "Y": 0.3286
+                    },
+                    "PreSize": {
+                      "X": 0.8667,
+                      "Y": 0.24
+                    },
+                    "LeftMargin": 50.3551,
+                    "RightMargin": 69.6449,
+                    "TopMargin": 215.699,
+                    "BottomMargin": 164.301,
+                    "Tag": 77,
+                    "ActionTag": -1239719426,
+                    "Size": {
+                      "X": 780.0,
+                      "Y": 120.0
+                    },
+                    "Name": "list",
+                    "ctype": "ListViewObjectData"
+                  },
+                  {
+                    "FlipX": true,
+                    "FlipY": true,
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_jiantou.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 6,
+                    "Scale9OriginY": 10,
+                    "Scale9Width": 18,
+                    "Scale9Height": 15,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 39.9999,
+                      "Y": 220.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0444,
+                      "Y": 0.44
+                    },
+                    "PreSize": {
+                      "X": 0.0233,
+                      "Y": 0.062
+                    },
+                    "LeftMargin": 29.4999,
+                    "RightMargin": 849.5001,
+                    "TopMargin": 264.5,
+                    "BottomMargin": 204.5,
+                    "Tag": 86,
+                    "ActionTag": -1301005013,
+                    "Size": {
+                      "X": 21.0,
+                      "Y": 31.0
+                    },
+                    "Name": "leftImg",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FlipX": true,
+                    "FlipY": true,
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_jiantou.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 6,
+                    "Scale9OriginY": 10,
+                    "Scale9Width": 18,
+                    "Scale9Height": 15,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 840.0,
+                      "Y": 220.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "RotationSkewX": 180.0,
+                    "RotationSkewY": 180.0,
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.9333,
+                      "Y": 0.44
+                    },
+                    "PreSize": {
+                      "X": 0.0233,
+                      "Y": 0.062
+                    },
+                    "LeftMargin": 829.5,
+                    "RightMargin": 49.5,
+                    "TopMargin": 264.5,
+                    "BottomMargin": 204.5,
+                    "Tag": 87,
+                    "ActionTag": 1075839980,
+                    "Size": {
+                      "X": 21.0,
+                      "Y": 31.0
+                    },
+                    "Name": "rightImg",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 0,
+                    "ComboBoxIndex": 1,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9OriginX": -42,
+                    "Scale9OriginY": -40,
+                    "Scale9Width": 84,
+                    "Scale9Height": 80,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 116.6209,
+                      "Y": 230.2823
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.1296,
+                      "Y": 0.4606
+                    },
+                    "PreSize": {
+                      "X": 0.1222,
+                      "Y": 0.22
+                    },
+                    "LeftMargin": 61.6209,
+                    "RightMargin": 728.3791,
+                    "TopMargin": 214.7177,
+                    "BottomMargin": 175.2823,
+                    "Tag": 72,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "activity/invite/invite_wenhao.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 35,
+                        "Scale9OriginY": 35,
+                        "Scale9Width": 58,
+                        "Scale9Height": 54,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 55.0,
+                          "Y": 60.0
+                        },
+                        "Scale": {
+                          "ScaleX": 0.7,
+                          "ScaleY": 0.7
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5455
+                        },
+                        "PreSize": {
+                          "X": 1.1636,
+                          "Y": 1.1273
+                        },
+                        "LeftMargin": -9.0,
+                        "RightMargin": -9.0,
+                        "TopMargin": -12.0,
+                        "BottomMargin": -2.0,
+                        "Tag": 82,
+                        "Children": [
+                          {
+                            "IsCustomSize": true,
+                            "FontSize": 25,
+                            "LabelText": "我的名字我的",
+                            "HorizontalAlignmentType": "HT_Center",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 60.0,
+                              "Y": -18.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "R": 100,
+                              "G": 25,
+                              "B": 14
+                            },
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.4688,
+                              "Y": -0.1452
+                            },
+                            "PreSize": {
+                              "X": 1.1719,
+                              "Y": 0.2016
+                            },
+                            "LeftMargin": -15.0,
+                            "RightMargin": -7.0,
+                            "TopMargin": 129.5,
+                            "BottomMargin": -30.5,
+                            "Tag": 85,
+                            "ActionTag": 280569499,
+                            "Size": {
+                              "X": 150.0,
+                              "Y": 25.0
+                            },
+                            "Name": "name",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": -816710070,
+                        "Size": {
+                          "X": 128.0,
+                          "Y": 124.0
+                        },
+                        "Name": "item",
+                        "ctype": "ImageViewObjectData"
+                      }
+                    ],
+                    "ActionTag": 1234289250,
+                    "Size": {
+                      "X": 110.0,
+                      "Y": 110.0
+                    },
+                    "Name": "item",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_jdt_xia.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 301,
+                    "Scale9OriginY": 9,
+                    "Scale9Width": 311,
+                    "Scale9Height": 12,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 429.9998,
+                      "Y": 101.0226
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4778,
+                      "Y": 0.202
+                    },
+                    "PreSize": {
+                      "X": 0.8889,
+                      "Y": 0.06
+                    },
+                    "LeftMargin": 29.9998,
+                    "RightMargin": 70.0002,
+                    "TopMargin": 383.9774,
+                    "BottomMargin": 86.0226,
+                    "Tag": 79,
+                    "Children": [
+                      {
+                        "ProgressInfo": 100,
+                        "ImageFileData": {
+                          "Type": "Normal",
+                          "Path": "activity/invite/invite_jdt_shang.png",
+                          "Plist": ""
+                        },
+                        "AnchorPoint": {},
+                        "Position": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "PreSize": {
+                          "X": 1.0625,
+                          "Y": 1.0
+                        },
+                        "RightMargin": -50.0,
+                        "Tag": 80,
+                        "ActionTag": 1501336154,
+                        "Size": {
+                          "X": 850.0,
+                          "Y": 30.0
+                        },
+                        "Name": "bar",
+                        "ctype": "LoadingBarObjectData"
+                      }
+                    ],
+                    "ActionTag": 1261979785,
+                    "Size": {
+                      "X": 800.0,
+                      "Y": 30.0
+                    },
+                    "Name": "barbg",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_1.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_1.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_1.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 56,
+                    "Scale9Height": 63,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 79.9999,
+                      "Y": 100.941
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0889,
+                      "Y": 0.2019
+                    },
+                    "PreSize": {
+                      "X": 0.0956,
+                      "Y": 0.17
+                    },
+                    "LeftMargin": 36.9999,
+                    "RightMargin": 777.0001,
+                    "TopMargin": 356.559,
+                    "BottomMargin": 58.441,
+                    "Tag": 88,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "activity/invite/invite_faguang.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 33,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 34,
+                        "Scale9Height": 34,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": 42.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.1628,
+                          "Y": 1.1765
+                        },
+                        "LeftMargin": -7.0,
+                        "RightMargin": -7.0,
+                        "TopMargin": -7.5,
+                        "BottomMargin": -7.5,
+                        "Tag": 89,
+                        "ActionTag": -168508942,
+                        "Size": {
+                          "X": 100.0,
+                          "Y": 100.0
+                        },
+                        "Name": "yes",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "activity/invite/invite_yilingqu.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 33,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 35,
+                        "Scale9Height": 35,
+                        "AnchorPoint": {
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": -7.5,
+                          "Y": 42.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": -0.0872,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.1744,
+                          "Y": 1.1882
+                        },
+                        "LeftMargin": -7.5,
+                        "RightMargin": -7.5,
+                        "TopMargin": -8.0,
+                        "BottomMargin": -8.0,
+                        "Tag": 90,
+                        "ActionTag": -271250723,
+                        "Size": {
+                          "X": 101.0,
+                          "Y": 101.0
+                        },
+                        "Name": "no",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontSize": 25,
+                        "LabelText": "2人",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": -22.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 108,
+                          "G": 37,
+                          "B": 20
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": -0.2588
+                        },
+                        "PreSize": {
+                          "X": 0.4419,
+                          "Y": 0.2941
+                        },
+                        "LeftMargin": 24.0,
+                        "RightMargin": 24.0,
+                        "TopMargin": 94.5,
+                        "BottomMargin": -34.5,
+                        "Tag": 91,
+                        "ActionTag": -1223161306,
+                        "Size": {
+                          "X": 38.0,
+                          "Y": 25.0
+                        },
+                        "Name": "text",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 2133989827,
+                    "Size": {
+                      "X": 86.0,
+                      "Y": 85.0
+                    },
+                    "Name": "award_0",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_2.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_2.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_2.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 56,
+                    "Scale9Height": 63,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 249.9999,
+                      "Y": 100.941
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2778,
+                      "Y": 0.2019
+                    },
+                    "PreSize": {
+                      "X": 0.0956,
+                      "Y": 0.17
+                    },
+                    "LeftMargin": 206.9999,
+                    "RightMargin": 607.0001,
+                    "TopMargin": 356.559,
+                    "BottomMargin": 58.441,
+                    "Tag": 92,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "activity/invite/invite_faguang.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 33,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 34,
+                        "Scale9Height": 34,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": 42.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.1628,
+                          "Y": 1.1765
+                        },
+                        "LeftMargin": -7.0,
+                        "RightMargin": -7.0,
+                        "TopMargin": -7.5,
+                        "BottomMargin": -7.5,
+                        "Tag": 93,
+                        "ActionTag": -98528178,
+                        "Size": {
+                          "X": 100.0,
+                          "Y": 100.0
+                        },
+                        "Name": "yes",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "activity/invite/invite_yilingqu.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 33,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 35,
+                        "Scale9Height": 35,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": 42.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.1744,
+                          "Y": 1.1882
+                        },
+                        "LeftMargin": -7.5,
+                        "RightMargin": -7.5,
+                        "TopMargin": -8.0,
+                        "BottomMargin": -8.0,
+                        "Tag": 94,
+                        "ActionTag": -847618134,
+                        "Size": {
+                          "X": 101.0,
+                          "Y": 101.0
+                        },
+                        "Name": "no",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontSize": 25,
+                        "LabelText": "4人",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": -22.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 108,
+                          "G": 37,
+                          "B": 20
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": -0.2588
+                        },
+                        "PreSize": {
+                          "X": 0.4419,
+                          "Y": 0.2941
+                        },
+                        "LeftMargin": 24.0,
+                        "RightMargin": 24.0,
+                        "TopMargin": 94.5,
+                        "BottomMargin": -34.5,
+                        "Tag": 95,
+                        "ActionTag": 1419137507,
+                        "Size": {
+                          "X": 38.0,
+                          "Y": 25.0
+                        },
+                        "Name": "text",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 720572485,
+                    "Size": {
+                      "X": 86.0,
+                      "Y": 85.0
+                    },
+                    "Name": "award_1",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_3.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_3.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_3.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 56,
+                    "Scale9Height": 63,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 439.9998,
+                      "Y": 100.941
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4889,
+                      "Y": 0.2019
+                    },
+                    "PreSize": {
+                      "X": 0.0956,
+                      "Y": 0.17
+                    },
+                    "LeftMargin": 396.9998,
+                    "RightMargin": 417.0002,
+                    "TopMargin": 356.559,
+                    "BottomMargin": 58.441,
+                    "Tag": 96,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "activity/invite/invite_faguang.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 33,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 34,
+                        "Scale9Height": 34,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": 42.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.1628,
+                          "Y": 1.1765
+                        },
+                        "LeftMargin": -7.0,
+                        "RightMargin": -7.0,
+                        "TopMargin": -7.5,
+                        "BottomMargin": -7.5,
+                        "Tag": 97,
+                        "ActionTag": 1142285576,
+                        "Size": {
+                          "X": 100.0,
+                          "Y": 100.0
+                        },
+                        "Name": "yes",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "activity/invite/invite_yilingqu.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 33,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 35,
+                        "Scale9Height": 35,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": 42.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.1744,
+                          "Y": 1.1882
+                        },
+                        "LeftMargin": -7.5,
+                        "RightMargin": -7.5,
+                        "TopMargin": -8.0,
+                        "BottomMargin": -8.0,
+                        "Tag": 98,
+                        "ActionTag": -1348030459,
+                        "Size": {
+                          "X": 101.0,
+                          "Y": 101.0
+                        },
+                        "Name": "no",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontSize": 25,
+                        "LabelText": "8人",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": -22.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 108,
+                          "G": 37,
+                          "B": 20
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": -0.2588
+                        },
+                        "PreSize": {
+                          "X": 0.4419,
+                          "Y": 0.2941
+                        },
+                        "LeftMargin": 24.0,
+                        "RightMargin": 24.0,
+                        "TopMargin": 94.5,
+                        "BottomMargin": -34.5,
+                        "Tag": 99,
+                        "ActionTag": 356651600,
+                        "Size": {
+                          "X": 38.0,
+                          "Y": 25.0
+                        },
+                        "Name": "text",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 1820688541,
+                    "Size": {
+                      "X": 86.0,
+                      "Y": 85.0
+                    },
+                    "Name": "award_2",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_4.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_4.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_4.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 56,
+                    "Scale9Height": 63,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 619.9998,
+                      "Y": 100.941
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.6889,
+                      "Y": 0.2019
+                    },
+                    "PreSize": {
+                      "X": 0.0956,
+                      "Y": 0.17
+                    },
+                    "LeftMargin": 576.9998,
+                    "RightMargin": 237.0002,
+                    "TopMargin": 356.559,
+                    "BottomMargin": 58.441,
+                    "Tag": 100,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "activity/invite/invite_faguang.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 33,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 34,
+                        "Scale9Height": 34,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": 42.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.1628,
+                          "Y": 1.1765
+                        },
+                        "LeftMargin": -7.0,
+                        "RightMargin": -7.0,
+                        "TopMargin": -7.5,
+                        "BottomMargin": -7.5,
+                        "Tag": 101,
+                        "ActionTag": -411443130,
+                        "Size": {
+                          "X": 100.0,
+                          "Y": 100.0
+                        },
+                        "Name": "yes",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "activity/invite/invite_yilingqu.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 33,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 35,
+                        "Scale9Height": 35,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": 42.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.1744,
+                          "Y": 1.1882
+                        },
+                        "LeftMargin": -7.5,
+                        "RightMargin": -7.5,
+                        "TopMargin": -8.0,
+                        "BottomMargin": -8.0,
+                        "Tag": 102,
+                        "ActionTag": -2103457952,
+                        "Size": {
+                          "X": 101.0,
+                          "Y": 101.0
+                        },
+                        "Name": "no",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontSize": 25,
+                        "LabelText": "13人",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": -22.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 108,
+                          "G": 37,
+                          "B": 20
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": -0.2588
+                        },
+                        "PreSize": {
+                          "X": 0.593,
+                          "Y": 0.2941
+                        },
+                        "LeftMargin": 17.5,
+                        "RightMargin": 17.5,
+                        "TopMargin": 94.5,
+                        "BottomMargin": -34.5,
+                        "Tag": 103,
+                        "ActionTag": -2120776085,
+                        "Size": {
+                          "X": 51.0,
+                          "Y": 25.0
+                        },
+                        "Name": "text",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": -479404758,
+                    "Size": {
+                      "X": 86.0,
+                      "Y": 85.0
+                    },
+                    "Name": "award_3",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_5.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_5.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_5.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 56,
+                    "Scale9Height": 63,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 799.9999,
+                      "Y": 100.941
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.8889,
+                      "Y": 0.2019
+                    },
+                    "PreSize": {
+                      "X": 0.0956,
+                      "Y": 0.17
+                    },
+                    "LeftMargin": 756.9999,
+                    "RightMargin": 57.0001,
+                    "TopMargin": 356.559,
+                    "BottomMargin": 58.441,
+                    "Tag": 104,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "activity/invite/invite_faguang.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 33,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 34,
+                        "Scale9Height": 34,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": 42.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.1628,
+                          "Y": 1.1765
+                        },
+                        "LeftMargin": -7.0,
+                        "RightMargin": -7.0,
+                        "TopMargin": -7.5,
+                        "BottomMargin": -7.5,
+                        "Tag": 105,
+                        "ActionTag": -1354316101,
+                        "Size": {
+                          "X": 100.0,
+                          "Y": 100.0
+                        },
+                        "Name": "yes",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "activity/invite/invite_yilingqu.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 33,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 35,
+                        "Scale9Height": 35,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": 42.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.1744,
+                          "Y": 1.1882
+                        },
+                        "LeftMargin": -7.5,
+                        "RightMargin": -7.5,
+                        "TopMargin": -8.0,
+                        "BottomMargin": -8.0,
+                        "Tag": 106,
+                        "ActionTag": -896476747,
+                        "Size": {
+                          "X": 101.0,
+                          "Y": 101.0
+                        },
+                        "Name": "no",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontSize": 25,
+                        "LabelText": "20人",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 43.0,
+                          "Y": -22.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 108,
+                          "G": 37,
+                          "B": 20
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": -0.2588
+                        },
+                        "PreSize": {
+                          "X": 0.593,
+                          "Y": 0.2941
+                        },
+                        "LeftMargin": 17.5,
+                        "RightMargin": 17.5,
+                        "TopMargin": 94.5,
+                        "BottomMargin": -34.5,
+                        "Tag": 107,
+                        "ActionTag": -797378131,
+                        "Size": {
+                          "X": 51.0,
+                          "Y": 25.0
+                        },
+                        "Name": "text",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": -693265540,
+                    "Size": {
+                      "X": 86.0,
+                      "Y": 85.0
+                    },
+                    "Name": "award_4",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_yaoqing_h.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_yaoqing_h.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "activity/invite/invite_btn_yaoqing.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 140,
+                    "Scale9Height": 43,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 429.367,
+                      "Y": -16.0222
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4771,
+                      "Y": -0.032
+                    },
+                    "PreSize": {
+                      "X": 0.1889,
+                      "Y": 0.13
+                    },
+                    "LeftMargin": 344.367,
+                    "RightMargin": 385.633,
+                    "TopMargin": 483.5222,
+                    "BottomMargin": -48.5222,
+                    "Tag": 81,
+                    "ActionTag": -801832532,
+                    "Size": {
+                      "X": 170.0,
+                      "Y": 65.0
+                    },
+                    "Name": "invitebt",
+                    "ctype": "ButtonObjectData"
+                  }
+                ],
+                "ActionTag": -1908902441,
+                "Size": {
+                  "X": 900.0,
+                  "Y": 500.0
+                },
+                "Name": "invite",
+                "ctype": "PanelObjectData"
+              }
+            ],
+            "ActionTag": 513667307,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "back",
+            "ctype": "PanelObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "activity/invite/invite_btn_1.png",
+        "activity/invite/invite_btn_2.png",
+        "activity/invite/invite_btn_3.png",
+        "activity/invite/invite_btn_4.png",
+        "activity/invite/invite_btn_5.png",
+        "activity/invite/invite_btn_yaoqing.png",
+        "activity/invite/invite_btn_yaoqing_h.png",
+        "activity/invite/invite_faguang.png",
+        "activity/invite/invite_guizeshuoming.png",
+        "activity/invite/invite_jdt_shang.png",
+        "activity/invite/invite_jdt_xia.png",
+        "activity/invite/invite_jianbiantiao.png",
+        "activity/invite/invite_jiantou.png",
+        "activity/invite/invite_wenhao.png",
+        "activity/invite/invite_yilingqu.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

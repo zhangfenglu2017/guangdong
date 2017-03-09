@@ -1,4 +1,5 @@
-var res = {
+var res =
+{
     Update_bk:"res/login/z_login.png",
 
 	Updae_json:"res/Update.json",
@@ -28,17 +29,15 @@ var res = {
 };
 
 var g_resources = [];
-for (var i in res) {
+for (var i in res)
+{
     g_resources.push(res[i]);
     cc.log("预加载资源：" + res[i]);
 }
 
-
 cc.spriteFrameCache.addSpriteFrames("res/MaJiangNew/z_mj.plist");
 cc.spriteFrameCache.addSpriteFrames("res/MaJiangNew/cardAnim.plist");
 cc.spriteFrameCache.addSpriteFrames("res/playerchat/emoji_action_texture.plist");
-
-
 
 
 var jsclient={};
@@ -56,7 +55,21 @@ var UpdateLayer;
 var CreateLayer;
 var ChangeIDLayer;
 var ExportDataLayer;
-var ExitGameLayer;
+
+var Activity;
+var Activity_Invite;
+
+var ActivationCodeLayer;
+var AwardPrompt;
+var ErroPrompt;
+
+var ActivityType =
+{
+    rotary:1,       //转盘
+    compensation:2, //补偿
+    newPlayer:3,    //新手
+    invite:4        //邀请
+};
 
 function sendEvent(eName,ePara)
 {
@@ -165,7 +178,8 @@ function BindUIEvent(pjs,node,evt,func)
 }
 
 //不同类型的事件
-var bindFunction = {
+var bindFunction =
+{
 	_event:function(pjs,node,js)
 	{
 		for(var evt in js)
@@ -187,25 +201,25 @@ var bindFunction = {
 				js(btn,eT);
 			}				
 		},node);
-	}
-	,_visible:function(pjs,node,js)
+	},
+    _visible:function(pjs,node,js)
 	{
 		if(typeof js=="function") node.visible=js();
 		else node.visible=js;
-	}
-	,_keyboard:function(pjs,node,js)
+	},
+    _keyboard:function(pjs,node,js)
 	{
 		cc.eventManager.addListener({
                 event: cc.EventListener.KEYBOARD,
                 onKeyPressed: js.onKeyPressed,
                 onKeyReleased:js.onKeyReleased, 
             }, node);
-	}
-	,_check:function(pjs,node,js)
+	},
+    _check:function(pjs,node,js)
 	{
 	   	node.addEventListener(js,pjs);
-	}
-	,_layout:function(pjs,node,js)
+	},
+    _layout:function(pjs,node,js)
 	{
 		var ar=[node];  
 
@@ -224,16 +238,20 @@ var bindFunction = {
 	_run:function(pjs,node,js)
 	{
 		js.call(node);
-	}
-	,_slider:function(pjs,node,js)
+	},
+    _slider:function(pjs,node,js)
 	{
 		node.addEventListener(js,node);
-	}
-	,_listener:function(pjs,node,js)
+	},
+    _listener:function(pjs,node,js)
 	{
 		node.addEventListener(js,node);
-	}
-}
+	},
+    _listenerScrollView:function(pjs,node,js)
+    {
+        node.addCCSEventListener(js);
+    }
+};
 
 //链接cocosStudio
 function ConnectUI2Logic(node,js)

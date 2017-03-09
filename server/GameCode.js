@@ -39,7 +39,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     }
 
     function GLog(log) {
-        return;
+        if(getPublicIp() != "114.55.255.22") return; 
         app.FileWork(gameLog, __dirname + "/log.txt", log)
     }
 
@@ -508,6 +508,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             gui4Hu:false,//鬼牌模式 下有4鬼即可胡牌
             gui4huBeiNum:1,//有鬼情况下 拿到4鬼胡牌所番的倍数 默认为1
         };
+        majiang.init(this);
     }
     //断线重连
     Table.prototype.Disconnect = function (pl, msg) {
@@ -520,6 +521,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     }
     Table.prototype.Reconnect = function (pl, plData, msg, sinfo) {
         GLog("Table.prototype.Reconnect");
+        majiang.init(this);
         pl.onLine = true;
         var tData = this.tData;
         //if(isUndefined(tData.canHu7)||isUndefined(tData.canHuWith258))
@@ -1923,7 +1925,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 startGameForYiBaiZhang(this);
                 break;
         }
-
+        majiang.init(this);
     }
 
     function EndGameForShenZhen(tb, pl, byEndRoom) {
@@ -4046,6 +4048,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     Table.prototype.MJPut = function (pl, msg, session, next) {
         GLog("Table.prototype.MJPut");
         next(null, null);  //if(this.GamePause()) return;
+        majiang.init(this);
         var tData = this.tData;
         switch (tData.gameType) {
             case GamesType.GANG_DONG:
@@ -4626,6 +4629,23 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     //    return playInfo;
     //}
 
+    //战绩日志函数，自动添加index
+    var lastLogDay = 0;
+
+    function doGameLog(para) {
+        var day = new Date();
+        day = (day.getFullYear() * 10000 + (day.getMonth() + 1) * 100 + day.getDate()) + "";
+        app.mdb.insert('gameLog' + day, para, function(){
+            if(lastLogDay != day) {
+                lastLogDay = day;
+                app.mdb.db.collection('gameLog' + day).createIndex({"uid1":1},{"background":1});
+                app.mdb.db.collection('gameLog' + day).createIndex({"uid2":1},{"background":1});
+                app.mdb.db.collection('gameLog' + day).createIndex({"uid3":1},{"background":1});
+                app.mdb.db.collection('gameLog' + day).createIndex({"uid4":1},{"background":1});
+            }
+        });
+    }
+    //end
     //新版本
     function EndRoom(tb, msg) {
         GLog("function EndRoom");
@@ -4647,6 +4667,16 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     logid: playid,
                     players: []
                 };
+                //战绩日志
+                var logData = {};
+                logData.uid1 = tData.owner;
+                logData.time = nowStr;
+                logData.money = tb.createPara.money;
+                logData.tableid = tb.tableid;
+                logData.logid = playid;
+                logData.createRound = tb.createPara.round;
+                logData.remainRound = tb.tData.roundNum;
+                var logIndex = 1;
                 tb.AllPlayerRun(function (p) {
                     var pinfo = {};
                     pinfo.uid = p.uid;
@@ -4654,7 +4684,30 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     pinfo.nickname = p.info.nickname || p.info.name;
                     pinfo.money = p.info.money;
                     playInfo.players.push(pinfo);
+
+                    //战绩日志
+                    if(logData.uid1 == p.uid) {
+                        logData['winall1'] = p.winall;
+                        logData['money1'] = p.info.money;
+                    } else {
+                        logIndex++;
+                        logData['uid' + logIndex] = p.uid;
+                        logData['winall' + logIndex] = p.winall;
+                        logData['money' + logIndex] = p.info.money;
+                    }
                 });
+
+                //战绩日志，如果不足4人添加默认值
+                if(logIndex < 4) {
+                    for(var logNum = logIndex + 1; logNum <= 4; logNum++) {
+                        logData['uid' + logNum] = 0;
+                        logData['winall' + logNum] = 0;
+                        logData['money' + logNum] = 0;
+                    }
+                }
+
+                doGameLog(logData);
+                //战绩日志END
                 //统计场数
                 var dayID = parseInt(endTime.Format("yyyyMMdd"));
                 tb.AllPlayerRun(function (p) {
@@ -5007,6 +5060,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     Table.prototype.MJPass = function (pl, msg, session, next) {
         GLog("Table.prototype.MJPass");
         next(null, null); //if(this.GamePause()) return;
+        majiang.init(this);
         var tData = this.tData;
         switch (tData.gameType) {
             case GamesType.GANG_DONG:
@@ -5115,6 +5169,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     Table.prototype.MJChi = function (pl, msg, session, next) {
         GLog("Table.prototype.MJChi");
         next(null, null); //if(this.GamePause()) return;
+        majiang.init(this);
         var tData = this.tData;
 
         switch (tData.gameType) {
@@ -5526,6 +5581,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     Table.prototype.MJPeng = function (pl, msg, session, next) {
         GLog("Table.prototype.MJPeng");
         next(null, null); //if(this.GamePause()) return;
+        majiang.init(this);
         var tData = this.tData;
         switch (tData.gameType) {
             case GamesType.GANG_DONG:
@@ -6589,6 +6645,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     Table.prototype.MJGang = function (pl, msg, session, next) {
         GLog("Table.prototype.MJGang");
         next(null, null); //if(this.GamePause()) return;
+        majiang.init(this);
         var tData = this.tData;
         switch (tData.gameType) {
             case GamesType.GANG_DONG:
@@ -7319,7 +7376,8 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     Table.prototype.MJHu = function (pl, msg, session, next) {
         GLog("Table.prototype.MJHu");
         //此处必须保证胡牌顺序
-        next(null, null); //if(this.GamePause()) return;	
+        next(null, null); //if(this.GamePause()) return;
+        majiang.init(this);
         var tData = this.tData;
         switch (tData.gameType) {
             case GamesType.GANG_DONG:
@@ -7345,6 +7403,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     Table.prototype.DelRoom = function (pl, msg, session, next) {
         GLog("Table.prototype.DelRoom");
         next(null, null);
+        majiang.init(this);
         var table = this;
         var tData = this.tData;
         if (pl.delRoom == 0) {

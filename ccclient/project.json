@@ -14,9 +14,9 @@
     "jsList" : [
         "src/pomelo/index.js",
         "src/gamenet.js",
-		"src/Result.js",
-		"src/resource.js",
-		"src/majiang.js",
+	"src/Result.js",
+	"src/resource.js",
+	"src/majiang.js",
         "src/Update.js",
         "src/Loading.js",
         "src/Login.js",
@@ -25,13 +25,18 @@
         "src/create.js",
         "src/enter.js",
         "src/Play.js",
-		"src/Replay.js",
+	"src/Replay.js",
         "src/endOne.js",
         "src/endAll.js",
         "src/app.js",
-		"src/PayLayer.js",
-		"src/userInfoLayer.js",
-        "src/ChatCheckJxlw.js"
+	"src/PayLayer.js",
+	"src/userInfoLayer.js",
+        "src/ChatCheckJxlw.js",
+        "src/activationCodeLayer.js",
+        "src/activity.js",
+        "src/activity_invite.js",
+        "src/awardPrompt.js",
+        "src/erroPrompt.js"
         
     ]
 }

@@ -118,7 +118,22 @@
             <PreSize X="0.2219" Y="0.1417" />
             <FileData Type="Normal" Path="home-yli/floor_11.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title" ActionTag="1392491195" Tag="16" IconVisible="False" LeftMargin="443.5000" RightMargin="423.5000" TopMargin="2.9998" BottomMargin="581.0002" LeftEage="102" RightEage="102" TopEage="34" BottomEage="34" Scale9OriginX="102" Scale9OriginY="34" Scale9Width="209" Scale9Height="68" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="xslb" ActionTag="-1331983889" Tag="346" IconVisible="False" LeftMargin="1149.2659" RightMargin="13.7341" TopMargin="104.6176" BottomMargin="499.3824" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="87" Scale9Height="94" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="117.0000" Y="116.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1207.7659" Y="557.3824" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9436" Y="0.7741" />
+            <PreSize X="0.0914" Y="0.1611" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Normal" Path="home-yli/xslb.png" Plist="" />
+            <PressedFileData Type="Normal" Path="home-yli/xslb.png" Plist="" />
+            <NormalFileData Type="Normal" Path="home-yli/xslb.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="title" ActionTag="1392491195" Tag="16" IconVisible="False" LeftMargin="473.5000" RightMargin="393.5000" TopMargin="2.0000" BottomMargin="582.0000" LeftEage="102" RightEage="102" TopEage="34" BottomEage="34" Scale9OriginX="102" Scale9OriginY="34" Scale9Width="209" Scale9Height="68" ctype="ImageViewObjectData">
             <Size X="413.0000" Y="136.0000" />
             <Children>
               <AbstractNodeData Name="scroll" ActionTag="976010434" Tag="43" IconVisible="False" HorizontalEdge="LeftEdge" LeftMargin="-85.4899" RightMargin="-51.5101" TopMargin="148.3540" BottomMargin="-52.3540" TouchEnable="True" ClipAble="True" BackColorAlpha="93" ColorAngle="90.0000" Scale9Enable="True" LeftEage="193" RightEage="193" TopEage="14" BottomEage="14" Scale9OriginX="193" Scale9OriginY="14" Scale9Width="200" Scale9Height="12" ScrollDirectionType="Horizontal" ctype="ScrollViewObjectData">
@@ -162,27 +177,12 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="650.0000" Y="649.0002" />
+            <Position X="680.0000" Y="650.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5078" Y="0.9014" />
+            <PrePosition X="0.5313" Y="0.9028" />
             <PreSize X="0.3227" Y="0.1889" />
             <FileData Type="Normal" Path="home-yli/logo_02.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="setting" ActionTag="-1293749877" Tag="11" IconVisible="False" LeftMargin="1161.0002" RightMargin="42.9998" TopMargin="11.5001" BottomMargin="631.4999" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="76.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1199.0002" Y="669.9999" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9367" Y="0.9306" />
-            <PreSize X="0.0594" Y="0.1069" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="home-yli/btn_arrange_press.png" Plist="" />
-            <NormalFileData Type="Normal" Path="home-yli/btn_arrange_normal.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
           <AbstractNodeData Name="help" ActionTag="1218524737" Tag="10" IconVisible="False" LeftMargin="1061.0000" RightMargin="143.0000" TopMargin="11.4999" BottomMargin="631.5001" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="76.0000" Y="77.0000" />
@@ -196,6 +196,21 @@
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
             <PressedFileData Type="Normal" Path="home-yli/btn_help_press.png" Plist="" />
             <NormalFileData Type="Normal" Path="home-yli/btn_help_normal.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="setting" ActionTag="-1293749877" Tag="11" IconVisible="False" LeftMargin="1161.0002" RightMargin="42.9998" TopMargin="11.5001" BottomMargin="631.4999" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="76.0000" Y="77.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1199.0002" Y="669.9999" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9367" Y="0.9306" />
+            <PreSize X="0.0594" Y="0.1069" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="home-yli/btn_arrange_press.png" Plist="" />
+            <NormalFileData Type="Normal" Path="home-yli/btn_arrange_normal.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -266,6 +281,16 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+          <AbstractNodeData Name="noticeImg" ActionTag="-658275850" Tag="566" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="315.0000" RightMargin="315.0000" TopMargin="573.9000" BottomMargin="113.1000" LeftEage="214" RightEage="214" TopEage="10" BottomEage="10" Scale9OriginX="214" Scale9OriginY="10" Scale9Width="222" Scale9Height="13" ctype="ImageViewObjectData">
+            <Size X="650.0000" Y="33.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="640.0000" Y="129.6000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.1800" />
+            <PreSize X="0.5078" Y="0.0458" />
+            <FileData Type="Normal" Path="home-yli/jiankangyouxi.png" Plist="" />
+          </AbstractNodeData>
           <AbstractNodeData Name="share" ActionTag="-1928552872" Tag="229" IconVisible="False" LeftMargin="15.5000" RightMargin="1175.5000" TopMargin="625.5000" BottomMargin="5.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="59" Scale9Height="67" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="89.0000" Y="89.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -323,6 +348,21 @@
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
             <PressedFileData Type="Normal" Path="home-yli/btn_market_press.png" Plist="" />
             <NormalFileData Type="Normal" Path="home-yli/btn_market_normal.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="activity" ActionTag="1835315369" Tag="345" IconVisible="False" LeftMargin="495.5000" RightMargin="695.5000" TopMargin="625.5000" BottomMargin="5.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="59" Scale9Height="67" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="89.0000" Y="89.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="540.0000" Y="50.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4219" Y="0.0694" />
+            <PreSize X="0.0695" Y="0.1236" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Normal" Path="home-yli/invite_btn_huodong.png" Plist="" />
+            <PressedFileData Type="Normal" Path="home-yli/invite_btn_huodong.png" Plist="" />
+            <NormalFileData Type="Normal" Path="home-yli/invite_btn_huodong_press.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

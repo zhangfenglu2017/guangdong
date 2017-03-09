@@ -95,6 +95,11 @@
     }
 
     var majiang = {};
+    var myObject;
+    majiang.init = function (object)
+    {
+        myObject = object;
+    }
 
     //惠州牌型枚举
     majiang.HUI_ZHOU_HTYPE = {

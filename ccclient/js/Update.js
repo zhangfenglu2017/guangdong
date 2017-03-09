@@ -1,7 +1,7 @@
 (function () 
 {
 
-    var jindu = 1,isAlready=false;
+    var jindu = 1,isAlready = false;
     function upText()
     {
         jindu++;
@@ -9,9 +9,11 @@
         {
             if(jindu !=99)  bar.setPercent(jindu);
             loadTitle.setString("资源正在加载中(" + jindu + "%)");
-        } else
+        }
+        else
         {
-            if(jindu==100)  GetRemoteCfg();
+            if(jindu==100)
+                GetRemoteCfg();
         }
     }
     function setProgressPercent(p)
@@ -42,29 +44,54 @@
     {
         var xhr = cc.loader.getXMLHttpRequest();
         xhr.open("GET", "http://gdmj.coolgamebox.com:800/gdmj/" + remoteCfgName);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
+        xhr.onreadystatechange = function ()
+        {
+            if (xhr.readyState == 4 && xhr.status == 200)
+            {
                 jsclient.remoteCfg = JSON.parse(xhr.responseText);
                 sendEvent("updateFinish");
             }
-            else CfgGetFail();
-        }
-        xhr.onerror = function (event) {
+            else
+                CfgGetFail();
+        };
+        xhr.onerror = function (event)
+        {
             CfgGetFail();
-        }
+        };
         xhr.send();
     }
 
-    function GetRemoteCfgNet() {
+    function LoadActionCfg(remoteCfgName)
+    {
+        var xhr = cc.loader.getXMLHttpRequest();
+        xhr.open("GET", "http://gdmj.coolgamebox.com:800/gdmj/" + remoteCfgName);
+        xhr.onreadystatechange = function ()
+        {
+            if (xhr.readyState == 4 && xhr.status == 200)
+            {
+                jsclient.actionCfg = JSON.parse(xhr.responseText);
+                log("活动数据：" + JSON.stringify(jsclient.actionCfg));
+            }
+        };
+        xhr.send();
+    }
+
+    function GetRemoteCfgNet()
+    {
         var remoteCfgName = "android.json";
-        if (cc.sys.OS_IOS == cc.sys.os) {
-            if (jsb.fileUtils.isFileExist(jsb.fileUtils.getWritablePath() + "majiangios.txt")) {
-                cc.loader.loadTxt(jsb.fileUtils.getWritablePath() + "majiangios.txt", function (er, txt) {
-                    if (txt && txt.length > 0) {
+        if (cc.sys.OS_IOS == cc.sys.os)
+        {
+            if (jsb.fileUtils.isFileExist(jsb.fileUtils.getWritablePath() + "majiangios.txt"))
+            {
+                cc.loader.loadTxt(jsb.fileUtils.getWritablePath() + "majiangios.txt", function (er, txt)
+                {
+                    if (txt && txt.length > 0)
+                    {
                         remoteCfgName = txt + ".json";
                         LoadConfig(remoteCfgName);
                     }
-                    else CfgGetFail();
+                    else
+                        CfgGetFail();
                 });
                 return;
             }
@@ -73,19 +100,26 @@
         LoadConfig(remoteCfgName);
     }
 
-    function GetRemoteCfg() {
-        cc.loader.loadTxt("res/test.cfg", function (er, txt) {
-            if (er || txt.length == 0) {
+    function GetRemoteCfg()
+    {
+        cc.loader.loadTxt("res/test.cfg", function (er, txt)
+        {
+            if (er || txt.length == 0)
+            {
                 GetRemoteCfgNet();
             }
-            else {
+            else
+            {
                 jsclient.remoteCfg = JSON.parse(txt);
                 sendEvent("updateFinish");
             }
         });
+
+        LoadActionCfg("action.json");
     }
 
-    function GetRemoteIP() {
+    function GetRemoteIP()
+    {
 
         // if (cc.sys.OS_WINDOWS == cc.sys.os)
         // {
@@ -208,7 +242,8 @@
             }
 
         },
-        ctor: function () {
+        ctor: function ()
+        {
             this._super();
             var updateui = ccs.load(res.Updae_json);
             ConnectUI2Logic(updateui.node, this.jsBind);
@@ -217,23 +252,26 @@
             //this.schedule(upText,0.01);
             return true;
         },
-        onEnter: function () {
-
+        onEnter: function ()
+        {
             this._super();
             //cc.spriteFrameCache.addSpriteFrames("res/Pic/Game/poker.plist");
             // var barNode = this.jsBind.barbk.bar._node;
             // barNode.setPercent(0);
 
-            function UpdateResource() {
+            function UpdateResource()
+            {
                 manager = new jsb.AssetsManager("res/project.manifest", jsb.fileUtils.getWritablePath() + "update");
                 manager.update();
                 // As the process is asynchronised, you need to retain the assets manager to make sure it won't be released before the process is ended.
                 manager.retain();
-                if (!manager.getLocalManifest().isLoaded()) {
+                if (!manager.getLocalManifest().isLoaded())
+                {
                     manager.release();
                     GetRemoteIP();
                 }
-                else {
+                else
+                {
                     listener = new jsb.EventListenerAssetsManager(manager, function (event) {
 
                         sendEvent("AssetsManagerEvent", event);
@@ -244,8 +282,6 @@
 
             //if(  cc.sys.OS_WINDOWS == cc.sys.os )  GetRemoteIP();	else
             UpdateResource();
-
-
         }
     });
 
@@ -1566,6 +1602,9 @@ var updatelayer_itme_node;
     });
 
 })();
+
+
+
 
 
 

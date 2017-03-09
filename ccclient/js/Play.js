@@ -4600,6 +4600,7 @@ var PlayLayer = cc.Layer.extend(
                         canHu7: {
                             _visible: function () {
                                 return (jsclient.data.sData.tData.canHu7
+                                && jsclient.data.sData.tData.gameType != 1
                                 && jsclient.data.sData.tData.gameType != 3
                                 && jsclient.data.sData.tData.gameType != 5
                                 && jsclient.data.sData.tData.gameType != 6);

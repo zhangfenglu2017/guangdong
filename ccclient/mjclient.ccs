@@ -3,6 +3,35 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Folder Name="activity">
+          <Folder Name="invite">
+            <Image Name="invite_btn_1.png" />
+            <Image Name="invite_btn_2.png" />
+            <Image Name="invite_btn_3.png" />
+            <Image Name="invite_btn_4.png" />
+            <Image Name="invite_btn_5.png" />
+            <Image Name="invite_btn_lingqu.png" />
+            <Image Name="invite_btn_lingqu_h.png" />
+            <Image Name="invite_btn_normal.png" />
+            <Image Name="invite_btn_press.png" />
+            <Image Name="invite_btn_xinshoulibao.png" />
+            <Image Name="invite_btn_yaoqing.png" />
+            <Image Name="invite_btn_yaoqing_h.png" />
+            <Image Name="invite_diban.png" />
+            <Image Name="invite_faguang.png" />
+            <Image Name="invite_guizeshuoming.png" />
+            <Image Name="invite_hdzs.png" />
+            <Image Name="invite_hdzx.png" />
+            <Image Name="invite_jdt_shang.png" />
+            <Image Name="invite_jdt_xia.png" />
+            <Image Name="invite_jianbiantiao.png" />
+            <Image Name="invite_jiantou.png" />
+            <Image Name="invite_wenhao.png" />
+            <Image Name="invite_yilingqu.png" />
+            <Image Name="invite_zuanshi.png" />
+            <Image Name="invite_zuanshishu.png" />
+          </Folder>
+        </Folder>
         <Folder Name="addRoomNew">
           <Image Name="btn_delete_normal.png" />
           <Image Name="btn_delete_press.png" />
@@ -208,12 +237,16 @@
           <Image Name="floor_04.png" />
           <Image Name="floor_11.png" />
           <Image Name="horn.png" />
+          <Image Name="invite_btn_huodong.png" />
+          <Image Name="invite_btn_huodong_press.png" />
           <Image Name="jia_02.png" />
           <Image Name="jia01.png" />
+          <Image Name="jiankangyouxi.png" />
           <Image Name="joinGame.png" />
           <Image Name="logo_02.png" />
           <Image Name="red_dot.png" />
           <Image Name="returnGame.png" />
+          <Image Name="xslb.png" />
         </Folder>
         <Folder Name="loading">
           <Image Name="agree.png" />
@@ -615,6 +648,10 @@
           <Image Name="t_rule.png" />
           <Image Name="t_yonghuxieyi.png" />
         </Folder>
+        <Project Name="activationCodeLayer.csd" Type="Layer" />
+        <Project Name="Activity.csd" Type="Node" />
+        <Project Name="Activity_Invite.csd" Type="Node" />
+        <Project Name="awardPrompt.csd" Type="Layer" />
         <Project Name="block.csd" Type="Layer" />
         <Project Name="ChangeIdLayer.csd" Type="Layer" />
         <Project Name="create.csd" Type="Layer" />
@@ -623,6 +660,7 @@
         <Project Name="endOne.csd" Type="Layer" />
         <Project Name="EndRoom.csd" Type="Node" />
         <Project Name="enter.csd" Type="Layer" />
+        <Project Name="erroPrompt.csd" Type="Layer" />
         <Project Name="ExportDataLayer.csd" Type="Layer" />
         <Project Name="ExtGame.csd" Type="Layer" />
         <Project Name="Home.csd" Type="Layer" />
