@@ -1,5 +1,5 @@
 {
-  "servers":"120.76.204.225:15010:15039,120.76.205.11:15010:15039"
+   "servers":"120.76.204.225:15010:15039,120.76.205.11:15010:15039"
   ,"serversSelect":[600,400]
   ,"wxShareUrl":"http://download.happyplaygame.net"
   ,"voiceUrl":"http://124.232.153.18:9109/symj/"
@@ -12,8 +12,14 @@
   ,"help2Url":"http://gdmj.coolgamebox.com:800/gdmj/help2.html"
   ,"help3Url":"http://gdmj.coolgamebox.com:800/gdmj/help3.html"
   ,"help4Url":"http://gdmj.coolgamebox.com:800/gdmj/help4.html"
+  ,"help5Url":"http://gdmj.coolgamebox.com:800/gdmj/help5.html"
+  ,"help6Url":"http://gdmj.coolgamebox.com:800/gdmj/help6.html"
+  ,"help7Url":"http://gdmj.coolgamebox.com:800/gdmj/help7.html"
   ,"legalUrl":"http://gdmj.coolgamebox.com:800/gdmj/legal.html"
   ,"infoUrl":"http://gdmj.coolgamebox.com:800/gdmj/info.html"
   ,"noticeUrl":"http://gdmj.coolgamebox.com:800/gdmj/notice.json"
   ,"homeScroll":"代理咨询请联系微信Kfxj111，文明娱乐，禁止赌博"
+  ,"uptitle":"亲爱的玩家:"
+  ,"upnexttitle":"星悦广东麻将本次更新内容如下:"
+  ,"updesc":"1.新增三人推倒胡玩法\t\n2.广州推倒胡玩法新增节节高选项\t\n3.修复幺九算法存在的漏洞\t\n"
 }

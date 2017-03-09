@@ -1804,7 +1804,7 @@
             },
             "LeftMargin": 424.9998,
             "RightMargin": 685.0002,
-            "TopMargin": 647.4999,
+            "TopMargin": 647.5,
             "BottomMargin": 7.5,
             "Tag": 1596,
             "ActionTag": -600402216,
@@ -2546,7 +2546,7 @@
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 28,
+                    "FontSize": 26,
                     "LabelText": "清一色清一色清一色",
                     "OutlineColor": {
                       "G": 0,
@@ -2564,8 +2564,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 428.5251,
-                      "Y": 98.7548
+                      "X": 522.2714,
+                      "Y": 97.5045
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2578,21 +2578,21 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 3.3479,
-                      "Y": 0.7964
+                      "X": 4.0802,
+                      "Y": 0.7863
                     },
                     "PreSize": {
-                      "X": 3.125,
+                      "X": 4.6875,
                       "Y": 0.3871
                     },
-                    "LeftMargin": 228.5251,
-                    "RightMargin": -500.5251,
-                    "TopMargin": 1.2452,
-                    "BottomMargin": 74.7548,
+                    "LeftMargin": 222.2714,
+                    "RightMargin": -694.2714,
+                    "TopMargin": 2.4955,
+                    "BottomMargin": 73.5045,
                     "Tag": 1605,
                     "ActionTag": 2026398694,
                     "Size": {
-                      "X": 400.0,
+                      "X": 600.0,
                       "Y": 48.0
                     },
                     "Name": "cardType",
@@ -2600,8 +2600,9 @@
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 28,
+                    "FontSize": 26,
                     "LabelText": "4番4番",
+                    "HorizontalAlignmentType": "HT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -2618,7 +2619,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 750.0001,
+                      "X": 809.9943,
                       "Y": 94.9999
                     },
                     "Scale": {
@@ -2632,15 +2633,15 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 5.8594,
+                      "X": 6.3281,
                       "Y": 0.7661
                     },
                     "PreSize": {
                       "X": 1.5625,
                       "Y": 0.3871
                     },
-                    "LeftMargin": 670.0001,
-                    "RightMargin": -742.0001,
+                    "LeftMargin": 729.9943,
+                    "RightMargin": -801.9943,
                     "TopMargin": 5.0001,
                     "BottomMargin": 70.9999,
                     "Tag": 1606,
@@ -3296,7 +3297,7 @@
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 28,
+                    "FontSize": 26,
                     "LabelText": "清一色清一色清一色",
                     "OutlineColor": {
                       "G": 0,
@@ -3314,8 +3315,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 428.3478,
-                      "Y": 97.4995
+                      "X": 522.095,
+                      "Y": 96.2462
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3328,21 +3329,21 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 3.3465,
-                      "Y": 0.7863
+                      "X": 4.0789,
+                      "Y": 0.7762
                     },
                     "PreSize": {
-                      "X": 3.125,
+                      "X": 4.6875,
                       "Y": 0.3871
                     },
-                    "LeftMargin": 228.3478,
-                    "RightMargin": -500.3478,
-                    "TopMargin": 2.5005,
-                    "BottomMargin": 73.4995,
+                    "LeftMargin": 222.095,
+                    "RightMargin": -694.095,
+                    "TopMargin": 3.7538,
+                    "BottomMargin": 72.2462,
                     "Tag": 591,
                     "ActionTag": -105439568,
                     "Size": {
-                      "X": 400.0,
+                      "X": 600.0,
                       "Y": 48.0
                     },
                     "Name": "cardType",
@@ -3350,8 +3351,9 @@
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 28,
+                    "FontSize": 26,
                     "LabelText": "4番4番",
+                    "HorizontalAlignmentType": "HT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -3368,8 +3370,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 750.0001,
-                      "Y": 94.9999
+                      "X": 809.9943,
+                      "Y": 94.9998
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3382,17 +3384,17 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 5.8594,
+                      "X": 6.3281,
                       "Y": 0.7661
                     },
                     "PreSize": {
                       "X": 1.5625,
                       "Y": 0.3871
                     },
-                    "LeftMargin": 670.0001,
-                    "RightMargin": -742.0001,
-                    "TopMargin": 5.0001,
-                    "BottomMargin": 70.9999,
+                    "LeftMargin": 729.9943,
+                    "RightMargin": -801.9943,
+                    "TopMargin": 5.0002,
+                    "BottomMargin": 70.9998,
                     "Tag": 592,
                     "ActionTag": 881574935,
                     "Size": {
@@ -4091,7 +4093,7 @@
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 28,
+                    "FontSize": 26,
                     "LabelText": "清一色清一色清一色",
                     "OutlineColor": {
                       "G": 0,
@@ -4109,8 +4111,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 428.3478,
-                      "Y": 97.5
+                      "X": 522.095,
+                      "Y": 96.2496
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4123,21 +4125,21 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 3.3465,
-                      "Y": 0.7863
+                      "X": 4.0789,
+                      "Y": 0.7762
                     },
                     "PreSize": {
-                      "X": 3.125,
+                      "X": 4.6875,
                       "Y": 0.3871
                     },
-                    "LeftMargin": 228.3478,
-                    "RightMargin": -500.3478,
-                    "TopMargin": 2.5,
-                    "BottomMargin": 73.5,
+                    "LeftMargin": 222.095,
+                    "RightMargin": -694.095,
+                    "TopMargin": 3.7504,
+                    "BottomMargin": 72.2496,
                     "Tag": 598,
                     "ActionTag": -1368140419,
                     "Size": {
-                      "X": 400.0,
+                      "X": 600.0,
                       "Y": 48.0
                     },
                     "Name": "cardType",
@@ -4145,8 +4147,9 @@
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 28,
+                    "FontSize": 26,
                     "LabelText": "4番4番",
+                    "HorizontalAlignmentType": "HT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -4163,7 +4166,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 750.0001,
+                      "X": 809.9943,
                       "Y": 94.9999
                     },
                     "Scale": {
@@ -4177,15 +4180,15 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 5.8594,
+                      "X": 6.3281,
                       "Y": 0.7661
                     },
                     "PreSize": {
                       "X": 1.5625,
                       "Y": 0.3871
                     },
-                    "LeftMargin": 670.0001,
-                    "RightMargin": -742.0001,
+                    "LeftMargin": 729.9943,
+                    "RightMargin": -801.9943,
                     "TopMargin": 5.0001,
                     "BottomMargin": 70.9999,
                     "Tag": 599,
@@ -4886,7 +4889,7 @@
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 28,
+                    "FontSize": 26,
                     "LabelText": "清一色清一色清一色",
                     "OutlineColor": {
                       "G": 0,
@@ -4904,8 +4907,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 428.3478,
-                      "Y": 97.5001
+                      "X": 522.095,
+                      "Y": 96.2502
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4918,21 +4921,21 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 3.3465,
-                      "Y": 0.7863
+                      "X": 4.0789,
+                      "Y": 0.7762
                     },
                     "PreSize": {
-                      "X": 3.125,
+                      "X": 4.6875,
                       "Y": 0.3871
                     },
-                    "LeftMargin": 228.3478,
-                    "RightMargin": -500.3478,
-                    "TopMargin": 2.4999,
-                    "BottomMargin": 73.5001,
+                    "LeftMargin": 222.095,
+                    "RightMargin": -694.095,
+                    "TopMargin": 3.7498,
+                    "BottomMargin": 72.2502,
                     "Tag": 605,
                     "ActionTag": -1079109547,
                     "Size": {
-                      "X": 400.0,
+                      "X": 600.0,
                       "Y": 48.0
                     },
                     "Name": "cardType",
@@ -4940,8 +4943,9 @@
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 28,
+                    "FontSize": 26,
                     "LabelText": "4番4番",
+                    "HorizontalAlignmentType": "HT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -4958,7 +4962,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 750.0001,
+                      "X": 809.9943,
                       "Y": 94.9999
                     },
                     "Scale": {
@@ -4972,15 +4976,15 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 5.8594,
+                      "X": 6.3281,
                       "Y": 0.7661
                     },
                     "PreSize": {
                       "X": 1.5625,
                       "Y": 0.3871
                     },
-                    "LeftMargin": 670.0001,
-                    "RightMargin": -742.0001,
+                    "LeftMargin": 729.9943,
+                    "RightMargin": -801.9943,
                     "TopMargin": 5.0001,
                     "BottomMargin": 70.9999,
                     "Tag": 606,

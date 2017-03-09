@@ -65,6 +65,16 @@ var SettingLayer = cc.Layer.extend({
 				   jsclient.setui.removeFromParent(true);
 				}
 			},
+
+			closeBtn:
+			{
+				_click:function()
+				{
+					var exitGameLayer = new ExitGameLayer();
+					jsclient.Scene.addChild(exitGameLayer);
+				}
+			},
+
 			Slider_effect:{
 				_run:function(){ this.setPercent(setEffectsVolume(-1)*100); },
 				_slider:function(sdr,tp){setEffectsVolume(this.getPercent()/100);}
@@ -83,7 +93,7 @@ var SettingLayer = cc.Layer.extend({
 		ConnectUI2Logic(setui.node,this.jsBind);
         this.addChild(setui.node);
 		jsclient.setui=this;
-		cc.log("machao_data "+JSON.stringify(jsclient.data));
+		// cc.log("machao_data "+JSON.stringify(jsclient.data));
         return true;
     },
     onEnter:function () 
@@ -95,12 +105,13 @@ var SettingLayer = cc.Layer.extend({
        		this.jsBind.back.exitBtn._node.setEnabled(true);
        		this.jsBind.back.delBtn._node.visible= false;
        		this.jsBind.back.delBtn._node.setEnabled(false);
-       	}else if(this.getName() == "PlayLayerClick")
+       	}
+		else if(this.getName() == "PlayLayerClick")
        	{
        		var sData=jsclient.data.sData;
 			var tData=sData.tData;
-			cc.log("machao_data "+JSON.stringify(jsclient.data));
-       		cc.log("machao_tdata "+JSON.stringify(tData));
+			// cc.log("machao_data "+JSON.stringify(jsclient.data));
+       		// cc.log("machao_tdata "+JSON.stringify(tData));
        		this.jsBind.back.delBtn._node.visible = true;
        		this.jsBind.back.delBtn._node.setEnabled(true);
        		this.jsBind.back.exitBtn._node.visible = false;
@@ -361,5 +372,65 @@ window.ChatLayer = cc.Layer.extend({
 
 
 })();
+
+
+
+
+
+
+
+
+var ExitGameLayer = cc.Layer.extend({
+	jsBind:
+	{
+		block:
+		{
+			_layout:[[1,1],[0.5,0.5],[0,0],true]
+		},
+		back:
+		{
+			_layout:[[0.54,0.66],[0.5,0.5],[0,0]],
+
+			okBtn:
+			{
+				_click:function()
+				{
+					// jsclient.showMsg("确定退出游戏吗？",
+					// 	function(){ 
+					//
+					// 	},function(){}
+					// );
+
+					if(  cc.sys.OS_IOS == cc.sys.os )
+					{
+						sendEvent("restartGame");
+					}
+					else
+					{
+						cc.director.end();
+					}
+				}
+			},
+
+			noBtn:
+			{
+				_click:function()
+				{
+					jsclient.exitGameui.removeFromParent(true);
+				}
+			},
+		}
+
+
+	},
+	ctor:function () {
+		this._super();
+		var setui = ccs.load("res/ExtGame.json");
+		ConnectUI2Logic(setui.node,this.jsBind);
+		this.addChild(setui.node);
+		jsclient.exitGameui=this;
+		return true;
+	},
+});
 
 

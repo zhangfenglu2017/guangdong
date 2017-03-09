@@ -238,8 +238,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 300.0,
-                  "Y": 490.0
+                  "X": 300.0001,
+                  "Y": 540.0005
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -249,16 +249,16 @@
                 "IconVisible": false,
                 "PrePosition": {
                   "X": 0.2344,
-                  "Y": 0.6806
+                  "Y": 0.75
                 },
                 "PreSize": {
                   "X": 0.1602,
                   "Y": 0.1083
                 },
-                "LeftMargin": 197.5,
-                "RightMargin": 877.5,
-                "TopMargin": 191.0,
-                "BottomMargin": 451.0,
+                "LeftMargin": 197.5001,
+                "RightMargin": 877.4999,
+                "TopMargin": 140.9995,
+                "BottomMargin": 501.0005,
                 "Tag": 235,
                 "ActionTag": -2001101897,
                 "Size": {
@@ -313,8 +313,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 300.0,
-                  "Y": 410.0
+                  "X": 300.0001,
+                  "Y": 400.0004
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -324,16 +324,16 @@
                 "IconVisible": false,
                 "PrePosition": {
                   "X": 0.2344,
-                  "Y": 0.5694
+                  "Y": 0.5556
                 },
                 "PreSize": {
                   "X": 0.1602,
                   "Y": 0.1083
                 },
-                "LeftMargin": 197.5,
-                "RightMargin": 877.5,
-                "TopMargin": 271.0,
-                "BottomMargin": 371.0,
+                "LeftMargin": 197.5001,
+                "RightMargin": 877.4999,
+                "TopMargin": 280.9996,
+                "BottomMargin": 361.0004,
                 "Tag": 234,
                 "ActionTag": -1807520407,
                 "Size": {
@@ -388,8 +388,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 300.0,
-                  "Y": 330.0
+                  "X": 300.0001,
+                  "Y": 330.0005
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -405,10 +405,10 @@
                   "X": 0.1602,
                   "Y": 0.1083
                 },
-                "LeftMargin": 197.5,
-                "RightMargin": 877.5,
-                "TopMargin": 351.0,
-                "BottomMargin": 291.0,
+                "LeftMargin": 197.5001,
+                "RightMargin": 877.4999,
+                "TopMargin": 350.9995,
+                "BottomMargin": 291.0005,
                 "Tag": 352,
                 "ActionTag": 2053477970,
                 "Size": {
@@ -416,6 +416,81 @@
                   "Y": 78.0
                 },
                 "Name": "shzhmjtable",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/y_donggua_normal.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/y_donggua_normal.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/y_donggua_press.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 175,
+                "Scale9Height": 56,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 300.0006,
+                  "Y": 260.0011
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2344,
+                  "Y": 0.3611
+                },
+                "PreSize": {
+                  "X": 0.1602,
+                  "Y": 0.1083
+                },
+                "LeftMargin": 197.5006,
+                "RightMargin": 877.4994,
+                "TopMargin": 420.9989,
+                "BottomMargin": 221.0011,
+                "Tag": 121,
+                "ActionTag": 1725460833,
+                "Size": {
+                  "X": 205.0,
+                  "Y": 78.0
+                },
+                "Name": "dgmjtable",
                 "ctype": "ButtonObjectData"
               },
               {
@@ -463,8 +538,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 300.0,
-                  "Y": 240.0
+                  "X": 300.0001,
+                  "Y": 190.0004
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -474,23 +549,173 @@
                 "IconVisible": false,
                 "PrePosition": {
                   "X": 0.2344,
-                  "Y": 0.3333
+                  "Y": 0.2639
                 },
                 "PreSize": {
                   "X": 0.1602,
                   "Y": 0.1083
                 },
-                "LeftMargin": 197.5,
-                "RightMargin": 877.5,
-                "TopMargin": 441.0,
-                "BottomMargin": 201.0,
-                "Tag": 121,
-                "ActionTag": 1725460833,
+                "LeftMargin": 197.5001,
+                "RightMargin": 877.4999,
+                "TopMargin": 490.9996,
+                "BottomMargin": 151.0004,
+                "Tag": 446,
+                "ActionTag": -1990082813,
                 "Size": {
                   "X": 205.0,
                   "Y": 78.0
                 },
                 "Name": "jphmjtable",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/y_100_1.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/y_100_1.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/y_100_2.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 175,
+                "Scale9Height": 56,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 300.0006,
+                  "Y": 120.0004
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2344,
+                  "Y": 0.1667
+                },
+                "PreSize": {
+                  "X": 0.1602,
+                  "Y": 0.1083
+                },
+                "LeftMargin": 197.5006,
+                "RightMargin": 877.4994,
+                "TopMargin": 560.9996,
+                "BottomMargin": 81.0004,
+                "Tag": 542,
+                "ActionTag": 1301926382,
+                "Size": {
+                  "X": 205.0,
+                  "Y": 78.0
+                },
+                "Name": "ybzhmjtable",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/y_sanrentuidaohu_normal.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/y_sanrentuidaohu_normal.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/y_sanrentuidaohu_press.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 175,
+                "Scale9Height": 56,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 300.0002,
+                  "Y": 470.0001
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2344,
+                  "Y": 0.6528
+                },
+                "PreSize": {
+                  "X": 0.1602,
+                  "Y": 0.1083
+                },
+                "LeftMargin": 197.5002,
+                "RightMargin": 877.4998,
+                "TopMargin": 210.9999,
+                "BottomMargin": 431.0001,
+                "Tag": 657,
+                "ActionTag": -1303672433,
+                "Size": {
+                  "X": 205.0,
+                  "Y": 78.0
+                },
+                "Name": "srfmjtable",
                 "ctype": "ButtonObjectData"
               },
               {
@@ -675,10 +900,16 @@
       "UsedResources": [
         "createRoomNew/jp-yeqian.png",
         "createRoomNew/jp-yeqian_press.png",
+        "createRoomNew/y_100_1.png",
+        "createRoomNew/y_100_2.png",
+        "createRoomNew/y_donggua_normal.png",
+        "createRoomNew/y_donggua_press.png",
         "createRoomNew/y_guangzhoutuidaohu_normal.png",
         "createRoomNew/y_guangzhoutuidaohu_press.png",
         "createRoomNew/y_huizhouzhuang_normal.png",
         "createRoomNew/y_huizhouzhuang_press.png",
+        "createRoomNew/y_sanrentuidaohu_normal.png",
+        "createRoomNew/y_sanrentuidaohu_press.png",
         "createRoomNew/y_shenzhen_normal.png",
         "createRoomNew/y_shenzhen_press.png",
         "Default/Button_Disable.png",

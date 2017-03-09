@@ -94,7 +94,7 @@ function initMJTexture(node)
 	}
 }
 
-
+var updateTishi;
 var HomeLayer=cc.Layer.extend(
 {
 	jsBind:
@@ -115,7 +115,59 @@ var HomeLayer=cc.Layer.extend(
         {
 			_layout:[[1,1],[0.5,0.5],[0,0],true],
 		},
+        updateTishi:
+        {
+            _run:function()
+            {
+                updateTishi = this;
+            },
+            _layout:[[0, 0.8],[0.5,0.5],[0,0]],
+            _visible: function ()
+            {
+                //判断 有更新 有则显示出来 且只显示1次 否则 不显示
+                var isUpdate = sys.localStorage.getItem("isUpdate");
+                if(isUpdate && isUpdate == "1"){
+                    sys.localStorage.setItem("isUpdate", "0");
+                    return true;
+                }
+                  return false;
+                
+            },
+            uptitle:
+            {
+                _text: function ()
+                {
+                    return jsclient.remoteCfg.uptitle;
+                }
+            },
+            upnexttitle:
+            {
+                _text: function ()
+                {
+                    return jsclient.remoteCfg.upnexttitle;
+                }
+            },
+            ScrollView:
+            {
+                updesc:
+                {
+                    _text: function ()
+                    {
+                        return jsclient.remoteCfg.updesc;
+                    }
+                }
+            },
+            close:
+            {
+                _touch: function (btn, eT)
+                {
+                    if (eT == 2)
+                        updateTishi.setVisible(false);
+                }
+            }
 
+
+        },
         title:
         {
             _layout:[[0.35,0.3],[0.53,0.9],[0,0]],
@@ -381,6 +433,30 @@ var HomeLayer=cc.Layer.extend(
 		jsclient.homeui=this;
 		playMusic("bgMain");
 		initMJTexture(this);
+        //更新说明提示框的回弹效果
+        doLayout(updateTishi,[0,0],[0.5,0.5],[0,0] );
+         updateTishi.runAction(cc.sequence(
+             cc.delayTime(0.3),
+             cc.callFunc(
+                 function () {
+                     doLayout(updateTishi,[0,0.80],[0.5,0.5],[0,0] );
+                 }
+             ),
+             cc.delayTime(0.1),
+             cc.callFunc(
+                 function () {
+                     updateTishi.setScaleY(0.85);
+                     doLayout(updateTishi,[0,0.85],[0.5,0.5],[0,0] );
+                 }
+             ),
+             cc.delayTime(0.1),
+             cc.callFunc(
+                 function () {
+                     doLayout(updateTishi,[0,0.80],[0.5,0.5],[0,0] );
+                 }
+             )
+
+         ));
 
 		return true;
 	}
@@ -396,7 +472,7 @@ var HomeLayer=cc.Layer.extend(
 
             },
             back: {
-                _layout: [[0, 0.4], [0.5, 0.5], [0, 0]],
+                _layout: [[0, 0.8], [0.5, 0.5], [0, 0]],
                 inputimg:{
                     input:{
                         _run:function() {
@@ -513,7 +589,7 @@ var HomeLayer=cc.Layer.extend(
 
             },
             back: {
-                _layout: [[0, 0.4], [0.5, 0.5], [0, 0]],
+                _layout: [[0, 0.8], [0.5, 0.5], [0, 0]],
                 inputimg:{
                     playerId:{
                         _run:function() {

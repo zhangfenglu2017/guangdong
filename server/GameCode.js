@@ -1,8 +1,45 @@
 module.exports = function (app, server, gameid, Player, Table, TableGroup, TableManager, Game) {
     var gameLog = [];
 
+    var fs=require('fs');
+    var os = require('os');
+    var existCheck={};
+
+    var publicIp=null;
+    function getPublicIp()
+    {
+        if(!publicIp)
+        {
+            var ifaces = os.networkInterfaces();
+            for(var iname in ifaces)
+            {
+                var net=ifaces[iname];
+                for(var i=0;i<net.length;i++)
+                {
+                    var ni=net[i];
+                    if(net[i].family=="IPv4")
+                    {
+                        var ip=net[i].address;
+                        if (ip.indexOf('127.') == 0 ||ip.indexOf('10.') == 0 ||    ip.indexOf('172.') == 0 ||   ip.indexOf('192.') == 0)
+                        {
+
+                        }
+                        else
+                        {
+                            publicIp=ip;
+                            break;
+                        }
+                    }
+                }
+                if(publicIp) break;
+            }
+        }
+        if(publicIp==null) publicIp="192.168.1.113";
+        return publicIp;
+    }
+
     function GLog(log) {
-         return;
+        return;
         app.FileWork(gameLog, __dirname + "/log.txt", log)
     }
 
@@ -14,7 +51,9 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         GANG_DONG: 1,//广东麻将
         HUI_ZHOU: 2,//惠州麻将
         SHEN_ZHEN: 3,//深圳麻将
-        JI_PING_HU:4//（鸡平胡)
+        JI_PING_HU:4,//（鸡平胡)
+        DONG_GUAN:5,//东莞麻将
+        YI_BAI_ZHANG:6,//清远100张
     }
 
     var TableState = {
@@ -40,7 +79,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         //for(var i=0;i<pl.mjhand.length;i++){
         //	GLog("pl.mjhand["+i+"]===="+pl.mjhand[i]);
         //}
-        var huType = majiang.canHu(!td.canHu7, pl.mjhand, cd, td.canHuWith258, td.withZhong,td.fanGui,td.gui);
+        var huType = majiang.canHu(!td.canHu7, pl.mjhand, cd, td.canHuWith258, td.withZhong,td.fanGui,td.gui,td.gui4Hu);
         pl.huType = huType;
         return huType;
     }
@@ -64,32 +103,38 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         if (tData.withZhong || tData.fanGui) horse + 2;
         if (tData.jiejieGao) //此局多预留2匹马
         {
-            switch (self.players[tData.uids[tData.zhuang]].linkZhuang) {
-                case 1:
-                    //horse = horse + 2;
-                    break;
-                case 2:
-                    horse = horse + 2;
-                    break;
-                case 3:
-                    horse = horse + 4;
-                    break;
-                case 4:
-                    horse = horse + 6;
-                    break;
-                case 5:
-                    horse = horse + 8;
-                    break;
-                case 6:
-                    horse = horse + 10;
-                    break;
-                case 7:
-                    horse = horse + 12;
-                    break;
-                case 8:
-                    horse = horse + 14;
-                    break;
+            //所有玩家中 连胡数不为0的数
+            for(var i=0;i<tData.maxPlayer;i++)
+            {
+                if(self.players[tData.uids[i]].linkHu == 0) continue;
+                horse += (self.players[tData.uids[i]].linkHu)*2;
             }
+            //switch (self.players[tData.uids[tData.zhuang]].linkZhuang) {
+            //    case 1:
+            //        //horse = horse + 2;
+            //        break;
+            //    case 2:
+            //        horse = horse + 2;
+            //        break;
+            //    case 3:
+            //        horse = horse + 4;
+            //        break;
+            //    case 4:
+            //        horse = horse + 6;
+            //        break;
+            //    case 5:
+            //        horse = horse + 8;
+            //        break;
+            //    case 6:
+            //        horse = horse + 10;
+            //        break;
+            //    case 7:
+            //        horse = horse + 12;
+            //        break;
+            //    case 8:
+            //        horse = horse + 14;
+            //        break;
+            //}
 
         }
         if (leftCard > horse && majiang.canGang0(pl.mjhand, cd))        eatFlag += 4;
@@ -131,7 +176,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             eatFlag += 4;
             GLog("eatFlag=" + eatFlag + " " + pl.info.name + " 第" + tData.uids.indexOf(pl.uid) + "个人可明杠");
         }
-        if ((leftCard >= horse) && majiang.canPeng(pl.mjhand, cd)) {
+        if ((leftCard >= horse) && majiang.canPeng(pl.mjhand, cd) /*&& (pl.skipPeng.length == 0 || pl.skipPeng.length != 0 && pl.skipPeng.indexOf(cd) == -1)*/) {
             eatFlag += 2;
             GLog("eatFlag=" + eatFlag + " " + pl.info.name + " 第" + tData.uids.indexOf(pl.uid) + "个人可碰");
         }
@@ -146,7 +191,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         return eatFlag;
     }
 
-    function GetGuangDongEatFlag(pl, tData) {
+    function GetGuangDongEatFlag(pl, tData,self) {
         GLog("GetGuangDongEatFlag");
         var cd = tData.lastPut;
         var leftCard = (tData.withWind ? 136 : 108) - tData.cardNext;
@@ -164,6 +209,42 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         }
         var horse = tData.horse;
         if (tData.withZhong || tData.fanGui) horse + 2;
+        if (tData.jiejieGao) //此局多预留2匹马
+        {
+            //所有玩家中 连胡数不为0的数
+            for(var i=0;i<tData.maxPlayer;i++)
+            {
+                if(self.players[tData.uids[i]].linkHu == 0) continue;
+                horse += (self.players[tData.uids[i]].linkHu)*2;
+            }
+            //switch (self.players[tData.uids[tData.zhuang]].linkZhuang) {
+            //    case 1:
+            //        //horse = horse + 2;
+            //        break;
+            //    case 2:
+            //        horse = horse + 2;
+            //        break;
+            //    case 3:
+            //        horse = horse + 4;
+            //        break;
+            //    case 4:
+            //        horse = horse + 6;
+            //        break;
+            //    case 5:
+            //        horse = horse + 8;
+            //        break;
+            //    case 6:
+            //        horse = horse + 10;
+            //        break;
+            //    case 7:
+            //        horse = horse + 12;
+            //        break;
+            //    case 8:
+            //        horse = horse + 14;
+            //        break;
+            //}
+
+        }
         //if(leftCard>0&&majiang.canGang0(pl.mjhand,cd))        eatFlag+=4;
         if (leftCard > horse && majiang.canGang0(pl.mjhand, cd))        eatFlag += 4;
         //if((leftCard>4||tData.noBigWin)&&majiang.canPeng(pl.mjhand,cd))         eatFlag+=2;
@@ -177,6 +258,31 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             majiang.canChi(pl.mjhand, cd).length > 0
         ) eatFlag += 1;
         GLog("GetGuangDongEatFlag eatFlag=-------------" + eatFlag);
+        return eatFlag;
+    }
+
+    function GetDongGuanEatFlag(pl, tData) {
+        GLog("GetDongGuanEatFlag");
+        var cd = tData.lastPut;
+        var leftCard = (tData.withWind ? 136 : 108) - tData.cardNext;
+        if (tData.withWind && tData.withZhong) leftCard = 136 - tData.cardNext;
+        if (tData.withWind && !tData.withZhong) leftCard = 136 - tData.cardNext;
+        if (!tData.withWind && tData.withZhong) leftCard = 108 + 4 - tData.cardNext;
+        if (!tData.withWind && !tData.withZhong) leftCard = 108 - tData.cardNext;
+        GLog("GetDongGuanEatFlag leftCard----" + leftCard);
+        var eatFlag = 0;
+        if (!pl.skipHu && tData.canEatHu && GetHuType(tData, pl, cd) > 0) {
+            eatFlag += 8;
+        }
+        var horse = tData.horse;
+        if (tData.withZhong || tData.fanGui) horse + 2;
+        if (leftCard > horse && majiang.canGang0(pl.mjhand, cd))        eatFlag += 4;
+        if ((leftCard >= 2 || tData.noBigWin) && majiang.canPeng(pl.mjhand, cd) /*&& (pl.skipPeng.length == 0 || pl.skipPeng.length != 0 && pl.skipPeng.indexOf(cd) == -1)*/)       eatFlag += 2;
+        if ((leftCard > 2 || tData.noBigWin) && tData.canEat &&
+            tData.uids[(tData.curPlayer + 1) % tData.maxPlayer] == pl.uid && //下家限制
+            majiang.canChi(pl.mjhand, cd).length > 0
+        ) eatFlag += 1;
+        GLog("GetDongGuanEatFlag=-------------" + eatFlag);
         return eatFlag;
     }
 
@@ -202,7 +308,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 case 1:
                 {
                     // 非鸡胡 或 人胡 或 三元牌大于等于1个刻字 或 风圈局的刻子 或 本盘门风的刻子
-                    if (jiPingHuType != majiang.JI_PING_HU_HUTYPE.JIHU || (tData.cardNext == 53 && tData.curPlayer != tData.zhuang) || majiang.getSanYuanPaiKeZiNum(pl) >= 1 || (majiang.isGetBenMenMenFengKeZi(pl) || majiang.isGetFengQuanKeZi(tData.jiPingHuCircleWind.curCircleWind, pl))) {
+                    if (jiPingHuType != majiang.JI_PING_HU_HUTYPE.JIHU || (tData.cardNext == 53 && tData.curPlayer == tData.zhuang) || majiang.getSanYuanPaiKeZiNum(pl) >= 1 || (majiang.isGetBenMenMenFengKeZi(pl) || majiang.isGetFengQuanKeZi(tData.jiPingHuCircleWind.curCircleWind, pl))) {
                         GLog("-----------------------非鸡胡 或 人胡 或 三元牌1个刻字 或 风圈局的刻子 或 本盘门风的刻子");
                         canHuForJiPingHu = true;
                     }
@@ -307,6 +413,31 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         return eatFlag;
     }
 
+    function GetYiBaiZhangEatFlag(pl, tData) {
+        GLog("GetYiBaiZhangEatFlag");
+        var cd = tData.lastPut;
+        var leftCard = (tData.withWind ? 136 : 108) - tData.cardNext - 36;
+        if (tData.withWind && tData.withZhong) leftCard = 136 - tData.cardNext - 36;
+        if (tData.withWind && !tData.withZhong) leftCard = 136 - tData.cardNext -36;
+        if (!tData.withWind && tData.withZhong) leftCard = 108 + 4 - tData.cardNext -36;
+        if (!tData.withWind && !tData.withZhong) leftCard = 108 - tData.cardNext -36;
+        GLog("GetYiBaiZhangEatFlag leftCard----" + leftCard);
+        var eatFlag = 0;
+        if (!pl.skipHu && tData.canEatHu && GetHuType(tData, pl, cd) > 0) {
+            eatFlag += 8;
+        }
+        var horse = tData.horse;
+        if (tData.withZhong || tData.fanGui) horse + 2;
+        if (leftCard > horse && majiang.canGang0(pl.mjhand, cd))        eatFlag += 4;
+        if ((leftCard >= 2 || tData.noBigWin) && majiang.canPeng(pl.mjhand, cd))         eatFlag += 2;
+        if ((leftCard > 2 || tData.noBigWin) && tData.canEat &&
+            tData.uids[(tData.curPlayer + 1) % tData.maxPlayer] == pl.uid && //下家限制
+            majiang.canChi(pl.mjhand, cd).length > 0
+        ) eatFlag += 1;
+        GLog("GetYiBaiZhangEatFlag=-------------" + eatFlag);
+        return eatFlag;
+    }
+
     function GetEatFlag(pl, tData,self) {
         GLog("GetEatFlag");
         var eatFlag = 0;
@@ -323,6 +454,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             case GamesType.JI_PING_HU:
                 eatFlag = GetJiPingHuEatFlag(pl, tData,self);
                 break;
+            case GamesType.DONG_GUAN:
+                eatFlag = GetDongGuanEatFlag(pl,tData,self);
+                break;
+            case GamesType.YI_BAI_ZHANG:
+                eatFlag = GetYiBaiZhangEatFlag(pl,tData,self);
+                break;
         }
         return eatFlag;
     }
@@ -337,6 +474,8 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         table.mjlog = [];
         //公开
         table.tData = {
+            canBigWin:false,//能否大胡
+            cardsNum :0,//牌总数
             tState: TableState.waitJoin,
             initCoin: 1000,   //积分显示
             fanGui:false,     //翻鬼
@@ -361,6 +500,13 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             fanNum:0, //0 翻起胡 1翻起胡 3翻起胡
             jiPingHuCircleWind:{curCircleWind:0, allZhuangPlayer: []},// 0东圈 1南圈 2西圈 3北圈 所有做过庄的玩家
             maxPlayer:4,//默认为4人房
+            zhongIsMa:false,//红中算法 （选择红中癞子的时候 这个变量必须为false 它会以花牌的形式打出去）
+            canFan7 : false,//7对翻倍 （7对选项若为选中 该选项必为false）
+            coinRoomCreate:false,//金币场
+            guiJiaBei:false, //有鬼情况下胡牌时 手牌没鬼加倍
+            guiJiaMa:false,//有鬼情况下胡牌时 手牌没鬼加马
+            gui4Hu:false,//鬼牌模式 下有4鬼即可胡牌
+            gui4huBeiNum:1,//有鬼情况下 拿到4鬼胡牌所番的倍数 默认为1
         };
     }
     //断线重连
@@ -432,6 +578,11 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     function initAddPlayerForShenZhen(pl, self, msg) {
         GLog("Table.prototype.initAddPlayerForShenZhen");
         //公开
+        pl.winTotalNum = 0;//赢的总次数
+        pl.mingGangTotalNum = 0;//明杠总次数
+        pl.anGangTotalNum = 0;//暗杠总次数
+        pl.zhongMaTotalNum = 0;//中马总个数
+        pl.zhongMaNum = 0;//单次中马个数
         pl.winall = 0;   //累计赢
         pl.mjState = TableState.isReady;
         pl.mjpeng = [];  //碰
@@ -448,6 +599,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         pl.left4Ma = [];
         pl.skipPeng = [];
         pl.skipHu = false;
+        pl.linkHu = 0;
         self.uid2did[pl.uid] = pl.did;//记录数据服务器id
         pl.baojiu = {num: 0, putCardPlayer: []};
         var tData = self.tData;
@@ -468,6 +620,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             tData.fanGui = self.createPara.fanGui;
             if(tData.withZhong && tData.fanGui) {tData.withZhong = true;tData.fanGui = false;};
             tData.maxPlayer = isUndefined(self.createPara.maxPlayer) ? 4 :self.createPara.maxPlayer;//几人房
+            tData.gui4Hu = true;
             GLog("游戏类型:" + tData.gameType);
             GLog("风牌:" + tData.withWind);
             GLog("能吃:" + tData.canEat);
@@ -504,6 +657,93 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     function initAddPlayerForGuangDong(pl, self, msg) {
         GLog("Table.prototype.initAddPlayerForGuangDong");
         //公开
+        pl.winTotalNum = 0;//赢的总次数
+        pl.mingGangTotalNum = 0;//明杠总次数
+        pl.anGangTotalNum = 0;//暗杠总次数
+        pl.zhongMaTotalNum = 0;//中马总个数
+        pl.zhongMaNum = 0;//单次中马个数
+        pl.winall = 0;   //累计赢
+        pl.mjState = TableState.isReady;
+        pl.linkZhuang = 1; //连庄次数
+        pl.mjpeng = [];  //碰
+        pl.mjgang0 = []; //明杠
+        pl.mjgang1 = []; //暗杠
+        pl.mjchi = [];   //吃
+        //私有
+        pl.mjhand = [];  //手牌
+        pl.eatFlag = 0;  //胡8 杠4 碰2 吃1
+        pl.delRoom = 0;
+        pl.onLine = true;
+
+        pl.mjMa = [];
+        pl.left4Ma = [];
+        pl.skipPeng = [];
+        pl.skipHu = false;
+        pl.baojiu = {num: 0, putCardPlayer: []};
+        pl.linkHu = 0;
+        self.uid2did[pl.uid] = pl.did;//记录数据服务器id
+
+        var tData = self.tData;
+        if (tData.roundNum == -1) {
+            tData.roundAll = self.createPara.round;    //总
+            tData.roundNum = self.createPara.round;    //剩余
+            tData.canEatHu = self.createPara.canEatHu; //是否可以吃胡
+            tData.withWind = self.createPara.withWind; //是否可以带风
+            tData.canEat = self.createPara.canEat;     //是否可以吃
+            tData.noBigWin = false;//this.createPara.noBigWin; //是否邵阳玩法
+            tData.canHu7 = isUndefined(self.createPara.canHu7) ? false : self.createPara.canHu7; //是否可以七对
+            //tData.canHuWith258=isUndefined(this.createPara.canHuWith258) ? false:this.createPara.canHuWith258; //只能258做将
+            tData.canFan7 = isUndefined(self.createPara.canFan7) ? false : self.createPara.canFan7; //是否可以七对
+            if(tData.canFan7) tData.canHu7 = true;
+            tData.withZhong = isUndefined(self.createPara.withZhong) ? false : self.createPara.withZhong; //红中赖子
+            tData.canHuWith258 = false;
+            tData.gameType = self.createPara.gameType;
+            tData.horse = self.createPara.horse;
+            tData.fanGui = self.createPara.fanGui;
+            if(tData.withZhong && tData.fanGui) {tData.withZhong = true;tData.fanGui = false;};
+            tData.maxPlayer = isUndefined(self.createPara.maxPlayer) ? 4 :self.createPara.maxPlayer;//几人房
+            tData.jiejieGao = isUndefined(self.createPara.jiejieGao) ? false : self.createPara.jiejieGao;
+            tData.gui4Hu = true;
+
+            GLog("游戏类型:" + tData.gameType);
+            GLog("风牌:" + tData.withWind);
+            GLog("能吃:" + tData.canEat);
+            GLog("能胡7对:" + tData.canHu7);
+            GLog("7对加番：" + tData.canFan7);
+            GLog("红中癞子:" + tData.withZhong);
+            GLog("能吃胡:" + tData.canEatHu);
+            GLog("总局数:" + tData.roundAll);
+            GLog("马数:" + tData.horse);
+            GLog("翻鬼：" + tData.fanGui);
+            GLog("几人房：" + tData.maxPlayer);
+            GLog("节节高:" + tData.jiejieGao);
+        }
+        if (tData.owner == -1)    tData.owner = pl.uid;
+        var uids = tData.uids;
+        if (uids.indexOf(pl.uid) < 0) {
+            if (uids.length < tData.maxPlayer) uids.push(pl.uid);
+            else {
+                for (var i = 0; i < uids.length; i++)
+                    if (uids[i] == 0) {
+                        uids[i] = pl.uid;
+                        break;
+                    }
+            }
+        }
+        self.NotifyAll('addPlayer', {
+            player: {info: pl.info, onLine: true, mjState: pl.mjState, winall: pl.winall},
+            tData: tData
+        });
+    }
+
+    function initAddPlayerForDongGuan(pl, self, msg) {
+        GLog("Table.prototype.initAddPlayerForDongGuan");
+        //公开
+        pl.winTotalNum = 0;//赢的总次数
+        pl.mingGangTotalNum = 0;//明杠总次数
+        pl.anGangTotalNum = 0;//暗杠总次数
+        pl.zhongMaTotalNum = 0;//中马总个数
+        pl.zhongMaNum = 0;//单次中马个数
         pl.winall = 0;   //累计赢
         pl.mjState = TableState.isReady;
         pl.mjpeng = [];  //碰
@@ -521,6 +761,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         pl.skipPeng = [];
         pl.skipHu = false;
         pl.baojiu = {num: 0, putCardPlayer: []};
+        pl.linkHu = 0;
         self.uid2did[pl.uid] = pl.did;//记录数据服务器id
 
         var tData = self.tData;
@@ -532,25 +773,47 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             tData.canEat = self.createPara.canEat;     //是否可以吃
             tData.noBigWin = false;//this.createPara.noBigWin; //是否邵阳玩法
             tData.canHu7 = isUndefined(self.createPara.canHu7) ? false : self.createPara.canHu7; //是否可以七对
-            //tData.canHuWith258=isUndefined(this.createPara.canHuWith258) ? false:this.createPara.canHuWith258; //只能258做将
             tData.withZhong = isUndefined(self.createPara.withZhong) ? false : self.createPara.withZhong; //红中赖子
             tData.canHuWith258 = false;
             tData.gameType = self.createPara.gameType;
             tData.horse = self.createPara.horse;
             tData.fanGui = self.createPara.fanGui;
+            tData.zhongIsMa = isUndefined(self.createPara.zhongIsMa) ? false : self.createPara.zhongIsMa;
+            if(tData.withZhong) tData.zhongIsMa = false;
+            if(tData.zhongIsMa) tData.withZhong = false;
+            tData.canFan7 = isUndefined(self.createPara.canFan7) ? false : self.createPara.canFan7; //是否可以七对
+            if(tData.canFan7) tData.canHu7 = true;
             if(tData.withZhong && tData.fanGui) {tData.withZhong = true;tData.fanGui = false;};
             tData.maxPlayer = isUndefined(self.createPara.maxPlayer) ? 4 :self.createPara.maxPlayer;//几人房
+            tData.gui4Hu = true;
+
+            //暂时写死
+            //tData.gameType = 5;
+            //tData.withWind = true;
+            //tData.canEat = false;
+            //tData.canHu7 = true;
+            //tData.withZhong = false;
+            //tData.zhongIsMa = true;
+            //tData.canEatHu = false;
+            //tData.roundAll = 8;
+            //tData.horse = 2;
+            //tData.fanGui = false;
+            //tData.maxPlayer = 4;
+
 
             GLog("游戏类型:" + tData.gameType);
             GLog("风牌:" + tData.withWind);
             GLog("能吃:" + tData.canEat);
             GLog("能胡7对:" + tData.canHu7);
+            GLog("7对加番：" + tData.canFan7);
             GLog("红中癞子:" + tData.withZhong);
+            GLog("红中算马:" + tData.zhongIsMa);
             GLog("能吃胡:" + tData.canEatHu);
             GLog("总局数:" + tData.roundAll);
             GLog("马数:" + tData.horse);
             GLog("翻鬼：" + tData.fanGui);
             GLog("几人房：" + tData.maxPlayer);
+
         }
         if (tData.owner == -1)    tData.owner = pl.uid;
         var uids = tData.uids;
@@ -573,6 +836,11 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     function initAddPlayerForHuiZhou(pl, self, msg) {
         GLog("Table.prototype.initAddPlayerForHuiZhou");
         //公开
+        pl.winTotalNum = 0;//赢的总次数
+        pl.mingGangTotalNum = 0;//明杠总次数
+        pl.anGangTotalNum = 0;//暗杠总次数
+        pl.zhongMaTotalNum = 0;//中马总个数
+        pl.zhongMaNum = 0;//单次中马个数
         pl.winall = 0;   //累计赢
         pl.mjState = TableState.isReady;
         pl.mjpeng = [];  //碰
@@ -590,6 +858,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         pl.skipPeng = [];
         pl.skipHu = false;
         pl.baojiu = {num: 0, putCardPlayer: []};
+        pl.linkHu = 0;
         self.uid2did[pl.uid] = pl.did;//记录数据服务器id
         var tData = self.tData;
         if (tData.roundNum == -1) {
@@ -606,6 +875,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             tData.gameType = self.createPara.gameType;//惠州麻将 2
             tData.horse = self.createPara.horse;
             tData.maxPlayer = isUndefined(self.createPara.maxPlayer) ? 4 :self.createPara.maxPlayer;//几人房
+            tData.gui4Hu = true;
             GLog("游戏类型:" + tData.gameType);
             GLog("风牌:" + tData.withWind);
             GLog("能吃:" + tData.canEat);
@@ -637,6 +907,11 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     function initAddPlayerForJiPingHu(pl, self, msg){
         GLog("Table.prototype.initAddPlayerForJiPingHu");
         //公开
+        pl.winTotalNum = 0;//赢的总次数
+        pl.mingGangTotalNum = 0;//明杠总次数
+        pl.anGangTotalNum = 0;//暗杠总次数
+        pl.zhongMaTotalNum = 0;//中马总个数
+        pl.zhongMaNum = 0;//单次中马个数
         pl.winall = 0;   //累计赢
         pl.mjState = TableState.isReady;
         pl.mjpeng = [];  //碰
@@ -656,6 +931,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         pl.baojiu = {num: 0, putCardPlayer: []};
         pl.fengWei = 0;
         pl.baoZiMo = {putCardPlayer:[],isOk:false}; //包自摸 {使其12张落地的人,成立条件(如果这个人也让别的玩家成立12张落地 则此人不包自摸)}
+        pl.linkHu = 0;
         self.uid2did[pl.uid] = pl.did;//记录数据服务器id
         var tData = self.tData;
         if (tData.roundNum == -1) {
@@ -678,6 +954,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             tData.horse = 0;
             tData.fanNum = self.createPara.fanNum;
             tData.maxPlayer = isUndefined(self.createPara.maxPlayer) ? 4 :self.createPara.maxPlayer;//几人房
+            tData.gui4Hu = true;
             GLog("游戏类型:" + tData.gameType);
             GLog("风牌:" + tData.withWind);
             GLog("能吃:" + tData.canEat);
@@ -707,12 +984,124 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         });
     }
 
+    function initAddPlayerForYiBaiZhang(pl, self, msg) {
+        GLog("Table.prototype.initAddPlayerForYiBaiZhang");
+        //公开
+        pl.winTotalNum = 0;//赢的总次数
+        pl.mingGangTotalNum = 0;//明杠总次数
+        pl.anGangTotalNum = 0;//暗杠总次数
+        pl.zhongMaTotalNum = 0;//中马总个数
+        pl.zhongMaNum = 0;//单次中马个数
+        pl.winall = 0;   //累计赢
+        pl.mjState = TableState.isReady;
+        pl.mjpeng = [];  //碰
+        pl.mjgang0 = []; //明杠
+        pl.mjgang1 = []; //暗杠
+        pl.mjchi = [];   //吃
+        //私有
+        pl.mjhand = [];  //手牌
+        pl.eatFlag = 0;  //胡8 杠4 碰2 吃1
+        pl.delRoom = 0;
+        pl.onLine = true;
+
+        pl.mjMa = [];
+        pl.left4Ma = [];
+        pl.skipPeng = [];
+        pl.skipHu = false;
+        pl.baojiu = {num: 0, putCardPlayer: []};
+        pl.linkHu = 0;
+        self.uid2did[pl.uid] = pl.did;//记录数据服务器id
+
+        var tData = self.tData;
+        if (tData.roundNum == -1) {
+            tData.roundAll = self.createPara.round;    //总
+            tData.roundNum = self.createPara.round;    //剩余
+            tData.canEatHu = self.createPara.canEatHu; //是否可以吃胡
+            tData.withWind = self.createPara.withWind; //是否可以带风
+            tData.canEat = self.createPara.canEat;     //是否可以吃
+            tData.noBigWin = false;//this.createPara.noBigWin; //是否邵阳玩法
+            tData.canHu7 = isUndefined(self.createPara.canHu7) ? false : self.createPara.canHu7; //是否可以七对
+            tData.withZhong = isUndefined(self.createPara.withZhong) ? false : self.createPara.withZhong; //红中赖子
+            tData.canHuWith258 = false;
+            tData.gameType = self.createPara.gameType;
+            tData.horse = self.createPara.horse;
+            tData.fanGui = self.createPara.fanGui;
+            tData.canFan7 = isUndefined(self.createPara.canFan7) ? false : self.createPara.canFan7; //是否可以七对
+            if(tData.withZhong && tData.fanGui) {tData.withZhong = true;tData.fanGui = false;};
+            tData.maxPlayer = isUndefined(self.createPara.maxPlayer) ? 4 :self.createPara.maxPlayer;//几人房
+            tData.canBigWin = isUndefined(self.createPara.canBigWin) ? false : self.createPara.canBigWin;
+            tData.canHu7 = false;//二期需求去掉了胡7对
+           //有鬼情况下胡牌时 手牌没鬼加倍
+            tData.guiJiaBei = isUndefined(self.createPara.guiJiaBei) ? false : self.createPara.guiJiaBei;
+            //有鬼情况下胡牌时 手牌没鬼加马
+            tData.guiJiaMa = isUndefined(self.createPara.guiJiaMa) ? false : self.createPara.guiJiaMa;
+            //有鬼模式下 拿到4鬼能否胡牌
+            tData.gui4Hu = isUndefined(self.createPara.gui4Hu) ? false : self.createPara.gui4Hu;
+            //有鬼情况下 拿到4鬼胡牌是否加倍
+            tData.gui4huBeiNum = isUndefined(self.createPara.gui4huBeiNum) ? 1 :self.createPara.gui4huBeiNum;
+            //规避前端误传参数带来数据错误的风险
+            if(!tData.withZhong && !tData.fanGui) {
+                tData.guiJiaBei = false;
+                tData.guiJiaMa = false;
+                tData.gui4Hu = false;
+                tData.gui4huBeiNum = 1;
+            }
+            if(tData.guiJiaBei) tData.guiJiaMa = false;
+            if(tData.guiJiaMa) tData.guiJiaBei = false;
+            if(!tData.gui4Hu) tData.gui4huBeiNum = 1;
+            if(tData.guiJiaBei && tData.guiJiaMa)
+            {
+                tData.guiJiaMa = true;
+                tData.guiJiaBei = false;
+            }
+
+            GLog("游戏类型:" + tData.gameType);
+            GLog("能否大胡:" + tData.canBigWin);
+            GLog("风牌:" + tData.withWind);
+            GLog("能吃:" + tData.canEat);
+            GLog("能胡7对:" + tData.canHu7);
+            GLog("红中癞子:" + tData.withZhong);
+            GLog("能吃胡:" + tData.canEatHu);
+            GLog("总局数:" + tData.roundAll);
+            GLog("马数:" + tData.horse);
+            GLog("翻鬼：" + tData.fanGui);
+            GLog("几人房：" + tData.maxPlayer);
+            if(tData.withZhong || tData.fanGui)
+            {
+                if(tData.guiJiaBei)  GLog("鬼牌模式下，手牌没鬼加倍");
+                if(tData.guiJiaMa)  GLog("鬼牌模式下，手牌没鬼加马");
+                if(tData.gui4Hu)  {
+                    GLog("鬼牌模式下，拿到4鬼可胡牌");
+                    GLog("鬼牌模式下，拿到4鬼胡牌时分数X"+tData.gui4huBeiNum);
+                }
+                else GLog("鬼牌模式下，拿到4鬼不可胡牌");
+            }
+
+
+        }
+        if (tData.owner == -1)    tData.owner = pl.uid;
+        var uids = tData.uids;
+        if (uids.indexOf(pl.uid) < 0) {
+            if (uids.length < tData.maxPlayer) uids.push(pl.uid);
+            else {
+                for (var i = 0; i < uids.length; i++)
+                    if (uids[i] == 0) {
+                        uids[i] = pl.uid;
+                        break;
+                    }
+            }
+        }
+        self.NotifyAll('addPlayer', {
+            player: {info: pl.info, onLine: true, mjState: pl.mjState, winall: pl.winall},
+            tData: tData
+        });
+    }
+
     Table.prototype.initAddPlayer = function (pl, msg) {
         GLog("Table.prototype.initAddPlayer");
         var tData = this.tData;
 
         if (tData.roundNum == -1) tData.gameType = this.createPara.gameType;
-
         switch (tData.gameType) {
             case GamesType.GANG_DONG:
                 initAddPlayerForGuangDong(pl, this, msg);
@@ -726,6 +1115,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             case GamesType.JI_PING_HU:
                 initAddPlayerForJiPingHu(pl,this,msg);
                 break;
+            case GamesType.DONG_GUAN:
+                initAddPlayerForDongGuan(pl,this,msg);
+                break;
+            case GamesType.YI_BAI_ZHANG:
+                initAddPlayerForYiBaiZhang(pl, this, msg);
+                break;
         }
     }
     //客户端收到initSceneData  session中的pkroom还没有设定好
@@ -735,7 +1130,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var msg = {
             players: this.collectPlayer(
                 'info', 'mjState', 'mjpeng', 'mjgang0', 'mjgang1', 'mjchi', 'mjput', 'onLine', 'delRoom',
-                'isNew', 'winall', 'mjMa', 'left4Ma', 'mjflower', 'skipPeng', 'baojiu', 'skipHu', 'linkZhuang','fengWei')
+                'isNew', 'winall', 'mjMa', 'left4Ma', 'mjflower', 'skipPeng', 'baojiu', 'skipHu', 'linkZhuang','fengWei','mjzhong','zhongMaNum','winTotalNum','mingGangTotalNum','anGangTotalNum','zhongMaTotalNum')
             , tData: this.tData
             , serverNow: Date.now()
         };
@@ -780,9 +1175,11 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             var tData = self.tData;
             if (app.testCards && app.testCards[tData.owner]) {
                 self.cards = app.testCards[tData.owner];
+                self.tData.cardsNum = self.cards.length;
             }
             else {
                 self.cards = majiang.randomCards(self.tData.withWind, self.tData.withZhong);//无花牌
+                self.tData.cardsNum = self.cards.length;
             }
             GLog("Table.prototype.startGame  withWind:" + self.tData.withWind + "    withZhong:" + self.tData.withZhong);
             var info = "";
@@ -902,13 +1299,14 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 }));//玩家
             }
             tData.putType = 0;
-            tData.curPlayer = (tData.curPlayer + 3) % tData.maxPlayer;
+            tData.curPlayer = (tData.curPlayer + tData.maxPlayer - 1) % tData.maxPlayer;
 
             mjlog.push("mjhand", self.cards, app.CopyPtys(tData));//开始
             SendNewCard(self);//开始后第一张发牌
         }
 
     }
+
     function startGameForShenZhen(self) {
         GLog("Table.prototype.startGameForShenZhen");
         if (self.tData.roundNum > 0 && self.PlayerCount() == self.tData.maxPlayer
@@ -923,9 +1321,11 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             GLog("鬼牌：" + tData.gui);
             if (app.testCards && app.testCards[tData.owner]) {
                 self.cards = app.testCards[tData.owner];
+                self.tData.cardsNum = self.cards.length;
             }
             else {
                 self.cards = majiang.randomCards(self.tData.withWind, self.tData.withZhong);//这里需要改成深圳的
+                self.tData.cardsNum = self.cards.length;
             }
             GLog("Table.prototype.startGame  withWind:" + self.tData.withWind + "    withZhong:" + self.tData.withZhong);
             var info = "";
@@ -951,8 +1351,10 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     else
                     {
                         self.players[tData.uids[tData.zhuang]].linkZhuang = 1;
+                        self.players[ tData.uids[tData.zhuang]].linkHu =0;
                         tData.zhuang = tData.curPlayer;
                     }
+                    self.players[ tData.uids[tData.curPlayer]].linkHu ++;
                 }else
                 {
                     tData.zhuang = tData.curPlayer;
@@ -968,8 +1370,10 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     else
                     {
                         self.players[tData.uids[tData.zhuang]].linkZhuang = 1;
+                        self.players[ tData.uids[tData.zhuang]].linkHu =0;
                         tData.zhuang = tData.curPlayer = tData.winner;
                     }
+                    self.players[ tData.uids[tData.winner]].linkHu ++;
                 }else{
                     tData.zhuang = tData.curPlayer = tData.winner;
                 }
@@ -1020,7 +1424,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 if (pl.onLine)pl.notify("mjhand", {mjhand: pl.mjhand, tData: tData});
             }
 
-            self.NotifyAll('getLinkZhuang', {players: self.collectPlayer('linkZhuang'), tData: app.CopyPtys(tData)});
+            self.NotifyAll('getLinkZhuang', {players: self.collectPlayer('linkZhuang','linkHu'), tData: app.CopyPtys(tData)});
             var mjlog = self.mjlog;
             if (mjlog.length == 0) {
                 mjlog.push("players", self.PlayerPtys(function (p) {
@@ -1036,7 +1440,461 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 }));//玩家
             }
             tData.putType = 0;
-            tData.curPlayer = (tData.curPlayer + 3) % tData.maxPlayer;
+            tData.curPlayer = (tData.curPlayer + tData.maxPlayer - 1) % tData.maxPlayer;
+            mjlog.push("mjhand", self.cards, app.CopyPtys(tData));//开始
+            SendNewCard(self);//开始后第一张发牌
+        }
+    }
+
+    function startGameForDongGuan(self){
+        GLog("Table.prototype.startGameForDongGuan");
+        if (self.tData.roundNum > 0 && self.PlayerCount() == self.tData.maxPlayer
+            && self.AllPlayerCheck(function (pl) {
+                return pl.mjState == TableState.isReady
+            })) {
+            var tData = self.tData;
+            if(tData.fanGui) {
+                majiang.gui = majiang.getRandomGui(tData.withWind);
+                tData.gui = majiang.gui ;
+                if(tData.zhongIsMa && tData.gui == 71) {//翻鬼牌模式下且选中了红中做马 此时不可翻出的鬼牌是红中
+                    majiang.gui = 21;
+                    tData.gui = majiang.gui ;
+                }
+            }
+            GLog("鬼牌：" + tData.gui);
+            if (app.testCards && app.testCards[tData.owner]) {
+                self.cards = app.testCards[tData.owner];
+                self.tData.cardsNum = self.cards.length;
+            }
+            else {
+                self.cards = majiang.randomCards(self.tData.withWind, self.tData.withZhong);
+                self.tData.cardsNum = self.cards.length;
+            }
+            GLog("Table.prototype.startGame  withWind:" + self.tData.withWind + "    withZhong:" + self.tData.withZhong);
+            var info = "";
+            for (var i = 0; i < self.cards.length; i++) {
+
+                info = info + self.cards[i] + ",";
+            }
+            GLog("cards :" + info);
+
+            if (tData.zhuang == -1)//第一局
+            {
+                tData.zhuang = tData.curPlayer = 0;
+            }
+            else if (tData.winner == -1)//荒庄
+            {
+                tData.zhuang = tData.curPlayer;
+            }
+            else//有赢家
+            {
+                tData.zhuang = tData.curPlayer = tData.winner;
+            }
+            tData.cardNext = 0;
+            tData.tState = TableState.waitCard;
+            tData.winner = -1;
+            GLog("startGame  horse===" + tData.horse);
+            var cards = self.cards;
+            for (var i = 0; i < tData.maxPlayer; i++) {
+                var pl = self.players[tData.uids[(i + tData.zhuang) % tData.maxPlayer]];
+                pl.mjState = TableState.waitCard;
+                pl.eatFlag = 0;
+                pl.winone = 0;   //当前局赢多少
+                pl.baseWin = 0;  //番数
+                pl.mjpeng = [];  //碰
+                pl.mjgang0 = []; //明杠
+                pl.gang0uid = {};
+                pl.mjgang1 = []; //暗杠
+                pl.mjchi = [];   //吃
+                pl.mjput = [];   //打出的牌
+                pl.winType = 0;  //胡牌类型
+                pl.isNew = false; //是否通过发牌获取的,不是碰 吃
+                //私有
+                pl.mjhand = [];  //手牌
+                pl.mjdesc = [];
+                pl.mjpeng4 = []; //碰的时候还有一张牌
+                pl.picknum = 0;
+                pl.mjflower = []; //获得的花牌
+                pl.mjzhong= []; //获得红中
+                pl.skipPeng = [];
+                pl.mjMa = [];//个人马
+                pl.baojiu = {num: 0, putCardPlayer: []};
+                pl.skipHu = false;
+                var maCards = majiang.initMa(i);
+                for (var j = 0; j < maCards.length; j++) {
+                    pl.mjMa.push(maCards[j]);
+                }
+
+                for (var j = 0; j < 13; j++) {
+                    pl.mjhand.push(cards[tData.cardNext++]);
+                }
+                if (pl.onLine)pl.notify("mjhand", {mjhand: pl.mjhand, tData: tData});
+            }
+
+            self.NotifyAll('getLinkZhuang', {tData: app.CopyPtys(tData)});
+            var mjlog = self.mjlog;
+            if (mjlog.length == 0) {
+                mjlog.push("players", self.PlayerPtys(function (p) {
+                    return {
+                        info: {
+                            uid: p.info.uid,
+                            nickname: p.info.nickname,
+                            headimgurl: p.info.headimgurl,
+                            remoteIP: p.info.remoteIP
+                        }
+                    }
+
+                }));//玩家
+            }
+            tData.putType = 0;
+            tData.curPlayer = (tData.curPlayer +tData.maxPlayer - 1) % tData.maxPlayer;
+            mjlog.push("mjhand", self.cards, app.CopyPtys(tData));//开始
+            SendNewCard(self);//开始后第一张发牌
+        }
+    }
+
+    function startGameForYiBaiZhang(self){
+        GLog("Table.prototype.startGameForYiBaiZhang");
+        if (self.tData.roundNum > 0 && self.PlayerCount() == self.tData.maxPlayer
+            && self.AllPlayerCheck(function (pl) {
+                return pl.mjState == TableState.isReady
+            })) {
+            var tData = self.tData;
+            if(tData.fanGui) {
+                // majiang.gui = majiang.getRandomGui(tData.withWind);
+                majiang.gui = majiang.getRandomGuiForYiBaiZhang();
+                tData.gui = majiang.gui ;
+            }
+            GLog("鬼牌：" + tData.gui);
+            if (app.testCards && app.testCards[tData.owner]) {
+                self.cards = app.testCards[tData.owner];
+                self.tData.cardsNum = self.cards.length;
+            }
+            else {
+                self.cards = majiang.randomYiBaiZhangCards(self.tData.withWind, self.tData.withZhong);
+                self.tData.cardsNum = self.cards.length;
+            }
+            GLog("Table.prototype.startGame  withWind:" + self.tData.withWind + "    withZhong:" + self.tData.withZhong);
+            var info = "";
+            for (var i = 0; i < self.cards.length; i++) {
+
+                info = info + self.cards[i] + ",";
+            }
+            GLog("cards :" + info);
+
+            if (tData.zhuang == -1)//第一局
+            {
+                tData.zhuang = tData.curPlayer = 0;
+            }
+            else if (tData.winner == -1)//荒庄
+            {
+                tData.zhuang = tData.curPlayer;
+            }
+            else//有赢家
+            {
+                tData.zhuang = tData.curPlayer = tData.winner;
+            }
+            tData.cardNext = 0;
+            tData.tState = TableState.waitCard;
+            tData.winner = -1;
+            GLog("startGame  horse===" + tData.horse);
+            var cards = self.cards;
+            for (var i = 0; i < tData.maxPlayer; i++) {
+                var pl = self.players[tData.uids[(i + tData.zhuang) % tData.maxPlayer]];
+                pl.mjState = TableState.waitCard;
+                pl.eatFlag = 0;
+                pl.winone = 0;   //当前局赢多少
+                pl.baseWin = 0;  //番数
+                pl.mjpeng = [];  //碰
+                pl.mjgang0 = []; //明杠
+                pl.gang0uid = {};
+                pl.mjgang1 = []; //暗杠
+                pl.mjchi = [];   //吃
+                pl.mjput = [];   //打出的牌
+                pl.winType = 0;  //胡牌类型
+                pl.isNew = false; //是否通过发牌获取的,不是碰 吃
+                //私有
+                pl.mjhand = [];  //手牌
+                pl.mjdesc = [];
+                pl.mjpeng4 = []; //碰的时候还有一张牌
+                pl.picknum = 0;
+                pl.mjflower = []; //获得的花牌
+                pl.mjzhong= []; //获得红中
+                pl.skipPeng = [];
+                pl.mjMa = [];//个人马
+                pl.baojiu = {num: 0, putCardPlayer: []};
+                pl.skipHu = false;
+                var maCards = majiang.initMa(i);
+                for (var j = 0; j < maCards.length; j++) {
+                    pl.mjMa.push(maCards[j]);
+                }
+
+                for (var j = 0; j < 13; j++) {
+                    pl.mjhand.push(cards[tData.cardNext++]);
+                }
+                if (pl.onLine)pl.notify("mjhand", {mjhand: pl.mjhand, tData: tData});
+            }
+
+            self.NotifyAll('getLinkZhuang', {tData: app.CopyPtys(tData)});
+            var mjlog = self.mjlog;
+            if (mjlog.length == 0) {
+                mjlog.push("players", self.PlayerPtys(function (p) {
+                    return {
+                        info: {
+                            uid: p.info.uid,
+                            nickname: p.info.nickname,
+                            headimgurl: p.info.headimgurl,
+                            remoteIP: p.info.remoteIP
+                        }
+                    }
+
+                }));//玩家
+            }
+            tData.putType = 0;
+            tData.curPlayer = (tData.curPlayer +tData.maxPlayer - 1) % tData.maxPlayer;
+            mjlog.push("mjhand", self.cards, app.CopyPtys(tData));//开始
+            SendNewCard(self);//开始后第一张发牌
+        }
+    }
+
+    function startGameForGuangDong(self)
+    {
+        var tData = self.tData;
+        if (self.tData.roundNum > 0 && self.PlayerCount() == tData.maxPlayer
+            && self.AllPlayerCheck(function (pl) {
+                return pl.mjState == TableState.isReady
+            })) {
+            var tData = self.tData;
+            if(tData.fanGui) {
+                majiang.gui = majiang.getRandomGui(tData.withWind);
+                tData.gui = majiang.gui ;
+            }
+            GLog("鬼牌：" + tData.gui);
+            if (app.testCards && app.testCards[tData.owner]) {
+                self.cards = app.testCards[tData.owner];
+                self.tData.cardsNum = self.cards.length;
+            }
+            else {
+                self.cards = majiang.randomCards(self.tData.withWind, self.tData.withZhong);
+                self.tData.cardsNum = self.cards.length;
+            }
+            GLog("Table.prototype.startGame  withWind:" + self.tData.withWind + "    withZhong:" + self.tData.withZhong);
+            var info = "";
+            for (var i = 0; i < self.cards.length; i++) {
+
+                info = info + self.cards[i] + ",";
+            }
+            GLog("cards :" + info);
+
+            var isFirst = false;
+            if (tData.zhuang == -1)//第一局
+            {
+                isFirst = true;
+                tData.zhuang = tData.curPlayer = 0;
+            }
+            else if (tData.winner == -1)//荒庄
+            {
+                if(tData.jiejieGao)
+                {
+                    if(tData.zhuang == tData.curPlayer)
+                        self.players[tData.uids[ tData.zhuang]].linkZhuang ++;
+                    else
+                    {
+                        self.players[tData.uids[tData.zhuang]].linkZhuang = 1;
+                        self.players[ tData.uids[tData.zhuang]].linkHu =0;
+                        tData.zhuang = tData.curPlayer;
+                    }
+                    self.players[ tData.uids[tData.curPlayer]].linkHu ++;
+                }else
+                {
+                    tData.zhuang = tData.curPlayer;
+                }
+            }
+            else//有赢家
+            {
+                if(tData.jiejieGao){
+                    if(tData.zhuang == tData.winner)
+                    {
+                        self.players[ tData.uids[tData.zhuang]].linkZhuang ++;
+                    }
+                    else
+                    {
+                        self.players[tData.uids[tData.zhuang]].linkZhuang = 1;
+                        self.players[ tData.uids[tData.zhuang]].linkHu =0;
+                        //self.players[ tData.uids[tData.winner]].linkZhuang ++;
+                        tData.zhuang = tData.curPlayer = tData.winner;
+                    }
+                    self.players[ tData.uids[tData.winner]].linkHu ++;
+                }else{
+                    tData.zhuang = tData.curPlayer = tData.winner;
+                }
+            }
+            tData.cardNext = 0;
+            tData.tState = TableState.waitCard;
+            tData.winner = -1;
+            GLog("startGame  horse===" + tData.horse);
+            var cards = self.cards;
+            for (var i = 0; i < tData.maxPlayer; i++) {
+                var pl = self.players[tData.uids[(i + tData.zhuang) % tData.maxPlayer]];
+                pl.mjState = TableState.waitCard;
+                pl.eatFlag = 0;
+                pl.winone = 0;   //当前局赢多少
+                pl.baseWin = 0;  //番数
+                pl.mjpeng = [];  //碰
+                pl.mjgang0 = []; //明杠
+                pl.gang0uid = {};
+                pl.mjgang1 = []; //暗杠
+                pl.mjchi = [];   //吃
+                pl.mjput = [];   //打出的牌
+                pl.winType = 0;  //胡牌类型
+                pl.isNew = false; //是否通过发牌获取的,不是碰 吃
+                //私有
+                pl.mjhand = [];  //手牌
+                pl.mjdesc = [];
+                pl.mjpeng4 = []; //碰的时候还有一张牌
+                pl.picknum = 0;
+                pl.mjflower = []; //获得的花牌
+                pl.skipPeng = [];
+                pl.mjMa = [];//个人马
+                pl.baojiu = {num: 0, putCardPlayer: []};
+                pl.skipHu = false;
+                var maCards = majiang.initMa(i);
+                for (var j = 0; j < maCards.length; j++) {
+                    pl.mjMa.push(maCards[j]);
+                }
+
+                for (var j = 0; j < 13; j++) {
+                    pl.mjhand.push(cards[tData.cardNext++]);
+                }
+                if (pl.onLine)pl.notify("mjhand", {mjhand: pl.mjhand, tData: tData});
+            }
+
+            self.NotifyAll('getLinkZhuang', {players: self.collectPlayer('linkZhuang','linkHu'), tData: app.CopyPtys(tData)});
+            var mjlog = self.mjlog;
+            if (mjlog.length == 0) {
+                mjlog.push("players", self.PlayerPtys(function (p) {
+                    return {
+                        info: {
+                            uid: p.info.uid,
+                            nickname: p.info.nickname,
+                            headimgurl: p.info.headimgurl,
+                            remoteIP: p.info.remoteIP
+                        }
+                    }
+
+                }));//玩家
+            }
+            tData.putType = 0;
+            tData.curPlayer = (tData.curPlayer + tData.maxPlayer - 1) % tData.maxPlayer;
+            mjlog.push("mjhand", self.cards, app.CopyPtys(tData));//开始
+            SendNewCard(self);//开始后第一张发牌
+        }
+
+    }
+
+    function startGameForHuiZhou(self){
+        var tData = self.tData;
+        if (self.tData.roundNum > 0 && self.PlayerCount() == tData.maxPlayer
+            && self.AllPlayerCheck(function (pl) {
+                return pl.mjState == TableState.isReady
+            })) {
+            var tData = self.tData;
+            if(tData.fanGui) {
+                majiang.gui = majiang.getRandomGui(tData.withWind);
+                tData.gui = majiang.gui ;
+            }
+            GLog("鬼牌：" + tData.gui);
+            if (app.testCards && app.testCards[tData.owner]) {
+                self.cards = app.testCards[tData.owner];
+                self.tData.cardsNum = self.cards.length;
+            }
+            else {
+                self.cards = majiang.randomHuiZhouCards(self.tData.withWind, self.tData.withZhong);
+                self.tData.cardsNum = self.cards.length;
+            }
+            GLog("Table.prototype.startGame  withWind:" + self.tData.withWind + "    withZhong:" + self.tData.withZhong);
+            var info = "";
+            for (var i = 0; i < self.cards.length; i++) {
+
+                info = info + self.cards[i] + ",";
+            }
+            GLog("cards :" + info);
+
+            var isFirst = false;
+            if (tData.zhuang == -1)//第一局
+            {
+                isFirst = true;
+                tData.zhuang = tData.curPlayer = 0;
+            }
+            else if (tData.winner == -1)//荒庄
+            {
+                tData.zhuang = tData.curPlayer;
+            }
+            else//有赢家
+            {
+                tData.zhuang = tData.curPlayer = tData.winner;
+            }
+            tData.cardNext = 0;
+            tData.tState = TableState.waitCard;
+            tData.winner = -1;
+            GLog("startGame  horse===" + tData.horse);
+            var cards = self.cards;
+            for (var i = 0; i < tData.maxPlayer; i++) {
+                var pl = self.players[tData.uids[(i + tData.zhuang) % tData.maxPlayer]];
+                pl.mjState = TableState.waitCard;
+                pl.eatFlag = 0;
+                pl.winone = 0;   //当前局赢多少
+                pl.baseWin = 0;  //番数
+                pl.mjpeng = [];  //碰
+                pl.mjgang0 = []; //明杠
+                pl.gang0uid = {};
+                pl.mjgang1 = []; //暗杠
+                pl.mjchi = [];   //吃
+                pl.mjput = [];   //打出的牌
+                pl.winType = 0;  //胡牌类型
+                pl.isNew = false; //是否通过发牌获取的,不是碰 吃
+                //私有
+                pl.mjhand = [];  //手牌
+                pl.mjdesc = [];
+                pl.mjpeng4 = []; //碰的时候还有一张牌
+                pl.picknum = 0;
+                pl.mjflower = []; //获得的花牌
+                pl.skipPeng = [];
+                pl.mjMa = [];//个人马
+                pl.baojiu = {num: 0, putCardPlayer: []};
+                pl.skipHu = false;
+                //pl.left4Ma=[];//剩余麻将中的前4个 作为马
+                //if(isFirst)
+                //{
+                var maCards = majiang.initMa(i);
+                for (var j = 0; j < maCards.length; j++) {
+                    pl.mjMa.push(maCards[j]);
+                }
+                //}
+
+                for (var j = 0; j < 13; j++) {
+                    pl.mjhand.push(cards[tData.cardNext++]);
+                }
+                if (pl.onLine)pl.notify("mjhand", {mjhand: pl.mjhand, tData: tData});
+            }
+
+            self.NotifyAll('getLinkZhuang', {tData: app.CopyPtys(tData)});
+            var mjlog = self.mjlog;
+            if (mjlog.length == 0) {
+                mjlog.push("players", self.PlayerPtys(function (p) {
+                    return {
+                        info: {
+                            uid: p.info.uid,
+                            nickname: p.info.nickname,
+                            headimgurl: p.info.headimgurl,
+                            remoteIP: p.info.remoteIP
+                        }
+                    }
+
+                }));//玩家
+            }
+            tData.putType = 0;
+            tData.curPlayer = (tData.curPlayer + tData.maxPlayer - 1) % tData.maxPlayer;
             mjlog.push("mjhand", self.cards, app.CopyPtys(tData));//开始
             SendNewCard(self);//开始后第一张发牌
         }
@@ -1047,127 +1905,22 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var tData = this.tData;
         switch (tData.gameType) {
             case GamesType.GANG_DONG:
+                startGameForGuangDong(this);
+                break;
             case GamesType.HUI_ZHOU:
-            {
-                if (this.tData.roundNum > 0 && this.PlayerCount() == tData.maxPlayer
-                    && this.AllPlayerCheck(function (pl) {
-                        return pl.mjState == TableState.isReady
-                    })) {
-                    var tData = this.tData;
-                    if(tData.fanGui) {
-                        majiang.gui = majiang.getRandomGui(tData.withWind);
-                        tData.gui = majiang.gui ;
-                    }
-                    GLog("鬼牌：" + tData.gui);
-                    if (app.testCards && app.testCards[tData.owner]) {
-                        this.cards = app.testCards[tData.owner];
-                    }
-                    else {
-                        switch (tData.gameType) {
-                            case 1:
-                                this.cards = majiang.randomCards(this.tData.withWind, this.tData.withZhong);
-                                break;
-                            case 2:
-                                this.cards = majiang.randomHuiZhouCards(this.tData.withWind, this.tData.withZhong);
-                                break;
-                            default :
-                                this.cards = majiang.randomCards(this.tData.withWind, this.tData.withZhong);
-                                break;
-                        }
-                    }
-                    GLog("Table.prototype.startGame  withWind:" + this.tData.withWind + "    withZhong:" + this.tData.withZhong);
-                    var info = "";
-                    for (var i = 0; i < this.cards.length; i++) {
-
-                        info = info + this.cards[i] + ",";
-                    }
-                    GLog("cards :" + info);
-
-                    var isFirst = false;
-                    if (tData.zhuang == -1)//第一局
-                    {
-                        isFirst = true;
-                        tData.zhuang = tData.curPlayer = 0;
-                    }
-                    else if (tData.winner == -1)//荒庄
-                    {
-                        tData.zhuang = tData.curPlayer;
-                    }
-                    else//有赢家
-                    {
-                        tData.zhuang = tData.curPlayer = tData.winner;
-                    }
-                    tData.cardNext = 0;
-                    tData.tState = TableState.waitCard;
-                    tData.winner = -1;
-                    GLog("startGame  horse===" + tData.horse);
-                    var cards = this.cards;
-                    for (var i = 0; i < tData.maxPlayer; i++) {
-                        var pl = this.players[tData.uids[(i + tData.zhuang) % tData.maxPlayer]];
-                        pl.mjState = TableState.waitCard;
-                        pl.eatFlag = 0;
-                        pl.winone = 0;   //当前局赢多少
-                        pl.baseWin = 0;  //番数
-                        pl.mjpeng = [];  //碰
-                        pl.mjgang0 = []; //明杠
-                        pl.gang0uid = {};
-                        pl.mjgang1 = []; //暗杠
-                        pl.mjchi = [];   //吃
-                        pl.mjput = [];   //打出的牌
-                        pl.winType = 0;  //胡牌类型
-                        pl.isNew = false; //是否通过发牌获取的,不是碰 吃
-                        //私有
-                        pl.mjhand = [];  //手牌
-                        pl.mjdesc = [];
-                        pl.mjpeng4 = []; //碰的时候还有一张牌
-                        pl.picknum = 0;
-                        pl.mjflower = []; //获得的花牌
-                        pl.skipPeng = [];
-                        pl.mjMa = [];//个人马
-                        pl.baojiu = {num: 0, putCardPlayer: []};
-                        pl.skipHu = false;
-                        //pl.left4Ma=[];//剩余麻将中的前4个 作为马
-                        //if(isFirst)
-                        //{
-                        var maCards = majiang.initMa(i);
-                        for (var j = 0; j < maCards.length; j++) {
-                            pl.mjMa.push(maCards[j]);
-                        }
-                        //}
-
-                        for (var j = 0; j < 13; j++) {
-                            pl.mjhand.push(cards[tData.cardNext++]);
-                        }
-                        if (pl.onLine)pl.notify("mjhand", {mjhand: pl.mjhand, tData: tData});
-                    }
-
-                    this.NotifyAll('getLinkZhuang', {tData: app.CopyPtys(tData)});
-                    var mjlog = this.mjlog;
-                    if (mjlog.length == 0) {
-                        mjlog.push("players", this.PlayerPtys(function (p) {
-                            return {
-                                info: {
-                                    uid: p.info.uid,
-                                    nickname: p.info.nickname,
-                                    headimgurl: p.info.headimgurl,
-                                    remoteIP: p.info.remoteIP
-                                }
-                            }
-
-                        }));//玩家
-                    }
-                    tData.putType = 0;
-                    tData.curPlayer = (tData.curPlayer + tData.maxPlayer - 1) % tData.maxPlayer;
-                    mjlog.push("mjhand", this.cards, app.CopyPtys(tData));//开始
-                    SendNewCard(this);//开始后第一张发牌
-                }
-            }
+                startGameForHuiZhou(this);
                 break;
             case GamesType.SHEN_ZHEN:
                 startGameForShenZhen(this);
                 break;
             case GamesType.JI_PING_HU:
                 startGameForJiPingHu(this);
+                break;
+            case GamesType.DONG_GUAN:
+                startGameForDongGuan(this);
+                break;
+            case GamesType.YI_BAI_ZHANG:
+                startGameForYiBaiZhang(this);
                 break;
         }
 
@@ -1185,31 +1938,32 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var horse = tData.horse;
         if (pl && tData.jiejieGao) {
             GLog("EndGameForShenZhen===========linkZhuang=================================" + pl.linkZhuang);
-            switch (pl.linkZhuang) {
-                case 1:
-                    break;
-                case 2:
-                    horse = horse + 2;
-                    break;
-                case 3:
-                    horse = horse + 4;
-                    break;
-                case 4:
-                    horse = horse + 6;
-                    break;
-                case 5:
-                    horse = horse + 8;
-                    break;
-                case 6:
-                    horse = horse + 10;
-                    break;
-                case 7:
-                    horse = horse + 12;
-                    break;
-                case 8:
-                    horse = horse + 14;
-                    break;
-            }
+            horse += (pl.linkHu)*2;
+            //switch (pl.linkZhuang) {
+            //    case 1:
+            //        break;
+            //    case 2:
+            //        horse = horse + 2;
+            //        break;
+            //    case 3:
+            //        horse = horse + 4;
+            //        break;
+            //    case 4:
+            //        horse = horse + 6;
+            //        break;
+            //    case 5:
+            //        horse = horse + 8;
+            //        break;
+            //    case 6:
+            //        horse = horse + 10;
+            //        break;
+            //    case 7:
+            //        horse = horse + 12;
+            //        break;
+            //    case 8:
+            //        horse = horse + 14;
+            //        break;
+            //}
         }
         //鬼牌模式  判断胡牌是否含红中 无红中 增加2匹马
         if (tData.withZhong) {
@@ -1383,18 +2137,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     pi.mjdesc.push(desc);
 
 
-                    var isGangShangHua = false;
-                    var isQiangGangHu = false;
-
                     var maFan = 0;//算分
                     var maCount = 0;
 
-                    //var zhongMaNum = majiang.getMaPrice(pi);
-                    //maFan = 2 * zhongMaNum;
-                    //maCount = zhongMaNum;
-
-                    maFan = 2 * majiang.getMaPrice(pi);
-                    maCount = majiang.getMaPrice(pi);
+                    var zhongMaNum = majiang.getMaPrice(pi);
+                    maFan = 2 * zhongMaNum;
+                    maCount = zhongMaNum;
 
                     if (maCount > 0) baseWin = baseWin + maFan;
                     for (var j = 0; j < pls.length; j++) {
@@ -1404,12 +2152,11 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                         //抢杠胡 杠炮的那个玩家包3家 马钱也包
                         if (pi.winType == WinType.eatGang) {
                             if (pj.uid != tData.uids[tData.curPlayer]) continue;
-                            //roundWin*=tData.noBigWin?1:3;
-                            //pj.mjdesc.push("杠炮");
-                            isQiangGangHu = true;
+                            if(pi.mjdesc.indexOf("抢杠胡") == -1) pi.mjdesc.push("抢杠胡");
                             baseWin = baseWin * 3;
-                            // pi.baseWin = pi.baseWin * 3;
                             pi.baseWin = 1;
+                            if(tData.maxPlayer == 4 && pj.mjdesc.indexOf("包三家") == -1 && pj.uid == tData.uids[tData.curPlayer]) pj.mjdesc.push("包三家");
+                            if(tData.maxPlayer == 3 && pj.mjdesc.indexOf("包两家") == -1 && pj.uid == tData.uids[tData.curPlayer]) pj.mjdesc.push("包两家");
                         }
                         else {
                             baseWin = baseWin;
@@ -1417,23 +2164,18 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
                         if (pi.winType == WinType.pickGang23 || pi.winType == WinType.pickGang1 ) {//
                             //if(pj.uid!=tData.uids[tData.lastPutPlayer])	continue;
-                            isGangShangHua = true;
+                            if(pi.mjdesc.indexOf("杠上花") == -1) pi.mjdesc.push("杠上花");
                             GLog("胡家类型：" + pi.winType);
                         }
 
                         pi.winone += baseWin;
                         pj.winone -= baseWin;
                     }
-                    if (isGangShangHua) {
-                        GLog("胡家类型：" + pi.winType);
-                        pi.mjdesc.push("杠上花");
-                    }
-                    if (isQiangGangHu) {
-                        GLog("胡家类型：" + pi.winType);
-                        pi.mjdesc.push("抢杠胡");
-                    }
 
-                    if (maCount > 0) pi.mjdesc.push("买马" + maCount);
+                    if(maCount > 0) pi.mjdesc.push("买马" + maCount);
+                    if (maCount >= 0) {
+                        pi.zhongMaNum = maCount;
+                    }
 
                 }
 
@@ -1448,19 +2190,39 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
         tData.tState = TableState.roundFinish;
         var owner = tb.players[tData.uids[0]].info;
-        if (!byEndRoom) {
+        if (!byEndRoom && !tData.coinRoomCreate) {
             if (!owner.$inc) {
                 owner.$inc = {money: -tb.createPara.money};
             }
+            //后加的
+            tb.AllPlayerRun(function(p) {
+                if(!p.info.$inc) {
+                    //GLog("===初始化 playNum=1");
+                    p.info.$inc = {playNum:1};
+                } else if(!p.info.$inc.playNum) {
+                    p.info.$inc.playNum = 1;
+                } else {
+                    p.info.$inc.playNum += 1;
+                    //GLog("===增加 playNum="+p.info.$inc.playNum);
+                }
+            });
+
         }
         tb.AllPlayerRun(function (p) {
             p.winall += p.winone;
+            if(p.winType > 0)
+            {
+                p.winTotalNum ++;
+                p.zhongMaTotalNum += p.zhongMaNum;
+            }
+            p.mingGangTotalNum += p.mjgang0.length;
+            p.anGangTotalNum += p.mjgang1.length;
 
         });
         tData.roundNum--;
 
         var roundEnd = {
-            players: tb.collectPlayer('mjhand', 'mjdesc', 'winone', 'winall', 'winType', 'baseWin', 'mjMa', 'left4Ma', 'linkZhuang'),
+            players: tb.collectPlayer('mjhand', 'mjdesc', 'winone', 'winall', 'winType', 'baseWin', 'mjMa', 'left4Ma', 'linkZhuang','zhongMaNum','winTotalNum','mingGangTotalNum','anGangTotalNum','zhongMaTotalNum'),
             tData: app.CopyPtys(tData)
         };
         tb.mjlog.push("roundEnd", roundEnd);//一局结束
@@ -1468,6 +2230,16 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         if (tData.roundNum == 0) playInfo = EndRoom(tb);//结束
         if (playInfo) roundEnd.playInfo = playInfo;
         tb.NotifyAll("roundEnd", roundEnd);
+        if(tData.roundNum == 0)
+        {
+            tb.AllPlayerRun(function (p) {
+                GLog(p.uid + "赢得总次数:" + p.winTotalNum);
+                GLog(p.uid +"中马总个数："+p.zhongMaTotalNum);
+                GLog(p.uid +"暗杠的总次数:" + p.anGangTotalNum);
+                GLog(p.uid +"明杠的总次数:" + p.mingGangTotalNum);
+                GLog("---------------------");
+            });
+        }
     }
 
     function EndGameForHuiZhou(tb, pl, byEndRoom) {
@@ -1522,7 +2294,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                         var pj = pls[j];
                         if (ganguid >= 0 && pj.uid != tData.uids[ganguid]) continue;
                         if (ganguid >= 0) {
-                            pj.winone -= 3;
+                            pj.winone -= (tData.maxPlayer - 1);
                             pj.mjdesc.push("点杠");
                         }
                         else pj.winone -= 1;
@@ -1607,25 +2379,23 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
                     //鸡胡不算花，大胡算花
                     if (huType > 0) {
-                        if (pi.mjflower.length > 0) pi.mjdesc.push("花 X" + pi.mjflower.length);
+                        if (pi.mjflower.length > 0) pi.mjdesc.push("花X" + pi.mjflower.length);
                         baseWin += pi.mjflower.length;
                     }
 
 
                     pi.baseWin = 1
-                    var isGangShangHua = false;
-                    var isQiangGangHu = false;
+
+
                     var isBaoJiu = false;
 
                     var maFan = 0;//算分
                     var maCount = 0;
 
-                    //var zhongMaNum = majiang.getMaPrice(pi);
-                    //maFan = 2 * zhongMaNum;
-                    //maCount = zhongMaNum;
+                    var zhongMaNum = majiang.getMaPrice(pi);
+                    maFan = 2 * zhongMaNum;
+                    maCount = zhongMaNum;
 
-                    maFan = 2 * majiang.getMaPrice(pi);
-                    maCount = majiang.getMaPrice(pi);
                     if (maCount > 0) baseWin = baseWin + maFan;
                     for (var j = 0; j < pls.length; j++) {
                         var pj = pls[j];
@@ -1646,10 +2416,11 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             if (pj.uid != tData.uids[tData.curPlayer]) continue;
                             //roundWin*=tData.noBigWin?1:3;
                             //pj.mjdesc.push("杠炮");
-                            isQiangGangHu = true;
                             baseWin = baseWin * 3;
-                            //pi.baseWin = 3;
                             pi.baseWin = 1;//都让这么写
+                            if(pi.mjdesc.indexOf("抢杠胡") == -1)pi.mjdesc.push("抢杠胡");
+                            if(tData.maxPlayer == 4 && pj.mjdesc.indexOf("包三家") == -1 && pj.uid == tData.uids[tData.curPlayer]) pj.mjdesc.push("包三家");
+                            if(tData.maxPlayer == 3 && pj.mjdesc.indexOf("包两家") == -1 && pj.uid == tData.uids[tData.curPlayer]) pj.mjdesc.push("包两家");
 
                         }
                         else {
@@ -1659,15 +2430,14 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
                         if (pi.winType == WinType.pickGang1 || pi.winType == WinType.pickGang23) {//
                             //if(pj.uid!=tData.uids[tData.lastPutPlayer])	continue;
-                            isGangShangHua = true;
                             GLog("胡家类型：" + pi.winType);
                             pi.baseWin = 1;
+                            if(pi.mjdesc.indexOf("杠上花") == -1)pi.mjdesc.push("杠上花");
                         }
 
                         //报九张(一定放在最后)
                         if (pi.winType == WinType.pickNormal && pi.baojiu.num == 4) {
                             isBaoJiu = true;
-                            //pi.baseWin = 3;
                             pi.baseWin = 1;//都改成1了
                         }
                         //非点炮时 输的玩家 算马与花 该怎么算就怎么算
@@ -1676,10 +2446,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                         //点炮时 赢的玩家 只算除点炮者输的玩家的花与马 暂时未用
                         //if(pi.winType == WinType.eatPut && pi.winType ==  WinType.eatGangPut && huType > 0) pi.winone += (maFan + pi.mjflower.length);
                         //if(pi.winType == WinType.eatPut && pi.winType ==  WinType.eatGangPut && huType == 0) pi.winone += maFan;
-                        if (pi.winType == WinType.pickNormal && tb.getPlayer(tData.uids[pi.baojiu.putCardPlayer]) == pj) {
+                        if (pi.winType == WinType.pickNormal && tb.getPlayer(tData.uids[pi.baojiu.putCardPlayer]) == pj && (huType == majiang.HUI_ZHOU_HTYPE.ZIYISE || huType == majiang.HUI_ZHOU_HTYPE.DAGE || huType == majiang.HUI_ZHOU_HTYPE.QUANYAOJIU)) {
                             pj.winone -= baseWin * 3;
+                            if(tData.maxPlayer == 4 && tb.getPlayer(tData.uids[pi.baojiu.putCardPlayer]).mjdesc.indexOf("包三家") == -1) tb.getPlayer(tData.uids[pi.baojiu.putCardPlayer]).mjdesc.push("包三家");
+                            if(tData.maxPlayer == 3 && tb.getPlayer(tData.uids[pi.baojiu.putCardPlayer]).mjdesc.indexOf("包两家") == -1) tb.getPlayer(tData.uids[pi.baojiu.putCardPlayer]).mjdesc.push("包两家");
                         }
-                        else if (isBaoJiu) {
+                        else if (isBaoJiu && (huType == majiang.HUI_ZHOU_HTYPE.ZIYISE || huType == majiang.HUI_ZHOU_HTYPE.DAGE || huType == majiang.HUI_ZHOU_HTYPE.QUANYAOJIU)) {
                             pj.winone -= 0;
                         }
                         else {
@@ -1691,16 +2463,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             //if(pi.winType == WinType.eatPut && pi.winType ==  WinType.eatGangPut && huType == 0 ) pj.winone -= maFan;
                         }
                     }
-                    if (isGangShangHua) {
-                        GLog("胡家类型：" + pi.winType);
-                        pi.mjdesc.push("杠上花");
-                    }
-                    if (isQiangGangHu) {
-                        GLog("胡家类型：" + pi.winType);
-                        pi.mjdesc.push("抢杠胡");
-                    }
+
 
                     if (maCount > 0) pi.mjdesc.push("买马" + maCount);
+                    if (maCount >= 0) {
+                        pi.zhongMaNum = maCount;
+                    }
 
                 }
 
@@ -1715,19 +2483,39 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
         tData.tState = TableState.roundFinish;
         var owner = tb.players[tData.uids[0]].info;
-        if (!byEndRoom) {
+        if (!byEndRoom && !tData.coinRoomCreate) {
             if (!owner.$inc) {
                 owner.$inc = {money: -tb.createPara.money};
             }
+            //后加的
+            tb.AllPlayerRun(function(p) {
+                if(!p.info.$inc) {
+                    //GLog("===初始化 playNum=1");
+                    p.info.$inc = {playNum:1};
+                } else if(!p.info.$inc.playNum) {
+                    p.info.$inc.playNum = 1;
+                } else {
+                    p.info.$inc.playNum += 1;
+                    //GLog("===增加 playNum="+p.info.$inc.playNum);
+                }
+            });
+
         }
         tb.AllPlayerRun(function (p) {
             p.winall += p.winone;
+            if(p.winType > 0)
+            {
+                p.winTotalNum ++;
+                p.zhongMaTotalNum += p.zhongMaNum;
+            }
+            p.mingGangTotalNum += p.mjgang0.length;
+            p.anGangTotalNum += p.mjgang1.length;
 
         });
         tData.roundNum--;
 
         var roundEnd = {
-            players: tb.collectPlayer('mjhand', 'mjdesc', 'winone', 'winall', 'winType', 'baseWin', 'mjMa', 'left4Ma'),
+            players: tb.collectPlayer('mjhand', 'mjdesc', 'winone', 'winall', 'winType', 'baseWin', 'mjMa', 'left4Ma','zhongMaNum','winTotalNum','mingGangTotalNum','anGangTotalNum','zhongMaTotalNum','linkHu'),
             tData: app.CopyPtys(tData)
         };
         tb.mjlog.push("roundEnd", roundEnd);//一局结束
@@ -1735,6 +2523,16 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         if (tData.roundNum == 0) playInfo = EndRoom(tb);//结束
         if (playInfo) roundEnd.playInfo = playInfo;
         tb.NotifyAll("roundEnd", roundEnd);
+        if(tData.roundNum == 0)
+        {
+            tb.AllPlayerRun(function (p) {
+                GLog(p.uid + "赢得总次数:" + p.winTotalNum);
+                GLog(p.uid +"中马总个数："+p.zhongMaTotalNum);
+                GLog(p.uid +"暗杠的总次数:" + p.anGangTotalNum);
+                GLog(p.uid +"明杠的总次数:" + p.mingGangTotalNum);
+                GLog("---------------------");
+            });
+        }
     }
 
     function EndGameForGangDong(tb, pl, byEndRoom) {
@@ -1747,6 +2545,38 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         });
 
         var horse = tData.horse;
+        if (pl && tData.jiejieGao) {
+            GLog("EndGameForGuangDong===========linkZhuang=================================" + pl.linkZhuang);
+            horse += (pl.linkHu)*2;
+            //switch (pl.linkZhuang) {
+            //    case 1:
+            //
+            //        break;
+            //    case 2:
+            //        horse = horse + 2;
+            //        break;
+            //    case 3:
+            //        horse = horse + 4;
+            //        break;
+            //    case 4:
+            //        horse = horse + 6;
+            //        break;
+            //    case 5:
+            //        horse = horse + 8;
+            //        break;
+            //    case 6:
+            //        horse = horse + 10;
+            //        break;
+            //    case 7:
+            //        horse = horse + 12;
+            //        break;
+            //    case 8:
+            //        horse = horse + 14;
+            //        break;
+            //}
+        }
+
+
         //鬼牌模式  判断胡牌是否含红中 无红中 增加2匹马
         if (tData.withZhong) {
             if (pl) {
@@ -1782,17 +2612,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     if (j != i) {
                         var pj = pls[j];
                         if (ganguid >= 0 && pj.uid != tData.uids[ganguid]) continue;
-                        //if (ganguid > 0 && pj.uid == tData.uids[ganguid]) {
-                        //    pj.winone -= (tData.maxPlayer - 1);
-                        //    pj.mjdesc.push("点杠");
-                        //}
                         if(ganguid >= 0)
                         {
                             pj.winone -= (tData.maxPlayer - 1);
                             pj.mjdesc.push("点杠");
                         }
                         else pj.winone -= 1;
-
                     }
                 }
             }
@@ -1822,23 +2647,18 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 if (pi.winType > 0) {
                     var num2 = pi.huType == 7 ? 1 : 0;
                     if (num2 == 1 && majiang.canGang1([], pi.mjhand, []).length > 0) num2 = 2;
-                    GLog("num2=======" + num2);
                     var num3 = majiang.All3(pi);//0 1大对碰 2 含风大对碰
-
                     var sameColor = majiang.SameColor(pi);
                     var hunyise = majiang.HunYiSe(pi);
-
-                    //var baseWin=1;
                     var baseWin = 2;
                     var judgeType = 0;
                     if (!tData.noBigWin) {
                         var des = "";
-                        if (sameColor)//清一色
+                        if (sameColor)
                         {
                             des = "清一色";
                             judgeType = 1;
                         }
-                        //混一色
                         if (hunyise) {
                             des = "混一色";
                             judgeType = 1;
@@ -1849,9 +2669,16 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
                             if (hunyise) des = "混碰";
                             judgeType = 1;
-
                         }
                         if (des != "")    pi.mjdesc.push(des);
+                        //判断 7对 普通7对 有杠龙7对
+                        if (num2 > 0) {
+                            pi.mjdesc.push(num2 > 1 ? "龙七对" : "七对");
+                            judgeType = 1;
+                        }
+                        if (judgeType == 0) {
+                            pi.mjdesc.push("平胡");
+                        }
 
                         //天胡
                         if (
@@ -1887,108 +2714,63 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             pi.mjdesc.push("杠上花");
                             judgeType = 1;
                         }
-                        //判断 7对 普通7对 有杠龙7对
-                        if (num2 > 0) {
-                            pi.mjdesc.push(num2 > 1 ? "龙七对" : "七对");
-                            judgeType = 1;
-                        }
+
 
                     }
-                    //pi.baseWin=baseWin;
-                    pi.baseWin = 1
-                    var isGangShangHua = false;
-                    var isQiangGangHu = false;
 
-                    //var maFan = 1;//算翻
+                    pi.baseWin = 1
                     var maFan = 1;//算分
                     var maCount = 0;
-
-                    //var zhongMaNum = majiang.getMaPrice(pi);
-                    //if(zhongMaNum == 0){
-                    //    maFan = 1;
-                    //    maCount = zhongMaNum;
-                    //}else{
-                    //    maFan = 2 * zhongMaNum;
-                    //    maCount = zhongMaNum;
-                    //}
-                    if(majiang.getMaPrice(pi) == 0){
+                    var zhongMaNum = majiang.getMaPrice(pi);
+                    if(zhongMaNum == 0){
                         maFan = 1;
-                        maCount = majiang.getMaPrice(pi);
+                        maCount = zhongMaNum;
                     }else{
-                        maFan = 2 * majiang.getMaPrice(pi);
-                        maCount = majiang.getMaPrice(pi);
+                        maFan = 2 * zhongMaNum;
+                        maCount = zhongMaNum;
                     }
-
                     for (var j = 0; j < pls.length; j++) {
                         var pj = pls[j];
                         if (pj.winType > 0) continue;
-
                         var roundWin = 1;
-                        //点炮一家输
-                        //if(pi.winType<=WinType.eatGangPut)
-                        //{
-                        //	if(pj.uid!=tData.uids[tData.curPlayer]) continue;
-                        //	roundWin*=(!tData.noBigWin&&pi.winType==WinType.eatGangPut)?3:1;
-                        //	pj.mjdesc.push( (tData.noBigWin||pi.winType<WinType.eatGangPut)?"点炮":"杠炮");
-                        //}
-                        //抢杠   邵阳包三家  转转不包
-                        //抢杠胡 杠炮的那个玩家包3家 马钱也包
+                        //抢杠胡 包3家
                         if (pi.winType == WinType.eatGang) {
                             if (pj.uid != tData.uids[tData.curPlayer]) continue;
-                            //roundWin*=tData.noBigWin?1:3;
-                            //pj.mjdesc.push("杠炮");
                             judgeType = 1;
-                            isQiangGangHu = true;
-                            //pi.mjdesc.push("抢杠胡");
-                           // if(maFan == 1)  baseWin = 3*2;
-                            if(maFan == 1)  baseWin = (tData.maxPlayer - 1)*2;
-                           // else baseWin = maFan * 3 + 3 * 2;
-                            else baseWin = maFan * (tData.maxPlayer - 1) + (tData.maxPlayer - 1) * 2;
-                            //pi.baseWin = 3;
-                            pi.baseWin = 1;//都让这么改了
-
+                            //后加的 在广州的基础上 新增七对加番选项 ：即选七对加番后 胡了七对或豪华七对 胡牌变为每家4分，即2×2
+                            if(num2 > 0 && tData.canFan7){
+                                if(maFan == 1)  baseWin = (tData.maxPlayer - 1)*2 * 2;
+                                else baseWin = maFan * (tData.maxPlayer - 1) + (tData.maxPlayer - 1) * 2 * 2 ;
+                            }else
+                            {
+                                if(maFan == 1)  baseWin = (tData.maxPlayer - 1)*2;
+                                else baseWin = maFan * (tData.maxPlayer - 1) + (tData.maxPlayer - 1) * 2;
+                            }
+                            if(pi.mjdesc.indexOf("抢杠胡") == -1)pi.mjdesc.push("抢杠胡");
+                            if(tData.maxPlayer == 4 && pj.mjdesc.indexOf("包三家") == -1) pj.mjdesc.push("包三家");
+                            if(tData.maxPlayer == 3 && pj.mjdesc.indexOf("包两家") == -1) pj.mjdesc.push("包两家");
                         }
                         else {
-                            if (maFan == 1) baseWin = maFan + 1;//无马 基础分2
-                            else baseWin = maFan + 1 * 2;
+                            //后加的 在广州的基础上 新增七对加番选项 ：即选七对加番后 胡了七对或豪华七对 胡牌变为每家4分，即2×2
+                            if(num2 > 0 && tData.canFan7)
+                            {
+                                if (maFan == 1) baseWin = 2 * 2;//无马 基础分2
+                                else baseWin = maFan + 1 * 2 * 2;
+                            }else{
+                                if (maFan == 1) baseWin = maFan + 1;//无马 基础分2
+                                else baseWin = maFan + 1 * 2;
+                            }
                             pi.baseWin = 1;
                         }
-
-                        //点杠者包3家  if(pi.winType==WinType.pickGang1){if(pj.uid!=tData.uids[tData.lastPutPlayer])	continue;roundWin*=3;}
-
-                        //var maFan = 1;
-                        //var maCount = 0;
-                        if (pi.winType == WinType.pickGang1 || pi.winType == WinType.pickGang23) {//点杠
-                            //if (pj.uid != tData.uids[tData.lastPutPlayer])    continue;
-                            //baseWin = maFan * 3 +3*2;
-                            //judgeType = 1;
-                            //isGangShangHua = true;
-                            //pi.baseWin=3;
-                            //  isGangShangHua = true;
-                            pi.baseWin = 1;
-                            judgeType = 1;
-                        }
-                        //else
-                        //{
-                        //	if(maFan == 1) baseWin = maFan + 1;//无马 基础分2
-                        //	else baseWin = maFan + 1*2;
-                        //	pi.baseWin=1;
-                        //}
 
                         pi.winone += roundWin * baseWin;
                         pj.winone -= roundWin * baseWin;
                     }
-                    if (isGangShangHua) {
-                        pi.mjdesc.push("杠上花");
-                    }
-                    if (isQiangGangHu) {
-                        pi.mjdesc.push("抢杠胡");
-                    }
 
-                    //pi.baseWin=baseWin;
+
                     if (maFan != 1) pi.mjdesc.push("买马" + maCount);
-                    if (judgeType == 0) {
-                        pi.mjdesc.push("平胡");
+                    if (maCount >= 0) {
+                        pi.zhongMaNum = maCount;
                     }
                 }
             }
@@ -2015,19 +2797,38 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
         tData.tState = TableState.roundFinish;
         var owner = tb.players[tData.uids[0]].info;
-        if (!byEndRoom) {
+        if (!byEndRoom && !tData.coinRoomCreate) {
             if (!owner.$inc) {
                 owner.$inc = {money: -tb.createPara.money};
             }
+            //后加的
+            tb.AllPlayerRun(function(p) {
+                if(!p.info.$inc) {
+                    //GLog("===初始化 playNum=1");
+                    p.info.$inc = {playNum:1};
+                } else if(!p.info.$inc.playNum) {
+                    p.info.$inc.playNum = 1;
+                } else {
+                    p.info.$inc.playNum += 1;
+                    //GLog("===增加 playNum="+p.info.$inc.playNum);
+                }
+            });
+
         }
         tb.AllPlayerRun(function (p) {
             p.winall += p.winone;
-
+            if(p.winType > 0)
+            {
+                p.winTotalNum ++;
+                p.zhongMaTotalNum += p.zhongMaNum;
+            }
+            p.mingGangTotalNum += p.mjgang0.length;
+            p.anGangTotalNum += p.mjgang1.length;
         });
         tData.roundNum--;
 
         var roundEnd = {
-            players: tb.collectPlayer('mjhand', 'mjdesc', 'winone', 'winall', 'winType', 'baseWin', 'mjMa', 'left4Ma'),
+            players: tb.collectPlayer('mjhand', 'mjdesc', 'winone', 'winall', 'winType', 'baseWin', 'mjMa', 'left4Ma','zhongMaNum','winTotalNum','mingGangTotalNum','anGangTotalNum','zhongMaTotalNum'),
             tData: app.CopyPtys(tData)
         };
         tb.mjlog.push("roundEnd", roundEnd);//一局结束
@@ -2035,6 +2836,16 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         if (tData.roundNum == 0) playInfo = EndRoom(tb);//结束
         if (playInfo) roundEnd.playInfo = playInfo;
         tb.NotifyAll("roundEnd", roundEnd);
+        if(tData.roundNum == 0)
+        {
+            tb.AllPlayerRun(function (p) {
+                GLog(p.uid + "赢得总次数:" + p.winTotalNum);
+                GLog(p.uid +"中马总个数："+p.zhongMaTotalNum);
+                GLog(p.uid +"暗杠的总次数:" + p.anGangTotalNum);
+                GLog(p.uid +"明杠的总次数:" + p.mingGangTotalNum);
+                GLog("---------------------");
+            });
+        }
     }
 
     function EndGameForJiPingHu(tb, pl, byEndRoom){
@@ -2070,7 +2881,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         //算杠
         for (var i = 0; i < pls.length; i++) {
             var pi = pls[i];
-            pi.winone += (pi.mjgang1.length * 2 + pi.mjgang0.length) * 3;
+            pi.winone += (pi.mjgang1.length * 2 + pi.mjgang0.length) * (tData.maxPlayer - 1);
 
             if (pi.mjgang0.length > 0) pi.mjdesc.push(pi.mjgang0.length + "明杠");
             for (var g = 0; g < pi.mjgang0.length; g++) {
@@ -2080,7 +2891,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                         var pj = pls[j];
                         if (ganguid >= 0 && pj.uid != tData.uids[ganguid]) continue;
                         if (ganguid >= 0) {
-                            pj.winone -= 3;
+                            pj.winone -= (tData.maxPlayer - 1);
                             pj.mjdesc.push("点杠");
                         }
                         else pj.winone -= 1;
@@ -2217,7 +3028,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                                 huCounts.push(p);
                             }
                         });
-                        if(huCounts == 3) fanNum = 3;
+                        if(huCounts.length == 3) fanNum = 3;
                         //抢杠胡 3番
                         if (pi.winType == WinType.eatGang) fanNum = 3;
                         //海底捞月 3番
@@ -2260,16 +3071,27 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                         if (pi.baoZiMo.isOk) {
                             pi.winone += Math.pow(2, pi.baseWin);
                             tb.getPlayer(tData.uids[pi.baoZiMo.putCardPlayer]).winone -= Math.pow(2, pi.baseWin);
+                            if(tData.maxPlayer == 4 && tb.getPlayer(tData.uids[pi.baoZiMo.putCardPlayer]).mjdesc.indexOf("包三家") == -1) pj.mjdesc.push("包三家");
+                            if(tData.maxPlayer == 3 && tb.getPlayer(tData.uids[pi.baoZiMo.putCardPlayer]).mjdesc.indexOf("包两家") == -1) pj.mjdesc.push("包两家");
                         }
                         //抢杠胡 包输家
                         else if (pi.winType == WinType.eatGang && pj.uid == tData.uids[tData.curPlayer]){
-                            pi.winone += winPlayerNums * Math.pow(2, pi.baseWin);
-                            if (pj.uid == tData.uids[tData.curPlayer]) pj.winone -= winPlayerNums * Math.pow(2, pi.baseWin);
+                            pi.winone += winPlayerNums * Math.pow(2, pi.baseWin) * (tData.maxPlayer - winPlayerNums);
+                            if (pj.uid == tData.uids[tData.curPlayer]) pj.winone -= winPlayerNums * Math.pow(2, pi.baseWin)* (tData.maxPlayer - winPlayerNums);
+                            if(tData.maxPlayer == 4 && pj.mjdesc.indexOf("包三家") == -1) pj.mjdesc.push("包三家");
+                            if(tData.maxPlayer == 3 && pj.mjdesc.indexOf("包两家") == -1) pj.mjdesc.push("包两家");
+                            break;
                         }
-                        //杠上花（自摸明杠）包输家
-                        else if(pi.winType == WinType.pickGang1 && pj.uid == tData.uids[tData.curPlayer]){
-                            pi.winone += winPlayerNums *Math.pow(2, pi.baseWin);
-                            if(pj.uid==tData.uids[tData.lastPutPlayer]) pj.winone -= winPlayerNums * Math.pow(2, pi.baseWin);
+                        //杠上花（明杠）包输家
+                        else if(pi.winType == WinType.pickGang1 && pj.uid == tData.uids[tData.lastPutPlayer]){
+                            pi.winone += winPlayerNums *Math.pow(2, pi.baseWin) * (tData.maxPlayer - winPlayerNums);
+                            if(pj.uid==tData.uids[tData.lastPutPlayer])
+                            {
+                                pj.winone -= winPlayerNums * Math.pow(2, pi.baseWin) * (tData.maxPlayer - winPlayerNums);
+                                if(tData.maxPlayer == 4 && pj.mjdesc.indexOf("包三家") == -1) pj.mjdesc.push("包三家");
+                                if(tData.maxPlayer == 3 && pj.mjdesc.indexOf("包两家") == -1) pj.mjdesc.push("包两家");
+                            }
+                            break;
                         }
                         //点炮 一家输
                         else if(pi.winType == WinType.eatPut || pi.winType == WinType.eatGangPut)
@@ -2282,8 +3104,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                         }
                         else
                         {
-                            pi.winone += Math.pow(2, pi.baseWin);
-                            pj.winone -= Math.pow(2, pi.baseWin);
+                            if(pi.winType != WinType.pickGang1  && pi.winType != WinType.eatGang)
+                            {
+                                pi.winone += Math.pow(2, pi.baseWin);
+                                pj.winone -= Math.pow(2, pi.baseWin);
+                            }
+
                         }
 
                     }
@@ -2312,19 +3138,39 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
         tData.tState = TableState.roundFinish;
         var owner = tb.players[tData.uids[0]].info;
-        if (!byEndRoom) {
+        if (!byEndRoom && !tData.coinRoomCreate) {
             if (!owner.$inc) {
-                owner.$inc = {money: -tb.createPara.money};
+                //owner.$inc = {money: -tb.createPara.money};
             }
+            //后加的
+            tb.AllPlayerRun(function(p) {
+                if(!p.info.$inc) {
+                    //GLog("===初始化 playNum=1");
+                    p.info.$inc = {playNum:1};
+                } else if(!p.info.$inc.playNum) {
+                    p.info.$inc.playNum = 1;
+                } else {
+                    p.info.$inc.playNum += 1;
+                    //GLog("===增加 playNum="+p.info.$inc.playNum);
+                }
+            });
+
         }
         tb.AllPlayerRun(function (p) {
             p.winall += p.winone;
+            if(p.winType > 0)
+            {
+                p.winTotalNum ++;
+                p.zhongMaTotalNum += p.zhongMaNum;
+            }
+            p.mingGangTotalNum += p.mjgang0.length;
+            p.anGangTotalNum += p.mjgang1.length;
 
         });
         tData.roundNum--;
 
         var roundEnd = {
-            players: tb.collectPlayer('mjhand', 'mjdesc', 'winone', 'winall', 'winType', 'baseWin', 'mjMa', 'left4Ma'),
+            players: tb.collectPlayer('mjhand', 'mjdesc', 'winone', 'winall', 'winType', 'baseWin', 'mjMa', 'left4Ma','zhongMaNum','winTotalNum','mingGangTotalNum','anGangTotalNum','zhongMaTotalNum'),
             tData: app.CopyPtys(tData)
         };
         tb.mjlog.push("roundEnd", roundEnd);//一局结束
@@ -2332,7 +3178,533 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         if (tData.roundNum == 0) playInfo = EndRoom(tb);//结束
         if (playInfo) roundEnd.playInfo = playInfo;
         tb.NotifyAll("roundEnd", roundEnd);
+        if(tData.roundNum == 0)
+        {
+            tb.AllPlayerRun(function (p) {
+                GLog(p.uid + "赢得总次数:" + p.winTotalNum);
+                GLog(p.uid +"中马总个数："+p.zhongMaTotalNum);
+                GLog(p.uid +"暗杠的总次数:" + p.anGangTotalNum);
+                GLog(p.uid +"明杠的总次数:" + p.mingGangTotalNum);
+                GLog("---------------------");
+            });
+        }
     }
+
+    function EndGameForDongGuan(tb, pl, byEndRoom) {
+        GLog("function EndGameForDongGuan");
+        var tData = tb.tData;
+        var pls = [];
+        tb.AllPlayerRun(function (p) {
+            p.mjState = TableState.roundFinish;
+            pls.push(p);
+        });
+
+        var horse = tData.horse;
+        //鬼牌模式  判断胡牌是否含红中 无红中 增加2匹马
+        if (tData.withZhong) {
+            if (pl) {
+                if (!majiang.isHuWithHongZhong(pl)) horse = horse + 2;
+            }
+        }
+        if(tData.fanGui){
+            if (pl) {
+                if (!majiang.isHuWithFanGui(pl,tData.gui)) horse = horse + 2;
+            }
+        }
+        GLog("EndGameForDongGuan  horse==========================================" + horse);
+        //不管胡不胡都给每位玩家 传送left4Ma
+        for (var z = 0; z < pls.length; z++) {
+            pls[z].left4Ma=[];
+            for (var i = 0; i < horse; i++) {
+                pls[z].left4Ma.push(tb.cards[tData.cardNext + i]);
+            }
+        }
+
+        //算杠
+        for (var i = 0; i < pls.length; i++) {
+            var pi = pls[i];
+            pi.winone += (pi.mjgang1.length * 2 + pi.mjgang0.length) * (tData.maxPlayer - 1);
+
+            if (pi.mjgang0.length > 0) pi.mjdesc.push(pi.mjgang0.length + "明杠");
+            for (var g = 0; g < pi.mjgang0.length; g++) {
+                var ganguid = pi.gang0uid[pi.mjgang0[g]];
+                for (var j = 0; j < pls.length; j++) {
+                    if (j != i) {
+                        var pj = pls[j];
+                        if (ganguid >= 0 && pj.uid != tData.uids[ganguid]) continue;
+                        if (ganguid >= 0) {
+                            pj.winone -= (tData.maxPlayer - 1);
+                            pj.mjdesc.push("点杠");
+                        }
+                        else pj.winone -= 1;
+
+                    }
+                }
+            }
+            if (pi.mjgang1.length > 0) pi.mjdesc.push(pi.mjgang1.length + "暗杠");
+            //var gangWin=pi.mjgang1.length*2;
+            var gangWin = pi.mjgang1.length * 2;
+            for (var j = 0; j < pls.length; j++) {
+                if (j != i) {
+                    var pj = pls[j];
+                    pj.winone -= gangWin;
+                }
+            }
+        }
+        //没人胡 就黄庄
+        if (!pl) {
+            for (var i = 0; i < pls.length; i++) {
+                var pi = pls[i];
+                pi.winone = 0;
+            }
+        }
+
+        if (pl) {
+            tData.winner = tData.uids.indexOf(pl.uid);
+            //算胡
+            for (var i = 0; i < pls.length; i++) {
+                var pi = pls[i];
+                if (pi.winType > 0) {
+                    pi.baseWin = 1
+                    var num2 = pi.huType == 7 ? 1 : 0;
+                    if (num2 == 1 && majiang.canGang1([], pi.mjhand, []).length > 0) num2 = 2;
+                    var desc = "";
+                    //东莞 0平胡 1混一色 2大对胡 3清一色 4七对 5龙七对 6混七对 7混龙七对 8清七对 9清龙七对 10混大对 11清大对
+                    var huType = majiang.getHuTypeForDongGuan(pi);
+                    var baseWin = 0;
+                    switch (huType) {
+                        case majiang.DONG_GUAN_HUTYPE.PINGHU:
+                            desc = "平胡";
+                            baseWin = 2;
+                            break;
+                        case majiang.DONG_GUAN_HUTYPE.HUNYISE:
+                            desc = "混一色";
+                            baseWin = 4
+                            break;
+                        case majiang.DONG_GUAN_HUTYPE.DADUIHU:
+                            desc = "大对胡";
+                            baseWin = 4;
+                            break;
+                        case majiang.DONG_GUAN_HUTYPE.QINGYISE:
+                            desc = "清一色";
+                            baseWin = 6;
+                            break;
+                        case majiang.DONG_GUAN_HUTYPE.HUN_DADUI:
+                            desc = "混大对";
+                            baseWin = 8;
+                            break;
+                        case majiang.DONG_GUAN_HUTYPE.QING_DADUI:
+                            desc = "清大对";
+                            baseWin = 12;
+                            break;
+                    }
+
+                    if (num2 == 1) {
+                        desc = "七对";
+                        baseWin = 6;
+                    }
+
+                    if (num2 == 1 && huType == majiang.DONG_GUAN_HUTYPE.QINGYISE) {
+                        desc = "清七对";
+                        baseWin = 18;
+                    }
+                    if (num2 == 1 && huType == majiang.DONG_GUAN_HUTYPE.HUNYISE) {
+                        desc = "混七对";
+                        baseWin = 12;
+                    }
+
+                    if (num2 == 2) {
+                        desc = "龙七对";
+                        baseWin = 12;
+                    }
+                    if (num2 == 2 && huType == majiang.DONG_GUAN_HUTYPE.QINGYISE) {
+                        desc = "清龙七对";
+                        baseWin = 36;
+                    }
+                    if (num2 == 2 && huType == majiang.DONG_GUAN_HUTYPE.HUNYISE) {
+                        desc = "混龙七对";
+                        baseWin = 24;
+                    }
+
+                    pi.mjdesc.push(desc);
+
+                    var maFan = 0;//算分
+                    var maCount = 0;
+
+                    var zhongMaNum = majiang.getMaPrice(pi);
+                    maCount = zhongMaNum;
+                    if(maCount > 0) pi.mjdesc.push("买马" + maCount);
+                    //红中 算马
+                    if(tData.zhongIsMa && pi.mjzhong && pi.mjzhong.length > 0 ){
+                        maCount += pi.mjzhong.length;
+                        pi.mjdesc.push("红中X" + pi.mjzhong.length);
+                        GLog("红中 算马个数是"+pi.mjzhong.length);
+                    }
+                    maFan = 2 * maCount;
+
+                    //如果是海底胡 分数番2倍 杠开 番2倍 海底杠开番4倍
+                    if((tData.cardNext == tData.cardsNum - horse) && (pi.winType == WinType.pickGang23 || pi.winType == WinType.pickGang1 ) )
+                    {
+                        baseWin *= 4;
+                        pi.mjdesc.push("海底杠开");
+                    }
+                    else if(pi.winType == WinType.pickGang23 || pi.winType == WinType.pickGang1)
+                    {
+                        baseWin *= 2;
+                        pi.mjdesc.push("杠上花");
+                    }else if(tData.cardNext == tData.cardsNum - horse){
+                        baseWin *= 2;
+                        pi.mjdesc.push("海底胡");
+                    }
+
+                    if (maCount > 0) baseWin = baseWin + maFan;
+                    for (var j = 0; j < pls.length; j++) {
+                        var pj = pls[j];
+                        if (pj.winType > 0) continue;
+                        //抢杠胡 被抢杠者包3家
+                        if (pi.winType == WinType.eatGang) {
+                            if (pj.uid != tData.uids[tData.curPlayer]) continue;
+                            baseWin = baseWin * (tData.maxPlayer - 1);
+                            if(pi.mjdesc.indexOf("抢杠胡") == -1) pi.mjdesc.push("抢杠胡");
+                            if(pj.uid == tData.uids[tData.curPlayer] && tData.maxPlayer == 4 && pj.mjdesc.indexOf("包三家") == -1) pj.mjdesc.push("包三家");
+                            if(pj.uid == tData.uids[tData.curPlayer] && tData.maxPlayer == 3 && pj.mjdesc.indexOf("包两家") == -1) pj.mjdesc.push("包两家");
+                        }
+                        else {
+                            baseWin = baseWin;
+                        }
+                        pi.winone += baseWin;
+                        pj.winone -= baseWin;
+                    }
+
+                    if (maCount >= 0) {
+                        pi.zhongMaNum = maCount;
+                    }
+
+                }
+
+            }
+
+        }
+        else {
+            tData.winner = -1;
+            GLog("黄庄");
+        }
+
+        tData.tState = TableState.roundFinish;
+        var owner = tb.players[tData.uids[0]].info;
+        if (!byEndRoom && !tData.coinRoomCreate) {
+            if (!owner.$inc) {
+                 owner.$inc = {money: -tb.createPara.money};
+                // owner.$inc = {money: 0};
+            }
+            //后加的
+            tb.AllPlayerRun(function(p) {
+                if(!p.info.$inc) {
+                    //GLog("===初始化 playNum=1");
+                    p.info.$inc = {playNum:1};
+                } else if(!p.info.$inc.playNum) {
+                    p.info.$inc.playNum = 1;
+                } else {
+                    p.info.$inc.playNum += 1;
+                    //GLog("===增加 playNum="+p.info.$inc.playNum);
+                }
+            });
+
+        }
+        tb.AllPlayerRun(function (p) {
+            p.winall += p.winone;
+            if(p.winType > 0)
+            {
+                p.winTotalNum ++;
+                p.zhongMaTotalNum += p.zhongMaNum;
+            }
+            p.mingGangTotalNum += p.mjgang0.length;
+            p.anGangTotalNum += p.mjgang1.length;
+        });
+        tData.roundNum--;
+
+        var roundEnd = {
+            players: tb.collectPlayer('mjhand', 'mjdesc', 'winone', 'winall', 'winType', 'baseWin', 'mjMa', 'left4Ma', 'linkZhuang','zhongMaNum','winTotalNum','mingGangTotalNum','anGangTotalNum','zhongMaTotalNum'),
+            tData: app.CopyPtys(tData)
+        };
+        tb.mjlog.push("roundEnd", roundEnd);//一局结束
+        var playInfo = null;
+        if (tData.roundNum == 0) playInfo = EndRoom(tb);//结束
+        if (playInfo) roundEnd.playInfo = playInfo;
+        tb.NotifyAll("roundEnd", roundEnd);
+        if(tData.roundNum == 0)
+        {
+            tb.AllPlayerRun(function (p) {
+                GLog(p.uid + "赢得总次数:" + p.winTotalNum);
+                GLog(p.uid +"中马总个数："+p.zhongMaTotalNum);
+                GLog(p.uid +"暗杠的总次数:" + p.anGangTotalNum);
+                GLog(p.uid +"明杠的总次数:" + p.mingGangTotalNum);
+                GLog("---------------------");
+            });
+        }
+    }
+
+    function EndGameForYiBaiZhuang(tb, pl, byEndRoom) {
+        GLog("function EndGameForYiBaiZhuang");
+        var tData = tb.tData;
+        var pls = [];
+        tb.AllPlayerRun(function (p) {
+            p.mjState = TableState.roundFinish;
+            pls.push(p);
+        });
+
+        var horse = tData.horse;
+        //鬼牌模式  判断胡牌是否含红中 无红中 增加2匹马
+        if (tData.withZhong) {
+            if (pl) {
+                if (!majiang.isHuWithHongZhong(pl) && tData.guiJiaMa ) horse = horse + 2;
+            }
+        }
+        if(tData.fanGui){
+            if (pl) {
+                if (!majiang.isHuWithFanGui(pl,tData.gui) && tData.guiJiaMa) horse = horse + 2;
+            }
+        }
+        GLog("EndGameForYiBaiZhuang  horse==========================================" + horse);
+        //不管胡不胡都给每位玩家 传送left4Ma
+        for (var z = 0; z < pls.length; z++) {
+            pls[z].left4Ma=[];
+            for (var i = 0; i < horse; i++) {
+                pls[z].left4Ma.push(tb.cards[tData.cardNext + i]);
+            }
+        }
+
+        //算杠
+        for (var i = 0; i < pls.length; i++) {
+            var pi = pls[i];
+            pi.winone += (pi.mjgang1.length * 2 + pi.mjgang0.length) * (tData.maxPlayer - 1);
+
+            if (pi.mjgang0.length > 0) pi.mjdesc.push(pi.mjgang0.length + "明杠");
+            for (var g = 0; g < pi.mjgang0.length; g++) {
+                var ganguid = pi.gang0uid[pi.mjgang0[g]];
+                for (var j = 0; j < pls.length; j++) {
+                    if (j != i) {
+                        var pj = pls[j];
+                        if (ganguid >= 0 && pj.uid != tData.uids[ganguid]) continue;
+                        if (ganguid >= 0) {
+                            pj.winone -= (tData.maxPlayer - 1);
+                            pj.mjdesc.push("点杠");
+                        }
+                        else pj.winone -= 1;
+
+                    }
+                }
+            }
+            if (pi.mjgang1.length > 0) pi.mjdesc.push(pi.mjgang1.length + "暗杠");
+            //var gangWin=pi.mjgang1.length*2;
+            var gangWin = pi.mjgang1.length * 2;
+            for (var j = 0; j < pls.length; j++) {
+                if (j != i) {
+                    var pj = pls[j];
+                    pj.winone -= gangWin;
+                }
+            }
+        }
+        //没人胡 就黄庄
+        if (!pl) {
+            for (var i = 0; i < pls.length; i++) {
+                var pi = pls[i];
+                pi.winone = 0;
+            }
+        }
+
+        if (pl) {
+            tData.winner = tData.uids.indexOf(pl.uid);
+            //算胡
+            for (var i = 0; i < pls.length; i++) {
+                var pi = pls[i];
+                if (pi.winType > 0) {
+                    pi.baseWin = 1
+                    var num2 = pi.huType == 7 ? 1 : 0;
+                    if (num2 == 1 && majiang.canGang1([], pi.mjhand, []).length > 0) num2 = 2;
+                    var desc = "";
+                    //100张 0平胡 1碰碰胡 2七对 3龙七对 4混一色 5清一色 6混碰 7清碰 8幺九 9字一色 10十三幺
+                    //二期需求 去掉7对胡法 混一色 及 混碰
+                    var huType = majiang.getHuTypeForYiBaiZhang(pi);
+                    //鬼牌模式 摸到4鬼 直接平胡
+                    //if((tData.withZhong || tData.fanGui) && tData.gui4Hu && majiang.check4guiforhands(pi.mjhand,tData.withZhong,tData.fanGui,tData.gui)) huType = 1000;
+                    //if(huType == 1000) desc = "平胡";
+                    var baseWin = 2;
+                    switch (huType) {
+                        case majiang.YI_BAI_ZHANG.PINGHU:
+                            desc = "平胡";
+                            break;
+                        case majiang.YI_BAI_ZHANG.PENGPENGHU:
+                            desc = "碰碰胡";
+                            if(tData.canBigWin) baseWin = 4;
+                            break;
+                        //case majiang.YI_BAI_ZHANG.HUNYISE:
+                        //    desc = "混一色";
+                        //    if(tData.canBigWin) baseWin = 4;
+                        //    break;
+                        case majiang.YI_BAI_ZHANG.QINGYISE:
+                            desc = "清一色";
+                            if(tData.canBigWin) baseWin = 8;
+                            break;
+                        //case majiang.YI_BAI_ZHANG.HUNPENG:
+                        //    desc = "混碰";
+                        //    if(tData.canBigWin) baseWin = 6;
+                        //    break;
+                        //case majiang.YI_BAI_ZHANG.QINGPENG:
+                        //    desc = "清碰";
+                        //    if(tData.canBigWin) baseWin = 12;
+                        //    break;
+                        case majiang.YI_BAI_ZHANG.YAOJIU:
+                            desc = "幺九";
+                            if(tData.canBigWin) baseWin = 12;
+                            break;
+                        case majiang.YI_BAI_ZHANG.ZIYISE:
+                            desc = "字一色";
+                            baseWin = 2;
+                            if(tData.canBigWin) baseWin = 16;
+                            break;
+                        case majiang.YI_BAI_ZHANG.SHISANYAO:
+                            desc = "十三幺";
+                            baseWin = 2;
+                            if(tData.canBigWin) baseWin = 16;
+                            break;
+                    }
+
+                    //鬼牌模式 清碰+鬼 应该算成 字一色
+                    if (tData.withZhong)
+                    {
+                        if(huType == majiang.YI_BAI_ZHANG.QINGYISE && (num2 == 1 || num2 == 2 || majiang.check4guiforhands(pi.mjhand,tData.withZhong,tData.fanGui,tData.gui) ) && (pi.mjhand.indexOf(71) != -1 || pi.mjpeng.indexOf(71) != -1 || pi.mjgang0.indexOf(71) != -1 || pi.mjgang1.indexOf(71) != -1) ) {
+                            desc = "字一色";
+                            baseWin = 16;
+                            if(tData.canBigWin) baseWin = 16;
+                        }
+                    }
+                    if (tData.fanGui)
+                    {
+                        if(huType == majiang.YI_BAI_ZHANG.QINGYISE && (num2 == 1 || num2 == 2 || majiang.check4guiforhands(pi.mjhand,tData.withZhong,tData.fanGui,tData.gui)) && (pi.mjhand.indexOf(tData.gui) != -1 || pi.mjpeng.indexOf(tData.gui) != -1 || pi.mjgang0.indexOf(tData.gui) != -1 || pi.mjgang1.indexOf(tData.gui) != -1) ) {
+                            desc = "字一色";
+                            baseWin = 16;
+                            if(tData.canBigWin) baseWin = 16;
+                        }
+                    }
+
+                    //鬼牌模式 手牌无鬼 分翻倍
+                    if (tData.withZhong) {
+                            if (!majiang.isHuWithHongZhong(pi) && tData.guiJiaBei ) baseWin *= 2;
+                    }
+                    if(tData.fanGui){
+                            if (!majiang.isHuWithFanGui(pl,tData.gui) && tData.guiJiaBei) baseWin *= 2;
+                    }
+
+                    //鬼牌模式 摸到4鬼 选择加倍 分翻倍
+                    if((tData.withZhong || tData.fanGui) && tData.gui4Hu && majiang.check4guiforhands(pi.mjhand,tData.withZhong,tData.fanGui,tData.gui)) baseWin *= tData.gui4huBeiNum;
+
+                    pi.mjdesc.push(desc);
+                    var maFan = 0;//算分
+                    var maCount = 0;
+
+                    var zhongMaNum = majiang.getMaPrice(pi);
+                    maFan = 2 * zhongMaNum;
+                    maCount = zhongMaNum;
+
+                    if(maCount > 0) pi.mjdesc.push("买马" + maCount);
+
+                    if(pi.winType == WinType.pickGang23 || pi.winType == WinType.pickGang1)
+                    {
+                        pi.mjdesc.push("杠上花");
+                    }
+
+                    if (maCount > 0) baseWin = baseWin + maFan;
+                    for (var j = 0; j < pls.length; j++) {
+                        var pj = pls[j];
+                        if (pj.winType > 0) continue;
+
+                        //抢杠胡 杠炮的那个玩家包3家 马钱也包
+                        if (pi.winType == WinType.eatGang) {
+                            if (pj.uid != tData.uids[tData.curPlayer]) continue;
+                            baseWin = baseWin * (tData.maxPlayer - 1);
+                            if(pi.mjdesc.indexOf("抢杠胡") == -1) pi.mjdesc.push("抢杠胡");
+                            if(pj.uid == tData.uids[tData.curPlayer] && tData.maxPlayer == 4 && pj.mjdesc.indexOf("包三家") == -1) pj.mjdesc.push("包三家");
+                            if(pj.uid == tData.uids[tData.curPlayer] && tData.maxPlayer == 3 && pj.mjdesc.indexOf("包两家") == -1) pj.mjdesc.push("包两家");
+                        }
+                        else {
+                            baseWin = baseWin;
+                        }
+
+                        pi.winone += baseWin;
+                        pj.winone -= baseWin;
+                    }
+
+
+                    if (maCount >= 0) {
+                        pi.zhongMaNum = maCount;
+                    }
+
+                }
+
+            }
+            GLog("赢得玩家的分====" + pl.winone);
+            GLog("最终     胡家类型：" + huType + desc);
+        }
+        else {
+            tData.winner = -1;
+            GLog("黄庄");
+        }
+
+        tData.tState = TableState.roundFinish;
+        var owner = tb.players[tData.uids[0]].info;
+        if (!byEndRoom && !tData.coinRoomCreate) {
+            if (!owner.$inc) {
+                // owner.$inc = {money: -tb.createPara.money};
+                // owner.$inc = {money: 0};
+            }
+            //后加的
+            tb.AllPlayerRun(function(p) {
+                if(!p.info.$inc) {
+                    //GLog("===初始化 playNum=1");
+                    p.info.$inc = {playNum:1};
+                } else if(!p.info.$inc.playNum) {
+                    p.info.$inc.playNum = 1;
+                } else {
+                    p.info.$inc.playNum += 1;
+                    //GLog("===增加 playNum="+p.info.$inc.playNum);
+                }
+            });
+
+        }
+        tb.AllPlayerRun(function (p) {
+            p.winall += p.winone;
+            if(p.winType > 0)
+            {
+                p.winTotalNum ++;
+                p.zhongMaTotalNum += p.zhongMaNum;
+            }
+            p.mingGangTotalNum += p.mjgang0.length;
+            p.anGangTotalNum += p.mjgang1.length;
+        });
+        tData.roundNum--;
+
+        var roundEnd = {
+            players: tb.collectPlayer('mjhand', 'mjdesc', 'winone', 'winall', 'winType', 'baseWin', 'mjMa', 'left4Ma', 'linkZhuang','zhongMaNum','winTotalNum','mingGangTotalNum','anGangTotalNum','zhongMaTotalNum'),
+            tData: app.CopyPtys(tData)
+        };
+        tb.mjlog.push("roundEnd", roundEnd);//一局结束
+        var playInfo = null;
+        if (tData.roundNum == 0) playInfo = EndRoom(tb);//结束
+        if (playInfo) roundEnd.playInfo = playInfo;
+        tb.NotifyAll("roundEnd", roundEnd);
+        if(tData.roundNum == 0)
+        {
+            tb.AllPlayerRun(function (p) {
+                GLog(p.uid + "赢得总次数:" + p.winTotalNum);
+                GLog(p.uid +"中马总个数："+p.zhongMaTotalNum);
+                GLog(p.uid +"暗杠的总次数:" + p.anGangTotalNum);
+                GLog(p.uid +"明杠的总次数:" + p.mingGangTotalNum);
+                GLog("---------------------");
+            });
+        }
+    }
+
     function EndGame(tb, pl, byEndRoom) {
         switch (tb.tData.gameType) {
             case GamesType.GANG_DONG:
@@ -2346,6 +3718,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 break;
             case GamesType.JI_PING_HU:
                 EndGameForJiPingHu(tb,pl,byEndRoom);
+                break;
+            case GamesType.DONG_GUAN:
+                EndGameForDongGuan(tb,pl,byEndRoom);
+                break;
+            case GamesType.YI_BAI_ZHANG:
+                EndGameForYiBaiZhuang(tb,pl,byEndRoom);
                 break;
         }
     }
@@ -2447,6 +3825,67 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         }
     }
 
+    function MJPutForDongGuan(pl, msg, self) {
+        GLog("东莞麻将 打牌中");
+        var tData = self.tData;
+        if (tData.tState == TableState.waitPut && pl.uid == tData.uids[tData.curPlayer]) {
+            var cdIdx = pl.mjhand.indexOf(msg.card);
+            if (cdIdx >= 0) {
+                if (self.tData.zhongIsMa && msg.card == 71) {
+                    GLog("遇到红中打出红中");
+                    pl.mjzhong.push(msg.card);
+                    pl.mjhand.splice(cdIdx, 1);
+                    tData.putType = 6;//红中
+                    self.NotifyAll('MJZhong', {uid: pl.uid, card: msg.card});
+                    self.mjlog.push('MJZhong', {uid:pl.uid, card:msg.card});
+                    self.AllPlayerRun(function (pl) {
+                        pl.mjState = TableState.waitCard;
+                    });
+                    GLog(">>>> 遇到红中打出红中 红中算马 " + msg.card);
+                    SendNewCard(self); //尝试补牌
+                }else{
+                    pl.mjhand.splice(cdIdx, 1);
+                    pl.skipPeng = [];
+                    pl.mjput.push(msg.card);
+                    pl.skipHu = false;
+                    msg.uid = pl.uid;
+                    tData.lastPut = msg.card;
+                    tData.lastPutPlayer = tData.curPlayer;
+                    tData.tState = TableState.waitEat;
+                    pl.mjState = TableState.waitCard;
+                    pl.eatFlag = 0;//自己不能吃
+
+                    if (tData.putType > 0 && tData.putType < 4) tData.putType = 4; else tData.putType = 0;
+
+                    self.AllPlayerRun(function (p) {
+                        if (p != pl) {
+                            p.eatFlag = GetEatFlag(p, tData,self);
+                            GLog("p.eatFlag" + p.eatFlag);
+
+                            if (p.eatFlag == 2 && p.skipPeng.indexOf(msg.card) != -1) //过碰
+                                p.eatFlag = 0;
+
+                            if (p.eatFlag != 0) {
+                                GLog("p.mjState" + p.mjState);
+                                p.mjState = TableState.waitEat;
+                            }
+                            else {
+                                GLog("p.mjState" + p.mjState);
+                                p.mjState = TableState.waitCard;
+                            }
+                        }
+                    });
+                    var cmd = msg.cmd;
+                    delete msg.cmd;
+                    msg.putType = tData.putType;
+                    self.NotifyAll(cmd, msg);
+                    self.mjlog.push(cmd, msg);//打牌
+                    SendNewCard(self);//打牌后尝试发牌
+                }
+            }
+        }
+    }
+
     function MJPutForHuiZhou(pl, msg, self) {
         GLog("Table.prototype.MJPutForHuiZhou");
         var tData = self.tData;
@@ -2459,6 +3898,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     pl.mjhand.splice(cdIdx, 1);
                     tData.putType = 5;//花牌
                     self.NotifyAll('MJFlower', {uid: pl.uid, card: msg.card});
+                    self.mjlog.push('MJFlower', {uid:pl.uid, card:msg.card});
                     self.AllPlayerRun(function (pl) {
                         pl.mjState = TableState.waitCard;
                     });
@@ -2559,6 +3999,50 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         }
     }
 
+    function MJPutForYiBaiZhuang(pl, msg, self) {
+        GLog("100章 打牌中");
+        var tData = self.tData;
+        if (tData.tState == TableState.waitPut && pl.uid == tData.uids[tData.curPlayer]) {
+            var cdIdx = pl.mjhand.indexOf(msg.card);
+            if (cdIdx >= 0) {
+                {
+                    pl.mjhand.splice(cdIdx, 1);
+                    pl.mjput.push(msg.card);
+                    pl.skipHu = false;
+                    msg.uid = pl.uid;
+                    tData.lastPut = msg.card;
+                    tData.lastPutPlayer = tData.curPlayer;
+                    tData.tState = TableState.waitEat;
+                    pl.mjState = TableState.waitCard;
+                    pl.eatFlag = 0;//自己不能吃
+
+                    if (tData.putType > 0 && tData.putType < 4) tData.putType = 4; else tData.putType = 0;
+
+                    self.AllPlayerRun(function (p) {
+                        if (p != pl) {
+                            p.eatFlag = GetEatFlag(p, tData,self);
+                            GLog("p.eatFlag" + p.eatFlag);
+                            if (p.eatFlag != 0) {
+                                GLog("p.mjState" + p.mjState);
+                                p.mjState = TableState.waitEat;
+                            }
+                            else {
+                                GLog("p.mjState" + p.mjState);
+                                p.mjState = TableState.waitCard;
+                            }
+                        }
+                    });
+                    var cmd = msg.cmd;
+                    delete msg.cmd;
+                    msg.putType = tData.putType;
+                    self.NotifyAll(cmd, msg);
+                    self.mjlog.push(cmd, msg);//打牌
+                    SendNewCard(self);//打牌后尝试发牌
+                }
+            }
+        }
+    }
+
     Table.prototype.MJPut = function (pl, msg, session, next) {
         GLog("Table.prototype.MJPut");
         next(null, null);  //if(this.GamePause()) return;
@@ -2576,13 +4060,98 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             case GamesType.JI_PING_HU:
                 MJPutForJiPingHu(pl, msg, this);
                 break;
+            case GamesType.DONG_GUAN:
+                MJPutForDongGuan(pl,msg,this);
+                break;
+            case GamesType.YI_BAI_ZHANG:
+                MJPutForYiBaiZhuang(pl, msg, this);
+                break;
         }
 
 
     }
-    //发牌不要求在线
-    function SendNewCard(tb) {
-        GLog("function SendNewCard >>>>,尝试摸牌");
+
+    function SendNewCardForGuangDong(tb)
+    {
+        var tData = tb.tData;
+        var cards = tb.cards;
+        var horse = tData.horse;
+        if (tb.AllPlayerCheck(function (pl) {
+                GLog("pl.uid======" + pl.uid + "   pl.mjState:" + pl.mjState);
+                return pl.mjState == TableState.waitCard
+            })) {
+            if (tData.withZhong || tData.fanGui) horse = horse + 2; //GLog("SendNewCard  horse==="+horse);
+            if ((tData.gameType == GamesType.SHEN_ZHEN || tData.gameType == GamesType.GANG_DONG)&& tData.jiejieGao) //此局多预留2匹马
+            {
+                //所有玩家中 连胡数不为0的数
+                for(var i=0;i<tData.maxPlayer;i++)
+                {
+                    if(tb.players[tData.uids[i]].linkHu == 0) continue;
+                    horse += (tb.players[tData.uids[i]].linkHu)*2;
+                    GLog("连庄次数："+tb.players[tData.uids[i]].linkHu+"    预留下马数horse："+horse);
+                }
+                GLog("======================================================================");
+                //switch (tb.players[tData.uids[tData.zhuang]].linkZhuang) {
+                //    case 1:
+                //        //horse = horse + 2;
+                //        break;
+                //    case 2:
+                //        horse = horse + 2;
+                //        break;
+                //    case 3:
+                //        horse = horse + 4;
+                //        break;
+                //    case 4:
+                //        horse = horse + 6;
+                //        break;
+                //    case 5:
+                //        horse = horse + 8;
+                //        break;
+                //    case 6:
+                //        horse = horse + 10;
+                //        break;
+                //    case 7:
+                //        horse = horse + 12;
+                //        break;
+                //    case 8:
+                //        horse = horse + 14;
+                //        break;
+                //}
+
+              //  GLog("连庄次数："+tb.players[tData.uids[tData.zhuang]].linkZhuang+"    预留下马数horse："+horse);
+            }
+            GLog("预留下马数horse-------------------------------------------："+horse);
+            if (tData.cardNext < cards.length - horse) {
+                var newCard = cards[tData.cardNext++];
+                if (tData.putType == 0 || tData.putType == 4)tData.curPlayer = (tData.curPlayer + 1) % tData.maxPlayer;
+                var uid = tData.uids[tData.curPlayer];
+                pl = tb.getPlayer(uid);
+                pl.mjhand.push(newCard);
+                pl.isNew = true;
+                tData.tState = TableState.waitPut;
+                tb.AllPlayerRun(function (pl) {
+                    pl.mjState = TableState.waitPut;
+                    pl.eatFlag = 0;
+                });
+                if (pl.onLine)pl.notify("newCard", newCard);
+                tb.NotifyAll("waitPut", tData);
+                pl.picknum++;
+                tb.mjlog.push("newCard", app.CopyPtys(tData));//发牌
+                GLog("<<<<" + tb.getPlayer(pl.uid).info.name + " 第" + tData.curPlayer + "个人摸牌成功" + newCard);
+
+                return true;
+            }
+            else//没有牌了
+            {
+                EndGame(tb, null);
+                GLog("摸牌失败 已无牌");
+            }
+        } else GLog("摸牌失败");
+        return false;
+    }
+
+    function SendNewCardForHuiZhou(tb)
+    {
         var tData = tb.tData;
         var cards = tb.cards;
         var horse = tData.horse;
@@ -2652,12 +4221,412 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         } else GLog("摸牌失败");
         return false;
     }
+    function SendNewCardForShenZhen(tb)
+    {
+        var tData = tb.tData;
+        var cards = tb.cards;
+        var horse = tData.horse;
+        if (tb.AllPlayerCheck(function (pl) {
+                GLog("pl.uid======" + pl.uid + "   pl.mjState:" + pl.mjState);
+                return pl.mjState == TableState.waitCard
+            })) {
+            if (tData.withZhong || tData.fanGui) horse = horse + 2; //GLog("SendNewCard  horse==="+horse);
+            if (tData.gameType == GamesType.SHEN_ZHEN && tData.jiejieGao) //此局多预留2匹马
+            {
+                //所有玩家中 连胡数不为0的数
+                for(var i=0;i<tData.maxPlayer;i++)
+                {
+                    if(tb.players[tData.uids[i]].linkHu == 0) continue;
+                    horse += (tb.players[tData.uids[i]].linkHu)*2;
+                    GLog("连庄次数："+tb.players[tData.uids[i]].linkHu+"    预留下马数horse："+horse);
+                }
+                GLog("======================================================================");
+                //switch (tb.players[tData.uids[tData.zhuang]].linkZhuang) {
+                //    case 1:
+                //        //horse = horse + 2;
+                //        break;
+                //    case 2:
+                //        horse = horse + 2;
+                //        break;
+                //    case 3:
+                //        horse = horse + 4;
+                //        break;
+                //    case 4:
+                //        horse = horse + 6;
+                //        break;
+                //    case 5:
+                //        horse = horse + 8;
+                //        break;
+                //    case 6:
+                //        horse = horse + 10;
+                //        break;
+                //    case 7:
+                //        horse = horse + 12;
+                //        break;
+                //    case 8:
+                //        horse = horse + 14;
+                //        break;
+                //}
 
+                //GLog("连庄次数："+tb.players[tData.uids[tData.zhuang]].linkZhuang+"    预留下马数horse："+horse);
+            }
+
+            if (tData.cardNext < cards.length - horse) {
+                var newCard = cards[tData.cardNext++];
+                if (tData.putType == 0 || tData.putType == 4)tData.curPlayer = (tData.curPlayer + 1) % tData.maxPlayer;
+                var uid = tData.uids[tData.curPlayer];
+                pl = tb.getPlayer(uid);
+                pl.mjhand.push(newCard);
+                pl.isNew = true;
+                tData.tState = TableState.waitPut;
+                tb.AllPlayerRun(function (pl) {
+                    pl.mjState = TableState.waitPut;
+                    pl.eatFlag = 0;
+                });
+                if (pl.onLine)pl.notify("newCard", newCard);
+                tb.NotifyAll("waitPut", tData);
+                pl.picknum++;
+                tb.mjlog.push("newCard", app.CopyPtys(tData));//发牌
+                GLog("<<<<" + tb.getPlayer(pl.uid).info.name + " 第" + tData.curPlayer + "个人摸牌成功" + newCard);
+
+                return true;
+            }
+            else//没有牌了
+            {
+                EndGame(tb, null);
+                GLog("摸牌失败 已无牌");
+            }
+        } else GLog("摸牌失败");
+        return false;
+    }
+    function SendNewCardForJiPingHu(tb)
+    {
+        var tData = tb.tData;
+        var cards = tb.cards;
+        var horse = tData.horse;
+        if (tb.AllPlayerCheck(function (pl) {
+                GLog("pl.uid======" + pl.uid + "   pl.mjState:" + pl.mjState);
+                return pl.mjState == TableState.waitCard
+            })) {
+            if (tData.withZhong || tData.fanGui) horse = horse + 2; //GLog("SendNewCard  horse==="+horse);
+            if (tData.gameType == GamesType.SHEN_ZHEN && tData.jiejieGao) //此局多预留2匹马
+            {
+                GLog("======================================================================");
+                switch (tb.players[tData.uids[tData.zhuang]].linkZhuang) {
+                    case 1:
+                        //horse = horse + 2;
+                        break;
+                    case 2:
+                        horse = horse + 2;
+                        break;
+                    case 3:
+                        horse = horse + 4;
+                        break;
+                    case 4:
+                        horse = horse + 6;
+                        break;
+                    case 5:
+                        horse = horse + 8;
+                        break;
+                    case 6:
+                        horse = horse + 10;
+                        break;
+                    case 7:
+                        horse = horse + 12;
+                        break;
+                    case 8:
+                        horse = horse + 14;
+                        break;
+                }
+
+                GLog("连庄次数："+tb.players[tData.uids[tData.zhuang]].linkZhuang+"    预留下马数horse："+horse);
+            }
+
+            if (tData.cardNext < cards.length - horse) {
+                var newCard = cards[tData.cardNext++];
+                if (tData.putType == 0 || tData.putType == 4)tData.curPlayer = (tData.curPlayer + 1) % tData.maxPlayer;
+                var uid = tData.uids[tData.curPlayer];
+                pl = tb.getPlayer(uid);
+                pl.mjhand.push(newCard);
+                pl.isNew = true;
+                tData.tState = TableState.waitPut;
+                tb.AllPlayerRun(function (pl) {
+                    pl.mjState = TableState.waitPut;
+                    pl.eatFlag = 0;
+                });
+                if (pl.onLine)pl.notify("newCard", newCard);
+                tb.NotifyAll("waitPut", tData);
+                pl.picknum++;
+                tb.mjlog.push("newCard", app.CopyPtys(tData));//发牌
+                GLog("<<<<" + tb.getPlayer(pl.uid).info.name + " 第" + tData.curPlayer + "个人摸牌成功" + newCard);
+
+                return true;
+            }
+            else//没有牌了
+            {
+                EndGame(tb, null);
+                GLog("摸牌失败 已无牌");
+            }
+        } else GLog("摸牌失败");
+        return false;
+    }
+    function SendNewCardForDongGuan(tb)
+    {
+        var tData = tb.tData;
+        var cards = tb.cards;
+        var horse = tData.horse;
+        if (tb.AllPlayerCheck(function (pl) {
+                GLog("pl.uid======" + pl.uid + "   pl.mjState:" + pl.mjState);
+                return pl.mjState == TableState.waitCard
+            })) {
+            if (tData.withZhong || tData.fanGui) horse = horse + 2; //GLog("SendNewCard  horse==="+horse);
+            if (tData.gameType == GamesType.SHEN_ZHEN && tData.jiejieGao) //此局多预留2匹马
+            {
+                GLog("======================================================================");
+                switch (tb.players[tData.uids[tData.zhuang]].linkZhuang) {
+                    case 1:
+                        //horse = horse + 2;
+                        break;
+                    case 2:
+                        horse = horse + 2;
+                        break;
+                    case 3:
+                        horse = horse + 4;
+                        break;
+                    case 4:
+                        horse = horse + 6;
+                        break;
+                    case 5:
+                        horse = horse + 8;
+                        break;
+                    case 6:
+                        horse = horse + 10;
+                        break;
+                    case 7:
+                        horse = horse + 12;
+                        break;
+                    case 8:
+                        horse = horse + 14;
+                        break;
+                }
+
+                GLog("连庄次数："+tb.players[tData.uids[tData.zhuang]].linkZhuang+"    预留下马数horse："+horse);
+            }
+
+            if (tData.cardNext < cards.length - horse) {
+                var newCard = cards[tData.cardNext++];
+                if (tData.putType == 0 || tData.putType == 4)tData.curPlayer = (tData.curPlayer + 1) % tData.maxPlayer;
+                var uid = tData.uids[tData.curPlayer];
+                pl = tb.getPlayer(uid);
+                pl.mjhand.push(newCard);
+                pl.isNew = true;
+                tData.tState = TableState.waitPut;
+                tb.AllPlayerRun(function (pl) {
+                    pl.mjState = TableState.waitPut;
+                    pl.eatFlag = 0;
+                });
+                if (pl.onLine)pl.notify("newCard", newCard);
+                tb.NotifyAll("waitPut", tData);
+                pl.picknum++;
+                tb.mjlog.push("newCard", app.CopyPtys(tData));//发牌
+                GLog("<<<<" + tb.getPlayer(pl.uid).info.name + " 第" + tData.curPlayer + "个人摸牌成功" + newCard);
+
+                return true;
+            }
+            else//没有牌了
+            {
+                EndGame(tb, null);
+                GLog("摸牌失败 已无牌");
+            }
+        } else GLog("摸牌失败");
+        return false;
+    }
+    function SendNewCardForYiBaiZhang(tb)
+    {
+        var tData = tb.tData;
+        var cards = tb.cards;
+        var horse = tData.horse;
+        if (tb.AllPlayerCheck(function (pl) {
+                return pl.mjState == TableState.waitCard
+            })) {
+            if ((tData.withZhong || tData.fanGui) && tData.guiJiaMa) horse = horse + 2;
+
+            if (tData.cardNext < cards.length - horse) {
+                var newCard = cards[tData.cardNext++];
+                if (tData.putType == 0 || tData.putType == 4)tData.curPlayer = (tData.curPlayer + 1) % tData.maxPlayer;
+                var uid = tData.uids[tData.curPlayer];
+                pl = tb.getPlayer(uid);
+                pl.mjhand.push(newCard);
+                pl.isNew = true;
+                tData.tState = TableState.waitPut;
+                tb.AllPlayerRun(function (pl) {
+                    pl.mjState = TableState.waitPut;
+                    pl.eatFlag = 0;
+                });
+                if (pl.onLine)pl.notify("newCard", newCard);
+                tb.NotifyAll("waitPut", tData);
+                pl.picknum++;
+                tb.mjlog.push("newCard", app.CopyPtys(tData));//发牌
+                GLog("<<<<" + tb.getPlayer(pl.uid).info.name + " 第" + tData.curPlayer + "个人摸牌成功" + newCard);
+
+                return true;
+            }
+            else//没有牌了
+            {
+                EndGame(tb, null);
+                GLog("摸牌失败 已无牌");
+            }
+        } else GLog("摸牌失败");
+        return false;
+    }
+    //发牌不要求在线
+    function SendNewCard(tb) {
+        var tData = tb.tData;
+        switch (tData.gameType){
+            case GamesType.GANG_DONG:
+                return SendNewCardForGuangDong(tb);
+            case GamesType.HUI_ZHOU:
+                return SendNewCardForHuiZhou(tb);
+            case GamesType.SHEN_ZHEN:
+                return SendNewCardForShenZhen(tb);
+            case GamesType.JI_PING_HU:
+                return SendNewCardForJiPingHu(tb);
+            case GamesType.DONG_GUAN:
+                return SendNewCardForDongGuan(tb);
+            case GamesType.YI_BAI_ZHANG:
+                return SendNewCardForYiBaiZhang(tb);
+        }
+    }
     Table.prototype.TryNewCard = function () {
         GLog("function TryNewCard");
         SendNewCard(this);
     }
 
+    //老版本
+    //function EndRoom(tb, msg) {
+    //    GLog("function EndRoom");
+    //    var playInfo = null;
+    //    if (tb.tData.roundNum > -2) {
+    //        if (tb.tData.roundNum != tb.createPara.round) {
+    //            logid++;
+    //            var playid = app.serverId + "_" + logid;
+    //            var endTime = new Date();
+    //            var nowStr = endTime.Format("yyyy-MM-dd hh:mm:ss");
+    //            var tableName = endTime.Format("yyyy-MM-dd");
+    //            var tData = tb.tData;
+    //            playInfo = {
+    //                owner: tData.owner,
+    //                money: tb.createPara.money,
+    //                now: nowStr,
+    //                tableid: tb.tableid,
+    //                logid: playid,
+    //                players: []
+    //            };
+    //            tb.AllPlayerRun(function (p) {
+    //                var pinfo = {};
+    //                pinfo.uid = p.uid;
+    //                pinfo.winall = p.winall;
+    //                pinfo.nickname = p.info.nickname || p.info.name;
+    //                pinfo.money = p.info.money;
+    //                playInfo.players.push(pinfo);
+    //            });
+    //            tb.AllPlayerRun(function (p) {
+    //                var table = "majiangLog";
+    //                app.mdb.db.collection("majiangLog").update({_id: p.uid},
+    //                    {$push: {logs: {$each: [playInfo], $slice: -50}}}, {upsert: true}, function (er, doc) {
+    //                    });
+    //
+    //                /*
+    //                 app.mdb.findOne(table,{_id:p.uid},function(er,doc){
+    //
+    //                 if(doc)
+    //                 {
+    //                 app.mdb.update(table,{_id:p.uid},{logs:{
+    //                 $each:[playInfo],$slice: -50
+    //                 }},"$push");
+    //                 }
+    //                 else
+    //                 {
+    //                 app.mdb.insert(table,{_id:p.uid,uid:p.uid,logs:[playInfo]},function(){});
+    //                 }
+    //                 });
+    //                 */
+    //
+    //
+    //            });
+    //
+    //            //统计场数
+    //            var dayID = parseInt(endTime.Format("yyyyMMdd"));
+    //            var inc = {};
+    //            var guiString = "0";
+    //            //游戏类型t1 总局数r4 马数h2 红中鬼g1 无鬼g0 翻鬼g2 风牌f1 f0 胡7对 d0 d1  能吃 c1 c0 能吃胡 p0 p1 节节高 j0 j1
+    //            switch (tData.gameType){
+    //                case GamesType.GANG_DONG:
+    //                {
+    //                    if(tData.withZhong) guiString = "1";
+    //                    if(tData.fanGui) guiString = "2";
+    //                    inc["t1_r"+tData.roundAll + "_h" + tData.horse + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) + "_s"+tData.maxPlayer] = 1;
+    //                }
+    //                    break;
+    //                case GamesType.HUI_ZHOU:
+    //                    inc["t2_r"+tData.roundAll + "_h" + tData.horse + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) + "_j" + (tData.jiejieGao ? 1:0)+ "_s"+tData.maxPlayer] = 1;
+    //                    break;
+    //                case GamesType.SHEN_ZHEN:
+    //                {
+    //                    if(tData.withZhong) guiString = "1";
+    //                    if(tData.fanGui) guiString = "2";
+    //                    inc["t3_r"+tData.roundAll + "_h" + tData.horse + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0)+ "_s"+tData.maxPlayer] = 1;
+    //                }
+    //                    break;
+    //                case GamesType.JI_PING_HU:
+    //                {
+    //                    inc["t4_r"+tData.roundAll  + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p1" + "_s"+tData.maxPlayer] = 1; //_p1 默认为点炮的意思
+    //                }
+    //                    break;
+    //            }
+    //            //inc[tData.roundAll + "_" + (tData.noBigWin ? "z" : "s") + "_c" + (tData.canEat ? 1 : 0) + "_f" + (tData.withWind ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0)] = 1;
+    //            app.mdb.db.collection("dayLog").update({_id: dayID}, {$inc: inc}, {upsert: true}, function (er, doc) {
+    //
+    //            });
+    //            //合并回放
+    //            if (!app.mjlogs) app.mjlogs = {array: [], tableName: tableName};
+    //            if (app.mjlogs.tableName != tableName || app.mjlogs.array.length >= 10) {
+    //                app.mdb.db.collection(app.mjlogs.tableName).insertMany(app.mjlogs.array, function (er, doc) {
+    //                });
+    //                app.mjlogs.array = [];
+    //                app.mjlogs.tableName = tableName;
+    //            }
+    //            app.mjlogs.array.push({logid: playid, endTime: endTime, mjlog: tb.mjlog});
+    //        }
+    //
+    //        if (msg) {
+    //            if (playInfo) msg.playInfo = playInfo;
+    //            msg.showEnd = tb.tData.roundNum != tb.createPara.round;
+    //            tb.NotifyAll("endRoom", msg);
+    //        }
+    //
+    //        tb.SetTimer();
+    //        tb.tData.roundNum = -2;
+    //
+    //        DestroyTable(tb);
+    //        var uid2did = tb.uid2did;
+    //        var uids = {};
+    //        for (var uid in uid2did) {
+    //            var did = uid2did[uid];
+    //            var ids = uids[did];
+    //            if (!ids)uids[did] = ids = [];
+    //            ids.push(uid);
+    //        }
+    //        for (var did in uids) {
+    //            var ids = uids[did];
+    //            app.rpc.pkplayer.Rpc.endVipTable(did, {uids: ids, tableid: tb.tableid}, function () {
+    //            });
+    //        }
+    //    }
+    //    return playInfo;
+    //}
+
+    //新版本
     function EndRoom(tb, msg) {
         GLog("function EndRoom");
         var playInfo = null;
@@ -2670,6 +4639,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 var tableName = endTime.Format("yyyy-MM-dd");
                 var tData = tb.tData;
                 playInfo = {
+                    ip:getPublicIp(),
                     owner: tData.owner,
                     money: tb.createPara.money,
                     now: nowStr,
@@ -2685,73 +4655,107 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     pinfo.money = p.info.money;
                     playInfo.players.push(pinfo);
                 });
-                tb.AllPlayerRun(function (p) {
-                    var table = "majiangLog";
-                    app.mdb.db.collection("majiangLog").update({_id: p.uid},
-                        {$push: {logs: {$each: [playInfo], $slice: -50}}}, {upsert: true}, function (er, doc) {
-                        });
-
-                    /*
-                     app.mdb.findOne(table,{_id:p.uid},function(er,doc){
-
-                     if(doc)
-                     {
-                     app.mdb.update(table,{_id:p.uid},{logs:{
-                     $each:[playInfo],$slice: -50
-                     }},"$push");
-                     }
-                     else
-                     {
-                     app.mdb.insert(table,{_id:p.uid,uid:p.uid,logs:[playInfo]},function(){});
-                     }
-                     });
-                     */
-
-
-                });
-
                 //统计场数
                 var dayID = parseInt(endTime.Format("yyyyMMdd"));
-                var inc = {};
+                tb.AllPlayerRun(function (p) {
+                    var table = "majiangLog";
+                    //app.mdb.db.collection("majiangLog").update({_id: p.uid},
+                    //    {$push: {logs: {$each: [playInfo], $slice: -50}}}, {upsert: true}, function (er, doc) {
+                    //    });
+                    //新添加的
+                    app.mdb.db.collection("majiangLog").update({_id:p.uid},
+                        {$push:{logs:{$each:[playInfo],$slice: -50}},$set:{lastGameDay:dayID}},{upsert:true}, function(er,doc)
+                        {
+                        });
+                });
+
+
+                if(!app.playday) app.playday={dayID:dayID,flushAt:Date.now(),inc:{}};
+                var playday=app.playday;
+                //var inc = {};
                 var guiString = "0";
+                if(tData.withZhong) guiString = "1";
+                if(tData.fanGui) guiString = "2";
+                var incKey= "";
                 //游戏类型t1 总局数r4 马数h2 红中鬼g1 无鬼g0 翻鬼g2 风牌f1 f0 胡7对 d0 d1  能吃 c1 c0 能吃胡 p0 p1 节节高 j0 j1
                 switch (tData.gameType){
                     case GamesType.GANG_DONG:
                     {
-                        if(tData.withZhong) guiString = "1";
-                        if(tData.fanGui) guiString = "2";
-                        inc["t1_r"+tData.roundAll + "_h" + tData.horse + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) + "_s"+tData.maxPlayer] = 1;
+                        incKey ="t1_r"+tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) */+ "_s"+tData.maxPlayer;
                     }
                         break;
                     case GamesType.HUI_ZHOU:
-                        inc["t2_r"+tData.roundAll + "_h" + tData.horse + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) + "_j" + (tData.jiejieGao ? 1:0)+ "_s"+tData.maxPlayer] = 1;
+                        incKey ="t2_r"+tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) */+ "_j" + (tData.jiejieGao ? 1:0)+ "_s"+tData.maxPlayer;
                         break;
                     case GamesType.SHEN_ZHEN:
                     {
-                        if(tData.withZhong) guiString = "1";
-                        if(tData.fanGui) guiString = "2";
-                        inc["t3_r"+tData.roundAll + "_h" + tData.horse + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0)+ "_s"+tData.maxPlayer] = 1;
+                        incKey ="t3_r"+tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) */+ "_s"+tData.maxPlayer;
                     }
                         break;
                     case GamesType.JI_PING_HU:
                     {
-                        inc["t4_r"+tData.roundAll  + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p1" + "_s"+tData.maxPlayer] = 1; //_p1 默认为点炮的意思
+                        incKey ="t4_r"+tData.roundAll  + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p1" */+ "_s"+tData.maxPlayer; //_p1 默认为点炮的意思
+                    }
+                        break;
+                    case GamesType.DONG_GUAN:
+                    {
+                        incKey ="t5_r"+tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p0"*/ + "_s"+tData.maxPlayer + "_m" + (tData.zhongIsMa ? 1 :0); //_p1 默认为点炮的意思
+                    }
+                        break;
+                    case GamesType.YI_BAI_ZHANG:
+                    {
+                        incKey ="t6_r"+tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p0" */+ "_s"+tData.maxPlayer  + "_b" + (tData.canBigWin ? 1 : 0); //_p1 默认为点炮的意思
                     }
                         break;
                 }
-                //inc[tData.roundAll + "_" + (tData.noBigWin ? "z" : "s") + "_c" + (tData.canEat ? 1 : 0) + "_f" + (tData.withWind ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0)] = 1;
-                app.mdb.db.collection("dayLog").update({_id: dayID}, {$inc: inc}, {upsert: true}, function (er, doc) {
 
-                });
-                //合并回放
-                if (!app.mjlogs) app.mjlogs = {array: [], tableName: tableName};
-                if (app.mjlogs.tableName != tableName || app.mjlogs.array.length >= 10) {
-                    app.mdb.db.collection(app.mjlogs.tableName).insertMany(app.mjlogs.array, function (er, doc) {
-                    });
-                    app.mjlogs.array = [];
-                    app.mjlogs.tableName = tableName;
+                var flushFlag=0;
+                if(dayID==playday.dayID)
+                {
+                    var oldVal=playday.inc[incKey]; if(!oldVal) oldVal=0;
+                    playday.inc[incKey]=oldVal+1;
+                    var dayMoney=playday.inc.dayMoney;  if(!dayMoney) dayMoney=0;
+                    playday.inc.dayMoney=dayMoney+playInfo.money;
+                    if(Date.now()-playday.flushAt>10*60000) flushFlag=1;
                 }
-                app.mjlogs.array.push({logid: playid, endTime: endTime, mjlog: tb.mjlog});
+                else
+                {
+                    flushFlag=2;
+                }
+                if(flushFlag>0)
+                {
+                    if(Object.keys(playday.inc).length>0)
+                        app.mdb.db.collection("dayLog").update({_id:playday.dayID},{$inc:playday.inc},{upsert:true}, function(er,doc)
+                        {
+
+                        });
+                    app.playday={dayID:dayID,flushAt:Date.now(),inc:{}};
+                    if(flushFlag>1){
+                        app.playday.inc[incKey]=1;
+                        app.playday.inc.dayMoney=playInfo.money;
+                    }
+                }
+                if(!existCheck["/playlog/"+tableName])
+                {
+                    if(!fs.existsSync("/playlog")) fs.mkdirSync("/playlog");
+                    if(!fs.existsSync("/playlog/"+tableName)) fs.mkdirSync("/playlog/"+tableName);
+                    existCheck["/playlog/"+tableName]=true;
+                }
+                if(!app.playlog) app.playlog=[];
+                app.FileWork(app.playlog,"/playlog/"+tableName+"/"+tData.owner+"_"+tb.tableid+".json",tb.mjlog);
+
+                // app.mdb.db.collection("dayLog").update({_id: dayID}, {$inc: inc}, {upsert: true}, function (er, doc) {
+                //
+                //});
+                ////合并回放
+                //if (!app.mjlogs) app.mjlogs = {array: [], tableName: tableName};
+                //if (app.mjlogs.tableName != tableName || app.mjlogs.array.length >= 10) {
+                //    app.mdb.db.collection(app.mjlogs.tableName).insertMany(app.mjlogs.array, function (er, doc) {
+                //    });
+                //    app.mjlogs.array = [];
+                //    app.mjlogs.tableName = tableName;
+                //}
+                //app.mjlogs.array.push({logid: playid, endTime: endTime, mjlog: tb.mjlog});
             }
 
             if (msg) {
@@ -2942,6 +4946,64 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         }
     }
 
+    function MJPassForDongGuan(pl, msg, self) {
+        GLog("Table.prototype.MJPassForGuangDong");
+        var tData = self.tData;
+        if (tData.tState == TableState.waitEat && pl.mjState == TableState.waitEat) {
+            GLog("此人" + pl.info.name + "想      过胡");
+            if (pl.eatFlag == msg.eatFlag /*&& this.CheckPlayerCount(function(p){
+             GLog(p.uid+" 他的 eatFlag："+p.eatFlag);
+             return p!=pl&&p.eatFlag>msg.eatFlag })==0*/
+            ) {
+                self.mjlog.push("MJPass", {uid: pl.uid, eatFlag: msg.eatFlag});//发牌
+                pl.mjState = TableState.waitCard;
+                if (tData.gameType == 5 && (pl.eatFlag == 2 || pl.eatFlag >= 10) && pl.skipPeng.length == 0)
+                {
+                    pl.skipPeng.push(tData.lastPut);
+                    GLog("此人" + pl.info.name + "过碰牌" + tData.lastPut + " skipPeng.length= " + pl.skipPeng.length);
+                }
+                pl.eatFlag = 0;
+                if (!SendNewCard(self)) //过后尝试发牌
+                    pl.notify("MJPass", {mjState: pl.mjState, skipPeng: pl.skipPeng, skipHu: pl.skipHu});
+            }
+        }
+        else if (tData.tState == TableState.roundFinish && pl.mjState == TableState.roundFinish) {
+            pl.mjState = TableState.isReady;
+            self.NotifyAll('onlinePlayer', {uid: pl.uid, onLine: true, mjState: pl.mjState});
+            pl.eatFlag = 0;
+            self.startGame();
+        }
+    }
+
+    function MJPassForYiBaiZhang(pl, msg, self) {
+        GLog("Table.prototype.MJPassForYiBaiZhang");
+        var tData = self.tData;
+        if (tData.tState == TableState.waitEat && pl.mjState == TableState.waitEat) {
+            GLog("此人" + pl.info.name + "想      过胡");
+            if (pl.eatFlag == msg.eatFlag /*&& this.CheckPlayerCount(function(p){
+             GLog(p.uid+" 他的 eatFlag："+p.eatFlag);
+             return p!=pl&&p.eatFlag>msg.eatFlag })==0*/
+            ) {
+                self.mjlog.push("MJPass", {uid: pl.uid, eatFlag: msg.eatFlag});//发牌
+                pl.mjState = TableState.waitCard;
+                if (tData.gameType == 5 && (pl.eatFlag == 2 || pl.eatFlag >= 10) && pl.skipPeng.length == 0)
+                {
+                    pl.skipPeng.push(tData.lastPut);
+                    GLog("此人" + pl.info.name + "过碰牌" + tData.lastPut + " skipPeng.length= " + pl.skipPeng.length);
+                }
+                pl.eatFlag = 0;
+                if (!SendNewCard(self)) //过后尝试发牌
+                    pl.notify("MJPass", {mjState: pl.mjState, skipPeng: pl.skipPeng, skipHu: pl.skipHu});
+            }
+        }
+        else if (tData.tState == TableState.roundFinish && pl.mjState == TableState.roundFinish) {
+            pl.mjState = TableState.isReady;
+            self.NotifyAll('onlinePlayer', {uid: pl.uid, onLine: true, mjState: pl.mjState});
+            pl.eatFlag = 0;
+            self.startGame();
+        }
+    }
+
     Table.prototype.MJPass = function (pl, msg, session, next) {
         GLog("Table.prototype.MJPass");
         next(null, null); //if(this.GamePause()) return;
@@ -2958,6 +5020,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 break;
             case GamesType.JI_PING_HU:
                 MJPassForJiPingHu(pl, msg, this);
+                break;
+            case GamesType.DONG_GUAN:
+                MJPassForDongGuan(pl, msg, this);
+                break;
+            case GamesType.YI_BAI_ZHANG:
+                MJPassForYiBaiZhang(pl, msg, this);
                 break;
         }
 
@@ -3353,6 +5421,108 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         }
     }
 
+    function MJPengForDongGuan(pl, msg, self) {
+        var tData = self.tData;
+        if (tData.tState == TableState.waitEat
+            && pl.mjState == TableState.waitEat
+            && tData.uids[tData.curPlayer] != pl.uid
+        ) {
+            //此处必须保证没有其他玩家想胡牌
+            if (self.AllPlayerCheck(function (p) {
+                    if (p == pl) return true;
+                    return p.eatFlag < 8;
+                })) {
+                var hand = pl.mjhand;
+                var matchnum = 0;
+                for (var i = 0; i < hand.length; i++) {
+                    if (hand[i] == tData.lastPut) {
+                        matchnum++;
+                    }
+                }
+                if (matchnum >= 2) {
+                    hand.splice(hand.indexOf(tData.lastPut), 1);
+                    hand.splice(hand.indexOf(tData.lastPut), 1);
+                    pl.mjpeng.push(tData.lastPut);
+                    if (matchnum == 3) pl.mjpeng4.push(tData.lastPut);
+                    pl.isNew = false;
+                    var lastPlayer = tData.curPlayer;
+                    var pPut = self.getPlayer(tData.uids[lastPlayer]);
+                    pPut.mjput.length = pPut.mjput.length - 1;
+                    tData.curPlayer = tData.uids.indexOf(pl.uid);
+                    self.AllPlayerRun(function (p) {
+                        p.mjState = TableState.waitPut;
+                        p.eatFlag = 0;
+                    });
+                    tData.tState = TableState.waitPut;
+
+                    //pl.notify('MJPeng',{tData:tData,from:lastPlayer,baojiu:pl.baojiu});
+                    self.NotifyAll('MJPeng', {tData: tData, from: lastPlayer});
+                    self.mjlog.push('MJPeng', {tData: app.CopyPtys(tData), from: lastPlayer, eatFlag: msg.eatFlag});//碰
+                }
+                else {
+                    //console.error("peng num error");
+                }
+            }
+            else {
+                //console.error("peng state error");
+            }
+        }
+        else {
+            //console.error(tData.tState+" "+pl.mjState+" "+tData.uids[tData.curPlayer]+" "+pl.uid);
+        }
+    }
+
+    function MJPengForYiBaiZhang(pl, msg, self) {
+        var tData = self.tData;
+        if (tData.tState == TableState.waitEat
+            && pl.mjState == TableState.waitEat
+            && tData.uids[tData.curPlayer] != pl.uid
+        ) {
+            //此处必须保证没有其他玩家想胡牌
+            if (self.AllPlayerCheck(function (p) {
+                    if (p == pl) return true;
+                    return p.eatFlag < 8;
+                })) {
+                var hand = pl.mjhand;
+                var matchnum = 0;
+                for (var i = 0; i < hand.length; i++) {
+                    if (hand[i] == tData.lastPut) {
+                        matchnum++;
+                    }
+                }
+                if (matchnum >= 2) {
+                    hand.splice(hand.indexOf(tData.lastPut), 1);
+                    hand.splice(hand.indexOf(tData.lastPut), 1);
+                    pl.mjpeng.push(tData.lastPut);
+                    if (matchnum == 3) pl.mjpeng4.push(tData.lastPut);
+                    pl.isNew = false;
+                    var lastPlayer = tData.curPlayer;
+                    var pPut = self.getPlayer(tData.uids[lastPlayer]);
+                    pPut.mjput.length = pPut.mjput.length - 1;
+                    tData.curPlayer = tData.uids.indexOf(pl.uid);
+                    self.AllPlayerRun(function (p) {
+                        p.mjState = TableState.waitPut;
+                        p.eatFlag = 0;
+                    });
+                    tData.tState = TableState.waitPut;
+
+                    //pl.notify('MJPeng',{tData:tData,from:lastPlayer,baojiu:pl.baojiu});
+                    self.NotifyAll('MJPeng', {tData: tData, from: lastPlayer});
+                    self.mjlog.push('MJPeng', {tData: app.CopyPtys(tData), from: lastPlayer, eatFlag: msg.eatFlag});//碰
+                }
+                else {
+                    //console.error("peng num error");
+                }
+            }
+            else {
+                //console.error("peng state error");
+            }
+        }
+        else {
+            //console.error(tData.tState+" "+pl.mjState+" "+tData.uids[tData.curPlayer]+" "+pl.uid);
+        }
+    }
+
     Table.prototype.MJPeng = function (pl, msg, session, next) {
         GLog("Table.prototype.MJPeng");
         next(null, null); //if(this.GamePause()) return;
@@ -3370,6 +5540,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             case GamesType.JI_PING_HU:
                 MJPengForJiPingHu(pl, msg, this);
                 break;
+            case GamesType.DONG_GUAN:
+                MJPengForDongGuan(pl, msg, this);
+                break;
+            case GamesType.YI_BAI_ZHANG:
+                MJPengForYiBaiZhang(pl, msg, this);
+                break;
         }
 
     }
@@ -3382,32 +5558,38 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         if (tData.withZhong || tData.fanGui) horse = horse + 2;
         if (tData.jiejieGao) //为此局多预留2匹马
         {
-            switch (self.players[tData.uids[tData.zhuang]].linkZhuang) {
-                case 1:
-                    //horse = horse + 2;
-                    break;
-                case 2:
-                    horse = horse + 2;
-                    break;
-                case 3:
-                    horse = horse + 4;
-                    break;
-                case 4:
-                    horse = horse + 6;
-                    break;
-                case 5:
-                    horse = horse + 8;
-                    break;
-                case 6:
-                    horse = horse + 10;
-                    break;
-                case 7:
-                    horse = horse + 12;
-                    break;
-                case 8:
-                    horse = horse + 14;
-                    break;
+            //所有玩家中 连胡数不为0的数
+            for(var i=0;i<tData.maxPlayer;i++)
+            {
+                if(self.players[tData.uids[i]].linkHu == 0) continue;
+                horse += (self.players[tData.uids[i]].linkHu)*2;
             }
+            //switch (self.players[tData.uids[tData.zhuang]].linkZhuang) {
+            //    case 1:
+            //        //horse = horse + 2;
+            //        break;
+            //    case 2:
+            //        horse = horse + 2;
+            //        break;
+            //    case 3:
+            //        horse = horse + 4;
+            //        break;
+            //    case 4:
+            //        horse = horse + 6;
+            //        break;
+            //    case 5:
+            //        horse = horse + 8;
+            //        break;
+            //    case 6:
+            //        horse = horse + 10;
+            //        break;
+            //    case 7:
+            //        horse = horse + 12;
+            //        break;
+            //    case 8:
+            //        horse = horse + 14;
+            //        break;
+            //}
         }
 
         GLog("horse------" + horse);
@@ -3558,7 +5740,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             //	tData.putType=0;
             //	tData.curPlayer=(tData.uids.indexOf(pl.uid)+3)%4;
             //}
-            if (msg.gang == 1 || msg.gang == 2 || msg.gang == 3) {
+            if (msg.gang == 1 || msg.gang == 2 || msg.gang == 3 || msg.gang == 4) {
                 GLog("杠胡");
                 tData.putType = msg.gang;
                 tData.curPlayer = tData.uids.indexOf(pl.uid);
@@ -3567,7 +5749,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             else {
                 GLog("没杠");
                 tData.putType = 0;
-                tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % tData.maxPlayer;
+                tData.curPlayer = (tData.uids.indexOf(pl.uid) + tData.maxPlayer - 1) % tData.maxPlayer;
             }
             tData.tState = TableState.waitEat;
             SendNewCard(self); //杠后尝试补牌
@@ -3583,6 +5765,42 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var horse = tData.horse;
         //鬼牌模式 或者带风模式 多预留2匹马
         if (tData.withZhong || tData.fanGui) horse = horse + 2;
+        if (tData.jiejieGao) //为此局多预留2匹马(之前是根据连庄 现在是根据连胡)
+        {
+            //所有玩家中 连胡数不为0的数
+            for(var i=0;i<tData.maxPlayer;i++)
+            {
+                if(self.players[tData.uids[i]].linkHu == 0) continue;
+                horse += (self.players[tData.uids[i]].linkHu)*2;
+            }
+
+            //switch (self.players[tData.uids[tData.zhuang]].linkZhuang) {
+            //    case 1:
+            //        //horse = horse + 2;
+            //        break;
+            //    case 2:
+            //        horse = horse + 2;
+            //        break;
+            //    case 3:
+            //        horse = horse + 4;
+            //        break;
+            //    case 4:
+            //        horse = horse + 6;
+            //        break;
+            //    case 5:
+            //        horse = horse + 8;
+            //        break;
+            //    case 6:
+            //        horse = horse + 10;
+            //        break;
+            //    case 7:
+            //        horse = horse + 12;
+            //        break;
+            //    case 8:
+            //        horse = horse + 14;
+            //        break;
+            //}
+        }
         if (
             //最后1+horse张不能杠
         tData.cardNext < (self.cards.length - horse)
@@ -3683,7 +5901,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             //    tData.putType = 0;
             //    tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % 4;
             //}
-            if (msg.gang == 1 || msg.gang == 2 || msg.gang == 3) {
+            if (msg.gang == 1 || msg.gang == 2 || msg.gang == 3 || msg.gang == 4) {
                 GLog("杠胡");
                 tData.putType = msg.gang;
                 tData.curPlayer = tData.uids.indexOf(pl.uid);
@@ -3692,7 +5910,112 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             else {
                 GLog("没杠");
                 tData.putType = 0;
-                tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % tData.maxPlayer;
+                tData.curPlayer = (tData.uids.indexOf(pl.uid) + tData.maxPlayer-1) % tData.maxPlayer;
+            }
+            tData.tState = TableState.waitEat;
+            SendNewCard(self); //杠后尝试补牌
+        }
+        else {
+            //console.error(tData.tState+" "+pl.mjState+" "+tData.uids[tData.curPlayer]+" "+pl.uid);
+        }
+    }
+
+    function MJGangForDongGuan(pl, msg, self) {
+        GLog("Table.prototype.MJGangForDongGuan");
+        var tData = self.tData;
+        var horse = tData.horse;
+        //鬼牌模式 或者带风模式 多预留2匹马
+        if (tData.withZhong || tData.fanGui) horse = horse + 2;
+        if (
+            //最后1+horse张不能杠
+        tData.cardNext < (self.cards.length - horse)
+        &&
+        (
+            //吃牌杠
+            tData.tState == TableState.waitEat && pl.mjState == TableState.waitEat && tData.uids[tData.curPlayer] != pl.uid
+                //此处必须保证没有其他玩家想胡牌 邵阳麻将 可以抢杠 不需要检查胡
+            && (   /*!tData.canEatHu || */
+                self.AllPlayerCheck(function (p) {
+                    if (p == pl) return true;
+                    return p.eatFlag < 4;
+                })
+            )
+                //摸牌杠
+            || tData.tState == TableState.waitPut && pl.mjState == TableState.waitPut && tData.uids[tData.curPlayer] == pl.uid
+        )
+        ) {
+            var hand = pl.mjhand;
+            var handNum = 0;
+            for (var i = 0; i < hand.length; i++) {
+                if (hand[i] == msg.card) {
+                    handNum++;
+                }
+            }
+            if (tData.tState == TableState.waitEat && handNum == 3 && tData.lastPut == msg.card) {
+
+                var fp = self.getPlayer(tData.uids[tData.curPlayer]);
+                var mjput = fp.mjput;
+                if (mjput.length > 0 && mjput[mjput.length - 1] == msg.card) {
+                    mjput.length = mjput.length - 1;
+                }
+                else return;
+
+                pl.mjgang0.push(msg.card);//吃明杠
+                pl.gang0uid[msg.card] = tData.curPlayer;
+                hand.splice(hand.indexOf(msg.card), 1);
+                hand.splice(hand.indexOf(msg.card), 1);
+                hand.splice(hand.indexOf(msg.card), 1);
+                msg.gang = 1;
+                msg.from = tData.curPlayer;
+                pl.isNew = false;
+
+            }
+            else if (tData.tState == TableState.waitPut && handNum == 4) {
+                pl.mjgang1.push(msg.card);//暗杠
+                hand.splice(hand.indexOf(msg.card), 1);
+                hand.splice(hand.indexOf(msg.card), 1);
+                hand.splice(hand.indexOf(msg.card), 1);
+                hand.splice(hand.indexOf(msg.card), 1);
+                msg.gang = 3;
+            }
+            else if (tData.tState == TableState.waitPut && handNum == 1 && pl.mjpeng.indexOf(msg.card) >= 0 && pl.mjpeng4.indexOf(msg.card) < 0) {
+                pl.mjgang0.push(msg.card);//自摸明杠
+                hand.splice(hand.indexOf(msg.card), 1);
+                pl.mjpeng.splice(pl.mjpeng.indexOf(msg.card), 1);
+                msg.gang = 2;
+            }
+            else return;
+            msg.uid = pl.uid;
+
+            //红中算马时 手牌有红中 抢杠胡 不能胡
+            var canHu = true;
+            if(tData.zhongIsMa && tData.lastPut == 71) canHu = false;
+            var canEatGang = (msg.gang == 2 && canHu);//只抢自摸明杠
+            GLog("canEatGang " + canEatGang);
+            self.AllPlayerRun(function (p) {
+                p.mjState = TableState.waitCard;
+                p.eatFlag = 0;
+                GLog("p!=pl " + (p != pl) + "  !p.skipHu" + (!p.skipHu));
+                var huType = GetHuType(tData, p, msg.card);
+                if (canEatGang && p != pl && !p.skipHu && huType > 0 && huType != 13 ) {
+                    GLog("msg.gang = " + msg.gang + "   huType = " + huType);
+                    p.mjState = TableState.waitEat;
+                    p.eatFlag = 8;
+                }
+            });
+            self.NotifyAll('MJGang', msg);
+            self.mjlog.push('MJGang', msg);//杠
+
+            if (msg.gang == 1 || msg.gang == 2 || msg.gang == 3 || msg.gang == 4) {
+                GLog("杠胡");
+                tData.putType = msg.gang;
+                tData.curPlayer = tData.uids.indexOf(pl.uid);
+                tData.lastPut = msg.card;
+            }
+            else {
+                GLog("没杠");
+                tData.putType = 0;
+                tData.curPlayer = (tData.uids.indexOf(pl.uid) + tData.maxPlayer - 1) % tData.maxPlayer;
             }
             tData.tState = TableState.waitEat;
             SendNewCard(self); //杠后尝试补牌
@@ -3847,7 +6170,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             self.mjlog.push('MJGang', msg);//杠
 
 
-            if (msg.gang == 1 || msg.gang == 2 || msg.gang == 3) {
+            if (msg.gang == 1 || msg.gang == 2 || msg.gang == 3 || msg.gang == 4) {
                 GLog("杠胡")
                 tData.putType = msg.gang;
                 tData.curPlayer = tData.uids.indexOf(pl.uid);
@@ -3857,7 +6180,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
                 GLog("没杠")
                 tData.putType = 0;
-                tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % tData.maxPlayer;
+                tData.curPlayer = (tData.uids.indexOf(pl.uid) + tData.maxPlayer - 1) % tData.maxPlayer;
             }
             tData.tState = TableState.waitEat;
             SendNewCard(self); //杠后尝试补牌
@@ -4003,6 +6326,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     var hType = GetHuType(tData, p, msg.card);
                     if(hType > 0)
                     {
+                        isCanHu = true; // 改成各种杠都可以胡
                         switch(tData.fanNum)
                         {
                             case 0://任何类型都可胡
@@ -4011,7 +6335,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             case 1:
                             {
                                 // 非鸡胡 或 三元牌大于等于1个刻字 或 风圈局的刻子 或 本盘门风的刻子
-                                if( jiPingHuType != majiang.JI_PING_HU_HUTYPE.JIHU ||  majiang.getSanYuanPaiKeZiNum(pl) >= 1 || (majiang.isGetBenMenMenFengKeZi(pl) || majiang.isGetFengQuanKeZi(tData.jiPingHuCircleWind.curCircleWind,pl)))
+                                if( jiPingHuType != majiang.JI_PING_HU_HUTYPE.JIHU || majiang.getSanYuanPaiKeZiNum(pl) >= 1 || (majiang.isGetBenMenMenFengKeZi(pl) || majiang.isGetFengQuanKeZi(tData.jiPingHuCircleWind.curCircleWind,pl)))
                                 {
                                     GLog("------------------------------------------非鸡胡 或 人胡 或 三元牌1个刻字 或 风圈局的刻子 或 本盘门风的刻子");
                                     isCanHu = true;
@@ -4104,7 +6428,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             }
                         }
                         else {
-                            if (msg.gang != 3 && msg.gang != 1 || hType != 13) {
+                            if (msg.gang != 3 && msg.gang != 1 || hType == 13) {
                                 p.mjState = TableState.waitEat;
                                 p.eatFlag = 8;
                             }
@@ -4140,7 +6464,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             //}
 
 
-            if (msg.gang == 1 || msg.gang == 2 || msg.gang == 3) {
+            if (msg.gang == 1 || msg.gang == 2 || msg.gang == 3 || msg.gang == 4) {
                 GLog("杠胡")
                 tData.putType = msg.gang;
                 tData.curPlayer = tData.uids.indexOf(pl.uid);
@@ -4149,7 +6473,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             else {
                 GLog("没杠")
                 tData.putType = 0;
-                tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % tData.maxPlayer;
+                tData.curPlayer = (tData.uids.indexOf(pl.uid) + tData.maxPlayer-1) % tData.maxPlayer;
             }
             tData.tState = TableState.waitEat;
             SendNewCard(self); //杠后尝试补牌
@@ -4158,6 +6482,108 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             //console.error(tData.tState+" "+pl.mjState+" "+tData.uids[tData.curPlayer]+" "+pl.uid);
         }
 
+    }
+
+    function MJGangForYiBaiZhang(pl, msg, self) {
+        GLog("Table.prototype.MJGangForYiBaiZhang");
+        var tData = self.tData;
+        var horse = tData.horse;
+        //鬼牌模式 或者带风模式 多预留2匹马
+        if (tData.withZhong || tData.fanGui) horse = horse + 2;
+        if (
+            //最后1+horse张不能杠
+        tData.cardNext < (self.cards.length - horse)
+        &&
+        (
+            //吃牌杠
+            tData.tState == TableState.waitEat && pl.mjState == TableState.waitEat && tData.uids[tData.curPlayer] != pl.uid
+                //此处必须保证没有其他玩家想胡牌 邵阳麻将 可以抢杠 不需要检查胡
+            && (   /*!tData.canEatHu || */
+                self.AllPlayerCheck(function (p) {
+                    if (p == pl) return true;
+                    return p.eatFlag < 4;
+                })
+            )
+                //摸牌杠
+            || tData.tState == TableState.waitPut && pl.mjState == TableState.waitPut && tData.uids[tData.curPlayer] == pl.uid
+        )
+        ) {
+            var hand = pl.mjhand;
+            var handNum = 0;
+            for (var i = 0; i < hand.length; i++) {
+                if (hand[i] == msg.card) {
+                    handNum++;
+                }
+            }
+            if (tData.tState == TableState.waitEat && handNum == 3 && tData.lastPut == msg.card) {
+
+                var fp = self.getPlayer(tData.uids[tData.curPlayer]);
+                var mjput = fp.mjput;
+                if (mjput.length > 0 && mjput[mjput.length - 1] == msg.card) {
+                    mjput.length = mjput.length - 1;
+                }
+                else return;
+
+                pl.mjgang0.push(msg.card);//吃明杠
+                pl.gang0uid[msg.card] = tData.curPlayer;
+                hand.splice(hand.indexOf(msg.card), 1);
+                hand.splice(hand.indexOf(msg.card), 1);
+                hand.splice(hand.indexOf(msg.card), 1);
+                msg.gang = 1;
+                msg.from = tData.curPlayer;
+                pl.isNew = false;
+
+            }
+            else if (tData.tState == TableState.waitPut && handNum == 4) {
+                pl.mjgang1.push(msg.card);//暗杠
+                hand.splice(hand.indexOf(msg.card), 1);
+                hand.splice(hand.indexOf(msg.card), 1);
+                hand.splice(hand.indexOf(msg.card), 1);
+                hand.splice(hand.indexOf(msg.card), 1);
+                msg.gang = 3;
+            }
+            else if (tData.tState == TableState.waitPut && handNum == 1 && pl.mjpeng.indexOf(msg.card) >= 0 && pl.mjpeng4.indexOf(msg.card) < 0) {
+                pl.mjgang0.push(msg.card);//自摸明杠
+                hand.splice(hand.indexOf(msg.card), 1);
+                pl.mjpeng.splice(pl.mjpeng.indexOf(msg.card), 1);
+                msg.gang = 2;
+            }
+            else return;
+            msg.uid = pl.uid;
+
+            var canEatGang = (msg.gang == 2);//只抢自摸明杠
+            GLog("canEatGang " + canEatGang);
+            self.AllPlayerRun(function (p) {
+                p.mjState = TableState.waitCard;
+                p.eatFlag = 0;
+                GLog("p!=pl " + (p != pl) + "  !p.skipHu" + (!p.skipHu));
+                var huType = GetHuType(tData, p, msg.card);
+                if (canEatGang && p != pl && !p.skipHu && huType > 0  ) {
+                    GLog("msg.gang = " + msg.gang + "   huType = " + huType);
+                    p.mjState = TableState.waitEat;
+                    p.eatFlag = 8;
+                }
+            });
+            self.NotifyAll('MJGang', msg);
+            self.mjlog.push('MJGang', msg);//杠
+
+            if (msg.gang == 1 || msg.gang == 2 || msg.gang == 3 || msg.gang == 4) {
+                GLog("杠胡");
+                tData.putType = msg.gang;
+                tData.curPlayer = tData.uids.indexOf(pl.uid);
+                tData.lastPut = msg.card;
+            }
+            else {
+                GLog("没杠");
+                tData.putType = 0;
+                tData.curPlayer = (tData.uids.indexOf(pl.uid) + tData.maxPlayer - 1) % tData.maxPlayer;
+            }
+            tData.tState = TableState.waitEat;
+            SendNewCard(self); //杠后尝试补牌
+        }
+        else {
+            //console.error(tData.tState+" "+pl.mjState+" "+tData.uids[tData.curPlayer]+" "+pl.uid);
+        }
     }
 
     Table.prototype.MJGang = function (pl, msg, session, next) {
@@ -4176,6 +6602,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 break;
             case GamesType.JI_PING_HU:
                 MJGangForJiPingHu(pl, msg, this);
+                break;
+            case GamesType.DONG_GUAN:
+                MJGangForDongGuan(pl, msg, this);
+                break;
+            case GamesType.YI_BAI_ZHANG:
+                MJGangForYiBaiZhang(pl, msg, this);
                 break;
         }
     }
@@ -4710,6 +7142,180 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         }
     }
 
+    function MJHuForDongGuan(pl, msg, self) {
+        GLog("Table.prototype.MJHuForDongGuan");
+        var tData = self.tData;
+        var uids = self.tData.uids;
+        var canEnd = false;
+
+        GLog("是否过胡：" + pl.skipHu + "tData.tState===" + tData.tState + "  pl.mjState:==" + pl.mjState + "  tData.uids[tData.curPlayer]==" + tData.uids[tData.curPlayer] + "  pl.uid=" + pl.uid + " pl.eatFlag==" + pl.eatFlag)
+
+        //自摸胡
+        if (
+            tData.tState == TableState.waitPut && pl.mjState == TableState.waitPut && pl.isNew
+            && tData.uids[tData.curPlayer] == pl.uid && GetHuType(tData, pl) > 0 && GetHuType(tData, pl) != 13//自摸测试
+        ) {
+            //补摸
+            if (tData.putType > 0 && tData.putType < 4) {
+                if (tData.putType == 1) {
+                    pl.winType = WinType.pickGang1;
+                }
+                else//自摸杠在补摸
+                {
+                    pl.winType = WinType.pickGang23;
+                }
+            }
+            else//自摸
+            {
+                pl.winType = WinType.pickNormal;
+            }
+            canEnd = true;
+
+        }
+        //点炮胡 抢杠胡
+        //GLog("是否过胡："+ pl.skipHu + "tData.tState==="+tData.tState + "  pl.mjState:=="+pl.mjState + "  tData.uids[tData.curPlayer]=="+tData.uids[tData.curPlayer] + "  pl.uid="+pl.uid +" pl.eatFlag=="+pl.eatFlag )
+        else if (
+            !pl.skipHu
+            && tData.tState == TableState.waitEat && pl.mjState == TableState.waitEat && tData.uids[tData.curPlayer] != pl.uid && pl.eatFlag >= 8
+            && (tData.putType > 0 || tData.canEatHu)
+        /*&& !HighPlayerHuForGuangDong(self,pl)*/// 邵阳麻将可以多家胡
+        ) {
+            GLog("点炮胡 抢杠胡 ");
+            if (tData.tState == TableState.waitEat) {
+                var fp = self.getPlayer(tData.uids[tData.curPlayer]);
+                var winType = null;
+                var mjput = null;
+                if (tData.putType == 0) {
+                    winType = WinType.eatPut;
+                    mjput = fp.mjput;
+                }
+                else if (tData.putType == 4) {
+                    winType = WinType.eatGangPut;
+                    mjput = fp.mjput;
+                }
+                else //抢杠包3家
+                {
+                    winType = WinType.eatGang;
+                    if (tData.putType == 3) mjput = fp.mjgang1;
+                    else mjput = fp.mjgang0;
+                }
+                if (mjput.length > 0 && mjput[mjput.length - 1] == tData.lastPut) {
+                    mjput.length = mjput.length - 1;
+                }
+                else return;
+                //一炮多响
+                self.AllPlayerRun(function (p) {
+                    if (p.mjState == TableState.waitEat && p.eatFlag >= 8) {
+                        p.mjhand.push(tData.lastPut);
+                        p.winType = winType;
+                    }
+                });
+                //if (pl.mjState == TableState.waitEat && pl.eatFlag >= 8) {
+                //    pl.mjhand.push(tData.lastPut);
+                //    pl.winType = winType;
+                //}
+                canEnd = true;
+            }
+        }
+        if (canEnd) {
+            self.mjlog.push("MJHu", {uid: pl.uid, eatFlag: msg.eatFlag});
+            EndGame(self, pl);
+        }
+        else {
+            if (!app.huError) app.huError = [];
+            app.FileWork(app.huError, app.serverId + "huError.txt",
+                tData.tState + " " + pl.mjState + " " + pl.isNew + " " + tData.uids[tData.curPlayer] + " " + pl.uid + " " + pl.huType
+            );
+        }
+    }
+
+    function MJHuForYiBaiZhang(pl, msg, self) {
+        GLog("Table.prototype.MJHuForYiBaiZhang");
+        var tData = self.tData;
+        var uids = self.tData.uids;
+        var canEnd = false;
+
+        GLog("是否过胡：" + pl.skipHu + "tData.tState===" + tData.tState + "  pl.mjState:==" + pl.mjState + "  tData.uids[tData.curPlayer]==" + tData.uids[tData.curPlayer] + "  pl.uid=" + pl.uid + " pl.eatFlag==" + pl.eatFlag)
+
+        //自摸胡
+        if (
+            tData.tState == TableState.waitPut && pl.mjState == TableState.waitPut && pl.isNew
+            && tData.uids[tData.curPlayer] == pl.uid && GetHuType(tData, pl) > 0 && GetHuType(tData, pl) != 13//自摸测试
+        ) {
+            //补摸
+            if (tData.putType > 0 && tData.putType < 4) {
+                if (tData.putType == 1) {
+                    pl.winType = WinType.pickGang1;
+                }
+                else//自摸杠在补摸
+                {
+                    pl.winType = WinType.pickGang23;
+                }
+            }
+            else//自摸
+            {
+                pl.winType = WinType.pickNormal;
+            }
+            canEnd = true;
+
+        }
+        //点炮胡 抢杠胡
+        //GLog("是否过胡："+ pl.skipHu + "tData.tState==="+tData.tState + "  pl.mjState:=="+pl.mjState + "  tData.uids[tData.curPlayer]=="+tData.uids[tData.curPlayer] + "  pl.uid="+pl.uid +" pl.eatFlag=="+pl.eatFlag )
+        else if (
+            !pl.skipHu
+            && tData.tState == TableState.waitEat && pl.mjState == TableState.waitEat && tData.uids[tData.curPlayer] != pl.uid && pl.eatFlag >= 8
+            && (tData.putType > 0 || tData.canEatHu)
+        /*&& !HighPlayerHuForGuangDong(self,pl)*/// 邵阳麻将可以多家胡
+        ) {
+            GLog("点炮胡 抢杠胡 ");
+            if (tData.tState == TableState.waitEat) {
+                var fp = self.getPlayer(tData.uids[tData.curPlayer]);
+                var winType = null;
+                var mjput = null;
+                if (tData.putType == 0) {
+                    winType = WinType.eatPut;
+                    mjput = fp.mjput;
+                }
+                else if (tData.putType == 4) {
+                    winType = WinType.eatGangPut;
+                    mjput = fp.mjput;
+                }
+                else //抢杠包3家
+                {
+                    winType = WinType.eatGang;
+                    if (tData.putType == 3) mjput = fp.mjgang1;
+                    else mjput = fp.mjgang0;
+                }
+                if (mjput.length > 0 && mjput[mjput.length - 1] == tData.lastPut) {
+                    mjput.length = mjput.length - 1;
+                }
+                else return;
+                //一炮多响
+                self.AllPlayerRun(function (p) {
+                    if (p.mjState == TableState.waitEat && p.eatFlag >= 8) {
+                        p.mjhand.push(tData.lastPut);
+                        p.winType = winType;
+                    }
+                });
+                //if (pl.mjState == TableState.waitEat && pl.eatFlag >= 8) {
+                //    pl.mjhand.push(tData.lastPut);
+                //    pl.winType = winType;
+                //}
+                canEnd = true;
+            }
+        }
+        if (canEnd) {
+            self.mjlog.push("MJHu", {uid: pl.uid, eatFlag: msg.eatFlag});
+            EndGame(self, pl);
+        }
+        else {
+            if (!app.huError) app.huError = [];
+            app.FileWork(app.huError, app.serverId + "huError.txt",
+                tData.tState + " " + pl.mjState + " " + pl.isNew + " " + tData.uids[tData.curPlayer] + " " + pl.uid + " " + pl.huType
+            );
+        }
+    }
+
     Table.prototype.MJHu = function (pl, msg, session, next) {
         GLog("Table.prototype.MJHu");
         //此处必须保证胡牌顺序
@@ -4728,7 +7334,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             case GamesType.JI_PING_HU:
                 MJHuForJiPingHu(pl, msg, this);
                 break;
-
+            case GamesType.DONG_GUAN:
+                MJHuForDongGuan(pl,msg,this);
+                break;
+            case GamesType.YI_BAI_ZHANG:
+                MJHuForYiBaiZhang(pl, msg, this);
+                break;
         }
     }
     Table.prototype.DelRoom = function (pl, msg, session, next) {

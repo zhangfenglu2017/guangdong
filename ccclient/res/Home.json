@@ -938,6 +938,98 @@
             "TopMargin": 175.5,
             "BottomMargin": 155.5,
             "Tag": 13,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/xianshimianfei.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 27,
+                "Scale9OriginY": 52,
+                "Scale9Width": 29,
+                "Scale9Height": 54,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 374.9195,
+                  "Y": 110.4552
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9688,
+                  "Y": 0.2839
+                },
+                "PreSize": {
+                  "X": 0.2145,
+                  "Y": 0.4062
+                },
+                "LeftMargin": 333.4195,
+                "RightMargin": -29.4195,
+                "TopMargin": 199.5448,
+                "BottomMargin": 31.4552,
+                "Tag": 270,
+                "ActionTag": -216683876,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 158.0
+                },
+                "Name": "Image_1",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/xinwanfa.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 27,
+                "Scale9OriginY": 52,
+                "Scale9Width": 69,
+                "Scale9Height": 21,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 59.6478,
+                  "Y": 300.3519
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1541,
+                  "Y": 0.7721
+                },
+                "PreSize": {
+                  "X": 0.3178,
+                  "Y": 0.3213
+                },
+                "LeftMargin": -1.8522,
+                "RightMargin": 265.8522,
+                "TopMargin": 26.1481,
+                "BottomMargin": 237.8519,
+                "Tag": 271,
+                "ActionTag": -606548723,
+                "Size": {
+                  "X": 123.0,
+                  "Y": 125.0
+                },
+                "Name": "Image_1_0",
+                "ctype": "ImageViewObjectData"
+              }
+            ],
             "ActionTag": 1115676696,
             "Size": {
               "X": 387.0,
@@ -1395,6 +1487,392 @@
             },
             "Name": "buy",
             "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "createRoomNew/window-big.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 241,
+            "Scale9OriginY": 185,
+            "Scale9Width": 456,
+            "Scale9Height": 272,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 649.4885,
+              "Y": 363.0093
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5074,
+              "Y": 0.5042
+            },
+            "PreSize": {
+              "X": 0.7328,
+              "Y": 0.8917
+            },
+            "LeftMargin": 180.4885,
+            "RightMargin": 161.5115,
+            "TopMargin": 35.9907,
+            "BottomMargin": 42.0093,
+            "Tag": 497,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "addRoomNew/t_gengxin.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 81,
+                "Scale9OriginY": 28,
+                "Scale9Width": 400,
+                "Scale9Height": 14,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 450.2615,
+                  "Y": 604.2584
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.48,
+                  "Y": 0.9412
+                },
+                "PreSize": {
+                  "X": 0.5991,
+                  "Y": 0.109
+                },
+                "LeftMargin": 169.2615,
+                "RightMargin": 206.7385,
+                "TopMargin": 2.7416,
+                "BottomMargin": 569.2584,
+                "Tag": 498,
+                "ActionTag": -1546713096,
+                "Size": {
+                  "X": 562.0,
+                  "Y": 70.0
+                },
+                "Name": "lable",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "dissolveRoomNew/btn_confirm_press.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "dissolveRoomNew/btn_confirm_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "dissolveRoomNew/btn_confirm_normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 140,
+                "Scale9Height": 43,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 465.4759,
+                  "Y": 86.8092
+                },
+                "Scale": {
+                  "ScaleX": 1.037,
+                  "ScaleY": 1.037
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4962,
+                  "Y": 0.1352
+                },
+                "PercentWidthEnable": true,
+                "PercentHeightEnable": true,
+                "PercentWidthEnabled": true,
+                "PercentHeightEnabled": true,
+                "PreSize": {
+                  "X": 0.1812,
+                  "Y": 0.1012
+                },
+                "LeftMargin": 380.4931,
+                "RightMargin": 387.5413,
+                "TopMargin": 522.7056,
+                "BottomMargin": 54.324,
+                "Tag": 500,
+                "ActionTag": 403819908,
+                "Size": {
+                  "X": 169.9656,
+                  "Y": 64.9704
+                },
+                "Name": "close",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "IsBounceEnabled": true,
+                "InnerNodeSize": {
+                  "Width": 830,
+                  "Height": 300
+                },
+                "ScrollDirectionType": "Vertical",
+                "ClipAble": true,
+                "BackColorAlpha": 102,
+                "SingleColor": {
+                  "G": 150,
+                  "B": 100
+                },
+                "FirstColor": {
+                  "G": 150,
+                  "B": 100
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "TouchEnable": true,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 55.4798,
+                  "Y": 143.7573
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0591,
+                  "Y": 0.2239
+                },
+                "PreSize": {
+                  "X": 0.8849,
+                  "Y": 0.4673
+                },
+                "LeftMargin": 55.4798,
+                "RightMargin": 52.5202,
+                "TopMargin": 198.2427,
+                "BottomMargin": 143.7573,
+                "Tag": 28,
+                "Children": [
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 30,
+                    "LabelText": "本次更新内容略",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 1.7287,
+                      "Y": 292.8379
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "G": 197,
+                      "B": 76
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0021,
+                      "Y": 0.9761
+                    },
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 1.0
+                    },
+                    "LeftMargin": 1.7287,
+                    "RightMargin": -1.7287,
+                    "TopMargin": 7.1621,
+                    "BottomMargin": -7.1621,
+                    "Tag": 47,
+                    "ActionTag": -610751468,
+                    "Size": {
+                      "X": 830.0,
+                      "Y": 300.0
+                    },
+                    "Name": "updesc",
+                    "ctype": "TextObjectData"
+                  }
+                ],
+                "ActionTag": 304781337,
+                "Size": {
+                  "X": 830.0,
+                  "Y": 300.0
+                },
+                "Name": "ScrollView",
+                "ctype": "ScrollViewObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 30,
+                "LabelText": "亲爱的玩家:",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 57.2685,
+                  "Y": 511.8391
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "G": 197,
+                  "B": 76
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0611,
+                  "Y": 0.7973
+                },
+                "PreSize": {
+                  "X": 0.533,
+                  "Y": 0.0623
+                },
+                "LeftMargin": 57.2685,
+                "RightMargin": 380.7315,
+                "TopMargin": 110.1609,
+                "BottomMargin": 491.8391,
+                "Tag": 45,
+                "ActionTag": 1580722063,
+                "Size": {
+                  "X": 500.0,
+                  "Y": 40.0
+                },
+                "Name": "uptitle",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 30,
+                "LabelText": "星悦广东麻将本次更新内容如下:",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 57.2892,
+                  "Y": 466.143
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "G": 197,
+                  "B": 76
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0611,
+                  "Y": 0.7261
+                },
+                "PreSize": {
+                  "X": 0.533,
+                  "Y": 0.0623
+                },
+                "LeftMargin": 57.2892,
+                "RightMargin": 380.7108,
+                "TopMargin": 155.857,
+                "BottomMargin": 446.143,
+                "Tag": 46,
+                "ActionTag": 2109812774,
+                "Size": {
+                  "X": 500.0,
+                  "Y": 40.0
+                },
+                "Name": "upnexttitle",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": -630310754,
+            "Size": {
+              "X": 938.0,
+              "Y": 642.0
+            },
+            "Name": "updateTishi",
+            "ctype": "ImageViewObjectData"
           }
         ],
         "Size": {
@@ -1405,7 +1883,13 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
+        "addRoomNew/t_gengxin.png",
+        "createRoomNew/window-big.png",
+        "createRoomNew/xianshimianfei.png",
+        "createRoomNew/xinwanfa.png",
         "Default/Button_Disable.png",
+        "dissolveRoomNew/btn_confirm_normal.png",
+        "dissolveRoomNew/btn_confirm_press.png",
         "home-yli/bac_02.png",
         "home-yli/btn_achievement_normal.png",
         "home-yli/btn_achievement_press.png",

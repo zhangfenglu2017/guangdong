@@ -24,8 +24,12 @@
         else
         {
             bar.setPercent(p);
-            loadTitle.setString("资源正在加载中(" + parseInt(p) + "%)");
+            loadTitle.setString("资源正在更新中(" + parseInt(p) + "%)");
             isAlready = true;
+
+            var isUpdate = sys.localStorage.getItem("isUpdate");
+            if(!isUpdate || isUpdate != "1") sys.localStorage.setItem("isUpdate", "1");
+
         }
     }
 
@@ -83,33 +87,33 @@
 
     function GetRemoteIP() {
 
-        if (cc.sys.OS_WINDOWS == cc.sys.os)
-        {
-            jsclient.remoteIP = "192.168.1.1";
+        // if (cc.sys.OS_WINDOWS == cc.sys.os)
+        // {
+            // jsclient.remoteIP = "192.168.1.1";
             GetRemoteCfg();
-            return;
-        };
+            // return;
+        // };
 
-        var xhr = cc.loader.getXMLHttpRequest();
-        xhr.open("GET", "http://ip.taobao.com/service/getIpInfo2.php?ip=myip");
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-
-                var js = JSON.parse(xhr.responseText);
-                jsclient.remoteIP = js.data.ip;
-            }
-
-           // GetRemoteCfg();
-            if(isAlready){
-                GetRemoteCfg();
-            }else jsclient.updateui.schedule(upText,0.01);
-
-
-        }
-        xhr.onerror = function (event) {
-            GetRemoteCfg();
-        }
-        xhr.send();
+        // var xhr = cc.loader.getXMLHttpRequest();
+        // xhr.open("GET", "http://ip.taobao.com/service/getIpInfo2.php?ip=myip");
+        // xhr.onreadystatechange = function () {
+        //     if (xhr.readyState == 4 && xhr.status == 200) {
+        //
+        //         var js = JSON.parse(xhr.responseText);
+        //         jsclient.remoteIP = js.data.ip;
+        //     }
+        //
+        //    // GetRemoteCfg();
+        //     if(isAlready){
+        //         GetRemoteCfg();
+        //     }else jsclient.updateui.schedule(upText,0.01);
+        //
+        //
+        // }
+        // xhr.onerror = function (event) {
+        //     GetRemoteCfg();
+        // }
+        // xhr.send();
 
     }
 
@@ -462,7 +466,9 @@
 //游戏玩法
 (function ()
 {
-    var webViewLayer2, uiPara, webView, scroll, gdmjtable, hzhmjtable,shzhmjtable,jphmjtable, help;
+    var webViewLayer2, uiPara, webView, scroll,
+        gdmjtable, hzhmjtable,shzhmjtable,jphmjtable, dgmjtable, ybzhmjtable, srfmjtable,
+        help;
 
     function createWebViewByUrl(url)
     {
@@ -491,6 +497,9 @@
         var url2 = jsclient.remoteCfg.help2Url;
         var url3 = jsclient.remoteCfg.help3Url;
         var url4 = jsclient.remoteCfg.help4Url;
+        var url5 = jsclient.remoteCfg.help5Url;
+        var url6 = jsclient.remoteCfg.help6Url;
+        var url7 = jsclient.remoteCfg.help7Url;
 
         switch(helpType)
         {
@@ -506,6 +515,15 @@
 
             jphmjtable.setBright(true);
             jphmjtable.setEnabled(true);
+
+            dgmjtable.setBright(true);
+            dgmjtable.setEnabled(true);
+
+            ybzhmjtable.setBright(true);
+            ybzhmjtable.setEnabled(true);
+
+            srfmjtable.setBright(true);
+            srfmjtable.setEnabled(true);
 
             createWebViewByUrl(url1);
 
@@ -524,6 +542,15 @@
             jphmjtable.setBright(true);
             jphmjtable.setEnabled(true);
 
+            dgmjtable.setBright(true);
+            dgmjtable.setEnabled(true);
+
+            ybzhmjtable.setBright(true);
+            ybzhmjtable.setEnabled(true);
+
+            srfmjtable.setBright(true);
+            srfmjtable.setEnabled(true);
+
             createWebViewByUrl(url2);
 
             break;
@@ -540,6 +567,15 @@
 
             jphmjtable.setBright(true);
             jphmjtable.setEnabled(true);
+
+            dgmjtable.setBright(true);
+            dgmjtable.setEnabled(true);
+
+            ybzhmjtable.setBright(true);
+            ybzhmjtable.setEnabled(true);
+
+            srfmjtable.setBright(true);
+            srfmjtable.setEnabled(true);
 
             createWebViewByUrl(url3);
 
@@ -558,7 +594,94 @@
             jphmjtable.setBright(false);
             jphmjtable.setEnabled(false);
 
+            dgmjtable.setBright(true);
+            dgmjtable.setEnabled(true);
+
+            ybzhmjtable.setBright(true);
+            ybzhmjtable.setEnabled(true);
+
+            srfmjtable.setBright(true);
+            srfmjtable.setEnabled(true);
+
             createWebViewByUrl(url4);
+
+            break;
+        case 5:
+
+            gdmjtable.setBright(true);
+            gdmjtable.setEnabled(true);
+
+            hzhmjtable.setBright(true);
+            hzhmjtable.setEnabled(true);
+
+            shzhmjtable.setBright(true);
+            shzhmjtable.setEnabled(true);
+
+            jphmjtable.setBright(true);
+            jphmjtable.setEnabled(true);
+
+            dgmjtable.setBright(false);
+            dgmjtable.setEnabled(false);
+
+            ybzhmjtable.setBright(true);
+            ybzhmjtable.setEnabled(true);
+
+            srfmjtable.setBright(true);
+            srfmjtable.setEnabled(true);
+
+            createWebViewByUrl(url5);
+
+            break;
+        case 6:
+
+            gdmjtable.setBright(true);
+            gdmjtable.setEnabled(true);
+
+            hzhmjtable.setBright(true);
+            hzhmjtable.setEnabled(true);
+
+            shzhmjtable.setBright(true);
+            shzhmjtable.setEnabled(true);
+
+            jphmjtable.setBright(true);
+            jphmjtable.setEnabled(true);
+
+            dgmjtable.setBright(true);
+            dgmjtable.setEnabled(true);
+
+            ybzhmjtable.setBright(false);
+            ybzhmjtable.setEnabled(false);
+
+            srfmjtable.setBright(true);
+            srfmjtable.setEnabled(true);
+
+            createWebViewByUrl(url6);
+
+            break;
+        case 7:
+
+            gdmjtable.setBright(true);
+            gdmjtable.setEnabled(true);
+
+            hzhmjtable.setBright(true);
+            hzhmjtable.setEnabled(true);
+
+            shzhmjtable.setBright(true);
+            shzhmjtable.setEnabled(true);
+
+            jphmjtable.setBright(true);
+            jphmjtable.setEnabled(true);
+
+            dgmjtable.setBright(true);
+            dgmjtable.setEnabled(true);
+
+            ybzhmjtable.setBright(true);
+            ybzhmjtable.setEnabled(true);
+
+            srfmjtable.setBright(false);
+            srfmjtable.setEnabled(false);
+
+            createWebViewByUrl(url7);
 
             break;
         }
@@ -629,6 +752,45 @@
                     _click:function ()
                     {
                         setPanelContentByType(4);
+                    }
+                },
+
+                dgmjtable:
+                {
+                    _run:function ()
+                    {
+                        dgmjtable = this;
+                    },
+
+                    _click:function ()
+                    {
+                        setPanelContentByType(5);
+                    }
+                },
+
+                ybzhmjtable:
+                {
+                    _run:function ()
+                    {
+                        ybzhmjtable = this;
+                    },
+
+                    _click:function ()
+                    {
+                        setPanelContentByType(6);
+                    }
+                },
+
+                srfmjtable:
+                {
+                    _run:function ()
+                    {
+                        srfmjtable = this;
+                    },
+
+                    _click:function ()
+                    {
+                        setPanelContentByType(7);
                     }
                 },
 
@@ -735,7 +897,8 @@ var playLogInfoItem = {};
 
             _click: function ()
             {
-                jsclient.getPlayLogOne(item.now, item.logid);
+                //jsclient.getPlayLogOne(item.now, item.logid);
+                jsclient.getPlayLogOne(item);
                 playLogInfoItem = item;
             }
         };
@@ -1024,7 +1187,23 @@ var updatelayer_itme_node;
                 return;
             }
 
-            if (logMsg[msgCount] == "mjhand")
+            if(logMsg[msgCount] == "MJFlower")
+            {
+                var arry = [];
+                arry[0] = "MJFlower";
+                arry[1]=logMsg[msgCount+1];
+
+                sendEvent("QueueNetMsg",arry);
+            }
+            else if(logMsg[msgCount] == "MJZhong")
+            {
+                var arry = [];
+                arry[0] = "MJZhong";
+                arry[1]=logMsg[msgCount+1];
+
+                sendEvent("QueueNetMsg",arry);
+            }
+            else if (logMsg[msgCount] == "mjhand")
             {
                 var arry = [];
                 var object = {};
@@ -1193,26 +1372,51 @@ var updatelayer_itme_node;
             {
                 var sData=jsclient.data.sData;
                 var tData=sData.tData;
+                var uids=tData.uids;
                 var players = logMsg[msgCount + 1].players;
                 var ed = {};
-                var uid;
-                for (var i in players)
-                {
-                    if (players[i].winType > 0)
-                    {
-                        uid = i;
-                    }
-                }
+                var mjhand = [];
+                // var uid;
+                // for (var i in players)
+                // {
+                //     if (players[i].winType > 0)
+                //     {
+                //         uid = i;
+                //     }
+                // }
                 for (var i = 0; i < tData.maxPlayer; i++)
                 {
-                    var pl = getUIPlayer(i);
-                    if (pl && uid == pl.info.uid)
+                    // var pl = getUIPlayer(i);
+                    // if (pl && uid == pl.info.uid)
+                    // {
+                    //     var sData=jsclient.data.sData.tData;
+                    //     ed.off = i;
+                    //     ed.eatWhat = "hu";
+                    //     ed.lastput = sData.lastPut;
+                    //     sendEvent("showcaneat", ed);
+                    // }
+
+                    var selfIndex = uids.indexOf(SelfUid());
+                    selfIndex = (selfIndex + i) % tData.maxPlayer;
+
+                    var pl = players[uids[selfIndex]];
+                    if (!pl)
+                        continue;
+
+                    mjhand = pl.mjhand.slice(0);
+                    if (pl.winType > 0)
                     {
-                        var sData=jsclient.data.sData.tData;
-                        ed.off = i;
+                        var index = getIndexPlayer(uids[selfIndex]);
+                        ed.off = index;
                         ed.eatWhat = "hu";
-                        ed.lastput = sData.lastPut;
-                        sendEvent("showcaneat", ed);
+
+                        if(pl.winType > 3)
+                            ed.lastput = mjhand[mjhand.length-1];
+                        else
+                            ed.lastput = tData.lastPut;
+
+                        sendEvent("showcaneat",ed);
+                        break;
                     }
                 }
                 /*var arry = [];
@@ -1222,7 +1426,7 @@ var updatelayer_itme_node;
                  arry[1] =object;
                  sendEvent("QueueNetMsg",arry);*/
             }
-
+            
             msgCount++;
         }.bind(node);
 
@@ -1239,6 +1443,10 @@ var updatelayer_itme_node;
             delay = 1.5;
         }
         else if (logMsg[msgCount] == "MJChi")
+        {
+            delay = 1.5;
+        }
+        else if(logMsg[msgCount] == "MJZhong")
         {
             delay = 1.5;
         }

@@ -188,16 +188,49 @@ jsclient.leaveGame = function () {
     });
 };
 
-jsclient.getPlayLogOne = function (now, logid) {
+//jsclient.getPlayLogOne = function (now, logid) {
+//
+//    jsclient.block();
+//    jsclient.gamenet.request("pkplayer.handler.getSymjLog", {now: now, logid: logid}, function (rtn) {
+//        cc.log("getPlayLogOne------callback");
+//        jsclient.unblock();
+//        if (rtn.result == 0) {
+//            sendEvent("playLogOne", rtn.data["mjlog"]);
+//        }
+//    });
+//};
 
-    jsclient.block();
-    jsclient.gamenet.request("pkplayer.handler.getSymjLog", {now: now, logid: logid}, function (rtn) {
-        cc.log("getPlayLogOne------callback");
-        jsclient.unblock();
-        if (rtn.result == 0) {
-            sendEvent("playLogOne", rtn.data["mjlog"]);
+jsclient.getPlayLogOne = function (item) {
+
+    console.log("ip===========" + item.ip);
+    if(item.ip)
+    {
+        console.log("ip===========" + item.ip);
+        jsclient.block();
+        var xhr = cc.loader.getXMLHttpRequest();
+        var playUrl="http://"+item.ip+":800/playlog/"+item.now.substr(0,10)+"/"+item.owner+"_"+item.tableid+".json";
+        xhr.open("GET", playUrl);
+        xhr.onreadystatechange = function () {
+            jsclient.unblock();
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                sendEvent("playLogOne",JSON.parse(xhr.responseText));
+            }
         }
-    });
+        xhr.onerror = function (event) {jsclient.unblock(); }
+        xhr.send();
+    }
+    else
+    {
+        var now=item.now; var logid=item.logid;
+        jsclient.block();
+        jsclient.gamenet.request("pkcon.handler.getSymjLog",{now:now,logid:logid},function(rtn){
+            jsclient.unblock();
+            if(rtn.result==0)
+            {
+                sendEvent("playLogOne",rtn.data["mjlog"]);
+            }
+        });
+    }
 };
 
 jsclient.getPlayLog = function () {
@@ -249,12 +282,10 @@ jsclient.joinGame = function (tableid) {
         });
 };
 
-jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7,
-                                canHuWith258, withZhong, horse, jjg, fanGui, fanNum, isSanRen)
+jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7,canFan7,
+                                canHuWith258, withZhong, zhongIsMa, horse, jjg, fanGui, fanNum, maxPlayer,
+                                canBigWin, guiJiaMa, guiJiaBei, gui4Hu, gui4huBeiNum)
 {
-    //是否三人
-    var playerCount = isSanRen? 3:4;
-
     jsclient.block();
     jsclient.gamenet.request("pkplayer.handler.CreateVipTable", {
             gameType: gameType,
@@ -264,13 +295,20 @@ jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noB
             canEat: canEat,
             noBigWin: noBigWin,
             canHu7: canHu7,
+            canFan7:canFan7,
             canHuWith258: canHuWith258,
             withZhong: withZhong,
+            zhongIsMa:zhongIsMa,
             horse: horse,
             jiejieGao: jjg,
             fanGui:fanGui,
             fanNum:fanNum,
-            maxPlayer:playerCount
+            maxPlayer:maxPlayer,
+            canBigWin:canBigWin,
+            guiJiaMa:guiJiaMa,
+            guiJiaBei:guiJiaBei,
+            gui4Hu:gui4Hu,
+            gui4huBeiNum:gui4huBeiNum
         },
         function (rtn) {
             jsclient.unblock();
@@ -397,6 +435,7 @@ jsclient.netCallBack =
             pl.mjchi = [];
             pl.mjput = [];
             pl.mjflower = [];
+            pl.mjzhong = [];
             pl.skipPeng = [];
             pl.baojiu = {num: 0, putCardPlayer: []};
             pl.skipHu = false;
@@ -422,6 +461,19 @@ jsclient.netCallBack =
         }
         pl.mjflower.push(d.card);
         cc.log("HuiZhou：　MJFlower: pl.mjflower.length = " + pl.mjflower.length);
+    }],
+    MJZhong: [0, function (d) {
+        playEffect("nv/71");
+        var sData = jsclient.data.sData;
+        var pl = sData.players[d.uid];
+        if (d.uid == SelfUid()) {
+            var idx = pl.mjhand.indexOf(d.card);
+            if (idx >= 0) {
+                pl.mjhand.splice(idx, 1);
+            }
+        }
+        pl.mjzhong.push(d.card);
+        cc.log("东莞麻将：　红中算马个数: pl.mjzhong.length = " + pl.mjzhong.length);
     }],
     MJPass: [0, function (d) {
         console.log("------------------------------MJPass");
@@ -477,10 +529,11 @@ jsclient.netCallBack =
         var sData = jsclient.data.sData;
         sData.tData = d.tData;
 
-        if(sData.tData.gameType == 3){
+        if(sData.tData.gameType == 3 || sData.tData.gameType == 1 ){
             for (var uid in d.players) {
                 var pl = d.players[uid];
                 sData.players[uid].linkZhuang = pl.linkZhuang;
+                sData.players[uid].linkHu = pl.linkHu;
                 // cc.log("getLinkZhuang===============================================linkZhuang="+ pl.linkZhuang);
             }
         }
@@ -1143,6 +1196,8 @@ var JSScene = cc.Scene.extend({
         ConnectUI2Logic(this, this.jsBind);
         this.addChild(new UpdateLayer());
         this.addChild(new BlockLayer());
+
+        // this.addChild(new EndAllLayer());
 
         //确保这张图不会被释放掉
         var majiang = new cc.Sprite("res/MaJiangNew/z_mj.png");

@@ -746,6 +746,96 @@
                       {
                         "FileData": {
                           "Type": "Normal",
+                          "Path": "play-yli/youdahu.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 14,
+                        "Scale9OriginY": 6,
+                        "Scale9Width": 64,
+                        "Scale9Height": 19,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 66.999,
+                          "Y": -69.9012
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "LeftMargin": 6.999,
+                        "RightMargin": -126.999,
+                        "TopMargin": 52.4012,
+                        "BottomMargin": -87.4012,
+                        "Tag": 528,
+                        "ActionTag": -1953564528,
+                        "Size": {
+                          "X": 120.0,
+                          "Y": 35.0
+                        },
+                        "Name": "dahu",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "play-yli/wudahu.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 14,
+                        "Scale9OriginY": 6,
+                        "Scale9Width": 64,
+                        "Scale9Height": 19,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 66.9991,
+                          "Y": -69.9011
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "LeftMargin": 6.9991,
+                        "RightMargin": -126.9991,
+                        "TopMargin": 52.4011,
+                        "BottomMargin": -87.4011,
+                        "Tag": 529,
+                        "ActionTag": 1095924409,
+                        "Size": {
+                          "X": 120.0,
+                          "Y": 35.0
+                        },
+                        "Name": "nodahu",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
                           "Path": "play-yli/2pi.png",
                           "Plist": ""
                         },
@@ -926,6 +1016,51 @@
                       {
                         "FileData": {
                           "Type": "Normal",
+                          "Path": "play-yli/qiduijiafan.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 14,
+                        "Scale9OriginY": 6,
+                        "Scale9Width": 67,
+                        "Scale9Height": 19,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 66.999,
+                          "Y": -189.9015
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "LeftMargin": 6.999,
+                        "RightMargin": -126.999,
+                        "TopMargin": 172.4015,
+                        "BottomMargin": -207.4015,
+                        "Tag": 327,
+                        "ActionTag": 1726616403,
+                        "Size": {
+                          "X": 120.0,
+                          "Y": 35.0
+                        },
+                        "Name": "canFan7",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
                           "Path": "play-yli/jiejiegao.png",
                           "Plist": ""
                         },
@@ -1101,6 +1236,51 @@
                           "Y": 35.0
                         },
                         "Name": "fan3",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "play-yli/zhongsuanma.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 14,
+                        "Scale9OriginY": 6,
+                        "Scale9Width": 64,
+                        "Scale9Height": 19,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 71.5655,
+                          "Y": -148.6711
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "LeftMargin": 11.5655,
+                        "RightMargin": -131.5655,
+                        "TopMargin": 131.1711,
+                        "BottomMargin": -166.1711,
+                        "Tag": 328,
+                        "ActionTag": -2082989890,
+                        "Size": {
+                          "X": 120.0,
+                          "Y": 35.0
+                        },
+                        "Name": "zhongisma",
                         "ctype": "ImageViewObjectData"
                       }
                     ],
@@ -1299,6 +1479,141 @@
                   "Y": 56.0
                 },
                 "Name": "jipinghu",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/dgmj.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 30,
+                "Scale9OriginY": 9,
+                "Scale9Width": 140,
+                "Scale9Height": 38,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 647.38,
+                  "Y": 431.09
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 547.38,
+                "RightMargin": -747.38,
+                "TopMargin": -459.09,
+                "BottomMargin": 403.09,
+                "Tag": 726,
+                "ActionTag": -438582625,
+                "Size": {
+                  "X": 200.0,
+                  "Y": 56.0
+                },
+                "Name": "dgmj",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/100zhang.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 30,
+                "Scale9OriginY": 9,
+                "Scale9Width": 140,
+                "Scale9Height": 38,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 647.3801,
+                  "Y": 431.0901
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 547.3801,
+                "RightMargin": -747.3801,
+                "TopMargin": -459.0901,
+                "BottomMargin": 403.0901,
+                "Tag": 527,
+                "ActionTag": -1813522378,
+                "Size": {
+                  "X": 200.0,
+                  "Y": 56.0
+                },
+                "Name": "ybzhmj",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/sanrentuidaohu.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 30,
+                "Scale9OriginY": 9,
+                "Scale9Width": 206,
+                "Scale9Height": 38,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 647.3802,
+                  "Y": 431.0901
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 514.3802,
+                "RightMargin": -780.3802,
+                "TopMargin": -459.0901,
+                "BottomMargin": 403.0901,
+                "Tag": 586,
+                "ActionTag": -1037422802,
+                "Size": {
+                  "X": 266.0,
+                  "Y": 56.0
+                },
+                "Name": "srfmj",
                 "ctype": "ImageViewObjectData"
               }
             ],
@@ -3232,18 +3547,18 @@
                       "Y": 0.2271
                     },
                     "PreSize": {
-                      "X": 0.9375,
-                      "Y": 0.9677
+                      "X": 1.1719,
+                      "Y": 1.2097
                     },
-                    "LeftMargin": 134.0197,
-                    "RightMargin": -126.0197,
-                    "TopMargin": 35.8348,
-                    "BottomMargin": -31.8348,
+                    "LeftMargin": 119.0197,
+                    "RightMargin": -141.0197,
+                    "TopMargin": 20.8348,
+                    "BottomMargin": -46.8348,
                     "Tag": 298,
                     "ActionTag": 1438632772,
                     "Size": {
-                      "X": 120.0,
-                      "Y": 120.0
+                      "X": 150.0,
+                      "Y": 150.0
                     },
                     "VisibleForFrame": false,
                     "Name": "emoji",
@@ -3349,6 +3664,108 @@
                       "Y": 58.0
                     },
                     "Name": "hua",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/icon_zhong.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 13,
+                    "Scale9OriginY": 9,
+                    "Scale9Width": 40,
+                    "Scale9Height": 19,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 72.3267,
+                      "Y": -87.5244
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5651,
+                      "Y": -0.7058
+                    },
+                    "PreSize": {
+                      "X": 0.8438,
+                      "Y": 0.4677
+                    },
+                    "LeftMargin": 18.3267,
+                    "RightMargin": 1.6733,
+                    "TopMargin": 182.5244,
+                    "BottomMargin": -116.5244,
+                    "Tag": 406,
+                    "Children": [
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 30,
+                        "LabelText": "0",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 151.4698,
+                          "Y": 31.1727
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 238,
+                          "G": 244,
+                          "B": 5
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 1.4025,
+                          "Y": 0.5375
+                        },
+                        "PreSize": {
+                          "X": 1.6667,
+                          "Y": 0.5172
+                        },
+                        "LeftMargin": 61.4698,
+                        "RightMargin": -133.4698,
+                        "TopMargin": 11.8273,
+                        "BottomMargin": 16.1727,
+                        "Tag": 407,
+                        "ActionTag": 1341850234,
+                        "Size": {
+                          "X": 180.0,
+                          "Y": 30.0
+                        },
+                        "Name": "zhong_num",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": -462509026,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 58.0
+                    },
+                    "Name": "zhong",
                     "ctype": "ImageViewObjectData"
                   }
                 ],
@@ -3654,6 +4071,51 @@
                       "Y": 105.0
                     },
                     "Name": "ef_hua",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/t_zhong.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 35,
+                    "Scale9OriginY": 34,
+                    "Scale9Width": 26,
+                    "Scale9Height": 54,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 390.7565,
+                      "Y": 432.6735
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 342.7565,
+                    "RightMargin": -438.7565,
+                    "TopMargin": -493.6735,
+                    "BottomMargin": 371.6735,
+                    "Tag": 723,
+                    "ActionTag": 772576007,
+                    "Size": {
+                      "X": 96.0,
+                      "Y": 122.0
+                    },
+                    "Name": "ef_zhong",
                     "ctype": "ImageViewObjectData"
                   }
                 ],
@@ -4868,18 +5330,18 @@
                       "Y": 0.3884
                     },
                     "PreSize": {
-                      "X": 0.9375,
-                      "Y": 0.9677
+                      "X": 1.1719,
+                      "Y": 1.2097
                     },
-                    "LeftMargin": 114.0197,
-                    "RightMargin": -106.0197,
-                    "TopMargin": 15.8348,
-                    "BottomMargin": -11.8348,
+                    "LeftMargin": 99.0197,
+                    "RightMargin": -121.0197,
+                    "TopMargin": 0.8348,
+                    "BottomMargin": -26.8348,
                     "Tag": 296,
                     "ActionTag": 1485575767,
                     "Size": {
-                      "X": 120.0,
-                      "Y": 120.0
+                      "X": 150.0,
+                      "Y": 150.0
                     },
                     "VisibleForFrame": false,
                     "Name": "emoji",
@@ -4985,6 +5447,108 @@
                       "Y": 58.0
                     },
                     "Name": "hua",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/icon_zhong.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 13,
+                    "Scale9OriginY": 9,
+                    "Scale9Width": 40,
+                    "Scale9Height": 19,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 71.5643,
+                      "Y": -93.194
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5591,
+                      "Y": -0.7516
+                    },
+                    "PreSize": {
+                      "X": 0.8438,
+                      "Y": 0.4677
+                    },
+                    "LeftMargin": 17.5643,
+                    "RightMargin": 2.4357,
+                    "TopMargin": 188.194,
+                    "BottomMargin": -122.194,
+                    "Tag": 408,
+                    "Children": [
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 30,
+                        "LabelText": "0",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 151.847,
+                          "Y": 31.3318
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 238,
+                          "G": 244,
+                          "B": 5
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 1.406,
+                          "Y": 0.5402
+                        },
+                        "PreSize": {
+                          "X": 1.6667,
+                          "Y": 0.5172
+                        },
+                        "LeftMargin": 61.847,
+                        "RightMargin": -133.847,
+                        "TopMargin": 11.6682,
+                        "BottomMargin": 16.3318,
+                        "Tag": 409,
+                        "ActionTag": 957625235,
+                        "Size": {
+                          "X": 180.0,
+                          "Y": 30.0
+                        },
+                        "Name": "zhong_num",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 1915575002,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 58.0
+                    },
+                    "Name": "zhong",
                     "ctype": "ImageViewObjectData"
                   }
                 ],
@@ -5286,6 +5850,51 @@
                       "Y": 105.0
                     },
                     "Name": "ef_hua",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/t_zhong.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 35,
+                    "Scale9OriginY": 34,
+                    "Scale9Width": 26,
+                    "Scale9Height": 54,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 1008.7057,
+                      "Y": 311.7048
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 960.7057,
+                    "RightMargin": -1056.7057,
+                    "TopMargin": -372.7048,
+                    "BottomMargin": 250.7048,
+                    "Tag": 722,
+                    "ActionTag": -1470922665,
+                    "Size": {
+                      "X": 96.0,
+                      "Y": 122.0
+                    },
+                    "Name": "ef_zhong",
                     "ctype": "ImageViewObjectData"
                   }
                 ],
@@ -6409,18 +7018,18 @@
                       "Y": 0.4602
                     },
                     "PreSize": {
-                      "X": 0.9375,
-                      "Y": 0.9677
+                      "X": 1.1719,
+                      "Y": 1.2097
                     },
-                    "LeftMargin": -140.5881,
-                    "RightMargin": 148.5881,
-                    "TopMargin": 6.9332,
-                    "BottomMargin": -2.9332,
+                    "LeftMargin": -155.5881,
+                    "RightMargin": 133.5881,
+                    "TopMargin": -8.0668,
+                    "BottomMargin": -17.9332,
                     "Tag": 297,
                     "ActionTag": -1528625823,
                     "Size": {
-                      "X": 120.0,
-                      "Y": 120.0
+                      "X": 150.0,
+                      "Y": 150.0
                     },
                     "VisibleForFrame": false,
                     "Name": "emoji",
@@ -6526,6 +7135,108 @@
                       "Y": 58.0
                     },
                     "Name": "hua",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/icon_zhong.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 13,
+                    "Scale9OriginY": 9,
+                    "Scale9Width": 40,
+                    "Scale9Height": 19,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 71.4956,
+                      "Y": -86.8319
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5586,
+                      "Y": -0.7003
+                    },
+                    "PreSize": {
+                      "X": 0.8438,
+                      "Y": 0.4677
+                    },
+                    "LeftMargin": 17.4956,
+                    "RightMargin": 2.5044,
+                    "TopMargin": 181.8319,
+                    "BottomMargin": -115.8319,
+                    "Tag": 410,
+                    "Children": [
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 30,
+                        "LabelText": "0",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 151.8987,
+                          "Y": 31.7737
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 238,
+                          "G": 244,
+                          "B": 5
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 1.4065,
+                          "Y": 0.5478
+                        },
+                        "PreSize": {
+                          "X": 1.6667,
+                          "Y": 0.5172
+                        },
+                        "LeftMargin": 61.8987,
+                        "RightMargin": -133.8987,
+                        "TopMargin": 11.2263,
+                        "BottomMargin": 16.7737,
+                        "Tag": 411,
+                        "ActionTag": -828312243,
+                        "Size": {
+                          "X": 180.0,
+                          "Y": 30.0
+                        },
+                        "Name": "zhong_num",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": -2072367753,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 58.0
+                    },
+                    "Name": "zhong",
                     "ctype": "ImageViewObjectData"
                   }
                 ],
@@ -6827,6 +7538,51 @@
                       "Y": 105.0
                     },
                     "Name": "ef_hua",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/t_zhong.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 35,
+                    "Scale9OriginY": 34,
+                    "Scale9Width": 26,
+                    "Scale9Height": 54,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 20.0001,
+                      "Y": -20.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -27.9999,
+                    "RightMargin": -68.0001,
+                    "TopMargin": -41.0,
+                    "BottomMargin": -81.0,
+                    "Tag": 724,
+                    "ActionTag": 1900844065,
+                    "Size": {
+                      "X": 96.0,
+                      "Y": 122.0
+                    },
+                    "Name": "ef_zhong",
                     "ctype": "ImageViewObjectData"
                   }
                 ],
@@ -7949,18 +8705,18 @@
                       "Y": 0.5122
                     },
                     "PreSize": {
-                      "X": 0.9375,
-                      "Y": 0.9677
+                      "X": 1.1719,
+                      "Y": 1.2097
                     },
-                    "LeftMargin": -118.0249,
-                    "RightMargin": 126.0249,
-                    "TopMargin": 0.4863,
-                    "BottomMargin": 3.5137,
+                    "LeftMargin": -133.0249,
+                    "RightMargin": 111.0249,
+                    "TopMargin": -14.5137,
+                    "BottomMargin": -11.4863,
                     "Tag": 299,
                     "ActionTag": -443005947,
                     "Size": {
-                      "X": 120.0,
-                      "Y": 120.0
+                      "X": 150.0,
+                      "Y": 150.0
                     },
                     "VisibleForFrame": false,
                     "Name": "emoji",
@@ -8066,6 +8822,108 @@
                       "Y": 58.0
                     },
                     "Name": "hua",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/icon_zhong.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 13,
+                    "Scale9OriginY": 9,
+                    "Scale9Width": 40,
+                    "Scale9Height": 19,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 74.3371,
+                      "Y": -88.0612
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5808,
+                      "Y": -0.7102
+                    },
+                    "PreSize": {
+                      "X": 0.8438,
+                      "Y": 0.4677
+                    },
+                    "LeftMargin": 20.3371,
+                    "RightMargin": -0.3371,
+                    "TopMargin": 183.0612,
+                    "BottomMargin": -117.0612,
+                    "Tag": 412,
+                    "Children": [
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 30,
+                        "LabelText": "0",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 149.0485,
+                          "Y": 30.7799
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 238,
+                          "G": 244,
+                          "B": 5
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 1.3801,
+                          "Y": 0.5307
+                        },
+                        "PreSize": {
+                          "X": 1.6667,
+                          "Y": 0.5172
+                        },
+                        "LeftMargin": 59.0485,
+                        "RightMargin": -131.0485,
+                        "TopMargin": 12.2201,
+                        "BottomMargin": 15.7799,
+                        "Tag": 413,
+                        "ActionTag": 650373973,
+                        "Size": {
+                          "X": 180.0,
+                          "Y": 30.0
+                        },
+                        "Name": "zhong_num",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": -779567729,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 58.0
+                    },
+                    "Name": "zhong",
                     "ctype": "ImageViewObjectData"
                   }
                 ],
@@ -8367,6 +9225,51 @@
                       "Y": 105.0
                     },
                     "Name": "ef_hua",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/t_zhong.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 35,
+                    "Scale9OriginY": 34,
+                    "Scale9Width": 26,
+                    "Scale9Height": 54,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 885.9094,
+                      "Y": 469.9999
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 837.9094,
+                    "RightMargin": -933.9094,
+                    "TopMargin": -530.9999,
+                    "BottomMargin": 408.9999,
+                    "Tag": 725,
+                    "ActionTag": -1166645739,
+                    "Size": {
+                      "X": 96.0,
+                      "Y": 122.0
+                    },
+                    "Name": "ef_zhong",
                     "ctype": "ImageViewObjectData"
                   }
                 ],
@@ -12108,6 +13011,7 @@
         "playerchat/chatbg_rd.png",
         "playerchat/chatbg_top.png",
         "playerchat/fennu.png",
+        "play-yli/100zhang.png",
         "play-yli/2pi.png",
         "play-yli/4pi.png",
         "play-yli/6pi.png",
@@ -12147,6 +13051,7 @@
         "play-yli/btn_voice_press.png",
         "play-yli/circleWind0.png",
         "play-yli/daifeng.png",
+        "play-yli/dgmj.png",
         "play-yli/dir_normal_0.png",
         "play-yli/dir_normal_1.png",
         "play-yli/dir_normal_2.png",
@@ -12163,6 +13068,7 @@
         "play-yli/icon_electricity_01.png",
         "play-yli/icon_electricity_02.png",
         "play-yli/icon_hua.png",
+        "play-yli/icon_zhong.png",
         "play-yli/icon_zhuang.png",
         "play-yli/jiejiegao.png",
         "play-yli/jph.png",
@@ -12176,18 +13082,24 @@
         "play-yli/Photo_frame_03.png",
         "play-yli/Photo_frame_06.png",
         "play-yli/Photo_frame_man.png",
+        "play-yli/qiduijiafan.png",
         "play-yli/roundnumbg.png",
         "play-yli/sanfanqihu.png",
+        "play-yli/sanrentuidaohu.png",
         "play-yli/shenzhenmajiang.png",
         "play-yli/t_chi.png",
         "play-yli/t_gang.png",
         "play-yli/t_guo.png",
         "play-yli/t_hua.png",
         "play-yli/t_peng.png",
+        "play-yli/t_zhong.png",
         "play-yli/t-hu.png",
+        "play-yli/wudahu.png",
         "play-yli/wufanqihu.png",
         "play-yli/yifanqihu.png",
+        "play-yli/youdahu.png",
         "play-yli/Z_zhunbeizhuangt.png",
+        "play-yli/zhongsuanma.png",
         "play-yli/zhuang_1.png"
       ],
       "ctype": "GameFileData"

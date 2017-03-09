@@ -14,6 +14,8 @@ var res = {
 	EndOne_json:"res/endOne.json",
 	EndAll_json:"res/endAll.json",
 
+	ExtGame_json:"res/ExtGame.json",
+
 
     PlayMJ_my_png:"res/MaJiangNew/z_mj.png",
     PlayMJ_my_plist:"res/MaJiangNew/z_mj.plist",
@@ -54,6 +56,7 @@ var UpdateLayer;
 var CreateLayer;
 var ChangeIDLayer;
 var ExportDataLayer;
+var ExitGameLayer;
 
 function sendEvent(eName,ePara)
 {

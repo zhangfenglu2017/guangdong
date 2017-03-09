@@ -95,13 +95,13 @@
                 <BallPressedData Type="Normal" Path="set/slither.png" Plist="" />
                 <BallDisabledData Type="Normal" Path="set/slither.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="exitBtn" ActionTag="-410361543" Tag="1151" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="262.5000" RightMargin="262.5000" TopMargin="349.9000" BottomMargin="63.1000" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="exitBtn" ActionTag="-410361543" Tag="1151" IconVisible="False" LeftMargin="405.0000" RightMargin="120.0000" TopMargin="345.5000" BottomMargin="67.5000" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="170.0000" Y="65.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="347.5000" Y="95.6000" />
+                <Position X="490.0000" Y="100.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.2000" />
+                <PrePosition X="0.7050" Y="0.2092" />
                 <PreSize X="0.2446" Y="0.1360" />
                 <TextColor A="255" R="255" G="255" B="255" />
                 <DisabledFileData Type="Normal" Path="set/btn_exit_login_press.png" Plist="" />
@@ -110,18 +110,33 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="delBtn" ActionTag="-2136444830" Tag="1152" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="234.0000" RightMargin="234.0000" TopMargin="349.9000" BottomMargin="63.1000" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="197" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="227.0000" Y="65.0000" />
+              <AbstractNodeData Name="delBtn" ActionTag="-2136444830" Tag="1152" IconVisible="False" LeftMargin="405.0000" RightMargin="120.0000" TopMargin="345.5001" BottomMargin="67.4999" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="170.0000" Y="65.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="347.5000" Y="95.6000" />
+                <Position X="490.0000" Y="99.9999" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.2000" />
-                <PreSize X="0.3266" Y="0.1360" />
+                <PrePosition X="0.7050" Y="0.2092" />
+                <PreSize X="0.2446" Y="0.1360" />
                 <TextColor A="255" R="255" G="255" B="255" />
-                <DisabledFileData Type="Normal" Path="set/btn_application_press.png" Plist="" />
-                <PressedFileData Type="Normal" Path="set/btn_application_press.png" Plist="" />
-                <NormalFileData Type="Normal" Path="set/btn_application_normal.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="set/btn_dissolution_press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="set/btn_dissolution_press.png" Plist="" />
+                <NormalFileData Type="Normal" Path="set/btn_dissolution_normal.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="closeBtn" ActionTag="-1720950991" Tag="14" IconVisible="False" LeftMargin="115.0000" RightMargin="410.0000" TopMargin="345.5000" BottomMargin="67.5000" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="170.0000" Y="65.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="200.0000" Y="100.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.2878" Y="0.2092" />
+                <PreSize X="0.2446" Y="0.1360" />
+                <TextColor A="255" R="255" G="255" B="255" />
+                <DisabledFileData Type="Normal" Path="set/btn_tcyx_press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="set/btn_tcyx_press.png" Plist="" />
+                <NormalFileData Type="Normal" Path="set/btn_tcyx_normal.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

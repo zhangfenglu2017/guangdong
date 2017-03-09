@@ -42,7 +42,9 @@ function SetEndOnePlayerUI(node, off)
                 _text: function () {
                     if(jsclient.data.sData.tData.gameType == 4)
                         return pl.baseWin > 0 ? ( pl.baseWin + "番") : "";
-                    return pl.baseWin > 0 ? ( "X" + pl.baseWin) : "";
+                    //不再提示X1
+                    //return pl.baseWin > 0 ? ( "X" + pl.baseWin) : "";
+                    return "";
                 }
             },
 
@@ -992,7 +994,7 @@ var EndOneLayer = cc.Layer.extend(
             var zoff = (tData.zhuang + tData.maxPlayer - tData.uids.indexOf(selfUid)) % tData.maxPlayer;
             var zhuang = this.jsBind["head" + zoff].head.zhuang._node;
             var linkZhuang = this.jsBind["head" + zoff].head.linkZhuang._node;
-            if (tData.gameType == 3 && tData.jiejieGao) {
+            if ((tData.gameType == 3 || tData.gameType == 1) && tData.jiejieGao) {
                 zhuang.visible = false;
                 linkZhuang.visible = true;
             }

@@ -60,7 +60,28 @@ function SetEndAllPlayerUI(node,off)
                     this.visible = true;
                 }
             }
-        }
+        },
+
+
+        hunum:
+        {
+            _text:function(){return "胡牌次数："+pl.winTotalNum; }
+        },
+
+        manum:
+        {
+            _text:function(){return "中马个数："+pl.zhongMaTotalNum; }
+        },
+
+        gang1num:
+        {
+            _text:function(){return "暗杠个数："+pl.anGangTotalNum; }
+        },
+
+        gang2num:
+        {
+            _text:function(){return "明杠个数："+pl.mingGangTotalNum; }
+        },
 
 	};
 

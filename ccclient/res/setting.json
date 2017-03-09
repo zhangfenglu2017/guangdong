@@ -485,8 +485,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 347.5,
-                  "Y": 95.6
+                  "X": 490.0,
+                  "Y": 100.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -494,20 +494,18 @@
                 },
                 "CColor": {},
                 "IconVisible": false,
-                "PositionPercentXEnabled": true,
-                "PositionPercentYEnabled": true,
                 "PrePosition": {
-                  "X": 0.5,
-                  "Y": 0.2
+                  "X": 0.705,
+                  "Y": 0.2092
                 },
                 "PreSize": {
                   "X": 0.2446,
                   "Y": 0.136
                 },
-                "LeftMargin": 262.5,
-                "RightMargin": 262.5,
-                "TopMargin": 349.9,
-                "BottomMargin": 63.1,
+                "LeftMargin": 405.0,
+                "RightMargin": 120.0,
+                "TopMargin": 345.5,
+                "BottomMargin": 67.5,
                 "Tag": 1151,
                 "ActionTag": -410361543,
                 "Size": {
@@ -523,23 +521,23 @@
                 "TextColor": {},
                 "DisabledFileData": {
                   "Type": "Normal",
-                  "Path": "set/btn_application_press.png",
+                  "Path": "set/btn_dissolution_press.png",
                   "Plist": ""
                 },
                 "PressedFileData": {
                   "Type": "Normal",
-                  "Path": "set/btn_application_press.png",
+                  "Path": "set/btn_dissolution_press.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "set/btn_application_normal.png",
+                  "Path": "set/btn_dissolution_normal.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
-                "Scale9Width": 197,
+                "Scale9Width": 140,
                 "Scale9Height": 43,
                 "OutlineColor": {
                   "G": 0,
@@ -558,8 +556,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 347.5,
-                  "Y": 95.6
+                  "X": 490.0,
+                  "Y": 99.9999
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -567,27 +565,96 @@
                 },
                 "CColor": {},
                 "IconVisible": false,
-                "PositionPercentXEnabled": true,
-                "PositionPercentYEnabled": true,
                 "PrePosition": {
-                  "X": 0.5,
-                  "Y": 0.2
+                  "X": 0.705,
+                  "Y": 0.2092
                 },
                 "PreSize": {
-                  "X": 0.3266,
+                  "X": 0.2446,
                   "Y": 0.136
                 },
-                "LeftMargin": 234.0,
-                "RightMargin": 234.0,
-                "TopMargin": 349.9,
-                "BottomMargin": 63.1,
+                "LeftMargin": 405.0,
+                "RightMargin": 120.0,
+                "TopMargin": 345.5001,
+                "BottomMargin": 67.4999,
                 "Tag": 1152,
                 "ActionTag": -2136444830,
                 "Size": {
-                  "X": 227.0,
+                  "X": 170.0,
                   "Y": 65.0
                 },
                 "Name": "delBtn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 36,
+                "ButtonText": "",
+                "TextColor": {},
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "set/btn_tcyx_press.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "set/btn_tcyx_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "set/btn_tcyx_normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 140,
+                "Scale9Height": 43,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 200.0,
+                  "Y": 100.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2878,
+                  "Y": 0.2092
+                },
+                "PreSize": {
+                  "X": 0.2446,
+                  "Y": 0.136
+                },
+                "LeftMargin": 115.0,
+                "RightMargin": 410.0,
+                "TopMargin": 345.5,
+                "BottomMargin": 67.5,
+                "Tag": 14,
+                "ActionTag": -1720950991,
+                "Size": {
+                  "X": 170.0,
+                  "Y": 65.0
+                },
+                "Name": "closeBtn",
                 "ctype": "ButtonObjectData"
               },
               {
@@ -700,10 +767,12 @@
       "UsedResources": [
         "set/bar_01.png",
         "set/bar_02.png",
-        "set/btn_application_normal.png",
-        "set/btn_application_press.png",
+        "set/btn_dissolution_normal.png",
+        "set/btn_dissolution_press.png",
         "set/btn_exit_login_normal.png",
         "set/btn_exit_login_press.png",
+        "set/btn_tcyx_normal.png",
+        "set/btn_tcyx_press.png",
         "set/music.png",
         "set/slither.png",
         "set/sound.png",

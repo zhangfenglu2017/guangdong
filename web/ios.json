@@ -1,8 +1,8 @@
 {
-  "servers":"gdmj.coolgamebox.com:15010:15019"
+  "servers":"114.55.255.22:15010:15011"
   ,"serversSelect":[600,400]
   ,"wxShareUrl":"http://download.happyplaygame.net"
-  ,"voiceUrl":"http://124.232.153.18:3000/symj/"
+  ,"voiceUrl":"http://124.232.153.18:9109/symj/"
   ,"guestLogin":false
   ,"coinRoom":false
   ,"canEatHu":false
@@ -12,8 +12,12 @@
   ,"help2Url":"http://gdmj.coolgamebox.com:800/gdmj/help2.html"
   ,"help3Url":"http://gdmj.coolgamebox.com:800/gdmj/help3.html"
   ,"help4Url":"http://gdmj.coolgamebox.com:800/gdmj/help4.html"
+  ,"help5Url":"http://gdmj.coolgamebox.com:800/gdmj/help5.html"
   ,"legalUrl":"http://gdmj.coolgamebox.com:800/gdmj/legal.html"
   ,"infoUrl":"http://gdmj.coolgamebox.com:800/gdmj/info.html"
   ,"noticeUrl":"http://gdmj.coolgamebox.com:800/gdmj/notice.json"
   ,"homeScroll":"代理咨询请联系微信Kfxj111，文明娱乐，禁止赌博"
+  ,"uptitle":"亲爱的玩家:"
+  ,"upnexttitle":"星悦广东麻将本次更新内容如下:"
+  ,"updesc":"1.增加100张玩法\t\n2.修复回放BUG\t\n"
 }

@@ -195,7 +195,7 @@
             },
             "LeftMargin": 425.0,
             "RightMargin": 685.0,
-            "TopMargin": 647.4999,
+            "TopMargin": 647.5,
             "BottomMargin": 7.5,
             "Tag": 67,
             "ActionTag": 1539874248,
@@ -427,6 +427,51 @@
               {
                 "FileData": {
                   "Type": "Normal",
+                  "Path": "gameEndNew/xiaodiban.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 157,
+                "Scale9OriginY": 32,
+                "Scale9Width": 162,
+                "Scale9Height": 35,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 659.9999,
+                  "Y": 55.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 5.1562,
+                  "Y": 0.4435
+                },
+                "PreSize": {
+                  "X": 3.9063,
+                  "Y": 0.7984
+                },
+                "LeftMargin": 409.9999,
+                "RightMargin": -781.9999,
+                "TopMargin": 19.5,
+                "BottomMargin": 5.5,
+                "Tag": 38,
+                "ActionTag": -577702162,
+                "Size": {
+                  "X": 500.0,
+                  "Y": 99.0
+                },
+                "Name": "tipsbk",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
                   "Path": "gameEndNew/Photo_frame_02.png",
                   "Plist": ""
                 },
@@ -472,7 +517,7 @@
               {
                 "IsCustomSize": true,
                 "FontSize": 36,
-                "LabelText": "姓名姓名姓名姓名",
+                "LabelText": "一二三四五六七",
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -488,7 +533,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 169.4277,
+                  "X": 135.9277,
                   "Y": 71.6707
                 },
                 "Scale": {
@@ -502,21 +547,21 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 1.3237,
+                  "X": 1.0619,
                   "Y": 0.578
                 },
                 "PreSize": {
-                  "X": 2.25,
+                  "X": 2.0313,
                   "Y": 0.2903
                 },
-                "LeftMargin": 169.4277,
-                "RightMargin": -329.4277,
+                "LeftMargin": 135.9277,
+                "RightMargin": -267.9277,
                 "TopMargin": 34.3293,
                 "BottomMargin": 53.6707,
                 "Tag": 47,
                 "ActionTag": 135445244,
                 "Size": {
-                  "X": 288.0,
+                  "X": 260.0,
                   "Y": 36.0
                 },
                 "Name": "name",
@@ -540,7 +585,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 816.6639,
+                  "X": 950.0,
                   "Y": 49.9999
                 },
                 "Scale": {
@@ -554,15 +599,15 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 6.3802,
+                  "X": 7.4219,
                   "Y": 0.4032
                 },
                 "PreSize": {
                   "X": 0.625,
                   "Y": 0.3226
                 },
-                "LeftMargin": 816.6639,
-                "RightMargin": -768.6639,
+                "LeftMargin": 950.0,
+                "RightMargin": -902.0,
                 "TopMargin": 54.0001,
                 "BottomMargin": 29.9999,
                 "Tag": 51,
@@ -589,8 +634,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 107.2617,
-                  "Y": 27.9169
+                  "X": 69.7616,
+                  "Y": 15.4169
                 },
                 "Scale": {
                   "ScaleX": 1.5,
@@ -599,17 +644,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.838,
-                  "Y": 0.2251
+                  "X": 0.545,
+                  "Y": 0.1243
                 },
                 "PreSize": {
                   "X": 0.6016,
                   "Y": 0.2581
                 },
-                "LeftMargin": 68.7617,
-                "RightMargin": -17.7617,
-                "TopMargin": 80.0831,
-                "BottomMargin": 11.9169,
+                "LeftMargin": 31.2616,
+                "RightMargin": 19.7384,
+                "TopMargin": 92.5831,
+                "BottomMargin": -0.5831,
                 "Tag": 348,
                 "ActionTag": 1436819180,
                 "Size": {
@@ -638,7 +683,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 167.791,
+                  "X": 137.7909,
                   "Y": 23.4868
                 },
                 "Scale": {
@@ -652,15 +697,15 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 1.3109,
+                  "X": 1.0765,
                   "Y": 0.1894
                 },
                 "PreSize": {
                   "X": 1.5625,
                   "Y": 0.2903
                 },
-                "LeftMargin": 167.791,
-                "RightMargin": -239.791,
+                "LeftMargin": 137.7909,
+                "RightMargin": -209.7909,
                 "TopMargin": 82.5132,
                 "BottomMargin": 5.4868,
                 "Tag": 526,
@@ -687,7 +732,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1100.0,
+                  "X": 1140.0,
                   "Y": 60.0
                 },
                 "Scale": {
@@ -697,15 +742,15 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 8.5938,
+                  "X": 8.9063,
                   "Y": 0.4839
                 },
                 "PreSize": {
                   "X": 1.5391,
                   "Y": 0.7823
                 },
-                "LeftMargin": 1001.5,
-                "RightMargin": -1070.5,
+                "LeftMargin": 1041.5,
+                "RightMargin": -1110.5,
                 "TopMargin": 15.5,
                 "BottomMargin": 11.5,
                 "Tag": 70,
@@ -716,6 +761,214 @@
                 },
                 "Name": "win",
                 "ctype": "SpriteObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "胡牌次数：888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 419.9997,
+                  "Y": 76.25
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 3.2812,
+                  "Y": 0.6149
+                },
+                "PreSize": {
+                  "X": 1.7266,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 419.9997,
+                "RightMargin": -512.9996,
+                "TopMargin": 30.75,
+                "BottomMargin": 59.25,
+                "Tag": 42,
+                "ActionTag": -2028214615,
+                "Size": {
+                  "X": 221.0,
+                  "Y": 34.0
+                },
+                "Name": "hunum",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "中马个数：8888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 654.9999,
+                  "Y": 76.25
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 5.1172,
+                  "Y": 0.6149
+                },
+                "PreSize": {
+                  "X": 1.8594,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 654.9999,
+                "RightMargin": -764.9999,
+                "TopMargin": 30.75,
+                "BottomMargin": 59.25,
+                "Tag": 43,
+                "ActionTag": 50928685,
+                "Size": {
+                  "X": 238.0,
+                  "Y": 34.0
+                },
+                "Name": "manum",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "暗杠次数：888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 419.9997,
+                  "Y": 36.25
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 3.2812,
+                  "Y": 0.2923
+                },
+                "PreSize": {
+                  "X": 1.7266,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 419.9997,
+                "RightMargin": -512.9996,
+                "TopMargin": 70.75,
+                "BottomMargin": 19.25,
+                "Tag": 44,
+                "ActionTag": 257844322,
+                "Size": {
+                  "X": 221.0,
+                  "Y": 34.0
+                },
+                "Name": "gang1num",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "明杠次数：8888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 654.9999,
+                  "Y": 36.25
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 5.1172,
+                  "Y": 0.2923
+                },
+                "PreSize": {
+                  "X": 1.8594,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 654.9999,
+                "RightMargin": -764.9999,
+                "TopMargin": 70.75,
+                "BottomMargin": 19.25,
+                "Tag": 45,
+                "ActionTag": 1595675945,
+                "Size": {
+                  "X": 238.0,
+                  "Y": 34.0
+                },
+                "Name": "gang2num",
+                "ctype": "TextObjectData"
               }
             ],
             "ActionTag": 629365591,
@@ -764,6 +1017,51 @@
             "BottomMargin": 232.4983,
             "Tag": 52,
             "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/xiaodiban.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 157,
+                "Scale9OriginY": 32,
+                "Scale9Width": 162,
+                "Scale9Height": 35,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 660.0001,
+                  "Y": 55.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 5.1563,
+                  "Y": 0.4435
+                },
+                "PreSize": {
+                  "X": 3.9063,
+                  "Y": 0.7984
+                },
+                "LeftMargin": 410.0001,
+                "RightMargin": -782.0001,
+                "TopMargin": 19.5,
+                "BottomMargin": 5.5,
+                "Tag": 39,
+                "ActionTag": 1163683105,
+                "Size": {
+                  "X": 500.0,
+                  "Y": 99.0
+                },
+                "Name": "tipsbk",
+                "ctype": "ImageViewObjectData"
+              },
               {
                 "FileData": {
                   "Type": "Normal",
@@ -828,8 +1126,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 166.2473,
-                  "Y": 67.3158
+                  "X": 136.2472,
+                  "Y": 67.3157
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -842,21 +1140,21 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 1.2988,
+                  "X": 1.0644,
                   "Y": 0.5429
                 },
                 "PreSize": {
-                  "X": 2.25,
+                  "X": 2.0313,
                   "Y": 0.2903
                 },
-                "LeftMargin": 166.2473,
-                "RightMargin": -326.2473,
-                "TopMargin": 38.6842,
-                "BottomMargin": 49.3158,
+                "LeftMargin": 136.2472,
+                "RightMargin": -268.2472,
+                "TopMargin": 38.6843,
+                "BottomMargin": 49.3157,
                 "Tag": 53,
                 "ActionTag": -1888282198,
                 "Size": {
-                  "X": 288.0,
+                  "X": 260.0,
                   "Y": 36.0
                 },
                 "Name": "name",
@@ -880,8 +1178,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 816.6636,
-                  "Y": 49.9999
+                  "X": 950.0,
+                  "Y": 49.9998
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -894,17 +1192,17 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 6.3802,
+                  "X": 7.4219,
                   "Y": 0.4032
                 },
                 "PreSize": {
                   "X": 0.625,
                   "Y": 0.3226
                 },
-                "LeftMargin": 816.6636,
-                "RightMargin": -768.6636,
-                "TopMargin": 54.0001,
-                "BottomMargin": 29.9999,
+                "LeftMargin": 950.0,
+                "RightMargin": -902.0,
+                "TopMargin": 54.0002,
+                "BottomMargin": 29.9998,
                 "Tag": 57,
                 "ActionTag": -1966860445,
                 "Size": {
@@ -929,8 +1227,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 106.2608,
-                  "Y": 26.9173
+                  "X": 68.7607,
+                  "Y": 14.4173
                 },
                 "Scale": {
                   "ScaleX": 1.5,
@@ -939,17 +1237,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.8302,
-                  "Y": 0.2171
+                  "X": 0.5372,
+                  "Y": 0.1163
                 },
                 "PreSize": {
                   "X": 0.6016,
                   "Y": 0.2581
                 },
-                "LeftMargin": 67.7608,
-                "RightMargin": -16.7608,
-                "TopMargin": 81.0827,
-                "BottomMargin": 10.9173,
+                "LeftMargin": 30.2607,
+                "RightMargin": 20.7393,
+                "TopMargin": 93.5827,
+                "BottomMargin": -1.5827,
                 "Tag": 347,
                 "ActionTag": -918116067,
                 "Size": {
@@ -978,7 +1276,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 166.4691,
+                  "X": 136.469,
                   "Y": 29.7008
                 },
                 "Scale": {
@@ -992,15 +1290,15 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 1.3005,
+                  "X": 1.0662,
                   "Y": 0.2395
                 },
                 "PreSize": {
                   "X": 1.5625,
                   "Y": 0.2903
                 },
-                "LeftMargin": 166.4691,
-                "RightMargin": -238.4691,
+                "LeftMargin": 136.469,
+                "RightMargin": -208.469,
                 "TopMargin": 76.2992,
                 "BottomMargin": 11.7008,
                 "Tag": 525,
@@ -1027,7 +1325,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1100.0,
+                  "X": 1140.0,
                   "Y": 60.0
                 },
                 "Scale": {
@@ -1037,15 +1335,15 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 8.5938,
+                  "X": 8.9063,
                   "Y": 0.4839
                 },
                 "PreSize": {
                   "X": 1.5391,
                   "Y": 0.7823
                 },
-                "LeftMargin": 1001.5,
-                "RightMargin": -1070.5,
+                "LeftMargin": 1041.5,
+                "RightMargin": -1110.5,
                 "TopMargin": 15.5,
                 "BottomMargin": 11.5,
                 "Tag": 35,
@@ -1056,6 +1354,214 @@
                 },
                 "Name": "win",
                 "ctype": "SpriteObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "胡牌次数：888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 419.9998,
+                  "Y": 76.2502
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 3.2812,
+                  "Y": 0.6149
+                },
+                "PreSize": {
+                  "X": 1.7266,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 419.9998,
+                "RightMargin": -512.9998,
+                "TopMargin": 30.7498,
+                "BottomMargin": 59.2502,
+                "Tag": 46,
+                "ActionTag": 1318633677,
+                "Size": {
+                  "X": 221.0,
+                  "Y": 34.0
+                },
+                "Name": "hunum",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "中马个数：8888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 655.0,
+                  "Y": 76.2502
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 5.1172,
+                  "Y": 0.6149
+                },
+                "PreSize": {
+                  "X": 1.8594,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 655.0,
+                "RightMargin": -765.0,
+                "TopMargin": 30.7498,
+                "BottomMargin": 59.2502,
+                "Tag": 47,
+                "ActionTag": 1410261698,
+                "Size": {
+                  "X": 238.0,
+                  "Y": 34.0
+                },
+                "Name": "manum",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "暗杠次数：888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 419.9998,
+                  "Y": 36.2501
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 3.2812,
+                  "Y": 0.2923
+                },
+                "PreSize": {
+                  "X": 1.7266,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 419.9998,
+                "RightMargin": -512.9998,
+                "TopMargin": 70.7499,
+                "BottomMargin": 19.2501,
+                "Tag": 48,
+                "ActionTag": 143135403,
+                "Size": {
+                  "X": 221.0,
+                  "Y": 34.0
+                },
+                "Name": "gang1num",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "明杠次数：8888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 655.0,
+                  "Y": 36.2501
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 5.1172,
+                  "Y": 0.2923
+                },
+                "PreSize": {
+                  "X": 1.8594,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 655.0,
+                "RightMargin": -765.0,
+                "TopMargin": 70.7499,
+                "BottomMargin": 19.2501,
+                "Tag": 49,
+                "ActionTag": 1236016178,
+                "Size": {
+                  "X": 238.0,
+                  "Y": 34.0
+                },
+                "Name": "gang2num",
+                "ctype": "TextObjectData"
               }
             ],
             "ActionTag": 834103090,
@@ -1107,6 +1613,51 @@
               {
                 "FileData": {
                   "Type": "Normal",
+                  "Path": "gameEndNew/xiaodiban.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 157,
+                "Scale9OriginY": 32,
+                "Scale9Width": 162,
+                "Scale9Height": 35,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 659.9999,
+                  "Y": 55.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 5.1562,
+                  "Y": 0.4435
+                },
+                "PreSize": {
+                  "X": 3.9063,
+                  "Y": 0.7984
+                },
+                "LeftMargin": 409.9999,
+                "RightMargin": -781.9999,
+                "TopMargin": 19.5,
+                "BottomMargin": 5.5,
+                "Tag": 40,
+                "ActionTag": 1376246947,
+                "Size": {
+                  "X": 500.0,
+                  "Y": 99.0
+                },
+                "Name": "tipsbk",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
                   "Path": "gameEndNew/Photo_frame_02.png",
                   "Plist": ""
                 },
@@ -1152,7 +1703,7 @@
               {
                 "IsCustomSize": true,
                 "FontSize": 36,
-                "LabelText": "姓名姓名姓名姓名",
+                "LabelText": "姓名姓名姓名",
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -1168,7 +1719,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 169.7439,
+                  "X": 139.7438,
                   "Y": 73.5819
                 },
                 "Scale": {
@@ -1182,21 +1733,21 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 1.3261,
+                  "X": 1.0917,
                   "Y": 0.5934
                 },
                 "PreSize": {
-                  "X": 2.25,
+                  "X": 2.0313,
                   "Y": 0.2903
                 },
-                "LeftMargin": 169.7439,
-                "RightMargin": -329.7439,
+                "LeftMargin": 139.7438,
+                "RightMargin": -271.7438,
                 "TopMargin": 32.4181,
                 "BottomMargin": 55.5819,
                 "Tag": 59,
                 "ActionTag": -368056091,
                 "Size": {
-                  "X": 288.0,
+                  "X": 260.0,
                   "Y": 36.0
                 },
                 "Name": "name",
@@ -1220,8 +1771,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 816.6639,
-                  "Y": 49.9998
+                  "X": 950.0,
+                  "Y": 49.9997
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1234,17 +1785,17 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 6.3802,
+                  "X": 7.4219,
                   "Y": 0.4032
                 },
                 "PreSize": {
                   "X": 0.625,
                   "Y": 0.3226
                 },
-                "LeftMargin": 816.6639,
-                "RightMargin": -768.6639,
-                "TopMargin": 54.0002,
-                "BottomMargin": 29.9998,
+                "LeftMargin": 950.0,
+                "RightMargin": -902.0,
+                "TopMargin": 54.0003,
+                "BottomMargin": 29.9997,
                 "Tag": 63,
                 "ActionTag": 1694826613,
                 "Size": {
@@ -1269,8 +1820,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 104.2879,
-                  "Y": 26.888
+                  "X": 66.7879,
+                  "Y": 14.388
                 },
                 "Scale": {
                   "ScaleX": 1.5,
@@ -1279,17 +1830,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.8147,
-                  "Y": 0.2168
+                  "X": 0.5218,
+                  "Y": 0.116
                 },
                 "PreSize": {
                   "X": 0.6016,
                   "Y": 0.2581
                 },
-                "LeftMargin": 65.7879,
-                "RightMargin": -14.7879,
-                "TopMargin": 81.112,
-                "BottomMargin": 10.888,
+                "LeftMargin": 28.2879,
+                "RightMargin": 22.7121,
+                "TopMargin": 93.612,
+                "BottomMargin": -1.612,
                 "Tag": 346,
                 "ActionTag": -2070685923,
                 "Size": {
@@ -1318,7 +1869,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 172.0769,
+                  "X": 142.0768,
                   "Y": 34.4141
                 },
                 "Scale": {
@@ -1332,15 +1883,15 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 1.3444,
+                  "X": 1.11,
                   "Y": 0.2775
                 },
                 "PreSize": {
                   "X": 1.5625,
                   "Y": 0.2903
                 },
-                "LeftMargin": 172.0769,
-                "RightMargin": -244.0769,
+                "LeftMargin": 142.0768,
+                "RightMargin": -214.0768,
                 "TopMargin": 71.5859,
                 "BottomMargin": 16.4141,
                 "Tag": 524,
@@ -1367,7 +1918,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1100.0,
+                  "X": 1140.0,
                   "Y": 60.0
                 },
                 "Scale": {
@@ -1377,15 +1928,15 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 8.5938,
+                  "X": 8.9063,
                   "Y": 0.4839
                 },
                 "PreSize": {
                   "X": 1.5391,
                   "Y": 0.7823
                 },
-                "LeftMargin": 1001.5,
-                "RightMargin": -1070.5,
+                "LeftMargin": 1041.5,
+                "RightMargin": -1110.5,
                 "TopMargin": 15.5,
                 "BottomMargin": 11.5,
                 "Tag": 36,
@@ -1396,6 +1947,214 @@
                 },
                 "Name": "win",
                 "ctype": "SpriteObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "胡牌次数：888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 420.0,
+                  "Y": 76.2499
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 3.2812,
+                  "Y": 0.6149
+                },
+                "PreSize": {
+                  "X": 1.7266,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 420.0,
+                "RightMargin": -513.0,
+                "TopMargin": 30.7501,
+                "BottomMargin": 59.2499,
+                "Tag": 50,
+                "ActionTag": 616460902,
+                "Size": {
+                  "X": 221.0,
+                  "Y": 34.0
+                },
+                "Name": "hunum",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "中马个数：8888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 655.0002,
+                  "Y": 76.2499
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 5.1172,
+                  "Y": 0.6149
+                },
+                "PreSize": {
+                  "X": 1.8594,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 655.0002,
+                "RightMargin": -765.0002,
+                "TopMargin": 30.7501,
+                "BottomMargin": 59.2499,
+                "Tag": 51,
+                "ActionTag": 2035507685,
+                "Size": {
+                  "X": 238.0,
+                  "Y": 34.0
+                },
+                "Name": "manum",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "暗杠次数：888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 420.0,
+                  "Y": 36.25
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 3.2812,
+                  "Y": 0.2923
+                },
+                "PreSize": {
+                  "X": 1.7266,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 420.0,
+                "RightMargin": -513.0,
+                "TopMargin": 70.75,
+                "BottomMargin": 19.25,
+                "Tag": 52,
+                "ActionTag": 950015175,
+                "Size": {
+                  "X": 221.0,
+                  "Y": 34.0
+                },
+                "Name": "gang1num",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "明杠次数：8888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 655.0002,
+                  "Y": 36.25
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 5.1172,
+                  "Y": 0.2923
+                },
+                "PreSize": {
+                  "X": 1.8594,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 655.0002,
+                "RightMargin": -765.0002,
+                "TopMargin": 70.75,
+                "BottomMargin": 19.25,
+                "Tag": 53,
+                "ActionTag": 1855088286,
+                "Size": {
+                  "X": 238.0,
+                  "Y": 34.0
+                },
+                "Name": "gang2num",
+                "ctype": "TextObjectData"
               }
             ],
             "ActionTag": -698456146,
@@ -1447,6 +2206,51 @@
               {
                 "FileData": {
                   "Type": "Normal",
+                  "Path": "gameEndNew/xiaodiban.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 157,
+                "Scale9OriginY": 32,
+                "Scale9Width": 162,
+                "Scale9Height": 35,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 659.9999,
+                  "Y": 55.0002
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 5.1562,
+                  "Y": 0.4435
+                },
+                "PreSize": {
+                  "X": 3.9063,
+                  "Y": 0.7984
+                },
+                "LeftMargin": 409.9999,
+                "RightMargin": -781.9999,
+                "TopMargin": 19.4998,
+                "BottomMargin": 5.5002,
+                "Tag": 41,
+                "ActionTag": 531767068,
+                "Size": {
+                  "X": 500.0,
+                  "Y": 99.0
+                },
+                "Name": "tipsbk",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
                   "Path": "gameEndNew/Photo_frame_02.png",
                   "Plist": ""
                 },
@@ -1492,7 +2296,7 @@
               {
                 "IsCustomSize": true,
                 "FontSize": 36,
-                "LabelText": "姓名姓名姓名姓名",
+                "LabelText": "姓名姓名姓名",
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -1508,7 +2312,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 163.5793,
+                  "X": 133.5792,
                   "Y": 70.9537
                 },
                 "Scale": {
@@ -1522,21 +2326,21 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 1.278,
+                  "X": 1.0436,
                   "Y": 0.5722
                 },
                 "PreSize": {
-                  "X": 2.25,
+                  "X": 2.0313,
                   "Y": 0.2903
                 },
-                "LeftMargin": 163.5793,
-                "RightMargin": -323.5793,
+                "LeftMargin": 133.5792,
+                "RightMargin": -265.5792,
                 "TopMargin": 35.0463,
                 "BottomMargin": 52.9537,
                 "Tag": 65,
                 "ActionTag": 1711474673,
                 "Size": {
-                  "X": 288.0,
+                  "X": 260.0,
                   "Y": 36.0
                 },
                 "Name": "name",
@@ -1561,7 +2365,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 166.3285,
+                  "X": 136.3284,
                   "Y": 22.2012
                 },
                 "Scale": {
@@ -1575,15 +2379,15 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 1.2994,
+                  "X": 1.0651,
                   "Y": 0.179
                 },
                 "PreSize": {
                   "X": 1.5625,
                   "Y": 0.2903
                 },
-                "LeftMargin": 166.3285,
-                "RightMargin": -238.3285,
+                "LeftMargin": 136.3284,
+                "RightMargin": -208.3284,
                 "TopMargin": 83.7988,
                 "BottomMargin": 4.2012,
                 "Tag": 523,
@@ -1613,7 +2417,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 816.6639,
+                  "X": 950.0,
                   "Y": 49.9995
                 },
                 "Scale": {
@@ -1627,15 +2431,15 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 6.3802,
+                  "X": 7.4219,
                   "Y": 0.4032
                 },
                 "PreSize": {
                   "X": 0.625,
                   "Y": 0.3226
                 },
-                "LeftMargin": 816.6639,
-                "RightMargin": -768.6639,
+                "LeftMargin": 950.0,
+                "RightMargin": -902.0,
                 "TopMargin": 54.0005,
                 "BottomMargin": 29.9995,
                 "Tag": 69,
@@ -1662,8 +2466,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 104.2611,
-                  "Y": 25.9172
+                  "X": 66.761,
+                  "Y": 13.4172
                 },
                 "Scale": {
                   "ScaleX": 1.5,
@@ -1672,17 +2476,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.8145,
-                  "Y": 0.209
+                  "X": 0.5216,
+                  "Y": 0.1082
                 },
                 "PreSize": {
                   "X": 0.6016,
                   "Y": 0.2581
                 },
-                "LeftMargin": 65.7611,
-                "RightMargin": -14.7611,
-                "TopMargin": 82.0828,
-                "BottomMargin": 9.9172,
+                "LeftMargin": 28.261,
+                "RightMargin": 22.739,
+                "TopMargin": 94.5828,
+                "BottomMargin": -2.5828,
                 "Tag": 345,
                 "ActionTag": 426581602,
                 "Size": {
@@ -1707,8 +2511,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1100.0,
-                  "Y": 60.0
+                  "X": 1140.0,
+                  "Y": 60.0001
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1717,17 +2521,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 8.5938,
+                  "X": 8.9063,
                   "Y": 0.4839
                 },
                 "PreSize": {
                   "X": 1.5391,
                   "Y": 0.7823
                 },
-                "LeftMargin": 1001.5,
-                "RightMargin": -1070.5,
-                "TopMargin": 15.5,
-                "BottomMargin": 11.5,
+                "LeftMargin": 1041.5,
+                "RightMargin": -1110.5,
+                "TopMargin": 15.4999,
+                "BottomMargin": 11.5001,
                 "Tag": 37,
                 "ActionTag": 778416962,
                 "Size": {
@@ -1736,6 +2540,214 @@
                 },
                 "Name": "win",
                 "ctype": "SpriteObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "胡牌次数：888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 420.0003,
+                  "Y": 76.2495
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 3.2813,
+                  "Y": 0.6149
+                },
+                "PreSize": {
+                  "X": 1.7266,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 420.0003,
+                "RightMargin": -513.0002,
+                "TopMargin": 30.7505,
+                "BottomMargin": 59.2495,
+                "Tag": 54,
+                "ActionTag": -572230648,
+                "Size": {
+                  "X": 221.0,
+                  "Y": 34.0
+                },
+                "Name": "hunum",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "中马个数：8888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 655.0005,
+                  "Y": 76.2495
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 5.1172,
+                  "Y": 0.6149
+                },
+                "PreSize": {
+                  "X": 1.8594,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 655.0005,
+                "RightMargin": -765.0005,
+                "TopMargin": 30.7505,
+                "BottomMargin": 59.2495,
+                "Tag": 55,
+                "ActionTag": -1465837619,
+                "Size": {
+                  "X": 238.0,
+                  "Y": 34.0
+                },
+                "Name": "manum",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "暗杠次数：888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 420.0003,
+                  "Y": 36.2501
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 3.2813,
+                  "Y": 0.2923
+                },
+                "PreSize": {
+                  "X": 1.7266,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 420.0003,
+                "RightMargin": -513.0002,
+                "TopMargin": 70.7499,
+                "BottomMargin": 19.2501,
+                "Tag": 56,
+                "ActionTag": -2137017939,
+                "Size": {
+                  "X": 221.0,
+                  "Y": 34.0
+                },
+                "Name": "gang1num",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 34,
+                "LabelText": "明杠次数：8888",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 655.0005,
+                  "Y": 36.2501
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 5.1172,
+                  "Y": 0.2923
+                },
+                "PreSize": {
+                  "X": 1.8594,
+                  "Y": 0.2742
+                },
+                "LeftMargin": 655.0005,
+                "RightMargin": -765.0005,
+                "TopMargin": 70.7499,
+                "BottomMargin": 19.2501,
+                "Tag": 57,
+                "ActionTag": 1655269482,
+                "Size": {
+                  "X": 238.0,
+                  "Y": 34.0
+                },
+                "Name": "gang2num",
+                "ctype": "TextObjectData"
               }
             ],
             "ActionTag": 1196365483,
@@ -1811,7 +2823,8 @@
         "gameEndNew/Photo_frame_01.png",
         "gameEndNew/Photo_frame_02.png",
         "gameEndNew/t_big_win.png",
-        "gameEndNew/t_end.png"
+        "gameEndNew/t_end.png",
+        "gameEndNew/xiaodiban.png"
       ],
       "ctype": "GameFileData"
     }
