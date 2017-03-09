@@ -32,24 +32,24 @@
                 <PreSize X="0.8086" Y="0.1464" />
                 <FileData Type="Normal" Path="dissolveRoomNew/t_dissolution_06.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="msg" ActionTag="-1709109701" Tag="165" IconVisible="False" LeftMargin="100.0404" RightMargin="98.9596" TopMargin="129.7664" BottomMargin="150.2336" FontSize="32" LabelText="请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="496.0000" Y="198.0000" />
+              <AbstractNodeData Name="msg" ActionTag="-1709109701" Tag="165" IconVisible="False" LeftMargin="48.0404" RightMargin="46.9596" TopMargin="68.7664" BottomMargin="89.2336" IsCustomSize="True" FontSize="28" LabelText="请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="600.0000" Y="320.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="348.0404" Y="249.2336" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="228" G="192" B="112" />
                 <PrePosition X="0.5008" Y="0.5214" />
-                <PreSize X="0.7137" Y="0.4142" />
+                <PreSize X="0.8633" Y="0.6695" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="yes" ActionTag="-1513567581" Tag="164" IconVisible="False" LeftMargin="371.5109" RightMargin="153.4891" TopMargin="343.9977" BottomMargin="69.0023" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="yes" ActionTag="-1513567581" Tag="164" IconVisible="False" LeftMargin="371.5106" RightMargin="153.4894" TopMargin="379.9977" BottomMargin="33.0023" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="170.0000" Y="65.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="456.5109" Y="101.5023" />
+                <Position X="456.5106" Y="65.5023" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6569" Y="0.2123" />
+                <PrePosition X="0.6568" Y="0.1370" />
                 <PreSize X="0.2446" Y="0.1360" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
@@ -58,13 +58,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="del" ActionTag="-418384622" Tag="28" IconVisible="False" LeftMargin="156.4496" RightMargin="368.5504" TopMargin="343.5705" BottomMargin="69.4295" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="del" ActionTag="-418384622" Tag="28" IconVisible="False" LeftMargin="156.4496" RightMargin="368.5504" TopMargin="379.5705" BottomMargin="33.4295" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="170.0000" Y="65.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="241.4496" Y="101.9295" />
+                <Position X="241.4496" Y="65.9295" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3474" Y="0.2132" />
+                <PrePosition X="0.3474" Y="0.1379" />
                 <PreSize X="0.2446" Y="0.1360" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />

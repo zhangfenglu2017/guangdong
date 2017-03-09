@@ -1,6 +1,6 @@
 {
   "ID": "0645ce54-1149-4905-accd-dc5be4331fef",
-  "Version": "2.3.4",
+  "Version": "3.10.0.0",
   "Name": "EndRoom",
   "Content": {
     "Content": {
@@ -158,7 +158,7 @@
                 "ctype": "SpriteObjectData"
               },
               {
-                "FontSize": 24,
+                "FontSize": 32,
                 "LabelText": "玩家[abcdhdfafdsij]申请解散房间\n玩家[abcdhdfafdsij]申请解散房间\n玩家[abcdhdfafdsij]申请解散房间",
                 "OutlineColor": {
                   "G": 0,
@@ -194,18 +194,18 @@
                   "Y": 0.628
                 },
                 "PreSize": {
-                  "X": 0.5353,
-                  "Y": 0.1506
+                  "X": 0.7137,
+                  "Y": 0.2071
                 },
-                "LeftMargin": 159.3899,
-                "RightMargin": 163.6101,
-                "TopMargin": 141.8161,
-                "BottomMargin": 264.1839,
+                "LeftMargin": 97.3899,
+                "RightMargin": 101.6101,
+                "TopMargin": 128.3161,
+                "BottomMargin": 250.6839,
                 "Tag": 42,
                 "ActionTag": 2068191731,
                 "Size": {
-                  "X": 372.0,
-                  "Y": 72.0
+                  "X": 496.0,
+                  "Y": 99.0
                 },
                 "Name": "info",
                 "ctype": "TextObjectData"

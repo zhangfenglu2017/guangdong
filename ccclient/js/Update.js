@@ -23,7 +23,7 @@
         else
         {
             bar.setPercent(p);
-            loadTitle.setString("资源正在加载中(" + p + "%)");
+            loadTitle.setString("资源正在加载中(" + parseInt(p) + "%)");
             isAlready = true;
         }
     }

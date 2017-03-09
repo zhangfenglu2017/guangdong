@@ -1,6 +1,6 @@
 {
   "ID": "100295f5-b0b6-4d55-9afc-3406c8224981",
-  "Version": "2.3.4",
+  "Version": "3.10.0.0",
   "Name": "SameIP",
   "Content": {
     "Content": {
@@ -158,8 +158,10 @@
                 "ctype": "ImageViewObjectData"
               },
               {
-                "FontSize": 32,
+                "IsCustomSize": true,
+                "FontSize": 28,
                 "LabelText": "请添加联系以下微信号,进行充值。\n请添加联系以下微信号,进行充值。\n请添加联系以下微信号,进行充值。\n请添加联系以下微信号,进行充值。\n请添加联系以下微信号,进行充值。\n请添加联系以下微信号,进行充值",
+                "VerticalAlignmentType": "VT_Center",
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -194,18 +196,18 @@
                   "Y": 0.5214
                 },
                 "PreSize": {
-                  "X": 0.7137,
-                  "Y": 0.4142
+                  "X": 0.8633,
+                  "Y": 0.6695
                 },
-                "LeftMargin": 100.0404,
-                "RightMargin": 98.9596,
-                "TopMargin": 129.7664,
-                "BottomMargin": 150.2336,
+                "LeftMargin": 48.0404,
+                "RightMargin": 46.9596,
+                "TopMargin": 68.7664,
+                "BottomMargin": 89.2336,
                 "Tag": 165,
                 "ActionTag": -1709109701,
                 "Size": {
-                  "X": 496.0,
-                  "Y": 198.0
+                  "X": 600.0,
+                  "Y": 320.0
                 },
                 "Name": "msg",
                 "ctype": "TextObjectData"
@@ -255,8 +257,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 456.5109,
-                  "Y": 101.5023
+                  "X": 456.5106,
+                  "Y": 65.5023
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -265,17 +267,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.6569,
-                  "Y": 0.2123
+                  "X": 0.6568,
+                  "Y": 0.137
                 },
                 "PreSize": {
                   "X": 0.2446,
                   "Y": 0.136
                 },
-                "LeftMargin": 371.5109,
-                "RightMargin": 153.4891,
-                "TopMargin": 343.9977,
-                "BottomMargin": 69.0023,
+                "LeftMargin": 371.5106,
+                "RightMargin": 153.4894,
+                "TopMargin": 379.9977,
+                "BottomMargin": 33.0023,
                 "Tag": 164,
                 "ActionTag": -1513567581,
                 "Size": {
@@ -331,7 +333,7 @@
                 },
                 "Position": {
                   "X": 241.4496,
-                  "Y": 101.9295
+                  "Y": 65.9295
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -341,7 +343,7 @@
                 "IconVisible": false,
                 "PrePosition": {
                   "X": 0.3474,
-                  "Y": 0.2132
+                  "Y": 0.1379
                 },
                 "PreSize": {
                   "X": 0.2446,
@@ -349,8 +351,8 @@
                 },
                 "LeftMargin": 156.4496,
                 "RightMargin": 368.5504,
-                "TopMargin": 343.5705,
-                "BottomMargin": 69.4295,
+                "TopMargin": 379.5705,
+                "BottomMargin": 33.4295,
                 "Tag": 28,
                 "ActionTag": -418384622,
                 "Size": {

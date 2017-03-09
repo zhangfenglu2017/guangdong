@@ -1,6 +1,6 @@
 {
   "ID": "af0da0c9-3c57-4a75-965c-65635bd7e845",
-  "Version": "2.3.4",
+  "Version": "3.10.0.0",
   "Name": "endAll",
   "Content": {
     "Content": {
@@ -671,6 +671,51 @@
                 },
                 "Name": "id",
                 "ctype": "TextObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/t_big_win.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1100.0,
+                  "Y": 60.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 8.5938,
+                  "Y": 0.4839
+                },
+                "PreSize": {
+                  "X": 1.5391,
+                  "Y": 0.7823
+                },
+                "LeftMargin": 1001.5,
+                "RightMargin": -1070.5,
+                "TopMargin": 15.5,
+                "BottomMargin": 11.5,
+                "Tag": 70,
+                "ActionTag": -394449627,
+                "Size": {
+                  "X": 197.0,
+                  "Y": 97.0
+                },
+                "Name": "win",
+                "ctype": "SpriteObjectData"
               }
             ],
             "ActionTag": 629365591,
@@ -966,6 +1011,51 @@
                 },
                 "Name": "id",
                 "ctype": "TextObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/t_big_win.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1100.0,
+                  "Y": 60.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 8.5938,
+                  "Y": 0.4839
+                },
+                "PreSize": {
+                  "X": 1.5391,
+                  "Y": 0.7823
+                },
+                "LeftMargin": 1001.5,
+                "RightMargin": -1070.5,
+                "TopMargin": 15.5,
+                "BottomMargin": 11.5,
+                "Tag": 35,
+                "ActionTag": -840973001,
+                "Size": {
+                  "X": 197.0,
+                  "Y": 97.0
+                },
+                "Name": "win",
+                "ctype": "SpriteObjectData"
               }
             ],
             "ActionTag": 834103090,
@@ -1261,6 +1351,51 @@
                 },
                 "Name": "id",
                 "ctype": "TextObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/t_big_win.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1100.0,
+                  "Y": 60.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 8.5938,
+                  "Y": 0.4839
+                },
+                "PreSize": {
+                  "X": 1.5391,
+                  "Y": 0.7823
+                },
+                "LeftMargin": 1001.5,
+                "RightMargin": -1070.5,
+                "TopMargin": 15.5,
+                "BottomMargin": 11.5,
+                "Tag": 36,
+                "ActionTag": 1328257467,
+                "Size": {
+                  "X": 197.0,
+                  "Y": 97.0
+                },
+                "Name": "win",
+                "ctype": "SpriteObjectData"
               }
             ],
             "ActionTag": -698456146,
@@ -1556,6 +1691,51 @@
                 },
                 "Name": "fangzhu",
                 "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/t_big_win.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1100.0,
+                  "Y": 60.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 8.5938,
+                  "Y": 0.4839
+                },
+                "PreSize": {
+                  "X": 1.5391,
+                  "Y": 0.7823
+                },
+                "LeftMargin": 1001.5,
+                "RightMargin": -1070.5,
+                "TopMargin": 15.5,
+                "BottomMargin": 11.5,
+                "Tag": 37,
+                "ActionTag": 778416962,
+                "Size": {
+                  "X": 197.0,
+                  "Y": 97.0
+                },
+                "Name": "win",
+                "ctype": "SpriteObjectData"
               }
             ],
             "ActionTag": 1196365483,
@@ -1564,51 +1744,6 @@
               "Y": 124.0
             },
             "Name": "head0",
-            "ctype": "SpriteObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "gameEndNew/t_big_win.png",
-              "Plist": ""
-            },
-            "BlendFunc": {
-              "Src": 1,
-              "Dst": 771
-            },
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 1062.6774,
-              "Y": 572.0001
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.8302,
-              "Y": 0.7944
-            },
-            "PreSize": {
-              "X": 0.1539,
-              "Y": 0.1347
-            },
-            "LeftMargin": 964.1774,
-            "RightMargin": 118.8226,
-            "TopMargin": 99.4999,
-            "BottomMargin": 523.5001,
-            "Tag": 70,
-            "ActionTag": -394449627,
-            "Size": {
-              "X": 197.0,
-              "Y": 97.0
-            },
-            "Name": "win",
             "ctype": "SpriteObjectData"
           },
           {

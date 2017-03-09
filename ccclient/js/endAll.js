@@ -41,6 +41,14 @@ function SetEndAllPlayerUI(node,off)
 			_text:function(){return pl.winall+""; } 
 		},
 
+        win:
+        {
+            _visible:function ()
+            {
+                return false;
+            }
+        },
+
         fangzhu:
         {
             _run:function ()
@@ -60,7 +68,8 @@ function SetEndAllPlayerUI(node,off)
     jsclient.loadWxHead(pl.info.headimgurl,node,65,60,0.2,1);
     //大赢家
     var MaxWinAll = 0;
-    var win = node.getParent().getChildByName("win");
+    var win = node.getChildByName("win");
+
     for (var i = 0; i < 4; i++)
     {
         var play = getUIPlayer(i);
@@ -70,7 +79,6 @@ function SetEndAllPlayerUI(node,off)
     if (MaxWinAll > 0 && MaxWinAll == pl.winall)
     {
         win.visible = true;
-        win.y = node.y;
     }
 }
 
@@ -114,15 +122,6 @@ var EndAllLayer = cc.Layer.extend({
 				jsclient.endallui.removeFromParent(true);
 			}
 		},
-        
-        win:
-        {
-            _layout: [[0.18,0.18], [0.82, 0.8], [0,0]],
-            _run:function()
-            {
-                this.visible = false;
-            }
-        },
 
         head0:
         {

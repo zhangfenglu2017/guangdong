@@ -1,7 +1,7 @@
 {
    "servers":"120.76.200.158:15010:15019"
   ,"serversSelect":[600,400]
-  ,"wxShareUrl":"http://gdmj.coolgamebox.com:800/gdmj/HappyPlay/download.html"
+  ,"wxShareUrl":"http://download.happyplaygame.net"
   ,"voiceUrl":"http://124.232.153.18:3000/symj/"
   ,"guestLogin":false
   ,"coinRoom":false

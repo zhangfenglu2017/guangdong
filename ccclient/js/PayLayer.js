@@ -63,27 +63,28 @@ var PayLayer = cc.Layer.extend({
 					delete jsclient.payLayerui;
 				}
 			},
-			weixinBuy:{
-				_text:function(){//提审后注意修改
-					//if(!jsclient.data.isShop){//shop
-					//	return jsclient.remoteCfg.weixinBuy;
-					//}else return "";
-					return jsclient.remoteCfg.weixinBuy;
+			weixinBuy:
+            {
+				_text:function()
+                {
+                    //提审后注意修改
+                    // return "";
+                    return jsclient.remoteCfg.weixinBuy;
 				}
 			},
-			lessMoney:{
-				_visible:function(){
-					//return jsclient.uiPara.lessMoney;
-					//return true;
+			lessMoney:
+            {
+				_visible:function()
+                {
 					//提审关闭
-					//if(!jsclient.data.isShop){//shop
-					//	return true;
-					//}
-					return true;
+                    return true;
+					// return false;
 				}
 			},
-			text:{
-				_run:function(){
+			text:
+            {
+				_run:function()
+                {
 					payLayerText = this;
 				}
 			}
@@ -91,14 +92,17 @@ var PayLayer = cc.Layer.extend({
 		
 
     },
-    ctor:function () {
+    ctor:function ()
+    {
         this._super();
         var payLayerui = ccs.load("res/PayLayer.json");
 		ConnectUI2Logic(payLayerui.node,this.jsBind);
         this.addChild(payLayerui.node);
 		jsclient.payLayerui=this;
 		if(jsclient.data.isShop){//shop
-			payLayerText.setString("请联系所在群主或添加以下微信号。");//提审这么写
+			//提审这么写
+			// payLayerText.setString("暂未开放");
+            payLayerText.setString("请联系所在群主或添加以下微信号。");
 		}else{//not shop
 			payLayerText.setString("请联系所在群主或添加以下微信号。");
 		}

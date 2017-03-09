@@ -1,3 +1,10 @@
+jsclient.config =
+{
+    geog:function ()
+    {
+        return  jsb.fileUtils.isFileExist("res/geog.txt");
+    }
+};
 
 function stopEffect(id)
 {
@@ -162,7 +169,7 @@ jsclient.loadWxHead = function(url,node, posx, posy, scale, zindex, name, tag)
 
 jsclient.showPlayerInfo=function(info)
 {
-	jsclient.uiPara=info;
+	jsclient.uiPara = info;
 	jsclient.Scene.addChild(new UserInfoLayer());
 };
 
@@ -282,16 +289,18 @@ jsclient.joinGame=function(tableid)
 jsclient.createRoom=function(round,canEatHu,withWind,canEat,noBigWin,canHu7,canHuWith258,withZhong,horse)
 {
 	jsclient.block();
-	jsclient.gamenet.request("pkplayer.handler.CreateVipTable",{round:round,canEatHu:canEatHu,withWind:withWind,canEat:canEat,noBigWin:noBigWin,canHu7:canHu7,canHuWith258:canHuWith258,withZhong:withZhong, horse:horse},
-	function(rtn)
-	{
-	   jsclient.unblock();
-	   if(rtn.result==0)
-	   {
-		   jsclient.data.vipTable=rtn.vipTable;
-		   jsclient.joinGame(rtn.vipTable);
-	   }
-	});
+	jsclient.gamenet.request("pkplayer.handler.CreateVipTable",{
+        round:round,canEatHu:canEatHu, withWind:withWind,canEat:canEat,noBigWin:noBigWin,
+        canHu7:canHu7,canHuWith258:canHuWith258,withZhong:withZhong, horse:horse},
+        function(rtn)
+        {
+           jsclient.unblock();
+           if(rtn.result==0)
+           {
+               jsclient.data.vipTable=rtn.vipTable;
+               jsclient.joinGame(rtn.vipTable);
+           }
+        });
 };
 
 jsclient.tickGame=function(tickType)
@@ -729,7 +738,6 @@ jsclient.native =
 	 try{
 		 if (cc.sys.OS_ANDROID == cc.sys.os)
 		 {
-
 			 jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "StartShareWebViewWxSceneSession", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",url, title,description);
 		 }
          else if(cc.sys.OS_IOS==cc.sys.os)
@@ -912,6 +920,11 @@ jsclient.native =
     //计算两个玩家之间的距离
     CalculateLineDistance:function(latitude1, longitude1, latitude2, longitude2)
     {
+        return 0;
+
+        if(latitude1 == 0 || longitude1 == 0|| latitude2 == 0 || longitude2 == 0)
+            return 0;
+
         try{
             if (cc.sys.OS_ANDROID == cc.sys.os)
             {
@@ -921,18 +934,28 @@ jsclient.native =
             }
             else if(cc.sys.OS_IOS==cc.sys.os)
             {
-
+                return jsb.reflection.callStaticMethod("AppController","calculateDistance:lon1:lat2:lon2:",
+                    String(latitude1),String(longitude1),String(latitude2),String(longitude2));
             }
+            else
+            {
+                return 0;
+            }
+
         }
         catch(e)
         {
             jsclient.native.HelloOC("CalculateLineDistance throw: " + JSON.stringify(e));
+            return 0;
         }
+
     },
 
     //获取玩家纬度
     GetLatitudePos:function()
     {
+        return 0;
+
         try{
             if (cc.sys.OS_ANDROID == cc.sys.os)
             {
@@ -940,18 +963,25 @@ jsclient.native =
             }
             else if(cc.sys.OS_IOS==cc.sys.os)
             {
-
+                return String(jsb.reflection.callStaticMethod("AppController","getLatitudePos"));
+            }
+            else
+            {
+                return 0;
             }
         }
         catch(e)
         {
             jsclient.native.HelloOC("getLatitudePos throw: " + JSON.stringify(e));
+            return 0;
         }
     },
 
     //获取玩家经度
     GetLongitudePos:function()
     {
+        return 0;
+
         try{
             if (cc.sys.OS_ANDROID == cc.sys.os)
             {
@@ -959,12 +989,17 @@ jsclient.native =
             }
             else if(cc.sys.OS_IOS==cc.sys.os)
             {
-
+                return jsb.reflection.callStaticMethod("AppController","getLongitudePos");
+            }
+            else
+            {
+                return 0;
             }
         }
         catch(e)
         {
-            jsclient.native.HelloOC("getLatitudePos throw: " + JSON.stringify(e));
+            jsclient.native.HelloOC("getLongitudePos throw: " + JSON.stringify(e));
+            return 0;
         }
     },
 };
@@ -1111,17 +1146,19 @@ var JSScene = cc.Scene.extend({
 
             },
 
-            onKeyReleased: function (key, event) {
+            onKeyReleased: function (key, event)
+            {
+                if (cc.sys.OS_WINDOWS != cc.sys.os)
+                    return;
 
                 if(key==82)
                     jsclient.restartGame();
                 if(key == 73 && jsclient.homeui)
                     jsclient.changeIdLayer();
- 
                 if(key == 67 && jsclient.homeui)
                     jsclient.exportDataLayer();
 
-                // cc.log("Key with keycode %d released", key);
+                cc.log("Key with keycode %d released", key);
             }
         },
 
@@ -1167,5 +1204,8 @@ var JSScene = cc.Scene.extend({
         // this.addChild(new EndOneLayer());
         // this.addChild(new EndAllLayer());
         // this.addChild(newReplayLayer());
+
+       
+
     }
 });

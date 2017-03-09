@@ -134,9 +134,9 @@ bool AppDelegate::applicationDidFinishLaunching()
 		auto  str2 =CCFileUtils::getInstance()->getStringFromFile("res/project.manifest");
 		auto  cstr1 = str1.c_str();
 		auto  cstr2 = str2.c_str();
-		d.Parse<rapidjson::kParseDefaultFlags>(cstr1); // 0¬±√å¬†√¶∆í¬®¬ª≈ì¬µ∆íŒ©‚Äö≈íÀÜ‚àëŒ©¬†Œ©¬£¬™
+		d.Parse<rapidjson::kParseDefaultFlags>(cstr1); // 0¬¨¬±‚àö√•¬¨‚Ä†‚àö¬∂‚àÜ√≠¬¨¬Æ¬¨¬™‚âà√¨¬¨¬µ‚àÜ√≠≈í¬©‚Äö√Ñ√∂‚âà√≠√Ä√ú‚Äö√†√´≈í¬©¬¨‚Ä†≈í¬©¬¨¬£¬¨‚Ñ¢
 		std::string   up_version =	d["version"].GetString();
-		r.Parse<rapidjson::kParseDefaultFlags>(cstr2); // 0¬±√å¬†√¶∆í¬®¬ª≈ì¬µ∆íŒ©‚Äö≈íÀÜ‚àëŒ©¬†Œ©¬£¬™
+		r.Parse<rapidjson::kParseDefaultFlags>(cstr2); // 0¬¨¬±‚àö√•¬¨‚Ä†‚àö¬∂‚àÜ√≠¬¨¬Æ¬¨¬™‚âà√¨¬¨¬µ‚àÜ√≠≈í¬©‚Äö√Ñ√∂‚âà√≠√Ä√ú‚Äö√†√´≈í¬©¬¨‚Ä†≈í¬©¬¨¬£¬¨‚Ñ¢
 		std::string res_version = r["version"].GetString();
 	
 		auto num =	res_version.compare(up_version);
@@ -154,7 +154,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     fullVersion = IosTools::getFullVersion();
 #endif
     
-	//¬´¬Ø‚àë√∑¬†¬´‚àë√í≈í‚Ñ¢‚àÜ√õ‚Äú¬µ‚àû√ä¬™œÄ¬†¬´appstore‚àû√ä¬±�?
+	//¬¨¬¥¬¨√ò‚Äö√†√´‚àö‚àë¬¨‚Ä†¬¨¬¥‚Äö√†√´‚àö√≠‚âà√≠‚Äö√ë¬¢‚Äö√†√ú‚àö√µ‚Äö√Ñ√∫¬¨¬µ‚Äö√†√ª‚àö√§¬¨‚Ñ¢≈ì√Ñ¬¨‚Ä†¬¨¬¥appstore‚Äö√†√ª‚àö√§¬¨¬±‚à?
 	CCFileUtils::getInstance()->writeStringToFile(fullVersion.c_str(),CCFileUtils::getInstance()->getWritablePath()+"majiangios.txt");
 //	CCFileUtils::getInstance()->removeFile(CCFileUtils::getInstance()->getWritablePath()+"majiangios.txt");
 
@@ -284,6 +284,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     ScriptingCore::getInstance()->runScript("main.js");
 
+    //ScriptingCore::getInstance()->evalString("jsclient.config.ver = 1000000"); //1.0版本 代表001 000 000 1.0.1 代表001 000 001
 	
     return true;
 }

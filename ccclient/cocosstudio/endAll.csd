@@ -142,6 +142,17 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
+              <AbstractNodeData Name="win" ActionTag="-394449627" Tag="70" IconVisible="False" LeftMargin="1001.5000" RightMargin="-1070.5000" TopMargin="15.5000" BottomMargin="11.5000" ctype="SpriteObjectData">
+                <Size X="197.0000" Y="97.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="1100.0000" Y="60.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="8.5938" Y="0.4839" />
+                <PreSize X="1.5391" Y="0.7823" />
+                <FileData Type="Normal" Path="gameEndNew/t_big_win.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="265.8893" Y="158.5323" />
@@ -207,6 +218,17 @@
                 <PreSize X="1.5625" Y="0.2903" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="win" ActionTag="-840973001" Tag="35" IconVisible="False" LeftMargin="1001.5000" RightMargin="-1070.5000" TopMargin="15.5000" BottomMargin="11.5000" ctype="SpriteObjectData">
+                <Size X="197.0000" Y="97.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="1100.0000" Y="60.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="8.5938" Y="0.4839" />
+                <PreSize X="1.5391" Y="0.7823" />
+                <FileData Type="Normal" Path="gameEndNew/t_big_win.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -274,6 +296,17 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
+              <AbstractNodeData Name="win" ActionTag="1328257467" Tag="36" IconVisible="False" LeftMargin="1001.5000" RightMargin="-1070.5000" TopMargin="15.5000" BottomMargin="11.5000" ctype="SpriteObjectData">
+                <Size X="197.0000" Y="97.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="1100.0000" Y="60.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="8.5938" Y="0.4839" />
+                <PreSize X="1.5391" Y="0.7823" />
+                <FileData Type="Normal" Path="gameEndNew/t_big_win.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="265.8893" Y="435.4744" />
@@ -340,6 +373,17 @@
                 <PreSize X="0.4219" Y="0.2339" />
                 <FileData Type="Normal" Path="png/fangzhu.png" Plist="" />
               </AbstractNodeData>
+              <AbstractNodeData Name="win" ActionTag="778416962" Tag="37" IconVisible="False" LeftMargin="1001.5000" RightMargin="-1070.5000" TopMargin="15.5000" BottomMargin="11.5000" ctype="SpriteObjectData">
+                <Size X="197.0000" Y="97.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="1100.0000" Y="60.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="8.5938" Y="0.4839" />
+                <PreSize X="1.5391" Y="0.7823" />
+                <FileData Type="Normal" Path="gameEndNew/t_big_win.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="265.8893" Y="570.4282" />
@@ -348,17 +392,6 @@
             <PrePosition X="0.2077" Y="0.7923" />
             <PreSize X="0.1000" Y="0.1722" />
             <FileData Type="Normal" Path="gameEndNew/Photo_frame_01.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="win" ActionTag="-394449627" Tag="70" IconVisible="False" LeftMargin="964.1774" RightMargin="118.8226" TopMargin="99.4999" BottomMargin="523.5001" ctype="SpriteObjectData">
-            <Size X="197.0000" Y="97.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1062.6774" Y="572.0001" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8302" Y="0.7944" />
-            <PreSize X="0.1539" Y="0.1347" />
-            <FileData Type="Normal" Path="gameEndNew/t_big_win.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="table" ActionTag="-78518656" Tag="527" IconVisible="False" LeftMargin="6.2595" RightMargin="999.7405" TopMargin="-1.5237" BottomMargin="188.5237" ctype="SpriteObjectData">

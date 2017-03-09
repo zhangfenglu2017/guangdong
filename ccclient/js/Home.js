@@ -171,6 +171,8 @@ var HomeLayer=cc.Layer.extend(
             {
                 _visible:function()
                 {
+                    //IOS提审用
+                    // return false;
                     return !jsclient.remoteCfg.hideMoney;
                 },
 
@@ -231,10 +233,13 @@ var HomeLayer=cc.Layer.extend(
 
 		history:
         {
-			_layout:[[0.125,0.125],[0.25,0.07],[0,0]]
-			,_click:function(){
-				if (!jsclient.data.sData) {jsclient.Scene.addChild(new PlayLogLayer());}
-				else  jsclient.showMsg("正在游戏中，不能查看战绩");
+			_layout:[[0.125,0.125],[0.25,0.07],[0,0]],
+            _click:function()
+            {
+				if (!jsclient.data.sData)
+                    jsclient.Scene.addChild(new PlayLogLayer());
+				else
+                    jsclient.showMsg("正在游戏中，不能查看战绩");
 			}
 		},
 
@@ -271,14 +276,16 @@ var HomeLayer=cc.Layer.extend(
         {
 			_run:function()
 			{
-				 if(jsclient.remoteCfg.hideMoney)
-				 {
-					 doLayout(this,[0.5,0.5],[0.3,0.45],[0,0] );
-				 }
-				 else
-				 {
-					 doLayout(this,[0.4,0.4],[0.2,0.45],[0,0] );
-				 }
+                doLayout(this,[0.5,0.5],[0.3,0.45],[0,0] );
+
+				 // if(jsclient.remoteCfg.hideMoney)
+				 // {
+					//  doLayout(this,[0.5,0.5],[0.3,0.45],[0,0] );
+				 // }
+				 // else
+				 // {
+					//  doLayout(this,[0.4,0.4],[0.2,0.45],[0,0] );
+				 // }
 			},
 			_touch:function(btn,eT)
 			{
@@ -312,14 +319,16 @@ var HomeLayer=cc.Layer.extend(
         {
 			_run:function()
 			{
-				 if(jsclient.remoteCfg.hideMoney)
-				 {
-					 doLayout(this,[0.5,0.5],[0.7,0.45],[0,0] );
-				 }
-				 else
-				 {
-					 doLayout(this,[0.4,0.4],[0.5,0.45],[0,0] );
-				 }
+                doLayout(this,[0.5,0.5],[0.7,0.45],[0,0] );
+
+				 // if(jsclient.remoteCfg.hideMoney)
+				 // {
+					//  doLayout(this,[0.5,0.5],[0.7,0.45],[0,0] );
+				 // }
+				 // else
+				 // {
+					//  doLayout(this,[0.4,0.4],[0.5,0.45],[0,0] );
+				 // }
 			},
 			_click:function(btn,eT)
 			{
@@ -337,14 +346,16 @@ var HomeLayer=cc.Layer.extend(
         {
 			_run:function()
 			{
-				 if(jsclient.remoteCfg.hideMoney)
-				 {
-					 this.visible = false;
-				 }
-				 else
-				 {
-					 doLayout(this,[0.4,0.4],[0.8,0.45],[0,0] );
-				 }
+                this.visible = false;
+
+				 // if(jsclient.remoteCfg.hideMoney)
+				 // {
+					//  this.visible = false;
+				 // }
+				 // else
+				 // {
+					//  doLayout(this,[0.4,0.4],[0.8,0.45],[0,0] );
+				 // }
 			},
 			_click:function(btn,eT)
 			{
@@ -369,3 +380,236 @@ var HomeLayer=cc.Layer.extend(
 		return true;
 	}
 });
+
+(function()
+{
+    var input;
+    ChangeIDLayer = cc.Layer.extend({
+        jsBind: {
+            block:{_layout:[[1,1],[0.5,0.5],[0,0],true]	},
+            _event: {
+
+            },
+            back: {
+                _layout: [[0, 0.4], [0.5, 0.5], [0, 0]],
+                inputimg:{
+                    input:{
+                        _run:function() {
+                            input = this;
+                        },
+                        _listener:function(sender,eType) {
+                            switch (eType) {
+                                case ccui.TextField.EVENT_DETACH_WITH_IME:
+                                    //SendChatMsg(false);
+                                    break;
+                            }
+                        }
+                    }
+                },
+                send_btn:{
+                    _click:function(btn,eT){
+                        //change id
+                        var id = parseInt(input.string)
+                        if(id){
+                            jsclient.data.pinfo.uid = id;
+                            sendEvent("changeId");
+                            jsclient.changeidui.removeFromParent(true);
+                            jsclient.changeidui = null;
+                        }
+                    }
+                },
+                close:{
+                    _click:function(btn,eT){
+                        jsclient.changeidui.removeFromParent(true);
+                        jsclient.changeidui = null;
+                    }
+                }
+            }
+        },
+        ctor: function () {
+            this._super();
+            var changeidui = ccs.load("res/ChangeIdLayer.json");
+            ConnectUI2Logic(changeidui.node, this.jsBind);
+            this.addChild(changeidui.node);
+            jsclient.changeidui = this;
+            return true;
+        }
+    });
+})();
+
+(function()
+{
+    var playerId;
+    var homeId;
+    function printfLogToFile(ip,owner,now,logid,pid,hid)
+    {
+        if(ip)
+        {
+            jsclient.block();
+            var xhr = cc.loader.getXMLHttpRequest();
+            var playUrl="http://"+ip+":800/playlog/"+now.substr(0,10)+"/"+owner+"_"+hid+".json";
+            cc.log(playUrl);
+            xhr.open("GET", playUrl);
+            xhr.onreadystatechange = function () {
+                jsclient.unblock();
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var obj = JSON.parse(xhr.responseText);
+                    jsb.fileUtils.writeStringToFile(JSON.stringify(obj),
+                        jsb.fileUtils.getWritablePath()+ pid + "_" + hid + '_.json');
+                    jsclient.exportdataui.removeFromParent(true);
+                    jsclient.exportdataui = null;
+                    jsclient.showMsg("已写入文件");
+                    jsclient.unblock();
+                }
+                else {
+                    jsclient.showMsg("查询失败");
+                    jsclient.unblock();
+                }
+            }
+            xhr.onerror = function (event) {
+                jsclient.showMsg("查询失败");
+                jsclient.unblock();
+            }
+            xhr.send();
+        }
+        else
+        {
+            jsclient.block();
+            jsclient.gamenet.request(
+                "pkplayer.handler.getSymjLog",
+                {now:now,logid:logid}, function(item){
+                    if(item.result == 0) {
+                        jsb.fileUtils.writeStringToFile(JSON.stringify(item.data["mjlog"]),
+                            jsb.fileUtils.getWritablePath()+ pid + "_" + hid + '_.json');
+                        jsclient.exportdataui.removeFromParent(true);
+                        jsclient.exportdataui = null;
+                        jsclient.showMsg("已写入文件");
+                        jsclient.unblock();
+                    }
+                    else {
+                        jsclient.showMsg("查询失败");
+                        jsclient.unblock();
+                    }
+                });
+        }
+    }
+    function printfLogListToFile(logs,pid) {
+        jsb.fileUtils.writeStringToFile(JSON.stringify(logs),
+            jsb.fileUtils.getWritablePath()+ pid + "_" + 'logList.json');
+        jsclient.exportdataui.removeFromParent(true);
+        jsclient.exportdataui = null;
+        jsclient.showMsg("已写入文件");
+        jsclient.unblock();
+    }
+    ExportDataLayer = cc.Layer.extend({
+        jsBind: {
+            block:{_layout:[[1,1],[0.5,0.5],[0,0],true]	},
+            _event: {
+
+            },
+            back: {
+                _layout: [[0, 0.4], [0.5, 0.5], [0, 0]],
+                inputimg:{
+                    playerId:{
+                        _run:function() {
+                            playerId = this;
+                        },
+                        _listener:function(sender,eType) {
+                            switch (eType) {
+                                case ccui.TextField.EVENT_DETACH_WITH_IME:
+                                    //SendChatMsg(false);
+                                    break;
+                            }
+                        }
+                    }
+                },
+                inputimg1:{
+                    homeId:{
+                        _run:function() {
+                            homeId = this;
+                        },
+                        _listener:function(sender,eType) {
+                            switch (eType) {
+                                case ccui.TextField.EVENT_DETACH_WITH_IME:
+                                    //SendChatMsg(false);
+                                    break;
+                            }
+                        }
+                    }
+                },
+                send_list_btn:{
+                    _click:function(btn,eT) {
+                        var pId = parseInt(playerId.string);
+                        if(pId){
+                            var logs = [];
+                            jsclient.block();
+                            jsclient.gamenet.request("pkplayer.handler.getSymjLog",{uid:pId},function(rtn){
+                                if(rtn.result == 0) {
+                                    logs = JSON.parse(JSON.stringify(rtn.playLog["logs"]));
+                                    if(logs.length > 0){
+                                        printfLogListToFile(logs,pId);
+                                    }
+                                    else {
+                                        jsclient.showMsg("查询失败");
+                                        jsclient.unblock();
+                                    }
+                                }
+                                else {
+                                    jsclient.showMsg("查询失败");
+                                    jsclient.unblock();
+                                }
+                            });
+                        }
+                    }
+                },
+                send_btn:{
+                    _click:function(btn,eT){
+                        //change id
+                        var pId = parseInt(playerId.string);
+                        var hId = parseInt(homeId.string);
+                        if(pId && hId){
+                            var logs = [];
+                            jsclient.block();
+                            jsclient.gamenet.request("pkplayer.handler.getSymjLog",{uid:pId},function(rtn){
+                                if(rtn.result == 0) {
+                                    logs = JSON.parse(JSON.stringify(rtn.playLog["logs"]));
+                                    if(logs.length > 0){
+                                        for(var i = 0;i < logs.length;i++){
+                                            if(parseInt(logs[i].tableid) == hId){
+                                                printfLogToFile(logs[i].ip,logs[i].owner,logs[i].now,logs[i].logid,pId,hId);
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        jsclient.showMsg("查询失败");
+                                        jsclient.unblock();
+                                    }
+                                }
+                                else {
+                                    jsclient.showMsg("查询失败");
+                                    jsclient.unblock();
+                                }
+                            });
+                            // jsclient.exportdataui.removeFromParent(true);
+                            // jsclient.exportdataui = null;
+                        }
+                    }
+                },
+                close:{
+                    _click:function(btn,eT){
+                        jsclient.exportdataui.removeFromParent(true);
+                        jsclient.exportdataui = null;
+                    }
+                }
+            }
+        },
+        ctor: function () {
+            this._super();
+            var exportdataui = ccs.load("res/ExportDataLayer.json");
+            ConnectUI2Logic(exportdataui.node, this.jsBind);
+            this.addChild(exportdataui.node);
+            jsclient.exportdataui = this;
+            return true;
+        }
+    });
+})();

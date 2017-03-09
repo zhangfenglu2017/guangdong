@@ -63,58 +63,58 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="player0" ActionTag="-1407522131" Tag="42" IconVisible="False" LeftMargin="166.8552" RightMargin="156.1448" TopMargin="110.0023" BottomMargin="343.9977" FontSize="24" LabelText="玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="372.0000" Y="24.0000" />
+              <AbstractNodeData Name="player0" ActionTag="-1407522131" Tag="42" IconVisible="False" LeftMargin="107.8369" RightMargin="91.1631" TopMargin="131.8719" BottomMargin="313.1281" FontSize="32" LabelText="玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="496.0000" Y="33.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="166.8552" Y="355.9977" />
+                <Position X="107.8369" Y="329.6281" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="228" G="192" B="112" />
-                <PrePosition X="0.2401" Y="0.7448" />
-                <PreSize X="0.5353" Y="0.0502" />
+                <PrePosition X="0.1552" Y="0.6896" />
+                <PreSize X="0.7137" Y="0.0690" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="time" ActionTag="570132051" Tag="43" IconVisible="False" LeftMargin="166.8552" RightMargin="156.1448" TopMargin="145.4059" BottomMargin="308.5941" FontSize="24" LabelText="玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="372.0000" Y="24.0000" />
+              <AbstractNodeData Name="time" ActionTag="570132051" Tag="43" IconVisible="False" LeftMargin="107.8369" RightMargin="91.1631" TopMargin="167.2758" BottomMargin="277.7242" FontSize="32" LabelText="玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="496.0000" Y="33.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="166.8552" Y="320.5941" />
+                <Position X="107.8369" Y="294.2242" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="228" G="192" B="112" />
-                <PrePosition X="0.2401" Y="0.6707" />
-                <PreSize X="0.5353" Y="0.0502" />
+                <PrePosition X="0.1552" Y="0.6155" />
+                <PreSize X="0.7137" Y="0.0690" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="player1" ActionTag="-571091661" Tag="44" IconVisible="False" LeftMargin="166.8552" RightMargin="156.1448" TopMargin="180.8087" BottomMargin="273.1913" FontSize="24" LabelText="玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="372.0000" Y="24.0000" />
+              <AbstractNodeData Name="player1" ActionTag="-571091661" Tag="44" IconVisible="False" LeftMargin="107.8369" RightMargin="91.1631" TopMargin="202.6784" BottomMargin="242.3216" FontSize="32" LabelText="玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="496.0000" Y="33.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="166.8552" Y="285.1913" />
+                <Position X="107.8369" Y="258.8216" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="228" G="192" B="112" />
-                <PrePosition X="0.2401" Y="0.5966" />
-                <PreSize X="0.5353" Y="0.0502" />
+                <PrePosition X="0.1552" Y="0.5415" />
+                <PreSize X="0.7137" Y="0.0690" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="player2" ActionTag="569487359" Tag="45" IconVisible="False" LeftMargin="166.8552" RightMargin="156.1448" TopMargin="216.2119" BottomMargin="237.7881" FontSize="24" LabelText="玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="372.0000" Y="24.0000" />
+              <AbstractNodeData Name="player2" ActionTag="569487359" Tag="45" IconVisible="False" LeftMargin="107.8369" RightMargin="91.1631" TopMargin="238.0817" BottomMargin="206.9183" FontSize="32" LabelText="玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="496.0000" Y="33.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="166.8552" Y="249.7881" />
+                <Position X="107.8369" Y="223.4183" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="228" G="192" B="112" />
-                <PrePosition X="0.2401" Y="0.5226" />
-                <PreSize X="0.5353" Y="0.0502" />
+                <PrePosition X="0.1552" Y="0.4674" />
+                <PreSize X="0.7137" Y="0.0690" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="player3" ActionTag="779769533" Tag="46" IconVisible="False" LeftMargin="166.8552" RightMargin="156.1448" TopMargin="251.6147" BottomMargin="202.3853" FontSize="24" LabelText="玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="372.0000" Y="24.0000" />
+              <AbstractNodeData Name="player3" ActionTag="779769533" Tag="46" IconVisible="False" LeftMargin="107.8369" RightMargin="91.1631" TopMargin="273.4844" BottomMargin="171.5156" FontSize="32" LabelText="玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="496.0000" Y="33.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="166.8552" Y="214.3853" />
+                <Position X="107.8369" Y="188.0156" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="228" G="192" B="112" />
-                <PrePosition X="0.2401" Y="0.4485" />
-                <PreSize X="0.5353" Y="0.0502" />
+                <PrePosition X="0.1552" Y="0.3933" />
+                <PreSize X="0.7137" Y="0.0690" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

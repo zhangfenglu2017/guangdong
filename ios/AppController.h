@@ -25,13 +25,19 @@
 
 @class RootViewController;
 #import "wxSDK/WXApi.h"
-@interface AppController : NSObject <UIApplicationDelegate,UIAlertViewDelegate,WXApiDelegate>
+#import <AMapLocationKit/AMapLocationManager.h>
+#import <AMapFoundationKit/AMapServices.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
+
+
+@interface AppController : NSObject <UIApplicationDelegate,UIAlertViewDelegate,WXApiDelegate,AMapLocationManagerDelegate>
 {
     UIWindow *window;
     NSString * access_token;
     NSString * openid;
     NSString * wxappid;
     RootViewController    *viewController;
+    AMapLocationManager * locationManager;
 }
 
 @end

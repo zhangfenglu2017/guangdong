@@ -614,8 +614,8 @@ public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandl
 	 //启动定位
         mlocationClient.startLocation();
         
-        String sha1 = sHA1(this);
-        Log.e("gaode", "广东麻将SHA1:" + sha1);
+//        String sha1 = sHA1(this);
+//        Log.e("gaode", "广东麻将SHA1:" + sha1);
         
     }
 	
@@ -665,12 +665,12 @@ public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandl
 	}
 	
 	//获取纬度坐标
-	public String getLatitudePos(){
+	public String getLatitude(){
 		return this.latitudePos+"";
 	}
 	
 	//获取经度坐标
-	public String getLongitudePos(){
+	public String getLongitude(){
 		return this.longitudePos+"";
 	}
 	
@@ -743,6 +743,16 @@ public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandl
 		}
 		
 		return "0";
+	}
+	
+	//获取纬度坐标
+	public static String getLatitudePos(){
+		return ccActivity.getLatitude();
+	}
+	
+	//获取经度坐标
+	public static String getLongitudePos(){
+		return ccActivity.getLongitude();
 	}
 
 	

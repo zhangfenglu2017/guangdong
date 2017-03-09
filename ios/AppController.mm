@@ -35,6 +35,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UserRecord.h"
+
 @implementation AppController
 
 #pragma mark -
@@ -42,12 +43,17 @@
 
 // cocos2d application instance
 static AppDelegate s_sharedApplication;
-static UserRecord*myRecord=NULL;
+static UserRecord* myRecord=NULL;
 BOOL isRecord = false;
+
+static NSString* latPos;
+static NSString* lonPos;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-     [WXApi registerApp:@"wx073b364e22383a0d"];
+    [self configLocationManager];
+    [WXApi registerApp:@"wx073b364e22383a0d"];
     cocos2d::Application *app = cocos2d::Application::getInstance();
     app->initGLContextAttrs();
     cocos2d::GLViewImpl::convertAttrs();
@@ -93,7 +99,8 @@ BOOL isRecord = false;
     cocos2d::GLView *glview = cocos2d::GLViewImpl::createWithEAGLView(eaglView);
     cocos2d::Director::getInstance()->setOpenGLView(glview);
     
-
+    
+    [self startSerialLocation];
    
     [self addNotBackUpiCloud];
     app->run();
@@ -686,6 +693,88 @@ BOOL isRecord = false;
 
 - (void)dealloc {
     [super dealloc];
+}
+
+- (void)configLocationManager
+{
+    [AMapServices sharedServices].apiKey = @"f04f38274fee86941eef35f91bc813d0";
+    
+    
+    locationManager = [[AMapLocationManager alloc] init];
+    
+    [locationManager setDelegate:self];
+    
+    [locationManager setPausesLocationUpdatesAutomatically:NO];
+    
+    [locationManager setAllowsBackgroundLocationUpdates:YES];
+}
+
+- (void)startSerialLocation
+{
+    //开始定位
+    [locationManager startUpdatingLocation];
+}
+
+- (void)stopSerialLocation
+{
+    //停止定位
+    [locationManager stopUpdatingLocation];
+}
+
+- (void)amapLocationManager:(AMapLocationManager *)manager didFailWithError:(NSError *)error
+{
+    //定位错误
+    NSLog(@"%s, 定位错误amapLocationManager = %@, error = %@", __func__, [manager class], error);
+}
+
+float latitudePos;
+float longitudePos;
+- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location
+{
+    //定位结果
+    NSLog(@"定位结果location:{lat:%f; lon:%f; accuracy:%f}", location.coordinate.latitude, location.coordinate.longitude, location.horizontalAccuracy);
+    
+    latitudePos = location.coordinate.latitude;
+    longitudePos = location.coordinate.longitude;
+    
+    [self stopSerialLocation];
+
+}
+
+
++(NSString*)getLatitudePos//wei du
+{
+    NSString* latPos = [NSString stringWithFormat:@"%6f",latitudePos];
+    
+    return latPos;
+}
+
++(NSString*)getLongitudePos//jing du
+{
+    NSString* lonPos = [NSString stringWithFormat:@"%6f",longitudePos];
+    
+    return lonPos;
+}
+
++(NSString*)calculateDistance:(NSString*)latvar1 lon1:(NSString*)lonvar1 lat2:(NSString*)latvar2 lon2:(NSString*)lonvar2
+{
+    
+    double lat1 = [latvar1 doubleValue];
+    double lon1 = [lonvar1 doubleValue];
+    double lat2 = [latvar2 doubleValue];
+    double lon2 = [lonvar2 doubleValue];
+    
+    double R = 6371004; //chi dao ban jing
+    double dd = M_PI/180;
+    
+    double x1=lat1*dd, x2=lat2*dd;
+    double y1=lon1*dd, y2=lon2*dd;
+    
+    double distance = (2*R*asin(sqrt(2-2*cos(x1)*cos(x2)*cos(y1-y2) - 2*sin(x1)*sin(x2))/2));
+    
+    NSString* disStr = [NSString stringWithFormat:@"%6f",distance];
+    
+    return disStr;
 }
 
 

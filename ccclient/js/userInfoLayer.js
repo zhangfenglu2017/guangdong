@@ -1,20 +1,22 @@
-//Jian
-//2016骞�7鏈�15鏃� 16:46:50
-//涓汉涓婚〉
-
 
 function ShowSameIP(msg)
 {
 	var sameIPUI;
 	var SameIPInfo = cc.Layer.extend({
 	jsBind:{
-		block:{
+		block:
+        {
 			_layout:[[1,1],[0.5,0.5],[0,0],true]
 		},
 		back:
-		{	_layout:[[0.5,0.5],[0.5,0.5],[0,0]],
-		    msg:{
-					_text:function(){      return msg;  }
+		{
+            _layout:[[0.5,0.5],[0.5,0.5],[0,0]],
+		    msg:
+            {
+                _text:function()
+                {
+                    return msg;
+                }
 			},
 			
 			close:
@@ -30,6 +32,7 @@ function ShowSameIP(msg)
 				_click:function()
 				{
 					sameIPUI.removeFromParent(true);
+                    sendEvent("mjgeog");
 				}
 			},
 			del:
@@ -40,13 +43,11 @@ function ShowSameIP(msg)
 					jsclient.delRoom(true);
 				}
 			}
-			
-			 
-		}
-		
 
+		}
     },
-    ctor:function () {
+    ctor:function ()
+    {
         this._super();
 		sameIPUI=this;
         var jsonui = ccs.load("res/SameIP.json");
@@ -57,15 +58,75 @@ function ShowSameIP(msg)
 });	
 
    jsclient.Scene.addChild(new SameIPInfo());
-	
 }
 
+//地理提示框
+function ShowSameGeog(msg)
+{
+    var sameGeogUI;
+    var SameGeogInfo = cc.Layer.extend({
+        jsBind:{
+            block:
+            {
+                _layout:[[1,1],[0.5,0.5],[0,0],true]
+            },
+            back:
+            {
+                _layout:[[0.5,0.5],[0.5,0.5],[0,0]],
+                msg:
+                {
+
+
+                    _text:function()
+                    {
+                        return msg;
+                    }
+                },
+
+                close:
+                {
+                    _click:function()
+                    {
+                        sameGeogUI.removeFromParent(true);
+                    }
+                }
+                ,
+                yes:
+                {
+                    _click:function()
+                    {
+                        sameGeogUI.removeFromParent(true);
+                    }
+                },
+                del:
+                {
+                    _click:function()
+                    {
+                        sameGeogUI.removeFromParent(true);
+                        jsclient.delRoom(true);
+                    }
+                }
+
+            }
+        },
+        ctor:function () {
+            this._super();
+            sameGeogUI=this;
+            var jsonui = ccs.load("res/SameIP.json");
+            ConnectUI2Logic(jsonui.node,this.jsBind);
+            this.addChild(jsonui.node);
+            return true;
+        }
+    });
+
+    jsclient.Scene.addChild(new SameGeogInfo());
+}
 
 (function(){
 
     var pinfo;
-
-    UserInfoLayer = cc.Layer.extend({
+    UserInfoLayer = cc.Layer.extend(
+    {
 	    jsBind:
         {
             block:
@@ -79,9 +140,7 @@ function ShowSameIP(msg)
 
                 _run:function ()
                 {
-                    var selfHead = GetSelfHead();
-                    // var uid = silfHead.uid;
-                    var url = selfHead.url;
+                    var url = pinfo.headimgurl;
                     jsclient.loadWxHead(url,this,181,268,0.2,1);
                 },
 
@@ -123,12 +182,18 @@ function ShowSameIP(msg)
                         _text:function(){ return  pinfo.coin;}
                     }
                 },
-                money: {
-                    _visible: function () {
-                        return !jsclient.remoteCfg.hideMoney;
-                    }
-                    , num: {
-                        _text: function () {
+
+                money:
+                {
+                    _visible: function ()
+                    {
+                         return !jsclient.remoteCfg.hideMoney;
+                       // return false;
+                    },
+                    num:
+                    {
+                        _text: function ()
+                        {
                             return pinfo.money;
                         }
                     }
@@ -139,6 +204,61 @@ function ShowSameIP(msg)
                     _run:function ()
                     {
                         this.zIndex = 2;
+                    }
+                },
+
+                geog:
+                {
+                    _text:function ()
+                    {
+                        return"";
+
+                        var sData=jsclient.data.sData;
+                        if(!sData)
+                            return "";
+
+                        var pls = sData.players;
+                        if(!pls || pls.length <= 0)
+                            return "";
+
+                        var plays = [];
+                        var index = 0;
+                        for(var uid  in pls)
+                        {
+                            var pl = pls[uid];
+                            var selfUid = SelfUid();
+
+                            // log("玩家数据：" + JSON.stringify(pl));
+                            if(pl.info.uid == selfUid)
+                                continue;
+
+                            plays[index] = pl;
+                            index++;
+                        }
+
+                        var ipmsg = "";
+                        for(var i = 0; i < plays.length; i++ )
+                        {
+                            var pi1 = plays[i];
+                            var geogData1 = pi1.info.geogData;
+                            
+                            for (var j = i+1; j < plays.length; j++)
+                            {
+                                var pi2 = plays[j];
+                                var geogData2 = pi2.info.geogData;
+
+                                var distance = jsclient.native.CalculateLineDistance(
+                                    geogData1.latitude, geogData1.longitude, geogData2.latitude, geogData2.longitude);
+
+                                if(distance <= 100  && distance > 0)
+                                {
+                                    ipmsg = ipmsg + unescape(pi1.info.nickname||pi1.info.name) + "和"
+                                    + unescape(pi2.info.nickname||pi2.info.name) + "相距小于" + distance + "米\n";
+                                }
+                            }
+                        }
+
+                        return ipmsg;
                     }
                 }
             }

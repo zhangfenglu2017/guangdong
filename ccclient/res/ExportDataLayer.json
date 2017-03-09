@@ -1,6 +1,6 @@
 {
   "ID": "14faece2-a2b4-4395-ac50-bd5eb803c07c",
-  "Version": "2.3.4",
+  "Version": "3.10.0.0",
   "Name": "ExportDataLayer",
   "Content": {
     "Content": {
@@ -146,6 +146,100 @@
                     "FontSize": 30,
                     "IsCustomSize": true,
                     "LabelText": "",
+                    "PlaceHolderText": "请输入玩家ID",
+                    "MaxLengthEnable": true,
+                    "MaxLengthText": 20,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 154.5757,
+                      "Y": 18.28
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 0,
+                      "G": 0,
+                      "B": 0
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5153,
+                      "Y": 0.3047
+                    },
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 0.8333
+                    },
+                    "LeftMargin": 4.5757,
+                    "RightMargin": -4.5757,
+                    "TopMargin": 16.72,
+                    "BottomMargin": -6.72,
+                    "Tag": 172,
+                    "ActionTag": 1801553502,
+                    "Size": {
+                      "X": 300.0,
+                      "Y": 50.0
+                    },
+                    "Name": "playerId",
+                    "ctype": "TextFieldObjectData"
+                  }
+                ],
+                "ActionTag": -592319972,
+                "Size": {
+                  "X": 300.0,
+                  "Y": 60.0
+                },
+                "Name": "inputimg",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "setting/input.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 217,
+                "Scale9OriginY": 19,
+                "Scale9Width": 226,
+                "Scale9Height": 22,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 220.95,
+                  "Y": 125.92
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4965,
+                  "Y": 0.4579
+                },
+                "PreSize": {
+                  "X": 0.6742,
+                  "Y": 0.2182
+                },
+                "LeftMargin": 70.95,
+                "RightMargin": 74.05,
+                "TopMargin": 119.08,
+                "BottomMargin": 95.92,
+                "Tag": 70,
+                "Children": [
+                  {
+                    "FontSize": 30,
+                    "IsCustomSize": true,
+                    "LabelText": "",
                     "PlaceHolderText": "请输入房间ID",
                     "MaxLengthEnable": true,
                     "MaxLengthText": 20,
@@ -163,9 +257,9 @@
                       "ScaleY": 1.0
                     },
                     "CColor": {
-                      "R": 194,
-                      "G": 169,
-                      "B": 139
+                      "R": 0,
+                      "G": 0,
+                      "B": 0
                     },
                     "IconVisible": false,
                     "PrePosition": {
@@ -180,22 +274,22 @@
                     "RightMargin": -4.5757,
                     "TopMargin": 16.719,
                     "BottomMargin": -6.719,
-                    "Tag": 172,
-                    "ActionTag": 1801553502,
+                    "Tag": 71,
+                    "ActionTag": 528517019,
                     "Size": {
                       "X": 300.0,
                       "Y": 50.0
                     },
-                    "Name": "input",
+                    "Name": "homeId",
                     "ctype": "TextFieldObjectData"
                   }
                 ],
-                "ActionTag": -592319972,
+                "ActionTag": 1189530067,
                 "Size": {
                   "X": 300.0,
                   "Y": 60.0
                 },
-                "Name": "inputimg",
+                "Name": "inputimg1",
                 "ctype": "ImageViewObjectData"
               },
               {
@@ -243,8 +337,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 224.7751,
-                  "Y": 121.1445
+                  "X": 110.5894,
+                  "Y": 52.1307
                 },
                 "Scale": {
                   "ScaleX": 1.05,
@@ -257,17 +351,17 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.5051,
-                  "Y": 0.4405
+                  "X": 0.2485,
+                  "Y": 0.1896
                 },
                 "PreSize": {
                   "X": 0.4045,
                   "Y": 0.1455
                 },
-                "LeftMargin": 134.7751,
-                "RightMargin": 130.2249,
-                "TopMargin": 133.8555,
-                "BottomMargin": 101.1445,
+                "LeftMargin": 20.5894,
+                "RightMargin": 244.4106,
+                "TopMargin": 202.8693,
+                "BottomMargin": 32.1307,
                 "Tag": 174,
                 "ActionTag": 2046280070,
                 "Size": {
@@ -275,6 +369,85 @@
                   "Y": 40.0
                 },
                 "Name": "send_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 18,
+                "ButtonText": "导出战绩列表",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "Default/Button_Press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "Default/Button_Normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 16,
+                "Scale9Height": 14,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 332.5895,
+                  "Y": 52.1308
+                },
+                "Scale": {
+                  "ScaleX": 1.05,
+                  "ScaleY": 1.05
+                },
+                "CColor": {
+                  "R": 0,
+                  "G": 128,
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.7474,
+                  "Y": 0.1896
+                },
+                "PreSize": {
+                  "X": 0.4045,
+                  "Y": 0.1455
+                },
+                "LeftMargin": 242.5895,
+                "RightMargin": 22.4105,
+                "TopMargin": 202.8692,
+                "BottomMargin": 32.1308,
+                "Tag": 289,
+                "ActionTag": -937043249,
+                "Size": {
+                  "X": 180.0,
+                  "Y": 40.0
+                },
+                "Name": "send_list_btn",
                 "ctype": "ButtonObjectData"
               },
               {

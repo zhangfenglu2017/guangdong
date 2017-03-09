@@ -18,10 +18,10 @@
         21,22,23,24,25,26,27,28,29,
 
 
-        31,41,51,61,71,81,91,
-        31,41,51,61,71,81,91,
-        31,41,51,61,71,81,91,
-        31,41,51,61,71,81,91
+        31,41,51,61,81,91,
+        31,41,51,61,81,91,
+        31,41,51,61,81,91,
+        31,41,51,61,81,91
 
     ]
     var s13=[1,9,11,19,21,29,31,41,51,61,71,81,91];
@@ -449,14 +449,20 @@
     {
         //return testCds[(++nextTest)%testCds.length ];
 
-        var rtn=[]; rtn.length=withWind?mjcards.length:(mjcards.length-28);
+        //var rtn=[]; rtn.length=withWind?mjcards.length:(mjcards.length-28);
+        var rtn=[];
+        if(withWind && withZhong) rtn.length= mjcards.length;
+        if(withWind && !withZhong) rtn.length= mjcards.length;
+        if(!withWind && withZhong) rtn.length= mjcards.length -24;
+        if(!withWind && !withZhong) rtn.length= mjcards.length -24;
+        //rtn.length=withWind?mjcards.length:(mjcards.length-24);
 
         for(var i=0;i<rtn.length;i++) rtn[i]=mjcards[i];
-        //if(withZhong){
-        //	for(var i = 0;i < 4;i++){
-        //		rtn.push(71);
-        //	}
-        //}
+        if(withZhong || withWind){
+        	for(var i = 0;i < 4;i++){
+        		rtn.push(71);
+        	}
+        }
         for(var i=0;i<rtn.length;i++)
         {
             var ci=rtn[i];
@@ -464,6 +470,13 @@
             rtn[i]=rtn[j];
             rtn[j]=ci;
         }
+        //查看 初始牌
+        //for(var i=0;i<rtn.length;i++){
+        //    var tt ="";
+        //    tt = tt + rtn[i] + ",";
+        //    console.log(tt);
+        //}
+        //console.log("是否含有红中："+withZhong);
         return rtn;
     }
 

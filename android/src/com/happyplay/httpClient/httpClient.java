@@ -133,14 +133,14 @@ public class httpClient {
             e.printStackTrace();
             ok = 0;
         } finally {
-            try {
-                output.close();
-                System.out.println("success");
-            } catch (IOException e) {
-                System.out.println("fail");
-                e.printStackTrace();
-                ok = 0;
-            }
+//            try {
+//                output.close();
+//                System.out.println("success");
+//            } catch (IOException e) {
+//                System.out.println("fail");
+//                e.printStackTrace();
+//                ok = 0;
+//            }
         }
     }
 }

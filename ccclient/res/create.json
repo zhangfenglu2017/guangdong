@@ -1,6 +1,6 @@
 {
   "ID": "ffcfca0f-c7f4-4aff-a471-47a55ccbb19e",
-  "Version": "2.3.4",
+  "Version": "3.10.0.0",
   "Name": "create",
   "Content": {
     "Content": {
@@ -383,7 +383,7 @@
                 "IconVisible": false,
                 "PrePosition": {
                   "X": 0.1398,
-                  "Y": 0.7813
+                  "Y": 0.7812
                 },
                 "PreSize": {
                   "X": 0.1452,
@@ -470,17 +470,17 @@
                     },
                     "PreSize": {
                       "X": 3.8519,
-                      "Y": 3.8667
+                      "Y": 4.3333
                     },
                     "LeftMargin": 155.9759,
                     "RightMargin": -540.9759,
-                    "TopMargin": 59.408,
-                    "BottomMargin": -145.408,
+                    "TopMargin": 52.408,
+                    "BottomMargin": -152.408,
                     "Tag": 52,
                     "ActionTag": 1053196243,
                     "Size": {
                       "X": 520.0,
-                      "Y": 116.0
+                      "Y": 130.0
                     },
                     "Name": "whitebackground",
                     "ctype": "ImageViewObjectData"
@@ -488,7 +488,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 26,
-                    "LabelText": "玩法简介：推倒胡玩法，只能自摸，没有大胡，可选红中鬼牌玩法与可胡七对玩法。可选买马数量，每中1马，加2分。",
+                    "LabelText": "玩法简介：推倒胡玩法，只能自摸，没有大胡，可选红中鬼牌玩法、可胡七对玩法与带风牌玩法。可选买马数量，每中1马，加2分。",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -506,7 +506,7 @@
                     },
                     "Position": {
                       "X": 419.0065,
-                      "Y": -87.0086
+                      "Y": -94.0086
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -520,21 +520,21 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 3.1038,
-                      "Y": -2.9003
+                      "Y": -3.1336
                     },
                     "PreSize": {
                       "X": 3.7037,
-                      "Y": 3.3333
+                      "Y": 4.0
                     },
                     "LeftMargin": 169.0065,
                     "RightMargin": -534.0065,
-                    "TopMargin": 67.0086,
-                    "BottomMargin": -137.0086,
+                    "TopMargin": 64.0086,
+                    "BottomMargin": -154.0086,
                     "Tag": 53,
                     "ActionTag": 549967594,
                     "Size": {
                       "X": 500.0,
-                      "Y": 100.0
+                      "Y": 120.0
                     },
                     "Name": "playinfotext1",
                     "ctype": "TextObjectData"
@@ -1046,6 +1046,173 @@
                     },
                     "Name": "canHu7",
                     "ctype": "CheckBoxObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/floor-9.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 60,
+                    "Scale9OriginY": 12,
+                    "Scale9Width": 63,
+                    "Scale9Height": 15,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 664.7198,
+                      "Y": 16.9999
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 4.4315,
+                      "Y": 0.5667
+                    },
+                    "PreSize": {
+                      "X": 1.22,
+                      "Y": 1.3
+                    },
+                    "LeftMargin": 573.2198,
+                    "RightMargin": -606.2198,
+                    "TopMargin": -6.4999,
+                    "BottomMargin": -2.5001,
+                    "Tag": 40,
+                    "ActionTag": 611793396,
+                    "Size": {
+                      "X": 183.0,
+                      "Y": 39.0
+                    },
+                    "Name": "Image_4",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "CheckedState": true,
+                    "NormalBackFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/circle_02.png",
+                      "Plist": ""
+                    },
+                    "PressedBackFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/circle_02.png",
+                      "Plist": ""
+                    },
+                    "DisableBackFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/circle_02.png",
+                      "Plist": ""
+                    },
+                    "NodeNormalFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/Duigou.png",
+                      "Plist": ""
+                    },
+                    "NodeDisableFileData": {
+                      "Type": "Default",
+                      "Path": "Default/CheckBoxNode_Disable.png",
+                      "Plist": ""
+                    },
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 598.08,
+                      "Y": 15.75
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 3.9872,
+                      "Y": 0.525
+                    },
+                    "PreSize": {
+                      "X": 0.4,
+                      "Y": 2.0
+                    },
+                    "LeftMargin": 568.08,
+                    "RightMargin": -478.08,
+                    "TopMargin": -15.75,
+                    "BottomMargin": -14.25,
+                    "Tag": 38,
+                    "Children": [
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 30,
+                        "LabelText": "带风",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 67.362,
+                          "Y": 32.04
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 228,
+                          "G": 192,
+                          "B": 112
+                        },
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 1.1227,
+                          "Y": 0.534
+                        },
+                        "PreSize": {
+                          "X": 1.5,
+                          "Y": 0.5
+                        },
+                        "LeftMargin": 67.362,
+                        "RightMargin": -97.362,
+                        "TopMargin": 12.96,
+                        "BottomMargin": 17.04,
+                        "Tag": 39,
+                        "ActionTag": 451968174,
+                        "Size": {
+                          "X": 90.0,
+                          "Y": 30.0
+                        },
+                        "Name": "Text_1",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 2145973624,
+                    "Size": {
+                      "X": 60.0,
+                      "Y": 60.0
+                    },
+                    "Name": "feng",
+                    "ctype": "CheckBoxObjectData"
                   }
                 ],
                 "ActionTag": 149152100,
@@ -1210,7 +1377,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 664.0,
+                      "X": 666.9999,
                       "Y": 17.0
                     },
                     "Scale": {
@@ -1220,15 +1387,15 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 4.4267,
+                      "X": 4.4467,
                       "Y": 0.5667
                     },
                     "PreSize": {
                       "X": 1.22,
                       "Y": 1.3
                     },
-                    "LeftMargin": 572.5,
-                    "RightMargin": -605.5,
+                    "LeftMargin": 575.4999,
+                    "RightMargin": -608.4999,
                     "TopMargin": -6.5,
                     "BottomMargin": -2.5,
                     "Tag": 180,
@@ -1515,7 +1682,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 602.7,
+                      "X": 598.695,
                       "Y": 14.751
                     },
                     "Scale": {
@@ -1527,15 +1694,15 @@
                     "PositionPercentXEnabled": true,
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 4.018,
+                      "X": 3.9913,
                       "Y": 0.4917
                     },
                     "PreSize": {
                       "X": 0.4,
                       "Y": 2.0
                     },
-                    "LeftMargin": 572.7,
-                    "RightMargin": -482.7,
+                    "LeftMargin": 568.695,
+                    "RightMargin": -478.695,
                     "TopMargin": -14.751,
                     "BottomMargin": -15.249,
                     "Tag": 173,

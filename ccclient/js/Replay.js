@@ -2121,7 +2121,16 @@ function rePlayCardNext(node)
 	var sData = jsclient.data.sData;
 	var tData = sData.tData;
 
-	if(tData) node.setString((tData.withWind?136:108) - tData.cardNext);
+	if(tData){
+		var leftCard = 0;
+		if(tData.withWind && tData.withZhong) leftCard = 136 - tData.cardNext;
+		//if(tData.withWind && !tData.withZhong) leftCard = 136 - 4 - tData.cardNext;
+		if(tData.withWind && !tData.withZhong) leftCard = 136 - tData.cardNext;
+		if(!tData.withWind && tData.withZhong) leftCard = 108 + 4 - tData.cardNext;
+		if(!tData.withWind && !tData.withZhong) leftCard = 108 - tData.cardNext;
+		node.setString(leftCard);
+		//node.setString((tData.withWind?136:108) - tData.cardNext);
+	}
 }
 
 var rePlayLayer=cc.Layer.extend({
@@ -2227,7 +2236,17 @@ var rePlayLayer=cc.Layer.extend({
 				{
 					var sData = jsclient.data.sData;
 					var tData = sData.tData;
-					if(tData) return  (tData.withWind?136:108) - tData.cardNext;
+					if(tData)
+					{
+						var leftCard = 0;
+						if(tData.withWind && tData.withZhong) leftCard = 136 - tData.cardNext;
+						//if(tData.withWind && !tData.withZhong) leftCard = 136 - 4 - tData.cardNext;
+						if(tData.withWind && !tData.withZhong) leftCard = 136  - tData.cardNext;
+						if(!tData.withWind && tData.withZhong) leftCard = 108 + 4 - tData.cardNext;
+						if(!tData.withWind && !tData.withZhong) leftCard = 108 - tData.cardNext;
+						return leftCard;
+						//return  (tData.withWind?136:108) - tData.cardNext;
+					}
 				},_event:{
 					waitPut:function()
 					{

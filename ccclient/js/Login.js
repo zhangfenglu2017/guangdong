@@ -3,11 +3,18 @@
 	
 	function f_login(mail,code,isLocalGuest)
 	{
-		var loginData=code?	{  mail: mail, code: code}:mail;
+        var geogData = {};
+        geogData.latitude = jsclient.native.GetLatitudePos();    //纬度
+        geogData.longitude = jsclient.native.GetLongitudePos();  //经度
+
+		var loginData= code?{mail: mail, code:code}:mail;
 		
 		loginData.resVersion=jsclient.resVersion;
 		loginData.app={appid:"com.coolgamebox.gdmj",os:cc.sys.os};
 		loginData.remoteIP=jsclient.remoteIP;
+        loginData.geogData = geogData;
+
+        // log("玩家登陆数据：" + JSON.stringify(loginData));
 
 		jsclient.gamenet.request("pkcon.handler.doLogin", loginData,
 		function (rtn) 
@@ -16,7 +23,9 @@
 			var unblock=true;
 			if (rtn.result==ZJHCode.Success) 
 			{
-				if(code) sys.localStorage.setItem("loginData", JSON.stringify(loginData));  
+				if(code)
+                    sys.localStorage.setItem("loginData", JSON.stringify(loginData));
+
 				sendEvent("loginOK",rtn);
 			}
 			else if(rtn.result==ZJHCode.playerNotFound)
@@ -26,7 +35,6 @@
 					unblock=false;
 					getGuest();
 				}
-				
 			}
 			else if(rtn.result==ZJHCode.serverFull)
 			{
@@ -38,8 +46,8 @@
 			{
 			}
 			
-			if(unblock) jsclient.unblock();
-			
+			if(unblock)
+                jsclient.unblock();
 		});
 	}
 	function getGuest()
@@ -129,6 +137,7 @@
 			wechatLogin:
 			{
 			   _layout:[[0.6,0.1],[0.5,0.7],[0,-3]],
+
 				_click:function(btn,etype)
 				{
 					if(agreeNode.isSelected())
@@ -152,47 +161,36 @@
 				},
 				agree:
                 {
-					_run:function(){ agreeNode=this;
-					}
+					_run:function(){ agreeNode = this;}
 				},
 				_run:function()
 				{
+                    //IOS提审用
 					if(jsclient.remoteCfg.guestLogin)
 					{
-						this.touchEnabled=false;
+						this.touchEnabled = false;
 						this.setCascadeOpacityEnabled(false);
-						this.opacity=0;
-						// doLayout(this,[0.6,0.1],[0.4,0.4],[0,0]);
-					}
-					if((cc.sys.OS_WINDOWS == cc.sys.os) || jsclient.remoteCfg.guestLogin)
-					{
-
-					}else {
-						//doLayout(this,[0.6,0.1],[0.5,0.4],[0,0]);
+						this.opacity = 0;
 					}
 				}
-
 			},
 
 			guestLogin:
 			{
+                _layout:[[0.6,0.1],[0.5,0.7],[0,-3]],
+
 			    _visible:function()
 				{
-					return (cc.sys.OS_WINDOWS == cc.sys.os) || jsclient.remoteCfg.guestLogin;
+					return jsclient.remoteCfg.guestLogin;
 				},
+
 				_run:function()
 				{
-					if(jsclient.remoteCfg.guestLogin)
-					{
-						doLayout(this,[0.6,0.1],[0.5,0.4],[0,0]);
-					}
-					else
-					{
-						this.visible=false;
-						//doLayout(this,[0.6,0.1],[0.4,0.7],[1.2,-3]);
-					}
-				}
-			    ,_click:function()
+                    //IOS提审用
+                    // this.visible = true;
+				},
+
+                _click:function()
 				{
 					if(agreeNode.isSelected())
 						LoginAsGuest();

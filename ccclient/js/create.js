@@ -4,7 +4,7 @@
 
 (function()
 {
-    var createui,round4,round8,Joker,gdmj,canHu7,ma2,ma4,ma6;
+    var createui,round4,round8,Joker,gdmj,canHu7,feng,ma2,ma4,ma6;
     var horse = 2;
 
     CreateLayer = cc.Layer.extend(
@@ -65,6 +65,13 @@
                         {
                             canHu7 = this;
                         },
+                    },
+                    feng:
+                    {
+                        _run:function ()
+                        {
+                            feng = this;
+                        }
                     }
                 },
 
@@ -183,7 +190,7 @@
                            jsclient.createRoom(
                                isRound4?"round4":"round8", //4局或8局
                                false,                      //胡
-                               true,                       //风
+                               feng.isSelected(),          //风
                                false,                      //吃
                                true,                       //广州麻将
                                canHu7.isSelected(),        //7
@@ -191,7 +198,6 @@
                                Joker.isSelected(),        //红中
                                horse                      //几匹马
                            );
-                           log("创建房间的马数：" + horse);
                        }
                        else
                        {
