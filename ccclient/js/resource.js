@@ -3,14 +3,14 @@ var res = {
 
 	Updae_json:"res/Update.json",
 	Login_json:"res/Login.json",
-	
+
 	Create_json:"res/create.json",
 	Enter_json:"res/enter.json",
-	
+
 	Home_json:"res/Home.json",
 	Play_json:"res/Play.json",
 	Block_json:"res/block.json",
-	
+
 	EndOne_json:"res/endOne.json",
 	EndAll_json:"res/endAll.json",
 
@@ -29,6 +29,7 @@ for (var i in res) {
 
 cc.spriteFrameCache.addSpriteFrames("res/MaJiangNew/z_mj.plist");
 cc.spriteFrameCache.addSpriteFrames("res/playerchat/emoji_action_texture.plist");
+
 
 var jsclient={};
 

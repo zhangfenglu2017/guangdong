@@ -1,0 +1,637 @@
+{
+  "ID": "d493212b-58a5-48e9-9d9c-872318ea7201",
+  "Version": "3.10.0.0",
+  "Name": "ShowMa",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 72,
+        "Children": [
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 204,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 26,
+            "ActionTag": 736875449,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Alpha": 204,
+            "Name": "block",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "playerchat/window-big.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 169,
+            "Scale9OriginY": 141,
+            "Scale9Width": 600,
+            "Scale9Height": 360,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 643.25,
+              "Y": 359.16
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5025,
+              "Y": 0.4988
+            },
+            "PreSize": {
+              "X": 0.7328,
+              "Y": 0.8917
+            },
+            "LeftMargin": 174.25,
+            "RightMargin": 167.75,
+            "TopMargin": 39.84,
+            "BottomMargin": 38.16,
+            "Tag": 1144,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "playerchat/floor_12.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 273,
+                "Scale9OriginY": 122,
+                "Scale9Width": 283,
+                "Scale9Height": 127,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 469.0,
+                  "Y": 308.9946
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.4813
+                },
+                "PreSize": {
+                  "X": 0.8838,
+                  "Y": 0.7632
+                },
+                "LeftMargin": 54.5,
+                "RightMargin": 54.5,
+                "TopMargin": 88.0054,
+                "BottomMargin": 63.9946,
+                "Tag": 1176,
+                "ActionTag": -1539876950,
+                "Size": {
+                  "X": 829.0,
+                  "Y": 490.0
+                },
+                "Name": "backg",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/maima__0002_4.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 273,
+                "Scale9OriginY": 122,
+                "Scale9Width": 261,
+                "Scale9Height": 211,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 473.221,
+                  "Y": 312.012
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5045,
+                  "Y": 0.486
+                },
+                "PreSize": {
+                  "X": 0.8603,
+                  "Y": 0.7087
+                },
+                "LeftMargin": 69.721,
+                "RightMargin": 61.2791,
+                "TopMargin": 102.488,
+                "BottomMargin": 84.512,
+                "Tag": 1645,
+                "ActionTag": -43439017,
+                "Size": {
+                  "X": 807.0,
+                  "Y": 455.0
+                },
+                "Name": "backk",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/maima__0000.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 273,
+                "Scale9OriginY": 23,
+                "Scale9Width": 16,
+                "Scale9Height": 24,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 469.0,
+                  "Y": 605.9196
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.9438
+                },
+                "PreSize": {
+                  "X": 0.5991,
+                  "Y": 0.109
+                },
+                "LeftMargin": 188.0,
+                "RightMargin": 188.0,
+                "TopMargin": 1.0804,
+                "BottomMargin": 570.9196,
+                "Tag": 1647,
+                "ActionTag": -1898966163,
+                "Size": {
+                  "X": 562.0,
+                  "Y": 70.0
+                },
+                "Name": "table",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 36,
+                "ButtonText": "",
+                "TextColor": {},
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "dissolveRoomNew/btn_confirm_press.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "dissolveRoomNew/btn_confirm_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "dissolveRoomNew/btn_confirm_normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 140,
+                "Scale9Height": 43,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 464.31,
+                  "Y": 118.5132
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.495,
+                  "Y": 0.1846
+                },
+                "PreSize": {
+                  "X": 0.1812,
+                  "Y": 0.1012
+                },
+                "LeftMargin": 379.31,
+                "RightMargin": 388.69,
+                "TopMargin": 490.9868,
+                "BottomMargin": 86.0132,
+                "Tag": 1151,
+                "ActionTag": -410361543,
+                "Size": {
+                  "X": 170.0,
+                  "Y": 65.0
+                },
+                "Name": "OK",
+                "ctype": "ButtonObjectData"
+              }
+            ],
+            "ActionTag": -108244162,
+            "Size": {
+              "X": 938.0,
+              "Y": 642.0
+            },
+            "Name": "back",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 0,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 609.8265,
+              "Y": 280.7734
+            },
+            "Scale": {
+              "ScaleX": 0.7,
+              "ScaleY": 0.7
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4764,
+              "Y": 0.39
+            },
+            "PreSize": {
+              "X": 0.0766,
+              "Y": 0.2111
+            },
+            "LeftMargin": 609.8265,
+            "RightMargin": 572.1735,
+            "TopMargin": 287.2266,
+            "BottomMargin": 280.7734,
+            "Tag": 1070,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg4.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 12,
+                "Scale9OriginY": 19,
+                "Scale9Width": 74,
+                "Scale9Height": 114,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 49.0,
+                  "Y": 76.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.5
+                },
+                "PreSize": {
+                  "X": 1.0,
+                  "Y": 1.0
+                },
+                "Tag": 901,
+                "ActionTag": -212382648,
+                "Size": {
+                  "X": 98.0,
+                  "Y": 152.0
+                },
+                "Name": "down",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg1.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 11,
+                "Scale9OriginY": 18,
+                "Scale9Width": 76,
+                "Scale9Height": 116,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 50.323,
+                  "Y": 76.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5135,
+                  "Y": 0.5
+                },
+                "PreSize": {
+                  "X": 1.0,
+                  "Y": 1.0
+                },
+                "LeftMargin": 1.323,
+                "RightMargin": -1.323,
+                "Tag": 902,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 26,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 50.0,
+                      "Y": 90.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5102,
+                      "Y": 0.5921
+                    },
+                    "PreSize": {
+                      "X": 0.7551,
+                      "Y": 0.6579
+                    },
+                    "LeftMargin": 13.0,
+                    "RightMargin": 11.0,
+                    "TopMargin": 12.0,
+                    "BottomMargin": 40.0,
+                    "Tag": 903,
+                    "ActionTag": 1659377616,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -1322392747,
+                "Size": {
+                  "X": 98.0,
+                  "Y": 152.0
+                },
+                "Name": "up",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/mazz.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 50.3231,
+                  "Y": 77.0001
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5135,
+                  "Y": 0.5066
+                },
+                "PreSize": {
+                  "X": 1.0204,
+                  "Y": 1.0197
+                },
+                "LeftMargin": 0.3231,
+                "RightMargin": -2.3231,
+                "TopMargin": -2.5001,
+                "BottomMargin": -0.4999,
+                "Tag": 1073,
+                "ActionTag": 1589965576,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 155.0
+                },
+                "Name": "close",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/maima__0001_5.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 33,
+                "Scale9OriginY": 42,
+                "Scale9Width": 24,
+                "Scale9Height": 44,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 49.9996,
+                  "Y": 73.9936
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5102,
+                  "Y": 0.4868
+                },
+                "PreSize": {
+                  "X": 1.1735,
+                  "Y": 1.1513
+                },
+                "LeftMargin": -7.5004,
+                "RightMargin": -9.4996,
+                "TopMargin": -9.4936,
+                "BottomMargin": -13.5064,
+                "Tag": 1074,
+                "ActionTag": -1512613781,
+                "Size": {
+                  "X": 115.0,
+                  "Y": 175.0
+                },
+                "Name": "open",
+                "ctype": "ImageViewObjectData"
+              }
+            ],
+            "ActionTag": 1745232023,
+            "Size": {
+              "X": 98.0,
+              "Y": 152.0
+            },
+            "Name": "card",
+            "ctype": "PanelObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1280.0,
+          "Y": 720.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "dissolveRoomNew/btn_confirm_normal.png",
+        "dissolveRoomNew/btn_confirm_press.png",
+        "gameEndNew/maima__0000.png",
+        "gameEndNew/maima__0001_5.png",
+        "gameEndNew/maima__0002_4.png",
+        "gameEndNew/mazz.png",
+        "MaJiangNew/mj_91.png",
+        "MaJiangNew/mj_bg1.png",
+        "MaJiangNew/mj_bg4.png",
+        "playerchat/floor_12.png",
+        "playerchat/window-big.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

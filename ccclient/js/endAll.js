@@ -95,12 +95,13 @@ var EndAllLayer = cc.Layer.extend(
 
         table:
         {
-            _layout:  [[0.6, 0.6], [0.1, 0.65], [0, 0]]
+            _layout:  [[0.6, 0.6], [0.1, 0.75], [0, 0]]
         },
 
 		share:
         {
-            _layout:[[0.16,0.16],[0.7,0.1],[0,0]],
+            // _layout:[[0.16,0.16],[0.7,0.1],[0,0]],
+            _layout: [[0.15, 0], [0.5, 0.07], [1, 0.5]],
 
             _click:function()
             {
@@ -115,7 +116,8 @@ var EndAllLayer = cc.Layer.extend(
 
 		tohome:
         {
-            _layout:[[0.16,0.16],[0.4,0.1],[0,0]],
+            // _layout:[[0.16,0.16],[0.4,0.1],[0,0]],
+            _layout: [[0.15, 0], [0.2, 0.07], [1, 0.5]],
 
             _click:function()
             {

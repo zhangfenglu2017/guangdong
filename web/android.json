@@ -1,5 +1,5 @@
 {
-  "servers":"120.25.224.7:15010:15011"
+  "servers":"git.game-yes.com:15010:15011"
   ,"serversSelect":[600,400]
   ,"wxShareUrl":"http://download.happyplaygame.net"
   ,"voiceUrl":"http://124.232.153.18:3000/symj/"
@@ -10,6 +10,7 @@
   ,"weixinBuy":"Kfxj111"
   ,"help1Url":"http://gdmj.coolgamebox.com:800/gdmj/help1.html"
   ,"help2Url":"http://gdmj.coolgamebox.com:800/gdmj/help2.html"
+  ,"help3Url":"http://gdmj.coolgamebox.com:800/gdmj/help3.html"
   ,"legalUrl":"http://gdmj.coolgamebox.com:800/gdmj/legal.html"
   ,"infoUrl":"http://gdmj.coolgamebox.com:800/gdmj/info.html"
   ,"noticeUrl":"http://gdmj.coolgamebox.com:800/gdmj/notice.json"

@@ -462,7 +462,7 @@
 //游戏玩法
 (function ()
 {
-    var webViewLayer2, uiPara, webView, scroll, gdmjtable, hzhmjtable, help;
+    var webViewLayer2, uiPara, webView, scroll, gdmjtable, hzhmjtable,shzhmjtable, help;
 
     function createWebViewByUrl(url)
     {
@@ -489,19 +489,19 @@
         var helpType = type;
         var url1 = jsclient.remoteCfg.help1Url;
         var url2 = jsclient.remoteCfg.help2Url;
+        var url3 = jsclient.remoteCfg.help3Url;
 
         switch(helpType)
         {
         case 1:
             gdmjtable.setBright(false);
             gdmjtable.setEnabled(false);
-            // gdmjtable.setTouchEnabled(false);
-            // gdmjtable.setVisible(false);
 
             hzhmjtable.setBright(true);
             hzhmjtable.setEnabled(true);
-            // hzhmjtable.setTouchEnabled(true);
-            // hzhmjtable.setVisible(true);
+
+            shzhmjtable.setBright(true);
+            shzhmjtable.setEnabled(true);
 
             createWebViewByUrl(url1);
 
@@ -510,15 +510,28 @@
 
             gdmjtable.setBright(true);
             gdmjtable.setEnabled(true);
-            // gdmjtable.setTouchEnabled(true);
-            // gdmjtable.setVisible(true);
 
             hzhmjtable.setBright(false);
             hzhmjtable.setEnabled(false);
-            // hzhmjtable.setTouchEnabled(false);
-            // hzhmjtable.setVisible(false);
+
+            shzhmjtable.setBright(true);
+            shzhmjtable.setEnabled(true);
 
             createWebViewByUrl(url2);
+
+            break;
+        case 3:
+
+            gdmjtable.setBright(true);
+            gdmjtable.setEnabled(true);
+
+            hzhmjtable.setBright(true);
+            hzhmjtable.setEnabled(true);
+
+            shzhmjtable.setBright(false);
+            shzhmjtable.setEnabled(false);
+
+            createWebViewByUrl(url3);
 
             break;
         }
@@ -563,6 +576,19 @@
                     _click:function ()
                     {
                         setPanelContentByType(2);
+                    }
+                },
+
+                shzhmjtable:
+                {
+                    _run:function ()
+                    {
+                        shzhmjtable = this;
+                    },
+
+                    _click:function ()
+                    {
+                        setPanelContentByType(3);
                     }
                 },
 

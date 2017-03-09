@@ -101,13 +101,14 @@
           <Image Name="qiansediban.png" />
           <Image Name="t_chuangjianfangjian.png" />
           <Image Name="window-big.png" />
-          <Image Name="xiaoguotu.png" />
           <Image Name="y_donggua_normal.png" />
           <Image Name="y_donggua_press.png" />
           <Image Name="y_guangzhoutuidaohu_normal.png" />
           <Image Name="y_guangzhoutuidaohu_press.png" />
           <Image Name="y_huizhouzhuang_normal.png" />
           <Image Name="y_huizhouzhuang_press.png" />
+          <Image Name="y_shenzhen_normal.png" />
+          <Image Name="y_shenzhen_press.png" />
         </Folder>
         <Folder Name="Default">
           <Image Name="Button_Disable.png" />
@@ -155,6 +156,9 @@
           <Image Name="fangzhu.png" />
           <Image Name="floor_11.png" />
           <Image Name="Light.png" />
+          <Image Name="maima__0000.png" />
+          <Image Name="maima__0001_5.png" />
+          <Image Name="maima__0002_4.png" />
           <Image Name="mazz.png" />
           <Image Name="ot-maima.png" />
           <Image Name="Photo_frame_01.png" />
@@ -520,6 +524,7 @@
           <Image Name="icon_signal_03.png" />
           <Image Name="icon_signal_04.png" />
           <Image Name="icon_zhuang.png" />
+          <Image Name="jiejiegao.png" />
           <Image Name="kehu.png" />
           <Image Name="pai_bottom.png" />
           <Image Name="penggang_bottom.png" />
@@ -529,6 +534,7 @@
           <Image Name="Photo_frame_06.png" />
           <Image Name="Photo_frame_man.png" />
           <Image Name="roundnumbg.png" />
+          <Image Name="shenzhenmajiang.png" />
           <Image Name="t_chi.png" />
           <Image Name="t_gang.png" />
           <Image Name="t_guo.png" />
@@ -537,6 +543,7 @@
           <Image Name="t-hu.png" />
           <Image Name="Z_money_frame.png" />
           <Image Name="Z_zhunbeizhuangt.png" />
+          <Image Name="zhuang_1.png" />
         </Folder>
         <Folder Name="set">
           <Image Name="bar_01.png" />
@@ -591,6 +598,7 @@
         <Project Name="Replay.csd" Type="Layer" />
         <Project Name="SameIP.csd" Type="Node" />
         <Project Name="setting.csd" Type="Layer" />
+        <Project Name="ShowMa.csd" Type="Layer" />
         <Project Name="SkipHu.csd" Type="Node" />
         <Project Name="Update.csd" Type="Layer" />
         <Project Name="UserInfo.csd" Type="Layer" />

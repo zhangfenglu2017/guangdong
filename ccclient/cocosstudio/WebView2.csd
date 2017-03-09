@@ -36,13 +36,13 @@
                 <PreSize X="0.8820" Y="0.8278" />
                 <FileData Type="Normal" Path="webview/floor_14.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gdmjtable" ActionTag="-2001101897" Tag="235" IconVisible="False" LeftMargin="191.9839" RightMargin="883.0161" TopMargin="188.6298" BottomMargin="453.3702" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="gdmjtable" ActionTag="-2001101897" Tag="235" IconVisible="False" LeftMargin="197.5000" RightMargin="877.5000" TopMargin="191.0000" BottomMargin="451.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="205.0000" Y="78.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="294.4839" Y="492.3702" />
+                <Position X="300.0000" Y="490.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2301" Y="0.6838" />
+                <PrePosition X="0.2344" Y="0.6806" />
                 <PreSize X="0.1602" Y="0.1083" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Normal" Path="createRoomNew/y_guangzhoutuidaohu_normal.png" Plist="" />
@@ -51,18 +51,33 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="hzhmjtable" ActionTag="-1807520407" Tag="234" IconVisible="False" LeftMargin="191.9839" RightMargin="883.0161" TopMargin="268.6297" BottomMargin="373.3703" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="hzhmjtable" ActionTag="-1807520407" Tag="234" IconVisible="False" LeftMargin="197.5000" RightMargin="877.5000" TopMargin="271.0000" BottomMargin="371.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="205.0000" Y="78.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="294.4839" Y="412.3703" />
+                <Position X="300.0000" Y="410.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2301" Y="0.5727" />
+                <PrePosition X="0.2344" Y="0.5694" />
                 <PreSize X="0.1602" Y="0.1083" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Normal" Path="createRoomNew/y_huizhouzhuang_normal.png" Plist="" />
                 <PressedFileData Type="Normal" Path="createRoomNew/y_huizhouzhuang_normal.png" Plist="" />
                 <NormalFileData Type="Normal" Path="createRoomNew/y_huizhouzhuang_press.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="shzhmjtable" ActionTag="2053477970" Tag="352" IconVisible="False" LeftMargin="197.5000" RightMargin="877.5000" TopMargin="351.0000" BottomMargin="291.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="205.0000" Y="78.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="300.0000" Y="330.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.2344" Y="0.4583" />
+                <PreSize X="0.1602" Y="0.1083" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Normal" Path="createRoomNew/y_shenzhen_normal.png" Plist="" />
+                <PressedFileData Type="Normal" Path="createRoomNew/y_shenzhen_normal.png" Plist="" />
+                <NormalFileData Type="Normal" Path="createRoomNew/y_shenzhen_press.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

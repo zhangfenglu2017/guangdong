@@ -1860,7 +1860,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 937.9996,
+              "X": 940.0,
               "Y": 40.0
             },
             "Scale": {
@@ -1870,15 +1870,15 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.7328,
+              "X": 0.7344,
               "Y": 0.0556
             },
             "PreSize": {
               "X": 0.1328,
               "Y": 0.0903
             },
-            "LeftMargin": 852.9996,
-            "RightMargin": 257.0004,
+            "LeftMargin": 855.0,
+            "RightMargin": 255.0,
             "TopMargin": 647.5,
             "BottomMargin": 7.5,
             "Tag": 1597,
@@ -2195,17 +2195,17 @@
                       "Path": "play-yli/icon_zhuang.png",
                       "Plist": ""
                     },
-                    "BlendFunc": {
-                      "Src": 1,
-                      "Dst": 771
-                    },
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 13,
+                    "Scale9Height": 13,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 33.01,
-                      "Y": 20.2267
+                      "X": 103.39,
+                      "Y": 25.82
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2214,25 +2214,70 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.2579,
-                      "Y": 0.1631
+                      "X": 0.8077,
+                      "Y": 0.2082
                     },
                     "PreSize": {
-                      "X": 0.2734,
-                      "Y": 0.2823
+                      "X": 0.4297,
+                      "Y": 0.4435
                     },
-                    "LeftMargin": 15.51,
-                    "RightMargin": 77.49,
-                    "TopMargin": 86.2733,
-                    "BottomMargin": 2.7267,
-                    "Tag": 172,
-                    "ActionTag": 107729654,
+                    "LeftMargin": 75.89,
+                    "RightMargin": -2.89,
+                    "TopMargin": 70.68,
+                    "BottomMargin": -1.68,
+                    "Tag": 345,
+                    "ActionTag": -787222307,
                     "Size": {
-                      "X": 35.0,
-                      "Y": 35.0
+                      "X": 55.0,
+                      "Y": 55.0
                     },
                     "Name": "zhuang",
-                    "ctype": "SpriteObjectData"
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/zhuang_1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 43,
+                    "Scale9Height": 10,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.0,
+                      "Y": 29.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.875,
+                      "Y": 0.2339
+                    },
+                    "PreSize": {
+                      "X": 0.8438,
+                      "Y": 0.4516
+                    },
+                    "LeftMargin": 58.0,
+                    "RightMargin": -38.0,
+                    "TopMargin": 67.0,
+                    "BottomMargin": 1.0,
+                    "Tag": 346,
+                    "ActionTag": -1068552676,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 56.0
+                    },
+                    "Name": "linkZhuang",
+                    "ctype": "ImageViewObjectData"
                   },
                   {
                     "IsCustomSize": true,
@@ -2855,17 +2900,17 @@
                       "Path": "play-yli/icon_zhuang.png",
                       "Plist": ""
                     },
-                    "BlendFunc": {
-                      "Src": 1,
-                      "Dst": 771
-                    },
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 13,
+                    "Scale9Height": 13,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 33.0099,
-                      "Y": 25.1711
+                      "X": 103.39,
+                      "Y": 25.82
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2874,25 +2919,70 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.2579,
-                      "Y": 0.203
+                      "X": 0.8077,
+                      "Y": 0.2082
                     },
                     "PreSize": {
-                      "X": 0.2734,
-                      "Y": 0.2823
+                      "X": 0.4297,
+                      "Y": 0.4435
                     },
-                    "LeftMargin": 15.5099,
-                    "RightMargin": 77.4901,
-                    "TopMargin": 81.3289,
-                    "BottomMargin": 7.6711,
-                    "Tag": 171,
-                    "ActionTag": 1701773708,
+                    "LeftMargin": 75.89,
+                    "RightMargin": -2.89,
+                    "TopMargin": 70.68,
+                    "BottomMargin": -1.68,
+                    "Tag": 344,
+                    "ActionTag": -2024201230,
                     "Size": {
-                      "X": 35.0,
-                      "Y": 35.0
+                      "X": 55.0,
+                      "Y": 55.0
                     },
                     "Name": "zhuang",
-                    "ctype": "SpriteObjectData"
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/zhuang_1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 43,
+                    "Scale9Height": 10,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.0,
+                      "Y": 29.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.875,
+                      "Y": 0.2339
+                    },
+                    "PreSize": {
+                      "X": 0.8438,
+                      "Y": 0.4516
+                    },
+                    "LeftMargin": 58.0,
+                    "RightMargin": -38.0,
+                    "TopMargin": 67.0,
+                    "BottomMargin": 1.0,
+                    "Tag": 347,
+                    "ActionTag": -714001363,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 56.0
+                    },
+                    "Name": "linkZhuang",
+                    "ctype": "ImageViewObjectData"
                   },
                   {
                     "IsCustomSize": true,
@@ -3560,17 +3650,17 @@
                       "Path": "play-yli/icon_zhuang.png",
                       "Plist": ""
                     },
-                    "BlendFunc": {
-                      "Src": 1,
-                      "Dst": 771
-                    },
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 13,
+                    "Scale9Height": 13,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 33.0098,
-                      "Y": 23.4484
+                      "X": 103.39,
+                      "Y": 25.82
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3579,25 +3669,70 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.2579,
-                      "Y": 0.1891
+                      "X": 0.8077,
+                      "Y": 0.2082
                     },
                     "PreSize": {
-                      "X": 0.2734,
-                      "Y": 0.2823
+                      "X": 0.4297,
+                      "Y": 0.4435
                     },
-                    "LeftMargin": 15.5098,
-                    "RightMargin": 77.4902,
-                    "TopMargin": 83.0516,
-                    "BottomMargin": 5.9484,
-                    "Tag": 170,
-                    "ActionTag": 392838381,
+                    "LeftMargin": 75.89,
+                    "RightMargin": -2.89,
+                    "TopMargin": 70.68,
+                    "BottomMargin": -1.68,
+                    "Tag": 343,
+                    "ActionTag": -1713706090,
                     "Size": {
-                      "X": 35.0,
-                      "Y": 35.0
+                      "X": 55.0,
+                      "Y": 55.0
                     },
                     "Name": "zhuang",
-                    "ctype": "SpriteObjectData"
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/zhuang_1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 43,
+                    "Scale9Height": 10,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.0,
+                      "Y": 29.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.875,
+                      "Y": 0.2339
+                    },
+                    "PreSize": {
+                      "X": 0.8438,
+                      "Y": 0.4516
+                    },
+                    "LeftMargin": 58.0,
+                    "RightMargin": -38.0,
+                    "TopMargin": 67.0,
+                    "BottomMargin": 1.0,
+                    "Tag": 348,
+                    "ActionTag": 890984320,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 56.0
+                    },
+                    "Name": "linkZhuang",
+                    "ctype": "ImageViewObjectData"
                   },
                   {
                     "IsCustomSize": true,
@@ -4265,17 +4400,17 @@
                       "Path": "play-yli/icon_zhuang.png",
                       "Plist": ""
                     },
-                    "BlendFunc": {
-                      "Src": 1,
-                      "Dst": 771
-                    },
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 13,
+                    "Scale9Height": 13,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 21.8984,
-                      "Y": 22.8393
+                      "X": 103.39,
+                      "Y": 25.82
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4284,25 +4419,70 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.1711,
-                      "Y": 0.1842
+                      "X": 0.8077,
+                      "Y": 0.2082
                     },
                     "PreSize": {
-                      "X": 0.2734,
-                      "Y": 0.2823
+                      "X": 0.4297,
+                      "Y": 0.4435
                     },
-                    "LeftMargin": 4.3984,
-                    "RightMargin": 88.6016,
-                    "TopMargin": 83.6607,
-                    "BottomMargin": 5.3393,
-                    "Tag": 1600,
-                    "ActionTag": -269314619,
+                    "LeftMargin": 75.89,
+                    "RightMargin": -2.89,
+                    "TopMargin": 70.68,
+                    "BottomMargin": -1.68,
+                    "Tag": 342,
+                    "ActionTag": -1499574320,
                     "Size": {
-                      "X": 35.0,
-                      "Y": 35.0
+                      "X": 55.0,
+                      "Y": 55.0
                     },
                     "Name": "zhuang",
-                    "ctype": "SpriteObjectData"
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/zhuang_1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 43,
+                    "Scale9Height": 10,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.0,
+                      "Y": 29.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.875,
+                      "Y": 0.2339
+                    },
+                    "PreSize": {
+                      "X": 0.8438,
+                      "Y": 0.4516
+                    },
+                    "LeftMargin": 58.0,
+                    "RightMargin": -38.0,
+                    "TopMargin": 67.0,
+                    "BottomMargin": 1.0,
+                    "Tag": 349,
+                    "ActionTag": 847817739,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 56.0
+                    },
+                    "Name": "linkZhuang",
+                    "ctype": "ImageViewObjectData"
                   },
                   {
                     "IsCustomSize": true,
@@ -4741,7 +4921,8 @@
         "MaJiangNew/mj_bg2.png",
         "MaJiangNew/mj_bg4.png",
         "play-yli/icon_zhuang.png",
-        "play-yli/Photo_frame_06.png"
+        "play-yli/Photo_frame_06.png",
+        "play-yli/zhuang_1.png"
       ],
       "ctype": "GameFileData"
     }

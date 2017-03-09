@@ -56,13 +56,13 @@
                 <FileData Type="Normal" Path="createRoomNew/fengexian.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gdmjtable" ActionTag="-1675202873" Tag="996" IconVisible="False" LeftMargin="54.9643" RightMargin="869.0357" TopMargin="93.1399" BottomMargin="424.8601" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="gdmjtable" ActionTag="-1675202873" Tag="996" IconVisible="False" LeftMargin="57.5000" RightMargin="866.5000" TopMargin="97.0000" BottomMargin="421.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="205.0000" Y="78.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="157.4643" Y="463.8601" />
+                <Position X="160.0000" Y="460.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1395" Y="0.7783" />
+                <PrePosition X="0.1417" Y="0.7718" />
                 <PreSize X="0.1816" Y="0.1309" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Normal" Path="createRoomNew/y_guangzhoutuidaohu_normal.png" Plist="" />
@@ -71,13 +71,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="hzhmjtable" ActionTag="1192722482" Tag="1032" IconVisible="False" LeftMargin="54.9643" RightMargin="869.0357" TopMargin="173.1393" BottomMargin="344.8607" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="hzhmjtable" ActionTag="1192722482" Tag="1032" IconVisible="False" LeftMargin="57.5000" RightMargin="866.5000" TopMargin="177.0000" BottomMargin="341.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="205.0000" Y="78.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="157.4643" Y="383.8607" />
+                <Position X="160.0000" Y="380.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1395" Y="0.6441" />
+                <PrePosition X="0.1417" Y="0.6376" />
                 <PreSize X="0.1816" Y="0.1309" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Normal" Path="createRoomNew/y_huizhouzhuang_normal.png" Plist="" />
@@ -86,7 +86,22 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gdmj" Visible="False" ActionTag="1840191753" Tag="91" IconVisible="False" LeftMargin="54.9600" RightMargin="869.0400" TopMargin="93.1400" BottomMargin="424.8600" LeftEage="67" RightEage="67" TopEage="25" BottomEage="25" Scale9OriginX="67" Scale9OriginY="25" Scale9Width="71" Scale9Height="28" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="shzhmjtable" ActionTag="119384410" Tag="383" IconVisible="False" LeftMargin="57.5000" RightMargin="866.5000" TopMargin="257.0000" BottomMargin="261.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="205.0000" Y="78.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="160.0000" Y="300.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1417" Y="0.5034" />
+                <PreSize X="0.1816" Y="0.1309" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Normal" Path="createRoomNew/y_shenzhen_normal.png" Plist="" />
+                <PressedFileData Type="Normal" Path="createRoomNew/y_shenzhen_normal.png" Plist="" />
+                <NormalFileData Type="Normal" Path="createRoomNew/y_shenzhen_press.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="gdmj" ActionTag="1840191753" Tag="91" IconVisible="False" LeftMargin="57.5000" RightMargin="866.5000" TopMargin="97.0000" BottomMargin="421.0000" LeftEage="67" RightEage="67" TopEage="25" BottomEage="25" Scale9OriginX="67" Scale9OriginY="25" Scale9Width="71" Scale9Height="28" ctype="ImageViewObjectData">
                 <Size X="205.0000" Y="78.0000" />
                 <Children>
                   <AbstractNodeData Name="tipsBack" ActionTag="1053196243" Tag="52" IconVisible="False" LeftMargin="215.0000" RightMargin="-780.0000" TopMargin="-35.5000" BottomMargin="6.5000" LeftEage="196" RightEage="196" TopEage="36" BottomEage="36" Scale9OriginX="196" Scale9OriginY="36" Scale9Width="378" Scale9Height="35" ctype="ImageViewObjectData">
@@ -536,14 +551,14 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="157.4600" Y="463.8600" />
+                <Position X="160.0000" Y="460.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1395" Y="0.7783" />
+                <PrePosition X="0.1417" Y="0.7718" />
                 <PreSize X="0.1816" Y="0.1309" />
                 <FileData Type="Normal" Path="createRoomNew/y_guangzhoutuidaohu_normal.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="hzhmj" ActionTag="1834272603" Tag="92" IconVisible="False" LeftMargin="54.9600" RightMargin="869.0400" TopMargin="173.1400" BottomMargin="344.8600" LeftEage="67" RightEage="67" TopEage="25" BottomEage="25" Scale9OriginX="67" Scale9OriginY="25" Scale9Width="71" Scale9Height="28" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="hzhmj" Visible="False" ActionTag="1834272603" Tag="92" IconVisible="False" LeftMargin="57.5000" RightMargin="866.5000" TopMargin="177.0000" BottomMargin="341.0000" LeftEage="67" RightEage="67" TopEage="25" BottomEage="25" Scale9OriginX="67" Scale9OriginY="25" Scale9Width="71" Scale9Height="28" ctype="ImageViewObjectData">
                 <Size X="205.0000" Y="78.0000" />
                 <Children>
                   <AbstractNodeData Name="tipsBack" ActionTag="340846826" Tag="338" IconVisible="False" LeftMargin="215.0009" RightMargin="-780.0009" TopMargin="-116.5077" BottomMargin="87.5077" LeftEage="196" RightEage="196" TopEage="36" BottomEage="36" Scale9OriginX="196" Scale9OriginY="36" Scale9Width="378" Scale9Height="35" ctype="ImageViewObjectData">
@@ -882,12 +897,469 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="157.4600" Y="383.8600" />
+                <Position X="160.0000" Y="380.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1395" Y="0.6441" />
+                <PrePosition X="0.1417" Y="0.6376" />
                 <PreSize X="0.1816" Y="0.1309" />
                 <FileData Type="Normal" Path="createRoomNew/y_huizhouzhuang_normal.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="shzhmj" Visible="False" ActionTag="973765733" Tag="617" IconVisible="False" LeftMargin="57.5000" RightMargin="866.5000" TopMargin="257.0000" BottomMargin="261.0000" LeftEage="67" RightEage="67" TopEage="25" BottomEage="25" Scale9OriginX="67" Scale9OriginY="25" Scale9Width="71" Scale9Height="28" ctype="ImageViewObjectData">
+                <Size X="205.0000" Y="78.0000" />
+                <Children>
+                  <AbstractNodeData Name="tipsBack" ActionTag="403541030" Tag="618" IconVisible="False" LeftMargin="215.0087" RightMargin="-780.0087" TopMargin="-196.0350" BottomMargin="167.0350" LeftEage="196" RightEage="196" TopEage="36" BottomEage="36" Scale9OriginX="196" Scale9OriginY="36" Scale9Width="378" Scale9Height="35" ctype="ImageViewObjectData">
+                    <Size X="770.0000" Y="107.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="600.0087" Y="220.5350" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="2.9269" Y="2.8274" />
+                    <PreSize X="3.7561" Y="1.3718" />
+                    <FileData Type="Normal" Path="createRoomNew/diban.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="tips" ActionTag="1481344959" Tag="619" IconVisible="False" LeftMargin="234.5545" RightMargin="-779.5545" TopMargin="-190.9153" BottomMargin="163.9153" IsCustomSize="True" FontSize="26" LabelText="玩法简介：大胡玩法。只能自摸，没有点炮。可选红中鬼牌玩法与带风玩法。可选买马匹数，每中1马，加2分。节节高玩法，连庄1次，多2马。" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="750.0000" Y="105.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="609.5545" Y="216.4153" />
+                    <Scale ScaleX="1.0000" ScaleY="0.9304" />
+                    <CColor A="255" R="108" G="37" B="20" />
+                    <PrePosition X="2.9734" Y="2.7746" />
+                    <PreSize X="3.6585" Y="1.3462" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="playType" ActionTag="-1806507403" Tag="620" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="219.3018" RightMargin="-174.3018" TopMargin="-66.2188" BottomMargin="111.2188" IsCustomSize="True" FontSize="32" LabelText="选择玩法:" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="160.0000" Y="33.0000" />
+                    <Children>
+                      <AbstractNodeData Name="Image_1" ActionTag="-1930768736" Tag="621" IconVisible="False" LeftMargin="166.5000" RightMargin="-189.5000" TopMargin="-6.5000" BottomMargin="0.5000" LeftEage="60" RightEage="60" TopEage="12" BottomEage="12" Scale9OriginX="60" Scale9OriginY="12" Scale9Width="63" Scale9Height="15" ctype="ImageViewObjectData">
+                        <Size X="183.0000" Y="39.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="258.0000" Y="20.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.6125" Y="0.6061" />
+                        <PreSize X="1.1437" Y="1.1818" />
+                        <FileData Type="Normal" Path="createRoomNew/qiansediban.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Image_2" ActionTag="-664896166" Tag="622" IconVisible="False" LeftMargin="384.4997" RightMargin="-407.4997" TopMargin="-6.5003" BottomMargin="0.5003" LeftEage="60" RightEage="60" TopEage="12" BottomEage="12" Scale9OriginX="60" Scale9OriginY="12" Scale9Width="63" Scale9Height="15" ctype="ImageViewObjectData">
+                        <Size X="183.0000" Y="39.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="475.9997" Y="20.0003" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="2.9750" Y="0.6061" />
+                        <PreSize X="1.1437" Y="1.1818" />
+                        <FileData Type="Normal" Path="createRoomNew/qiansediban.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Image_3" ActionTag="-1778260128" Tag="623" IconVisible="False" LeftMargin="166.5000" RightMargin="-189.5000" TopMargin="61.5000" BottomMargin="-67.5000" LeftEage="60" RightEage="60" TopEage="12" BottomEage="12" Scale9OriginX="60" Scale9OriginY="12" Scale9Width="63" Scale9Height="15" ctype="ImageViewObjectData">
+                        <Size X="183.0000" Y="39.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="258.0000" Y="-48.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.6125" Y="-1.4545" />
+                        <PreSize X="1.1437" Y="1.1818" />
+                        <FileData Type="Normal" Path="createRoomNew/qiansediban.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Image_4" ActionTag="-1176272141" Tag="624" IconVisible="False" LeftMargin="384.4997" RightMargin="-407.4997" TopMargin="58.4997" BottomMargin="-64.4997" LeftEage="60" RightEage="60" TopEage="12" BottomEage="12" Scale9OriginX="60" Scale9OriginY="12" Scale9Width="63" Scale9Height="15" ctype="ImageViewObjectData">
+                        <Size X="183.0000" Y="39.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="475.9997" Y="-44.9997" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="2.9750" Y="-1.3636" />
+                        <PreSize X="1.1437" Y="1.1818" />
+                        <FileData Type="Normal" Path="createRoomNew/qiansediban.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Image_5" ActionTag="1076448338" Tag="625" IconVisible="False" LeftMargin="166.5001" RightMargin="-189.5001" TopMargin="127.4998" BottomMargin="-133.4998" LeftEage="60" RightEage="60" TopEage="12" BottomEage="12" Scale9OriginX="60" Scale9OriginY="12" Scale9Width="63" Scale9Height="15" ctype="ImageViewObjectData">
+                        <Size X="183.0000" Y="39.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="258.0001" Y="-113.9998" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.6125" Y="-3.4545" />
+                        <PreSize X="1.1437" Y="1.1818" />
+                        <FileData Type="Normal" Path="createRoomNew/qiansediban.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="nozhong" ActionTag="730772653" Tag="626" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="146.0000" RightMargin="-46.0000" TopMargin="-13.5000" BottomMargin="-13.5000" TouchEnable="True" ctype="CheckBoxObjectData">
+                        <Size X="60.0000" Y="60.0000" />
+                        <Children>
+                          <AbstractNodeData Name="Text_1" ActionTag="13987588" Tag="627" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="67.3620" RightMargin="-127.3620" TopMargin="11.3000" BottomMargin="13.7000" IsCustomSize="True" FontSize="30" LabelText="无鬼牌" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="120.0000" Y="35.0000" />
+                            <AnchorPoint ScaleY="0.5000" />
+                            <Position X="67.3620" Y="31.2000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="108" G="37" B="20" />
+                            <PrePosition X="1.1227" Y="0.5200" />
+                            <PreSize X="2.0000" Y="0.5833" />
+                            <OutlineColor A="255" R="255" G="0" B="0" />
+                            <ShadowColor A="255" R="110" G="110" B="110" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="176.0000" Y="16.5000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.1000" Y="0.5000" />
+                        <PreSize X="0.3750" Y="1.8182" />
+                        <NormalBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <PressedBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <DisableBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <NodeNormalFileData Type="Normal" Path="createRoomNew/Duigou.png" Plist="" />
+                        <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="zhong" ActionTag="-946863849" Tag="628" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="364.0000" RightMargin="-264.0000" TopMargin="-13.5000" BottomMargin="-13.5000" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+                        <Size X="60.0000" Y="60.0000" />
+                        <Children>
+                          <AbstractNodeData Name="Text_1" ActionTag="1749439966" Tag="629" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="72.0000" RightMargin="-132.0000" TopMargin="11.3000" BottomMargin="13.7000" IsCustomSize="True" FontSize="30" LabelText="红中鬼牌" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="120.0000" Y="35.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="132.0000" Y="31.2000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="108" G="37" B="20" />
+                            <PrePosition X="2.2000" Y="0.5200" />
+                            <PreSize X="2.0000" Y="0.5833" />
+                            <OutlineColor A="255" R="255" G="0" B="0" />
+                            <ShadowColor A="255" R="110" G="110" B="110" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="394.0000" Y="16.5000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="2.4625" Y="0.5000" />
+                        <PreSize X="0.3750" Y="1.8182" />
+                        <NormalBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <PressedBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <DisableBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <NodeNormalFileData Type="Normal" Path="createRoomNew/Duigou.png" Plist="" />
+                        <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="nofeng" ActionTag="-465155671" Tag="630" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="146.0000" RightMargin="-46.0000" TopMargin="53.9520" BottomMargin="-80.9520" TouchEnable="True" ctype="CheckBoxObjectData">
+                        <Size X="60.0000" Y="60.0000" />
+                        <Children>
+                          <AbstractNodeData Name="Text_1" ActionTag="491784408" Tag="631" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="67.3620" RightMargin="-127.3620" TopMargin="11.3000" BottomMargin="13.7000" IsCustomSize="True" FontSize="30" LabelText="不带风牌" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="120.0000" Y="35.0000" />
+                            <AnchorPoint ScaleY="0.5000" />
+                            <Position X="67.3620" Y="31.2000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="108" G="37" B="20" />
+                            <PrePosition X="1.1227" Y="0.5200" />
+                            <PreSize X="2.0000" Y="0.5833" />
+                            <OutlineColor A="255" R="255" G="0" B="0" />
+                            <ShadowColor A="255" R="110" G="110" B="110" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="176.0000" Y="-50.9520" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.1000" Y="-1.5440" />
+                        <PreSize X="0.3750" Y="1.8182" />
+                        <NormalBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <PressedBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <DisableBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <NodeNormalFileData Type="Normal" Path="createRoomNew/Duigou.png" Plist="" />
+                        <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="feng" ActionTag="-1921934447" Tag="632" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="364.0000" RightMargin="-264.0000" TopMargin="51.5100" BottomMargin="-78.5100" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+                        <Size X="60.0000" Y="60.0000" />
+                        <Children>
+                          <AbstractNodeData Name="Text_1" ActionTag="-234476047" Tag="633" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="74.4540" RightMargin="-134.4540" TopMargin="11.3000" BottomMargin="13.7000" IsCustomSize="True" FontSize="30" LabelText="带风牌" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="120.0000" Y="35.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="134.4540" Y="31.2000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="108" G="37" B="20" />
+                            <PrePosition X="2.2409" Y="0.5200" />
+                            <PreSize X="2.0000" Y="0.5833" />
+                            <OutlineColor A="255" R="255" G="0" B="0" />
+                            <ShadowColor A="255" R="110" G="110" B="110" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="394.0000" Y="-48.5100" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="2.4625" Y="-1.4700" />
+                        <PreSize X="0.3750" Y="1.8182" />
+                        <NormalBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <PressedBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <DisableBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <NodeNormalFileData Type="Normal" Path="createRoomNew/Duigou.png" Plist="" />
+                        <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="jjg" ActionTag="-654160197" Tag="634" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="144.2240" RightMargin="-44.2240" TopMargin="119.9157" BottomMargin="-146.9157" TouchEnable="True" ctype="CheckBoxObjectData">
+                        <Size X="60.0000" Y="60.0000" />
+                        <Children>
+                          <AbstractNodeData Name="Text_1" ActionTag="-1876905468" Tag="635" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="70.0020" RightMargin="-130.0020" TopMargin="11.3000" BottomMargin="13.7000" IsCustomSize="True" FontSize="30" LabelText="节节高" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="120.0000" Y="35.0000" />
+                            <AnchorPoint ScaleY="0.5000" />
+                            <Position X="70.0020" Y="31.2000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="108" G="37" B="20" />
+                            <PrePosition X="1.1667" Y="0.5200" />
+                            <PreSize X="2.0000" Y="0.5833" />
+                            <OutlineColor A="255" R="255" G="0" B="0" />
+                            <ShadowColor A="255" R="110" G="110" B="110" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="174.2240" Y="-116.9157" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.0889" Y="-3.5429" />
+                        <PreSize X="0.3750" Y="1.8182" />
+                        <NormalBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <PressedBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <DisableBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <NodeNormalFileData Type="Normal" Path="createRoomNew/Duigou.png" Plist="" />
+                        <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="299.3018" Y="127.7188" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="108" G="37" B="20" />
+                    <PrePosition X="1.4600" Y="1.6374" />
+                    <PreSize X="0.7805" Y="0.4231" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="horse" ActionTag="-738858596" Tag="636" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="219.3018" RightMargin="-174.3018" TopMargin="130.8575" BottomMargin="-85.8575" IsCustomSize="True" FontSize="32" LabelText="买马数量：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="160.0000" Y="33.0000" />
+                    <Children>
+                      <AbstractNodeData Name="Image_2" ActionTag="1479713187" Tag="637" IconVisible="False" LeftMargin="166.5000" RightMargin="-189.5000" TopMargin="-3.4995" BottomMargin="-2.5005" LeftEage="60" RightEage="60" TopEage="12" BottomEage="12" Scale9OriginX="60" Scale9OriginY="12" Scale9Width="63" Scale9Height="15" ctype="ImageViewObjectData">
+                        <Size X="183.0000" Y="39.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="258.0000" Y="16.9995" />
+                        <Scale ScaleX="0.9797" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.6125" Y="0.5151" />
+                        <PreSize X="1.1437" Y="1.1818" />
+                        <FileData Type="Normal" Path="createRoomNew/qiansediban.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Image_4" ActionTag="1502076211" Tag="638" IconVisible="False" LeftMargin="384.4997" RightMargin="-407.4997" TopMargin="-6.4995" BottomMargin="0.4995" LeftEage="60" RightEage="60" TopEage="12" BottomEage="12" Scale9OriginX="60" Scale9OriginY="12" Scale9Width="63" Scale9Height="15" ctype="ImageViewObjectData">
+                        <Size X="183.0000" Y="39.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="475.9997" Y="19.9995" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="2.9750" Y="0.6060" />
+                        <PreSize X="1.1437" Y="1.1818" />
+                        <FileData Type="Normal" Path="createRoomNew/qiansediban.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Image_6" ActionTag="1466746591" Tag="639" IconVisible="False" LeftMargin="593.4998" RightMargin="-616.4998" TopMargin="-5.5000" BottomMargin="-0.5000" LeftEage="60" RightEage="60" TopEage="12" BottomEage="12" Scale9OriginX="60" Scale9OriginY="12" Scale9Width="63" Scale9Height="15" ctype="ImageViewObjectData">
+                        <Size X="183.0000" Y="39.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="684.9998" Y="19.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="4.2812" Y="0.5758" />
+                        <PreSize X="1.1437" Y="1.1818" />
+                        <FileData Type="Normal" Path="createRoomNew/qiansediban.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="ma2" ActionTag="-275355457" Tag="640" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="146.0000" RightMargin="-46.0000" TopMargin="-13.2261" BottomMargin="-13.7739" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+                        <Size X="60.0000" Y="60.0000" />
+                        <Children>
+                          <AbstractNodeData Name="Text_1" ActionTag="-182026441" Tag="641" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="69.9998" RightMargin="-129.9998" TopMargin="11.3000" BottomMargin="13.7000" IsCustomSize="True" FontSize="30" LabelText="2匹" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="120.0000" Y="35.0000" />
+                            <AnchorPoint ScaleY="0.5000" />
+                            <Position X="69.9998" Y="31.2000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="108" G="37" B="20" />
+                            <PrePosition X="1.1667" Y="0.5200" />
+                            <PreSize X="2.0000" Y="0.5833" />
+                            <OutlineColor A="255" R="255" G="0" B="0" />
+                            <ShadowColor A="255" R="110" G="110" B="110" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="176.0000" Y="16.2261" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.1000" Y="0.4917" />
+                        <PreSize X="0.3750" Y="1.8182" />
+                        <NormalBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <PressedBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <DisableBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <NodeNormalFileData Type="Normal" Path="createRoomNew/Duigou.png" Plist="" />
+                        <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="ma4" ActionTag="-151790918" Tag="642" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="364.0000" RightMargin="-264.0000" TopMargin="-14.3712" BottomMargin="-12.6288" TouchEnable="True" ctype="CheckBoxObjectData">
+                        <Size X="60.0000" Y="60.0000" />
+                        <Children>
+                          <AbstractNodeData Name="Text_1" ActionTag="1646658345" Tag="643" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="72.0000" RightMargin="-132.0000" TopMargin="11.3000" BottomMargin="13.7000" IsCustomSize="True" FontSize="30" LabelText="4匹" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="120.0000" Y="35.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="132.0000" Y="31.2000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="108" G="37" B="20" />
+                            <PrePosition X="2.2000" Y="0.5200" />
+                            <PreSize X="2.0000" Y="0.5833" />
+                            <OutlineColor A="255" R="255" G="0" B="0" />
+                            <ShadowColor A="255" R="110" G="110" B="110" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="394.0000" Y="17.3712" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="2.4625" Y="0.5264" />
+                        <PreSize X="0.3750" Y="1.8182" />
+                        <NormalBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <PressedBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <DisableBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <NodeNormalFileData Type="Normal" Path="createRoomNew/Duigou.png" Plist="" />
+                        <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="ma6" ActionTag="-2145954605" Tag="644" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="580.6080" RightMargin="-480.6080" TopMargin="-13.2261" BottomMargin="-13.7739" TouchEnable="True" ctype="CheckBoxObjectData">
+                        <Size X="60.0000" Y="60.0000" />
+                        <Children>
+                          <AbstractNodeData Name="Text_1" ActionTag="1465939434" Tag="645" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="72.0000" RightMargin="-132.0000" TopMargin="11.3000" BottomMargin="13.7000" IsCustomSize="True" FontSize="30" LabelText="6匹" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="120.0000" Y="35.0000" />
+                            <AnchorPoint ScaleY="0.5000" />
+                            <Position X="72.0000" Y="31.2000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="108" G="37" B="20" />
+                            <PrePosition X="1.2000" Y="0.5200" />
+                            <PreSize X="2.0000" Y="0.5833" />
+                            <OutlineColor A="255" R="255" G="0" B="0" />
+                            <ShadowColor A="255" R="110" G="110" B="110" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="610.6080" Y="16.2261" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="3.8163" Y="0.4917" />
+                        <PreSize X="0.3750" Y="1.8182" />
+                        <NormalBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <PressedBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <DisableBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <NodeNormalFileData Type="Normal" Path="createRoomNew/Duigou.png" Plist="" />
+                        <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="299.3018" Y="-69.3575" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="108" G="37" B="20" />
+                    <PrePosition X="1.4600" Y="-0.8892" />
+                    <PreSize X="0.7805" Y="0.4231" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="round" ActionTag="-1746490017" Tag="646" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="219.3018" RightMargin="-174.3018" TopMargin="196.5415" BottomMargin="-151.5415" IsCustomSize="True" FontSize="32" LabelText="选择局数：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="160.0000" Y="33.0000" />
+                    <Children>
+                      <AbstractNodeData Name="back4" ActionTag="-1816079442" Tag="647" IconVisible="False" LeftMargin="166.5000" RightMargin="-189.5000" TopMargin="-3.5002" BottomMargin="-2.4998" LeftEage="60" RightEage="60" TopEage="12" BottomEage="12" Scale9OriginX="60" Scale9OriginY="12" Scale9Width="63" Scale9Height="15" ctype="ImageViewObjectData">
+                        <Size X="183.0000" Y="39.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="258.0000" Y="17.0002" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.6125" Y="0.5152" />
+                        <PreSize X="1.1437" Y="1.1818" />
+                        <FileData Type="Normal" Path="createRoomNew/qiansediban.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="back8" ActionTag="1471840577" Tag="648" IconVisible="False" LeftMargin="384.4997" RightMargin="-407.4997" TopMargin="-3.5002" BottomMargin="-2.4998" LeftEage="60" RightEage="60" TopEage="12" BottomEage="12" Scale9OriginX="60" Scale9OriginY="12" Scale9Width="63" Scale9Height="15" ctype="ImageViewObjectData">
+                        <Size X="183.0000" Y="39.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="475.9997" Y="17.0002" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="2.9750" Y="0.5152" />
+                        <PreSize X="1.1437" Y="1.1818" />
+                        <FileData Type="Normal" Path="createRoomNew/qiansediban.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="round8" ActionTag="932354068" Tag="649" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="361.1200" RightMargin="-261.1200" TopMargin="-14.9400" BottomMargin="-12.0600" TouchEnable="True" ctype="CheckBoxObjectData">
+                        <Size X="60.0000" Y="60.0000" />
+                        <Children>
+                          <AbstractNodeData Name="Text" ActionTag="1331974171" Tag="650" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="78.0000" RightMargin="-138.0000" TopMargin="15.3020" BottomMargin="9.6980" IsCustomSize="True" FontSize="30" LabelText="8局" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="120.0000" Y="35.0000" />
+                            <AnchorPoint ScaleY="0.5000" />
+                            <Position X="78.0000" Y="27.1980" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="108" G="37" B="20" />
+                            <PrePosition X="1.3000" Y="0.4533" />
+                            <PreSize X="2.0000" Y="0.5833" />
+                            <OutlineColor A="255" R="255" G="0" B="0" />
+                            <ShadowColor A="255" R="110" G="110" B="110" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5480" ScaleY="0.4265" />
+                        <Position X="394.0000" Y="13.5300" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="2.4625" Y="0.4100" />
+                        <PreSize X="0.3750" Y="1.8182" />
+                        <NormalBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <PressedBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <DisableBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <NodeNormalFileData Type="Normal" Path="createRoomNew/Duigou.png" Plist="" />
+                        <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="round4" ActionTag="683333879" Tag="651" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="146.0000" RightMargin="-46.0000" TopMargin="-10.5300" BottomMargin="-16.4700" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+                        <Size X="60.0000" Y="60.0000" />
+                        <Children>
+                          <AbstractNodeData Name="Text" ActionTag="1321325690" Tag="652" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="72.0000" RightMargin="-132.0000" TopMargin="11.3000" BottomMargin="13.7000" IsCustomSize="True" FontSize="30" LabelText="4局" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="120.0000" Y="35.0000" />
+                            <AnchorPoint ScaleY="0.5000" />
+                            <Position X="72.0000" Y="31.2000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="108" G="37" B="20" />
+                            <PrePosition X="1.2000" Y="0.5200" />
+                            <PreSize X="2.0000" Y="0.5833" />
+                            <OutlineColor A="255" R="255" G="0" B="0" />
+                            <ShadowColor A="255" R="110" G="110" B="110" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="176.0000" Y="13.5300" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.1000" Y="0.4100" />
+                        <PreSize X="0.3750" Y="1.8182" />
+                        <NormalBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <PressedBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <DisableBackFileData Type="Normal" Path="createRoomNew/circle_02.png" Plist="" />
+                        <NodeNormalFileData Type="Normal" Path="createRoomNew/Duigou.png" Plist="" />
+                        <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="299.3018" Y="-135.0415" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="108" G="37" B="20" />
+                    <PrePosition X="1.4600" Y="-1.7313" />
+                    <PreSize X="0.7805" Y="0.4231" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="yes" ActionTag="-1902978230" Tag="653" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="464.4228" RightMargin="-429.4228" TopMargin="262.2859" BottomMargin="-249.2859" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="170.0000" Y="65.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="549.4228" Y="-216.7859" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="2.6801" Y="-2.7793" />
+                    <PreSize X="0.8293" Y="0.8333" />
+                    <TextColor A="255" R="255" G="255" B="255" />
+                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="dissolveRoomNew/btn_confirm_press.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="dissolveRoomNew/btn_confirm_normal.png" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="160.0000" Y="300.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1417" Y="0.5034" />
+                <PreSize X="0.1816" Y="0.1309" />
+                <FileData Type="Normal" Path="createRoomNew/y_shenzhen_normal.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

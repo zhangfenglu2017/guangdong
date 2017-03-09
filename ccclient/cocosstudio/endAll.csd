@@ -16,10 +16,10 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="gameEndNew/bac-3.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="share" ActionTag="-546708211" Tag="72" IconVisible="False" LeftMargin="854.9999" RightMargin="255.0001" TopMargin="647.5000" BottomMargin="7.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="share" ActionTag="-546708211" Tag="72" IconVisible="False" LeftMargin="855.0000" RightMargin="255.0000" TopMargin="647.5000" BottomMargin="7.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="170.0000" Y="65.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="939.9999" Y="40.0000" />
+            <Position X="940.0000" Y="40.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.7344" Y="0.0556" />
@@ -31,13 +31,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="tohome" ActionTag="1539874248" Tag="67" IconVisible="False" LeftMargin="425.0000" RightMargin="685.0000" TopMargin="647.5000" BottomMargin="7.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="tohome" ActionTag="1539874248" Tag="67" IconVisible="False" LeftMargin="423.0000" RightMargin="687.0000" TopMargin="647.5000" BottomMargin="7.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="170.0000" Y="65.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="510.0000" Y="40.0000" />
+            <Position X="508.0000" Y="40.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3984" Y="0.0556" />
+            <PrePosition X="0.3969" Y="0.0556" />
             <PreSize X="0.1328" Y="0.0903" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
@@ -121,14 +121,14 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="fangzhu" ActionTag="1436819180" Tag="348" IconVisible="False" LeftMargin="5.2615" RightMargin="68.7385" TopMargin="81.5831" BottomMargin="13.4169" LeftEage="17" RightEage="17" TopEage="9" BottomEage="9" Scale9OriginX="17" Scale9OriginY="9" Scale9Width="20" Scale9Height="11" ctype="ImageViewObjectData">
-                <Size X="54.0000" Y="29.0000" />
+              <AbstractNodeData Name="fangzhu" ActionTag="1436819180" Tag="348" IconVisible="False" LeftMargin="68.7617" RightMargin="-17.7617" TopMargin="80.0831" BottomMargin="11.9169" LeftEage="17" RightEage="17" TopEage="9" BottomEage="9" Scale9OriginX="17" Scale9OriginY="9" Scale9Width="43" Scale9Height="14" ctype="ImageViewObjectData">
+                <Size X="77.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="32.2615" Y="27.9169" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="107.2617" Y="27.9169" />
+                <Scale ScaleX="1.5000" ScaleY="1.5000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2520" Y="0.2251" />
-                <PreSize X="0.4219" Y="0.2339" />
+                <PrePosition X="0.8380" Y="0.2251" />
+                <PreSize X="0.6016" Y="0.2581" />
                 <FileData Type="Normal" Path="gameEndNew/fangzhu.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="id" ActionTag="-885953658" Tag="526" IconVisible="False" LeftMargin="136.5412" RightMargin="-208.5412" TopMargin="82.5132" BottomMargin="5.4868" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -198,14 +198,14 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="fangzhu" ActionTag="-918116067" Tag="347" IconVisible="False" LeftMargin="4.2607" RightMargin="69.7393" TopMargin="82.5828" BottomMargin="12.4172" LeftEage="17" RightEage="17" TopEage="9" BottomEage="9" Scale9OriginX="17" Scale9OriginY="9" Scale9Width="20" Scale9Height="11" ctype="ImageViewObjectData">
-                <Size X="54.0000" Y="29.0000" />
+              <AbstractNodeData Name="fangzhu" ActionTag="-918116067" Tag="347" IconVisible="False" LeftMargin="67.7608" RightMargin="-16.7608" TopMargin="81.0827" BottomMargin="10.9173" LeftEage="17" RightEage="17" TopEage="9" BottomEage="9" Scale9OriginX="17" Scale9OriginY="9" Scale9Width="43" Scale9Height="14" ctype="ImageViewObjectData">
+                <Size X="77.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="31.2607" Y="26.9172" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="106.2608" Y="26.9173" />
+                <Scale ScaleX="1.5000" ScaleY="1.5000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2442" Y="0.2171" />
-                <PreSize X="0.4219" Y="0.2339" />
+                <PrePosition X="0.8302" Y="0.2171" />
+                <PreSize X="0.6016" Y="0.2581" />
                 <FileData Type="Normal" Path="gameEndNew/fangzhu.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="id" ActionTag="1399326168" Tag="525" IconVisible="False" LeftMargin="135.2187" RightMargin="-207.2187" TopMargin="76.2993" BottomMargin="11.7007" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -275,14 +275,14 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="fangzhu" ActionTag="-2070685923" Tag="346" IconVisible="False" LeftMargin="2.2877" RightMargin="71.7123" TopMargin="82.6121" BottomMargin="12.3879" LeftEage="17" RightEage="17" TopEage="9" BottomEage="9" Scale9OriginX="17" Scale9OriginY="9" Scale9Width="20" Scale9Height="11" ctype="ImageViewObjectData">
-                <Size X="54.0000" Y="29.0000" />
+              <AbstractNodeData Name="fangzhu" ActionTag="-2070685923" Tag="346" IconVisible="False" LeftMargin="65.7879" RightMargin="-14.7879" TopMargin="81.1120" BottomMargin="10.8880" LeftEage="17" RightEage="17" TopEage="9" BottomEage="9" Scale9OriginX="17" Scale9OriginY="9" Scale9Width="43" Scale9Height="14" ctype="ImageViewObjectData">
+                <Size X="77.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="29.2877" Y="26.8879" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="104.2879" Y="26.8880" />
+                <Scale ScaleX="1.5000" ScaleY="1.5000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2288" Y="0.2168" />
-                <PreSize X="0.4219" Y="0.2339" />
+                <PrePosition X="0.8147" Y="0.2168" />
+                <PreSize X="0.6016" Y="0.2581" />
                 <FileData Type="Normal" Path="gameEndNew/fangzhu.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="id" ActionTag="441248151" Tag="524" IconVisible="False" LeftMargin="140.8273" RightMargin="-212.8273" TopMargin="71.5859" BottomMargin="16.4141" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -363,14 +363,14 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="fangzhu" ActionTag="426581602" Tag="345" IconVisible="False" LeftMargin="2.2609" RightMargin="71.7391" TopMargin="83.5828" BottomMargin="11.4172" LeftEage="17" RightEage="17" TopEage="9" BottomEage="9" Scale9OriginX="17" Scale9OriginY="9" Scale9Width="20" Scale9Height="11" ctype="ImageViewObjectData">
-                <Size X="54.0000" Y="29.0000" />
+              <AbstractNodeData Name="fangzhu" ActionTag="426581602" Tag="345" IconVisible="False" LeftMargin="65.7611" RightMargin="-14.7611" TopMargin="82.0828" BottomMargin="9.9172" LeftEage="17" RightEage="17" TopEage="9" BottomEage="9" Scale9OriginX="17" Scale9OriginY="9" Scale9Width="43" Scale9Height="14" ctype="ImageViewObjectData">
+                <Size X="77.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="29.2609" Y="25.9172" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="104.2611" Y="25.9172" />
+                <Scale ScaleX="1.5000" ScaleY="1.5000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2286" Y="0.2090" />
-                <PreSize X="0.4219" Y="0.2339" />
+                <PrePosition X="0.8145" Y="0.2090" />
+                <PreSize X="0.6016" Y="0.2581" />
                 <FileData Type="Normal" Path="gameEndNew/fangzhu.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="win" ActionTag="778416962" Tag="37" IconVisible="False" LeftMargin="1001.5000" RightMargin="-1070.5000" TopMargin="15.5000" BottomMargin="11.5000" ctype="SpriteObjectData">
@@ -394,13 +394,13 @@
             <FileData Type="Normal" Path="gameEndNew/Photo_frame_01.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="table" ActionTag="-78518656" Tag="527" IconVisible="False" LeftMargin="6.2595" RightMargin="999.7405" TopMargin="-1.5237" BottomMargin="188.5237" ctype="SpriteObjectData">
+          <AbstractNodeData Name="table" Visible="False" ActionTag="-78518656" Tag="527" IconVisible="False" LeftMargin="6.2595" RightMargin="999.7405" TopMargin="-21.5238" BottomMargin="208.5238" ctype="SpriteObjectData">
             <Size X="274.0000" Y="533.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="143.2595" Y="455.0237" />
+            <Position X="143.2595" Y="475.0238" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1119" Y="0.6320" />
+            <PrePosition X="0.1119" Y="0.6598" />
             <PreSize X="0.2141" Y="0.7403" />
             <FileData Type="Normal" Path="gameEndNew/t_end.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
