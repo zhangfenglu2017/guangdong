@@ -117,6 +117,7 @@ var HomeLayer=cc.Layer.extend(
         title:
         {
             _layout:[[0.35,0.3],[0.53,0.9],[0,0]],
+
             scroll:
             {
                 msg:
@@ -279,7 +280,7 @@ var HomeLayer=cc.Layer.extend(
 			_run:function()
 			{
                 doLayout(this,[0.5,0.5],[0.3,0.45],[0,0] );
-
+                
 				 // if(jsclient.remoteCfg.hideMoney)
 				 // {
 					//  doLayout(this,[0.5,0.5],[0.3,0.45],[0,0] );

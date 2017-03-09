@@ -99,13 +99,13 @@
                 <PreSize X="1.0000" Y="1.0000" />
                 <FileData Type="Normal" Path="gameEndNew/Photo_frame_02.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="135445244" Tag="47" IconVisible="False" LeftMargin="138.1781" RightMargin="-298.1781" TopMargin="34.3293" BottomMargin="53.6707" IsCustomSize="True" FontSize="36" LabelText="姓名姓名姓名姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="135445244" Tag="47" IconVisible="False" LeftMargin="169.4277" RightMargin="-329.4277" TopMargin="34.3293" BottomMargin="53.6707" IsCustomSize="True" FontSize="36" LabelText="姓名姓名姓名姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="288.0000" Y="36.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="138.1781" Y="71.6707" />
+                <Position X="169.4277" Y="71.6707" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="1.0795" Y="0.5780" />
+                <PrePosition X="1.3237" Y="0.5780" />
                 <PreSize X="2.2500" Y="0.2903" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -131,13 +131,13 @@
                 <PreSize X="0.6016" Y="0.2581" />
                 <FileData Type="Normal" Path="gameEndNew/fangzhu.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="id" ActionTag="-885953658" Tag="526" IconVisible="False" LeftMargin="136.5412" RightMargin="-208.5412" TopMargin="82.5132" BottomMargin="5.4868" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="id" ActionTag="-885953658" Tag="526" IconVisible="False" LeftMargin="167.7910" RightMargin="-239.7910" TopMargin="82.5132" BottomMargin="5.4868" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="200.0000" Y="36.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="136.5412" Y="23.4868" />
+                <Position X="167.7910" Y="23.4868" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="1.0667" Y="0.1894" />
+                <PrePosition X="1.3109" Y="0.1894" />
                 <PreSize X="1.5625" Y="0.2903" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -176,13 +176,13 @@
                 <PreSize X="1.0000" Y="1.0000" />
                 <FileData Type="Normal" Path="gameEndNew/Photo_frame_02.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="-1888282198" Tag="53" IconVisible="False" LeftMargin="134.9969" RightMargin="-294.9969" TopMargin="38.6843" BottomMargin="49.3157" IsCustomSize="True" FontSize="36" LabelText="姓名姓名姓名姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="-1888282198" Tag="53" IconVisible="False" LeftMargin="166.2473" RightMargin="-326.2473" TopMargin="38.6842" BottomMargin="49.3158" IsCustomSize="True" FontSize="36" LabelText="姓名姓名姓名姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="288.0000" Y="36.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="134.9969" Y="67.3157" />
+                <Position X="166.2473" Y="67.3158" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="1.0547" Y="0.5429" />
+                <PrePosition X="1.2988" Y="0.5429" />
                 <PreSize X="2.2500" Y="0.2903" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -208,13 +208,13 @@
                 <PreSize X="0.6016" Y="0.2581" />
                 <FileData Type="Normal" Path="gameEndNew/fangzhu.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="id" ActionTag="1399326168" Tag="525" IconVisible="False" LeftMargin="135.2187" RightMargin="-207.2187" TopMargin="76.2993" BottomMargin="11.7007" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="id" ActionTag="1399326168" Tag="525" IconVisible="False" LeftMargin="166.4691" RightMargin="-238.4691" TopMargin="76.2992" BottomMargin="11.7008" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="200.0000" Y="36.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="135.2187" Y="29.7007" />
+                <Position X="166.4691" Y="29.7008" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="1.0564" Y="0.2395" />
+                <PrePosition X="1.3005" Y="0.2395" />
                 <PreSize X="1.5625" Y="0.2903" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -253,13 +253,13 @@
                 <PreSize X="1.0000" Y="1.0000" />
                 <FileData Type="Normal" Path="gameEndNew/Photo_frame_02.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="-368056091" Tag="59" IconVisible="False" LeftMargin="138.4942" RightMargin="-298.4942" TopMargin="32.4182" BottomMargin="55.5818" IsCustomSize="True" FontSize="36" LabelText="姓名姓名姓名姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="-368056091" Tag="59" IconVisible="False" LeftMargin="169.7439" RightMargin="-329.7439" TopMargin="32.4181" BottomMargin="55.5819" IsCustomSize="True" FontSize="36" LabelText="姓名姓名姓名姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="288.0000" Y="36.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="138.4942" Y="73.5818" />
+                <Position X="169.7439" Y="73.5819" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="1.0820" Y="0.5934" />
+                <PrePosition X="1.3261" Y="0.5934" />
                 <PreSize X="2.2500" Y="0.2903" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -285,13 +285,13 @@
                 <PreSize X="0.6016" Y="0.2581" />
                 <FileData Type="Normal" Path="gameEndNew/fangzhu.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="id" ActionTag="441248151" Tag="524" IconVisible="False" LeftMargin="140.8273" RightMargin="-212.8273" TopMargin="71.5859" BottomMargin="16.4141" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="id" ActionTag="441248151" Tag="524" IconVisible="False" LeftMargin="172.0769" RightMargin="-244.0769" TopMargin="71.5859" BottomMargin="16.4141" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="200.0000" Y="36.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="140.8273" Y="34.4141" />
+                <Position X="172.0769" Y="34.4141" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="1.1002" Y="0.2775" />
+                <PrePosition X="1.3444" Y="0.2775" />
                 <PreSize X="1.5625" Y="0.2903" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -330,24 +330,24 @@
                 <PreSize X="1.0000" Y="1.0000" />
                 <FileData Type="Normal" Path="gameEndNew/Photo_frame_02.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="1711474673" Tag="65" IconVisible="False" LeftMargin="132.3295" RightMargin="-292.3295" TopMargin="35.0462" BottomMargin="52.9538" IsCustomSize="True" FontSize="36" LabelText="姓名姓名姓名姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="1711474673" Tag="65" IconVisible="False" LeftMargin="163.5793" RightMargin="-323.5793" TopMargin="35.0463" BottomMargin="52.9537" IsCustomSize="True" FontSize="36" LabelText="姓名姓名姓名姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="288.0000" Y="36.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="132.3295" Y="70.9538" />
+                <Position X="163.5793" Y="70.9537" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="1.0338" Y="0.5722" />
+                <PrePosition X="1.2780" Y="0.5722" />
                 <PreSize X="2.2500" Y="0.2903" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="id" ActionTag="1836145813" Tag="523" IconVisible="False" LeftMargin="135.0788" RightMargin="-207.0788" TopMargin="83.7988" BottomMargin="4.2012" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="id" ActionTag="1836145813" Tag="523" IconVisible="False" LeftMargin="166.3285" RightMargin="-238.3285" TopMargin="83.7988" BottomMargin="4.2012" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="200.0000" Y="36.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="135.0788" Y="22.2012" />
+                <Position X="166.3285" Y="22.2012" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="1.0553" Y="0.1790" />
+                <PrePosition X="1.2994" Y="0.1790" />
                 <PreSize X="1.5625" Y="0.2903" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

@@ -744,7 +744,7 @@ var EndOneLayer = cc.Layer.extend(
                 _layout: [[0.15, 0], [0.5, 0.07], [1, 0.5]],
 
                 _click: function (btn, eT) {
-    
+                    
                     sendEvent("clearCardUI");
                     jsclient.endoneui.removeFromParent(true);
                     jsclient.MJPass2Net();
@@ -983,7 +983,7 @@ function showCardActionAndMa(cardIndex, cardNode, time) {
         cardImg.visible = true;
         cardImg.scaleX = 0;
 
-        cardImg.runAction(cc.sequence(cc.scaleTo(0.2, 1, 1), cc.callFunc(function () {
+        cardImg.runAction(cc.sequence(cc.scaleTo(0.3, 1, 1), cc.callFunc(function () {
             if (checkMjMa(cardIndex)) {
                 cardOpen.visible = true;
             }
@@ -993,7 +993,7 @@ function showCardActionAndMa(cardIndex, cardNode, time) {
         })));
     };
     var actTime = cc.delayTime(time);
-    var actScale = cc.scaleTo(0.2, 0, 1);
+    var actScale = cc.scaleTo(0.3, 0, 1);
     var actCall = cc.callFunc(onActionEnd);
     var actSeq = cc.sequence(actTime, actScale, actCall);
 

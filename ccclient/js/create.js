@@ -138,6 +138,7 @@
                     gdmj: {
                         self1Nozhong: null,
                         self1Zhong: null,
+                        self1FanGui:null,
                         self1Nofeng: null,
                         self1Feng: null,
                         self1CanHu7: null,
@@ -162,6 +163,8 @@
                                     self1Zhong.setTouchEnabled(true);
                                     self1Nozhong.setSelected(true);
                                     self1Nozhong.setTouchEnabled(false);
+                                    self1FanGui.setSelected(false);
+                                    self1FanGui.setTouchEnabled(true);
                                 }
                             },
 
@@ -175,6 +178,24 @@
                                     self1Zhong.setTouchEnabled(false);
                                     self1Nozhong.setSelected(false);
                                     self1Nozhong.setTouchEnabled(true);
+                                    self1FanGui.setSelected(false);
+                                    self1FanGui.setTouchEnabled(true);
+                                }
+                            },
+
+                            fangui:
+                            {
+                                _run: function () {
+                                    self1FanGui = this;
+                                },
+
+                                _click: function () {
+                                    self1Zhong.setSelected(false);
+                                    self1Zhong.setTouchEnabled(true);
+                                    self1Nozhong.setSelected(false);
+                                    self1Nozhong.setTouchEnabled(true);
+                                    self1FanGui.setSelected(true);
+                                    self1FanGui.setTouchEnabled(false);
                                 }
                             },
 
@@ -284,8 +305,10 @@
                         },
 
                         //创建,判断金钱
-                        yes: {
-                            _click: function (btn, evt) {
+                        yes:
+                        {
+                            _click: function (btn, evt)
+                            {
                                 var majiang = jsclient.data.gameInfo.gdmj;
                                 var isRound = self1Round4.isSelected();
                                 var needMoney = isRound ? majiang.round4 : majiang.round8;
@@ -311,7 +334,8 @@
                                         false,                     //258
                                         self1Zhong.isSelected(),    //鬼牌
                                         horse,                     //几匹马
-                                        false                       //节节高
+                                        false,                     //节节高
+                                        self1FanGui.isSelected()    //翻鬼
                                     );
                                 }
                                 else {
@@ -485,7 +509,8 @@
                                         false,                     //258
                                         false,                     //鬼牌
                                         horse,                     //几匹马
-                                        false                      //节节高
+                                        false,                      //节节高
+                                        false                       //翻鬼
                                     );
                                 }
                                 else {
@@ -500,6 +525,7 @@
                     shzhmj: {
                         self3Nozhong: null,
                         self3Zhong: null,
+                        self3FanGui:null,
                         self3Nofeng: null,
                         self3Feng: null,
                         self3JJG: null,
@@ -524,6 +550,8 @@
                                     self3Zhong.setTouchEnabled(true);
                                     self3Nozhong.setSelected(true);
                                     self3Nozhong.setTouchEnabled(false);
+                                    self3FanGui.setSelected(false);
+                                    self3FanGui.setTouchEnabled(true);
                                 }
                             },
 
@@ -537,6 +565,26 @@
                                     self3Zhong.setTouchEnabled(false);
                                     self3Nozhong.setSelected(false);
                                     self3Nozhong.setTouchEnabled(true);
+                                    self3FanGui.setSelected(false);
+                                    self3FanGui.setTouchEnabled(true);
+                                }
+                            },
+
+                            fangui:
+                            {
+                                _run: function ()
+                                {
+                                    self3FanGui = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    self3Zhong.setSelected(false);
+                                    self3Zhong.setTouchEnabled(true);
+                                    self3Nozhong.setSelected(false);
+                                    self3Nozhong.setTouchEnabled(true);
+                                    self3FanGui.setSelected(true);
+                                    self3FanGui.setTouchEnabled(false);
                                 }
                             },
 
@@ -673,7 +721,8 @@
                                         false,                     //258
                                         self3Zhong.isSelected(),    //鬼牌
                                         horse,                     //几匹马
-                                        self3JJG.isSelected()      //节节高
+                                        self3JJG.isSelected(),      //节节高
+                                        self3FanGui.isSelected()    //翻鬼
                                     );
                                 }
                                 else {

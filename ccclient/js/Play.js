@@ -21,6 +21,138 @@ var ActionType =
     FLOWER: 7
 };
 
+//重置右上角鬼牌效果
+function resetEffectFangui(card, cardBk)
+{
+    if(jsclient.data.sData.tData.fanGui)
+    {
+        var guiTag = jsclient.data.sData.tData.gui;
+        if(guiTag != 0)
+        {
+            card.visible = true;
+            setCardPic(card, guiTag);
+        }
+        else
+        {
+            card.visible = false;
+        }
+
+        log("任意鬼牌。。。。" + guiTag);
+    }
+
+    if(jsclient.data.sData.tData.withZhong)
+    {
+        card.visible = true;
+
+        log("红中鬼牌。。。。" + 71);
+    }
+
+    cardBk.visible = false;
+}
+
+//播放鬼牌效果
+function playEffectFangui(selfCard, selfCardBk, selfArrowbk)
+{
+    var guiTag = 0,showTag = 0;
+    if(jsclient.data.sData.tData.withZhong)
+        return;
+
+    if(jsclient.data.sData.tData.fanGui)
+        guiTag = jsclient.data.sData.tData.gui;
+
+    if(guiTag == 0)
+        return;
+
+    if(jsclient.sameGeogUI)
+        return;
+
+    if(selfCard.visible )
+    {
+        setCardPic(selfCard, guiTag);
+        return;
+    }
+
+    //翻鬼特效
+    log("播放翻鬼牌特效。。。。。。");
+
+    if(guiTag < 30)
+    {
+        //条万筒
+        if((guiTag - 1)%10 == 0)
+            showTag = guiTag + 8;
+        else
+            showTag = guiTag - 1;
+    }
+    else
+    {
+        //风
+        if(guiTag == 31)
+            showTag = 91;
+        else
+            showTag = guiTag - 10;
+    }
+
+    setCardPic(selfCard, showTag);
+
+    var startX = selfCardBk.x;
+    var startY = selfCardBk.y;
+
+    var onActionEnd = function ()
+    {
+        selfCard.visible = true;
+
+        selfCardBk.x = startX;
+        selfCardBk.y = startY;
+        selfCardBk.visible = false;
+
+        var onSetCardGui = function ()
+        {
+            setCardPic(selfCard, guiTag);
+        };
+
+        var onFanGuiEnd = function ()
+        {
+            selfArrowbk.visible = true;
+        };
+
+        selfCard.runAction(
+            cc.sequence(
+                cc.scaleTo(0.3, 0.8, 0.8),
+                cc.delayTime(0.5),
+                cc.callFunc(onSetCardGui),
+                cc.delayTime(0.5),
+                cc.moveTo(0.5, startX,startY),
+                cc.callFunc(onFanGuiEnd)));
+
+        selfCard.runAction(
+            cc.sequence(
+                cc.delayTime(1.3),
+                cc.scaleTo(0.5, 0.45, 0.45)));
+    };
+    var actTime = cc.delayTime(0.5);
+    var actScale = cc.scaleTo(0.3, 0, 0.8);
+    var actCall = cc.callFunc(onActionEnd);
+    var actSeq = cc.sequence(actTime, actScale, actCall);
+    var size = jsclient.size;
+
+    var ctnpos = selfCardBk.getParent().convertToNodeSpace(cc.p(size.width / 2, size.height / 2));
+
+    selfCard.x = ctnpos.x;
+    selfCard.y = ctnpos.y;
+    selfCard.visible = false;
+    selfCard.scaleX = 0;
+    selfCard.scaleY = 0.8;
+
+    selfCardBk.x = ctnpos.x;
+    selfCardBk.y = ctnpos.y;
+    selfCardBk.visible = true;
+    selfCardBk.scaleX = 0.8;
+    selfCardBk.scaleY = 0.8;
+    selfCardBk.runAction(actSeq);
+
+    selfArrowbk.visible = false;
+}
+
 function ShowEatActionAnim(node, actType, off) {
     if (off == 0)
         return;
@@ -94,6 +226,8 @@ function PutAwayCard(cdui, cd) {
         jsclient.lastPutPos = {x: cdui.x, y: cdui.y};
         //if(newCard) newCard.isnewCard=false;
         HandleMJPut(cdui.parent, {uid: SelfUid(), card: cd}, 0);
+        log("打出的牌是：" + cd);
+        cdui.stopAllActions();
     }
 }
 
@@ -346,8 +480,7 @@ function CheckEatVisible(eat) {
 
             }
 
-
-            if (pl.isNew && mj.canHu(!tData.canHu7, pl.mjhand, 0, tData.canHuWith258, tData.withZhong) > 0) {
+            if (pl.isNew && mj.canHu(!tData.canHu7, pl.mjhand, 0, tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui) > 0) {
                 vnode.push(eat.hu._node);
             }
             console.log("最后打出的牌：" + tData.lastPut);
@@ -359,7 +492,7 @@ function CheckEatVisible(eat) {
             //判断红中癞子
             var horse = 0;
             var rtn;
-            if (jsclient.data.sData.tData.withZhong) horse = jsclient.data.sData.tData.horse + 2;
+            if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui) horse = jsclient.data.sData.tData.horse + 2;
             else horse = jsclient.data.sData.tData.horse;
             if (jsclient.data.sData.tData.gameType == 3 && jsclient.data.sData.tData.jiejieGao) {
                     switch ( sData.players[tData.uids[tData.zhuang]].linkZhuang) {
@@ -415,7 +548,8 @@ function CheckEatVisible(eat) {
 
         if (!IsMyTurn()) {
             var huType = mj.canHu(!tData.canHu7, pl.mjhand, tData.lastPut,
-                tData.canHuWith258, tData.withZhong);
+                tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui);
+            console.log("fanGui============="+tData.fanGui + "  gui====="+tData.gui);
             console.log("uid:" + pl.info.uid + "  huType ====== " + huType);
             if ((tData.gameType == 1 || tData.gameType == 3 ) && tData.putType == 4) huType = 0;
             console.log("----------gameType" + tData.gameType);
@@ -491,7 +625,7 @@ function CheckEatVisible(eat) {
 
                 var horse = 0;
                 var rtn;
-                if (jsclient.data.sData.tData.withZhong) horse = jsclient.data.sData.tData.horse + 2;
+                if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui) horse = jsclient.data.sData.tData.horse + 2;
                 else horse = jsclient.data.sData.tData.horse;
                 if (tData.gameType == 3 && jsclient.data.sData.tData.jiejieGao) {
                     switch (sData.players[tData.uids[tData.zhuang]].linkZhuang) {
@@ -580,7 +714,7 @@ function CheckEatVisible(eat) {
     {
         "peng": ["res/play-yli/btn_peng_normal.png", "res/play-yli/btn_peng_press.png"],
         "gang0": ["res/play-yli/btn_gang_normal.png", "res/play-yli/btn_gang_press.png"],
-        "chi0": ["res/play-yli/btn_chi_normal.png", "res/png/play-yli/btn_chi_press.png"],
+        "chi0": ["res/play-yli/btn_chi_normal.png", "res/play-yli/btn_chi_press.png"],
     }
 
 
@@ -677,14 +811,17 @@ function CheckInviteVisible() {
     }
 }
 
-function CheckArrowVisible() {
+function CheckArrowVisible()
+{
     var sData = jsclient.data.sData;
     var tData = sData.tData;
 
-    if (TableState.waitPut == tData.tState || TableState.waitEat == tData.tState || TableState.waitCard == tData.tState) {
+    if (TableState.waitPut == tData.tState || TableState.waitEat == tData.tState || TableState.waitCard == tData.tState)
+    {
         return true;
     }
-    else {
+    else
+    {
         return false;
     }
 }
@@ -1002,28 +1139,50 @@ function RestoreCardLayout(node, off, endonepl) {
     var newC = null;
     var newVal = 0;
     var pl;
-    if (endonepl) {
+
+    if (endonepl)
+    {
         pl = endonepl;
     }
-    else {
+    else
+    {
         pl = getUIPlayer(off);
     }
     var mjhandNum = 0;
     var children = node.children;
-    for (var i = 0; i < children.length; i++) {
+    for (var i = 0; i < children.length; i++)
+    {
         var ci = children[i];
-        if (ci.name == "mjhand") {
+        if (ci.name == "mjhand")
+        {
             mjhandNum++;
         }
     }
-    if (pl.mjhand && pl.mjhand.length > 0) {
+    
+    if(pl.mjhand){
+        pl.mjhand.sort(function(a,b){
+            if(jsclient.data.sData.tData.withZhong)
+            {
+                return b == 71;
+            }
+            if(jsclient.data.sData.tData.fanGui)
+            {
+                return b == jsclient.data.sData.tData.gui;
+            }
+        });
+    }
+
+    if (pl.mjhand && pl.mjhand.length > 0)
+    {
         var count = jsclient.majiang.CardCount(pl);
 
-        if (count == 14 && mjhandNum == pl.mjhand.length) {
+        if (count == 14 && mjhandNum == pl.mjhand.length)
+        {
             if (pl.isNew || endonepl)
                 newVal = pl.mjhand[pl.mjhand.length - 1];
             else
-                newVal = Math.max.apply(null, pl.mjhand);
+                newVal = pl.mjhand[pl.mjhand.length - 1];
+               // newVal = Math.max.apply(null, pl.mjhand);
         }
     }
 
@@ -1057,28 +1216,36 @@ function RestoreCardLayout(node, off, endonepl) {
     var uichi = [];
     var uistand = [];
 
-    for (var i = 0; i < children.length; i++) {
+    for (var i = 0; i < children.length; i++)
+    {
         var ci = children[i];
-        if (ci.name == "mjhand") {
-            if (newC == null && newVal == ci.tag) {
+        if (ci.name == "mjhand")
+        {
+            if (newC == null && newVal == ci.tag)
+            {
                 newC = ci;
             }
             else
                 uistand.push(ci);
         }
-        else if (ci.name == "standPri") {
+        else if (ci.name == "standPri")
+        {
             uistand.push(ci);
         }
-        else if (ci.name == "gang0") {
+        else if (ci.name == "gang0")
+        {
             uigang0.push(ci);
         }
-        else if (ci.name == "gang1") {
+        else if (ci.name == "gang1")
+        {
             uigang1.push(ci);
         }
-        else if (ci.name == "chi") {
+        else if (ci.name == "chi")
+        {
             uichi.push(ci);
         }
-        else if (ci.name == "peng") {
+        else if (ci.name == "peng")
+        {
             uipeng.push(ci);
         }
         /*
@@ -1091,106 +1258,178 @@ function RestoreCardLayout(node, off, endonepl) {
     uichi.sort(TagOrder);
     uistand.sort(TagOrder);
 
-    if (newC) {
-        uistand.push(newC);
+    var guiTag = 0;
+    if(jsclient.data.sData.tData.withZhong)
+        guiTag = 71;
 
+    if(jsclient.data.sData.tData.fanGui)
+        guiTag = jsclient.data.sData.tData.gui;
+
+    jsclient.majiang.toFontGuiPai(uistand, jsclient.data.sData.tData.withZhong, jsclient.data.sData.tData.fanGui, guiTag);
+
+    if (newC)
+    {
+        uistand.push(newC);
     }
+
+    //给鬼牌加特效
+    if(jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+    {
+        for(var z = 0; z< uistand.length; z++)
+        {
+            var guiCard = uistand[z];
+
+            if(guiCard.tag == guiTag)
+            {
+                playAnimationByCard(guiCard);
+            }
+        }
+    }
+
     var uiOrder = [uigang1, uigang0, uipeng, uichi, uistand];
-    if (off == 1 || off == 2) uiOrder.reverse();
+    if (off == 1 || off == 2)
+        uiOrder.reverse();
+
     var orders = [];
-    for (var j = 0; j < uiOrder.length; j++) {
+    for (var j = 0; j < uiOrder.length; j++)
+    {
         var uis = uiOrder[j];
-        for (var i = 0; i < uis.length; i++)  orders.push(uis[i]);
+        for (var i = 0; i < uis.length; i++)
+            orders.push(uis[i]);
     }
     var slotwith = upSize.width * upS * 0.3;
     var slotheigt = upSize.height * upS * 0.3;
+
     for (var i = 0; i < orders.length; i++) {
         var ci = orders[i];
 
-        if (off % 2 == 0)  {
+        if (off % 2 == 0)
+        {
             if (i != 0) {
-                if (ci.name == orders[i - 1].name) {
+                if (ci.name == orders[i - 1].name)
+                {
 
-                    if (ci.isgang4) {
-
+                    if (ci.isgang4)
+                    {
                         ci.x = orders[i - 2].x;
                         ci.y = orders[i - 2].y + upSize.height * upS * 0.2;
-                    } else if (orders[i - 1].isgang4) {
+
+                    } else if (orders[i - 1].isgang4)
+                    {
                         ci.x = orders[i - 1].x + upSize.width * upS * 2;
-                    } else {
+
+                    } else
+                    {
                         ci.x = orders[i - 1].x + upSize.width * upS;
+
                     }
-                } else if (orders[i - 1].name == "gang0") {
+                }
+                else if (orders[i - 1].name == "gang0")
+                {
                     ci.x = orders[i - 2].x + upSize.width * upS + slotwith;
-                } else if (orders[i - 1].name == "gang1") {
+
+                }
+                else if (orders[i - 1].name == "gang1")
+                {
                     ci.x = orders[i - 2].x + upSize.width * upS + slotwith;
-                } else {
+                }
+                else
+                {
                     ci.x = orders[i - 1].x + upSize.width * upS + slotwith;
                 }
                 /*
                  判断是不是新抓的牌
                  */
-                if (off == 0) {
+                if (off == 0)
+                {
 
-                    if (i == orders.length - 1) {
-
-
-                        if (newC && endonepl) {
+                    if (i == orders.length - 1)
+                    {
+                        if (newC && endonepl)
+                        {
                             ci.x = ci.x + slotwith;
-                        } else if (newC) {
+                        }
+                        else if (newC)
+                        {
                             ci.x = ci.x + slotwith;
                             ci.y += 20;
                         }
                     }
                 }
-            } else {
+            }
+            else
+            {
                 ci.x = start.x + upSize.width * upS;
             }
         }
-        else {
-            if (i != 0) {
-                if (ci.name == orders[i - 1].name) {
-                    if (ci.isgang4) {
-
+        else
+        {
+            if (i != 0)
+            {
+                if (ci.name == orders[i - 1].name)
+                {
+                    if (ci.isgang4)
+                    {
                         ci.y = orders[i - 2].y + slotheigt;
-                    } else if (orders[i - 1].isgang4) {
+                    }
+                    else if (orders[i - 1].isgang4)
+                    {
                         ci.y = orders[i - 2].y - upSize.height * upS * 0.7;
-                    } else {
+                    }
+                    else
+                    {
                         ci.y = orders[i - 1].y - upSize.height * upS * 0.7;
                     }
 
-                } else if (orders[i - 1].name == "standPri") {
+                }
+                else if (orders[i - 1].name == "standPri")
+                {
                     ci.y = orders[i - 1].y - upSize.height * upS * 1.5;
-                } else if (orders[i - 1].name == "gang0") {
+                }
+                else if (orders[i - 1].name == "gang0")
+                {
                     ci.y = orders[i - 2].y - upSize.height * upS * 0.7 - slotheigt;
-                } else if (orders[i - 1].name == "gang1") {
+                }
+                else if (orders[i - 1].name == "gang1")
+                {
                     ci.y = orders[i - 2].y - upSize.height * upS * 0.7 - slotheigt;
-                }else {
+                }
+                else
+                {
                     ci.y = orders[i - 1].y - upSize.height * upS * 0.7 - slotheigt;
                 }
 
-            } else {
+            }
+            else
+            {
                 ci.y = start.y - upSize.height * upS * 0.7;
 
                 if(off == 1)
                     ci.y = ci.y + 40;
             }
 
-
-            if (off == 3) {
-                if (!ci.isgang4) {
+            if (off == 3)
+            {
+                if (!ci.isgang4)
+                {
                     ci.zIndex = i;
-                } else {
+                }
+                else
+                {
                     ci.zIndex = 200;
                 }
 
                 ci.x = start.x - 10;
             }
 
-            if (off == 1) {
-                if (!ci.isgang4) {
+            if (off == 1)
+            {
+                if (!ci.isgang4)
+                {
                     ci.zIndex = i;
-                } else {
+                }
+                else
+                {
                     ci.zIndex = 200;
                 }
 
@@ -1382,8 +1621,9 @@ function HandleMJPut(node, msg, off, outNum) {
     }
 }
 
-function setCardPic(node, cd, off) {
-    var imgName = "";
+function setCardPic(node, cd, off)
+{
+    // var imgName = "";
     // if(cd<30)
     // {
     // 	imgName=imgOff[off] + imgNames[Math.floor(cd/10)]+cd%10;
@@ -1392,20 +1632,20 @@ function setCardPic(node, cd, off) {
     // {
     //     imgName=imgOff[off] + imgNames[Math.floor(cd/10)];
     // }
-    imgName = "mj_" + cd + ".png";
+    var imgName = "mj_" + cd + ".png";
     node.tag = cd;
-    var callback = function () {
+    // var callback = function () {
         // node.loadTexture(imgName+".png",ccui.Widget.PLIST_TEXTURE  );
         var num = node.getChildByName("num");
         if (num != null)
             num.loadTexture(imgName, ccui.Widget.PLIST_TEXTURE);
-    };
-    node.stopAllActions();
-    node.runAction(cc.repeatForever(cc.sequence(cc.callFunc(callback), cc.delayTime(1))));
-
+    // };
+    // node.stopAllActions();
+    // node.runAction(cc.repeatForever(cc.sequence(cc.callFunc(callback), cc.delayTime(1))));
 }
 
-function SetArrowRotation(abk) {
+function SetArrowRotation(abk)
+{
     var sData = jsclient.data.sData;
     var tData = sData.tData;
     var uids = tData.uids;
@@ -2019,7 +2259,6 @@ function emojiPlayAction(node, num) {
     }
     for (var i = 0; i < 15; i++) {
         var frame = cc.spriteFrameCache.getSpriteFrame(framename + i + ".png");
-
         if (frame) {
             imgSize = frame.getOriginalSize();
             arry.push(framename + i);
@@ -2373,11 +2612,21 @@ function downAndPlayVoice(uid, filePath) {
     jsclient.native.DownLoadFile(jsb.fileUtils.getWritablePath(), index + ".mp3", jsclient.remoteCfg.voiceUrl + filePath, "playVoice");
 }
 
+
+var selfArrowbk, selfCardBk, selfCard;
 var PlayLayer = cc.Layer.extend(
     {
         jsBind: {
-            _event: {
-                mjhand: function () {
+            _event:
+            {
+                initSceneData: function ()
+                {
+                    reConectHeadLayout(this);
+                    CheckDelRoomUI();
+                },
+
+                mjhand: function ()
+                {
                     var sData = jsclient.data.sData;
                     var tData = sData.tData;
                     if (tData.roundNum != tData.roundAll)
@@ -2385,7 +2634,8 @@ var PlayLayer = cc.Layer.extend(
 
                     var pls = sData.players;
                     var ip2pl = {};
-                    for (var uid in pls) {
+                    for (var uid in pls)
+                    {
                         var pi = pls[uid];
                         var ip = pi.info.remoteIP;
 
@@ -2397,18 +2647,27 @@ var PlayLayer = cc.Layer.extend(
                         }
                     }
                     var ipmsg = [];
-                    for (var ip in ip2pl) {
+                    for (var ip in ip2pl)
+                    {
                         var ips = ip2pl[ip];
-                        if (ips.length > 1) {
+                        if (ips.length > 1)
+                        {
                             ipmsg.push("玩家:" + ips + "\n为同一IP地址\n")
                         }
                     }
-                    if (ipmsg.length > 0) {
+                    if (ipmsg.length > 0)
+                    {
                         ShowSameIP(ipmsg.join(""));
                     }
-                    else {
+                    else
+                    {
                         sendEvent("mjgeog");
                     }
+                },
+
+                onlinePlayer: function ()
+                {
+                    reConectHeadLayout(this);
                 },
 
                 //麻将地理
@@ -2422,10 +2681,12 @@ var PlayLayer = cc.Layer.extend(
                     var plays = [];
                     var ipmsg = [];
                     var index = 0;
-                    for (var uid  in pls) {
+                    for (var uid  in pls)
+                    {
                         var pl = pls[uid];
                         var geogData = pl.info.geogData;
-                        if (geogData.latitude <= 0 || geogData.longitude <= 0) {
+                        if (geogData.latitude <= 0 || geogData.longitude <= 0)
+                        {
                             ipmsg.push("未获取" + unescape(pl.info.nickname || pl.info.name) + "的地理位置.\n");
 
                             continue;
@@ -2436,45 +2697,61 @@ var PlayLayer = cc.Layer.extend(
                     }
 
 
-                    for (var i = 0; i < plays.length; i++) {
+                    for (var i = 0; i < plays.length; i++)
+                    {
                         var pi1 = plays[i];
                         var geogData1 = pi1.info.geogData;
 
-                        for (var j = i + 1; j < plays.length; j++) {
+                        for (var j = i + 1; j < plays.length; j++)
+                        {
                             var pi2 = plays[j];
                             var geogData2 = pi2.info.geogData;
                             var distance = jsclient.native.CalculateLineDistance(
                                 geogData1.latitude, geogData1.longitude, geogData2.latitude, geogData2.longitude);
 
-                            if (distance < 100 && distance > 0) {
+                            if (distance < 100 && distance > 0)
+                            {
                                 ipmsg.push(unescape(pi1.info.nickname || pi1.info.name) + "和"
                                     + unescape(pi2.info.nickname || pi2.info.name) + "相距小于" + distance + "米\n");
                             }
                         }
                     }
 
-                    if (ipmsg.length > 0) {
+                    if (ipmsg.length > 0)
+                    {
                         ShowSameGeog(ipmsg.join(""));
+                    }
+                    else
+                    {
+                        sendEvent("playEffectFangui");
                     }
                 },
 
                 game_on_hide: function () {
                     jsclient.tickGame(-1);
                 },
+
                 game_on_show: function () {
                     jsclient.tickGame(1);
                 },
+
                 LeaveGame: function () {
                     jsclient.playui.removeFromParent(true);
                     delete jsclient.playui;
                     playMusic("bgMain");
                 },
+
+                //申请解散房间
                 endRoom: function (msg) {
                     mylog(JSON.stringify(msg));
-                    if (msg.showEnd) this.addChild(new EndAllLayer());
-                    else jsclient.Scene.addChild(new EndRoomLayer());
+                    if (msg.showEnd)
+                        this.addChild(new EndAllLayer());
+                    else
+                        jsclient.Scene.addChild(new EndRoomLayer());
                 },
-                roundEnd: function () {
+
+                //单局结束
+                roundEnd:function () {
                     var sData = jsclient.data.sData;
                     if (sData.tData.roundNum <= 0)
                         this.addChild(new EndAllLayer());
@@ -2484,25 +2761,25 @@ var PlayLayer = cc.Layer.extend(
                     //如果赢了显示买马
                     if (checkShowMa())
                         this.addChild(new ShowMaPanel());
+                },
 
-                }, moveHead: function () {
+                moveHead:function () {
                     tableStartHeadPlayAction(this);
-                }, initSceneData: function () {
-                    reConectHeadLayout(this);
-                    CheckDelRoomUI();
-                }, onlinePlayer: function () {
-                    reConectHeadLayout(this);
-                }, logout: function () {
-                    if (jsclient.playui) {
+                },
+
+                logout: function () {
+                    if (jsclient.playui)
+                    {
                         jsclient.playui.removeFromParent(true);
                         delete jsclient.playui;
                     }
                 },
+
                 DelRoom: CheckDelRoomUI
             },
 
             roundnumImg: {
-                _layout: [[0.1, 0.1], [0.5, 0.5], [1, 0]]
+                _layout: [[0.1, 0.1], [0.52, 0.5], [1, 0]]
                 , _event: {
                     initSceneData: function (eD) {
                         this.visible = CheckArrowVisible();
@@ -2530,7 +2807,7 @@ var PlayLayer = cc.Layer.extend(
             },
 
             cardNumImg: {
-                _layout: [[0.1, 0.1], [0.5, 0.5], [-1.1, 0]],
+                _layout: [[0.1, 0.1], [0.485, 0.5], [-1.1, 0]],
                 _event: {
                     initSceneData: function (eD) {
                         this.visible = CheckArrowVisible();
@@ -2610,9 +2887,29 @@ var PlayLayer = cc.Layer.extend(
                     _layout: [[0.15, 0.15], [0, 1], [0.5, -0.5]],
 
                     play: {
-                        canHu_hongzhong: {
-                            _visible: function () {
-                                return jsclient.data.sData.tData.withZhong;
+                        canHu_hongzhong:
+                        {
+                            _visible: function ()
+                            {
+                                return (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui);
+                            },
+
+                            cardBk:
+                            {
+                                _run:function()
+                                {
+                                    this.visible = false;
+                                    selfCardBk = this;
+                                }
+                            },
+
+                            card:
+                            {
+                                _run:function ()
+                                {
+                                    this.visible = false;
+                                    selfCard = this;
+                                }
                             }
                         },
 
@@ -2653,11 +2950,25 @@ var PlayLayer = cc.Layer.extend(
                         },
 
                         _event: {
-                            initSceneData: function (eD) {
-                                if (jsclient.data.sData.tData.withZhong) {
+
+                            playEffectFangui:function ()
+                            {
+                                //判断首局执行
+                                var sData = jsclient.data.sData;
+                                if (sData.tData.roundNum ==  sData.tData.roundAll)
+                                    playEffectFangui(selfCard, selfCardBk, selfArrowbk);
+                            },
+
+                            initSceneData: function (eD)
+                            {
+                                resetEffectFangui(selfCard, selfCardBk);
+
+                                if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+                                {
                                     this.y = 20;
                                 }
-                                else if (jsclient.data.sData.tData.withWind) {
+                                else if (jsclient.data.sData.tData.withWind)
+                                {
                                     this.y = 120;
                                 }
                                 else
@@ -2665,11 +2976,30 @@ var PlayLayer = cc.Layer.extend(
 
                                 this.visible = true;
                             },
-                            mjhand: function (eD) {
+                            mjhand: function (eD)
+                            {
                                 this.visible = CheckArrowVisible();
+
+                                //判断不是首局执行
+                                var sData = jsclient.data.sData;
+                                if (sData.tData.roundNum !=  sData.tData.roundAll)
+                                    playEffectFangui(selfCard, selfCardBk, selfArrowbk);
                             },
-                            onlinePlayer: function (eD) {
-                                this.visible = CheckArrowVisible();
+
+                            roundEnd:function ()
+                            {
+                                //鬼牌重置为不显示，则会继续播放翻牌特效
+
+                                // jsclient.data.sData.tData.gui = 0;
+                                // resetEffectFangui(selfCard, selfCardBk);
+                                selfCard.visible = false;
+                                selfCardBk.visible = false;
+                            },
+
+                            onlinePlayer: function (eD)
+                            {
+                                // this.visible = CheckArrowVisible();
+
                             }
                         }
                     }
@@ -2684,21 +3014,21 @@ var PlayLayer = cc.Layer.extend(
                 barb: {_layout: [[0.9, 0], [0.5, 0.01], [0, 0], true]},
 
                 gdmj: {
-                    _layout: [[0.2, 0.2], [0.5, 0.5], [0, 1.2]],
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
                     _visible: function () {
                         if (jsclient.data.sData.tData.gameType == 1) return true;
                         else return false;
                     }
                 },
                 hzmj: {
-                    _layout: [[0.2, 0.2], [0.5, 0.5], [0, 1.2]],
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
                     _visible: function () {
                         if (jsclient.data.sData.tData.gameType == 2) return true;
                         else return false;
                     }
                 },
                 shzhmj: {
-                    _layout: [[0.2, 0.2], [0.5, 0.5], [0, 1.2]],
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
                     _visible: function () {
                         if (jsclient.data.sData.tData.gameType == 3) return true;
                         else return false;
@@ -2757,65 +3087,79 @@ var PlayLayer = cc.Layer.extend(
             arrowbk: {
                 _layout: [[0.15, 0.15], [0.5, 0.5], [0, 0]],
                 _event: {
-                    initSceneData: function (eD) {
+                    initSceneData: function (eD)
+                    {
                         this.visible = CheckArrowVisible();
                         SetArrowRotation(this)
-                    }
-                    , mjhand: function (eD) {
+                    },
+                    mjhand: function (eD) {
                         this.visible = CheckArrowVisible();
                         SetArrowRotation(this);
-                    }
-                    , onlinePlayer: function (eD) {
+                    },
+                    onlinePlayer: function (eD) {
                         this.visible = CheckArrowVisible();
-                    }
-                    , waitPut: function (eD) {
+                    },
+                    waitPut: function (eD) {
                         SetArrowRotation(this)
-                    }
-                    , MJPeng: function (eD) {
+                    },
+                    MJPeng: function (eD) {
                         SetArrowRotation(this)
-                    }
-                    , MJChi: function (eD) {
+                    },
+                    MJChi: function (eD) {
                         SetArrowRotation(this)
-                    }
-                    , MJGang: function (eD) {
+                    },
+                    MJGang: function (eD) {
                         SetArrowRotation(this)
-                    }
-                    , MJFlower: function (eD) {
+                    },
+
+                    MJFlower: function (eD) {
                         SetArrowRotation(this);
                     }
                 },
-                number: {
-                    _run: function () {
-
+                _run:function()
+                {
+                    selfArrowbk = this;
+                },
+                number:
+                {
+                    _run: function ()
+                    {
                         updateArrowbkNumber(this);
                     },
-                    _event: {
-                        MJPeng: function () {
+                    _event:
+                    {
+                        MJPeng: function ()
+                        {
                             this.cleanup();
-                            stopEffect(playAramTimeID)
-                            updateArrowbkNumber(this);
-                        }
-                        , MJChi: function () {
-                            this.cleanup();
-                            stopEffect(playAramTimeID)
-                            updateArrowbkNumber(this);
-                        }
-                        , waitPut: function () {
-                            this.cleanup();
-                            stopEffect(playAramTimeID)
+                            stopEffect(playAramTimeID);
                             updateArrowbkNumber(this);
                         },
-                        MJPut: function (msg) {
+
+                        MJChi: function ()
+                        {
+                            this.cleanup();
+                            stopEffect(playAramTimeID);
+                            updateArrowbkNumber(this);
+                        },
+
+                        waitPut: function ()
+                        {
+                            this.cleanup();
+                            stopEffect(playAramTimeID);
+                            updateArrowbkNumber(this);
+                        },
+
+                        MJPut: function (msg)
+                        {
                             if (msg.uid == SelfUid())
                                 this.cleanup();
+                        },
 
-
-                        }, roundEnd: function () {
+                        roundEnd: function ()
+                        {
                             this.cleanup();
                             stopEffect(playAramTimeID)
                         }
-
-
                     }
                 }
             },
@@ -2856,12 +3200,16 @@ var PlayLayer = cc.Layer.extend(
                         var feng = tData.withWind;
                         var horse = tData.horse;
                         var roundNum = tData.roundNum;
+                        var fanGui = tData.fanGui;
+                        var jiejieGao = tData.jiejieGao;
 
                         var gameTypeTips = "";
                         var withZhongTips = withZhong ? "红中鬼牌、" : "";
                         var canHu7Tips = canHu7 ? "胡7对、" : "";
                         var fengTisp = feng ? "带风牌、" : "不带风";
                         var horseTips = horse + "马、";
+                        var jiejieGaoTips = jiejieGao ? "节节高、":"";
+                        var fanGuiTips = fanGui ? "翻鬼牌、": "";
                         var roundNumTips = roundNum + "局,";
 
                         if (gameType == 1)
@@ -2875,9 +3223,12 @@ var PlayLayer = cc.Layer.extend(
                             jsclient.remoteCfg.wxShareUrl,
                             gameTypeTips,
                             "房间号:" + tableid + ","
-                            + withZhongTips + canHu7Tips + fengTisp + horseTips + roundNumTips
+                            + withZhongTips + canHu7Tips + fengTisp + horseTips + fanGuiTips + jiejieGaoTips + roundNumTips
                             + "速度加入，只等你来【星悦麻将】");
 
+                        console.log( "房间号:" + tableid + ","
+                            + withZhongTips + canHu7Tips + fengTisp + horseTips + fanGuiTips + jiejieGaoTips + roundNumTips
+                            + "速度加入，只等你来【星悦麻将】");
                         //"【广东麻将】房间号:123456, 红中鬼牌、胡7对、带风牌、6马，4局，速度加入，只等你来【星悦麻将】
                     }
                 },
@@ -3831,8 +4182,10 @@ var PlayLayer = cc.Layer.extend(
                 changeui: {
                     changeuibg: {
                         _layout: [[0.4, 0.4], [0.5, 0], [0, 0]],
-                        _run: function () {
+                        _run: function ()
+                        {
                             this.y = this.getParent().getParent().getChildByName("chi0").y;
+                            this.visible = false;
                         },
                         card1: {
                             _touch: function (btn, et) {
@@ -4052,6 +4405,7 @@ var PlayLayer = cc.Layer.extend(
                 if (jsclient.game_on_show) jsclient.tickGame(0);
             }), cc.delayTime(7))));
             jsclient.playui = this;
+
             return true;
         },
     });

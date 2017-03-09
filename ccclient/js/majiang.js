@@ -22,6 +22,22 @@
 
     ]
 
+    var mjGuicards = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9,
+        1, 2, 3, 4, 5, 6, 7, 8, 9,
+        1, 2, 3, 4, 5, 6, 7, 8, 9,
+        1, 2, 3, 4, 5, 6, 7, 8, 9,
+
+        11, 12, 13, 14, 15, 16, 17, 18, 19,
+        11, 12, 13, 14, 15, 16, 17, 18, 19,
+        11, 12, 13, 14, 15, 16, 17, 18, 19,
+        11, 12, 13, 14, 15, 16, 17, 18, 19,
+
+        21, 22, 23, 24, 25, 26, 27, 28, 29,
+        21, 22, 23, 24, 25, 26, 27, 28, 29,
+        21, 22, 23, 24, 25, 26, 27, 28, 29,
+        21, 22, 23, 24, 25, 26, 27, 28, 29,
+    ]
     //惠州麻将
     var huizhoumjcards = [
         1, 2, 3, 4, 5, 6, 7, 8, 9,
@@ -168,6 +184,20 @@
         } else return true;
     }
 
+    majiang.isHuWithFanGui = function(pl,gui){
+        var test = [pl.mjhand, pl.mjpeng, pl.mjgang0, pl.mjgang1, pl.mjchi];
+        var noGuiCount = 0;
+        for (var i = 0; i < test.length; i++) {
+            var cds = test[i];
+            if (cds.indexOf(gui) == -1) {
+                noGuiCount++;
+            }
+        }
+        if (noGuiCount >= test.length) {
+            // console.log("不含红中");
+            return false;
+        } else return true;
+    }
 
     //惠州全幺九 不含风 全部由1和9组成的碰碰胡，并且必须有1和9
     //1 9 1 19 1 29  11 9 11 19 11 29 21 9 21 19 21 29
@@ -1147,6 +1177,113 @@
         return false;
     }
 
+
+    majiang.toFontGuiPai = function(cds,withZhong,isFanGui,gui)
+    {
+        //console.log("进来排序手牌了==============鬼牌是："+gui);
+        if(withZhong)
+        {
+            cds.sort(function(node1, node2){
+                return node2.tag == 71;
+            });
+        }
+        if(isFanGui)
+        {
+            cds.sort(function(node1, node2){
+                return node2.tag == gui;
+            });
+        }
+
+    };
+
+    function is4SameGui(cds,cd,gui){
+        var tmp = [];
+        for (var i = 0; i < cds.length; i++) tmp.push(cds[i]);
+        if (cd) tmp.push(cd);
+        var count = 0;
+        for (var i = 0; i < cds.length; i++) {
+            if (cds[i] == gui) {
+                count++;
+            }
+        }
+        if (count == 4) return true;
+        return false;
+    }
+
+    //随机 任意鬼牌 (不含花牌)
+    majiang.getRandomGui = function(withWind)
+    {
+        var randomIndex;
+        if(!withWind) randomIndex = Math.floor(Math.random() * (mjcards.length-24));
+        else  randomIndex = Math.floor(Math.random() * mjcards.length);
+
+        if(!withWind) return mjGuicards[randomIndex];
+        else  return mjcards[randomIndex];
+
+    }
+
+    //翻鬼的7对胡
+    function can_7_HuForFanGui(cds, cd, with258, withHun,gui){
+        var tmp = [];
+        for (var i = 0; i < cds.length; i++) tmp.push(cds[i]);
+        if (cd) tmp.push(cd);
+        cds = tmp;
+        cds.sort(function (a, b) {
+            return a - b
+        });
+
+        if (cds.length != 14) {
+            return false;
+        }
+        var oddCards = [];
+        var pairs = [];
+        var hunCards = [];
+        var isodd258 = false;
+        var ispair258 = false;
+        for (i = 0; i < cds.length; i++) {
+            if (withHun) {
+                if(gui == cds[i]){
+                    hunCards.push(cds[i]);
+                    continue;
+                }
+            }
+            if (i == cds.length - 1) {
+                oddCards.push(cds[i]);
+            } else if (cds[i] != cds[i + 1]) {
+                oddCards.push(cds[i]);
+                if (with258 && isCard258(cds[i])) {
+                    isodd258 = true;
+                }
+            } else {
+                if (with258 && isCard258(cds[i])) {
+                    ispair258 = true;
+                }
+                pairs.push(cds[i]);
+                i++;
+            }
+        }
+        if (oddCards.length > 0) {//有单牌
+            if (withHun) {
+                if (hunCards.length == oddCards.length) {//单牌数==红中数
+                    if (with258 && (ispair258 || isodd258)) {
+                        return true;
+                    } else
+                        return true;
+                }
+            }
+        } else {
+            if (hunCards.length == 2 || hunCards.length == 4) {
+                return true;
+            } else if (with258) {
+                if (ispair258)
+                    return true;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+
     function can_7_Hu(cds, cd, with258, withHun) {
         var tmp = [];
         for (var i = 0; i < cds.length; i++) tmp.push(cds[i]);
@@ -1208,7 +1345,119 @@
         return false;
     }
 
-    //癞子胡法
+    //任意癞子护法
+    function canHunHuForFanGui(no7, cds, cd, with258, withHun,gui)
+    {
+        if(is4SameGui(cds,cd,gui)) return 100;
+        //首先执行能否胡7对
+        if (!no7) {
+            var isHu7 = can_7_HuForFanGui(cds, cd, with258, withHun,gui);
+            if (isHu7)
+                return 7;
+        }
+        //分牌，按类型：条，筒，万，红中，1,2,3,5
+        //1.初始化
+        var allCards = [];
+        allCards[cardType.tiao] = [];
+        allCards[cardType.tong] = [];
+        allCards[cardType.wan] = [];
+        allCards[cardType.feng] = [];// 暂时没用到
+        allCards[cardType.hun] = [];
+        var tmp = [];
+        for (var i = 0; i < cds.length; i++) {
+            tmp.push(cds[i]);
+        }
+        if (cd) {
+            tmp.push(cd);
+        }
+        cds = tmp;
+        cds.sort(function (a, b) {
+            return a - b
+        });
+        for (i = 0; i < cds.length; i++) {
+            if (gui == cds[i]) {
+                allCards[cardType.hun].push(cds[i]);
+            }else if (isTiao(cds[i])) {
+                allCards[cardType.tiao].push(cds[i]);
+            } else if (isTong(cds[i])) {
+                allCards[cardType.tong].push(cds[i]);
+            } else if (isWan(cds[i])) {
+                allCards[cardType.wan].push(cds[i]);
+            } else if (isWind(cds[i])) {
+                allCards[cardType.feng].push(cds[i]);
+            }
+        }
+        var needHunNum = 0;
+        var jiangNeedNum = 0;
+        needMinHunNum = MJPAI_HUNMAX;
+        calNeedHunNumToBePu(allCards[cardType.wan], 0);
+        var wanToPuNeedNum = needMinHunNum;
+
+        needMinHunNum = MJPAI_HUNMAX;
+        calNeedHunNumToBePu(allCards[cardType.tong], 0);
+        var tongToPuNeedNum = needMinHunNum;
+
+        needMinHunNum = MJPAI_HUNMAX;
+        calNeedHunNumToBePu(allCards[cardType.tiao], 0);
+        var tiaoToPuNeedNum = needMinHunNum;
+
+        //暂不支持风
+        needMinHunNum = MJPAI_HUNMAX;
+        calNeedHunNumToBePu(allCards[cardType.feng], 0);
+        //var fengToPuNeedNum = 0;
+        var fengToPuNeedNum = needMinHunNum;
+
+        var hasNum = 0;
+        var vecSize = 0;
+        var isHu = false;
+        var hunHuType = 100;//混胡的类型定义
+        curHunNum = allCards[cardType.hun].length;
+        // console.info("hun:"+curHunNum);
+        // console.info("tongToPuNeedNum:"+tongToPuNeedNum);
+        // console.info("tiaoToPuNeedNum:"+tiaoToPuNeedNum);
+        // console.info("wanToPuNeedNum:"+wanToPuNeedNum);
+
+        //将在万中
+        //如果需要的混小于等于当前的则计算将在将在万中需要的混的个数
+        needHunNum = tongToPuNeedNum + tiaoToPuNeedNum + fengToPuNeedNum;
+        if (needHunNum <= curHunNum) {
+            vecSize = allCards[cardType.wan].length;
+            hasNum = curHunNum - needHunNum;
+            //
+            isHu = isCanHunHu(hasNum, allCards[cardType.wan], with258);
+            if (isHu)  return hunHuType;
+        }
+        //将在饼中
+        needHunNum = wanToPuNeedNum + tiaoToPuNeedNum + fengToPuNeedNum;
+        if (needHunNum <= curHunNum) {
+            vecSize = allCards[cardType.tong].length;
+            hasNum = curHunNum - needHunNum;
+            //
+            isHu = isCanHunHu(hasNum, allCards[cardType.tong], with258);
+            if (isHu)  return hunHuType;
+        }
+        //将在条中
+        needHunNum = wanToPuNeedNum + tongToPuNeedNum + fengToPuNeedNum;
+        if (needHunNum <= curHunNum) {
+            vecSize = allCards[cardType.tiao].length;
+            hasNum = curHunNum - needHunNum;
+            //
+            isHu = isCanHunHu(hasNum, allCards[cardType.tiao], with258);
+            if (isHu)  return hunHuType;
+        }
+        //将在风中,暂时不支持，待续
+        needHunNum = wanToPuNeedNum + tongToPuNeedNum + tiaoToPuNeedNum;
+        if (needHunNum <= curHunNum) {
+            vecSize = allCards[cardType.feng].length;
+            hasNum = curHunNum - needHunNum;
+            isHu = isCanHunHu(hasNum, allCards[cardType.feng], with258);
+            if (isHu)  return hunHuType;
+
+        }
+        return 0;
+    }
+
+    //红中癞子胡法
     function canHunHu(no7, cds, cd, with258, withHun) {
 
         //摸到4个红中 胡
@@ -1241,7 +1490,6 @@
         cds.sort(function (a, b) {
             return a - b
         });
-
         for (i = 0; i < cds.length; i++) {
             if (isTiao(cds[i])) {
                 allCards[cardType.tiao].push(cds[i]);
@@ -1325,11 +1573,15 @@
         return 0;
     }
 
-    majiang.canHu = function (no7, cds, cd, with258, withZhong) {
+    majiang.canHu = function (no7, cds, cd, with258, withZhong,fanGui,gui) {
         //带红中癞子
         if (withZhong) {
             return canHunHu(no7, cds, cd, with258, withZhong);
             //return canHuZhong(no7, cds, cd, with258);
+        }
+        else if(fanGui)
+        {
+            return canHunHuForFanGui(no7, cds, cd, with258, fanGui,gui);
         }
         else {
             return canHuNoZhong(no7, cds, cd, with258);
@@ -1958,6 +2210,20 @@
 
     }
 
+    function testCanHuForGui(){
+        var pl = {
+            mjhand: [ 16,1,2, 3, 4, 14, 15, 91, 91,91],
+            mjpeng: [],
+            mjgang0: [18],
+            mjgang1: [],
+            mjchi: [],
+        }
+
+        var isHu= majiang.canHu(false, pl.mjhand,13 , false, false,true,16);
+        if(isHu > 0) console.log("可以胡");
+        else  console.log("不可以胡");
+    }
+
     function DoTest() {
         //testZiYiSe();
         //testHuWithHongZhong();
@@ -1978,6 +2244,7 @@
         //console.log(tt.indexOf(4));
         //testDaSanYuan();
         //testGetHuTypeForShenZhen();
+        //testCanHuForGui();
     }
 
     if (typeof(jsclient) != "undefined") {

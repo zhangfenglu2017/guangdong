@@ -578,7 +578,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 26,
-                    "LabelText": "玩法简介：推倒胡玩法，只能自摸，没有大胡，可选红中鬼牌玩法、可胡七对玩法与带风牌玩法。可选买马数量，每中1马，加2分。",
+                    "LabelText": "玩法简介：推倒胡玩法，只能自摸，没有大胡，可选红中鬼牌玩法、可胡七对玩法与带风牌玩法。可选买马数量，每中1马，加2分,胡牌时没有鬼牌，加2马。",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -595,8 +595,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 618.229,
-                      "Y": 55.8798
+                      "X": 598.229,
+                      "Y": 55.8797
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -609,21 +609,21 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 3.0158,
+                      "X": 2.9182,
                       "Y": 0.7164
                     },
                     "PreSize": {
-                      "X": 3.9024,
+                      "X": 3.6585,
                       "Y": 1.3462
                     },
-                    "LeftMargin": 218.229,
-                    "RightMargin": -813.229,
-                    "TopMargin": -30.3798,
-                    "BottomMargin": 3.3798,
+                    "LeftMargin": 223.229,
+                    "RightMargin": -768.229,
+                    "TopMargin": -30.3797,
+                    "BottomMargin": 3.3797,
                     "Tag": 53,
                     "ActionTag": 549967594,
                     "Size": {
-                      "X": 800.0,
+                      "X": 750.0,
                       "Y": 105.0
                     },
                     "Name": "tips",
@@ -904,6 +904,51 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/qiansediban.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 60,
+                        "Scale9OriginY": 12,
+                        "Scale9Width": 63,
+                        "Scale9Height": 15,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 685.0,
+                          "Y": 20.0003
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 4.2813,
+                          "Y": 0.6061
+                        },
+                        "PreSize": {
+                          "X": 1.1437,
+                          "Y": 1.1818
+                        },
+                        "LeftMargin": 593.5,
+                        "RightMargin": -616.5,
+                        "TopMargin": -6.5003,
+                        "BottomMargin": 0.5003,
+                        "Tag": 375,
+                        "ActionTag": -139542591,
+                        "Size": {
+                          "X": 183.0,
+                          "Y": 39.0
+                        },
+                        "Name": "Image_6",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
                         "NormalBackFileData": {
                           "Type": "Normal",
                           "Path": "createRoomNew/circle_02.png",
@@ -1051,7 +1096,6 @@
                           "Path": "Default/CheckBoxNode_Disable.png",
                           "Plist": ""
                         },
-                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -1145,6 +1189,128 @@
                           "Y": 60.0
                         },
                         "Name": "zhong",
+                        "ctype": "CheckBoxObjectData"
+                      },
+                      {
+                        "NormalBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "PressedBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "DisableBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "NodeNormalFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/Duigou.png",
+                          "Plist": ""
+                        },
+                        "NodeDisableFileData": {
+                          "Type": "Default",
+                          "Path": "Default/CheckBoxNode_Disable.png",
+                          "Plist": ""
+                        },
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 608.0,
+                          "Y": 16.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 3.8,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 0.375,
+                          "Y": 1.8182
+                        },
+                        "LeftMargin": 578.0,
+                        "RightMargin": -478.0,
+                        "TopMargin": -13.5,
+                        "BottomMargin": -13.5,
+                        "Tag": 373,
+                        "Children": [
+                          {
+                            "IsCustomSize": true,
+                            "FontSize": 30,
+                            "LabelText": "翻鬼牌",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 126.0,
+                              "Y": 31.2
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "R": 108,
+                              "G": 37,
+                              "B": 20
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 2.1,
+                              "Y": 0.52
+                            },
+                            "PreSize": {
+                              "X": 2.0,
+                              "Y": 0.5833
+                            },
+                            "LeftMargin": 66.0,
+                            "RightMargin": -126.0,
+                            "TopMargin": 11.3,
+                            "BottomMargin": 13.7,
+                            "Tag": 374,
+                            "ActionTag": -1295771401,
+                            "Size": {
+                              "X": 120.0,
+                              "Y": 35.0
+                            },
+                            "Name": "Text_1",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": -400288954,
+                        "Size": {
+                          "X": 60.0,
+                          "Y": 60.0
+                        },
+                        "Name": "fangui",
                         "ctype": "CheckBoxObjectData"
                       },
                       {
@@ -1295,7 +1461,6 @@
                           "Path": "Default/CheckBoxNode_Disable.png",
                           "Plist": ""
                         },
-                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -1732,7 +1897,6 @@
                           "Path": "Default/CheckBoxNode_Disable.png",
                           "Plist": ""
                         },
-                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -1980,8 +2144,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 610.608,
-                          "Y": 16.2261
+                          "X": 608.0,
+                          "Y": 16.5
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1992,17 +2156,17 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 3.8163,
-                          "Y": 0.4917
+                          "X": 3.8,
+                          "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 580.608,
-                        "RightMargin": -480.608,
-                        "TopMargin": -13.2261,
-                        "BottomMargin": -13.7739,
+                        "LeftMargin": 578.0,
+                        "RightMargin": -478.0,
+                        "TopMargin": -13.5,
+                        "BottomMargin": -13.5,
                         "Tag": 173,
                         "Children": [
                           {
@@ -2365,7 +2529,6 @@
                           "Path": "Default/CheckBoxNode_Disable.png",
                           "Plist": ""
                         },
-                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -2854,7 +3017,6 @@
                           "Path": "Default/CheckBoxNode_Disable.png",
                           "Plist": ""
                         },
-                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -3291,7 +3453,6 @@
                           "Path": "Default/CheckBoxNode_Disable.png",
                           "Plist": ""
                         },
-                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -3924,7 +4085,6 @@
                           "Path": "Default/CheckBoxNode_Disable.png",
                           "Plist": ""
                         },
-                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -4196,7 +4356,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 26,
-                    "LabelText": "玩法简介：大胡玩法。只能自摸，没有点炮。可选红中鬼牌玩法与带风玩法。可选买马匹数，每中1马，加2分。节节高玩法，连庄1次，多2马。",
+                    "LabelText": "玩法简介：大胡玩法。只能自摸，没有点炮。可选红中鬼牌玩法与带风玩法。可选买马匹数，每中1马，加2分,胡牌时没有鬼牌，加2马。节节高玩法，连庄1次，多2马。",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -4267,8 +4427,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 299.3018,
-                      "Y": 127.7188
+                      "X": 299.3,
+                      "Y": 127.7172
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4290,10 +4450,10 @@
                       "X": 0.7805,
                       "Y": 0.4231
                     },
-                    "LeftMargin": 219.3018,
-                    "RightMargin": -174.3018,
-                    "TopMargin": -66.2188,
-                    "BottomMargin": 111.2188,
+                    "LeftMargin": 219.3,
+                    "RightMargin": -174.3,
+                    "TopMargin": -66.2172,
+                    "BottomMargin": 111.2172,
                     "Tag": 620,
                     "Children": [
                       {
@@ -4522,6 +4682,51 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/qiansediban.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 60,
+                        "Scale9OriginY": 12,
+                        "Scale9Width": 63,
+                        "Scale9Height": 15,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 685.0,
+                          "Y": 20.0005
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 4.2813,
+                          "Y": 0.6061
+                        },
+                        "PreSize": {
+                          "X": 1.1437,
+                          "Y": 1.1818
+                        },
+                        "LeftMargin": 593.5,
+                        "RightMargin": -616.5,
+                        "TopMargin": -6.5005,
+                        "BottomMargin": 0.5005,
+                        "Tag": 378,
+                        "ActionTag": 313688147,
+                        "Size": {
+                          "X": 183.0,
+                          "Y": 39.0
+                        },
+                        "Name": "Image_6",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
                         "NormalBackFileData": {
                           "Type": "Normal",
                           "Path": "createRoomNew/circle_02.png",
@@ -4669,7 +4874,6 @@
                           "Path": "Default/CheckBoxNode_Disable.png",
                           "Plist": ""
                         },
-                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -4913,7 +5117,6 @@
                           "Path": "Default/CheckBoxNode_Disable.png",
                           "Plist": ""
                         },
-                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -5129,6 +5332,128 @@
                         },
                         "Name": "jjg",
                         "ctype": "CheckBoxObjectData"
+                      },
+                      {
+                        "NormalBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "PressedBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "DisableBackFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/circle_02.png",
+                          "Plist": ""
+                        },
+                        "NodeNormalFileData": {
+                          "Type": "Normal",
+                          "Path": "createRoomNew/Duigou.png",
+                          "Plist": ""
+                        },
+                        "NodeDisableFileData": {
+                          "Type": "Default",
+                          "Path": "Default/CheckBoxNode_Disable.png",
+                          "Plist": ""
+                        },
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 608.0,
+                          "Y": 16.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 3.8,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 0.375,
+                          "Y": 1.8182
+                        },
+                        "LeftMargin": 578.0,
+                        "RightMargin": -478.0,
+                        "TopMargin": -13.5,
+                        "BottomMargin": -13.5,
+                        "Tag": 376,
+                        "Children": [
+                          {
+                            "IsCustomSize": true,
+                            "FontSize": 30,
+                            "LabelText": "翻鬼牌",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 126.0,
+                              "Y": 31.2
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "R": 108,
+                              "G": 37,
+                              "B": 20
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 2.1,
+                              "Y": 0.52
+                            },
+                            "PreSize": {
+                              "X": 2.0,
+                              "Y": 0.5833
+                            },
+                            "LeftMargin": 66.0,
+                            "RightMargin": -126.0,
+                            "TopMargin": 11.3,
+                            "BottomMargin": 13.7,
+                            "Tag": 377,
+                            "ActionTag": -2133417615,
+                            "Size": {
+                              "X": 120.0,
+                              "Y": 35.0
+                            },
+                            "Name": "Text_1",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": 1978529047,
+                        "Size": {
+                          "X": 60.0,
+                          "Y": 60.0
+                        },
+                        "Name": "fangui",
+                        "ctype": "CheckBoxObjectData"
                       }
                     ],
                     "ActionTag": -1806507403,
@@ -5159,8 +5484,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 299.3018,
-                      "Y": -69.3575
+                      "X": 299.3,
+                      "Y": -69.3576
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -5182,10 +5507,10 @@
                       "X": 0.7805,
                       "Y": 0.4231
                     },
-                    "LeftMargin": 219.3018,
-                    "RightMargin": -174.3018,
-                    "TopMargin": 130.8575,
-                    "BottomMargin": -85.8575,
+                    "LeftMargin": 219.3,
+                    "RightMargin": -174.3,
+                    "TopMargin": 130.8576,
+                    "BottomMargin": -85.8576,
                     "Tag": 636,
                     "Children": [
                       {
@@ -5350,7 +5675,6 @@
                           "Path": "Default/CheckBoxNode_Disable.png",
                           "Plist": ""
                         },
-                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -5598,8 +5922,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 610.608,
-                          "Y": 16.2261
+                          "X": 608.0,
+                          "Y": 16.5
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -5610,17 +5934,17 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 3.8163,
-                          "Y": 0.4917
+                          "X": 3.8,
+                          "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.375,
                           "Y": 1.8182
                         },
-                        "LeftMargin": 580.608,
-                        "RightMargin": -480.608,
-                        "TopMargin": -13.2261,
-                        "BottomMargin": -13.7739,
+                        "LeftMargin": 578.0,
+                        "RightMargin": -478.0,
+                        "TopMargin": -13.5,
+                        "BottomMargin": -13.5,
                         "Tag": 644,
                         "Children": [
                           {
@@ -5716,8 +6040,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 299.3018,
-                      "Y": -135.0415
+                      "X": 299.3,
+                      "Y": -135.0414
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -5739,10 +6063,10 @@
                       "X": 0.7805,
                       "Y": 0.4231
                     },
-                    "LeftMargin": 219.3018,
-                    "RightMargin": -174.3018,
-                    "TopMargin": 196.5415,
-                    "BottomMargin": -151.5415,
+                    "LeftMargin": 219.3,
+                    "RightMargin": -174.3,
+                    "TopMargin": 196.5414,
+                    "BottomMargin": -151.5414,
                     "Tag": 646,
                     "Children": [
                       {
@@ -5983,7 +6307,6 @@
                           "Path": "Default/CheckBoxNode_Disable.png",
                           "Plist": ""
                         },
-                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -6128,8 +6451,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 549.4228,
-                      "Y": -216.7859
+                      "X": 549.4205,
+                      "Y": -216.7854
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -6147,10 +6470,10 @@
                       "X": 0.8293,
                       "Y": 0.8333
                     },
-                    "LeftMargin": 464.4228,
-                    "RightMargin": -429.4228,
-                    "TopMargin": 262.2859,
-                    "BottomMargin": -249.2859,
+                    "LeftMargin": 464.4205,
+                    "RightMargin": -429.4205,
+                    "TopMargin": 262.2854,
+                    "BottomMargin": -249.2854,
                     "Tag": 653,
                     "ActionTag": -1902978230,
                     "Size": {

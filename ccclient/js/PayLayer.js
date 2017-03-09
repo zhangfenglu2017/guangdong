@@ -28,7 +28,8 @@ function NewPopMsgLayer(uiPara)
 				yes:{
 					_click:function(){
 						popui.removeFromParent(true);
-						if(uiPara.yes) uiPara.yes();
+						if(uiPara.yes)
+                            uiPara.yes();
 					}
 				}
 			}

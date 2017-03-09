@@ -20,14 +20,20 @@ var res = {
 
 	PlayMJ_emoji_png:"res/playerchat/emoji_action_texture.png",
 	PlayMJ_emoji_plist:"res/playerchat/emoji_action_texture.plist",
+
+	PlayMJ_cardAnim_png:"res/MaJiangNew/cardAnim.png",
+	PlayMj_cardAnim_plist:"res/MaJiangNew/cardAnim.plist"
 };
 
 var g_resources = [];
 for (var i in res) {
     g_resources.push(res[i]);
+    cc.log("预加载资源：" + res[i]);
 }
 
+
 cc.spriteFrameCache.addSpriteFrames("res/MaJiangNew/z_mj.plist");
+cc.spriteFrameCache.addSpriteFrames("res/MaJiangNew/cardAnim.plist");
 cc.spriteFrameCache.addSpriteFrames("res/playerchat/emoji_action_texture.plist");
 
 

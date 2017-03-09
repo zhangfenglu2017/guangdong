@@ -555,6 +555,51 @@
                           {
                             "FileData": {
                               "Type": "Normal",
+                              "Path": "MaJiangNew/mj_bg5.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 18,
+                            "Scale9OriginY": 27,
+                            "Scale9Width": 62,
+                            "Scale9Height": 98,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 35.0,
+                              "Y": 50.0
+                            },
+                            "Scale": {
+                              "ScaleX": 0.45,
+                              "ScaleY": 0.45
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.3431,
+                              "Y": 0.4717
+                            },
+                            "PreSize": {
+                              "X": 0.9608,
+                              "Y": 1.434
+                            },
+                            "LeftMargin": -14.0,
+                            "RightMargin": 18.0,
+                            "TopMargin": -20.0,
+                            "BottomMargin": -26.0,
+                            "Tag": 616,
+                            "ActionTag": 1029808874,
+                            "Size": {
+                              "X": 98.0,
+                              "Y": 152.0
+                            },
+                            "Name": "cardBk",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
                               "Path": "MaJiangNew/mj_bg2.png",
                               "Plist": ""
                             },
@@ -567,8 +612,8 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 37.0,
-                              "Y": 49.0
+                              "X": 35.0,
+                              "Y": 50.0
                             },
                             "Scale": {
                               "ScaleX": 0.45,
@@ -577,17 +622,17 @@
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.3627,
-                              "Y": 0.4623
+                              "X": 0.3431,
+                              "Y": 0.4717
                             },
                             "PreSize": {
                               "X": 0.9608,
                               "Y": 1.434
                             },
-                            "LeftMargin": -12.0,
-                            "RightMargin": 16.0,
-                            "TopMargin": -19.0,
-                            "BottomMargin": -27.0,
+                            "LeftMargin": -14.0,
+                            "RightMargin": 18.0,
+                            "TopMargin": -20.0,
+                            "BottomMargin": -26.0,
                             "Tag": 189,
                             "Children": [
                               {
@@ -1777,7 +1822,7 @@
                 "RightMargin": -187.8155,
                 "TopMargin": -320.4816,
                 "BottomMargin": 198.4816,
-                "Tag": 29,
+                "Tag": 291,
                 "ActionTag": -748234071,
                 "Size": {
                   "X": 56.0,
@@ -1916,7 +1961,7 @@
                 "RightMargin": -233.3148,
                 "TopMargin": -669.1876,
                 "BottomMargin": 571.1876,
-                "Tag": 31,
+                "Tag": 311,
                 "ActionTag": 1379879573,
                 "Size": {
                   "X": 122.0,
@@ -6314,7 +6359,7 @@
                 "RightMargin": -417.8206,
                 "TopMargin": -663.5167,
                 "BottomMargin": 511.5167,
-                "Tag": 38,
+                "Tag": 381,
                 "ActionTag": -1290218571,
                 "Size": {
                   "X": 98.0,

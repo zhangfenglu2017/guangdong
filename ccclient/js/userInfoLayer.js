@@ -32,6 +32,7 @@ function ShowSameIP(msg)
 				_click:function()
 				{
 					sameIPUI.removeFromParent(true);
+                    jsclient.sameIPUI = null;
                     sendEvent("mjgeog");
 				}
 			},
@@ -40,6 +41,8 @@ function ShowSameIP(msg)
 				_click:function()
 				{
 					sameIPUI.removeFromParent(true);
+                    jsclient.sameIPUI = null;
+                    sendEvent("playEffectFangui");
 					jsclient.delRoom(true);
 				}
 			}
@@ -53,6 +56,7 @@ function ShowSameIP(msg)
         var jsonui = ccs.load("res/SameIP.json");
 		ConnectUI2Logic(jsonui.node,this.jsBind);
         this.addChild(jsonui.node);
+        jsclient.sameIPUI = this;
         return true;
     }
 });	
@@ -75,8 +79,6 @@ function ShowSameGeog(msg)
                 _layout:[[0.5,0.5],[0.5,0.5],[0,0]],
                 msg:
                 {
-
-
                     _text:function()
                     {
                         return msg;
@@ -96,6 +98,8 @@ function ShowSameGeog(msg)
                     _click:function()
                     {
                         sameGeogUI.removeFromParent(true);
+                        jsclient.sameGeogUI = null;
+                        sendEvent("playEffectFangui");
                     }
                 },
                 del:
@@ -103,6 +107,8 @@ function ShowSameGeog(msg)
                     _click:function()
                     {
                         sameGeogUI.removeFromParent(true);
+                        jsclient.sameGeogUI = null;
+                        sendEvent("playEffectFangui");
                         jsclient.delRoom(true);
                     }
                 }
@@ -116,6 +122,7 @@ function ShowSameGeog(msg)
             var jsonui = ccs.load("res/SameIP.json");
             ConnectUI2Logic(jsonui.node,this.jsBind);
             this.addChild(jsonui.node);
+            jsclient.sameGeogUI = this;
             return true;
         }
     });
@@ -158,6 +165,7 @@ function ShowSameGeog(msg)
                     _click:function()
                     {
                         jsclient.userInfoLayerUi.removeFromParent(true);
+                        jsclient.userInfoLayerUi = null;
                     }
                 },
 

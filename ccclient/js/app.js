@@ -6,6 +6,43 @@
 //     }
 // };
 
+//鬼牌特效
+function playAnimationByCard(cardNode)
+{
+    if(cardNode.getChildByTag(9104))
+    {
+        log("已经有鬼牌特效...");
+        return;
+    }
+
+    log("执行鬼牌特效...");
+    var animSpr = new cc.Sprite();
+    animSpr.name = "guiEff";
+    animSpr.setAnchorPoint(0,0);
+
+    // cardNode.stopAllActions();
+    cardNode.addChild(animSpr,999,9104);
+
+    var animation = new cc.Animation();
+    for(var i = 1;i<=6;i++){
+        var frame = cc.spriteFrameCache.getSpriteFrame("glint_00" + i + ".png");
+        animation.addSpriteFrame(frame);
+    }
+
+    animation.setDelayPerUnit(0.12);
+    animation.setRestoreOriginalFrame(true);
+    // var action = cc.animate(animation).repeatForever();
+    var action = cc.animate(animation);
+    animSpr.runAction(cc.repeatForever(cc.sequence(action, cc.delayTime(1.5))));
+
+}
+
+//翻鬼牌特效
+function playAnimationByFanGui(cardNode)
+{
+    
+}
+
 function stopEffect(id) {
     cc.audioEngine.stopEffect(id);
 }
@@ -255,7 +292,7 @@ jsclient.joinGame = function (tableid) {
         });
 };
 
-jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7, canHuWith258, withZhong, horse, jjg) {
+jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7, canHuWith258, withZhong, horse, jjg, fanGui) {
     jsclient.block();
     jsclient.gamenet.request("pkplayer.handler.CreateVipTable", {
             gameType: gameType,
@@ -268,7 +305,8 @@ jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noB
             canHuWith258: canHuWith258,
             withZhong: withZhong,
             horse: horse,
-            jiejieGao: jjg
+            jiejieGao: jjg,
+            fanGui:fanGui
         },
         function (rtn) {
             jsclient.unblock();
@@ -309,11 +347,13 @@ jsclient.showMsg = function (msg, yesfunc, nofunc, style) {
     sendEvent("popUpMsg", {msg: msg, yes: yesfunc, no: nofunc, style: (style || "")});
 };
 
-jsclient.delRoom = function (yes) {
+jsclient.delRoom = function (yes)
+{
     var sData = jsclient.data.sData;
     if (sData.tData.tState == TableState.waitJoin && sData.tData.uids[0] != SelfUid())
         jsclient.leaveGame();
-    else jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "DelRoom", yes: yes});
+    else
+        jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "DelRoom", yes: yes});
 };
 
 //地理位置
@@ -472,11 +512,20 @@ jsclient.netCallBack =
     getLinkZhuang: [0, function (d) {
         var sData = jsclient.data.sData;
         sData.tData = d.tData;
-        for (var uid in d.players) {
-            var pl = d.players[uid];
-            sData.players[uid].linkZhuang = pl.linkZhuang;
-            // cc.log("getLinkZhuang===============================================linkZhuang="+ pl.linkZhuang);
+        if(sData.tData.gameType == 3){
+            for (var uid in d.players) {
+                var pl = d.players[uid];
+                sData.players[uid].linkZhuang = pl.linkZhuang;
+                // cc.log("getLinkZhuang===============================================linkZhuang="+ pl.linkZhuang);
+            }
         }
+        if(d.tData.fanGui){
+            sData.tData.fanGui = d.tData.fanGui;
+            sData.tData.gui = d.tData.gui;
+            jsclient.majiang.gui = sData.tData.gui;
+            console.log("翻出的鬼牌是===============================" + sData.tData.gui);
+        }
+
     }],
     MJChi: [0, function (d) {
         var sData = jsclient.data.sData;

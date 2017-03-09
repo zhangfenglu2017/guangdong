@@ -2123,8 +2123,37 @@ function newReplayLayer() {
                 clt: {
                     _layout: [[0.15, 0.15], [0, 1], [0.5, -0.5]],
                     play: {
-                        _visible: function () {
-                            return jsclient.data.sData.tData.withZhong;
+                        _visible: function ()
+                        {
+                            return (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui);
+                        },
+
+                        card:
+                        {
+                            _run:function ()
+                            {
+                                if(jsclient.data.sData.tData.withZhong)
+                                {
+                                    log("红中鬼牌。。。。");
+                                    this.visible = true;
+                                }
+
+
+                                if(jsclient.data.sData.tData.fanGui)
+                                {
+                                    var guiTag = jsclient.data.sData.tData.gui;
+                                    if(guiTag != 0)
+                                    {
+                                        this.visible = true;
+                                        setCardPic(this, guiTag);
+                                    }
+                                    else
+                                        this.visible = false;
+
+                                    log("任意鬼牌。。。。" + guiTag);
+                                }
+
+                            },
                         }
                     },
                     _event: {
