@@ -14,8 +14,8 @@
    alreadyInGame:9, 
    keepInGame:10, 
    //
-   
-   
+
+   lockPlayerId:11,
  
    sqlError:30,
    lessMoney:31,

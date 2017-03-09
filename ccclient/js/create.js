@@ -156,6 +156,7 @@
                         self1Round4: null,
                         self1Round8: null,
                         self1JJG:null,
+                        self1OK:null,
 
                         _run: function () {
                             gamemjs[1] = this;
@@ -320,6 +321,9 @@
                                     self1Round4.setTouchEnabled(false);
                                     self1Round8.setSelected(false);
                                     self1Round8.setTouchEnabled(true);
+
+                                    self1OK.loadTextureNormal("res/createRoomNew/queding_2.png");
+                                    self1OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
                                 }
                             },
 
@@ -332,6 +336,9 @@
                                     self1Round4.setTouchEnabled(true);
                                     self1Round8.setSelected(true);
                                     self1Round8.setTouchEnabled(false);
+
+                                    self1OK.loadTextureNormal("res/createRoomNew/queding_3.png");
+                                    self1OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
                                 }
                             }
                         },
@@ -339,6 +346,10 @@
                         //创建,判断金钱
                         yes:
                         {
+                            _run:function ()
+                            {
+                                self1OK = this;
+                            },
                             _click: function (btn, evt)
                             {
                                 var majiang = jsclient.data.gameInfo.gdmj;
@@ -398,6 +409,7 @@
                         self2Ma6: null,
                         self2Round4: null,
                         self2Round8: null,
+                        self2OK:null,
 
                         _run: function () {
                             gamemjs[2] = this;
@@ -507,6 +519,9 @@
                                     self2Round4.setTouchEnabled(false);
                                     self2Round8.setSelected(false);
                                     self2Round8.setTouchEnabled(true);
+
+                                    self2OK.loadTextureNormal("res/createRoomNew/queding_2.png");
+                                    self2OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
                                 }
                             },
 
@@ -519,6 +534,9 @@
                                     self2Round4.setTouchEnabled(true);
                                     self2Round8.setSelected(true);
                                     self2Round8.setTouchEnabled(false);
+
+                                    self2OK.loadTextureNormal("res/createRoomNew/queding_3.png");
+                                    self2OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
                                 }
                             }
                         },
@@ -526,6 +544,10 @@
                         //创建,判断金钱
                         yes:
                         {
+                            _run:function ()
+                            {
+                                self2OK = this;
+                            },
                             _click: function (btn, evt)
                             {
                                 var majiang = jsclient.data.gameInfo.gdmj;
@@ -588,6 +610,7 @@
                         self3Ma6: null,
                         self3Round4: null,
                         self3Round8: null,
+                        self3OK:null,
 
                         _run: function () {
                             gamemjs[3] = this;
@@ -731,6 +754,9 @@
                                     self3Round4.setTouchEnabled(false);
                                     self3Round8.setSelected(false);
                                     self3Round8.setTouchEnabled(true);
+
+                                    self3OK.loadTextureNormal("res/createRoomNew/queding_2.png");
+                                    self3OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
                                 }
                             },
 
@@ -743,12 +769,19 @@
                                     self3Round4.setTouchEnabled(true);
                                     self3Round8.setSelected(true);
                                     self3Round8.setTouchEnabled(false);
+
+                                    self3OK.loadTextureNormal("res/createRoomNew/queding_3.png");
+                                    self3OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
                                 }
                             }
                         },
 
                         //创建,判断金钱
                         yes: {
+                            _run:function ()
+                            {
+                                self3OK = this;
+                            },
                             _click: function (btn, evt)
                             {
                                 var majiang = jsclient.data.gameInfo.gdmj;
@@ -807,6 +840,7 @@
                         self4Fan3: null,
                         self4Round4: null,
                         self4Round8: null,
+                        self4OK:null,
 
                         _run: function () {
                             gamemjs[4] = this;
@@ -900,6 +934,9 @@
                                     self4Round4.setTouchEnabled(false);
                                     self4Round8.setSelected(false);
                                     self4Round8.setTouchEnabled(true);
+
+                                    self4OK.loadTextureNormal("res/createRoomNew/queding_2.png");
+                                    self4OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
                                 }
                             },
 
@@ -912,12 +949,20 @@
                                     self4Round4.setTouchEnabled(true);
                                     self4Round8.setSelected(true);
                                     self4Round8.setTouchEnabled(false);
+
+                                    self4OK.loadTextureNormal("res/createRoomNew/queding_3.png");
+                                    self4OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
                                 }
                             }
                         },
 
                         //创建,判断金钱
                         yes: {
+
+                            _run:function ()
+                            {
+                                self4OK = this;
+                            },
                             _click: function (btn, evt) {
                                 var majiang = jsclient.data.gameInfo.gdmj;
                                 var isRound = self4Round4.isSelected();
@@ -975,24 +1020,32 @@
                         self5Feng: null,
                         self5CanHu7: null,
                         self5CanFan7:null,
+                        self5NoGuiHu:null,
+                        self5NoGuiBei:null,
+                        self5NoGuiMa:null,
+                        self5Gui4Hu:null,
+                        self5Gui4Bei:null,
                         self5Ma2: null,
                         self5Ma4: null,
                         self5Ma6: null,
                         self5Round4: null,
                         self5Round8: null,
                         self5ZhongIsMa:null,
+                        self5OK:null,
 
                         _run: function () {
                             gamemjs[5] = this;
                         },
 
-                        playType: {
+                        playType:
+                        {
                             nozhong: {
                                 _run: function () {
                                     self5Nozhong = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
 
                                     self5ZhongIsMa.setTouchEnabled(true);
 
@@ -1002,6 +1055,21 @@
                                     self5Nozhong.setTouchEnabled(false);
                                     self5FanGui.setSelected(false);
                                     self5FanGui.setTouchEnabled(true);
+
+                                    self5NoGuiHu.setSelected(false);
+                                    self5NoGuiHu.setTouchEnabled(false);
+
+                                    self5NoGuiMa.setSelected(false);
+                                    self5NoGuiMa.setTouchEnabled(false);
+
+                                    self5NoGuiBei.setSelected(false);
+                                    self5NoGuiBei.setTouchEnabled(false);
+
+                                    self5Gui4Hu.setSelected(false);
+                                    self5Gui4Hu.setTouchEnabled(false);
+
+                                    self5Gui4Bei.setSelected(false);
+                                    self5Gui4Bei.setTouchEnabled(false);
                                 }
                             },
 
@@ -1028,6 +1096,9 @@
                                     self5Nozhong.setTouchEnabled(true);
                                     self5FanGui.setSelected(false);
                                     self5FanGui.setTouchEnabled(true);
+
+                                    self5NoGuiHu.setTouchEnabled(true);
+                                    self5Gui4Hu.setTouchEnabled(true);
                                 }
                             },
 
@@ -1047,6 +1118,9 @@
                                     self5Nozhong.setTouchEnabled(true);
                                     self5FanGui.setSelected(true);
                                     self5FanGui.setTouchEnabled(false);
+
+                                    self5NoGuiHu.setTouchEnabled(true);
+                                    self5Gui4Hu.setTouchEnabled(true);
                                 }
                             },
 
@@ -1097,6 +1171,102 @@
                                     }
 
 
+
+                                }
+                            },
+
+                            noguihu:
+                            {
+                                _run: function ()
+                                {
+                                    self5NoGuiHu = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    if(self5NoGuiHu.isSelected())
+                                    {
+                                        self5NoGuiBei.setTouchEnabled(true);
+                                        self5NoGuiMa.setTouchEnabled(true);
+                                    }
+                                    else
+                                    {
+                                        self5NoGuiBei.setSelected(false);
+                                        self5NoGuiBei.setTouchEnabled(false);
+
+                                        self5NoGuiMa.setSelected(false);
+                                        self5NoGuiMa.setTouchEnabled(false);
+                                    }
+
+                                }
+                            },
+
+                            noguibei:
+                            {
+                                _run: function ()
+                                {
+                                    self5NoGuiBei = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    if(self5NoGuiMa.isSelected())
+                                    {
+                                        self5NoGuiMa.setSelected(false);
+                                    }
+                                }
+                            },
+
+                            noguima:
+                            {
+                                _run: function ()
+                                {
+                                    self5NoGuiMa = this;
+                                },
+
+                                _click: function ()
+                                {
+
+                                    if(self5NoGuiBei.isSelected())
+                                    {
+                                        self5NoGuiBei.setSelected(false);
+                                    }
+                                }
+                            },
+
+                            gui4hu:
+                            {
+                                _run: function ()
+                                {
+                                    self5Gui4Hu = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    if(self5Nozhong.isSelected())
+                                        return;
+
+                                    if(self5Gui4Hu.isSelected())
+                                    {
+                                        self5Gui4Bei.setTouchEnabled(true);
+                                    }
+                                    else
+                                    {
+                                        self5Gui4Bei.setSelected(false);
+                                        self5Gui4Bei.setTouchEnabled(false);
+                                    }
+                                }
+                            },
+
+                            gui4bei:
+                            {
+                                _run: function ()
+                                {
+                                    self5Gui4Bei = this;
+                                },
+
+                                _click: function ()
+                                {
 
                                 }
                             }
@@ -1157,6 +1327,9 @@
                                     self5Round4.setTouchEnabled(false);
                                     self5Round8.setSelected(false);
                                     self5Round8.setTouchEnabled(true);
+
+                                    self5OK.loadTextureNormal("res/createRoomNew/queding_2.png");
+                                    self5OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
                                 }
                             },
 
@@ -1169,6 +1342,9 @@
                                     self5Round4.setTouchEnabled(true);
                                     self5Round8.setSelected(true);
                                     self5Round8.setTouchEnabled(false);
+
+                                    self5OK.loadTextureNormal("res/createRoomNew/queding_3.png");
+                                    self5OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
                                 }
                             }
                         },
@@ -1176,6 +1352,10 @@
                         //创建,判断金钱
                         yes:
                         {
+                            _run:function ()
+                            {
+                                self5OK = this;
+                            },
                             _click: function (btn, evt)
                             {
                                 var majiang = jsclient.data.gameInfo.gdmj;
@@ -1190,6 +1370,10 @@
                                     horse = 4;
                                 else if (self5Ma6.isSelected())
                                     horse = 6;
+
+                                var gui4huBeiNum = 1;
+                                if(self5Gui4Bei.isSelected())
+                                    gui4huBeiNum = 2;
 
                                 if (haveMoney >= needMoney)
                                 {
@@ -1211,13 +1395,14 @@
                                         0,                          //番
                                         4,                         //人数
                                         false,                       //大胡
-                                        true,                        //无鬼加码
-                                        false,                        //无鬼翻倍
-                                        true,                         //4鬼胡牌
-                                        1                           //4鬼加倍
+                                        self5NoGuiMa.isSelected(),  //无鬼加码
+                                        self5NoGuiBei.isSelected(), //无鬼加倍
+                                        self5Gui4Hu.isSelected(),   //4鬼胡牌
+                                        gui4huBeiNum                //4鬼加倍
                                     );
                                 }
-                                else {
+                                else
+                                {
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }
@@ -1244,6 +1429,7 @@
                         self6NoGuiMa:null,
                         self6Gui4Hu:null,
                         self6Gui4Bei:null,
+                        self6OK:null,
 
                         _run: function ()
                         {
@@ -1512,6 +1698,9 @@
                                     self6Round4.setTouchEnabled(false);
                                     self6Round8.setSelected(false);
                                     self6Round8.setTouchEnabled(true);
+
+                                    self6OK.loadTextureNormal("res/createRoomNew/queding_2.png");
+                                    self6OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
                                 }
                             },
 
@@ -1524,6 +1713,9 @@
                                     self6Round4.setTouchEnabled(true);
                                     self6Round8.setSelected(true);
                                     self6Round8.setTouchEnabled(false);
+
+                                    self6OK.loadTextureNormal("res/createRoomNew/queding_3.png");
+                                    self6OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
                                 }
                             }
                         },
@@ -1531,6 +1723,10 @@
                         //创建,判断金钱
                         yes:
                         {
+                            _run:function ()
+                            {
+                                self6OK = this;
+                            },
                             _click: function (btn, evt)
                             {
                                 var majiang = jsclient.data.gameInfo.gdmj;
@@ -1600,6 +1796,7 @@
                         self7Round4: null,
                         self7Round8: null,
                         self7JJG:null,
+                        self7OK:null,
 
                         _run: function () {
                             gamemjs[7] = this;
@@ -1764,6 +1961,9 @@
                                     self7Round4.setTouchEnabled(false);
                                     self7Round8.setSelected(false);
                                     self7Round8.setTouchEnabled(true);
+
+                                    self7OK.loadTextureNormal("res/createRoomNew/queding_2.png");
+                                    self7OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
                                 }
                             },
 
@@ -1776,6 +1976,9 @@
                                     self7Round4.setTouchEnabled(true);
                                     self7Round8.setSelected(true);
                                     self7Round8.setTouchEnabled(false);
+
+                                    self7OK.loadTextureNormal("res/createRoomNew/queding_3.png");
+                                    self7OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
                                 }
                             }
                         },
@@ -1783,6 +1986,11 @@
                         //创建,判断金钱
                         yes:
                         {
+                            _run:function ()
+                            {
+                                self7OK = this;
+                            },
+
                             _click: function (btn, evt)
                             {
                                 var majiang = jsclient.data.gameInfo.gdmj;

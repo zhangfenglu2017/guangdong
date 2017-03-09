@@ -333,8 +333,8 @@
                             var pinfo = jsclient.data.pinfo;
                             var name = unescape(pinfo.nickname || pinfo.name);
 
-                            var str  = "玩家" + name + "邀请您加入星悦广东麻将，邀请码 " + SelfUid() 
-                            + "。新手礼包界面输入邀请码，即可获得钻石奖励【星悦广东麻将】";
+                            var str  = "邀请码："+SelfUid() +"，玩家" + name + "邀请您加入星悦广东麻将,"
+                            + "新手礼包界面输入邀请码，即可获得钻石奖励【星悦广东麻将】";
                             jsclient.native.wxShareUrl(jsclient.remoteCfg.wxShareUrl, "星悦广东麻将",str);
                         }
                     },

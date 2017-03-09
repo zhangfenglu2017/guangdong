@@ -95,7 +95,7 @@ function initMJTexture(node)
 }
 
 
-var newPlayerAwardBtn = null, newPlayerAwardLeftTime = 99999 ;
+var newPlayerAwardBtn = null, newPlayerAwardLeftTime = 0 ;
 //新手礼包倒计时，只需设置newPlayerAwardLeftTime即可
 function newPlayerAwardTimer (dt)
 {
@@ -110,7 +110,7 @@ function newPlayerAwardTimer (dt)
     }
 }
 
-var updateTishi;
+var updateTishi, joinRoom, createRoom, updesc;
 var HomeLayer=cc.Layer.extend(
 {
 	jsBind:
@@ -124,31 +124,70 @@ var HomeLayer=cc.Layer.extend(
 					jsclient.homeui.removeFromParent(true);
 					delete jsclient.homeui;
 				}
-			},
+			}
 		},
 
         back:
         {
 			_layout:[[1,1],[0.5,0.5],[0,0],true],
 		},
+
         updateTishi:
         {
+            _layout:[[0, 0.8],[0.5,0.5],[0,0]],
+
             _run:function()
             {
+                this.zIndex = 9999;
                 updateTishi = this;
+
+                if(jsclient.changeValue.isShowed)
+                    return;
+
+                onActionEnd = function ()
+                {
+                    doLayout(updateTishi,[0,0],[0.5,0.5],[0,0] );
+                    updateTishi.runAction(cc.sequence(
+                        cc.delayTime(0.3),
+                        cc.callFunc(
+                            function ()
+                            {
+                                doLayout(updateTishi,[0,0.80],[0.5,0.5],[0,0] );
+                            }
+                        ),
+                        cc.delayTime(0.1),
+                        cc.callFunc(
+                            function ()
+                            {
+                                updateTishi.setScaleY(0.85);
+                                doLayout(updateTishi,[0,0.85],[0.5,0.5],[0,0] );
+                            }
+                        ),
+                        cc.delayTime(0.1),
+                        cc.callFunc(
+                            function ()
+                            {
+                                doLayout(updateTishi,[0,0.80],[0.5,0.5],[0,0] );
+                            }
+                        )
+                    ));
+                };
+
+                onActionEnd();
+                // jsclient.Scene.runAction(cc.sequence( cc.DelayTime(0.5) , cc.callFunc(onActionEnd)));
             },
-            _layout:[[0, 0.8],[0.5,0.5],[0,0]],
+
             _visible: function ()
             {
-                //判断 有更新 有则显示出来 且只显示1次 否则 不显示
-                var isUpdate = sys.localStorage.getItem("isUpdate");
-                if(isUpdate && isUpdate == "1"){
-                    sys.localStorage.setItem("isUpdate", "0");
-                    return true;
-                }
-                  return false;
-                
+                // 判断 有更新 有则显示出来 且只显示1次 否则 不显示
+                // var isUpdate = sys.localStorage.getItem("isUpdate");
+                // if(isUpdate && isUpdate == "1"){
+                //     sys.localStorage.setItem("isUpdate", "0");
+                //     return true;
+                // }
+                return !jsclient.changeValue.isShowed;
             },
+
             uptitle:
             {
                 _text: function ()
@@ -169,7 +208,7 @@ var HomeLayer=cc.Layer.extend(
                 {
                     _text: function ()
                     {
-                        return jsclient.remoteCfg.updesc;
+                        return jsclient.updateCfg.gameTip;
                     }
                 }
             },
@@ -184,6 +223,7 @@ var HomeLayer=cc.Layer.extend(
 
 
         },
+
         title:
         {
             _layout:[[0.35,0.3],[0.53,0.9],[0,0]],
@@ -285,17 +325,11 @@ var HomeLayer=cc.Layer.extend(
 
         xslb:
         {
-            _layout: [[0.09, 0.13], [0.95, 0.78], [0, 0]],
+            _layout: [[0.09, 0.13], [0.05, 0.6], [0, 0]],
             _run : function()
             {
+                this.visible = false;
                 newPlayerAwardBtn = this;
-                var isGot = jsclient.data.pinfo.recommendBy ? false : true;
-                //时间没到24小时，没领过
-                var isVisible = isGot && newPlayerAwardLeftTime > 0;
-                if( isVisible )
-                    this.schedule( newPlayerAwardTimer, 1.00 );
-
-                this.setVisible(isVisible);
             },
             _click: function ()
             {
@@ -307,11 +341,21 @@ var HomeLayer=cc.Layer.extend(
             {
                 UpdateGiftFlag: function ()
                 {
-                    var isGot = jsclient.data.pinfo.recommendBy ? false : true;
                     //时间没到24小时，没领过
-                    var isVisible = isGot && newPlayerAwardLeftTime > 0;
+                    var flag = jsclient.data.pinfo.recommendBy;
+                    var isVisible = (flag == null || flag <= 0) && (newPlayerAwardLeftTime > 0);
                     this.setVisible(isVisible);
                 }
+            }
+        },
+
+        mflz:
+        {
+            _layout: [[0.09, 0.13], [0.05, 0.75], [0, 0]],
+
+            _click:function()
+            {
+                jsclient.Scene.addChild(new Activity());
             }
         },
 
@@ -379,6 +423,12 @@ var HomeLayer=cc.Layer.extend(
         activity:
         {
             _layout:[[0.125,0.125],[0.45,0.07],[0,0]],
+
+            _run:function ()
+            {
+                this.visible = false;
+            },
+
             _click:function()
             {
                 jsclient.Scene.addChild(new Activity());
@@ -404,6 +454,8 @@ var HomeLayer=cc.Layer.extend(
 				 // {
 					//  doLayout(this,[0.4,0.4],[0.2,0.45],[0,0] );
 				 // }
+
+                joinRoom = this;
 			},
 			_touch:function(btn,eT)
 			{
@@ -433,6 +485,7 @@ var HomeLayer=cc.Layer.extend(
 				}
 			}
 		},
+
 		createRoom:
         {
 			_run:function()
@@ -447,6 +500,8 @@ var HomeLayer=cc.Layer.extend(
 				 // {
 					//  doLayout(this,[0.4,0.4],[0.5,0.45],[0,0] );
 				 // }
+
+                createRoom = this;
 			},
 			_click:function(btn,eT)
 			{
@@ -460,6 +515,7 @@ var HomeLayer=cc.Layer.extend(
 				}
 			}
 		},
+
 		coinRoom:
         {
 			_run:function()
@@ -482,7 +538,8 @@ var HomeLayer=cc.Layer.extend(
 				 else
                      jsclient.showMsg("暂未开放,敬请期待");
 			}
-		}
+		},
+
 	},
 
 	ctor:function ()
@@ -496,32 +553,29 @@ var HomeLayer=cc.Layer.extend(
 		initMJTexture(this);
 
         var off = getTimeOff( jsclient.data.pinfo.sendTime, new Date().toUTCString());
-        newPlayerAwardLeftTime  = 24 * 3600 - off;
+        newPlayerAwardLeftTime  = jsclient.getGiftData().actData.validTime * 3600 - off;
 
-        //更新说明提示框的回弹效果
-        doLayout(updateTishi,[0,0],[0.5,0.5],[0,0] );
-         updateTishi.runAction(cc.sequence(
-             cc.delayTime(0.3),
-             cc.callFunc(
-                 function () {
-                     doLayout(updateTishi,[0,0.80],[0.5,0.5],[0,0] );
-                 }
-             ),
-             cc.delayTime(0.1),
-             cc.callFunc(
-                 function () {
-                     updateTishi.setScaleY(0.85);
-                     doLayout(updateTishi,[0,0.85],[0.5,0.5],[0,0] );
-                 }
-             ),
-             cc.delayTime(0.1),
-             cc.callFunc(
-                 function () {
-                     doLayout(updateTishi,[0,0.80],[0.5,0.5],[0,0] );
-                 }
-             )
+        //时间没到24小时，没领过
+        var flag = jsclient.data.pinfo.recommendBy;
+        var isVisible = (flag == null || flag <= 0) && (newPlayerAwardLeftTime > 0);
+        if( isVisible )
+            newPlayerAwardBtn.schedule(newPlayerAwardTimer, 1.00 );
 
-         ));
+        newPlayerAwardBtn.setVisible(isVisible);
+
+
+        //播放特效
+        var createRoomAnim = playAnimByJson("chuangjianfangjian", "chuangjianfangjian");
+        homeui.node.addChild(createRoomAnim);
+        createRoomAnim.x = createRoom.x;
+        createRoomAnim.y = createRoom.y;
+        createRoomAnim.scale = createRoom.scale;
+
+        // var joinRoomAnim = playAnimByJson("jiaruyouxi", "jiaruyouxi");
+        // this.addChild(joinRoomAnim);
+        // joinRoomAnim.x = joinRoom.x;
+        // joinRoomAnim.y = joinRoom.y;
+        // joinRoomAnim.scale = joinRoom.scale;
 
 		return true;
 	}

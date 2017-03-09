@@ -1,5 +1,126 @@
 (function () 
 {
+    /*
+     提示: 参考:孙书林 的代码
+     功能：
+     客户端:循环请求web下的configuration.json，发现与上次有差别时，更新游戏内显示。（5分钟请求一次）
+     服务端:路南平
+     web端:产品配置
+     生效时间:假如10分钟后效
+
+     配置文件说明：
+     {
+     "weixinBuy":"hnxiuhhhggggxiu7332072" 			//微信号
+     ,"severRestart":"重启！！！！！！！！！！！！！！！！！！" 	//服务器重启提示
+     ,"restartTipBegin":"2016,10,26,15,50,00" 		//服务器重启提示面板开始弹出时间
+     ,"restartTipEnd":"2016,10,31,17,50,00"			//服务器重启提示面板停止弹出时间
+     ,"restartTipInterval": "300"						//服务器重启提示面板弹出间隔
+     ,"gameTip":"1111111跑得快更新说明 V1.3.6\n\n1.增加出牌选项：黑桃3先出、赢家先出（选项在第二局生效）\n2.报单修改：报单后，出单牌时，只能出手中最大的牌\n3.新增癞子玩法\n\n\n咨询微信号：nuokf123"			//公告面板
+     ,"homeScroll":"1112222!!!!!代理咨询请联系微信号:leyouxihn002，禁止赌博，如因此产生的法律责任与该平台无关。"					//跑马灯文字
+     }
+     （注意：后台输入内容全部是字符串，想公告，重启提示等有指定换行格式需要的程序里面需要处理一下，“\n”后台输入的是两个字符，要在程序内换成一个转义字符）。
+     循环请求：
+     主要是比较文本差异，处理时间，找到需要更新的字段，然后发送消息“cfgUpdate”。*/
+    function startUpdateCfg(){
+        var updateCfgInterval = 10*60; //重复请求时间间隔
+        var restartTime = -1; //重启弹出累计时间
+        //字符串\n替换
+        var formatStr = function (obj) {
+            if(!obj) return;
+            for(var key in obj){
+                obj[key] = obj[key].replace(/\\n/g,"\n");
+            }
+            return obj;
+        };
+        //日期格式替换
+        var formatData = function (data) {
+            if(!data) return false;
+            var times = data.split(",");
+            for(var i = 0; i < times.length; i++){
+                times[i] = Number(times[i]);
+            }
+            return times;
+        };
+        //更新数据
+        var updatecfg = function () {
+            var xhr = cc.loader.getXMLHttpRequest();
+            xhr.open("GET", "http://gdmj.coolgamebox.com:800/gdmj/configuration.json");
+            xhr.onreadystatechange = function ()
+            {
+                if (xhr.readyState == 4 && xhr.status == 200)
+                {
+                    jsclient.updateCfg = formatStr(JSON.parse(xhr.responseText));
+                    if(!jsclient.lastUpdateCfg)
+                    {
+                        jsclient.lastUpdateCfg = jsclient.updateCfg;
+                        GetRemoteCfg();
+                    }
+
+                    cc.log("更新内容： " + JSON.stringify(jsclient.updateCfg));
+
+                    var changeValue = {};
+                    changeValue.isShowed = true; //提示界面是否显示过了
+                    jsclient.changeValue = changeValue;
+                    
+                    for(var key in jsclient.updateCfg)
+                    {
+                        //if(jsclient.updateCfg[key] != jsclient.lastUpdateCfg[key]){
+                        if(jsclient.updateCfg[key] != jsclient.lastUpdateCfg[key] || !jsclient.isCfgRead)
+                        {
+                            changeValue[key] = jsclient.updateCfg[key];
+                            cc.log("wcx6 " + key +"=" +  jsclient.updateCfg[key]);
+                            changeValue.isShowed = false;
+                        }
+                    }
+
+                    //有重启配置并且累计时间大于弹出间隔时间时弹出面板
+                    var time_now = jsclient.getCurrentTime();
+                    if(jsclient.dateInRectDate(time_now, formatData(jsclient.updateCfg.restartTipBegin), formatData(jsclient.updateCfg.restartTipEnd)))
+                    {
+                        if((restartTime >= Number(jsclient.updateCfg.restartTipInterval)) || (restartTime < 0))
+                        {
+                            changeValue.severRestart = jsclient.updateCfg.severRestart;
+                            restartTime = 0;
+                        }
+                        else
+                        {
+                            changeValue.severRestart = null;
+                        }
+                    }
+                    restartTime += updateCfgInterval;
+
+
+                    { //存文件
+                        jsclient.isCfgRead = true;
+                        jsb.fileUtils.writeStringToFile(JSON.stringify(jsclient.updateCfg),
+                            jsb.fileUtils.getWritablePath()+  'configuration.json');
+                    }
+                    sendEvent("cfgUpdate", changeValue); //此时 home ui 不一定存在
+                    jsclient.lastUpdateCfg = jsclient.deepClone(jsclient.updateCfg);
+                }
+                else if(!jsclient.updateCfg)
+                {
+                    CfgGetFail();
+                }
+            };
+            xhr.onerror = function (event) {
+                if(!jsclient.updateCfg)
+                    CfgGetFail();
+            };
+            xhr.send();
+        };
+        //jsclient.Scene.runAction(cc.repeatForever(cc.sequence(cc.callFunc(updatecfg), cc.DelayTime(updateCfgInterval))));
+        {
+            var iDelay = 0.1; // 秒 读取失败就立刻进行网络请求
+            if(jsclient.isCfgRead){ //读取成功就 延迟 请求,让用户尽快进入游戏,
+                iDelay = 20;
+            }
+            jsclient.Scene.runAction(cc.repeatForever(cc.sequence(cc.callFunc(updatecfg), cc.DelayTime(updateCfgInterval))));
+
+        }
+    }
+
+
 
     var jindu = 1,isAlready = false;
     function upText()
@@ -75,6 +196,38 @@
         };
         xhr.send();
     }
+    
+    function LoadUpdateCfg(remoteCfgName)
+    {
+        if(jsclient.updateCfg)
+            return;
+
+        if (jsb.fileUtils.isFileExist(jsb.fileUtils.getWritablePath() + remoteCfgName))
+        {
+
+            cc.loader.loadTxt(jsb.fileUtils.getWritablePath() + remoteCfgName, function (er, txt)
+            {
+                if (txt && txt.length > 0)
+                {
+                    //设置
+                    jsclient.isCfgRead = true; //文件读取成功
+                    jsclient.updateCfg = JSON.parse(txt);
+                    jsclient.lastUpdateCfg = jsclient.deepClone(jsclient.updateCfg);
+                    startUpdateCfg();
+                }
+                else
+                {
+                    jsclient.isCfgRead = false; //文件读取失败
+                    startUpdateCfg();
+                }
+            });
+        }
+        else
+        {
+            jsclient.isCfgRead = false; //文件读取失败
+            startUpdateCfg();
+        }
+    }
 
     function GetRemoteCfgNet()
     {
@@ -102,6 +255,9 @@
 
     function GetRemoteCfg()
     {
+        LoadUpdateCfg("configuration.json");
+        LoadActionCfg("action.json");
+
         cc.loader.loadTxt("res/test.cfg", function (er, txt)
         {
             if (er || txt.length == 0)
@@ -114,8 +270,6 @@
                 sendEvent("updateFinish");
             }
         });
-
-        LoadActionCfg("action.json");
     }
 
     function GetRemoteIP()
@@ -255,9 +409,6 @@
         onEnter: function ()
         {
             this._super();
-            //cc.spriteFrameCache.addSpriteFrames("res/Pic/Game/poker.plist");
-            // var barNode = this.jsBind.barbk.bar._node;
-            // barNode.setPercent(0);
 
             function UpdateResource()
             {

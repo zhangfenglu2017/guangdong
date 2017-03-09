@@ -1,7 +1,7 @@
 
 
 (function(){
-    
+
 	function f_login(mail,code,isLocalGuest)
 	{
         var geogData = {};
@@ -45,6 +45,30 @@
 			}
 			else if(rtn.result==ZJHCode.clientUpdate)
 			{
+			}
+			else if(rtn.result==ZJHCode.lockPlayerId)	//封号提示
+			{
+				sys.localStorage.removeItem("WX_USER_LOGIN");
+				sys.localStorage.removeItem("loginData"); //不清除，无限登录
+				sendEvent("logout");
+				cc.log("====== 封号 ======");
+
+				var banTime = rtn.data;
+				var banStartTime;
+				if(banTime >0)
+				{
+					var s = parseInt(banTime /1000 %60);
+					var m = parseInt(banTime /1000 /60 %60);
+					var h = parseInt(banTime /1000 /60 /60 %24);
+					var d = parseInt(banTime /1000 /60 /60 /24 %365);
+					banStartTime = d + "天" + h + "时" + m + "分" + s + "秒";
+				}
+				else
+                {
+					banStartTime = "永久期限";
+				}
+				jsclient.showMsg("尊敬的用户您好:\n您的账户存在异常已被封号处理!\n封号时间:"
+					+banStartTime+"\n解除封号联系客服人员:"+jsclient.remoteCfg.weixinBuy, null, null, null);
 			}
 			
 			if(unblock)
@@ -122,17 +146,32 @@
 		}
 	};
 
-	var agreeNode;
+	var agreeNode, wechatLogin, logIcon;
 
 	LoginLayer = cc.Layer.extend({
 		jsBind:{
 			back:
-			{	_layout:[[1,1],[0.5,0.5],[0,0],true]
-			},
+			{
+                _layout:[[1,1],[0.5,0.5],[0,0],true],
+
+				// _run:function ()
+				// {
+				// 	var loginBkAnim = playAnimByJson("changjing", "weixinnanshou");
+				// 	this.addChild(loginBkAnim);
+                 //    loginBkAnim.x = 0;
+                 //    loginBkAnim.y = 0;
+                 //    loginBkAnim.scale = this.scale;
+				// }
+            },
 
 			logo:
 			{
-				_layout:[[0.35,0.35],[0.5,0.75],[0.08,0],true]
+				_layout:[[0.35,0.35],[0.5,0.75],[0.08,0],true],
+
+                _run:function ()
+                {
+                    logIcon = this;
+                }
 			},
 
 			wechatLogin:
@@ -167,6 +206,8 @@
 				},
 				_run:function()
 				{
+                    wechatLogin = this;
+
                     //IOS提审用
                     if(jsclient.remoteCfg.guestLogin)
 					{
@@ -184,12 +225,6 @@
 			    _visible:function()
 				{
 					return jsclient.remoteCfg.guestLogin;
-				},
-
-				_run:function()
-				{
-                    //IOS提审用
-                    // this.visible = true;
 				},
 
                 _click:function()
@@ -259,7 +294,7 @@
 				   }
 				}
 			},
-            
+
 		},
 	    ctor:function ()
         {
@@ -269,6 +304,21 @@
 	        this.addChild(loginui.node);
 			jsclient.loginui=this;
 	        jsclient.autoLogin();
+
+
+            //播放特效
+            var weixinAnim = playAnimByJson("weixindenglu", "weixinnanshou");
+            this.addChild(weixinAnim);
+            weixinAnim.x = wechatLogin.x;
+            weixinAnim.y = wechatLogin.y;
+            weixinAnim.scale = wechatLogin.scale;
+
+            var logIconAnim = playAnimByJson("guangdongmajiang", "guangdongmajiang");
+            this.addChild(logIconAnim);
+            logIconAnim.x = logIcon.x;
+            logIconAnim.y = logIcon.y;
+            logIcon.visible = false;
+            logIconAnim.scale = logIcon.scale;
 
 			return true;
 	    },

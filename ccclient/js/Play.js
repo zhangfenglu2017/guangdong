@@ -1106,7 +1106,7 @@ function CheckEatVisibleForDongGuan(eat)
             //判断红中癞子
             var horse = 0;
             var rtn;
-            if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+            if ((jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui) && jsclient.data.sData.tData.guiJiaMa )
                 horse = jsclient.data.sData.tData.horse + 2;
             else
                 horse = jsclient.data.sData.tData.horse;
@@ -1179,7 +1179,7 @@ function CheckEatVisibleForDongGuan(eat)
             {
                 var horse = 0;
                 var rtn;
-                if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+                if ((jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui) && jsclient.data.sData.tData.guiJiaMa )
                     horse = jsclient.data.sData.tData.horse + 2;
                 else
                     horse = jsclient.data.sData.tData.horse;
@@ -1344,7 +1344,7 @@ function CheckEatVisibleFoYiBaiZhang(eat)
             //判断红中癞子
             var horse = 0;
             var rtn;
-            if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+            if ((jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui) && jsclient.data.sData.tData.guiJiaMa )
                 horse = jsclient.data.sData.tData.horse + 2;
             else
                 horse = jsclient.data.sData.tData.horse;
@@ -1414,7 +1414,7 @@ function CheckEatVisibleFoYiBaiZhang(eat)
             {
                 var horse = 0;
                 var rtn;
-                if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+                if ((jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui) && jsclient.data.sData.tData.guiJiaMa )
                     horse = jsclient.data.sData.tData.horse + 2;
                 else
                     horse = jsclient.data.sData.tData.horse;
@@ -2954,11 +2954,21 @@ function HandleMJPut(node, msg, off, outNum) {
         var callbackFUNCROTATION = function ()
         {
             out.visible = true;
-            out.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)), cc.callFunc(callbackFUNC)));
+            // out.zIndex = zoder;
+            // out.x = endPoint.x;
+            // out.y = endPoint.y;
+            // out.scale = oSc;
+            // outAction.removeFromParent();
+            out.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, endPoint), cc.scaleTo(0.1, oSc)), cc.callFunc(callbackFUNC)));
         };
-        outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, Midpoint), cc.scaleTo(0.2, 2 * oSc))
+        outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, Midpoint), cc.scaleTo(0.1, 2 * oSc))
+        // outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)),cc.callFunc(callbackFUNCROTATION)
             //cc.DelayTime(0.4),cc.callFunc(callbackFUNCROTATION),cc.removeSelf()
         ));
+
+        // outAction.x = Midpoint.x;
+        // outAction.y = Midpoint.y;
+        // outAction.scale = 2*oSc;
 
         function RemovePutCard(onlySelf)
         {
@@ -2969,7 +2979,7 @@ function HandleMJPut(node, msg, off, outNum) {
                 outAction.runAction(cc.sequence(cc.DelayTime(delayNum), cc.callFunc(callbackFUNCROTATION), cc.removeSelf()));
             else
                 outAction.runAction(cc.sequence(cc.DelayTime(delayNum), cc.removeSelf()));
-        }
+        };
 
         var putTime = Date.now();
         var outActionBind =
@@ -4598,9 +4608,16 @@ var PlayLayer = cc.Layer.extend(
                         },
 
                         canHu7: {
-                            _visible: function () {
+
+                            _run:function()
+                            {
+                                if(jsclient.data.sData.tData.jiejieGao)
+                                    this.y -= 45;
+                            },
+
+                            _visible: function ()
+                            {
                                 return (jsclient.data.sData.tData.canHu7
-                                && jsclient.data.sData.tData.gameType != 1
                                 && jsclient.data.sData.tData.gameType != 3
                                 && jsclient.data.sData.tData.gameType != 5
                                 && jsclient.data.sData.tData.gameType != 6);
@@ -4608,7 +4625,15 @@ var PlayLayer = cc.Layer.extend(
                         },
 
                         canFan7: {
-                            _visible: function () {
+
+                            _run:function()
+                            {
+                                if(jsclient.data.sData.tData.jiejieGao)
+                                    this.y -= 45;
+                            },
+
+                            _visible: function ()
+                            {
                                 return jsclient.data.sData.tData.canFan7;
                             }
                         },

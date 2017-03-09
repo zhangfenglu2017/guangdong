@@ -16,7 +16,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="loading/bac_01.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="logo" ActionTag="-1046764534" Tag="282" IconVisible="False" LeftMargin="233.1800" RightMargin="190.8201" TopMargin="36.0249" BottomMargin="402.9751" LeftEage="282" RightEage="282" TopEage="92" BottomEage="92" Scale9OriginX="282" Scale9OriginY="92" Scale9Width="292" Scale9Height="97" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="logo" ActionTag="-1046764534" VisibleForFrame="False" Tag="282" IconVisible="False" LeftMargin="233.1800" RightMargin="190.8201" TopMargin="36.0249" BottomMargin="402.9751" LeftEage="282" RightEage="282" TopEage="92" BottomEage="92" Scale9OriginX="282" Scale9OriginY="92" Scale9Width="292" Scale9Height="97" ctype="ImageViewObjectData">
             <Size X="856.0000" Y="281.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="661.1800" Y="543.4751" />

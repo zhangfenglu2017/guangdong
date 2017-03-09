@@ -2,7 +2,7 @@
   "servers":"120.76.204.225:15010:15039,120.76.205.11:15010:15039"
   ,"serversSelect":[600,400]
   ,"wxShareUrl":"http://download.happyplaygame.net"
-  ,"voiceUrl":"http://124.232.153.18:9109/symj/"
+  ,"voiceUrl":"http://114.55.252.83:9109/symj/"
   ,"guestLogin":false
   ,"coinRoom":false
   ,"canEatHu":false
@@ -21,5 +21,5 @@
   ,"homeScroll":"代理咨询请联系微信Kfxj111，文明娱乐，禁止赌博"
   ,"uptitle":"亲爱的玩家:"
   ,"upnexttitle":"星悦广东麻将本次更新内容如下:"
-  ,"updesc":"1.新增邀请好友功能\t\n2.新增新手礼包功能\t\n3.新增健康游戏忠告UI\t\n"
+  ,"updesc":"1.修复有多张鬼牌时，可能导致大胡牌型计算错误的漏洞\t\n2.新增部分特效\t\n3.新增钻石消耗显示\t\n4.删除打牌部分动画\t\n"
 }

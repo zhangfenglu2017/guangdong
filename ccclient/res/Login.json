@@ -97,6 +97,7 @@
               "X": 856.0,
               "Y": 281.0
             },
+            "VisibleForFrame": false,
             "Name": "logo",
             "ctype": "ImageViewObjectData"
           },

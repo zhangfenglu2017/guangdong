@@ -134,6 +134,10 @@
           <Image Name="mianfei.png" />
           <Image Name="new.png" />
           <Image Name="qiansediban.png" />
+          <Image Name="queding_2.png" />
+          <Image Name="queding_2_press.png" />
+          <Image Name="queding_3.png" />
+          <Image Name="queding_3_press.png" />
           <Image Name="t_chuangjianfangjian.png" />
           <Image Name="window-big.png" />
           <Image Name="xianshimianfei.png" />
@@ -244,6 +248,7 @@
           <Image Name="jiankangyouxi.png" />
           <Image Name="joinGame.png" />
           <Image Name="logo_02.png" />
+          <Image Name="mianfeilingzuan.png" />
           <Image Name="red_dot.png" />
           <Image Name="returnGame.png" />
           <Image Name="xslb.png" />

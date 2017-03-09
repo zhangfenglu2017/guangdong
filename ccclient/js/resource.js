@@ -25,19 +25,47 @@ var res =
 	PlayMJ_emoji_plist:"res/playerchat/emoji_action_texture.plist",
 
 	PlayMJ_cardAnim_png:"res/MaJiangNew/cardAnim.png",
-	PlayMj_cardAnim_plist:"res/MaJiangNew/cardAnim.plist"
+	PlayMj_cardAnim_plist:"res/MaJiangNew/cardAnim.plist",
+
+	Weixindenglu_png:"res/animate/login/weixindenglu0.png",
+	Weixindenglu_plist:"res/animate/login/weixindenglu0.plist",
+	Weixindenglu_json:"res/animate/login/weixindenglu.ExportJson",
+
+    // Changjing_png:"res/animate/login/changjing0.png",
+    // Changjing_plist:"res/animate/login/changjing0.plist",
+    // Changjing_json:"res/animate/login/changjing.ExportJson",
+
+    Guangdongmajiang_png:"res/animate/login/guangdongmajiang0.png",
+    Guangdongmajiang_plist:"res/animate/login/guangdongmajiang0.plist",
+    Guangdongmajiang_json:"res/animate/login/guangdongmajiang.ExportJson",
+
+    // Jiaruyouxi_png:"res/animate/login/jiaruyouxi0.png",
+    // Jiaruyouxi_plist:"res/animate/login/jiaruyouxi0.plist",
+    // Jiaruyouxi_json:"res/animate/login/jiaruyouxi.ExportJson",
+    //
+    Chuangjianfangjian_png:"res/animate/home/chuangjianfangjian0.png",
+    Chuangjianfangjian_plist:"res/animate/home/chuangjianfangjian0.plist",
+    Chuangjianfangjian_json:"res/animate/home/chuangjianfangjian.ExportJson",
+
+    
+
 };
 
 var g_resources = [];
 for (var i in res)
 {
     g_resources.push(res[i]);
-    cc.log("预加载资源：" + res[i]);
+    // cc.log("预加载资源：" + res[i]);
 }
 
-cc.spriteFrameCache.addSpriteFrames("res/MaJiangNew/z_mj.plist");
-cc.spriteFrameCache.addSpriteFrames("res/MaJiangNew/cardAnim.plist");
-cc.spriteFrameCache.addSpriteFrames("res/playerchat/emoji_action_texture.plist");
+cc.spriteFrameCache.addSpriteFrames(res.PlayMJ_my_plist);
+cc.spriteFrameCache.addSpriteFrames(res.PlayMJ_emoji_plist);
+
+// ccs.ArmatureDataManager:getInstance().removeArmatureFileInfo(res.Weixindenglu_json);
+ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Weixindenglu_json);
+ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Guangdongmajiang_json);
+// ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Jiaruyouxi_json);
+ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Chuangjianfangjian_json);
 
 
 var jsclient={};

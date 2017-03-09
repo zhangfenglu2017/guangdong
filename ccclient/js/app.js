@@ -76,6 +76,36 @@ function getServerByRandForPort(parts) {
     }
 }
 
+function playAnimByPlist(animNode, resName, animMax)
+{
+
+
+    // var animation = new cc.Animation();
+    // for(var i = 1;i<=animMax;i++)
+    // {
+    //     var frame = cc.spriteFrameCache.getSpriteFrame(resName + i + ".png");
+    //     animation.addSpriteFrame(frame);
+    // }
+    //
+    // animation.setDelayPerUnit(0.12);
+    // animation.setRestoreOriginalFrame(true);
+    // var action = cc.animate(animation);
+    // animNode.runAction(cc.repeatForever(cc.sequence(action, cc.delayTime(1.5))));
+}
+
+function playAnimByJson(jsonName, animName)
+{
+    var armature = ccs.Armature.create(jsonName);
+
+    if(armature == null)
+        return null;
+
+    var animation = armature.getAnimation();
+    animation.play(animName);
+
+    return armature
+}
+
 //加载默认头像
 function loadDefaultHead(node, posx, posy, scale, zindex, name, tag) {
     url = "res/play-yli/Photo_frame_man.png";
@@ -445,6 +475,53 @@ jsclient.geographicalPos = function (latitude, longitude) {
         }, function (rtn) {
         });
 };
+
+
+jsclient.deepClone = function (sObj) {
+    if (typeof(sObj) !== "object") {
+        return sObj;
+    }
+
+    var s = {};
+    if (sObj.constructor == Array) {
+        s = [];
+    }
+
+    for (var i in sObj) {
+        s[i] = jsclient.deepClone(sObj[i]);//Object.clone(sObj[i]);
+    }
+    return s;
+};
+
+jsclient.getCurrentTime = function () {
+    var now = new Date();
+    var year = now.getFullYear();       //年
+    var month = now.getMonth() + 1;     //月
+    var day = now.getDate();            //日
+
+    var hh = now.getHours();            //时
+    var mm = now.getMinutes();          //分
+    var ss = now.getSeconds();          //秒
+
+    return [year, month, day, hh, mm, ss];
+};
+
+jsclient.dateInRectDate = function (myTime, startTime, endTime) {
+    if (!myTime || !startTime || !endTime) return;
+    var makeNum = function (array) {
+        var num = 0;
+        for (var i = 0; i < array.length; i++) {
+            num += array[i] * Math.pow(10, (10 - i * 2));
+        }
+        return num;
+    };
+
+    var myTime_Num = makeNum(myTime);
+    var startTime_Num = makeNum(startTime);
+    var endTime_Num = makeNum(endTime);
+    return (myTime_Num >= startTime_Num && myTime_Num <= endTime_Num);
+};
+
 
 jsclient.netCallBack =
 {
