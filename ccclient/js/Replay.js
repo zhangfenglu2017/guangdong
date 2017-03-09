@@ -1917,10 +1917,13 @@ function newReplayLayer()
         var osc = eatlogo.scale;
         eatlogo.scale = 0.01;
 
-        var imgName = "mj_" + ed.lastput + ".png";
+        // var imgName = "mj_" + ed.lastput + ".png";
+        var imgName = "res/MaJiangNew/mj_" + ed.lastput + ".png";
         var num = eatlogo.getChildByName("card1").getChildByName("num");
-        if (num != null) {
-            num.loadTexture(imgName, ccui.Widget.PLIST_TEXTURE);
+        if (num != null)
+        {
+            // num.loadTexture(imgName, ccui.Widget.PLIST_TEXTURE);
+            num.loadTexture(imgName);
         }
         var callback = function ()
         {
@@ -1988,6 +1991,8 @@ function newReplayLayer()
                 case 2:
                     leftCard = leftCard + 8;
                     break;
+                case 7:
+                    leftCard = leftCard + 8;
                 default :
                     leftCard = leftCard;
                     break;
@@ -2187,13 +2192,17 @@ function newReplayLayer()
                                     {
                                         this.visible = true;
                                         setCardPic(this, guiTag);
+                                        log("任意鬼牌。。。。" + guiTag);
+                                    }
+                                    else if(jsclient.data.sData.tData.gameType == 7)
+                                    {
+                                        this.visible = true;
+                                        setCardPic(this, "hua");
+                                        log("花鬼牌。。。。" + guiTag);
                                     }
                                     else
                                         this.visible = false;
-
-                                    log("任意鬼牌。。。。" + guiTag);
                                 }
-
                             },
                         }
                     },
@@ -2481,6 +2490,26 @@ function newReplayLayer()
                     _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
                     _visible: function () {
                         return (jsclient.data.sData.tData.gameType == 1 && IsThreeTable());
+                    }
+                },
+                bddhmj: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function ()
+                    {
+                        if (jsclient.data.sData.tData.gameType == 7 && jsclient.data.sData.tData.baidadahu)
+                            return true;
+                        else
+                            return false;
+                    }
+                },
+                bdjhmj: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function ()
+                    {
+                        if (jsclient.data.sData.tData.gameType == 7 && jsclient.data.sData.tData.baidajihu)
+                            return true;
+                        else
+                            return false;
                     }
                 }
             },

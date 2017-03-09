@@ -803,7 +803,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="right" ActionTag="1632467591" Tag="1002" IconVisible="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="right" Visible="False" ActionTag="1632467591" Tag="1002" IconVisible="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="ready" ActionTag="832958933" Tag="1003" IconVisible="False" LeftMargin="960.6440" RightMargin="-1048.6440" TopMargin="-375.9325" BottomMargin="336.9325" ctype="SpriteObjectData">
@@ -1678,6 +1678,26 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="play-yli/sanrentuidaohu.png" Plist="" />
               </AbstractNodeData>
+              <AbstractNodeData Name="bdjhmj" ActionTag="-1657801173" Tag="959" IconVisible="False" LeftMargin="547.3801" RightMargin="-747.3801" TopMargin="-459.0500" BottomMargin="403.0500" LeftEage="31" RightEage="31" TopEage="10" BottomEage="10" Scale9OriginX="31" Scale9OriginY="10" Scale9Width="138" Scale9Height="36" ctype="ImageViewObjectData">
+                <Size X="200.0000" Y="56.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="647.3801" Y="431.0500" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="play-yli/baidajihu.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="bddhmj" ActionTag="-29332980" Tag="960" IconVisible="False" LeftMargin="547.3802" RightMargin="-747.3802" TopMargin="-459.0501" BottomMargin="403.0501" LeftEage="31" RightEage="31" TopEage="10" BottomEage="10" Scale9OriginX="31" Scale9OriginY="10" Scale9Width="138" Scale9Height="36" ctype="ImageViewObjectData">
+                <Size X="200.0000" Y="56.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="647.3802" Y="431.0501" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="play-yli/baidadahu.png" Plist="" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint />
             <Position />
@@ -1686,7 +1706,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="top" ActionTag="1953524827" Tag="1087" IconVisible="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="top" Visible="False" ActionTag="1953524827" Tag="1087" IconVisible="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="ready" ActionTag="952202984" Tag="1088" IconVisible="False" LeftMargin="604.4496" RightMargin="-692.4496" TopMargin="-492.3252" BottomMargin="453.3252" ctype="SpriteObjectData">
@@ -2357,7 +2377,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="eat" Visible="False" ActionTag="-2072976172" Tag="946" IconVisible="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="eat" ActionTag="-2072976172" Tag="946" IconVisible="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="gang0" Visible="False" ActionTag="-484038438" Tag="947" IconVisible="False" LeftMargin="587.8206" RightMargin="-668.8206" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -2419,7 +2439,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gang1" ActionTag="-1825344072" Tag="952" IconVisible="False" LeftMargin="590.5610" RightMargin="-671.5610" TopMargin="-312.8865" BottomMargin="230.8865" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="gang1" Visible="False" ActionTag="-1825344072" Tag="952" IconVisible="False" LeftMargin="590.5610" RightMargin="-671.5610" TopMargin="-312.8865" BottomMargin="230.8865" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="81.0000" Y="82.0000" />
                 <Children>
                   <AbstractNodeData Name="card" ActionTag="606704668" Tag="953" IconVisible="False" LeftMargin="65.3994" RightMargin="-82.3994" TopMargin="-35.6004" BottomMargin="-34.3996" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
@@ -2458,7 +2478,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gang2" ActionTag="-998658718" Tag="954" IconVisible="False" LeftMargin="590.5609" RightMargin="-671.5609" TopMargin="-409.2031" BottomMargin="327.2031" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="gang2" Visible="False" ActionTag="-998658718" Tag="954" IconVisible="False" LeftMargin="590.5609" RightMargin="-671.5609" TopMargin="-409.2031" BottomMargin="327.2031" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="81.0000" Y="82.0000" />
                 <Children>
                   <AbstractNodeData Name="card" ActionTag="2010782150" Tag="955" IconVisible="False" LeftMargin="64.9998" RightMargin="-81.9998" TopMargin="-35.9997" BottomMargin="-34.0003" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
@@ -2583,7 +2603,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="peng" Visible="False" ActionTag="860422122" Tag="963" IconVisible="False" LeftMargin="471.2208" RightMargin="-552.2208" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="peng" ActionTag="860422122" Tag="963" IconVisible="False" LeftMargin="471.2208" RightMargin="-552.2208" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="81.0000" Y="82.0000" />
                 <Children>
                   <AbstractNodeData Name="bgground" ActionTag="841223175" Tag="964" IconVisible="False" LeftMargin="-112.6107" RightMargin="-36.3893" TopMargin="-7.1509" BottomMargin="-11.8491" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="80" Scale9Height="35" ctype="ImageViewObjectData">
@@ -2745,7 +2765,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="chi1" ActionTag="1896546829" Tag="975" IconVisible="False" LeftMargin="736.1828" RightMargin="-817.1828" TopMargin="-310.9414" BottomMargin="228.9414" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="chi1" Visible="False" ActionTag="1896546829" Tag="975" IconVisible="False" LeftMargin="736.1828" RightMargin="-817.1828" TopMargin="-310.9414" BottomMargin="228.9414" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="81.0000" Y="82.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="776.6828" Y="269.9414" />
@@ -2760,7 +2780,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="chi2" ActionTag="538292022" Tag="976" IconVisible="False" LeftMargin="736.0494" RightMargin="-817.0494" TopMargin="-409.5729" BottomMargin="327.5729" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="chi2" Visible="False" ActionTag="538292022" Tag="976" IconVisible="False" LeftMargin="736.0494" RightMargin="-817.0494" TopMargin="-409.5729" BottomMargin="327.5729" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="81.0000" Y="82.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="776.5494" Y="368.5729" />
@@ -2775,7 +2795,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="changeui" ActionTag="332951190" Tag="977" IconVisible="True" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="changeui" Visible="False" ActionTag="332951190" Tag="977" IconVisible="True" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="changeuibg" ActionTag="1713820674" Tag="978" IconVisible="False" LeftMargin="451.1711" RightMargin="-834.1711" TopMargin="-215.1418" BottomMargin="129.1418" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="233" Scale9Height="20" ctype="ImageViewObjectData">

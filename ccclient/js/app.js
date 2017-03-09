@@ -329,8 +329,8 @@ jsclient.joinGame = function (tableid) {
 
 jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7,canFan7,
                                 canHuWith258, withZhong, zhongIsMa, horse, baoZhaMa, jjg, fanGui, twogui, fanNum, maxPlayer,
-                                canBigWin, guiJiaMa, guiJiaBei, gui4Hu, gui4huBeiNum, noCanJiHu, maGenDi,maGenDiDuiDuiHu,
-                                menQingJiaFen)
+                                canBigWin, guiJiaMa, guiJiaBei, gui4Hu, gui4huBeiNum, noCanJiHu, canJiHu, maGenDi,maGenDiDuiDuiHu,
+                                menQingJiaFen, baidajihu, baidadahu)
 {
     jsclient.block();
     jsclient.gamenet.request("pkplayer.handler.CreateVipTable", {
@@ -358,9 +358,12 @@ jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noB
             gui4Hu:gui4Hu,
             gui4huBeiNum:gui4huBeiNum,
             noCanJiHu:noCanJiHu,
+            canJiHu:canJiHu,
             maGenDi:maGenDi,
             maGenDiDuiDuiHu:maGenDiDuiDuiHu,
             menQingJiaFen:menQingJiaFen,
+            baidajihu:baidajihu,
+            baidadahu:baidadahu
         },
         function (rtn) {
             jsclient.unblock();
@@ -569,6 +572,143 @@ jsclient.heartbeatGame = function() {
     });
 };
 
+
+/*更新 home tip*/
+jsclient.startUpdateHomeTipCfg = function() {
+
+    var showHomeTip = function()
+    {
+        if(jsclient.homeTipCfg.CanShow)
+        {
+            if(jsclient.homeui)
+            {
+                jsclient.homeui.addChild(new HomeTips(), 998);
+                jsclient.CanShow = true;
+            }
+
+            if(jsclient.homeTipCfg.Pic)
+            {
+                var url= "http://gdmj.coolgamebox.com:800/gdmj/" + jsclient.homeTipCfg.Pic;
+                if(url)
+                {
+                    log("Home弹窗内容图片：" + url);
+                    jsclient.startUpdateHomeTipCfg22();
+                }
+            }
+        }
+    };
+
+
+    //更新数据
+    var updatecfg = function ()
+    {
+        var xhr = cc.loader.getXMLHttpRequest();
+        xhr.open("GET", "http://gdmj.coolgamebox.com:800/gdmj/configurationHome.json");
+        xhr.onreadystatechange = function ()
+        {
+            if (xhr.readyState == 4 && xhr.status == 200)
+            {
+                jsclient.homeTipCfg = JSON.parse(xhr.responseText);
+                showHomeTip();
+            }
+            else if(!jsclient.homeTipCfg)
+            {
+                // CfgGetFail();
+            }
+        };
+        xhr.onerror = function (event)
+        {
+            //if(!jsclient.homeTipCfg)
+            //    CfgGetFail();
+        };
+        xhr.send();
+    };
+
+    if( typeof (jsclient.homeTipCfg) == "undefined")
+    {
+        updatecfg();
+    }
+    else
+    {
+        showHomeTip();
+    }
+};
+
+jsclient.startUpdateHomeTipCfg22 = function()
+{
+    var url= "http://gdmj.coolgamebox.com:800/gdmj/" + jsclient.homeTipCfg.Pic;
+    var dirpath =  jsb.fileUtils.getWritablePath() ;
+    var filepath = dirpath + jsclient.homeTipCfg.Pic;
+
+    function loadEnd()
+    {
+        cc.loader.load(filepath, function(err, tex)
+        {
+            if( err )
+            {
+                cc.error(err);
+            }
+            else
+            {
+                sendEvent("loadHomeTipImg",{img:"1"});
+            }
+        });
+    }
+
+    if( jsb.fileUtils.isFileExist(filepath) )
+    {
+        cc.log('Remote is find' + filepath);
+        loadEnd();
+        return;
+    }
+
+    var saveFile = function(data)
+    {
+        if( typeof data !== 'undefined' )
+        {
+            if( !jsb.fileUtils.isDirectoryExist(dirpath + "homeTip"))
+            {
+                jsb.fileUtils.createDirectory(dirpath + "homeTip");
+            }
+
+            if( jsb.fileUtils.writeDataToFile(  new Uint8Array(data) , filepath))
+            {
+                cc.log('Remote write file succeed.');
+                loadEnd();
+            }
+            else
+            {
+                cc.log('Remote write file failed.');
+            }
+        }
+        else
+        {
+            cc.log('Remote download file failed.');
+        }
+    };
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function ()
+    {
+        cc.log("xhr.readyState  " +xhr.readyState);
+        cc.log("xhr.status  " +xhr.status);
+        if (xhr.readyState === 4 )
+        {
+            if(xhr.status === 200)
+            {
+                xhr.responseType = 'arraybuffer';
+                saveFile(xhr.response);
+            }
+            else
+            {
+                saveFile(null);
+            }
+        }
+    }.bind(this);
+    xhr.open("GET", url, true);
+    xhr.send();
+};
+
 jsclient.netCallBack =
 {
     loadWxHead: [0.01, function (d) {
@@ -767,7 +907,6 @@ jsclient.netCallBack =
             sData.tData.jiPingHuCircleWind.curCircleWind = d.tData.jiPingHuCircleWind.curCircleWind;
 
         }
-
     }],
     MJChi: [0, function (d) {
         var sData = jsclient.data.sData;
@@ -823,6 +962,17 @@ jsclient.netCallBack =
             case 1:
                 break;
             case 2:
+            {
+                pl.baojiu = d.baojiu;
+                if (pl.baojiu && pl.baojiu.num == 3) {
+                    console.log(pl.info.name + "报九");
+                }
+                if (pl.baojiu && pl.baojiu.num == 4) {
+                    console.log("被" + pl.baojiu.putCardPlayer[0] + "报九");
+                }
+            }
+                break;
+            case 7:
             {
                 pl.baojiu = d.baojiu;
                 if (pl.baojiu && pl.baojiu.num == 3) {
@@ -1369,8 +1519,24 @@ var JSScene = cc.Scene.extend({
 
             cfgUpdate:function (changeValue)
             {
+                //更新提示
                 if(changeValue && !changeValue.isShowed)
                     this.addChild(new TipsPanel(), 9);
+
+                //重起提示
+                // if (changeValue && changeValue.severRestart)
+                // {
+                //     if(jsclient.errorLayer)
+                //     {
+                //         jsclient.errorLayer.removeFromParent(true);
+                //         jsclient.errorLayer = null;
+                //         jsclient.Scene.addChild(new ErroPrompt(changeValue.severRestart), 1000);
+                //     }
+                //     else
+                //     {
+                //         jsclient.Scene.addChild(new ErroPrompt(changeValue.severRestart), 1000);
+                //     }
+                // }
             },
         },
 

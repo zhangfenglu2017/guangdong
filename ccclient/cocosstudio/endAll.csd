@@ -16,6 +16,28 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="gameEndNew/bac-3.png" Plist="" />
           </AbstractNodeData>
+          <AbstractNodeData Name="gameID" ActionTag="-1705029182" Tag="168" IconVisible="False" LeftMargin="30.0000" RightMargin="950.0000" TopMargin="647.0000" BottomMargin="47.0000" IsCustomSize="True" FontSize="26" LabelText="房间号:100086" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="300.0000" Y="26.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="30.0000" Y="60.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0234" Y="0.0833" />
+            <PreSize X="0.2344" Y="0.0361" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="gameTime" ActionTag="-1842225285" Tag="169" IconVisible="False" LeftMargin="30.0000" RightMargin="900.0000" TopMargin="682.0000" BottomMargin="12.0000" IsCustomSize="True" FontSize="26" LabelText="2016-11-28" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="350.0000" Y="26.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="30.0000" Y="25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0234" Y="0.0347" />
+            <PreSize X="0.2734" Y="0.0361" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
           <AbstractNodeData Name="share" ActionTag="-546708211" Tag="72" IconVisible="False" LeftMargin="855.0000" RightMargin="255.0000" TopMargin="647.5000" BottomMargin="7.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="170.0000" Y="65.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

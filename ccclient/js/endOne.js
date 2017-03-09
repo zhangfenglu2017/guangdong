@@ -38,6 +38,14 @@ function SetEndOnePlayerUI(node, off)
                 }
             },
 
+            userId:
+            {
+                _text:function ()
+                {
+                    return "ID:" + pl.info._id
+                }
+            },
+
             winType: {
                 _text: function () {
                     if(jsclient.data.sData.tData.gameType == 4)
@@ -478,10 +486,31 @@ function setMjMa(node, off)
 //单次结算
 var EndOneLayer = cc.Layer.extend(
     {
-        jsBind: {
+        jsBind:
+        {
             back:
             {
-                _layout: [[0, 1], [0.5, 0.5], [0, 0]]
+                _layout: [[0, 1], [0.5, 0.5], [0, 0]],
+            },
+
+            gameID:
+            {
+                _layout:  [[0.2, 0.2], [0.02, 0.08], [0, 0]],
+
+                _text:function()
+                {
+                    return jsclient.data.sData.tData.tableid;
+                }
+            },
+
+            gameTime:
+            {
+                _layout:  [[0.2, 0.2], [0.02, 0.04], [0, 0]],
+
+                _text:function()
+                {
+                    return jsclient.data.sData.tData.createRoomTime + "";
+                }
             },
 
             maima:

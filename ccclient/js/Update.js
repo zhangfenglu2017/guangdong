@@ -26,7 +26,8 @@
         var updateCfgInterval = 10*60; //重复请求时间间隔
         var restartTime = -1; //重启弹出累计时间
         //字符串\n替换
-        var formatStr = function (obj) {
+        var formatStr = function (obj) 
+        {
             if(!obj) return;
             for(var key in obj){
                 obj[key] = obj[key].replace(/\\n/g,"\n");
@@ -34,7 +35,8 @@
             return obj;
         };
         //日期格式替换
-        var formatData = function (data) {
+        var formatData = function (data) 
+        {
             if(!data) return false;
             var times = data.split(",");
             for(var i = 0; i < times.length; i++){
@@ -43,7 +45,8 @@
             return times;
         };
         //更新数据
-        var updatecfg = function () {
+        var updatecfg = function () 
+        {
             var xhr = cc.loader.getXMLHttpRequest();
             xhr.open("GET", "http://gdmj.coolgamebox.com:800/gdmj/configuration.json");
             xhr.onreadystatechange = function ()
@@ -88,14 +91,15 @@
                             changeValue.severRestart = null;
                         }
                     }
+                    
                     restartTime += updateCfgInterval;
-
-
+                    
                     { //存文件
                         jsclient.isCfgRead = true;
                         jsb.fileUtils.writeStringToFile(JSON.stringify(jsclient.updateCfg),
                             jsb.fileUtils.getWritablePath()+  'configuration.json');
                     }
+                    
                     sendEvent("cfgUpdate", changeValue); //此时 home ui 不一定存在
                     jsclient.lastUpdateCfg = jsclient.deepClone(jsclient.updateCfg);
                 }
@@ -200,7 +204,6 @@
 
         if (jsb.fileUtils.isFileExist(jsb.fileUtils.getWritablePath() + remoteCfgName))
         {
-
             cc.loader.loadTxt(jsb.fileUtils.getWritablePath() + remoteCfgName, function (er, txt)
             {
                 if (txt && txt.length > 0)
@@ -270,7 +273,7 @@
             LoadActionCfg("action.json");
             LoadUpdateCfg("configuration.json");
         };
-
+        
         jsclient.Scene.runAction(cc.sequence(cc.DelayTime(1), cc.callFunc(onDelayCallback)));
     }
 
@@ -281,6 +284,7 @@
         // {
             // jsclient.remoteIP = "192.168.1.1";
             GetRemoteCfg();
+        // LoadUpdateCfg("configuration.json");
             // return;
         // };
 
@@ -666,7 +670,7 @@
 (function ()
 {
     var webViewLayer2, uiPara, webView, scroll,
-        gdmjtable, hzhmjtable,shzhmjtable,jphmjtable, dgmjtable, ybzhmjtable, srfmjtable,
+        bdhmjtable, gdmjtable, hzhmjtable,shzhmjtable,jphmjtable, dgmjtable, ybzhmjtable, srfmjtable,
         help;
 
     function createWebViewByUrl(url)
@@ -699,10 +703,14 @@
         var url5 = jsclient.remoteCfg.help5Url;
         var url6 = jsclient.remoteCfg.help6Url;
         var url7 = jsclient.remoteCfg.help7Url;
+        var url8 = jsclient.remoteCfg.help8Url;
 
         switch(helpType)
         {
         case 1:
+            bdhmjtable.setBright(true);
+            bdhmjtable.setEnabled(true);
+
             gdmjtable.setBright(false);
             gdmjtable.setEnabled(false);
 
@@ -728,6 +736,9 @@
 
             break;
         case 2:
+
+            bdhmjtable.setBright(true);
+            bdhmjtable.setEnabled(true);
 
             gdmjtable.setBright(true);
             gdmjtable.setEnabled(true);
@@ -755,6 +766,9 @@
             break;
         case 3:
 
+            bdhmjtable.setBright(true);
+            bdhmjtable.setEnabled(true);
+
             gdmjtable.setBright(true);
             gdmjtable.setEnabled(true);
 
@@ -780,6 +794,9 @@
 
             break;
         case 4:
+
+            bdhmjtable.setBright(true);
+            bdhmjtable.setEnabled(true);
 
             gdmjtable.setBright(true);
             gdmjtable.setEnabled(true);
@@ -807,6 +824,9 @@
             break;
         case 5:
 
+            bdhmjtable.setBright(true);
+            bdhmjtable.setEnabled(true);
+
             gdmjtable.setBright(true);
             gdmjtable.setEnabled(true);
 
@@ -832,6 +852,9 @@
 
             break;
         case 6:
+
+            bdhmjtable.setBright(true);
+            bdhmjtable.setEnabled(true);
 
             gdmjtable.setBright(true);
             gdmjtable.setEnabled(true);
@@ -859,6 +882,9 @@
             break;
         case 7:
 
+            bdhmjtable.setBright(true);
+            bdhmjtable.setEnabled(true);
+
             gdmjtable.setBright(true);
             gdmjtable.setEnabled(true);
 
@@ -883,6 +909,35 @@
             createWebViewByUrl(url7);
 
             break;
+        case 8:
+
+            bdhmjtable.setBright(false);
+            bdhmjtable.setEnabled(false);
+
+            gdmjtable.setBright(true);
+            gdmjtable.setEnabled(true);
+
+            hzhmjtable.setBright(true);
+            hzhmjtable.setEnabled(true);
+
+            shzhmjtable.setBright(true);
+            shzhmjtable.setEnabled(true);
+
+            jphmjtable.setBright(true);
+            jphmjtable.setEnabled(true);
+
+            dgmjtable.setBright(true);
+            dgmjtable.setEnabled(true);
+
+            ybzhmjtable.setBright(true);
+            ybzhmjtable.setEnabled(true);
+
+            srfmjtable.setBright(true);
+            srfmjtable.setEnabled(true);
+
+            createWebViewByUrl(url8);
+
+            break;
         }
     }
 
@@ -902,95 +957,112 @@
                         }
                     }
                 },
-                gdmjtable:
+
+                ScrollView:
                 {
-                    _run:function ()
+                    bdhmjtable:
                     {
-                        gdmjtable = this;
+                        _run:function ()
+                        {
+                            bdhmjtable = this;
+                        },
+
+                        _click:function ()
+                        {
+                            setPanelContentByType(8);
+                        }
                     },
 
-                    _click:function()
+                    gdmjtable:
                     {
-                        setPanelContentByType(1);
-                    }
-                },
+                        _run:function ()
+                        {
+                            gdmjtable = this;
+                        },
 
-                hzhmjtable:
-                {
-                    _run:function ()
-                    {
-                        hzhmjtable = this;
+                        _click:function()
+                        {
+                            setPanelContentByType(1);
+                        }
                     },
 
-                    _click:function ()
+                    hzhmjtable:
                     {
-                        setPanelContentByType(2);
-                    }
-                },
+                        _run:function ()
+                        {
+                            hzhmjtable = this;
+                        },
 
-                shzhmjtable:
-                {
-                    _run:function ()
-                    {
-                        shzhmjtable = this;
+                        _click:function ()
+                        {
+                            setPanelContentByType(2);
+                        }
                     },
 
-                    _click:function ()
+                    shzhmjtable:
                     {
-                        setPanelContentByType(3);
-                    }
-                },
+                        _run:function ()
+                        {
+                            shzhmjtable = this;
+                        },
 
-                jphmjtable:
-                {
-                    _run:function ()
-                    {
-                        jphmjtable = this;
+                        _click:function ()
+                        {
+                            setPanelContentByType(3);
+                        }
                     },
 
-                    _click:function ()
+                    jphmjtable:
                     {
-                        setPanelContentByType(4);
-                    }
-                },
+                        _run:function ()
+                        {
+                            jphmjtable = this;
+                        },
 
-                dgmjtable:
-                {
-                    _run:function ()
-                    {
-                        dgmjtable = this;
+                        _click:function ()
+                        {
+                            setPanelContentByType(4);
+                        }
                     },
 
-                    _click:function ()
+                    dgmjtable:
                     {
-                        setPanelContentByType(5);
-                    }
-                },
+                        _run:function ()
+                        {
+                            dgmjtable = this;
+                        },
 
-                ybzhmjtable:
-                {
-                    _run:function ()
-                    {
-                        ybzhmjtable = this;
+                        _click:function ()
+                        {
+                            setPanelContentByType(5);
+                        }
                     },
 
-                    _click:function ()
+                    ybzhmjtable:
                     {
-                        setPanelContentByType(6);
-                    }
-                },
+                        _run:function ()
+                        {
+                            ybzhmjtable = this;
+                        },
 
-                srfmjtable:
-                {
-                    _run:function ()
-                    {
-                        srfmjtable = this;
+                        _click:function ()
+                        {
+                            setPanelContentByType(6);
+                        }
                     },
 
-                    _click:function ()
+                    srfmjtable:
                     {
-                        setPanelContentByType(7);
-                    }
+                        _run:function ()
+                        {
+                            srfmjtable = this;
+                        },
+
+                        _click:function ()
+                        {
+                            setPanelContentByType(7);
+                        }
+                    },
                 },
 
                 help:

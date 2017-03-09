@@ -122,6 +122,26 @@ var EndAllLayer = cc.Layer.extend(
             _layout: [[0, 1], [0.5, 0.5], [0, 0]]
         },
 
+        gameID:
+        {
+            _layout:  [[0.2, 0.2], [0.02, 0.08], [0, 0]],
+
+            _text:function()
+            {
+                return jsclient.data.sData.tData.tableid;
+            }
+        },
+
+        gameTime:
+        {
+            _layout:  [[0.2, 0.2], [0.02, 0.04], [0, 0]],
+
+            _text:function()
+            {
+                return jsclient.data.sData.tData.createRoomTime + "";
+            }
+        },
+
         table:
         {
             _layout:  [[0.6, 0.6], [0.1, 0.75], [0, 0]]

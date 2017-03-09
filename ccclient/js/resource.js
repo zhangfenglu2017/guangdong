@@ -63,6 +63,26 @@ var res =
     GameEndHuang_plist:"res/animate/endGame/huang0.plist",
     GameEndHuang_json:"res/animate/endGame/huang.ExportJson",
 
+    //play
+	GamePlayZiMo_png:"res/animate/play/chi0.png",
+    GamePlayZiMo_plist:"res/animate/play/chi0.plist",
+    GamePlayZiMo_json:"res/animate/play/chi.ExportJson",
+
+    GamePlayDianPao_png:"res/animate/play/dianpao0.png",
+    GamePlayDianPao_plist:"res/animate/play/dianpao0.plist",
+    GamePlayDianPao_json:"res/animate/play/dianpao.ExportJson",
+
+    GamePlayGang_png:"res/animate/play/gang0.png",
+    GamePlayGang_plist:"res/animate/play/gang0.plist",
+    GamePlayGang_json:"res/animate/play/gang.ExportJson",
+
+    GamePlayHua_png:"res/animate/play/hua0.png",
+    GamePlayHua_plist:"res/animate/play/hua0.plist",
+    GamePlayHua_json:"res/animate/play/hua.ExportJson",
+
+    GamePlayPeng_png:"res/animate/play/peng0.png",
+    GamePlayPeng_plist:"res/animate/play/peng0.plist",
+    GamePlayPeng_json:"res/animate/play/peng.ExportJson",
 };
 
 var g_resources = [];
@@ -75,7 +95,7 @@ for (var i in res)
 // cc.spriteFrameCache.addSpriteFrames(res.PlayMJ_my_plist);
 cc.spriteFrameCache.addSpriteFrames(res.PlayMJ_emoji_plist);
 
-// ccs.ArmatureDataManager:getInstance().removeArmatureFileInfo(res.Weixindenglu_json);
+// ccs.ArmatureDataManager:getInstance().removeArmatureFileInfo();
 ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Weixindenglu_json);
 ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Guangdongmajiang_json);
 // ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Jiaruyouxi_json);
@@ -85,6 +105,13 @@ ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Chuangjianfangjian
 // ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.GameEndShu_json);
 // ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.GameEndPing_json);
 // ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.GameEndHuang_json);
+
+//play
+// ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.GamePlayZiMo_json);
+// ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.GamePlayDianPao_json);
+// ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.GamePlayGang_json);
+// ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.GamePlayHua_json);
+// ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.GamePlayPeng_json);
 
 
 var jsclient={};

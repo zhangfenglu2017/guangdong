@@ -1561,6 +1561,106 @@
             "ctype": "ImageViewObjectData"
           },
           {
+            "IsCustomSize": true,
+            "FontSize": 26,
+            "LabelText": "房间号:100086",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 30.0,
+              "Y": 60.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0234,
+              "Y": 0.0833
+            },
+            "PreSize": {
+              "X": 0.2344,
+              "Y": 0.0361
+            },
+            "LeftMargin": 30.0,
+            "RightMargin": 950.0,
+            "TopMargin": 647.0,
+            "BottomMargin": 47.0,
+            "Tag": 171,
+            "ActionTag": 1814790065,
+            "Size": {
+              "X": 300.0,
+              "Y": 26.0
+            },
+            "Name": "gameID",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 26,
+            "LabelText": "2016-00-00",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 30.0,
+              "Y": 25.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0234,
+              "Y": 0.0347
+            },
+            "PreSize": {
+              "X": 0.2734,
+              "Y": 0.0361
+            },
+            "LeftMargin": 30.0,
+            "RightMargin": 900.0,
+            "TopMargin": 682.0,
+            "BottomMargin": 12.0,
+            "Tag": 170,
+            "ActionTag": -1301849326,
+            "Size": {
+              "X": 350.0,
+              "Y": 26.0
+            },
+            "Name": "gameTime",
+            "ctype": "TextObjectData"
+          },
+          {
             "FileData": {
               "Type": "Normal",
               "Path": "gameEndNew/t_huangzhuang.png",
@@ -2373,8 +2473,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 13.7495,
-                      "Y": -20.0
+                      "X": 13.75,
+                      "Y": -8.0002
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2388,16 +2488,16 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.1074,
-                      "Y": -0.1613
+                      "Y": -0.0645
                     },
                     "PreSize": {
                       "X": 0.9375,
                       "Y": 0.1935
                     },
-                    "LeftMargin": 13.7495,
-                    "RightMargin": -5.7495,
-                    "TopMargin": 132.0,
-                    "BottomMargin": -32.0,
+                    "LeftMargin": 13.75,
+                    "RightMargin": -5.75,
+                    "TopMargin": 120.0002,
+                    "BottomMargin": -20.0002,
                     "Tag": 1599,
                     "ActionTag": 2052780396,
                     "Size": {
@@ -2742,6 +2842,59 @@
                     },
                     "Name": "stand",
                     "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "用户ID",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 13.75,
+                      "Y": -31.4999
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.1074,
+                      "Y": -0.254
+                    },
+                    "PreSize": {
+                      "X": 0.9375,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 13.75,
+                    "RightMargin": -5.75,
+                    "TopMargin": 143.4999,
+                    "BottomMargin": -43.4999,
+                    "Tag": 113,
+                    "ActionTag": -1662490922,
+                    "Size": {
+                      "X": 120.0,
+                      "Y": 24.0
+                    },
+                    "Name": "userId",
+                    "ctype": "TextObjectData"
                   }
                 ],
                 "ActionTag": -618578942,
@@ -3125,7 +3278,7 @@
                     },
                     "Position": {
                       "X": 13.7495,
-                      "Y": -20.0001
+                      "Y": -8.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3139,7 +3292,7 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.1074,
-                      "Y": -0.1613
+                      "Y": -0.0645
                     },
                     "PreSize": {
                       "X": 0.9375,
@@ -3147,8 +3300,8 @@
                     },
                     "LeftMargin": 13.7495,
                     "RightMargin": -5.7495,
-                    "TopMargin": 132.0001,
-                    "BottomMargin": -32.0001,
+                    "TopMargin": 120.0,
+                    "BottomMargin": -20.0,
                     "Tag": 589,
                     "ActionTag": 1244931692,
                     "Size": {
@@ -3538,6 +3691,59 @@
                     },
                     "Name": "baojiuzhang",
                     "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "用户ID",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 13.75,
+                      "Y": -31.5
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.1074,
+                      "Y": -0.254
+                    },
+                    "PreSize": {
+                      "X": 0.9375,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 13.75,
+                    "RightMargin": -5.75,
+                    "TopMargin": 143.5,
+                    "BottomMargin": -43.5,
+                    "Tag": 114,
+                    "ActionTag": 1627537874,
+                    "Size": {
+                      "X": 120.0,
+                      "Y": 24.0
+                    },
+                    "Name": "userId",
+                    "ctype": "TextObjectData"
                   }
                 ],
                 "ActionTag": 1386251049,
@@ -3921,7 +4127,7 @@
                     },
                     "Position": {
                       "X": 13.7495,
-                      "Y": -20.0004
+                      "Y": -8.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3935,7 +4141,7 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.1074,
-                      "Y": -0.1613
+                      "Y": -0.0645
                     },
                     "PreSize": {
                       "X": 0.9375,
@@ -3943,8 +4149,8 @@
                     },
                     "LeftMargin": 13.7495,
                     "RightMargin": -5.7495,
-                    "TopMargin": 132.0004,
-                    "BottomMargin": -32.0004,
+                    "TopMargin": 120.0,
+                    "BottomMargin": -20.0,
                     "Tag": 596,
                     "ActionTag": 2003753486,
                     "Size": {
@@ -4334,6 +4540,59 @@
                     },
                     "Name": "baojiuzhang",
                     "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "用户ID",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 13.75,
+                      "Y": -31.5
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.1074,
+                      "Y": -0.254
+                    },
+                    "PreSize": {
+                      "X": 0.9375,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 13.75,
+                    "RightMargin": -5.75,
+                    "TopMargin": 143.5,
+                    "BottomMargin": -43.5,
+                    "Tag": 115,
+                    "ActionTag": 1162889467,
+                    "Size": {
+                      "X": 120.0,
+                      "Y": 24.0
+                    },
+                    "Name": "userId",
+                    "ctype": "TextObjectData"
                   }
                 ],
                 "ActionTag": -1884823687,
@@ -4716,8 +4975,8 @@
                       "ScaleY": 0.5057
                     },
                     "Position": {
-                      "X": 13.7495,
-                      "Y": -20.0
+                      "X": 13.75,
+                      "Y": -8.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4731,16 +4990,16 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.1074,
-                      "Y": -0.1613
+                      "Y": -0.0645
                     },
                     "PreSize": {
                       "X": 0.9375,
                       "Y": 0.1935
                     },
-                    "LeftMargin": 13.7495,
-                    "RightMargin": -5.7495,
-                    "TopMargin": 132.1368,
-                    "BottomMargin": -32.1368,
+                    "LeftMargin": 13.75,
+                    "RightMargin": -5.75,
+                    "TopMargin": 120.1368,
+                    "BottomMargin": -20.1368,
                     "Tag": 603,
                     "ActionTag": -1732873602,
                     "Size": {
@@ -5130,6 +5389,59 @@
                     },
                     "Name": "baojiuzhang",
                     "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "用户ID",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5057
+                    },
+                    "Position": {
+                      "X": 13.75,
+                      "Y": -31.5
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 108,
+                      "G": 37,
+                      "B": 20
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.1074,
+                      "Y": -0.254
+                    },
+                    "PreSize": {
+                      "X": 0.9375,
+                      "Y": 0.1935
+                    },
+                    "LeftMargin": 13.75,
+                    "RightMargin": -5.75,
+                    "TopMargin": 143.6368,
+                    "BottomMargin": -43.6368,
+                    "Tag": 116,
+                    "ActionTag": 1601932137,
+                    "Size": {
+                      "X": 120.0,
+                      "Y": 24.0
+                    },
+                    "Name": "userId",
+                    "ctype": "TextObjectData"
                   }
                 ],
                 "ActionTag": -864628463,

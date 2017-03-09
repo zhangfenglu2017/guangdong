@@ -1,5 +1,6 @@
-
-
+//主界面
+//2016年11月18日 11:49:45
+//建子赫
 
 function changeLabelAtals(node,count)
 {
@@ -62,7 +63,10 @@ function homeRunText(node)
     {
 		node.x = startPosX;
 	};
+    node.stopAllActions();
 	node.runAction(cc.repeatForever(cc.sequence(cc.moveBy(length/150.0,cc.p(-length,0)),cc.callFunc(callback))));
+
+    // log("跑马灯 文字时间：" + length/150.0 + "    长度" + length);
 }
 
 //初始加载一下麻将
@@ -113,6 +117,7 @@ function newPlayerAwardTimer (dt)
 
 function showNwePlayerGift() {
 
+    //屏蔽新手礼包
     if(jsclient.getGiftData() == null)
     {
         newPlayerAwardBtn.setVisible(false);
@@ -161,13 +166,32 @@ var HomeLayer=cc.Layer.extend(
             {
                 msg:
                 {
+                    _event:
+                    {
+                        cfgUpdate:function (changeValue)
+                        {
+                            if(jsclient.updateCfg && jsclient.updateCfg.homeScroll && jsclient.updateCfg.homeScroll != this.getString())
+                            {
+                                log("跑马灯：" + jsclient.updateCfg.homeScroll);
+                                this.setString(jsclient.updateCfg.homeScroll);
+                                homeRunText(this);
+                            }
+                        },
+                    },
+
                     _text:function()
                     {
-                        return jsclient.remoteCfg.homeScroll;
+                        if(jsclient.updateCfg && jsclient.updateCfg.homeScroll)
+                            return jsclient.updateCfg.homeScroll;
+                        else
+                            return "";
+
+                        // return jsclient.remoteCfg.homeScroll;
                     },
                     _run:function()
                     {
-                        homeRunText(this);
+                        if(jsclient.updateCfg && jsclient.updateCfg.homeScroll && jsclient.updateCfg.homeScroll == this.getString())
+                            homeRunText(this);
                     }
                 }
             }
@@ -282,6 +306,12 @@ var HomeLayer=cc.Layer.extend(
         mflz:
         {
             _layout: [[0.09, 0.13], [0.05, 0.75], [0, 0]],
+
+            _run:function ()
+            {
+                //屏蔽免费领钻
+                // this.visible = false;
+            },
 
             _click:function()
             {
@@ -482,6 +512,8 @@ var HomeLayer=cc.Layer.extend(
 		playMusic("bgMain");
 		initMJTexture(this);
 
+        jsclient.startUpdateHomeTipCfg();
+
         //播放特效
         var createRoomAnim = playAnimByJson("chuangjianfangjian", "chuangjianfangjian");
         homeui.node.addChild(createRoomAnim);
@@ -498,6 +530,7 @@ var HomeLayer=cc.Layer.extend(
 		return true;
 	}
 });
+
 
 //新手礼包
 (function() {
@@ -564,8 +597,8 @@ var HomeLayer=cc.Layer.extend(
     });
 }());
 
-//更细提示框
 
+//更细提示框
 var updateBack = null;
 var TipsPanel = cc.Layer.extend({
     jsBind:
@@ -574,7 +607,7 @@ var TipsPanel = cc.Layer.extend({
         back:
         {
             _layout:[[0, 0.8],[0.5,0.5],[0,0]],
-
+            
             _run:function()
             {
                 // if(jsclient.changeValue == null || jsclient.changeValue.isShowed)
@@ -655,6 +688,51 @@ var TipsPanel = cc.Layer.extend({
         ConnectUI2Logic(tipsui.node, this.jsBind);
         this.addChild(tipsui.node);
         jsclient.tipsPanel = this;
+        return true;
+    }
+});
+
+
+//home提示框
+var HomeTips = cc.Layer.extend({
+    jsBind:
+    {
+        block:{_layout:[[1,1],[0.5,0.5],[0,0],true]},
+        back:
+        {
+            _layout:[[0, 0.8],[0.5,0.5],[0,0]],
+
+            Image:
+            {
+                _event:
+                {
+                    loadHomeTipImg:function(d)
+                    {
+                        var dirpath =  jsb.fileUtils.getWritablePath();
+                        var filepath = dirpath + jsclient.homeTipCfg.Pic;
+
+                        this.loadTexture(filepath);
+                    }
+                },
+            },
+
+            close:
+            {
+                _click:function(btn,eT)
+                {
+                    jsclient.homeTips.removeFromParent(true);
+                    jsclient.homeTips = null;
+                }
+            }
+        }
+    },
+    ctor: function ()
+    {
+        this._super();
+        var tipsui = ccs.load("res/HomeTips.json");
+        ConnectUI2Logic(tipsui.node, this.jsBind);
+        this.addChild(tipsui.node);
+        jsclient.homeTips = this;
         return true;
     }
 });

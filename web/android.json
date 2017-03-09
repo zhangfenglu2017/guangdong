@@ -1,7 +1,7 @@
 {
-  "servers":"120.76.204.225:15010:15039,120.76.205.11:15010:15039"
+  "servers":"114.55.255.22:15010:15011"
   ,"serversSelect":[600,400]
-  ,"wxShareUrl":"http://download.happyplaygame.net"
+  ,"wxShareUrl":"http://gdmj.coolgamebox.com:800/gdmj/HappyPlay/download.html"
   ,"voiceUrl":"http://114.55.252.83:9109/symj/"
   ,"guestLogin":false
   ,"coinRoom":false
@@ -15,6 +15,7 @@
   ,"help5Url":"http://gdmj.coolgamebox.com:800/gdmj/help5.html"
   ,"help6Url":"http://gdmj.coolgamebox.com:800/gdmj/help6.html"
   ,"help7Url":"http://gdmj.coolgamebox.com:800/gdmj/help7.html"
+  ,"help8Url":"http://gdmj.coolgamebox.com:800/gdmj/help8.html"
   ,"legalUrl":"http://gdmj.coolgamebox.com:800/gdmj/legal.html"
   ,"infoUrl":"http://gdmj.coolgamebox.com:800/gdmj/info.html"
   ,"noticeUrl":"http://gdmj.coolgamebox.com:800/gdmj/notice.json"

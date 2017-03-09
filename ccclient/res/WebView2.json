@@ -193,53 +193,34 @@
                 "ctype": "ImageViewObjectData"
               },
               {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
+                "IsBounceEnabled": true,
+                "InnerNodeSize": {
+                  "Width": 220,
+                  "Height": 640
                 },
-                "DisabledFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_guangzhoutuidaohu_normal.png",
-                  "Plist": ""
+                "ScrollDirectionType": "Vertical",
+                "ClipAble": true,
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "G": 150,
+                  "B": 100
                 },
-                "PressedFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_guangzhoutuidaohu_normal.png",
-                  "Plist": ""
+                "FirstColor": {
+                  "G": 150,
+                  "B": 100
                 },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_guangzhoutuidaohu_press.png",
-                  "Plist": ""
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
                 },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 175,
-                "Scale9Height": 56,
-                "DisplayState": false,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
+                "AnchorPoint": {},
                 "Position": {
-                  "X": 300.0001,
-                  "Y": 540.0005
+                  "X": 180.0004,
+                  "Y": 65.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -248,475 +229,628 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.2344,
-                  "Y": 0.75
+                  "X": 0.1406,
+                  "Y": 0.0903
                 },
                 "PreSize": {
-                  "X": 0.1602,
-                  "Y": 0.1083
+                  "X": 0.1719,
+                  "Y": 0.7222
                 },
-                "LeftMargin": 197.5001,
-                "RightMargin": 877.4999,
-                "TopMargin": 140.9995,
-                "BottomMargin": 501.0005,
-                "Tag": 235,
-                "ActionTag": -2001101897,
+                "LeftMargin": 180.0004,
+                "RightMargin": 879.9996,
+                "TopMargin": 135.0,
+                "BottomMargin": 65.0,
+                "Tag": 815,
+                "Children": [
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_guangzhoutuidaohu_normal.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_guangzhoutuidaohu_normal.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_guangzhoutuidaohu_press.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 175,
+                    "Scale9Height": 56,
+                    "DisplayState": false,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 99.9998,
+                      "Y": 520.0009
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4545,
+                      "Y": 0.8125
+                    },
+                    "PreSize": {
+                      "X": 0.9318,
+                      "Y": 0.1219
+                    },
+                    "LeftMargin": -2.5002,
+                    "RightMargin": 17.5002,
+                    "TopMargin": 80.9991,
+                    "BottomMargin": 481.0009,
+                    "Tag": 235,
+                    "ActionTag": -2001101897,
+                    "Size": {
+                      "X": 205.0,
+                      "Y": 78.0
+                    },
+                    "Name": "gdmjtable",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_huizhouzhuang_normal.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_huizhouzhuang_normal.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_huizhouzhuang_press.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 175,
+                    "Scale9Height": 56,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 99.9998,
+                      "Y": 360.0001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4545,
+                      "Y": 0.5625
+                    },
+                    "PreSize": {
+                      "X": 0.9318,
+                      "Y": 0.1219
+                    },
+                    "LeftMargin": -2.5002,
+                    "RightMargin": 17.5002,
+                    "TopMargin": 240.9999,
+                    "BottomMargin": 321.0001,
+                    "Tag": 234,
+                    "ActionTag": -1807520407,
+                    "Size": {
+                      "X": 205.0,
+                      "Y": 78.0
+                    },
+                    "Name": "hzhmjtable",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_shenzhen_normal.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_shenzhen_normal.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_shenzhen_press.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 175,
+                    "Scale9Height": 56,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 99.9998,
+                      "Y": 280.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4545,
+                      "Y": 0.4375
+                    },
+                    "PreSize": {
+                      "X": 0.9318,
+                      "Y": 0.1219
+                    },
+                    "LeftMargin": -2.5002,
+                    "RightMargin": 17.5002,
+                    "TopMargin": 321.0,
+                    "BottomMargin": 241.0,
+                    "Tag": 352,
+                    "ActionTag": 2053477970,
+                    "Size": {
+                      "X": 205.0,
+                      "Y": 78.0
+                    },
+                    "Name": "shzhmjtable",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_donggua_normal.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_donggua_normal.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_donggua_press.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 175,
+                    "Scale9Height": 56,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 100.0003,
+                      "Y": 199.9998
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4545,
+                      "Y": 0.3125
+                    },
+                    "PreSize": {
+                      "X": 0.9318,
+                      "Y": 0.1219
+                    },
+                    "LeftMargin": -2.4997,
+                    "RightMargin": 17.4997,
+                    "TopMargin": 401.0002,
+                    "BottomMargin": 160.9998,
+                    "Tag": 121,
+                    "ActionTag": 1725460833,
+                    "Size": {
+                      "X": 205.0,
+                      "Y": 78.0
+                    },
+                    "Name": "dgmjtable",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/jp-yeqian_press.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/jp-yeqian_press.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/jp-yeqian.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 175,
+                    "Scale9Height": 56,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 99.9998,
+                      "Y": 119.9998
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4545,
+                      "Y": 0.1875
+                    },
+                    "PreSize": {
+                      "X": 0.9318,
+                      "Y": 0.1219
+                    },
+                    "LeftMargin": -2.5002,
+                    "RightMargin": 17.5002,
+                    "TopMargin": 481.0002,
+                    "BottomMargin": 80.9998,
+                    "Tag": 446,
+                    "ActionTag": -1990082813,
+                    "Size": {
+                      "X": 205.0,
+                      "Y": 78.0
+                    },
+                    "Name": "jphmjtable",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_100_1.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_100_1.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_100_2.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 175,
+                    "Scale9Height": 56,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 100.0003,
+                      "Y": 39.9998
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4545,
+                      "Y": 0.0625
+                    },
+                    "PreSize": {
+                      "X": 0.9318,
+                      "Y": 0.1219
+                    },
+                    "LeftMargin": -2.4997,
+                    "RightMargin": 17.4997,
+                    "TopMargin": 561.0002,
+                    "BottomMargin": 0.9998,
+                    "Tag": 542,
+                    "ActionTag": 1301926382,
+                    "Size": {
+                      "X": 205.0,
+                      "Y": 78.0
+                    },
+                    "Name": "ybzhmjtable",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_sanrentuidaohu_normal.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_sanrentuidaohu_normal.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_sanrentuidaohu_press.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 175,
+                    "Scale9Height": 56,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 100.0,
+                      "Y": 439.9999
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4545,
+                      "Y": 0.6875
+                    },
+                    "PreSize": {
+                      "X": 0.9318,
+                      "Y": 0.1219
+                    },
+                    "LeftMargin": -2.5,
+                    "RightMargin": 17.5,
+                    "TopMargin": 161.0001,
+                    "BottomMargin": 400.9999,
+                    "Tag": 657,
+                    "ActionTag": -1303672433,
+                    "Size": {
+                      "X": 205.0,
+                      "Y": 78.0
+                    },
+                    "Name": "srfmjtable",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_heyuan_2.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_heyuan_2.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_heyuan_1.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 175,
+                    "Scale9Height": 56,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 100.0003,
+                      "Y": 600.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4545,
+                      "Y": 0.9375
+                    },
+                    "PreSize": {
+                      "X": 0.9318,
+                      "Y": 0.1219
+                    },
+                    "LeftMargin": -2.4997,
+                    "RightMargin": 17.4997,
+                    "TopMargin": 1.0,
+                    "BottomMargin": 561.0,
+                    "Tag": 816,
+                    "ActionTag": 1975725007,
+                    "Size": {
+                      "X": 205.0,
+                      "Y": 78.0
+                    },
+                    "Name": "bdhmjtable",
+                    "ctype": "ButtonObjectData"
+                  }
+                ],
+                "ActionTag": 760347912,
                 "Size": {
-                  "X": 205.0,
-                  "Y": 78.0
-                },
-                "Name": "gdmjtable",
-                "ctype": "ButtonObjectData"
-              },
-              {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_huizhouzhuang_normal.png",
-                  "Plist": ""
-                },
-                "PressedFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_huizhouzhuang_normal.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_huizhouzhuang_press.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 175,
-                "Scale9Height": 56,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 300.0001,
-                  "Y": 400.0004
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.2344,
-                  "Y": 0.5556
-                },
-                "PreSize": {
-                  "X": 0.1602,
-                  "Y": 0.1083
-                },
-                "LeftMargin": 197.5001,
-                "RightMargin": 877.4999,
-                "TopMargin": 280.9996,
-                "BottomMargin": 361.0004,
-                "Tag": 234,
-                "ActionTag": -1807520407,
-                "Size": {
-                  "X": 205.0,
-                  "Y": 78.0
-                },
-                "Name": "hzhmjtable",
-                "ctype": "ButtonObjectData"
-              },
-              {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_shenzhen_normal.png",
-                  "Plist": ""
-                },
-                "PressedFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_shenzhen_normal.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_shenzhen_press.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 175,
-                "Scale9Height": 56,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 300.0001,
-                  "Y": 330.0005
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.2344,
-                  "Y": 0.4583
-                },
-                "PreSize": {
-                  "X": 0.1602,
-                  "Y": 0.1083
-                },
-                "LeftMargin": 197.5001,
-                "RightMargin": 877.4999,
-                "TopMargin": 350.9995,
-                "BottomMargin": 291.0005,
-                "Tag": 352,
-                "ActionTag": 2053477970,
-                "Size": {
-                  "X": 205.0,
-                  "Y": 78.0
-                },
-                "Name": "shzhmjtable",
-                "ctype": "ButtonObjectData"
-              },
-              {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_donggua_normal.png",
-                  "Plist": ""
-                },
-                "PressedFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_donggua_normal.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_donggua_press.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 175,
-                "Scale9Height": 56,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 300.0006,
-                  "Y": 260.0011
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.2344,
-                  "Y": 0.3611
-                },
-                "PreSize": {
-                  "X": 0.1602,
-                  "Y": 0.1083
-                },
-                "LeftMargin": 197.5006,
-                "RightMargin": 877.4994,
-                "TopMargin": 420.9989,
-                "BottomMargin": 221.0011,
-                "Tag": 121,
-                "ActionTag": 1725460833,
-                "Size": {
-                  "X": 205.0,
-                  "Y": 78.0
-                },
-                "Name": "dgmjtable",
-                "ctype": "ButtonObjectData"
-              },
-              {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/jp-yeqian_press.png",
-                  "Plist": ""
-                },
-                "PressedFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/jp-yeqian_press.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/jp-yeqian.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 175,
-                "Scale9Height": 56,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 300.0001,
-                  "Y": 190.0004
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.2344,
-                  "Y": 0.2639
-                },
-                "PreSize": {
-                  "X": 0.1602,
-                  "Y": 0.1083
-                },
-                "LeftMargin": 197.5001,
-                "RightMargin": 877.4999,
-                "TopMargin": 490.9996,
-                "BottomMargin": 151.0004,
-                "Tag": 446,
-                "ActionTag": -1990082813,
-                "Size": {
-                  "X": 205.0,
-                  "Y": 78.0
-                },
-                "Name": "jphmjtable",
-                "ctype": "ButtonObjectData"
-              },
-              {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_100_1.png",
-                  "Plist": ""
-                },
-                "PressedFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_100_1.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_100_2.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 175,
-                "Scale9Height": 56,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 300.0006,
-                  "Y": 120.0004
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.2344,
-                  "Y": 0.1667
-                },
-                "PreSize": {
-                  "X": 0.1602,
-                  "Y": 0.1083
-                },
-                "LeftMargin": 197.5006,
-                "RightMargin": 877.4994,
-                "TopMargin": 560.9996,
-                "BottomMargin": 81.0004,
-                "Tag": 542,
-                "ActionTag": 1301926382,
-                "Size": {
-                  "X": 205.0,
-                  "Y": 78.0
-                },
-                "Name": "ybzhmjtable",
-                "ctype": "ButtonObjectData"
-              },
-              {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_sanrentuidaohu_normal.png",
-                  "Plist": ""
-                },
-                "PressedFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_sanrentuidaohu_normal.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "createRoomNew/y_sanrentuidaohu_press.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 175,
-                "Scale9Height": 56,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 300.0002,
-                  "Y": 470.0001
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.2344,
-                  "Y": 0.6528
-                },
-                "PreSize": {
-                  "X": 0.1602,
-                  "Y": 0.1083
-                },
-                "LeftMargin": 197.5002,
-                "RightMargin": 877.4998,
-                "TopMargin": 210.9999,
-                "BottomMargin": 431.0001,
-                "Tag": 657,
-                "ActionTag": -1303672433,
-                "Size": {
-                  "X": 205.0,
-                  "Y": 78.0
-                },
-                "Name": "srfmjtable",
-                "ctype": "ButtonObjectData"
+                  "X": 220.0,
+                  "Y": 520.0
+                },
+                "Name": "ScrollView",
+                "ctype": "ScrollViewObjectData"
               },
               {
                 "FontSize": 14,
@@ -906,6 +1040,8 @@
         "createRoomNew/y_donggua_press.png",
         "createRoomNew/y_guangzhoutuidaohu_normal.png",
         "createRoomNew/y_guangzhoutuidaohu_press.png",
+        "createRoomNew/y_heyuan_1.png",
+        "createRoomNew/y_heyuan_2.png",
         "createRoomNew/y_huizhouzhuang_normal.png",
         "createRoomNew/y_huizhouzhuang_press.png",
         "createRoomNew/y_sanrentuidaohu_normal.png",

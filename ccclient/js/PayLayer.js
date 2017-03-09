@@ -71,11 +71,28 @@ var PayLayer = cc.Layer.extend({
 			},
 			weixinBuy:
             {
-				_text:function()
+                _event:
+                {
+                    cfgUpdate:function (changeValue)
+                    {
+                        if(jsclient.updateCfg && jsclient.updateCfg.weixinBuy)
+                        {
+                            this.setString(jsclient.updateCfg.weixinBuy);
+                        }
+                    },
+                },
+
+
+                _text:function()
                 {
                     //提审后注意修改
                     // return "";
-                    return jsclient.remoteCfg.weixinBuy;
+                    // return jsclient.remoteCfg.weixinBuy;
+
+                    if(jsclient.updateCfg && jsclient.updateCfg.weixinBuy)
+                    {
+                        return jsclient.updateCfg.weixinBuy;
+                    }
 				}
 			},
 			lessMoney:

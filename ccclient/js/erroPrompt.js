@@ -61,6 +61,7 @@
                     _click:function(btn,eT)
                     {
                         errorLayer.removeFromParent( true );
+                        jsclient.errorLayer = null;
                     }
                 },
 
@@ -99,6 +100,8 @@
             var changeidui = ccs.load("res/erroPrompt.json");
             ConnectUI2Logic(changeidui.node, this.jsBind);
             this.addChild(changeidui.node);
+
+            jsclient.errorLayer = this;
 
             return true;
         }

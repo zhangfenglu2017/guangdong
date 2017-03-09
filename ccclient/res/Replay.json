@@ -4317,11 +4317,11 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.7813,
+                      "X": 0.7812,
                       "Y": 0.2339
                     },
                     "PreSize": {
-                      "X": 0.7813,
+                      "X": 0.7812,
                       "Y": 0.4516
                     },
                     "LeftMargin": 50.0,
@@ -7267,6 +7267,96 @@
                 },
                 "Name": "srfmj",
                 "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/baidajihu.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 31,
+                "Scale9OriginY": 10,
+                "Scale9Width": 138,
+                "Scale9Height": 36,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 647.3801,
+                  "Y": 431.05
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 547.3801,
+                "RightMargin": -747.3801,
+                "TopMargin": -459.05,
+                "BottomMargin": 403.05,
+                "Tag": 959,
+                "ActionTag": -1657801173,
+                "Size": {
+                  "X": 200.0,
+                  "Y": 56.0
+                },
+                "Name": "bdjhmj",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/baidadahu.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 31,
+                "Scale9OriginY": 10,
+                "Scale9Width": 138,
+                "Scale9Height": 36,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 647.3802,
+                  "Y": 431.0501
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 547.3802,
+                "RightMargin": -747.3802,
+                "TopMargin": -459.0501,
+                "BottomMargin": 403.0501,
+                "Tag": 960,
+                "ActionTag": -29332980,
+                "Size": {
+                  "X": 200.0,
+                  "Y": 56.0
+                },
+                "Name": "bddhmj",
+                "ctype": "ImageViewObjectData"
               }
             ],
             "ActionTag": -617746555,
@@ -8154,11 +8244,11 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.7813,
+                      "X": 0.7812,
                       "Y": 0.2339
                     },
                     "PreSize": {
-                      "X": 0.7813,
+                      "X": 0.7812,
                       "Y": 0.4516
                     },
                     "LeftMargin": 50.0,
@@ -13758,6 +13848,8 @@
         "play-yli/bac_edge_xia.png",
         "play-yli/bac_edge_you.png",
         "play-yli/bac_edge_zuo.png",
+        "play-yli/baidadahu.png",
+        "play-yli/baidajihu.png",
         "play-yli/baozhama.png",
         "play-yli/btn_Arrange_normal.png",
         "play-yli/btn_Arrange_press.png",

@@ -11,15 +11,16 @@
     tables[0] = null;
     gamemjs[0] = null;
 
-    function setPanelContentByType(type) {
-        var gameType = type;
+    function setPanelContentByType(type)
+    {
+        // var gameType = type;
 
         for(var i = 1; i < tables.length; i++)
         {
             var gameTable = tables[i];
             var game = gamemjs[i];
 
-            if(i == gameType)
+            if(i == type)
             {
                 gameTable.setBright(false);
                 gameTable.setEnabled(false);
@@ -42,107 +43,152 @@
 
     CreateLayer = cc.Layer.extend(
         {
-            jsBind: {
+            jsBind:
+            {
                 //背景
-                block: {
+                block:
+                {
                     _layout: [[0, 1], [0.5, 0.5], [0, 0]],
                 },
 
                 //返回
-                close: {
+                close:
+                {
                     _layout: [[0.1, 0.1], [0.95, 0.95], [0, 0]],
-                    _click: function () {
+                    _click: function ()
+                    {
                         createui.removeFromParent(true);
                     }
                 },
 
                 //标题
-                table: {
+                table:
+                {
                     _layout: [[0.8, 0.8], [0.05, 0.52], [0, 0]],
                 },
 
                 //内容
-                back: {
+                back:
+                {
                     _layout: [[0.9, 1], [0.54, 0.47], [0, 0], 3],
 
-                    gdmjtable: {
-                        _run: function () {
-                            tables[1] = this;
-                            this.visible = false;
+                    TableScrollView:
+                    {
+                        gdmjtable:
+                        {
+                            _run: function ()
+                            {
+                                tables[1] = this;
+                                this.visible = false;
+                            },
+
+                            _click: function ()
+                            {
+                                setPanelContentByType(1);
+                            }
                         },
 
-                        _click: function () {
-                            setPanelContentByType(1);
+                        hzhmjtable:
+                        {
+                            _run: function ()
+                            {
+                                tables[2] = this;
+                                this.visible = false;
+                            },
+
+                            _click: function ()
+                            {
+                                setPanelContentByType(2);
+                            }
+                        },
+
+                        shzhmjtable:
+                        {
+                            _run: function ()
+                            {
+                                tables[3] = this;
+                                this.visible = false;
+                            },
+
+                            _click: function ()
+                            {
+                                setPanelContentByType(3);
+                            }
+                        },
+
+                        jphmjtable:
+                        {
+                            _run: function ()
+                            {
+                                tables[4] = this;
+                                this.visible = false;
+                            },
+
+                            _click: function ()
+                            {
+                                setPanelContentByType(4);
+                            }
+                        },
+
+                        dgmjtable:
+                        {
+                            _run: function ()
+                            {
+                                tables[5] = this;
+                                this.visible = false;
+                            },
+
+                            _click: function ()
+                            {
+                                setPanelContentByType(5);
+                            }
+                        },
+
+                        ybzhmjtable:
+                        {
+                            _run: function ()
+                            {
+                                tables[6] = this;
+                                this.visible = false;
+                            },
+
+                            _click: function ()
+                            {
+                                setPanelContentByType(6);
+                            }
+                        },
+
+                        srfmjtable:
+                        {
+                            _run: function ()
+                            {
+                                tables[7] = this;
+                                this.visible = false;
+                            },
+
+                            _click: function ()
+                            {
+                                setPanelContentByType(7);
+                            }
+                        },
+
+                        bdhmjtable:
+                        {
+                            _run: function ()
+                            {
+                                tables[8] = this;
+                                this.visible = false;
+                            },
+
+                            _click: function ()
+                            {
+                                setPanelContentByType(8);
+                            }
                         }
                     },
 
-                    hzhmjtable: {
-                        _run: function () {
-                            tables[2] = this;
-                            this.visible = false;
-                        },
-
-                        _click: function () {
-                            setPanelContentByType(2);
-                        }
-                    },
-
-                    shzhmjtable: {
-                        _run: function () {
-                            tables[3] = this;
-                            this.visible = false;
-                        },
-
-                        _click: function () {
-                            setPanelContentByType(3);
-                        }
-                    },
-
-                    jphmjtable: {
-                        _run: function () {
-                            tables[4] = this;
-                            this.visible = false;
-                        },
-
-                        _click: function () {
-                            setPanelContentByType(4);
-                        }
-                    },
-
-                    dgmjtable: {
-                        _run: function () {
-                            tables[5] = this;
-                            this.visible = false;
-                        },
-
-                        _click: function () {
-                            setPanelContentByType(5);
-                        }
-                    },
-
-                    ybzhmjtable: {
-                        _run: function () {
-                            tables[6] = this;
-                            this.visible = false;
-                        },
-
-                        _click: function () {
-                            setPanelContentByType(6);
-                        }
-                    },
-
-                    srfmjtable: {
-                        _run: function () {
-                            tables[7] = this;
-                            this.visible = false;
-                        },
-
-                        _click: function () {
-                            setPanelContentByType(7);
-                        }
-                    },
-
-                    gdmj: {
+                    gdmj:
+                    {
                         self1Nozhong: null,
                         self1Zhong: null,
                         self1FanGui:null,
@@ -160,17 +206,22 @@
                         self1JJG:null,
                         self1OK:null,
 
-                        _run: function () {
+                        _run: function ()
+                        {
                             gamemjs[1] = this;
                         },
 
-                        playType: {
-                            nozhong: {
-                                _run: function () {
+                        playType:
+                        {
+                            nozhong:
+                            {
+                                _run: function ()
+                                {
                                     self1Nozhong = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self1Zhong.setSelected(false);
                                     self1Zhong.setTouchEnabled(true);
                                     self1Nozhong.setSelected(true);
@@ -183,12 +234,15 @@
                                 }
                             },
 
-                            zhong: {
-                                _run: function () {
+                            zhong:
+                            {
+                                _run: function ()
+                                {
                                     self1Zhong = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self1Zhong.setSelected(true);
                                     self1Zhong.setTouchEnabled(false);
                                     self1Nozhong.setSelected(false);
@@ -201,12 +255,15 @@
                                 }
                             },
 
-                            fangui: {
-                                _run: function () {
+                            fangui:
+                            {
+                                _run: function ()
+                                {
                                     self1FanGui = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self1Zhong.setSelected(false);
                                     self1Zhong.setTouchEnabled(true);
                                     self1Nozhong.setSelected(false);
@@ -219,13 +276,16 @@
                                 }
                             },
 
-                            shuanggui:{
+                            shuanggui:
+                            {
 
-                                _run: function () {
+                                _run: function ()
+                                {
                                     self1ShuangGui = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
 
                                     if(self1FanGui.isSelected() == false)
                                     {
@@ -239,12 +299,15 @@
                                 }
                             },
 
-                            nofeng: {
-                                _run: function () {
+                            nofeng:
+                            {
+                                _run: function ()
+                                {
                                     self1Nofeng = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self1Feng.setSelected(false);
                                     self1Feng.setTouchEnabled(true);
                                     self1Nofeng.setSelected(true);
@@ -252,12 +315,15 @@
                                 }
                             },
 
-                            feng: {
-                                _run: function () {
+                            feng:
+                            {
+                                _run: function ()
+                                {
                                     self1Feng = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self1Feng.setSelected(true);
                                     self1Feng.setTouchEnabled(false);
                                     self1Nofeng.setSelected(false);
@@ -265,37 +331,43 @@
                                 }
                             },
 
-                            canHu7: {
-                                _run: function () {
+                            canHu7:
+                            {
+                                _run: function ()
+                                {
                                     self1CanHu7 = this;
                                 },
+
                                 _click:function()
                                 {
-                                    if(self1CanHu7.isSelected())
-                                    {
-                                        self1CanFan7.setTouchEnabled(true)
-                                    }
-                                    else
-                                    {
+                                    if(self1CanFan7.isSelected())
                                         self1CanFan7.setSelected(false);
-                                        self1CanFan7.setTouchEnabled(false)
-                                    }
                                 }
                             },
 
-                            canFan7: {
-                                _run: function () {
+                            canFan7:
+                            {
+                                _run: function ()
+                                {
                                     self1CanFan7 = this;
-                                    self1CanFan7.setTouchEnabled(false)
+                                },
+
+                                _click:function()
+                                {
+                                    if(!self1CanHu7.isSelected())
+                                        self1CanHu7.setSelected(true);
                                 }
                             },
 
-                            jjg:{
-                                _run: function () {
+                            jjg:
+                            {
+                                _run: function ()
+                                {
                                     self1JJG = this;
                                 },
 
-                                _click:function(){
+                                _click:function()
+                                {
 
                                     if(self1MaBom.isSelected())
                                     {
@@ -309,12 +381,16 @@
                             }
                         },
 
-                        horse: {
-                            ma2: {
-                                _run: function () {
+                        horse:
+                        {
+                            ma2:
+                            {
+                                _run: function ()
+                                {
                                     self1Ma2 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self1Ma2.setSelected(true);
                                     self1Ma2.setTouchEnabled(false);
                                     self1Ma4.setSelected(false);
@@ -327,11 +403,15 @@
                                 }
                             },
 
-                            ma4: {
-                                _run: function () {
+                            ma4:
+                            {
+                                _run: function ()
+                                {
                                     self1Ma4 = this;
                                 },
-                                _click: function () {
+
+                                _click: function ()
+                                {
                                     self1Ma2.setSelected(false);
                                     self1Ma2.setTouchEnabled(true);
                                     self1Ma4.setSelected(true);
@@ -344,11 +424,15 @@
                                 }
                             },
 
-                            ma6: {
-                                _run: function () {
+                            ma6:
+                            {
+                                _run: function ()
+                                {
                                     self1Ma6 = this;
                                 },
-                                _click: function () {
+
+                                _click: function ()
+                                {
                                     self1Ma2.setSelected(false);
                                     self1Ma2.setTouchEnabled(true);
                                     self1Ma4.setSelected(false);
@@ -361,13 +445,16 @@
                                 }
                             },
 
-                            mabaozha: {
+                            mabaozha:
+                            {
 
-                                _run:function () {
+                                _run:function ()
+                                {
                                     self1MaBom = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self1Ma2.setSelected(false);
                                     self1Ma2.setTouchEnabled(true);
                                     self1Ma4.setSelected(false);
@@ -384,13 +471,17 @@
                             }
                         },
 
-                        round: {
-                            round4: {
-                                _run: function () {
+                        round:
+                        {
+                            round4:
+                            {
+                                _run: function ()
+                                {
                                     self1Round4 = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self1Round4.setSelected(true);
                                     self1Round4.setTouchEnabled(false);
                                     self1Round8.setSelected(false);
@@ -401,11 +492,15 @@
                                 }
                             },
 
-                            round8: {
-                                _run: function () {
+                            round8:
+                            {
+                                _run: function ()
+                                {
                                     self1Round8 = this;
                                 },
-                                _click: function () {
+
+                                _click: function ()
+                                {
                                     self1Round4.setSelected(false);
                                     self1Round4.setTouchEnabled(true);
                                     self1Round8.setSelected(true);
@@ -424,6 +519,7 @@
                             {
                                 self1OK = this;
                             },
+
                             _click: function (btn, evt)
                             {
                                 var majiang = jsclient.data.gameInfo.gdmj;
@@ -468,9 +564,12 @@
                                         true,                         //4鬼胡牌
                                         1,                            //4鬼加倍
                                         false,                        //不可鸡胡
+                                        false,                      //可鸡胡
                                         false,                         //马跟底
                                         false,                          //马跟底对对胡
-                                        false                          //门清加分
+                                        false,                          //门清加分
+                                        false,                          //百搭鸡胡
+                                        false                           //百搭大胡
                                     );
                                 }
                                 else 
@@ -483,7 +582,8 @@
                         },
                     },
 
-                    hzhmj: {
+                    hzhmj:
+                    {
                         self2Nofeng: null,
                         self2Feng: null,
                         self2CanHu7: null,
@@ -498,18 +598,23 @@
                         self2Round8: null,
                         self2OK:null,
 
-                        _run: function () {
+                        _run: function ()
+                        {
                             gamemjs[2] = this;
                         },
 
-                        playType: {
+                        playType:
+                        {
 
-                            nofeng: {
-                                _run: function () {
+                            nofeng:
+                            {
+                                _run: function ()
+                                {
                                     self2Nofeng = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self2Feng.setSelected(false);
                                     self2Feng.setTouchEnabled(true);
                                     self2Nofeng.setSelected(true);
@@ -517,12 +622,15 @@
                                 }
                             },
 
-                            feng: {
-                                _run: function () {
+                            feng:
+                            {
+                                _run: function ()
+                                {
                                     self2Feng = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self2Feng.setSelected(true);
                                     self2Feng.setTouchEnabled(false);
                                     self2Nofeng.setSelected(false);
@@ -530,8 +638,10 @@
                                 }
                             },
 
-                            canHu7: {
-                                _run: function () {
+                            canHu7:
+                            {
+                                _run: function ()
+                                {
                                     self2CanHu7 = this;
                                 }
 
@@ -549,33 +659,41 @@
                                 // }
                             },
 
-                            nojihu: {
+                            nojihu:
+                            {
 
-                                _run: function () {
+                                _run: function ()
+                                {
                                     self2NoJiHu = this;
                                 },
                             },
 
-                            difenma: {
+                            difenma:
+                            {
 
-                                _run: function () {
+                                _run: function ()
+                                {
                                     self2MaDiFen = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
 
                                     if(self2DuiDuiHu.isSelected())
                                         self2DuiDuiHu.setSelected(false);
                                 }
                             },
 
-                            duiduihu:{
+                            duiduihu:
+                            {
 
-                                _run: function () {
+                                _run: function ()
+                                {
                                     self2DuiDuiHu = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
 
                                     if(!self2MaDiFen.isSelected())
                                     {
@@ -584,20 +702,26 @@
                                 }
                             },
 
-                            menqing:{
+                            menqing:
+                            {
 
-                                _run: function () {
+                                _run: function ()
+                                {
                                     self2MenQing = this;
                                 },
                             }
                         },
 
-                        horse: {
-                            ma2: {
-                                _run: function () {
+                        horse:
+                        {
+                            ma2:
+                            {
+                                _run: function ()
+                                {
                                     self2Ma2 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self2Ma2.setSelected(true);
                                     self2Ma2.setTouchEnabled(false);
                                     self2Ma4.setSelected(false);
@@ -607,11 +731,14 @@
                                 }
                             },
 
-                            ma4: {
-                                _run: function () {
+                            ma4:
+                            {
+                                _run: function ()
+                                {
                                     self2Ma4 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self2Ma2.setSelected(false);
                                     self2Ma2.setTouchEnabled(true);
                                     self2Ma4.setSelected(true);
@@ -621,11 +748,14 @@
                                 }
                             },
 
-                            ma6: {
-                                _run: function () {
+                            ma6:
+                            {
+                                _run: function ()
+                                {
                                     self2Ma6 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self2Ma2.setSelected(false);
                                     self2Ma2.setTouchEnabled(true);
                                     self2Ma4.setSelected(false);
@@ -636,13 +766,17 @@
                             },
                         },
 
-                        round: {
-                            round4: {
-                                _run: function () {
+                        round:
+                        {
+                            round4:
+                            {
+                                _run: function ()
+                                {
                                     self2Round4 = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self2Round4.setSelected(true);
                                     self2Round4.setTouchEnabled(false);
                                     self2Round8.setSelected(false);
@@ -653,11 +787,14 @@
                                 }
                             },
 
-                            round8: {
-                                _run: function () {
+                            round8:
+                            {
+                                _run: function ()
+                                {
                                     self2Round8 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self2Round4.setSelected(false);
                                     self2Round4.setTouchEnabled(true);
                                     self2Round8.setSelected(true);
@@ -718,9 +855,12 @@
                                         true,                         //4鬼胡牌
                                         1,                             //4鬼加倍
                                         self2NoJiHu.isSelected(),     //不可鸡胡
+                                        false,                      //可鸡胡
                                         self2MaDiFen.isSelected(),    //马跟底
                                         self2DuiDuiHu.isSelected(),   //马跟底对对胡
-                                        self2MenQing.isSelected()     //门清加分
+                                        self2MenQing.isSelected(),     //门清加分
+                                        false,                          //百搭鸡胡
+                                        false                           //百搭大胡
                                     );
                                 }
                                 else
@@ -733,13 +873,16 @@
                         },
                     },
 
-                    shzhmj: {
+                    shzhmj:
+                    {
                         self3Nozhong: null,
                         self3Zhong: null,
                         self3FanGui:null,
                         self3Nofeng: null,
                         self3Feng: null,
                         self3JJG: null,
+                        self3MaDiFen:null,
+                        self3DuiDuiHu:null,
                         self3Ma2: null,
                         self3Ma4: null,
                         self3Ma6: null,
@@ -747,17 +890,22 @@
                         self3Round8: null,
                         self3OK:null,
 
-                        _run: function () {
+                        _run: function ()
+                        {
                             gamemjs[3] = this;
                         },
 
-                        playType: {
-                            nozhong: {
-                                _run: function () {
+                        playType:
+                        {
+                            nozhong:
+                            {
+                                _run: function ()
+                                {
                                     self3Nozhong = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self3Zhong.setSelected(false);
                                     self3Zhong.setTouchEnabled(true);
                                     self3Nozhong.setSelected(true);
@@ -767,12 +915,15 @@
                                 }
                             },
 
-                            zhong: {
-                                _run: function () {
+                            zhong:
+                            {
+                                _run: function ()
+                                {
                                     self3Zhong = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self3Zhong.setSelected(true);
                                     self3Zhong.setTouchEnabled(false);
                                     self3Nozhong.setSelected(false);
@@ -800,12 +951,15 @@
                                 }
                             },
 
-                            nofeng: {
-                                _run: function () {
+                            nofeng:
+                            {
+                                _run: function ()
+                                {
                                     self3Nofeng = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self3Feng.setSelected(false);
                                     self3Feng.setTouchEnabled(true);
                                     self3Nofeng.setSelected(true);
@@ -813,12 +967,15 @@
                                 }
                             },
 
-                            feng: {
-                                _run: function () {
+                            feng:
+                            {
+                                _run: function ()
+                                {
                                     self3Feng = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self3Feng.setSelected(true);
                                     self3Feng.setTouchEnabled(false);
                                     self3Nofeng.setSelected(false);
@@ -826,20 +983,55 @@
                                 }
                             },
 
-                            jjg: {
-                                _run: function () {
+                            jjg:
+                            {
+                                _run: function ()
+                                {
                                     self3JJG = this;
                                 }
                             },
 
+                            difenma:
+                            {
+
+                                _run: function ()
+                                {
+                                    self3MaDiFen = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    if(self3DuiDuiHu.isSelected())
+                                        self3DuiDuiHu.setSelected(false);
+                                }
+                            },
+
+                            duiduihu:
+                            {
+
+                                _run: function ()
+                                {
+                                    self3DuiDuiHu = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    if(!self3MaDiFen.isSelected())
+                                        self3MaDiFen.setSelected(true);
+                                }
+                            },
                         },
 
-                        horse: {
-                            ma2: {
-                                _run: function () {
+                        horse:
+                        {
+                            ma2:
+                            {
+                                _run: function ()
+                                {
                                     self3Ma2 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self3Ma2.setSelected(true);
                                     self3Ma2.setTouchEnabled(false);
                                     self3Ma4.setSelected(false);
@@ -849,11 +1041,14 @@
                                 }
                             },
 
-                            ma4: {
-                                _run: function () {
+                            ma4:
+                            {
+                                _run: function ()
+                                {
                                     self3Ma4 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self3Ma2.setSelected(false);
                                     self3Ma2.setTouchEnabled(true);
                                     self3Ma4.setSelected(true);
@@ -863,11 +1058,14 @@
                                 }
                             },
 
-                            ma6: {
-                                _run: function () {
+                            ma6:
+                            {
+                                _run: function ()
+                                {
                                     self3Ma6 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self3Ma2.setSelected(false);
                                     self3Ma2.setTouchEnabled(true);
                                     self3Ma4.setSelected(false);
@@ -878,13 +1076,17 @@
                             },
                         },
 
-                        round: {
-                            round4: {
-                                _run: function () {
+                        round:
+                        {
+                            round4:
+                            {
+                                _run: function ()
+                                {
                                     self3Round4 = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self3Round4.setSelected(true);
                                     self3Round4.setTouchEnabled(false);
                                     self3Round8.setSelected(false);
@@ -895,11 +1097,14 @@
                                 }
                             },
 
-                            round8: {
-                                _run: function () {
+                            round8:
+                            {
+                                _run: function ()
+                                {
                                     self3Round8 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self3Round4.setSelected(false);
                                     self3Round4.setTouchEnabled(true);
                                     self3Round8.setSelected(true);
@@ -912,7 +1117,8 @@
                         },
 
                         //创建,判断金钱
-                        yes: {
+                        yes:
+                        {
                             _run:function ()
                             {
                                 self3OK = this;
@@ -959,9 +1165,12 @@
                                         true,                         //4鬼胡牌
                                         1,                            //4鬼加倍
                                         false,                        //不可鸡胡
-                                        false,                         //马跟底
-                                        false,                          //马跟底对对胡
-                                        false                          //门清加分
+                                        false,                      //可鸡胡
+                                        self3MaDiFen.isSelected(),    //马跟底
+                                        self3DuiDuiHu.isSelected(),  //马跟底对对胡
+                                        false,                          //门清加分
+                                        false,                          //百搭鸡胡
+                                        false                           //百搭大胡
                                     );
                                 }
                                 else
@@ -974,7 +1183,8 @@
                         },
                     },
 
-                    jphmj: {
+                    jphmj:
+                    {
                         self4Nofeng: null,
                         self4Feng: null,
                         self4Fan0: null,
@@ -984,22 +1194,27 @@
                         self4Round8: null,
                         self4OK:null,
 
-                        _run: function () {
+                        _run: function ()
+                        {
                             gamemjs[4] = this;
                         },
 
-                        playType: {
+                        playType:
+                        {
                             _run:function ()
                             {
                                 this.visible = false;
                             },
 
-                            nofeng: {
-                                _run: function () {
+                            nofeng:
+                            {
+                                _run: function ()
+                                {
                                     self4Nofeng = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self4Feng.setSelected(false);
                                     self4Feng.setTouchEnabled(true);
                                     self4Nofeng.setSelected(true);
@@ -1007,12 +1222,15 @@
                                 }
                             },
 
-                            feng: {
-                                _run: function () {
+                            feng:
+                            {
+                                _run: function ()
+                                {
                                     self4Feng = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self4Feng.setSelected(true);
                                     self4Feng.setTouchEnabled(false);
                                     self4Nofeng.setSelected(false);
@@ -1021,12 +1239,16 @@
                             },
                         },
 
-                        fanshu: {
-                            fan0: {
-                                _run: function () {
+                        fanshu:
+                        {
+                            fan0:
+                            {
+                                _run: function ()
+                                {
                                     self4Fan0 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self4Fan0.setSelected(true);
                                     self4Fan0.setTouchEnabled(false);
                                     self4Fan1.setSelected(false);
@@ -1036,11 +1258,14 @@
                                 }
                             },
 
-                            fan1: {
-                                _run: function () {
+                            fan1:
+                            {
+                                _run: function ()
+                                {
                                     self4Fan1 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self4Fan0.setSelected(false);
                                     self4Fan0.setTouchEnabled(true);
                                     self4Fan1.setSelected(true);
@@ -1050,11 +1275,14 @@
                                 }
                             },
 
-                            fan3: {
-                                _run: function () {
+                            fan3:
+                            {
+                                _run: function ()
+                                {
                                     self4Fan3 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self4Fan0.setSelected(false);
                                     self4Fan0.setTouchEnabled(true);
                                     self4Fan1.setSelected(false);
@@ -1065,13 +1293,17 @@
                             },
                         },
 
-                        round: {
-                            round4: {
-                                _run: function () {
+                        round:
+                        {
+                            round4:
+                            {
+                                _run: function ()
+                                {
                                     self4Round4 = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self4Round4.setSelected(true);
                                     self4Round4.setTouchEnabled(false);
                                     self4Round8.setSelected(false);
@@ -1082,11 +1314,14 @@
                                 }
                             },
 
-                            round8: {
-                                _run: function () {
+                            round8:
+                            {
+                                _run: function ()
+                                {
                                     self4Round8 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self4Round4.setSelected(false);
                                     self4Round4.setTouchEnabled(true);
                                     self4Round8.setSelected(true);
@@ -1099,7 +1334,8 @@
                         },
 
                         //创建,判断金钱
-                        yes: {
+                        yes:
+                        {
 
                             _run:function ()
                             {
@@ -1148,9 +1384,12 @@
                                         false,                         //4鬼胡牌
                                         1,                             //4鬼加倍
                                         false,                        //不可鸡胡
+                                        false,                      //可鸡胡
                                         false,                         //马跟底
                                         false,                          //马跟底对对胡
-                                        false                          //门清加分
+                                        false,                          //门清加分
+                                        false,                          //百搭鸡胡
+                                        false                           //百搭大胡
                                     );
                                 }
                                 else
@@ -1163,7 +1402,8 @@
                         },
                     },
 
-                    dgmj: {
+                    dgmj:
+                    {
                         self5Nozhong: null,
                         self5Zhong: null,
                         self5FanGui:null,
@@ -1176,6 +1416,8 @@
                         self5NoGuiMa:null,
                         self5Gui4Hu:null,
                         self5Gui4Bei:null,
+                        self5MaDiFen:null,
+                        self5DuiDuiHu:null,
                         self5Ma2: null,
                         self5Ma4: null,
                         self5Ma6: null,
@@ -1184,22 +1426,22 @@
                         self5ZhongIsMa:null,
                         self5OK:null,
 
-                        _run: function () {
+                        _run: function ()
+                        {
                             gamemjs[5] = this;
                         },
 
                         playType:
                         {
-                            nozhong: {
-                                _run: function () {
+                            nozhong:
+                            {
+                                _run: function ()
+                                {
                                     self5Nozhong = this;
                                 },
 
                                 _click: function ()
                                 {
-
-                                    self5ZhongIsMa.setTouchEnabled(true);
-
                                     self5Zhong.setSelected(false);
                                     self5Zhong.setTouchEnabled(true);
                                     self5Nozhong.setSelected(true);
@@ -1224,22 +1466,17 @@
                                 }
                             },
 
-                            zhong: {
-                                _run: function () {
+                            zhong:
+                            {
+                                _run: function ()
+                                {
                                     self5Zhong = this;
                                 },
 
                                 _click:function()
                                 {
                                     if(self5Zhong.isSelected())
-                                    {
                                         self5ZhongIsMa.setSelected(false);
-                                        // self5ZhongIsMa.setTouchEnabled(false);
-                                    }
-                                    else
-                                    {
-                                        // self5ZhongIsMa.setTouchEnabled(true);
-                                    }
 
                                     self5Zhong.setSelected(true);
                                     self5Zhong.setTouchEnabled(false);
@@ -1248,21 +1485,29 @@
                                     self5FanGui.setSelected(false);
                                     self5FanGui.setTouchEnabled(true);
 
-                                    self5NoGuiHu.setTouchEnabled(true);
+                                    //self5NoGuiHu.setTouchEnabled(true);
+                                    self5NoGuiMa.setTouchEnabled(true);
+                                    self5NoGuiBei.setTouchEnabled(true);
                                     self5Gui4Hu.setTouchEnabled(true);
+                                    self5Gui4Bei.setTouchEnabled(true);
+
+                                    if(!self5NoGuiHu.isSelected())
+                                        self5NoGuiHu.setSelected(true);
+
+                                    if(!self5NoGuiMa.isSelected())
+                                        self5NoGuiMa.setSelected(true);
                                 }
                             },
 
                             fangui:
                             {
-                                _run: function () {
+                                _run: function ()
+                                {
                                     self5FanGui = this;
                                 },
 
-                                _click: function () {
-
-                                    self5ZhongIsMa.setTouchEnabled(true);
-
+                                _click: function ()
+                                {
                                     self5Zhong.setSelected(false);
                                     self5Zhong.setTouchEnabled(true);
                                     self5Nozhong.setSelected(false);
@@ -1270,17 +1515,29 @@
                                     self5FanGui.setSelected(true);
                                     self5FanGui.setTouchEnabled(false);
 
-                                    self5NoGuiHu.setTouchEnabled(true);
+                                    //self5NoGuiHu.setTouchEnabled(true);
+                                    self5NoGuiMa.setTouchEnabled(true);
+                                    self5NoGuiBei.setTouchEnabled(true);
                                     self5Gui4Hu.setTouchEnabled(true);
+                                    self5Gui4Bei.setTouchEnabled(true);
+
+                                    if(!self5NoGuiHu.isSelected())
+                                        self5NoGuiHu.setSelected(true);
+
+                                    if(!self5NoGuiMa.isSelected())
+                                        self5NoGuiMa.setSelected(true);
                                 }
                             },
 
-                            nofeng: {
-                                _run: function () {
+                            nofeng:
+                            {
+                                _run: function ()
+                                {
                                     self5Nofeng = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self5Feng.setSelected(false);
                                     self5Feng.setTouchEnabled(true);
                                     self5Nofeng.setSelected(true);
@@ -1288,12 +1545,15 @@
                                 }
                             },
 
-                            feng: {
-                                _run: function () {
+                            feng:
+                            {
+                                _run: function ()
+                                {
                                     self5Feng = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self5Feng.setSelected(true);
                                     self5Feng.setTouchEnabled(false);
                                     self5Nofeng.setSelected(false);
@@ -1301,16 +1561,15 @@
                                 }
                             },
 
-                            zhongisma:{
-                                _run: function () {
+                            zhongisma:
+                            {
+                                _run: function ()
+                                {
                                     self5ZhongIsMa = this;
-                                    // self5ZhongIsMa.setTouchEnabled(false);
                                 },
 
-                                _click: function () {
-
-                                    self5ZhongIsMa.setTouchEnabled(true);
-
+                                _click: function ()
+                                {
                                     if(self5Zhong.isSelected())
                                     {
                                         self5Zhong.setSelected(false);
@@ -1319,10 +1578,22 @@
                                         self5Nozhong.setTouchEnabled(false);
                                         self5FanGui.setSelected(false);
                                         self5FanGui.setTouchEnabled(true);
+
+                                        self5NoGuiHu.setSelected(false);
+                                        self5NoGuiHu.setTouchEnabled(false);
+
+                                        self5NoGuiMa.setSelected(false);
+                                        self5NoGuiMa.setTouchEnabled(false);
+
+                                        self5NoGuiBei.setSelected(false);
+                                        self5NoGuiBei.setTouchEnabled(false);
+
+                                        self5Gui4Hu.setSelected(false);
+                                        self5Gui4Hu.setTouchEnabled(false);
+
+                                        self5Gui4Bei.setSelected(false);
+                                        self5Gui4Bei.setTouchEnabled(false);
                                     }
-
-
-
                                 }
                             },
 
@@ -1335,20 +1606,11 @@
 
                                 _click: function ()
                                 {
-                                    if(self5NoGuiHu.isSelected())
-                                    {
-                                        self5NoGuiBei.setTouchEnabled(true);
-                                        self5NoGuiMa.setTouchEnabled(true);
-                                    }
-                                    else
-                                    {
-                                        self5NoGuiBei.setSelected(false);
-                                        self5NoGuiBei.setTouchEnabled(false);
-
-                                        self5NoGuiMa.setSelected(false);
-                                        self5NoGuiMa.setTouchEnabled(false);
-                                    }
-
+                                    //if(self5NoGuiBei.isSelected())
+                                    //    self5NoGuiBei.setSelected(false);
+                                    //
+                                    //if(self5NoGuiMa.isSelected())
+                                    //    self5NoGuiMa.setSelected(false);
                                 }
                             },
 
@@ -1361,10 +1623,13 @@
 
                                 _click: function ()
                                 {
+                                    //if(!self5NoGuiHu.isSelected())
+                                    //    self5NoGuiHu.setSelected(true);
+
                                     if(self5NoGuiMa.isSelected())
-                                    {
                                         self5NoGuiMa.setSelected(false);
-                                    }
+                                    else
+                                        self5NoGuiMa.setSelected(true);
                                 }
                             },
 
@@ -1378,10 +1643,13 @@
                                 _click: function ()
                                 {
 
+                                    //if(!self5NoGuiHu.isSelected())
+                                    //    self5NoGuiHu.setSelected(true);
+
                                     if(self5NoGuiBei.isSelected())
-                                    {
                                         self5NoGuiBei.setSelected(false);
-                                    }
+                                    else
+                                        self5NoGuiBei.setSelected(true);
                                 }
                             },
 
@@ -1394,18 +1662,8 @@
 
                                 _click: function ()
                                 {
-                                    if(self5Nozhong.isSelected())
-                                        return;
-
-                                    if(self5Gui4Hu.isSelected())
-                                    {
-                                        self5Gui4Bei.setTouchEnabled(true);
-                                    }
-                                    else
-                                    {
+                                    if(self5Gui4Bei.isSelected())
                                         self5Gui4Bei.setSelected(false);
-                                        self5Gui4Bei.setTouchEnabled(false);
-                                    }
                                 }
                             },
 
@@ -1418,17 +1676,52 @@
 
                                 _click: function ()
                                 {
-
+                                    if(!self5Gui4Hu.isSelected())
+                                        self5Gui4Hu.setSelected(true);
                                 }
-                            }
+                            },
+
+                            difenma:
+                            {
+
+                                _run: function ()
+                                {
+                                    self5MaDiFen = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    if(self5DuiDuiHu.isSelected())
+                                        self5DuiDuiHu.setSelected(false);
+                                }
+                            },
+
+                            duiduihu:
+                            {
+
+                                _run: function ()
+                                {
+                                    self5DuiDuiHu = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    if(!self5MaDiFen.isSelected())
+                                        self5MaDiFen.setSelected(true);
+                                }
+                            },
                         },
 
-                        horse: {
-                            ma2: {
-                                _run: function () {
+                        horse:
+                        {
+                            ma2:
+                            {
+                                _run: function ()
+                                {
                                     self5Ma2 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self5Ma2.setSelected(true);
                                     self5Ma2.setTouchEnabled(false);
                                     self5Ma4.setSelected(false);
@@ -1438,11 +1731,14 @@
                                 }
                             },
 
-                            ma4: {
-                                _run: function () {
+                            ma4:
+                            {
+                                _run: function ()
+                                {
                                     self5Ma4 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self5Ma2.setSelected(false);
                                     self5Ma2.setTouchEnabled(true);
                                     self5Ma4.setSelected(true);
@@ -1452,11 +1748,14 @@
                                 }
                             },
 
-                            ma6: {
-                                _run: function () {
+                            ma6:
+                            {
+                                _run: function ()
+                                {
                                     self5Ma6 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self5Ma2.setSelected(false);
                                     self5Ma2.setTouchEnabled(true);
                                     self5Ma4.setSelected(false);
@@ -1467,13 +1766,17 @@
                             },
                         },
 
-                        round: {
-                            round4: {
-                                _run: function () {
+                        round:
+                        {
+                            round4:
+                            {
+                                _run: function ()
+                                {
                                     self5Round4 = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self5Round4.setSelected(true);
                                     self5Round4.setTouchEnabled(false);
                                     self5Round8.setSelected(false);
@@ -1484,11 +1787,14 @@
                                 }
                             },
 
-                            round8: {
-                                _run: function () {
+                            round8:
+                            {
+                                _run: function ()
+                                {
                                     self5Round8 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self5Round4.setSelected(false);
                                     self5Round4.setTouchEnabled(true);
                                     self5Round8.setSelected(true);
@@ -1553,9 +1859,12 @@
                                         self5Gui4Hu.isSelected(),   //4鬼胡牌
                                         gui4huBeiNum,                //4鬼加倍
                                         false,                        //不可鸡胡
-                                        false,                         //马跟底
-                                        false,                          //马跟底对对胡
-                                        false                          //门清加分
+                                        false,                      //可鸡胡
+                                        self5MaDiFen.isSelected(),   //马跟底
+                                        self5DuiDuiHu.isSelected(),  //马跟底对对胡
+                                        false,                          //门清加分
+                                        false,                          //百搭鸡胡
+                                        false                           //百搭大胡
                                     );
                                 }
                                 else
@@ -1568,7 +1877,8 @@
                         },
                     },
 
-                    ybzhmj: {
+                    ybzhmj:
+                    {
                         self6Nozhong: null,
                         self6Zhong: null,
                         self6FanGui:null,
@@ -1604,7 +1914,6 @@
 
                                 _click: function ()
                                 {
-
                                     self6Zhong.setSelected(false);
                                     self6Zhong.setTouchEnabled(true);
                                     self6Nozhong.setSelected(true);
@@ -1645,8 +1954,17 @@
                                     self6FanGui.setSelected(false);
                                     self6FanGui.setTouchEnabled(true);
 
-                                    self6NoGuiHu.setTouchEnabled(true);
+                                    //self6NoGuiHu.setTouchEnabled(true);
+                                    self6NoGuiMa.setTouchEnabled(true);
+                                    self6NoGuiBei.setTouchEnabled(true);
                                     self6Gui4Hu.setTouchEnabled(true);
+                                    self6Gui4Bei.setTouchEnabled(true);
+
+                                    if(!self6NoGuiHu.isSelected())
+                                        self6NoGuiHu.setSelected(true);
+
+                                    if(!self6NoGuiMa.isSelected())
+                                        self6NoGuiMa.setSelected(true);
                                 }
                             },
 
@@ -1666,8 +1984,17 @@
                                     self6FanGui.setSelected(true);
                                     self6FanGui.setTouchEnabled(false);
 
-                                    self6NoGuiHu.setTouchEnabled(true);
+                                    //self6NoGuiHu.setTouchEnabled(true);
+                                    self6NoGuiMa.setTouchEnabled(true);
+                                    self6NoGuiBei.setTouchEnabled(true);
                                     self6Gui4Hu.setTouchEnabled(true);
+                                    self6Gui4Bei.setTouchEnabled(true);
+
+                                    if(!self6NoGuiHu.isSelected())
+                                        self6NoGuiHu.setSelected(true);
+
+                                    if(!self6NoGuiMa.isSelected())
+                                        self6NoGuiMa.setSelected(true);
                                 }
                             },
 
@@ -1712,20 +2039,11 @@
 
                                 _click: function ()
                                 {
-                                    if(self6NoGuiHu.isSelected())
-                                    {
-                                        self6NoGuiBei.setTouchEnabled(true);
-                                        self6NoGuiMa.setTouchEnabled(true);
-                                    }
-                                    else
-                                    {
-                                        self6NoGuiBei.setSelected(false);
-                                        self6NoGuiBei.setTouchEnabled(false);
-
-                                        self6NoGuiMa.setSelected(false);
-                                        self6NoGuiMa.setTouchEnabled(false);
-                                    }
-
+                                    //if(self6NoGuiBei.isSelected())
+                                    //    self6NoGuiBei.setSelected(false);
+                                    //
+                                    //if(self6NoGuiMa.isSelected())
+                                    //    self6NoGuiMa.setSelected(false);
                                 }
                             },
 
@@ -1738,10 +2056,13 @@
 
                                 _click: function ()
                                 {
+                                    //if(!self6NoGuiHu.isSelected())
+                                    //    self6NoGuiHu.setSelected(true);
+
                                     if(self6NoGuiMa.isSelected())
-                                    {
                                         self6NoGuiMa.setSelected(false);
-                                    }
+                                    else
+                                        self6NoGuiMa.setSelected(true);
                                 }
                             },
 
@@ -1754,11 +2075,13 @@
 
                                 _click: function ()
                                 {
+                                    //if(!self6NoGuiHu.isSelected())
+                                    //    self6NoGuiHu.setSelected(true);
 
                                     if(self6NoGuiBei.isSelected())
-                                    {
                                         self6NoGuiBei.setSelected(false);
-                                    }
+                                    else
+                                        self6NoGuiBei.setSelected(true);
                                 }
                             },
 
@@ -1771,18 +2094,8 @@
 
                                 _click: function ()
                                 {
-                                    if(self6Nozhong.isSelected())
-                                        return;
-
-                                    if(self6Gui4Hu.isSelected())
-                                    {
-                                        self6Gui4Bei.setTouchEnabled(true);
-                                    }
-                                    else
-                                    {
+                                    if(self6Gui4Bei.isSelected())
                                         self6Gui4Bei.setSelected(false);
-                                        self6Gui4Bei.setTouchEnabled(false);
-                                    }
                                 }
                             },
 
@@ -1795,17 +2108,52 @@
 
                                 _click: function ()
                                 {
-
+                                    if(!self6Gui4Hu.isSelected())
+                                        self6Gui4Hu.setSelected(true);
                                 }
-                            }
+                            },
+
+                            difenma:
+                            {
+
+                                _run: function ()
+                                {
+                                    self6MaDiFen = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    if(self6DuiDuiHu.isSelected())
+                                        self6DuiDuiHu.setSelected(false);
+                                }
+                            },
+
+                            duiduihu:
+                            {
+
+                                _run: function ()
+                                {
+                                    self6DuiDuiHu = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    if(!self6MaDiFen.isSelected())
+                                        self6MaDiFen.setSelected(true);
+                                }
+                            },
                         },
 
-                        horse: {
-                            ma2: {
-                                _run: function () {
+                        horse:
+                        {
+                            ma2:
+                            {
+                                _run: function ()
+                                {
                                     self6Ma2 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self6Ma2.setSelected(true);
                                     self6Ma2.setTouchEnabled(false);
                                     self6Ma4.setSelected(false);
@@ -1815,11 +2163,14 @@
                                 }
                             },
 
-                            ma4: {
-                                _run: function () {
+                            ma4:
+                            {
+                                _run: function ()
+                                {
                                     self6Ma4 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self6Ma2.setSelected(false);
                                     self6Ma2.setTouchEnabled(true);
                                     self6Ma4.setSelected(true);
@@ -1829,11 +2180,14 @@
                                 }
                             },
 
-                            ma6: {
-                                _run: function () {
+                            ma6:
+                            {
+                                _run: function ()
+                                {
                                     self6Ma6 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self6Ma2.setSelected(false);
                                     self6Ma2.setTouchEnabled(true);
                                     self6Ma4.setSelected(false);
@@ -1844,13 +2198,17 @@
                             },
                         },
 
-                        round: {
-                            round4: {
-                                _run: function () {
+                        round:
+                        {
+                            round4:
+                            {
+                                _run: function ()
+                                {
                                     self6Round4 = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self6Round4.setSelected(true);
                                     self6Round4.setTouchEnabled(false);
                                     self6Round8.setSelected(false);
@@ -1861,11 +2219,14 @@
                                 }
                             },
 
-                            round8: {
-                                _run: function () {
+                            round8:
+                            {
+                                _run: function ()
+                                {
                                     self6Round8 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self6Round4.setSelected(false);
                                     self6Round4.setTouchEnabled(true);
                                     self6Round8.setSelected(true);
@@ -1930,9 +2291,12 @@
                                         self6Gui4Hu.isSelected(),   //4鬼胡牌
                                         gui4huBeiNum,                //4鬼加倍
                                         false,                        //不可鸡胡
-                                        false,                         //马跟底
-                                        false,                          //马跟底对对胡
-                                        false                          //门清加分
+                                        false,                      //可鸡胡
+                                        self6MaDiFen.isSelected(),   //马跟底
+                                        self6DuiDuiHu.isSelected(),   //马跟底对对胡
+                                        false,                         //门清加分
+                                        false,                          //百搭鸡胡
+                                        false                           //百搭大胡
                                     );
                                 }
                                 else
@@ -1945,7 +2309,8 @@
                         },
                     },
 
-                    srfmj: {
+                    srfmj:
+                    {
                         self7Nozhong: null,
                         self7Zhong: null,
                         self7FanGui:null,
@@ -1963,17 +2328,22 @@
                         self7JJG:null,
                         self7OK:null,
 
-                        _run: function () {
+                        _run: function ()
+                        {
                             gamemjs[7] = this;
                         },
 
-                        playType: {
-                            nozhong: {
-                                _run: function () {
+                        playType:
+                        {
+                            nozhong:
+                            {
+                                _run: function ()
+                                {
                                     self7Nozhong = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self7Zhong.setSelected(false);
                                     self7Zhong.setTouchEnabled(true);
                                     self7Nozhong.setSelected(true);
@@ -1986,12 +2356,15 @@
                                 }
                             },
 
-                            zhong: {
-                                _run: function () {
+                            zhong:
+                            {
+                                _run: function ()
+                                {
                                     self7Zhong = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self7Zhong.setSelected(true);
                                     self7Zhong.setTouchEnabled(false);
                                     self7Nozhong.setSelected(false);
@@ -2004,12 +2377,15 @@
                                 }
                             },
 
-                            fangui: {
-                                _run: function () {
+                            fangui:
+                            {
+                                _run: function ()
+                                {
                                     self7FanGui = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self7Zhong.setSelected(false);
                                     self7Zhong.setTouchEnabled(true);
                                     self7Nozhong.setSelected(false);
@@ -2022,14 +2398,16 @@
                                 }
                             },
 
-                            shuanggui:{
+                            shuanggui:
+                            {
 
-                                _run: function () {
+                                _run: function ()
+                                {
                                     self7ShuangGui = this;
                                 },
 
-                                _click: function () {
-
+                                _click: function ()
+                                {
                                     if(self7FanGui.isSelected() == false)
                                     {
                                         self7Zhong.setSelected(false);
@@ -2042,12 +2420,15 @@
                                 }
                             },
 
-                            nofeng: {
-                                _run: function () {
+                            nofeng:
+                            {
+                                _run: function ()
+                                {
                                     self7Nofeng = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self7Feng.setSelected(false);
                                     self7Feng.setTouchEnabled(true);
                                     self7Nofeng.setSelected(true);
@@ -2055,12 +2436,15 @@
                                 }
                             },
 
-                            feng: {
-                                _run: function () {
+                            feng:
+                            {
+                                _run: function ()
+                                {
                                     self7Feng = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self7Feng.setSelected(true);
                                     self7Feng.setTouchEnabled(false);
                                     self7Nofeng.setSelected(false);
@@ -2068,37 +2452,42 @@
                                 }
                             },
 
-                            canHu7: {
-                                _run: function () {
+                            canHu7:
+                            {
+                                _run: function ()
+                                {
                                     self7CanHu7 = this;
                                 },
                                 _click:function()
                                 {
-                                    if(self7CanHu7.isSelected())
-                                    {
-                                        self7CanFan7.setTouchEnabled(true)
-                                    }
-                                    else
-                                    {
+                                    if(self7CanFan7.isSelected())
                                         self7CanFan7.setSelected(false);
-                                        self7CanFan7.setTouchEnabled(false)
-                                    }
                                 }
                             },
 
-                            canFan7: {
-                                _run: function () {
+                            canFan7:
+                            {
+                                _run: function ()
+                                {
                                     self7CanFan7 = this;
-                                    self7CanFan7.setTouchEnabled(false)
+                                },
+
+                                _click:function()
+                                {
+                                    if(!self7CanHu7.isSelected())
+                                        self7CanHu7.setSelected(true);
                                 }
                             },
 
-                            jjg:{
-                                _run: function () {
+                            jjg:
+                            {
+                                _run: function ()
+                                {
                                     self7JJG = this;
                                 },
 
-                                _click:function(){
+                                _click:function()
+                                {
 
                                     if(self7MaBom.isSelected())
                                     {
@@ -2112,12 +2501,16 @@
                             }
                         },
 
-                        horse: {
-                            ma2: {
-                                _run: function () {
+                        horse:
+                        {
+                            ma2:
+                            {
+                                _run: function ()
+                                {
                                     self7Ma2 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self7Ma2.setSelected(true);
                                     self7Ma2.setTouchEnabled(false);
                                     self7Ma4.setSelected(false);
@@ -2130,11 +2523,14 @@
                                 }
                             },
 
-                            ma4: {
-                                _run: function () {
+                            ma4:
+                            {
+                                _run: function ()
+                                {
                                     self7Ma4 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self7Ma2.setSelected(false);
                                     self7Ma2.setTouchEnabled(true);
                                     self7Ma4.setSelected(true);
@@ -2147,11 +2543,14 @@
                                 }
                             },
 
-                            ma6: {
-                                _run: function () {
+                            ma6:
+                            {
+                                _run: function ()
+                                {
                                     self7Ma6 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self7Ma2.setSelected(false);
                                     self7Ma2.setTouchEnabled(true);
                                     self7Ma4.setSelected(false);
@@ -2164,13 +2563,16 @@
                                 }
                             },
 
-                            mabaozha: {
+                            mabaozha:
+                            {
 
-                                _run:function () {
+                                _run:function ()
+                                {
                                     self7MaBom = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self7Ma2.setSelected(false);
                                     self7Ma2.setTouchEnabled(true);
                                     self7Ma4.setSelected(false);
@@ -2187,13 +2589,17 @@
                             }
                         },
 
-                        round: {
-                            round4: {
-                                _run: function () {
+                        round:
+                        {
+                            round4:
+                            {
+                                _run: function ()
+                                {
                                     self7Round4 = this;
                                 },
 
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self7Round4.setSelected(true);
                                     self7Round4.setTouchEnabled(false);
                                     self7Round8.setSelected(false);
@@ -2204,11 +2610,14 @@
                                 }
                             },
 
-                            round8: {
-                                _run: function () {
+                            round8:
+                            {
+                                _run: function ()
+                                {
                                     self7Round8 = this;
                                 },
-                                _click: function () {
+                                _click: function ()
+                                {
                                     self7Round4.setSelected(false);
                                     self7Round4.setTouchEnabled(true);
                                     self7Round8.setSelected(true);
@@ -2272,9 +2681,405 @@
                                         true,                         //4鬼胡牌
                                         1,                             //4鬼加倍
                                         false,                        //不可鸡胡
+                                        false,                      //可鸡胡
                                         false,                         //马跟底
                                         false,                          //马跟底对对胡
-                                        false                          //门清加分
+                                        false,                          //门清加分
+                                        false,                          //百搭鸡胡
+                                        false                           //百搭大胡
+                                    );
+                                }
+                                else
+                                {
+                                    jsclient.uiPara = {lessMoney: true};
+                                    jsclient.Scene.addChild(new PayLayer());
+                                }
+                                createui.removeFromParent(true);
+                            }
+                        },
+                    },
+
+                    bdhmj:
+                    {
+                        self8Image_5:null,
+                        self8Bddahu: null,
+                        self8Bdjihu: null,
+                        self8Magendi:null,
+                        self8CanHu7: null,
+                        self8CanFan7:null,
+                        self8Wuhuahu:null,
+                        self8Wuhuajiabei:null,
+                        self8Wuhuajiama:null,
+                        self8JiHu:null,
+                        self8Ma2: null,
+                        self8Ma4: null,
+                        self8Ma6: null,
+                        self8MaBom: null,
+                        self8Round4: null,
+                        self8Round8: null,
+                        self8JJG:null,
+                        self8OK:null,
+
+                        _run: function ()
+                        {
+                            gamemjs[8] = this;
+                        },
+
+                        playType:
+                        {
+
+                            Image_5:
+                            {
+                                _run:function()
+                                {
+                                    self8Image_5 = this;
+                                    this.visible = false;
+                                }
+                            },
+
+                            bddahu:
+                            {
+                                _run: function ()
+                                {
+                                    self8Bddahu = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    self8Bddahu.setSelected(true);
+                                    self8Bddahu.setTouchEnabled(false);
+                                    self8Bdjihu.setSelected(false);
+                                    self8Bdjihu.setTouchEnabled(true);
+
+                                    self8CanFan7.setSelected(false);
+                                    self8CanHu7.setSelected(false);
+                                    self8CanHu7.setVisible(false);
+                                    self8CanFan7.setVisible(false);
+                                    self8Image_5.setVisible(false);
+
+                                    if(self8JiHu.isSelected())
+                                        self8JiHu.setSelected(false);
+                                }
+                            },
+
+                            jihu:
+                            {
+                                _run: function ()
+                                {
+                                    self8JiHu = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    if(!self8Bddahu.isSelected())
+                                    {
+                                        self8Bddahu.setSelected(true);
+                                        self8Bddahu.setTouchEnabled(false);
+                                        self8Bdjihu.setSelected(false);
+                                        self8Bdjihu.setTouchEnabled(true);
+
+                                        self8CanFan7.setSelected(false);
+                                        self8CanHu7.setSelected(false);
+                                        self8CanHu7.setVisible(false);
+                                        self8CanFan7.setVisible(false);
+                                        self8Image_5.setVisible(false);
+                                    }
+
+                                }
+                            },
+
+                            bdjihu:
+                            {
+                                _run: function ()
+                                {
+                                    self8Bdjihu = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    self8Bddahu.setSelected(false);
+                                    self8Bddahu.setTouchEnabled(true);
+                                    self8Bdjihu.setSelected(true);
+                                    self8Bdjihu.setTouchEnabled(false);
+
+                                    self8CanHu7.setVisible(true);
+                                    self8CanFan7.setVisible(true);
+                                    self8Image_5.setVisible(true);
+
+                                    if(self8JiHu.isSelected())
+                                        self8JiHu.setSelected(false);
+                                }
+                            },
+
+                            magendi:
+                            {
+                                _run: function ()
+                                {
+                                    self8Magendi = this;
+                                },
+                            },
+
+                            canHu7:
+                            {
+                                _run: function ()
+                                {
+                                    self8CanHu7 = this;
+                                    this.visible = false;
+                                },
+
+                                _click: function ()
+                                {
+
+                                    if(self8CanFan7.isSelected())
+                                        self8CanFan7.setSelected(false);
+                                }
+                            },
+
+                            canFan7:
+                            {
+                                _run: function ()
+                                {
+                                    self8CanFan7 = this;
+                                    this.visible = false;
+                                },
+
+                                _click: function ()
+                                {
+                                    if(!self8CanHu7.isSelected())
+                                        self8CanHu7.setSelected(true);
+                                }
+                            },
+
+                            wuhuahu:
+                            {
+                                _run: function ()
+                                {
+                                    self8Wuhuahu = this;
+                                },
+
+                                _click:function()
+                                {
+
+                                    //if(self8Wuhuajiabei.isSelected())
+                                    //    self8Wuhuajiabei.setSelected(false);
+                                    //
+                                    //if(self8Wuhuajiama.isSelected())
+                                    //    self8Wuhuajiama.setSelected(false);
+                                }
+                            },
+
+                            wuhuajiabei:
+                            {
+                                _run: function ()
+                                {
+                                    self8Wuhuajiabei = this;
+                                },
+
+                                _click:function()
+                                {
+
+                                    //if(!self8Wuhuahu.isSelected())
+                                    //    self8Wuhuahu.setSelected(true);
+
+                                    if(self8Wuhuajiama.isSelected())
+                                        self8Wuhuajiama.setSelected(false);
+                                    else
+                                        self8Wuhuajiama.setSelected(true);
+                                }
+                            },
+
+                            wuhuajiama:
+                            {
+                                _run: function ()
+                                {
+                                    self8Wuhuajiama = this;
+                                },
+
+                                _click:function()
+                                {
+
+                                    //if(!self8Wuhuahu.isSelected())
+                                    //    self8Wuhuahu.setSelected(true);
+
+                                    if(self8Wuhuajiabei.isSelected())
+                                        self8Wuhuajiabei.setSelected(false);
+                                    else
+                                        self8Wuhuajiabei.setSelected(true);
+                                }
+                            },
+                        },
+
+                        horse:
+                        {
+                            ma2:
+                            {
+                                _run: function ()
+                                {
+                                    self8Ma2 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self8Ma2.setSelected(true);
+                                    self8Ma2.setTouchEnabled(false);
+                                    self8Ma4.setSelected(false);
+                                    self8Ma4.setTouchEnabled(true);
+                                    self8Ma6.setSelected(false);
+                                    self8Ma6.setTouchEnabled(true);
+                                }
+                            },
+
+                            ma4:
+                            {
+                                _run: function ()
+                                {
+                                    self8Ma4 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self8Ma2.setSelected(false);
+                                    self8Ma2.setTouchEnabled(true);
+                                    self8Ma4.setSelected(true);
+                                    self8Ma4.setTouchEnabled(false);
+                                    self8Ma6.setSelected(false);
+                                    self8Ma6.setTouchEnabled(true);
+                                }
+                            },
+
+                            ma6:
+                            {
+                                _run: function ()
+                                {
+                                    self8Ma6 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self8Ma2.setSelected(false);
+                                    self8Ma2.setTouchEnabled(true);
+                                    self8Ma4.setSelected(false);
+                                    self8Ma4.setTouchEnabled(true);
+                                    self8Ma6.setSelected(true);
+                                    self8Ma6.setTouchEnabled(false);
+                                }
+                            },
+
+                            mabaozha:
+                            {
+
+                                _run:function ()
+                                {
+                                    self8MaBom = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    self8Ma2.setSelected(false);
+                                    self8Ma2.setTouchEnabled(true);
+                                    self8Ma4.setSelected(false);
+                                    self8Ma4.setTouchEnabled(true);
+                                    self8Ma6.setSelected(false);
+                                    self8Ma6.setTouchEnabled(true);
+                                }
+                            }
+                        },
+
+                        round:
+                        {
+                            round4:
+                            {
+                                _run: function ()
+                                {
+                                    self8Round4 = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    self8Round4.setSelected(true);
+                                    self8Round4.setTouchEnabled(false);
+                                    self8Round8.setSelected(false);
+                                    self8Round8.setTouchEnabled(true);
+
+                                    self8OK.loadTextureNormal("res/createRoomNew/queding_2.png");
+                                    self8OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
+                                }
+                            },
+
+                            round8:
+                            {
+                                _run: function ()
+                                {
+                                    self8Round8 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self8Round4.setSelected(false);
+                                    self8Round4.setTouchEnabled(true);
+                                    self8Round8.setSelected(true);
+                                    self8Round8.setTouchEnabled(false);
+
+                                    self8OK.loadTextureNormal("res/createRoomNew/queding_3.png");
+                                    self8OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
+                                }
+                            }
+                        },
+
+                        //创建,判断金钱
+                        yes:
+                        {
+                            _run:function ()
+                            {
+                                self8OK = this;
+                            },
+
+                            _click: function (btn, evt)
+                            {
+                                var majiang = jsclient.data.gameInfo.gdmj;
+                                var isRound = self8Round4.isSelected();
+                                var needMoney = isRound ? majiang.round4 : majiang.round8;
+                                var haveMoney = jsclient.data.pinfo.money;
+
+                                var horse = 2;
+                                if (self8Ma2.isSelected())
+                                    horse = 2;
+                                else if (self8Ma4.isSelected())
+                                    horse = 4;
+                                else if (self8Ma6.isSelected())
+                                    horse = 6;
+                                else if(self8MaBom.isSelected())
+                                    horse = 1;
+
+                                if (haveMoney >= needMoney)
+                                {
+                                    jsclient.createRoom(
+                                        7,                              //游戏类型
+                                        isRound ? "round4" : "round8",  //4局或8局
+                                        false,                          //吃胡
+                                        true,                           //带风
+                                        false,                          //吃
+                                        true,                           //无效参数
+                                        self8CanHu7.isSelected(),       //7
+                                        self8CanFan7.isSelected(),      //7对加番
+                                        false,                          //258
+                                        false,                          //红中鬼牌
+                                        false,                          //红中为马
+                                        horse,                          //几匹马
+                                        false,                          //爆炸马
+                                        false,                          //节节高
+                                        true,                           //翻鬼
+                                        false,                          //双鬼
+                                        0,                              //番
+                                        4,                              //人数
+                                        false,                          //大胡
+                                        self8Wuhuajiama.isSelected(),   //无鬼加码
+                                        self8Wuhuajiabei.isSelected(),  //无鬼翻倍
+                                        true,                           //4鬼胡牌
+                                        1,                              //4鬼加倍
+                                        false,                          //不可鸡胡
+                                        self8JiHu.isSelected(),         //可鸡胡
+                                        self8Magendi.isSelected(),      //马跟底
+                                        false,                          //马跟底对对胡
+                                        false,                          //门清加分
+                                        self8Bdjihu.isSelected(),       //百搭鸡胡
+                                        self8Bddahu.isSelected()        //百搭大胡
                                     );
                                 }
                                 else
@@ -2289,7 +3094,8 @@
                 }
             },
 
-            ctor: function () {
+            ctor:function ()
+            {
                 this._super();
                 var jsonui = ccs.load(res.Create_json);
                 ConnectUI2Logic(jsonui.node, this.jsBind);

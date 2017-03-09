@@ -148,12 +148,16 @@
           <Image Name="y_donggua_press.png" />
           <Image Name="y_guangzhoutuidaohu_normal.png" />
           <Image Name="y_guangzhoutuidaohu_press.png" />
+          <Image Name="y_heyuan_1.png" />
+          <Image Name="y_heyuan_2.png" />
           <Image Name="y_huizhouzhuang_normal.png" />
           <Image Name="y_huizhouzhuang_press.png" />
           <Image Name="y_sanrentuidaohu_normal.png" />
           <Image Name="y_sanrentuidaohu_press.png" />
           <Image Name="y_shenzhen_normal.png" />
           <Image Name="y_shenzhen_press.png" />
+          <Image Name="y_xianggang_normal.png" />
+          <Image Name="y_xianggang_press.png" />
         </Folder>
         <Folder Name="Default">
           <Image Name="Button_Disable.png" />
@@ -251,6 +255,7 @@
           <Image Name="mianfeilingzuan.png" />
           <Image Name="red_dot.png" />
           <Image Name="returnGame.png" />
+          <Image Name="t_huodong.png" />
           <Image Name="xslb.png" />
         </Folder>
         <Folder Name="loading">
@@ -530,6 +535,8 @@
           <Image Name="bac_edge_xia.png" />
           <Image Name="bac_edge_you.png" />
           <Image Name="bac_edge_zuo.png" />
+          <Image Name="baidadahu.png" />
+          <Image Name="baidajihu.png" />
           <Image Name="baozhama.png" />
           <Image Name="btn_Arrange_normal.png" />
           <Image Name="btn_Arrange_press.png" />
@@ -561,6 +568,7 @@
           <Image Name="btn_voice_press.png" />
           <Image Name="budaifeng.png" />
           <Image Name="bukejihu.png" />
+          <Image Name="canJiHu.png" />
           <Image Name="chulai.png" />
           <Image Name="circleWind0.png" />
           <Image Name="daifeng.png" />
@@ -610,6 +618,8 @@
           <Image Name="sanfanqihu.png" />
           <Image Name="sanrentuidaohu.png" />
           <Image Name="shenzhenmajiang.png" />
+          <Image Name="siGuiHu.png" />
+          <Image Name="siGuiHuJiaBei.png" />
           <Image Name="t_chi.png" />
           <Image Name="t_gang.png" />
           <Image Name="t_guo.png" />
@@ -619,6 +629,9 @@
           <Image Name="t-hu.png" />
           <Image Name="wudahu.png" />
           <Image Name="wufanqihu.png" />
+          <Image Name="wuGuiJiaBei.png" />
+          <Image Name="wuGuiJiaMa.png" />
+          <Image Name="xianggangmajiang.png" />
           <Image Name="yifanqihu.png" />
           <Image Name="yixuanwanfa.png" />
           <Image Name="youdahu.png" />
@@ -679,6 +692,7 @@
         <Project Name="ExportDataLayer.csd" Type="Layer" />
         <Project Name="ExtGame.csd" Type="Layer" />
         <Project Name="Home.csd" Type="Layer" />
+        <Project Name="HomeTips.csd" Type="Layer" />
         <Project Name="Login.csd" Type="Layer" />
         <Project Name="NetError.csd" Type="Node" />
         <Project Name="PayLayer.csd" Type="Layer" />
