@@ -1,6 +1,8 @@
 //jian
 //2016年7月13日 14:41:05
-//背景层（loading层）      
+//背景层（loading层）    
+
+
 
 var BlockLayer = cc.Layer.extend(
     {

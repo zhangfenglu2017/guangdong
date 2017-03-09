@@ -353,6 +353,16 @@
                     <PreSize X="0.4297" Y="0.4435" />
                     <FileData Type="Normal" Path="play-yli/icon_zhuang.png" Plist="" />
                   </AbstractNodeData>
+                  <AbstractNodeData Name="linkZhuang" ActionTag="-1612094977" Tag="473" IconVisible="False" LeftMargin="58.0000" RightMargin="-38.0000" TopMargin="67.0000" BottomMargin="1.0000" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="39" Scale9Height="14" ctype="ImageViewObjectData">
+                    <Size X="108.0000" Y="56.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="112.0000" Y="29.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.8750" Y="0.2339" />
+                    <PreSize X="0.8438" Y="0.4516" />
+                    <FileData Type="Normal" Path="play-yli/zhuang_1.png" Plist="" />
+                  </AbstractNodeData>
                   <AbstractNodeData Name="chatbg" ActionTag="1957669668" VisibleForFrame="False" Tag="1105" IconVisible="False" LeftMargin="-157.4159" RightMargin="129.4159" TopMargin="109.9302" BottomMargin="-51.9302" Scale9Enable="True" LeftEage="39" RightEage="39" TopEage="21" BottomEage="21" Scale9OriginX="39" Scale9OriginY="21" Scale9Width="78" Scale9Height="24" ctype="ImageViewObjectData">
                     <Size X="156.0000" Y="66.0000" />
                     <Children>
@@ -621,7 +631,7 @@
                     <PreSize X="1.0000" Y="1.0000" />
                     <FileData Type="Normal" Path="play-yli/Photo_frame_man.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="name" ActionTag="-949651919" Tag="1071" IconVisible="False" LeftMargin="29.9015" RightMargin="18.0985" TopMargin="124.2174" BottomMargin="-20.2174" FontSize="20" LabelText="你的名字" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name=" name" ActionTag="-949651919" Tag="1071" IconVisible="False" LeftMargin="29.9015" RightMargin="18.0985" TopMargin="124.2174" BottomMargin="-20.2174" FontSize="20" LabelText="你的名字" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="80.0000" Y="20.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="69.9015" Y="-10.2174" />
@@ -642,7 +652,7 @@
                     <PreSize X="1.0000" Y="1.0000" />
                     <FileData Type="Normal" Path="play-yli/Photo_frame_02.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="offline" ActionTag="-946160435" Tag="1074" IconVisible="False" LeftMargin="1.5280" RightMargin="-1.5280" TopMargin="1.1744" BottomMargin="-1.1744" ctype="SpriteObjectData">
+                  <AbstractNodeData Name=" offline" ActionTag="-946160435" VisibleForFrame="False" Tag="1074" IconVisible="False" LeftMargin="1.5280" RightMargin="-1.5280" TopMargin="1.1744" BottomMargin="-1.1744" ctype="SpriteObjectData">
                     <Size X="128.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="65.5280" Y="60.8256" />
@@ -673,6 +683,16 @@
                     <PrePosition X="0.8047" Y="0.2016" />
                     <PreSize X="0.4297" Y="0.4435" />
                     <FileData Type="Normal" Path="play-yli/icon_zhuang.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="linkZhuang" ActionTag="-1298514521" Tag="469" IconVisible="False" LeftMargin="58.0000" RightMargin="-38.0000" TopMargin="67.0000" BottomMargin="1.0000" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="39" Scale9Height="14" ctype="ImageViewObjectData">
+                    <Size X="108.0000" Y="56.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="112.0000" Y="29.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.8750" Y="0.2339" />
+                    <PreSize X="0.8438" Y="0.4516" />
+                    <FileData Type="Normal" Path="play-yli/zhuang_1.png" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="chatbg" ActionTag="-1457511863" VisibleForFrame="False" Tag="1077" IconVisible="False" LeftMargin="89.9660" RightMargin="-99.9660" TopMargin="-26.4187" BottomMargin="84.4187" Scale9Enable="True" LeftEage="39" RightEage="39" TopEage="21" BottomEage="21" Scale9OriginX="39" Scale9OriginY="21" Scale9Width="60" Scale9Height="24" ctype="ImageViewObjectData">
                     <Size X="138.0000" Y="66.0000" />
@@ -888,6 +908,16 @@
                     <PreSize X="0.7551" Y="0.6579" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
                   </AbstractNodeData>
+                  <AbstractNodeData Name="gui" ActionTag="1251620979" Tag="474" IconVisible="False" LeftMargin="-3.5054" RightMargin="3.5054" TopMargin="1.3321" BottomMargin="-1.3321" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="50" Scale9Height="86" ctype="ImageViewObjectData">
+                    <Size X="98.0000" Y="152.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.4946" Y="74.6679" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4642" Y="0.4912" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="MaJiangNew/gui.png" Plist="" />
+                  </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="1117.3521" Y="78.6932" />
@@ -965,7 +995,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="offline" ActionTag="-571900825" Tag="1045" IconVisible="False" LeftMargin="3.2337" RightMargin="-3.2337" TopMargin="-3.6014" BottomMargin="3.6014" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="offline" ActionTag="-571900825" VisibleForFrame="False" Tag="1045" IconVisible="False" LeftMargin="3.2337" RightMargin="-3.2337" TopMargin="-3.6014" BottomMargin="3.6014" ctype="SpriteObjectData">
                     <Size X="128.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="67.2337" Y="65.6014" />
@@ -1006,6 +1036,16 @@
                     <PrePosition X="0.8047" Y="0.2016" />
                     <PreSize X="0.4297" Y="0.4435" />
                     <FileData Type="Normal" Path="play-yli/icon_zhuang.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="linkZhuang" ActionTag="-799463439" Tag="471" IconVisible="False" LeftMargin="58.0000" RightMargin="-38.0000" TopMargin="67.0000" BottomMargin="1.0000" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="39" Scale9Height="14" ctype="ImageViewObjectData">
+                    <Size X="108.0000" Y="56.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="112.0000" Y="29.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.8750" Y="0.2339" />
+                    <PreSize X="0.8438" Y="0.4516" />
+                    <FileData Type="Normal" Path="play-yli/zhuang_1.png" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="chatbg" ActionTag="-1091093802" VisibleForFrame="False" Tag="1049" IconVisible="False" LeftMargin="88.1854" RightMargin="-80.1854" TopMargin="-24.8571" BottomMargin="82.8571" Scale9Enable="True" LeftEage="39" RightEage="39" TopEage="21" BottomEage="21" Scale9OriginX="39" Scale9OriginY="21" Scale9Width="42" Scale9Height="24" ctype="ImageViewObjectData">
                     <Size X="120.0000" Y="66.0000" />
@@ -1328,6 +1368,16 @@
                     <PreSize X="0.4297" Y="0.4435" />
                     <FileData Type="Normal" Path="play-yli/icon_zhuang.png" Plist="" />
                   </AbstractNodeData>
+                  <AbstractNodeData Name="linkZhuang" ActionTag="-1496180568" Tag="472" IconVisible="False" LeftMargin="58.0000" RightMargin="-38.0000" TopMargin="67.0000" BottomMargin="1.0000" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="39" Scale9Height="14" ctype="ImageViewObjectData">
+                    <Size X="108.0000" Y="56.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="112.0000" Y="29.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.8750" Y="0.2339" />
+                    <PreSize X="0.8438" Y="0.4516" />
+                    <FileData Type="Normal" Path="play-yli/zhuang_1.png" Plist="" />
+                  </AbstractNodeData>
                   <AbstractNodeData Name="chatbg" ActionTag="-1167747294" VisibleForFrame="False" Tag="1020" IconVisible="False" LeftMargin="-149.5532" RightMargin="121.5532" TopMargin="-25.7892" BottomMargin="83.7892" Scale9Enable="True" LeftEage="39" RightEage="39" TopEage="21" BottomEage="21" Scale9OriginX="39" Scale9OriginY="21" Scale9Width="78" Scale9Height="24" ctype="ImageViewObjectData">
                     <Size X="156.0000" Y="66.0000" />
                     <Children>
@@ -1506,14 +1556,14 @@
                 <PreSize X="0.2502" Y="0.5065" />
                 <FileData Type="Normal" Path="play-yli/floor_06.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="tableid" ActionTag="-1972936478" Tag="453" IconVisible="False" LeftMargin="560.3976" RightMargin="454.6024" TopMargin="22.6694" BottomMargin="30.3306" FontSize="24" LabelText="123456" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="72.0000" Y="24.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="596.3976" Y="42.3306" />
+              <AbstractNodeData Name="tableid" ActionTag="-1972936478" Tag="453" IconVisible="False" LeftMargin="551.3978" RightMargin="435.6022" TopMargin="22.6693" BottomMargin="30.3307" IsCustomSize="True" FontSize="24" LabelText="123456" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="100.0000" Y="24.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="551.3978" Y="42.3307" />
                 <Scale ScaleX="1.3000" ScaleY="1.3000" />
                 <CColor A="255" R="255" G="254" B="162" />
-                <PrePosition X="0.5487" Y="0.5497" />
-                <PreSize X="0.0662" Y="0.3117" />
+                <PrePosition X="0.5073" Y="0.5497" />
+                <PreSize X="0.0920" Y="0.3117" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

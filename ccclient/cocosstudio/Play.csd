@@ -212,6 +212,36 @@
                         <PreSize X="0.0000" Y="0.0000" />
                         <FileData Type="Normal" Path="play-yli/jiejiegao.png" Plist="" />
                       </AbstractNodeData>
+                      <AbstractNodeData Name="fan0" ActionTag="-650884877" Tag="245" IconVisible="False" LeftMargin="6.9990" RightMargin="-126.9990" TopMargin="92.4007" BottomMargin="-127.4007" LeftEage="14" RightEage="14" TopEage="6" BottomEage="6" Scale9OriginX="14" Scale9OriginY="6" Scale9Width="64" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="120.0000" Y="35.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="66.9990" Y="-109.9007" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="play-yli/wufanqihu.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="fan1" ActionTag="406726585" Tag="246" IconVisible="False" LeftMargin="6.9990" RightMargin="-126.9990" TopMargin="92.4007" BottomMargin="-127.4007" LeftEage="14" RightEage="14" TopEage="6" BottomEage="6" Scale9OriginX="14" Scale9OriginY="6" Scale9Width="64" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="120.0000" Y="35.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="66.9990" Y="-109.9007" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="play-yli/yifanqihu.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="fan3" ActionTag="109427517" Tag="247" IconVisible="False" LeftMargin="6.9990" RightMargin="-126.9990" TopMargin="92.4007" BottomMargin="-127.4007" LeftEage="14" RightEage="14" TopEage="6" BottomEage="6" Scale9OriginX="14" Scale9OriginY="6" Scale9Width="64" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="120.0000" Y="35.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="66.9990" Y="-109.9007" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="play-yli/sanfanqihu.png" Plist="" />
+                      </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
                     <Position X="17.0000" Y="20.0002" />
@@ -259,6 +289,16 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="play-yli/shenzhenmajiang.png" Plist="" />
               </AbstractNodeData>
+              <AbstractNodeData Name="jipinghu" ActionTag="-1778669938" Tag="242" IconVisible="False" LeftMargin="547.3800" RightMargin="-747.3800" TopMargin="-459.0900" BottomMargin="403.0900" LeftEage="30" RightEage="30" TopEage="9" BottomEage="9" Scale9OriginX="30" Scale9OriginY="9" Scale9Width="140" Scale9Height="38" ctype="ImageViewObjectData">
+                <Size X="200.0000" Y="56.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="647.3800" Y="431.0900" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="play-yli/jph.png" Plist="" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint />
             <Position />
@@ -267,7 +307,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="roundnumImg" ActionTag="928435269" Tag="163" IconVisible="False" LeftMargin="722.6583" RightMargin="447.3417" TopMargin="337.6562" BottomMargin="355.3438" LeftEage="30" RightEage="30" TopEage="10" BottomEage="10" Scale9OriginX="30" Scale9OriginY="10" Scale9Width="50" Scale9Height="7" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="roundnumImg" ActionTag="928435269" Tag="163" IconVisible="False" LeftMargin="731.6583" RightMargin="438.3417" TopMargin="337.6562" BottomMargin="355.3438" LeftEage="30" RightEage="30" TopEage="10" BottomEage="10" Scale9OriginX="30" Scale9OriginY="10" Scale9Width="50" Scale9Height="7" ctype="ImageViewObjectData">
             <Size X="110.0000" Y="27.0000" />
             <Children>
               <AbstractNodeData Name="roundnumText" ActionTag="594646896" Tag="165" IconVisible="False" LeftMargin="19.9982" RightMargin="62.0018" TopMargin="6.4375" BottomMargin="6.5625" FontSize="14" LabelText="剩余" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -305,14 +345,14 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="777.6583" Y="368.8438" />
+            <Position X="786.6583" Y="368.8438" />
             <Scale ScaleX="1.3000" ScaleY="1.3000" />
             <CColor A="255" R="229" G="229" B="229" />
-            <PrePosition X="0.6075" Y="0.5123" />
+            <PrePosition X="0.6146" Y="0.5123" />
             <PreSize X="0.0859" Y="0.0375" />
             <FileData Type="Normal" Path="play-yli/roundnumbg.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="cardNumImg" ActionTag="1895184865" Tag="164" IconVisible="False" LeftMargin="448.4542" RightMargin="721.5458" TopMargin="338.3546" BottomMargin="354.6454" LeftEage="30" RightEage="30" TopEage="10" BottomEage="10" Scale9OriginX="30" Scale9OriginY="10" Scale9Width="50" Scale9Height="7" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="cardNumImg" ActionTag="1895184865" Tag="164" IconVisible="False" LeftMargin="440.4542" RightMargin="729.5458" TopMargin="338.3546" BottomMargin="354.6454" LeftEage="30" RightEage="30" TopEage="10" BottomEage="10" Scale9OriginX="30" Scale9OriginY="10" Scale9Width="50" Scale9Height="7" ctype="ImageViewObjectData">
             <Size X="110.0000" Y="27.0000" />
             <Children>
               <AbstractNodeData Name="cardNumText" ActionTag="1638828668" Tag="166" IconVisible="False" LeftMargin="17.0327" RightMargin="64.9673" TopMargin="5.4377" BottomMargin="7.5623" FontSize="14" LabelText="剩余" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -350,16 +390,56 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="503.4542" Y="368.1454" />
+            <Position X="495.4542" Y="368.1454" />
             <Scale ScaleX="1.3000" ScaleY="1.3000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3933" Y="0.5113" />
+            <PrePosition X="0.3871" Y="0.5113" />
             <PreSize X="0.0859" Y="0.0375" />
             <FileData Type="Normal" Path="play-yli/roundnumbg.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="arrowbk" ActionTag="-974953050" Tag="122" IconVisible="False" LeftMargin="571.7892" RightMargin="570.2108" TopMargin="295.9751" BottomMargin="287.0249" LeftEage="36" RightEage="36" TopEage="36" BottomEage="36" Scale9OriginX="36" Scale9OriginY="36" Scale9Width="66" Scale9Height="65" ctype="ImageViewObjectData">
             <Size X="138.0000" Y="137.0000" />
             <Children>
+              <AbstractNodeData Name="dir_down" ActionTag="720662599" Tag="262" IconVisible="False" LeftMargin="36.1021" RightMargin="39.8979" TopMargin="103.8770" BottomMargin="-28.8770" LeftEage="20" RightEage="20" TopEage="20" BottomEage="20" Scale9OriginX="20" Scale9OriginY="20" Scale9Width="9" Scale9Height="9" ctype="ImageViewObjectData">
+                <Size X="62.0000" Y="62.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="67.1021" Y="2.1230" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4862" Y="0.0155" />
+                <PreSize X="0.4493" Y="0.4526" />
+                <FileData Type="Normal" Path="play-yli/dir_normal_0.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="dir_right" ActionTag="1553156476" Tag="264" IconVisible="False" LeftMargin="107.3709" RightMargin="-31.3709" TopMargin="37.1642" BottomMargin="37.8358" LeftEage="20" RightEage="20" TopEage="20" BottomEage="20" Scale9OriginX="20" Scale9OriginY="20" Scale9Width="9" Scale9Height="9" ctype="ImageViewObjectData">
+                <Size X="62.0000" Y="62.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="138.3709" Y="68.8358" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="1.0027" Y="0.5025" />
+                <PreSize X="0.4493" Y="0.4526" />
+                <FileData Type="Normal" Path="play-yli/dir_normal_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="dir_left" ActionTag="791127856" Tag="265" IconVisible="False" LeftMargin="-34.8582" RightMargin="110.8582" TopMargin="37.1418" BottomMargin="37.8582" LeftEage="20" RightEage="20" TopEage="20" BottomEage="20" Scale9OriginX="20" Scale9OriginY="20" Scale9Width="9" Scale9Height="9" ctype="ImageViewObjectData">
+                <Size X="62.0000" Y="62.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-3.8582" Y="68.8582" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.0280" Y="0.5026" />
+                <PreSize X="0.4493" Y="0.4526" />
+                <FileData Type="Normal" Path="play-yli/dir_normal_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="dir_up" ActionTag="1334518354" Tag="266" IconVisible="False" LeftMargin="37.1286" RightMargin="38.8714" TopMargin="-27.9141" BottomMargin="102.9141" LeftEage="20" RightEage="20" TopEage="20" BottomEage="20" Scale9OriginX="20" Scale9OriginY="20" Scale9Width="9" Scale9Height="9" ctype="ImageViewObjectData">
+                <Size X="62.0000" Y="62.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="68.1286" Y="133.9141" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4937" Y="0.9775" />
+                <PreSize X="0.4493" Y="0.4526" />
+                <FileData Type="Normal" Path="play-yli/dir_normal_2.png" Plist="" />
+              </AbstractNodeData>
               <AbstractNodeData Name="arrow" ActionTag="-674127606" Tag="62" RotationSkewX="9000.0000" RotationSkewY="9000.0000" IconVisible="False" LeftMargin="18.6384" RightMargin="95.3616" TopMargin="54.8767" BottomMargin="55.1233" ctype="SpriteObjectData">
                 <Size X="24.0000" Y="27.0000" />
                 <AnchorPoint ScaleX="1.9961" ScaleY="0.4947" />
@@ -381,16 +461,26 @@
                 <PreSize X="0.4275" Y="0.4307" />
                 <FileData Type="Normal" Path="play-yli/floor_03.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="number" ActionTag="-1781766653" Tag="164" IconVisible="False" LeftMargin="47.2636" RightMargin="50.7364" TopMargin="51.2950" BottomMargin="45.7050" FontSize="40" LabelText="12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-                <Size X="40.0000" Y="40.0000" />
+              <AbstractNodeData Name="number" ActionTag="-1781766653" Tag="164" IconVisible="False" LeftMargin="39.7636" RightMargin="43.2364" TopMargin="53.7950" BottomMargin="48.2050" IsCustomSize="True" FontSize="35" LabelText="08" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="55.0000" Y="35.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="67.2636" Y="65.7050" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="240" G="233" B="67" />
                 <PrePosition X="0.4874" Y="0.4796" />
-                <PreSize X="0.2899" Y="0.2920" />
+                <PreSize X="0.3986" Y="0.2555" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="circleWind" ActionTag="1906376625" Tag="243" IconVisible="False" LeftMargin="18.9834" RightMargin="19.0166" TopMargin="164.8412" BottomMargin="-67.8412" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="59" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="40.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="68.9834" Y="-47.8412" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4999" Y="-0.3492" />
+                <PreSize X="0.7246" Y="0.2920" />
+                <FileData Type="Normal" Path="play-yli/circleWind0.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -401,7 +491,7 @@
             <PreSize X="0.1078" Y="0.1903" />
             <FileData Type="Normal" Path="play-yli/floor_02.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="left" ActionTag="1731434638" Tag="93" IconVisible="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="left" Visible="False" ActionTag="1731434638" Tag="93" IconVisible="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="ready" ActionTag="-283596604" Tag="109" IconVisible="False" LeftMargin="247.4120" RightMargin="-335.4120" TopMargin="-386.8918" BottomMargin="347.8918" ctype="SpriteObjectData">
@@ -800,6 +890,16 @@
                     <PrePosition X="0.5102" Y="0.3947" />
                     <PreSize X="0.7551" Y="0.6579" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="gui" ActionTag="1010811251" Tag="473" IconVisible="False" LeftMargin="-2.0002" RightMargin="2.0002" TopMargin="-1.0000" BottomMargin="1.0000" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="50" Scale9Height="86" ctype="ImageViewObjectData">
+                    <Size X="98.0000" Y="152.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="46.9998" Y="77.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4796" Y="0.5066" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="MaJiangNew/gui.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -1833,7 +1933,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="banner" Visible="False" ActionTag="1370862195" Tag="135" IconVisible="False" LeftMargin="90.5261" RightMargin="91.4739" TopMargin="-22.8893" BottomMargin="665.8893" LeftEage="220" RightEage="220" TopEage="29" BottomEage="29" Scale9OriginX="220" Scale9OriginY="29" Scale9Width="647" Scale9Height="19" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="banner" ActionTag="1370862195" Tag="135" IconVisible="False" LeftMargin="90.5261" RightMargin="91.4739" TopMargin="-22.8893" BottomMargin="665.8893" LeftEage="220" RightEage="220" TopEage="29" BottomEage="29" Scale9OriginX="220" Scale9OriginY="29" Scale9Width="647" Scale9Height="19" ctype="ImageViewObjectData">
             <Size X="1098.0000" Y="77.0000" />
             <Children>
               <AbstractNodeData Name="wifi" ActionTag="-1269420443" Tag="125" IconVisible="False" LeftMargin="346.8745" RightMargin="704.1255" TopMargin="11.5004" BottomMargin="18.4996" LeftEage="15" RightEage="15" TopEage="12" BottomEage="12" Scale9OriginX="15" Scale9OriginY="12" Scale9Width="17" Scale9Height="23" ctype="ImageViewObjectData">
@@ -1877,13 +1977,13 @@
                 <PreSize X="0.2477" Y="0.5065" />
                 <FileData Type="Normal" Path="play-yli/floor_06.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Z_room_txt_1" ActionTag="-1609828439" Tag="187" IconVisible="False" LeftMargin="450.1502" RightMargin="563.8498" TopMargin="22.2156" BottomMargin="30.7844" FontSize="24" LabelText="房间号:" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Z_room_txt_1" ActionTag="-1609828439" Tag="187" IconVisible="False" LeftMargin="445.1500" RightMargin="568.8500" TopMargin="22.2156" BottomMargin="30.7844" FontSize="24" LabelText="房间号:" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="84.0000" Y="24.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="492.1502" Y="42.7844" />
+                <Position X="487.1500" Y="42.7844" />
                 <Scale ScaleX="1.3000" ScaleY="1.3000" />
                 <CColor A="255" R="255" G="254" B="162" />
-                <PrePosition X="0.4482" Y="0.5556" />
+                <PrePosition X="0.4437" Y="0.5556" />
                 <PreSize X="0.0765" Y="0.3117" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -1918,14 +2018,14 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="tableid" ActionTag="850877846" Tag="169" IconVisible="False" LeftMargin="559.4011" RightMargin="466.5989" TopMargin="22.6695" BottomMargin="30.3305" FontSize="24" LabelText="123456" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="72.0000" Y="24.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="595.4011" Y="42.3305" />
+              <AbstractNodeData Name="tableid" ActionTag="850877846" Tag="169" IconVisible="False" LeftMargin="542.4011" RightMargin="455.5989" TopMargin="22.6694" BottomMargin="30.3306" IsCustomSize="True" FontSize="24" LabelText="888888&#xA;" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="100.0000" Y="24.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="542.4011" Y="42.3306" />
                 <Scale ScaleX="1.3000" ScaleY="1.3000" />
                 <CColor A="255" R="255" G="254" B="162" />
-                <PrePosition X="0.5423" Y="0.5497" />
-                <PreSize X="0.0656" Y="0.3117" />
+                <PrePosition X="0.4940" Y="0.5497" />
+                <PreSize X="0.0911" Y="0.3117" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -1938,7 +2038,7 @@
             <PreSize X="0.8578" Y="0.1069" />
             <FileData Type="Normal" Path="play-yli/floor_001.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="eat" Visible="False" ActionTag="-835653161" Tag="131" IconVisible="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="eat" ActionTag="-835653161" Tag="131" IconVisible="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="gang0" Visible="False" ActionTag="-1114337767" Tag="132" IconVisible="False" LeftMargin="587.8206" RightMargin="-668.8206" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -2081,7 +2181,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="hu" Visible="False" ActionTag="-1274979958" Tag="134" IconVisible="False" LeftMargin="366.0042" RightMargin="-447.0042" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="hu" ActionTag="-1274979958" Tag="134" IconVisible="False" LeftMargin="366.0042" RightMargin="-447.0042" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="81.0000" Y="82.0000" />
                 <Children>
                   <AbstractNodeData Name="bgground" ActionTag="902665337" Tag="130" IconVisible="False" LeftMargin="-116.8823" RightMargin="-32.1177" TopMargin="-14.2798" BottomMargin="-4.7202" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="80" Scale9Height="35" ctype="ImageViewObjectData">
@@ -2199,7 +2299,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="chi0" Visible="False" ActionTag="-78105389" Tag="137" IconVisible="False" LeftMargin="734.6613" RightMargin="-815.6613" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="chi0" Visible="False" ActionTag="-78105389" Tag="137" IconVisible="False" LeftMargin="734.6600" RightMargin="-815.6600" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="81.0000" Y="82.0000" />
                 <Children>
                   <AbstractNodeData Name="bgground" ActionTag="-1945318483" Tag="300" IconVisible="False" LeftMargin="-118.3949" RightMargin="-30.6051" TopMargin="-7.0202" BottomMargin="-11.9798" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="80" Scale9Height="35" ctype="ImageViewObjectData">
@@ -2244,7 +2344,7 @@
                     <PreSize X="1.2099" Y="1.8537" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg2.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card2" ActionTag="1953544478" Tag="3757" IconVisible="False" LeftMargin="-83.1917" RightMargin="66.1917" TopMargin="-122.6217" BottomMargin="52.6217" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="card2" ActionTag="1953544478" VisibleForFrame="False" Tag="3757" IconVisible="False" LeftMargin="-83.1917" RightMargin="66.1917" TopMargin="-122.6217" BottomMargin="52.6217" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
                     <Size X="98.0000" Y="152.0000" />
                     <Children>
                       <AbstractNodeData Name="num" ActionTag="-1834961752" Tag="3758" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="42.0000" BottomMargin="10.0000" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="26" Scale9Height="34" ctype="ImageViewObjectData">
@@ -2266,7 +2366,7 @@
                     <PreSize X="1.2099" Y="1.8537" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg2.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card3" ActionTag="-383484772" Tag="3759" IconVisible="False" LeftMargin="-81.8608" RightMargin="64.8608" TopMargin="-212.3264" BottomMargin="142.3264" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="card3" ActionTag="-383484772" VisibleForFrame="False" Tag="3759" IconVisible="False" LeftMargin="-81.8608" RightMargin="64.8608" TopMargin="-212.3264" BottomMargin="142.3264" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
                     <Size X="98.0000" Y="152.0000" />
                     <Children>
                       <AbstractNodeData Name="num" ActionTag="1196389501" Tag="3760" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="42.0000" BottomMargin="10.0000" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="26" Scale9Height="34" ctype="ImageViewObjectData">
@@ -2290,7 +2390,7 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="775.1613" Y="180.0000" />
+                <Position X="775.1600" Y="180.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
@@ -2332,101 +2432,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="changeui" Visible="False" ActionTag="1623342236" Tag="218" IconVisible="True" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="changeui" ActionTag="1623342236" Tag="218" IconVisible="True" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="changeuibg" ActionTag="615524104" Tag="219" IconVisible="False" LeftMargin="451.1711" RightMargin="-834.1711" TopMargin="-215.1418" BottomMargin="129.1418" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="233" Scale9Height="20" ctype="ImageViewObjectData">
-                    <Size X="383.0000" Y="86.0000" />
+                  <AbstractNodeData Name="changeuibg" ActionTag="615524104" Tag="219" IconVisible="False" LeftMargin="405.0005" RightMargin="-905.0005" TopMargin="-218.0001" BottomMargin="132.0001" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="233" Scale9Height="20" ctype="ImageViewObjectData">
+                    <Size X="500.0000" Y="86.0000" />
                     <Children>
-                      <AbstractNodeData Name="card9" ActionTag="-1029458487" Tag="224" IconVisible="False" LeftMargin="201.0000" RightMargin="84.0000" TopMargin="-35.4000" BottomMargin="-30.6000" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
-                        <Size X="98.0000" Y="152.0000" />
-                        <Children>
-                          <AbstractNodeData Name="num" ActionTag="-2093718860" Tag="1227" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
-                            <Size X="74.0000" Y="100.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="50.0000" Y="90.0000" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5102" Y="0.5921" />
-                            <PreSize X="0.7551" Y="0.6579" />
-                            <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="250.0000" Y="45.4000" />
-                        <Scale ScaleX="0.4000" ScaleY="0.4000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.6527" Y="0.5279" />
-                        <PreSize X="0.2559" Y="1.7674" />
-                        <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="card8" Visible="False" ActionTag="1986450767" Tag="225" IconVisible="False" LeftMargin="13.5440" RightMargin="271.4560" TopMargin="-35.3168" BottomMargin="-30.6832" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
-                        <Size X="98.0000" Y="152.0000" />
-                        <Children>
-                          <AbstractNodeData Name="num" ActionTag="1977955255" Tag="1228" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
-                            <Size X="74.0000" Y="100.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="50.0000" Y="90.0000" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5102" Y="0.5921" />
-                            <PreSize X="0.7551" Y="0.6579" />
-                            <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint ScaleX="0.3720" ScaleY="0.5966" />
-                        <Position X="50.0000" Y="60.0000" />
-                        <Scale ScaleX="0.4000" ScaleY="0.4000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.1305" Y="0.6977" />
-                        <PreSize X="0.2559" Y="1.7674" />
-                        <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="card3" ActionTag="-664445669" Tag="226" IconVisible="False" LeftMargin="-81.2056" RightMargin="366.2056" TopMargin="-33.7573" BottomMargin="-32.2427" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
-                        <Size X="98.0000" Y="152.0000" />
-                        <Children>
-                          <AbstractNodeData Name="num" ActionTag="-1220452617" Tag="1229" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
-                            <Size X="74.0000" Y="100.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="50.0000" Y="90.0000" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5102" Y="0.5921" />
-                            <PreSize X="0.7551" Y="0.6579" />
-                            <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="-32.2056" Y="43.7573" />
-                        <Scale ScaleX="0.4000" ScaleY="0.4000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="-0.0841" Y="0.5088" />
-                        <PreSize X="0.2559" Y="1.7674" />
-                        <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="card2" ActionTag="148227723" Tag="227" IconVisible="False" LeftMargin="-115.9389" RightMargin="400.9389" TopMargin="-34.3042" BottomMargin="-31.6958" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
-                        <Size X="98.0000" Y="152.0000" />
-                        <Children>
-                          <AbstractNodeData Name="num" ActionTag="-63546193" Tag="1230" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
-                            <Size X="74.0000" Y="100.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="50.0000" Y="90.0000" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5102" Y="0.5921" />
-                            <PreSize X="0.7551" Y="0.6579" />
-                            <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="-66.9389" Y="44.3042" />
-                        <Scale ScaleX="0.4000" ScaleY="0.4000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="-0.1748" Y="0.5152" />
-                        <PreSize X="0.2559" Y="1.7674" />
-                        <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="card1" Visible="False" ActionTag="-1222865644" Tag="228" IconVisible="False" LeftMargin="1.0000" RightMargin="284.0000" TopMargin="-50.0000" BottomMargin="-16.0000" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="card1" ActionTag="-1222865644" Tag="228" IconVisible="False" LeftMargin="-4.0006" RightMargin="406.0006" TopMargin="-35.0001" BottomMargin="-30.9999" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
                         <Size X="98.0000" Y="152.0000" />
                         <Children>
                           <AbstractNodeData Name="num" ActionTag="126628990" Tag="1231" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
@@ -2441,17 +2453,17 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="50.0000" Y="60.0000" />
+                        <Position X="44.9994" Y="45.0001" />
                         <Scale ScaleX="0.4000" ScaleY="0.4000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.1305" Y="0.6977" />
-                        <PreSize X="0.2559" Y="1.7674" />
+                        <PrePosition X="0.0900" Y="0.5233" />
+                        <PreSize X="0.1960" Y="1.7674" />
                         <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="card7" ActionTag="-1573253587" Tag="229" IconVisible="False" LeftMargin="101.0000" RightMargin="184.0000" TopMargin="-35.0000" BottomMargin="-31.0000" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="card2" ActionTag="148227723" Tag="227" IconVisible="False" LeftMargin="35.9994" RightMargin="366.0006" TopMargin="-35.0001" BottomMargin="-30.9999" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
                         <Size X="98.0000" Y="152.0000" />
                         <Children>
-                          <AbstractNodeData Name="num" ActionTag="461847556" Tag="1232" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="num" ActionTag="-63546193" Tag="1230" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
                             <Size X="74.0000" Y="100.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="50.0000" Y="90.0000" />
@@ -2463,17 +2475,17 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="150.0000" Y="45.0000" />
+                        <Position X="84.9994" Y="45.0001" />
                         <Scale ScaleX="0.4000" ScaleY="0.4000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.3916" Y="0.5233" />
-                        <PreSize X="0.2559" Y="1.7674" />
+                        <PrePosition X="0.1700" Y="0.5233" />
+                        <PreSize X="0.1960" Y="1.7674" />
                         <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="card6" Visible="False" ActionTag="-1916273287" Tag="230" IconVisible="False" LeftMargin="44.1068" RightMargin="240.8932" TopMargin="-34.3312" BottomMargin="-31.6688" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="card3" ActionTag="-664445669" Tag="226" IconVisible="False" LeftMargin="75.9995" RightMargin="326.0005" TopMargin="-35.0001" BottomMargin="-30.9999" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
                         <Size X="98.0000" Y="152.0000" />
                         <Children>
-                          <AbstractNodeData Name="num" ActionTag="-1008626842" Tag="1233" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="num" ActionTag="-1220452617" Tag="1229" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
                             <Size X="74.0000" Y="100.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="50.0000" Y="90.0000" />
@@ -2485,36 +2497,14 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="93.1068" Y="44.3312" />
+                        <Position X="124.9995" Y="45.0001" />
                         <Scale ScaleX="0.4000" ScaleY="0.4000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.2431" Y="0.5155" />
-                        <PreSize X="0.2559" Y="1.7674" />
+                        <PrePosition X="0.2500" Y="0.5233" />
+                        <PreSize X="0.1960" Y="1.7674" />
                         <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="card5" ActionTag="-1288841443" Tag="231" IconVisible="False" LeftMargin="1.0000" RightMargin="284.0000" TopMargin="-35.0000" BottomMargin="-31.0000" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
-                        <Size X="98.0000" Y="152.0000" />
-                        <Children>
-                          <AbstractNodeData Name="num" ActionTag="1518929375" Tag="1234" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
-                            <Size X="74.0000" Y="100.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="50.0000" Y="90.0000" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5102" Y="0.5921" />
-                            <PreSize X="0.7551" Y="0.6579" />
-                            <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="50.0000" Y="45.0000" />
-                        <Scale ScaleX="0.4000" ScaleY="0.4000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.1305" Y="0.5233" />
-                        <PreSize X="0.2559" Y="1.7674" />
-                        <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="card4" Visible="False" ActionTag="226175966" Tag="232" IconVisible="False" LeftMargin="1.0000" RightMargin="284.0000" TopMargin="-50.0000" BottomMargin="-16.0000" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="card4" ActionTag="226175966" Tag="232" IconVisible="False" LeftMargin="125.9988" RightMargin="276.0012" TopMargin="-35.0001" BottomMargin="-30.9999" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
                         <Size X="98.0000" Y="152.0000" />
                         <Children>
                           <AbstractNodeData Name="num" ActionTag="-1614023458" Tag="1235" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
@@ -2529,17 +2519,127 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="50.0000" Y="60.0000" />
+                        <Position X="174.9988" Y="45.0001" />
                         <Scale ScaleX="0.4000" ScaleY="0.4000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.1305" Y="0.6977" />
-                        <PreSize X="0.2559" Y="1.7674" />
+                        <PrePosition X="0.3500" Y="0.5233" />
+                        <PreSize X="0.1960" Y="1.7674" />
                         <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="guobg" ActionTag="-1815819720" Tag="220" IconVisible="False" LeftMargin="288.1644" RightMargin="20.8356" TopMargin="0.3100" BottomMargin="15.6900" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="card5" ActionTag="-1288841443" Tag="231" IconVisible="False" LeftMargin="165.9990" RightMargin="236.0010" TopMargin="-35.0001" BottomMargin="-30.9999" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                        <Size X="98.0000" Y="152.0000" />
+                        <Children>
+                          <AbstractNodeData Name="num" ActionTag="1518929375" Tag="1234" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
+                            <Size X="74.0000" Y="100.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="50.0000" Y="90.0000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.5102" Y="0.5921" />
+                            <PreSize X="0.7551" Y="0.6579" />
+                            <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="214.9990" Y="45.0001" />
+                        <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.4300" Y="0.5233" />
+                        <PreSize X="0.1960" Y="1.7674" />
+                        <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="card6" ActionTag="-1916273287" Tag="230" IconVisible="False" LeftMargin="205.9992" RightMargin="196.0008" TopMargin="-35.0001" BottomMargin="-30.9999" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                        <Size X="98.0000" Y="152.0000" />
+                        <Children>
+                          <AbstractNodeData Name="num" ActionTag="-1008626842" Tag="1233" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
+                            <Size X="74.0000" Y="100.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="50.0000" Y="90.0000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.5102" Y="0.5921" />
+                            <PreSize X="0.7551" Y="0.6579" />
+                            <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="254.9992" Y="45.0001" />
+                        <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5100" Y="0.5233" />
+                        <PreSize X="0.1960" Y="1.7674" />
+                        <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="card7" ActionTag="-1573253587" Tag="229" IconVisible="False" LeftMargin="260.3413" RightMargin="141.6587" TopMargin="-35.3760" BottomMargin="-30.6240" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                        <Size X="98.0000" Y="152.0000" />
+                        <Children>
+                          <AbstractNodeData Name="num" ActionTag="461847556" Tag="1232" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
+                            <Size X="74.0000" Y="100.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="50.0000" Y="90.0000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.5102" Y="0.5921" />
+                            <PreSize X="0.7551" Y="0.6579" />
+                            <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="309.3413" Y="45.3760" />
+                        <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.6187" Y="0.5276" />
+                        <PreSize X="0.1960" Y="1.7674" />
+                        <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="card8" ActionTag="1986450767" Tag="225" IconVisible="False" LeftMargin="300.3410" RightMargin="101.6590" TopMargin="-35.3760" BottomMargin="-30.6240" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                        <Size X="98.0000" Y="152.0000" />
+                        <Children>
+                          <AbstractNodeData Name="num" ActionTag="1977955255" Tag="1228" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
+                            <Size X="74.0000" Y="100.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="50.0000" Y="90.0000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.5102" Y="0.5921" />
+                            <PreSize X="0.7551" Y="0.6579" />
+                            <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="349.3410" Y="45.3760" />
+                        <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.6987" Y="0.5276" />
+                        <PreSize X="0.1960" Y="1.7674" />
+                        <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="card9" ActionTag="-1029458487" Tag="224" IconVisible="False" LeftMargin="340.3403" RightMargin="61.6597" TopMargin="-35.3760" BottomMargin="-30.6240" TouchEnable="True" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                        <Size X="98.0000" Y="152.0000" />
+                        <Children>
+                          <AbstractNodeData Name="num" ActionTag="-2093718860" Tag="1227" IconVisible="False" LeftMargin="13.0000" RightMargin="11.0000" TopMargin="12.0000" BottomMargin="40.0000" Scale9Width="74" Scale9Height="100" ctype="ImageViewObjectData">
+                            <Size X="74.0000" Y="100.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="50.0000" Y="90.0000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.5102" Y="0.5921" />
+                            <PreSize X="0.7551" Y="0.6579" />
+                            <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="389.3403" Y="45.3760" />
+                        <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.7787" Y="0.5276" />
+                        <PreSize X="0.1960" Y="1.7674" />
+                        <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="guobg" ActionTag="-1815819720" Tag="220" IconVisible="False" LeftMargin="418.0000" RightMargin="8.0000" TopMargin="6.0000" BottomMargin="10.0000" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
                         <Size X="74.0000" Y="70.0000" />
                         <Children>
-                          <AbstractNodeData Name="guo" ActionTag="-1753562688" Tag="221" IconVisible="False" LeftMargin="-3.0001" RightMargin="-3.9999" TopMargin="-5.9996" BottomMargin="-6.0004" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="22" BottomEage="22" Scale9OriginX="24" Scale9OriginY="22" Scale9Width="33" Scale9Height="38" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="guo" ActionTag="-1753562688" VisibleForFrame="False" Tag="221" IconVisible="False" LeftMargin="-3.0001" RightMargin="-3.9999" TopMargin="-5.9996" BottomMargin="-6.0004" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="22" BottomEage="22" Scale9OriginX="24" Scale9OriginY="22" Scale9Width="33" Scale9Height="38" ctype="ImageViewObjectData">
                             <Size X="81.0000" Y="82.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="37.4999" Y="34.9996" />
@@ -2549,10 +2649,10 @@
                             <PreSize X="1.0946" Y="1.1714" />
                             <FileData Type="Normal" Path="play-yli/btn_guo_normal.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="fanhui" ActionTag="204255682" Tag="222" IconVisible="False" LeftMargin="2.4999" RightMargin="-1.4999" TopMargin="1.0005" BottomMargin="-5.0005" TouchEnable="True" LeftEage="23" RightEage="23" TopEage="27" BottomEage="27" Scale9OriginX="23" Scale9OriginY="27" Scale9Width="27" Scale9Height="20" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="fanhui" ActionTag="204255682" Tag="222" IconVisible="False" LeftMargin="2.4990" RightMargin="-1.4990" TopMargin="1.0005" BottomMargin="-5.0005" TouchEnable="True" LeftEage="23" RightEage="23" TopEage="27" BottomEage="27" Scale9OriginX="23" Scale9OriginY="27" Scale9Width="27" Scale9Height="20" ctype="ImageViewObjectData">
                             <Size X="73.0000" Y="74.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="38.9999" Y="31.9995" />
+                            <Position X="38.9990" Y="31.9995" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition X="0.5270" Y="0.4571" />
@@ -2561,16 +2661,16 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="325.1644" Y="50.6900" />
+                        <Position X="455.0000" Y="45.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.8490" Y="0.5894" />
-                        <PreSize X="0.1932" Y="0.8140" />
+                        <PrePosition X="0.9100" Y="0.5233" />
+                        <PreSize X="0.1480" Y="0.8140" />
                         <FileData Type="Normal" Path="play-yli/penggang_bottom.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="642.6711" Y="172.1418" />
+                    <Position X="655.0005" Y="175.0001" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -2593,7 +2693,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="chat_btn" Visible="False" ActionTag="1600943711" Tag="133" IconVisible="False" LeftMargin="1164.4751" RightMargin="42.5249" TopMargin="540.3177" BottomMargin="105.6823" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="43" Scale9Height="52" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="chat_btn" ActionTag="1600943711" Tag="133" IconVisible="False" LeftMargin="1164.4751" RightMargin="42.5249" TopMargin="540.3177" BottomMargin="105.6823" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="43" Scale9Height="52" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="73.0000" Y="74.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1200.9751" Y="142.6823" />

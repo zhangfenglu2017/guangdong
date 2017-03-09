@@ -2,6 +2,8 @@
 //2016年7月14日 20:29:44
 //单次结算界面
 
+
+
 function SetEndOnePlayerUI(node, off) {
     var pl = getUIPlayer(off);
     node = node.getChildByName("head");
@@ -35,7 +37,9 @@ function SetEndOnePlayerUI(node, off) {
 
             winType: {
                 _text: function () {
-                    return pl.baseWin > 0 ? ("X" + pl.baseWin) : "";
+                    if(jsclient.data.sData.tData.gameType == 4)
+                        return pl.baseWin > 0 ? ( pl.baseWin + "番") : "";
+                    return pl.baseWin > 0 ? ( "X" + pl.baseWin) : "";
                 }
             },
 
@@ -94,7 +98,7 @@ function SetEndOnePlayerUI(node, off) {
 
                     cc.log("node.children.length" + node.children.length);
                     RestoreCardLayout(node, 0, pl);
-                }
+                },
             },
 
             down: {
@@ -362,7 +366,7 @@ function checkShowMa() {
 
     for (var i = 0; i < 4; i++) {
         var pl = getUIPlayer(i);
-        if (jsclient.majiang.CardCount(pl) == 14 && pl.winType > 0) {
+        if (jsclient.majiang.CardCount(pl) == 14 && pl.winType > 0 && jsclient.data.sData.tData.horse > 0) {
             show = true;
             break;
         }
@@ -398,6 +402,23 @@ function checkMjMa(off) {
     return false
 }
 
+//判断是否多人赢
+function checkWinCount()
+{
+    var plCount = 0;
+    for (var i = 0; i < 4; i++) {
+        pl = getUIPlayer(i);
+        if (jsclient.majiang.CardCount(pl) == 14 && pl.winType > 0) {
+            plCount ++;
+        }
+    }
+
+    if(plCount > 1)
+        return true;
+
+    return false;
+}
+
 //设置买马的牌
 function setMjMa(node, off) {
     var pl = getUIPlayer(0);
@@ -416,6 +437,24 @@ var EndOneLayer = cc.Layer.extend(
         jsBind: {
             back: {
                 _layout: [[0, 1], [0.5, 0.5], [0, 0]]
+            },
+
+            maima:
+            {
+                _layout: [[0.4, 0.4], [0.065, 0.55], [0, 0]],
+
+                _visible:function ()
+                {
+                    return checkShowMa();
+                },
+
+                _click: function ()
+                {
+                    if(jsclient.playui == null)
+                        return;
+
+                    jsclient.playui.addChild(new ShowMaPanel());
+                }
             },
 
             mjtips: {
@@ -757,14 +796,22 @@ var EndOneLayer = cc.Layer.extend(
                 head: {
                     _layout: [[0.12, 0.12], [0.2, 0.82], [0, 0]],
                     zhuang: {_visible: false},
-                    linkZhuang: {_visible: false}
+                    linkZhuang: {_visible: false},
+                    up:
+                    {
+                        gui:
+                        {
+                            _visible : false
+                        }
+                    }
                 },
 
                 winNum: {_layout: [[0.05, 0.05], [0.83, 0.8], [0, 0]]},
 
                 _run: function () {
                     SetEndOnePlayerUI(this, 0);
-                }
+                },
+
             },
 
             head1: {
@@ -773,7 +820,15 @@ var EndOneLayer = cc.Layer.extend(
                 head: {
                     _layout: [[0.12, 0.12], [0.2, 0.64], [0, 0]],
                     zhuang: {_visible: false},
-                    linkZhuang: {_visible: false}
+                    linkZhuang: {_visible: false},
+
+                    up:
+                    {
+                        gui:
+                        {
+                            _visible : false
+                        }
+                    }
                 },
 
                 winNum: {_layout: [[0.05, 0.05], [0.83, 0.62], [0, 0]]},
@@ -789,7 +844,15 @@ var EndOneLayer = cc.Layer.extend(
                 head: {
                     _layout: [[0.12, 0.12], [0.2, 0.46], [0, 0]],
                     zhuang: {_visible: false},
-                    linkZhuang: {_visible: false}
+                    linkZhuang: {_visible: false},
+
+                    up:
+                    {
+                        gui:
+                        {
+                            _visible : false
+                        }
+                    }
                 },
 
                 winNum: {_layout: [[0.05, 0.05], [0.83, 0.44], [0, 0]]},
@@ -805,7 +868,15 @@ var EndOneLayer = cc.Layer.extend(
                 head: {
                     _layout: [[0.12, 0.12], [0.2, 0.28], [0, 0]],
                     zhuang: {_visible: false},
-                    linkZhuang: {_visible: false}
+                    linkZhuang: {_visible: false},
+
+                    up:
+                    {
+                        gui:
+                        {
+                            _visible : false
+                        }
+                    }
                 },
 
                 winNum: {_layout: [[0.05, 0.05], [0.83, 0.26], [0, 0]]},
@@ -985,10 +1056,19 @@ function showCardActionAndMa(cardIndex, cardNode, time) {
 
         cardImg.runAction(cc.sequence(cc.scaleTo(0.3, 1, 1), cc.callFunc(function () {
             if (checkMjMa(cardIndex)) {
-                cardOpen.visible = true;
+
+                //如果有多人赢，则不显示高亮
+                if(checkWinCount())
+                    cardOpen.visible = false;
+                else
+                    cardOpen.visible = true;
             }
             else {
-                cardClose.visible = true;
+                //如果有多人赢，则不显示遮罩
+                if(checkWinCount())
+                    cardClose.visible = false;
+                else
+                    cardClose.visible = true;
             }
         })));
     };

@@ -612,6 +612,7 @@
                 "Tag": 43,
                 "Children": [
                   {
+                    "IsCustomSize": true,
                     "FontSize": 26,
                     "LabelText": "代理咨询请联系微信XXXXXX，文明娱乐，禁止赌博",
                     "OutlineColor": {
@@ -641,17 +642,17 @@
                       "Y": 0.175
                     },
                     "PreSize": {
-                      "X": 1.04,
+                      "X": 0.9273,
                       "Y": 0.65
                     },
                     "LeftMargin": 20.0,
-                    "RightMargin": -42.0,
+                    "RightMargin": 20.0,
                     "TopMargin": 7.0,
                     "BottomMargin": 7.0,
                     "Tag": 44,
                     "ActionTag": -1832792330,
                     "Size": {
-                      "X": 572.0,
+                      "X": 510.0,
                       "Y": 26.0
                     },
                     "Name": "msg",
@@ -765,7 +766,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 1200.0,
+              "X": 1199.0002,
               "Y": 669.9999
             },
             "Scale": {
@@ -775,15 +776,15 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.9375,
+              "X": 0.9367,
               "Y": 0.9306
             },
             "PreSize": {
               "X": 0.0594,
               "Y": 0.1069
             },
-            "LeftMargin": 1162.0,
-            "RightMargin": 42.0,
+            "LeftMargin": 1161.0002,
+            "RightMargin": 42.9998,
             "TopMargin": 11.5001,
             "BottomMargin": 631.4999,
             "Tag": 11,
@@ -840,8 +841,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 1100.0,
-              "Y": 670.0
+              "X": 1099.0,
+              "Y": 670.0001
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -850,17 +851,17 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.8594,
+              "X": 0.8586,
               "Y": 0.9306
             },
             "PreSize": {
               "X": 0.0594,
               "Y": 0.1069
             },
-            "LeftMargin": 1062.0,
-            "RightMargin": 142.0,
-            "TopMargin": 11.5,
-            "BottomMargin": 631.5,
+            "LeftMargin": 1061.0,
+            "RightMargin": 143.0,
+            "TopMargin": 11.4999,
+            "BottomMargin": 631.5001,
             "Tag": 10,
             "ActionTag": 1218524737,
             "Size": {

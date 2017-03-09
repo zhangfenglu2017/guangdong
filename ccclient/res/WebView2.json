@@ -427,6 +427,81 @@
                   "B": 70
                 },
                 "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/jp-yeqian_press.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/jp-yeqian_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "createRoomNew/jp-yeqian.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 175,
+                "Scale9Height": 56,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 300.0,
+                  "Y": 240.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2344,
+                  "Y": 0.3333
+                },
+                "PreSize": {
+                  "X": 0.1602,
+                  "Y": 0.1083
+                },
+                "LeftMargin": 197.5,
+                "RightMargin": 877.5,
+                "TopMargin": 441.0,
+                "BottomMargin": 201.0,
+                "Tag": 121,
+                "ActionTag": 1725460833,
+                "Size": {
+                  "X": 205.0,
+                  "Y": 78.0
+                },
+                "Name": "jphmjtable",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
                   "Type": "Default",
                   "Path": "Default/Button_Disable.png",
                   "Plist": ""
@@ -598,6 +673,8 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
+        "createRoomNew/jp-yeqian.png",
+        "createRoomNew/jp-yeqian_press.png",
         "createRoomNew/y_guangzhoutuidaohu_normal.png",
         "createRoomNew/y_guangzhoutuidaohu_press.png",
         "createRoomNew/y_huizhouzhuang_normal.png",

@@ -2,6 +2,8 @@
 //2016年7月14日 15:03:43
 //加入房间
 
+
+
 function EnterAddNumber(n)
 {
 	var change = true;

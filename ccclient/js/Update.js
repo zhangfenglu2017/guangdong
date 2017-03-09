@@ -462,7 +462,7 @@
 //游戏玩法
 (function ()
 {
-    var webViewLayer2, uiPara, webView, scroll, gdmjtable, hzhmjtable,shzhmjtable, help;
+    var webViewLayer2, uiPara, webView, scroll, gdmjtable, hzhmjtable,shzhmjtable,jphmjtable, help;
 
     function createWebViewByUrl(url)
     {
@@ -490,6 +490,7 @@
         var url1 = jsclient.remoteCfg.help1Url;
         var url2 = jsclient.remoteCfg.help2Url;
         var url3 = jsclient.remoteCfg.help3Url;
+        var url4 = jsclient.remoteCfg.help4Url;
 
         switch(helpType)
         {
@@ -502,6 +503,9 @@
 
             shzhmjtable.setBright(true);
             shzhmjtable.setEnabled(true);
+
+            jphmjtable.setBright(true);
+            jphmjtable.setEnabled(true);
 
             createWebViewByUrl(url1);
 
@@ -517,6 +521,9 @@
             shzhmjtable.setBright(true);
             shzhmjtable.setEnabled(true);
 
+            jphmjtable.setBright(true);
+            jphmjtable.setEnabled(true);
+
             createWebViewByUrl(url2);
 
             break;
@@ -531,7 +538,27 @@
             shzhmjtable.setBright(false);
             shzhmjtable.setEnabled(false);
 
+            jphmjtable.setBright(true);
+            jphmjtable.setEnabled(true);
+
             createWebViewByUrl(url3);
+
+            break;
+        case 4:
+
+            gdmjtable.setBright(true);
+            gdmjtable.setEnabled(true);
+
+            hzhmjtable.setBright(true);
+            hzhmjtable.setEnabled(true);
+
+            shzhmjtable.setBright(true);
+            shzhmjtable.setEnabled(true);
+
+            jphmjtable.setBright(false);
+            jphmjtable.setEnabled(false);
+
+            createWebViewByUrl(url4);
 
             break;
         }
@@ -589,6 +616,19 @@
                     _click:function ()
                     {
                         setPanelContentByType(3);
+                    }
+                },
+
+                jphmjtable:
+                {
+                    _run:function ()
+                    {
+                        jphmjtable = this;
+                    },
+
+                    _click:function ()
+                    {
+                        setPanelContentByType(4);
                     }
                 },
 
@@ -1306,5 +1346,9 @@ var updatelayer_itme_node;
     });
 
 })();
+
+
+
+
 
 

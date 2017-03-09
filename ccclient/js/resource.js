@@ -37,6 +37,8 @@ cc.spriteFrameCache.addSpriteFrames("res/MaJiangNew/cardAnim.plist");
 cc.spriteFrameCache.addSpriteFrames("res/playerchat/emoji_action_texture.plist");
 
 
+
+
 var jsclient={};
 
 var BlockLayer;

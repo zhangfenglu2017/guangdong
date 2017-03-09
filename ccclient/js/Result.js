@@ -4,8 +4,6 @@
    Success:0,
    Fail:1,
    
-   
-   
    verifyPlayerFail:2,
    emailUsed:3,
    emailValid:4,
@@ -72,9 +70,7 @@
    errorState:102,
    serverFull:103
    
-   
-   
-  
+    
 };
 
 if(module) module.exports =ZJHCode;

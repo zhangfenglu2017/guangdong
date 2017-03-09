@@ -2,14 +2,18 @@
   "servers":"gdmj.coolgamebox.com:15010:15019"
   ,"serversSelect":[600,400]
   ,"wxShareUrl":"http://download.happyplaygame.net"
-  ,"voiceUrl":"http://124.232.153.18:3000/symj/"
+  ,"voiceUrl":"http://124.232.153.18:9109/symj/"
   ,"guestLogin":false
   ,"coinRoom":false
   ,"canEatHu":false
   ,"hideMoney":false
   ,"weixinBuy":"Kfxj111"
-  ,"helpUrl":"http://gdmj.coolgamebox.com:800/gdmj/help.html"
+  ,"help1Url":"http://gdmj.coolgamebox.com:800/gdmj/help1.html"
+  ,"help2Url":"http://gdmj.coolgamebox.com:800/gdmj/help2.html"
+  ,"help3Url":"http://gdmj.coolgamebox.com:800/gdmj/help3.html"
+  ,"help4Url":"http://gdmj.coolgamebox.com:800/gdmj/help4.html"
   ,"legalUrl":"http://gdmj.coolgamebox.com:800/gdmj/legal.html"
   ,"infoUrl":"http://gdmj.coolgamebox.com:800/gdmj/info.html"
+  ,"noticeUrl":"http://gdmj.coolgamebox.com:800/gdmj/notice.json"
   ,"homeScroll":"代理咨询请联系微信Kfxj111，文明娱乐，禁止赌博"
 }

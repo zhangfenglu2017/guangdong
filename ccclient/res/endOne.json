@@ -75,8 +75,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 112.2783,
-              "Y": 475.9558
+              "X": -138.9711,
+              "Y": 477.2576
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -85,17 +85,17 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.0877,
-              "Y": 0.661
+              "X": -0.1086,
+              "Y": 0.6629
             },
             "PreSize": {
               "X": 0.1539,
               "Y": 0.0806
             },
-            "LeftMargin": 13.7783,
-            "RightMargin": 1069.2217,
-            "TopMargin": 215.0442,
-            "BottomMargin": 446.9558,
+            "LeftMargin": -237.4711,
+            "RightMargin": 1320.4711,
+            "TopMargin": 213.7424,
+            "BottomMargin": 448.2576,
             "Tag": 115,
             "Children": [
               {
@@ -1891,6 +1891,81 @@
             "ctype": "ButtonObjectData"
           },
           {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/btn_mmjg.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/btn_mmjg.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "gameEndNew/btn_mmjg.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 89,
+            "Scale9Height": 263,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 105.2128,
+              "Y": 329.5359
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0822,
+              "Y": 0.4577
+            },
+            "PreSize": {
+              "X": 0.093,
+              "Y": 0.3958
+            },
+            "LeftMargin": 45.7128,
+            "RightMargin": 1115.2872,
+            "TopMargin": 247.9641,
+            "BottomMargin": 187.0359,
+            "Tag": 368,
+            "ActionTag": 1971528347,
+            "Size": {
+              "X": 119.0,
+              "Y": 285.0
+            },
+            "Name": "maima",
+            "ctype": "ButtonObjectData"
+          },
+          {
             "AnchorPoint": {},
             "Position": {
               "X": 7.0,
@@ -2413,6 +2488,51 @@
                           "Y": 100.0
                         },
                         "Name": "num",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MaJiangNew/gui.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 24,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 50,
+                        "Scale9Height": 86,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 50.0,
+                          "Y": 106.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5102,
+                          "Y": 0.6974
+                        },
+                        "PreSize": {
+                          "X": 1.0,
+                          "Y": 1.0
+                        },
+                        "LeftMargin": 1.0,
+                        "RightMargin": -1.0,
+                        "TopMargin": -30.0,
+                        "BottomMargin": 30.0,
+                        "Tag": 586,
+                        "ActionTag": 971453391,
+                        "Size": {
+                          "X": 98.0,
+                          "Y": 152.0
+                        },
+                        "Name": "gui",
                         "ctype": "ImageViewObjectData"
                       }
                     ],
@@ -3118,6 +3238,51 @@
                           "Y": 100.0
                         },
                         "Name": "num",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MaJiangNew/gui.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 24,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 50,
+                        "Scale9Height": 86,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 50.0,
+                          "Y": 106.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5102,
+                          "Y": 0.6974
+                        },
+                        "PreSize": {
+                          "X": 1.0,
+                          "Y": 1.0
+                        },
+                        "LeftMargin": 1.0,
+                        "RightMargin": -1.0,
+                        "TopMargin": -30.0,
+                        "BottomMargin": 30.0,
+                        "Tag": 585,
+                        "ActionTag": 1742112071,
+                        "Size": {
+                          "X": 98.0,
+                          "Y": 152.0
+                        },
+                        "Name": "gui",
                         "ctype": "ImageViewObjectData"
                       }
                     ],
@@ -3869,6 +4034,51 @@
                         },
                         "Name": "num",
                         "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MaJiangNew/gui.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 24,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 50,
+                        "Scale9Height": 86,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 50.0,
+                          "Y": 106.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5102,
+                          "Y": 0.6974
+                        },
+                        "PreSize": {
+                          "X": 1.0,
+                          "Y": 1.0
+                        },
+                        "LeftMargin": 1.0,
+                        "RightMargin": -1.0,
+                        "TopMargin": -30.0,
+                        "BottomMargin": 30.0,
+                        "Tag": 584,
+                        "ActionTag": 740677837,
+                        "Size": {
+                          "X": 98.0,
+                          "Y": 152.0
+                        },
+                        "Name": "gui",
+                        "ctype": "ImageViewObjectData"
                       }
                     ],
                     "ActionTag": -47469633,
@@ -3900,7 +4110,7 @@
                     },
                     "Position": {
                       "X": 428.3478,
-                      "Y": 97.4995
+                      "Y": 97.5
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3922,8 +4132,8 @@
                     },
                     "LeftMargin": 228.3478,
                     "RightMargin": -500.3478,
-                    "TopMargin": 2.5005,
-                    "BottomMargin": 73.4995,
+                    "TopMargin": 2.5,
+                    "BottomMargin": 73.5,
                     "Tag": 598,
                     "ActionTag": -1368140419,
                     "Size": {
@@ -4619,6 +4829,51 @@
                         },
                         "Name": "num",
                         "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MaJiangNew/gui.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 24,
+                        "Scale9OriginY": 33,
+                        "Scale9Width": 50,
+                        "Scale9Height": 86,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 50.0,
+                          "Y": 106.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5102,
+                          "Y": 0.6974
+                        },
+                        "PreSize": {
+                          "X": 1.0,
+                          "Y": 1.0
+                        },
+                        "LeftMargin": 1.0,
+                        "RightMargin": -1.0,
+                        "TopMargin": -30.0,
+                        "BottomMargin": 30.0,
+                        "Tag": 583,
+                        "ActionTag": 1865209671,
+                        "Size": {
+                          "X": 98.0,
+                          "Y": 152.0
+                        },
+                        "Name": "gui",
+                        "ctype": "ImageViewObjectData"
                       }
                     ],
                     "ActionTag": 841615867,
@@ -4903,6 +5158,7 @@
         "gameEndNew/bac-3.png",
         "gameEndNew/btn_get_set_normal.png",
         "gameEndNew/btn_get_set_press.png",
+        "gameEndNew/btn_mmjg.png",
         "gameEndNew/btn_share_normal.png",
         "gameEndNew/btn_share_press.png",
         "gameEndNew/floor_11.png",
@@ -4916,6 +5172,7 @@
         "gameEndNew/t_ping.png",
         "gameEndNew/t-hu.png",
         "gameEndNew/t-win.png",
+        "MaJiangNew/gui.png",
         "MaJiangNew/mj_91.png",
         "MaJiangNew/mj_bg1.png",
         "MaJiangNew/mj_bg2.png",

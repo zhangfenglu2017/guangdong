@@ -1,3 +1,6 @@
+
+
+
 function NewPopMsgLayer(uiPara)
 {
     var popui;

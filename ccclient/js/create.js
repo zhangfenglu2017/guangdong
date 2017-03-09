@@ -4,76 +4,40 @@
 
 
 (function () {
-    //控件
-    var createui, gdmjtable, hzhmjtable, shzhmjtable, gdmj, hzhmj, shzhmj;
+
+    var tables = [];
+    var gamemjs = [];
+    //0 没有，1广州，2惠州，3深圳，4鸡平胡
+    tables[0] = null;
+    gamemjs[0] = null;
 
     function setPanelContentByType(type) {
         var gameType = type;
-        switch (gameType) {
-            case 1:
-                gdmjtable.setBright(false);
-                gdmjtable.setEnabled(false);
-                gdmjtable.setTouchEnabled(false);
-                gdmjtable.setVisible(false);
 
-                hzhmjtable.setBright(true);
-                hzhmjtable.setEnabled(true);
-                hzhmjtable.setTouchEnabled(true);
-                hzhmjtable.setVisible(true);
+        for(var i = 1; i < tables.length; i++)
+        {
+            var gameTable = tables[i];
+            var game = gamemjs[i];
 
-                shzhmjtable.setBright(true);
-                shzhmjtable.setEnabled(true);
-                shzhmjtable.setTouchEnabled(true);
-                shzhmjtable.setVisible(true);
+            if(i == gameType)
+            {
+                gameTable.setBright(false);
+                gameTable.setEnabled(false);
+                gameTable.setTouchEnabled(false);
+                gameTable.setVisible(false);
 
-                gdmj.setVisible(true);
-                hzhmj.setVisible(false);
-                shzhmj.setVisible(false);
+                log("当前游戏类型：" + gameType);
+                game.setVisible(true);
+            }
+            else
+            {
+                gameTable.setBright(true);
+                gameTable.setEnabled(true);
+                gameTable.setTouchEnabled(true);
+                gameTable.setVisible(true);
 
-                break;
-            case 2:
-
-                gdmjtable.setBright(true);
-                gdmjtable.setEnabled(true);
-                gdmjtable.setTouchEnabled(true);
-                gdmjtable.setVisible(true);
-
-                hzhmjtable.setBright(false);
-                hzhmjtable.setEnabled(false);
-                hzhmjtable.setTouchEnabled(false);
-                hzhmjtable.setVisible(false);
-
-                shzhmjtable.setBright(true);
-                shzhmjtable.setEnabled(true);
-                shzhmjtable.setTouchEnabled(true);
-                shzhmjtable.setVisible(true);
-
-                gdmj.setVisible(false);
-                hzhmj.setVisible(true);
-                shzhmj.setVisible(false);
-                break;
-
-            case 3:
-
-                gdmjtable.setBright(true);
-                gdmjtable.setEnabled(true);
-                gdmjtable.setTouchEnabled(true);
-                gdmjtable.setVisible(true);
-
-                hzhmjtable.setBright(true);
-                hzhmjtable.setEnabled(true);
-                hzhmjtable.setTouchEnabled(true);
-                hzhmjtable.setVisible(true);
-
-                shzhmjtable.setBright(false);
-                shzhmjtable.setEnabled(false);
-                shzhmjtable.setTouchEnabled(false);
-                shzhmjtable.setVisible(false);
-
-                gdmj.setVisible(false);
-                hzhmj.setVisible(false);
-                shzhmj.setVisible(true);
-                break;
+                game.setVisible(false);
+            }
         }
     }
 
@@ -104,7 +68,7 @@
 
                     gdmjtable: {
                         _run: function () {
-                            gdmjtable = this;
+                            tables[1] = this;
                             this.visible = false;
                         },
 
@@ -115,7 +79,7 @@
 
                     hzhmjtable: {
                         _run: function () {
-                            hzhmjtable = this;
+                            tables[2] = this;
                             this.visible = false;
                         },
 
@@ -126,12 +90,23 @@
 
                     shzhmjtable: {
                         _run: function () {
-                            shzhmjtable = this;
+                            tables[3] = this;
                             this.visible = false;
                         },
 
                         _click: function () {
                             setPanelContentByType(3);
+                        }
+                    },
+
+                    jphmjtable: {
+                        _run: function () {
+                            tables[4] = this;
+                            this.visible = false;
+                        },
+
+                        _click: function () {
+                            setPanelContentByType(4);
                         }
                     },
 
@@ -142,14 +117,14 @@
                         self1Nofeng: null,
                         self1Feng: null,
                         self1CanHu7: null,
-                        sel1fMa2: null,
-                        sel1fMa4: null,
-                        sel1fMa6: null,
+                        self1Ma2: null,
+                        self1Ma4: null,
+                        self1Ma6: null,
                         self1Round4: null,
                         self1Round8: null,
 
                         _run: function () {
-                            gdmj = this;
+                            gamemjs[1] = this;
                         },
 
                         playType: {
@@ -324,7 +299,7 @@
 
                                 if (haveMoney >= needMoney) {
                                     jsclient.createRoom(
-                                        1,                        //游戏类型 1广州
+                                        1,                        //游戏类型
                                         isRound ? "round4" : "round8",//4局或8局
                                         false,                     //吃胡
                                         self1Feng.isSelected(),     //带风
@@ -335,7 +310,8 @@
                                         self1Zhong.isSelected(),    //鬼牌
                                         horse,                     //几匹马
                                         false,                     //节节高
-                                        self1FanGui.isSelected()    //翻鬼
+                                        self1FanGui.isSelected(),   //翻鬼
+                                        0                           //番
                                     );
                                 }
                                 else {
@@ -358,7 +334,7 @@
                         self2Round8: null,
 
                         _run: function () {
-                            hzhmj = this;
+                            gamemjs[2] = this;
                         },
 
                         playType: {
@@ -499,7 +475,7 @@
 
                                 if (haveMoney >= needMoney) {
                                     jsclient.createRoom(
-                                        2,                        //游戏类型 1广州 2惠州
+                                        2,                        //游戏类型
                                         isRound ? "round4" : "round8",//4局或8局
                                         false,                     //吃胡
                                         self2Feng.isSelected(),     //带风
@@ -510,7 +486,8 @@
                                         false,                     //鬼牌
                                         horse,                     //几匹马
                                         false,                      //节节高
-                                        false                       //翻鬼
+                                        false,                       //翻鬼
+                                        0                            //番
                                     );
                                 }
                                 else {
@@ -529,14 +506,14 @@
                         self3Nofeng: null,
                         self3Feng: null,
                         self3JJG: null,
-                        sel3fMa2: null,
-                        sel3fMa4: null,
-                        sel3fMa6: null,
+                        self3Ma2: null,
+                        self3Ma4: null,
+                        self3Ma6: null,
                         self3Round4: null,
                         self3Round8: null,
 
                         _run: function () {
-                            shzhmj = this;
+                            gamemjs[3] = this;
                         },
 
                         playType: {
@@ -711,7 +688,7 @@
 
                                 if (haveMoney >= needMoney) {
                                     jsclient.createRoom(
-                                        3,                        //游戏类型 1广州 2惠州 3深圳
+                                        3,                        //游戏类型
                                         isRound ? "round4" : "round8",//4局或8局
                                         false,                     //吃胡
                                         self3Feng.isSelected(),     //带风
@@ -722,7 +699,168 @@
                                         self3Zhong.isSelected(),    //鬼牌
                                         horse,                     //几匹马
                                         self3JJG.isSelected(),      //节节高
-                                        self3FanGui.isSelected()    //翻鬼
+                                        self3FanGui.isSelected(),    //翻鬼
+                                        0                              //番
+                                    );
+                                }
+                                else {
+                                    jsclient.uiPara = {lessMoney: true};
+                                    jsclient.Scene.addChild(new PayLayer());
+                                }
+                                createui.removeFromParent(true);
+                            }
+                        },
+                    },
+
+                    jphmj: {
+                        self4Nofeng: null,
+                        self4Feng: null,
+                        self4Fan0: null,
+                        self4Fan1: null,
+                        self4Fan3: null,
+                        self4Round4: null,
+                        self4Round8: null,
+
+                        _run: function () {
+                            gamemjs[4] = this;
+                        },
+
+                        playType: {
+                            _run:function ()
+                            {
+                                this.visible = false;
+                            },
+
+                            nofeng: {
+                                _run: function () {
+                                    self4Nofeng = this;
+                                },
+
+                                _click: function () {
+                                    self4Feng.setSelected(false);
+                                    self4Feng.setTouchEnabled(true);
+                                    self4Nofeng.setSelected(true);
+                                    self4Nofeng.setTouchEnabled(false);
+                                }
+                            },
+
+                            feng: {
+                                _run: function () {
+                                    self4Feng = this;
+                                },
+
+                                _click: function () {
+                                    self4Feng.setSelected(true);
+                                    self4Feng.setTouchEnabled(false);
+                                    self4Nofeng.setSelected(false);
+                                    self4Nofeng.setTouchEnabled(true);
+                                }
+                            },
+                        },
+
+                        fanshu: {
+                            fan0: {
+                                _run: function () {
+                                    self4Fan0 = this;
+                                },
+                                _click: function () {
+                                    self4Fan0.setSelected(true);
+                                    self4Fan0.setTouchEnabled(false);
+                                    self4Fan1.setSelected(false);
+                                    self4Fan1.setTouchEnabled(true);
+                                    self4Fan3.setSelected(false);
+                                    self4Fan3.setTouchEnabled(true);
+                                }
+                            },
+
+                            fan1: {
+                                _run: function () {
+                                    self4Fan1 = this;
+                                },
+                                _click: function () {
+                                    self4Fan0.setSelected(false);
+                                    self4Fan0.setTouchEnabled(true);
+                                    self4Fan1.setSelected(true);
+                                    self4Fan1.setTouchEnabled(false);
+                                    self4Fan3.setSelected(false);
+                                    self4Fan3.setTouchEnabled(true);
+                                }
+                            },
+
+                            fan3: {
+                                _run: function () {
+                                    self4Fan3 = this;
+                                },
+                                _click: function () {
+                                    self4Fan0.setSelected(false);
+                                    self4Fan0.setTouchEnabled(true);
+                                    self4Fan1.setSelected(false);
+                                    self4Fan1.setTouchEnabled(true);
+                                    self4Fan3.setSelected(true);
+                                    self4Fan3.setTouchEnabled(false);
+                                }
+                            },
+                        },
+
+                        round: {
+                            round4: {
+                                _run: function () {
+                                    self4Round4 = this;
+                                },
+
+                                _click: function () {
+                                    self4Round4.setSelected(true);
+                                    self4Round4.setTouchEnabled(false);
+                                    self4Round8.setSelected(false);
+                                    self4Round8.setTouchEnabled(true);
+                                }
+                            },
+
+                            round8: {
+                                _run: function () {
+                                    self4Round8 = this;
+                                },
+                                _click: function () {
+                                    self4Round4.setSelected(false);
+                                    self4Round4.setTouchEnabled(true);
+                                    self4Round8.setSelected(true);
+                                    self4Round8.setTouchEnabled(false);
+                                }
+                            }
+                        },
+
+                        //创建,判断金钱
+                        yes: {
+                            _click: function (btn, evt) {
+                                var majiang = jsclient.data.gameInfo.gdmj;
+                                var isRound = self4Round4.isSelected();
+                                var needMoney = isRound ? majiang.round4 : majiang.round8;
+                                var haveMoney = jsclient.data.pinfo.money;
+
+                                var fannum = 0;
+                                if(self4Fan0.isSelected())
+                                    fannum = 0;
+                                else if(self4Fan1.isSelected())
+                                    fannum = 1;
+                                else if(self4Fan3.isSelected())
+                                    fannum = 3;
+
+
+                                if (haveMoney >= needMoney) {
+                                    jsclient.createRoom(
+                                        4,                        //游戏类型
+                                        isRound ? "round4" : "round8",//4局或8局
+                                        false,                     //吃胡
+                                        self4Feng.isSelected(),     //带风
+                                        true,                      //吃
+                                        true,                      //无效参数
+                                        false,                       //7
+                                        false,                     //258
+                                        false,                     //鬼牌
+                                        0,                         //几匹马
+                                        false,                    //节节高
+                                        false,                    //翻鬼
+                                        fannum                     //番
                                     );
                                 }
                                 else {

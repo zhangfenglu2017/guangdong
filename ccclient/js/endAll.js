@@ -3,6 +3,8 @@
 //全局结算界面
 
 
+
+
 function SetEndAllPlayerUI(node,off)
 {
 	var sData = jsclient.data.sData;

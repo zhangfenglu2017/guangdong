@@ -16,7 +16,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="gameEndNew/bac-3.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="mjtips" ActionTag="-2129940526" Tag="115" IconVisible="False" LeftMargin="13.7783" RightMargin="1069.2217" TopMargin="215.0442" BottomMargin="446.9558" LeftEage="65" RightEage="65" TopEage="19" BottomEage="19" Scale9OriginX="65" Scale9OriginY="19" Scale9Width="67" Scale9Height="20" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="mjtips" ActionTag="-2129940526" Tag="115" IconVisible="False" LeftMargin="-237.4711" RightMargin="1320.4711" TopMargin="213.7424" BottomMargin="448.2576" LeftEage="65" RightEage="65" TopEage="19" BottomEage="19" Scale9OriginX="65" Scale9OriginY="19" Scale9Width="67" Scale9Height="20" ctype="ImageViewObjectData">
             <Size X="197.0000" Y="58.0000" />
             <Children>
               <AbstractNodeData Name="mjtx0" ActionTag="1099363115" Tag="78" IconVisible="False" RightMargin="97.0000" TopMargin="48.5000" BottomMargin="-119.5000" LeftEage="33" RightEage="33" TopEage="42" BottomEage="42" Scale9OriginX="33" Scale9OriginY="42" Scale9Width="34" Scale9Height="45" ctype="ImageViewObjectData">
@@ -357,10 +357,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="112.2783" Y="475.9558" />
+            <Position X="-138.9711" Y="477.2576" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0877" Y="0.6610" />
+            <PrePosition X="-0.1086" Y="0.6629" />
             <PreSize X="0.1539" Y="0.0806" />
             <FileData Type="Normal" Path="gameEndNew/ot-maima.png" Plist="" />
           </AbstractNodeData>
@@ -431,6 +431,21 @@
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
             <PressedFileData Type="Normal" Path="gameEndNew/btn_get_set_press.png" Plist="" />
             <NormalFileData Type="Normal" Path="gameEndNew/btn_get_set_normal.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="maima" ActionTag="1971528347" Tag="368" IconVisible="False" LeftMargin="45.7128" RightMargin="1115.2872" TopMargin="247.9641" BottomMargin="187.0359" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="89" Scale9Height="263" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="119.0000" Y="285.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="105.2128" Y="329.5359" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0822" Y="0.4577" />
+            <PreSize X="0.0930" Y="0.3958" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Normal" Path="gameEndNew/btn_mmjg.png" Plist="" />
+            <PressedFileData Type="Normal" Path="gameEndNew/btn_mmjg.png" Plist="" />
+            <NormalFileData Type="Normal" Path="gameEndNew/btn_mmjg.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -536,6 +551,16 @@
                         <PrePosition X="0.5102" Y="0.5592" />
                         <PreSize X="0.7551" Y="0.6579" />
                         <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="gui" ActionTag="971453391" Tag="586" IconVisible="False" LeftMargin="1.0000" RightMargin="-1.0000" TopMargin="-30.0000" BottomMargin="30.0000" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="50" Scale9Height="86" ctype="ImageViewObjectData">
+                        <Size X="98.0000" Y="152.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="50.0000" Y="106.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5102" Y="0.6974" />
+                        <PreSize X="1.0000" Y="1.0000" />
+                        <FileData Type="Normal" Path="MaJiangNew/gui.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -698,6 +723,16 @@
                         <PrePosition X="0.5102" Y="0.5592" />
                         <PreSize X="0.7551" Y="0.6579" />
                         <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="gui" ActionTag="1742112071" Tag="585" IconVisible="False" LeftMargin="1.0000" RightMargin="-1.0000" TopMargin="-30.0000" BottomMargin="30.0000" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="50" Scale9Height="86" ctype="ImageViewObjectData">
+                        <Size X="98.0000" Y="152.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="50.0000" Y="106.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5102" Y="0.6974" />
+                        <PreSize X="1.0000" Y="1.0000" />
+                        <FileData Type="Normal" Path="MaJiangNew/gui.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -871,6 +906,16 @@
                         <PreSize X="0.7551" Y="0.6579" />
                         <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
                       </AbstractNodeData>
+                      <AbstractNodeData Name="gui" ActionTag="740677837" Tag="584" IconVisible="False" LeftMargin="1.0000" RightMargin="-1.0000" TopMargin="-30.0000" BottomMargin="30.0000" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="50" Scale9Height="86" ctype="ImageViewObjectData">
+                        <Size X="98.0000" Y="152.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="50.0000" Y="106.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5102" Y="0.6974" />
+                        <PreSize X="1.0000" Y="1.0000" />
+                        <FileData Type="Normal" Path="MaJiangNew/gui.png" Plist="" />
+                      </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="205.0000" Y="24.0000" />
@@ -880,10 +925,10 @@
                     <PreSize X="0.7656" Y="1.2258" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="cardType" ActionTag="-1368140419" Tag="598" IconVisible="False" LeftMargin="228.3478" RightMargin="-500.3478" TopMargin="2.5005" BottomMargin="73.4995" IsCustomSize="True" FontSize="28" LabelText="清一色清一色清一色" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="cardType" ActionTag="-1368140419" Tag="598" IconVisible="False" LeftMargin="228.3478" RightMargin="-500.3478" TopMargin="2.5000" BottomMargin="73.5000" IsCustomSize="True" FontSize="28" LabelText="清一色清一色清一色" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="400.0000" Y="48.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="428.3478" Y="97.4995" />
+                    <Position X="428.3478" Y="97.5000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
                     <PrePosition X="3.3465" Y="0.7863" />
@@ -1042,6 +1087,16 @@
                         <PrePosition X="0.5102" Y="0.5592" />
                         <PreSize X="0.7551" Y="0.6579" />
                         <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="gui" ActionTag="1865209671" Tag="583" IconVisible="False" LeftMargin="1.0000" RightMargin="-1.0000" TopMargin="-30.0000" BottomMargin="30.0000" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="50" Scale9Height="86" ctype="ImageViewObjectData">
+                        <Size X="98.0000" Y="152.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="50.0000" Y="106.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5102" Y="0.6974" />
+                        <PreSize X="1.0000" Y="1.0000" />
+                        <FileData Type="Normal" Path="MaJiangNew/gui.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

@@ -1,4 +1,6 @@
 
+
+
 function changeLabelAtals(node,count)
 {
 	node.setString("" + count);

@@ -1,3 +1,5 @@
+
+
 function GameNet()
 {
 	var pomelo_ioError="io-error";

@@ -1,47 +1,3 @@
-// jsclient.config =
-// {
-//     geog:function ()
-//     {
-//         return  jsb.fileUtils.isFileExist("res/geog.txt");
-//     }
-// };
-
-//鬼牌特效
-function playAnimationByCard(cardNode)
-{
-    if(cardNode.getChildByTag(9104))
-    {
-        log("已经有鬼牌特效...");
-        return;
-    }
-
-    log("执行鬼牌特效...");
-    var animSpr = new cc.Sprite();
-    animSpr.name = "guiEff";
-    animSpr.setAnchorPoint(0,0);
-
-    // cardNode.stopAllActions();
-    cardNode.addChild(animSpr,999,9104);
-
-    var animation = new cc.Animation();
-    for(var i = 1;i<=6;i++){
-        var frame = cc.spriteFrameCache.getSpriteFrame("glint_00" + i + ".png");
-        animation.addSpriteFrame(frame);
-    }
-
-    animation.setDelayPerUnit(0.12);
-    animation.setRestoreOriginalFrame(true);
-    // var action = cc.animate(animation).repeatForever();
-    var action = cc.animate(animation);
-    animSpr.runAction(cc.repeatForever(cc.sequence(action, cc.delayTime(1.5))));
-
-}
-
-//翻鬼牌特效
-function playAnimationByFanGui(cardNode)
-{
-    
-}
 
 function stopEffect(id) {
     cc.audioEngine.stopEffect(id);
@@ -292,7 +248,9 @@ jsclient.joinGame = function (tableid) {
         });
 };
 
-jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7, canHuWith258, withZhong, horse, jjg, fanGui) {
+jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7,
+                                canHuWith258, withZhong, horse, jjg, fanGui, fanNum)
+{
     jsclient.block();
     jsclient.gamenet.request("pkplayer.handler.CreateVipTable", {
             gameType: gameType,
@@ -306,7 +264,8 @@ jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noB
             withZhong: withZhong,
             horse: horse,
             jiejieGao: jjg,
-            fanGui:fanGui
+            fanGui:fanGui,
+            fanNum:fanNum
         },
         function (rtn) {
             jsclient.unblock();
@@ -512,6 +471,7 @@ jsclient.netCallBack =
     getLinkZhuang: [0, function (d) {
         var sData = jsclient.data.sData;
         sData.tData = d.tData;
+
         if(sData.tData.gameType == 3){
             for (var uid in d.players) {
                 var pl = d.players[uid];
@@ -519,11 +479,26 @@ jsclient.netCallBack =
                 // cc.log("getLinkZhuang===============================================linkZhuang="+ pl.linkZhuang);
             }
         }
-        if(d.tData.fanGui){
+        if(d.tData.fanGui) {
             sData.tData.fanGui = d.tData.fanGui;
             sData.tData.gui = d.tData.gui;
             jsclient.majiang.gui = sData.tData.gui;
             console.log("翻出的鬼牌是===============================" + sData.tData.gui);
+        }
+        for (var uid in d.players) {
+            var pl = d.players[uid];
+            sData.players[uid].linkZhuang = pl.linkZhuang;
+            // cc.log("getLinkZhuang===============================================linkZhuang="+ pl.linkZhuang);
+            if(sData.tData.gameType == 4)
+            {
+                sData.players[uid].fengWei = pl.fengWei;
+                cc.log("此人===============================================uid="+ uid + "风位是：" + pl.fengWei);
+            }
+        }
+        if(sData.tData.gameType == 4)
+        {
+            sData.tData.jiPingHuCircleWind.curCircleWind = d.tData.jiPingHuCircleWind.curCircleWind;
+
         }
 
     }],
@@ -583,10 +558,10 @@ jsclient.netCallBack =
             case 2:
             {
                 pl.baojiu = d.baojiu;
-                if (pl.baojiu.num == 3) {
+                if (pl.baojiu && pl.baojiu.num == 3) {
                     console.log(pl.info.name + "报九");
                 }
-                if (pl.baojiu.num == 4) {
+                if (pl.baojiu && pl.baojiu.num == 4) {
                     console.log("被" + pl.baojiu.putCardPlayer[0] + "报九");
                 }
             }

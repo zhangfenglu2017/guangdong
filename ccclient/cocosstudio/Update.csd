@@ -16,13 +16,13 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="loading/bac_01.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="logo" ActionTag="1430267486" Tag="111" IconVisible="False" LeftMargin="233.1800" RightMargin="190.8201" TopMargin="36.0249" BottomMargin="402.9751" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="826" Scale9Height="251" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="logo" ActionTag="1430267486" Tag="111" IconVisible="False" LeftMargin="233.1801" RightMargin="190.8199" TopMargin="34.0248" BottomMargin="404.9752" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="826" Scale9Height="251" ctype="ImageViewObjectData">
             <Size X="856.0000" Y="281.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="661.1800" Y="543.4751" />
+            <Position X="661.1801" Y="545.4752" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5165" Y="0.7548" />
+            <PrePosition X="0.5165" Y="0.7576" />
             <PreSize X="0.6687" Y="0.3903" />
             <FileData Type="Normal" Path="loading/logo_01.png" Plist="" />
           </AbstractNodeData>

@@ -81,6 +81,21 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
+              <AbstractNodeData Name="jphmjtable" ActionTag="1725460833" Tag="121" IconVisible="False" LeftMargin="197.5000" RightMargin="877.5000" TopMargin="441.0000" BottomMargin="201.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="205.0000" Y="78.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="300.0000" Y="240.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.2344" Y="0.3333" />
+                <PreSize X="0.1602" Y="0.1083" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Normal" Path="createRoomNew/jp-yeqian_press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="createRoomNew/jp-yeqian_press.png" Plist="" />
+                <NormalFileData Type="Normal" Path="createRoomNew/jp-yeqian.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
               <AbstractNodeData Name="yes" ActionTag="-1129682195" Tag="30" IconVisible="False" LeftMargin="1134.5559" RightMargin="70.4441" TopMargin="-2.7343" BottomMargin="652.7343" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="45" Scale9Height="48" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="75.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5615" ScaleY="0.4424" />
