@@ -2,8 +2,8 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     var gameLog = [];
 
     function GLog(log) {
-
-        app.FileWork(gameLog, __dirname + "/log.txt", log)
+        return;
+        app.FileWork(gameLog, __dirname + "/log.txt", log);
     }
 
     console.error(app.serverId + " reload game code " + gameid);
@@ -1714,7 +1714,8 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             judgeType = 1;
                             isQiangGangHu = true;
                             //pi.mjdesc.push("抢杠胡");
-                            baseWin = maFan * 3 + 3 * 2;
+                            if(maFan == 1)  baseWin = 3*2;
+                            else baseWin = maFan * 3 + 3 * 2;
                             pi.baseWin = 3;
 
                         }
@@ -1729,7 +1730,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                         //var maFan = 1;
                         //var maCount = 0;
                         if (pi.winType == WinType.pickGang1 || pi.winType == WinType.pickGang23) {//点杠
-                            if (pj.uid != tData.uids[tData.lastPutPlayer])    continue;
+                            //if (pj.uid != tData.uids[tData.lastPutPlayer])    continue;
                             //baseWin = maFan * 3 +3*2;
                             //judgeType = 1;
                             //isGangShangHua = true;

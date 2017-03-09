@@ -1158,19 +1158,6 @@ function RestoreCardLayout(node, off, endonepl) {
             mjhandNum++;
         }
     }
-    
-    if(pl.mjhand){
-        pl.mjhand.sort(function(a,b){
-            if(jsclient.data.sData.tData.withZhong)
-            {
-                return b == 71;
-            }
-            if(jsclient.data.sData.tData.fanGui)
-            {
-                return b == jsclient.data.sData.tData.gui;
-            }
-        });
-    }
 
     if (pl.mjhand && pl.mjhand.length > 0)
     {
@@ -1181,8 +1168,33 @@ function RestoreCardLayout(node, off, endonepl) {
             if (pl.isNew || endonepl)
                 newVal = pl.mjhand[pl.mjhand.length - 1];
             else
-                newVal = pl.mjhand[pl.mjhand.length - 1];
-               // newVal = Math.max.apply(null, pl.mjhand);
+            {
+                var tempHand = [];
+                for (var i = 0; i < pl.mjhand.length; i++)
+                {
+                    tempHand.push(pl.mjhand[i]);
+                }
+
+
+                tempHand.sort(function(a,b){
+
+                    return a - b;
+                });
+
+                tempHand.sort(function(a,b){
+                    if(jsclient.data.sData.tData.withZhong)
+                    {
+                        return b == 71;
+                    }
+                    if(jsclient.data.sData.tData.fanGui)
+                    {
+                        return b == jsclient.data.sData.tData.gui;
+                    }
+                });
+
+                newVal = tempHand[tempHand.length - 1];
+                // newVal = Math.max.apply(null, pl.mjhand);
+            }
         }
     }
 
@@ -1273,18 +1285,18 @@ function RestoreCardLayout(node, off, endonepl) {
     }
 
     //给鬼牌加特效
-    if(jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
-    {
-        for(var z = 0; z< uistand.length; z++)
-        {
-            var guiCard = uistand[z];
-
-            if(guiCard.tag == guiTag)
-            {
-                playAnimationByCard(guiCard);
-            }
-        }
-    }
+    // if(jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+    // {
+    //     for(var z = 0; z< uistand.length; z++)
+    //     {
+    //         var guiCard = uistand[z];
+    //
+    //         if(guiCard.tag == guiTag)
+    //         {
+    //             playAnimationByCard(guiCard);
+    //         }
+    //     }
+    // }
 
     var uiOrder = [uigang1, uigang0, uipeng, uichi, uistand];
     if (off == 1 || off == 2)
@@ -2990,10 +3002,11 @@ var PlayLayer = cc.Layer.extend(
                             {
                                 //鬼牌重置为不显示，则会继续播放翻牌特效
 
-                                // jsclient.data.sData.tData.gui = 0;
-                                // resetEffectFangui(selfCard, selfCardBk);
                                 selfCard.visible = false;
                                 selfCardBk.visible = false;
+
+                                if(jsclient.data.sData.tData.withZhong)
+                                    selfCard.visible = true;
                             },
 
                             onlinePlayer: function (eD)
