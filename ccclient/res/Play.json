@@ -6665,13 +6665,13 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "play-yli/shenzhenmajiang.png",
+                  "Path": "play-yli/xianggangmajiang.png",
                   "Plist": ""
                 },
                 "Scale9OriginX": 30,
                 "Scale9OriginY": 9,
-                "Scale9Width": 140,
-                "Scale9Height": 38,
+                "Scale9Width": 144,
+                "Scale9Height": 33,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -6694,15 +6694,15 @@
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 547.3792,
-                "RightMargin": -747.3792,
-                "TopMargin": -519.0894,
-                "BottomMargin": 463.0894,
+                "LeftMargin": 545.3792,
+                "RightMargin": -749.3792,
+                "TopMargin": -516.5894,
+                "BottomMargin": 465.5894,
                 "Tag": 240,
                 "ActionTag": 899988602,
                 "Size": {
-                  "X": 200.0,
-                  "Y": 56.0
+                  "X": 204.0,
+                  "Y": 51.0
                 },
                 "Name": "shzhmj",
                 "ctype": "ImageViewObjectData"
@@ -14169,7 +14169,6 @@
         "play-yli/roundnumbg.png",
         "play-yli/sanfanqihu.png",
         "play-yli/sanrentuidaohu.png",
-        "play-yli/shenzhenmajiang.png",
         "play-yli/siGuiHu.png",
         "play-yli/siGuiHuJiaBei.png",
         "play-yli/t_chi.png",
@@ -14183,6 +14182,7 @@
         "play-yli/wufanqihu.png",
         "play-yli/wuGuiJiaBei.png",
         "play-yli/wuGuiJiaMa.png",
+        "play-yli/xianggangmajiang.png",
         "play-yli/yifanqihu.png",
         "play-yli/yixuanwanfa.png",
         "play-yli/youdahu.png",

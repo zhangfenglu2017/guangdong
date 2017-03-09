@@ -1638,15 +1638,15 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="play-yli/dgmj.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="shzhmj" ActionTag="-107072663" Tag="454" IconVisible="False" LeftMargin="547.3801" RightMargin="-747.3801" TopMargin="-459.0500" BottomMargin="403.0500" LeftEage="71" RightEage="71" TopEage="16" BottomEage="16" Scale9OriginX="71" Scale9OriginY="16" Scale9Width="58" Scale9Height="24" ctype="ImageViewObjectData">
-                <Size X="200.0000" Y="56.0000" />
+              <AbstractNodeData Name="shzhmj" ActionTag="-107072663" Tag="454" IconVisible="False" LeftMargin="545.3801" RightMargin="-749.3801" TopMargin="-456.5500" BottomMargin="405.5500" LeftEage="71" RightEage="71" TopEage="16" BottomEage="16" Scale9OriginX="71" Scale9OriginY="16" Scale9Width="62" Scale9Height="19" ctype="ImageViewObjectData">
+                <Size X="204.0000" Y="51.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="647.3801" Y="431.0500" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="play-yli/shenzhenmajiang.png" Plist="" />
+                <FileData Type="Normal" Path="play-yli/xianggangmajiang.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="jipinghu" ActionTag="252537583" Tag="455" IconVisible="False" LeftMargin="547.3801" RightMargin="-747.3801" TopMargin="-459.0500" BottomMargin="403.0500" LeftEage="71" RightEage="71" TopEage="16" BottomEage="16" Scale9OriginX="71" Scale9OriginY="16" Scale9Width="58" Scale9Height="24" ctype="ImageViewObjectData">
                 <Size X="200.0000" Y="56.0000" />

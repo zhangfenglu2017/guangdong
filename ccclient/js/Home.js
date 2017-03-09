@@ -118,7 +118,7 @@ function newPlayerAwardTimer (dt)
 function showNwePlayerGift() {
 
     //屏蔽新手礼包
-    if(jsclient.getGiftData() == null)
+    // if(jsclient.getGiftData() == null)
     {
         newPlayerAwardBtn.setVisible(false);
         return;
@@ -310,7 +310,7 @@ var HomeLayer=cc.Layer.extend(
             _run:function ()
             {
                 //屏蔽免费领钻
-                // this.visible = false;
+                this.visible = false;
             },
 
             _click:function()

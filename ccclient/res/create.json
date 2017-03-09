@@ -2083,7 +2083,7 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 4.4062,
+                          "X": 4.4063,
                           "Y": 0.6061
                         },
                         "PreSize": {
@@ -3374,7 +3374,7 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 4.2812,
+                          "X": 4.2813,
                           "Y": 0.6061
                         },
                         "PreSize": {
@@ -4383,7 +4383,7 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 4.2812,
+                          "X": 4.2813,
                           "Y": 0.6061
                         },
                         "PreSize": {
@@ -4894,7 +4894,7 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.5312,
+                          "X": 1.5313,
                           "Y": 0.6061
                         },
                         "PreSize": {
@@ -5682,7 +5682,7 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 4.2812,
+                          "X": 4.2813,
                           "Y": 0.6061
                         },
                         "PreSize": {
@@ -8444,7 +8444,7 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 4.2812,
+                          "X": 4.2813,
                           "Y": 0.6061
                         },
                         "PreSize": {
@@ -17358,7 +17358,7 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 4.4062,
+                          "X": 4.4063,
                           "Y": 0.6061
                         },
                         "PreSize": {
@@ -21465,17 +21465,17 @@
                     },
                     "DisabledFileData": {
                       "Type": "Normal",
-                      "Path": "createRoomNew/y_shenzhen_normal.png",
+                      "Path": "createRoomNew/y_xianggang_normal.png",
                       "Plist": ""
                     },
                     "PressedFileData": {
                       "Type": "Normal",
-                      "Path": "createRoomNew/y_shenzhen_normal.png",
+                      "Path": "createRoomNew/y_xianggang_normal.png",
                       "Plist": ""
                     },
                     "NormalFileData": {
                       "Type": "Normal",
-                      "Path": "createRoomNew/y_shenzhen_press.png",
+                      "Path": "createRoomNew/y_xianggang_press.png",
                       "Plist": ""
                     },
                     "Scale9Enable": true,
@@ -22260,8 +22260,8 @@
         "createRoomNew/y_huizhouzhuang_press.png",
         "createRoomNew/y_sanrentuidaohu_normal.png",
         "createRoomNew/y_sanrentuidaohu_press.png",
-        "createRoomNew/y_shenzhen_normal.png",
-        "createRoomNew/y_shenzhen_press.png",
+        "createRoomNew/y_xianggang_normal.png",
+        "createRoomNew/y_xianggang_press.png",
         "Default/Button_Disable.png",
         "Default/CheckBoxNode_Disable.png",
         "dissolveRoomNew/btn_confirm_press.png",

@@ -5750,7 +5750,7 @@ var PlayLayer = cc.Layer.extend(
                         else if (gameType == 2)
                             gameTypeTips = "【惠州庄麻将】";
                         else if (gameType == 3)
-                            gameTypeTips = "【深圳麻将】";
+                            gameTypeTips = "【香港麻将】";
                         else if (gameType == 4)
                         {
                             gameTypeTips = "【鸡平胡麻将】";

@@ -403,17 +403,17 @@
                     },
                     "DisabledFileData": {
                       "Type": "Normal",
-                      "Path": "createRoomNew/y_shenzhen_normal.png",
+                      "Path": "createRoomNew/y_xianggang_normal.png",
                       "Plist": ""
                     },
                     "PressedFileData": {
                       "Type": "Normal",
-                      "Path": "createRoomNew/y_shenzhen_normal.png",
+                      "Path": "createRoomNew/y_xianggang_normal.png",
                       "Plist": ""
                     },
                     "NormalFileData": {
                       "Type": "Normal",
-                      "Path": "createRoomNew/y_shenzhen_press.png",
+                      "Path": "createRoomNew/y_xianggang_press.png",
                       "Plist": ""
                     },
                     "Scale9Enable": true,
@@ -1046,8 +1046,8 @@
         "createRoomNew/y_huizhouzhuang_press.png",
         "createRoomNew/y_sanrentuidaohu_normal.png",
         "createRoomNew/y_sanrentuidaohu_press.png",
-        "createRoomNew/y_shenzhen_normal.png",
-        "createRoomNew/y_shenzhen_press.png",
+        "createRoomNew/y_xianggang_normal.png",
+        "createRoomNew/y_xianggang_press.png",
         "Default/Button_Disable.png",
         "gameEndNew/touming.png",
         "webview/Arrow.png",

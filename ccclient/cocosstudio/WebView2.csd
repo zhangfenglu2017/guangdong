@@ -78,9 +78,9 @@
                     <PrePosition X="0.4545" Y="0.4375" />
                     <PreSize X="0.9318" Y="0.1219" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="createRoomNew/y_shenzhen_normal.png" Plist="" />
-                    <PressedFileData Type="Normal" Path="createRoomNew/y_shenzhen_normal.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="createRoomNew/y_shenzhen_press.png" Plist="" />
+                    <DisabledFileData Type="Normal" Path="createRoomNew/y_xianggang_normal.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="createRoomNew/y_xianggang_normal.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="createRoomNew/y_xianggang_press.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>

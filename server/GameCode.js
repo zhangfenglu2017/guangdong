@@ -4989,11 +4989,13 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             random =  Math.floor(Math.random() * other.length);
         }
 
+
        if( majiang.canHu(!td.canHu7, cds, other[random], false, false,td.fanGui,td.gui,td.gui4Hu,td.nextgui) <= 0)
        {
-           GLog("random="+ random);
+           GLog("random=============="+ random);
            return false;
        }
+        GLog("random="+ random + "-------------用来胡的那个牌："+ other[random]);
 
         return true;
     }
