@@ -379,6 +379,21 @@ var testCds=
 		return rtn;
 	}
 
+	majiang.isHuWithHongZhong = function(pl){
+		var test = [pl.mjhand, pl.mjpeng, pl.mjgang0, pl.mjgang1, pl.mjchi];
+		var noHongCount = 0;
+		for(var i = 0;i<test.length;i++){
+			var cds = test[i];
+			if (cds.indexOf(71) == -1 ) {
+				noHongCount++;
+			}
+		}
+		if(noHongCount >= test.length){
+			// console.log("不含红中");
+			return false;
+		}else return true;
+	}
+
 	majiang.HunYiSe = function (pl) {
 		var test = [pl.mjhand, pl.mjpeng, pl.mjgang0, pl.mjgang1, pl.mjchi];
 		var errorCount = 0;
@@ -426,7 +441,7 @@ var testCds=
 				if( pl.mjMa[i] == pl.left4Ma[j]) counts++;
 			}
 		}
-		return counts;//0 1 2 3
+		return counts;//0 1 2 3 4
 	}
 
 
@@ -842,6 +857,24 @@ function canMath12(cds,i)
 		}
 		return false;
 	}
+
+	function is4HongZhong(cds,cd)
+	{
+		var tmp=[];   for(var i=0;i<cds.length;i++) tmp.push(cds[i]);
+		if(cd) tmp.push(cd); cds=tmp;
+		cds.sort(function(a,b){return a-b});
+		var count = 0;
+		for(var i =0;i<cds.length;i++){
+			//console.log(cds[i]);
+			if(cds[i]==71){
+				count++;
+			}
+		}
+		//console.log("count==="+count);
+		if(count == 4) return true;
+		return false;
+	}
+
 	function can_7_Hu(cds,cd,with258,withHun){
 		var tmp=[];   for(var i=0;i<cds.length;i++) tmp.push(cds[i]);
 		if(cd) tmp.push(cd); cds=tmp;
@@ -901,11 +934,16 @@ function canMath12(cds,i)
 	//癞子胡法
 	function canHunHu (no7,cds,cd,with258,withHun) {
 
+		//摸到4个红中 胡
+		//for(var i=0;i<cds.length;i++){
+		//	console.log("cds["+i+"]========" + cds[i]);
+		//}
+		if(is4HongZhong(cds,cd)) return 100;
 		//首先执行能否胡7对
 		if(!no7){
 			var isHu7 = can_7_Hu(cds,cd,with258,withHun);
 			if(isHu7)
-				return 100;
+				return 7;
 		}
 		//分牌，按类型：条，筒，万，红中，1,2,3,5
 		//1.初始化

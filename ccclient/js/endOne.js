@@ -390,7 +390,7 @@ function DelRoomTime(node)
 
 })();
 
-//判断显示不显示买马
+//判断显示不显示买马  有人赢 才显示
 function checkShowMa()
 {
     var show = false;
@@ -403,7 +403,6 @@ function checkShowMa()
             show = true;
             break;
         }
-
     }
 
     return show;
@@ -412,7 +411,6 @@ function checkShowMa()
 //判断中马没有
 function checkMjMa(off)
 {
-
     var pl = null;
     for (var i = 0; i < 4; i++)
     {
@@ -429,6 +427,9 @@ function checkMjMa(off)
     var mjMa = pl.mjMa;
     var mj = pl.left4Ma[off];
 
+    if(mj == null)
+        return false;
+
     for(var i = 0; i<mjMa.length; i++)
     {
         if(pl.mjMa[i] == mj)
@@ -444,10 +445,16 @@ function setMjMa(node, off)
     var pl = getUIPlayer(0);
     var cd = pl.left4Ma[off];
     if(cd != null)
+    {
         setCardPic(node, cd);
+        return true
+    }
+
+    return false
 }
 
 //单次结算
+var mjzz1,mjzz2,mjzz3,mjzz4,mjzz5,mjzz6,mjzz7,mjzz8;
 var EndOneLayer = cc.Layer.extend(
 {
     jsBind:
@@ -459,7 +466,7 @@ var EndOneLayer = cc.Layer.extend(
 
         mjtips:
         {
-            _layout: [[0.15, 0.15], [0.06, 0.6], [0, 0]],
+            _layout: [[0.15, 0.15], [0.08, 0.75], [0, 0]],
 
             _visible: function ()
             {
@@ -494,12 +501,41 @@ var EndOneLayer = cc.Layer.extend(
                     return checkMjMa(3)
                 }
             },
+            mjtx4:
+            {
+                _visible:function ()
+                {
+                    return checkMjMa(4)
+                }
+            },
+            mjtx5:
+            {
+                _visible:function ()
+                {
+                    return checkMjMa(5)
+                }
+            },
+            mjtx6:
+            {
+                _visible:function ()
+                {
+                    return checkMjMa(6)
+                }
+            },
+            mjtx7:
+            {
+                _visible:function ()
+                {
+                    return checkMjMa(7)
+                }
+            },
 
             mjbk1:
             {
                 _run:function ()
                 {
-                    setMjMa(this, 0);
+                    var show = setMjMa(this, 0);
+                    this.setVisible(show);
                 }
             },
 
@@ -507,7 +543,8 @@ var EndOneLayer = cc.Layer.extend(
             {
                 _run:function ()
                 {
-                    setMjMa(this, 1);
+                    var show = setMjMa(this, 1);
+                    this.setVisible(show);
                 }
             },
 
@@ -515,7 +552,8 @@ var EndOneLayer = cc.Layer.extend(
             {
                 _run:function ()
                 {
-                    setMjMa(this, 2);
+                    var show = setMjMa(this, 2);
+                    this.setVisible(show);
                 }
             },
 
@@ -523,7 +561,40 @@ var EndOneLayer = cc.Layer.extend(
             {
                 _run:function ()
                 {
-                    setMjMa(this, 3);
+                    var show = setMjMa(this, 3);
+                    this.setVisible(show);
+                }
+            },
+            mjbk5:
+            {
+                _run:function ()
+                {
+                    var show = setMjMa(this, 4);
+                    this.setVisible(show);
+                }
+            },
+            mjbk6:
+            {
+                _run:function ()
+                {
+                    var show = setMjMa(this, 5);
+                    this.setVisible(show);
+                }
+            },
+            mjbk7:
+            {
+                _run:function ()
+                {
+                    var show = setMjMa(this, 6);
+                    this.setVisible(show);
+                }
+            },
+            mjbk8:
+            {
+                _run:function ()
+                {
+                    var show = setMjMa(this, 7);
+                    this.setVisible(show);
                 }
             },
 
@@ -531,6 +602,12 @@ var EndOneLayer = cc.Layer.extend(
             {
                 _visible:function ()
                 {
+                    var pl = getUIPlayer(0);
+                    var cd = pl.left4Ma[0];
+
+                    if(cd == null)
+                        return false;
+
                     return !checkMjMa(0);
                 }
             },
@@ -538,6 +615,12 @@ var EndOneLayer = cc.Layer.extend(
             {
                 _visible:function ()
                 {
+                    var pl = getUIPlayer(0);
+                    var cd = pl.left4Ma[1];
+
+                    if(cd == null)
+                        return false;
+
                     return !checkMjMa(1);
                 }
             },
@@ -545,6 +628,12 @@ var EndOneLayer = cc.Layer.extend(
             {
                 _visible:function ()
                 {
+                    var pl = getUIPlayer(0);
+                    var cd = pl.left4Ma[2];
+
+                    if(cd == null)
+                        return false;
+
                     return !checkMjMa(2);
                 }
             },
@@ -552,7 +641,65 @@ var EndOneLayer = cc.Layer.extend(
             {
                 _visible:function ()
                 {
+                    var pl = getUIPlayer(0);
+                    var cd = pl.left4Ma[3];
+
+                    if(cd == null)
+                        return false;
+
                     return !checkMjMa(3);
+                }
+            },
+            mjzz5:
+            {
+                _visible:function ()
+                {
+                    var pl = getUIPlayer(0);
+                    var cd = pl.left4Ma[4];
+
+                    if(cd == null)
+                        return false;
+
+                    return !checkMjMa(4);
+                }
+            },
+            mjzz6:
+            {
+                _visible:function ()
+                {
+                    var pl = getUIPlayer(0);
+                    var cd = pl.left4Ma[5];
+
+                    if(cd == null)
+                        return false;
+
+                    return !checkMjMa(5);
+                }
+            },
+            mjzz7:
+            {
+                _visible:function ()
+                {
+                    var pl = getUIPlayer(0);
+                    var cd = pl.left4Ma[6];
+
+                    if(cd == null)
+                        return false;
+
+                    return !checkMjMa(6);
+                }
+            },
+            mjzz8:
+            {
+                _visible:function ()
+                {
+                    var pl = getUIPlayer(0);
+                    var cd = pl.left4Ma[7];
+
+                    if(cd == null)
+                        return false;
+
+                    return !checkMjMa(7);
                 }
             },
 

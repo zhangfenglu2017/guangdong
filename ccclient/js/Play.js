@@ -1,4 +1,5 @@
-var TableState={
+var TableState =
+{
 	waitJoin:1,
 	waitReady:2,
 	waitPut:3,
@@ -6,9 +7,11 @@ var TableState={
 	waitCard:5,
 	roundFinish:6,
 	isReady:7
-}
+};
 
-var ActionType={//图片提示
+//图片提示
+var ActionType =
+{
 	CHI:1,
 	PENG:2,
 	GANG:3,
@@ -16,14 +19,19 @@ var ActionType={//图片提示
 	HU:5,
 	GUO:6
 };
+
 function ShowEatActionAnim(node,actType,off)
 {
-	if(off==0)return;
- 	var eatNode=node.getChildByName("effectStateAct");
-	var childActionNode;
-	var callback=function () {
+	if(off==0)
+        return;
+
+ 	var eatNode = node.getChildByName("effectStateAct");
+	var childActionNode = null;
+	var callback=function ()
+    {
 		childActionNode.visible=false;
-	}
+	};
+
 	switch(actType)
 	{
 		case ActionType.CHI:
@@ -41,19 +49,19 @@ function ShowEatActionAnim(node,actType,off)
 			childActionNode.visible=true;
 			childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
 			break;
-		// case ActionType.LIANG:
-		// 	childActionNode=eatNode.getChildByName("ef_chi");
-		// 	;
+		case ActionType.LIANG:
+			// childActionNode=eatNode.getChildByName("ef_chi");;
 		case ActionType.HU:
 			childActionNode=eatNode.getChildByName("ef_hu");
 			childActionNode.visible=true;
 			childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
 			break;
 		default:
-				break;
+            break;
 	}
 
 }
+
 function SelfUid()
 {
     return jsclient.data.pinfo.uid
@@ -65,52 +73,55 @@ function IsMyTurn()
 	var tData=sData.tData;
 	return SelfUid() == tData.uids[tData.curPlayer];
 }
+
 function PutAwayCard(cdui,cd)
 {
-	var children=cdui.parent.children;
-	var mjhandNum=0;
-	//var newCard;
-	var standUI=cdui.parent.getChildByName("stand");
+	var children = cdui.parent.children;
+	var mjhandNum = 0;
+	var standUI = cdui.parent.getChildByName("stand");
 	for (var i = 0; i < children.length; i++) 
 	{
 		if(children[i].name=="mjhand") 
 		{
-			/*if (children[i].isnewCard) 
-			{
-				newCard=children[i];
-			}*/
-			
-			if(children[i].y > standUI.y+10)
-					children[i].y = standUI.y;
+			if(children[i].y > standUI.y + 10)
+                children[i].y = standUI.y;
 			mjhandNum++;
 		}	
     }
+
 	var pl=getUIPlayer(0);
-	if(mjhandNum==pl.mjhand.length)
+	if(mjhandNum == pl.mjhand.length)
 	{
 		jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"MJPut",card:cd});
 		jsclient.lastPutPos={x:cdui.x,y:cdui.y};
 		//if(newCard) newCard.isnewCard=false;
-	    HandleMJPut(cdui.parent,{uid:SelfUid(), card:cd},0);	
-		
+	    HandleMJPut(cdui.parent,{uid:SelfUid(), card:cd},0);
 	}
-	
-
 }
 
 
 function getEatFlag()
 {
-	var eat=jsclient.playui.jsBind.eat;
+	var eat = jsclient.playui.jsBind.eat;
 	var eatFlag = 0;
-	if (eat.gang0._node.visible)eatFlag=eatFlag+4  ;
- 	if(eat.hu._node.visible)eatFlag=eatFlag+8 ;
-	if(eat.chi0._node.visible)eatFlag=eatFlag+1;
-	if(eat.peng._node.visible)eatFlag=eatFlag+2 ; 
-	mylog("eatFlag"+eatFlag)
+
+	if (eat.gang0._node.visible)
+        eatFlag=eatFlag+4  ;
+
+ 	if(eat.hu._node.visible)
+        eatFlag=eatFlag+8 ;
+
+	if(eat.chi0._node.visible)
+        eatFlag=eatFlag+1;
+
+	if(eat.peng._node.visible)
+        eatFlag=eatFlag+2 ;
+
 	return eatFlag;
 }
-jsclient.MJPass2Net=function()
+
+//过胡
+jsclient.MJPass2Net = function()
 {
 	var sData=jsclient.data.sData;
 	var tData=sData.tData;
@@ -120,48 +131,50 @@ jsclient.MJPass2Net=function()
 		var msg="确认过";
 		if(eat.gang0._node.visible) msg+=" 杠 ";
 		if(eat.hu._node.visible)    msg+=" 胡 ";
-		jsclient.showMsg(msg+"吗?",function(){
+		jsclient.showMsg(msg+"吗?",function()
+        {
 			eat.gang0._node.visible=false;
 			eat.hu._node.visible=false;
 			eat.guo._node.visible=false;
 		},function(){},"1");
-		
-		/*
-		var cduis=jsclient.playui.jsBind.down._node.children;
-		var pl=jsclient.data.sData.players[SelfUid()];
-		var lastCard=pl.mjhand[pl.mjhand.length-1];
-		for(var i=cduis.length-1;i>=0;i--)
-		{
-			if(cduis[i].tag==lastCard)
-			{
-				PutAwayCard(cduis[i],lastCard);
-				break;
-			}
-		}*/
 	}
 	else
 	{
 		if(jsclient.playui.jsBind.eat.hu._node.visible)
-		{
 			jsclient.showMsg("确认不胡吗?",ConfirmMJPass,function(){},"1");
-		}
-		else ConfirmMJPass();
+		else
+            ConfirmMJPass();
 	}
 }
-function MJGang2Net(cd){jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"MJGang",card:cd,eatFlag:getEatFlag()}); }
-function MJChi2Net(pos){jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"MJChi",pos:pos,eatFlag:getEatFlag()}); }
-function MJHu2Net(){jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"MJHu",eatFlag:getEatFlag()}); }
-function MJPeng2Net(){jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"MJPeng",eatFlag:getEatFlag()}); }
+
+function MJGang2Net(cd)
+{
+    jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"MJGang",card:cd,eatFlag:getEatFlag()});
+}
+
+function MJChi2Net(pos)
+{
+    jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"MJChi",pos:pos,eatFlag:getEatFlag()});
+}
+
+function MJHu2Net()
+{
+    jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"MJHu",eatFlag:getEatFlag()});
+}
+
+function MJPeng2Net()
+{
+    jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"MJPeng",eatFlag:getEatFlag()});
+}
+
 function ConfirmMJPass()
 {
-		var pl=getUIPlayer(0);
-		if(jsclient.playui.jsBind.eat.hu._node.visible)
-		{
-			pl.skipHu=true;
-		}
-		jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"MJPass",eatFlag:getEatFlag()});
-		//pl.mjState=TableState.waitCard;	CheckEatVisible(jsclient.playui.jsBind.eat); 
-	
+    var pl=getUIPlayer(0);
+    if(jsclient.playui.jsBind.eat.hu._node.visible)
+    {
+        pl.skipHu=true;
+    }
+    jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"MJPass",eatFlag:getEatFlag()});
 }
 
 function ShowMjChiCard(node, off)
@@ -181,7 +194,8 @@ function ShowMjChiCard(node, off)
 		setCardPic(card2,tData.lastPut+1,0);
 		setCardPic(card3,tData.lastPut+2,0);
 
-	}else if (off==1)
+	}
+    else if (off == 1)
 	{
 		var card1 = node.getChildByName("card4");
 		var card2 = node.getChildByName("card5");
@@ -192,7 +206,8 @@ function ShowMjChiCard(node, off)
 		setCardPic(card1,tData.lastPut-1,0);
 		setCardPic(card2,tData.lastPut,0);
 		setCardPic(card3,tData.lastPut+1,0);
-	}else if (off==2)
+	}
+    else if (off == 2)
 	{
 		var card1 = node.getChildByName("card7");
 		var card2 = node.getChildByName("card8");
@@ -204,13 +219,13 @@ function ShowMjChiCard(node, off)
 		setCardPic(card2,tData.lastPut-1,0);
 		setCardPic(card3,tData.lastPut,0);
 	}
-
-
 }
+
 function CheckChangeuiVisible()
 {
 	jsclient.playui.jsBind.eat.changeui.changeuibg._node.visible = false;
 }
+
 function ShowSkipHu()
 {
 	var jsonui = ccs.load("res/SkipHu.json");
@@ -219,11 +234,10 @@ function ShowSkipHu()
 	jsonui.node.runAction(cc.sequence(cc.delayTime(2),cc.removeSelf()));
 }
 
+//
 function CheckEatVisible(eat)
 {
-	
 	CheckChangeuiVisible();
-	var eatNode=eat._node;
 	var sData=jsclient.data.sData;
 	var tData=sData.tData;
 	var leftCard=(tData.withWind?136:108)-tData.cardNext;
@@ -237,23 +251,23 @@ function CheckEatVisible(eat)
 	eat.hu._node.visible=false;
 	eat.guo._node.visible=false;
 	var pl=sData.players[SelfUid()+""];
-	if(  
-	       pl.mjState==TableState.waitEat
-		|| pl.mjState==TableState.waitPut&&tData.uids[tData.curPlayer]==SelfUid() 
-	  ) {
-		  
+	if(pl.mjState==TableState.waitEat || pl.mjState==TableState.waitPut&&tData.uids[tData.curPlayer]==SelfUid())
+    {
+
 	 }
-	 else return;
+	 else
+        return;
 
 	jsclient.gangCards = [];
 	jsclient.eatpos = [];
 	var mj=jsclient.majiang;
 	var vnode=[];
 	//gang hu put
-    if(tData.tState==TableState.waitPut&&pl.mjState==TableState.waitPut) {
-		if(IsMyTurn()) {
-			if(pl.isNew && mj.canHu(!tData.canHu7,pl.mjhand,0,
-					tData.canHuWith258,tData.withZhong)>0)
+    if(tData.tState==TableState.waitPut&&pl.mjState==TableState.waitPut)
+    {
+		if(IsMyTurn())
+        {
+			if(pl.isNew && mj.canHu(!tData.canHu7,pl.mjhand,0,tData.canHuWith258,tData.withZhong)>0)
 			 {
 				 vnode.push(eat.hu._node);
 			 }
@@ -272,19 +286,16 @@ function CheckEatVisible(eat)
 			 		eat.gang0.card1._node.visible =false;
 			 	}
 			 	vnode.push(eat.gang0._node);
-				 /*var gang=[eat.gang0,eat.gang1,eat.gang2];
-				 for(var i=0;i<rtn.length&&i<gang.length;i++)
-				 {
-					 vnode.push(gang[i]._node);
-					 setCardPic(gang[i].card._node,rtn[i],4);
-					 gang[i]._node.tag=rtn[i];
-				 }*/
 			 }
-			 if(vnode.length>0)   vnode.push(eat.guo._node);
+
+			 if(vnode.length>0)
+                 vnode.push(eat.guo._node);
 		}
 	}
-    else if(tData.tState==TableState.waitEat) {
-		if(!IsMyTurn()) {
+    else if(tData.tState==TableState.waitEat)
+    {
+		if(!IsMyTurn())
+        {
             var huType=mj.canHu(!tData.canHu7,pl.mjhand,tData.lastPut,
 				tData.canHuWith258,tData.withZhong);
 			if(huType>0)
@@ -296,26 +307,27 @@ function CheckEatVisible(eat)
 				}
 				else if(tData.putType>0&&tData.putType<4)
 				{
-					    if(tData.canEatHu)
-						{
-							if(tData.putType!=3||huType==13)
-							{
-								canHu=true;
-							}
-						}
-						else
-						{
-							if( tData.putType!=3||huType==13) 
-							{
-						        canHu=true;   	
-							}
-						}
-					
+                    if(tData.canEatHu)
+                    {
+                        if(tData.putType!=3||huType==13)
+                        {
+                            canHu=true;
+                        }
+                    }
+                    else
+                    {
+                        if( tData.putType!=3||huType==13)
+                        {
+                            canHu=true;
+                        }
+                    }
 				}
 				if(canHu) 
 				{
-					if(pl.skipHu) ShowSkipHu();
-					else vnode.push(eat.hu._node);
+					if(pl.skipHu)
+                        ShowSkipHu();
+					else
+                        vnode.push(eat.hu._node);
 				}
 			}
 
@@ -329,80 +341,34 @@ function CheckEatVisible(eat)
 					eat.gang0.bgground.visible =true;
 			 		eat.gang0.card1._node.visible =true;
 			 		setCardPic(eat.gang0.card1._node,jsclient.gangCards[0],0);
-					/*setCardPic(eat.gang0.card._node,tData.lastPut,4);
-					eat.gang0._node.tag=tData.lastPut;*/
 				}
 				if((leftCard>4||tData.noBigWin)&&mj.canPeng(pl.mjhand,tData.lastPut))
 				{
 					vnode.push(eat.peng._node);
 				}
 
-                 
 				if((leftCard>4||tData.noBigWin)&&tData.canEat && tData.uids[(tData.curPlayer+1)%4]==SelfUid())
 				{
-					
 					var eatpos=mj.canChi(pl.mjhand,tData.lastPut);
-                    
-					
+
 					jsclient.eatpos = eatpos;
 					
 					if(eatpos.length>0)
 					{
 						 vnode.push(eat.chi0._node);
 					}
-					/*if (jsclient.eatpos.length ==1) 
-					{
-						eat.chi0.bgground._node.visible = true;
-						var card1 = eat.chi0.card1._node;
-						var card2 = eat.chi0.card2._node;
-						var card3 = eat.chi0.card3._node;
-						card1.visible =false;
-						card2.visible =false;
-						card3.visible =false;
-						if (jsclient.eatpos[0] == 0) 
-						{
-							setCardPic(card1,tData.lastPut,0);
-							setCardPic(card2,tData.lastPut+1,0);
-							setCardPic(card3,tData.lastPut+2,0);
-						}else if(jsclient.eatpos[0] == 1)
-						{
-							setCardPic(card1,tData.lastPut-1,0);
-							setCardPic(card2,tData.lastPut,0);
-							setCardPic(card3,tData.lastPut+1,0);
-						}else if(jsclient.eatpos[0] == 2)
-						{
-							setCardPic(card1,tData.lastPut-2,0);
-							setCardPic(card2,tData.lastPut-1,0);
-							setCardPic(card3,tData.lastPut,0);
-						}
-					}else
-					{
-						eat.chi0.bgground._node.visible = false;
-						eat.chi0.card1._node.visible =false;
-						eat.chi0.card2._node.visible =false;
-						eat.chi0.card3._node.visible =false;
-					}*/
-					/*var eatbtn=[eat.chi0._node,eat.chi1._node,eat.chi2._node];
-					for(var i=0;i<eatpos.length;i++)
-					{
-						 vnode.push(eatbtn[i]);
-						 eatbtn[i].tag=eatpos[i];
-						 ShowMjChiCard(eatbtn[i],eatpos[i]);
-					}	*/			
 				}
-
-
-	
-
 			}
-			
-			
-			if(vnode.length>0)   vnode.push(eat.guo._node);
-			else  getUIPlayer(0).mjState=TableState.waitCard;
+
+			if(vnode.length>0)
+                vnode.push(eat.guo._node);
+			else
+                getUIPlayer(0).mjState=TableState.waitCard;
 		}
 	}
 	
-	var btnImgs={
+	var btnImgs=
+    {
 		"peng":["res/play-yli/btn_peng_normal.png","res/play-yli/btn_peng_press.png"],
 		"gang0":["res/play-yli/btn_gang_normal.png","res/play-yli/btn_gang_press.png"],
 		"chi0":["res/play-yli/btn_chi_normal.png","res/png/play-yli/btn_chi_press.png"],
@@ -465,9 +431,7 @@ function CheckEatVisible(eat)
 
 function SetPlayerVisible(node,off)
 {
-	var sData=jsclient.data.sData;
 	var pl=getUIPlayer(off);
-
 	var head = node.getChildByName("head");
 	var name= head.getChildByName("name");
 	var moneybk= head.getChildByName("moneybk");
@@ -505,6 +469,7 @@ function SetPlayerVisible(node,off)
 
 	}
 }
+
 function CheckInviteVisible()
 {
 	var sData=jsclient.data.sData;
@@ -518,16 +483,13 @@ function CheckInviteVisible()
 		return false;
 	}
 }
+
 function CheckArrowVisible()
 {
 	var sData=jsclient.data.sData;
 	var tData=sData.tData;
-	
-	//mylog("CheckArrowVisible "+tData.tState);
-	if(    TableState.waitPut==tData.tState
-	    || TableState.waitEat==tData.tState
-	    || TableState.waitCard==tData.tState
-	)
+
+	if(TableState.waitPut==tData.tState || TableState.waitEat==tData.tState || TableState.waitCard==tData.tState)
 	{
 		return true;
 	}
@@ -536,6 +498,7 @@ function CheckArrowVisible()
 		return false;
 	}
 }
+
 function clearCardUI(node)
 {
 	mylog("clearCardUI");
@@ -550,21 +513,13 @@ function clearCardUI(node)
 		}
 	}
 }
+
 function HandleNewCard(node,msg,off)
 {
-	/*
-	 *去除过期的newcard 标签
-	 *
-	 for (var i = 0; i < node.children.length; i++) {
-	 	if (node.children[i].isnewCard) 
-	 	{
-	 		node.children[i].isnewCard = false;
-	 	}
-	 	
-	 }*/
 	AddNewCard(node,"stand","mjhand",msg,off);
 	RestoreCardLayout(node,0);
 }
+
 function HandleWaitPut(node,msg,off)
 {
 	var sData=jsclient.data.sData;
@@ -573,10 +528,11 @@ function HandleWaitPut(node,msg,off)
 	var selfIndex=(uids.indexOf(SelfUid())+off)%4;
 	if( tData.curPlayer==selfIndex)
 	{
-		AddNewCard(node,"stand","standPri");
+		AddNewCard(node,"stand","standPri",0,off);
 		RestoreCardLayout(node,off);
 	}
 }
+
 function HandleMJChi(node,msg,off)
 {
 	var sData=jsclient.data.sData;
@@ -596,17 +552,19 @@ function HandleMJChi(node,msg,off)
 		{
 			AddNewCard(node,"up","chi",cds[i],off);
 			if(off==0 && cds[i]!=tData.lastPut)
-			  RemoveBackNode(node,"mjhand",1,cds[i]);	
+                RemoveBackNode(node,"mjhand",1,cds[i]);
 		}
 		//删掉俩张stand
-		if(off==3)      RemoveBackNode(node,"standPri",2);
-		else if(off!=0) RemoveFrontNode(node,"standPri",2);
+		if(off==3)
+            RemoveBackNode(node,"standPri",2);
+		else if(off!=0)
+            RemoveFrontNode(node,"standPri",2);
 
 		RestoreCardLayout(node,off);
 		RestoreCardLayout(fnode,fromOff[0]);
-
 	}
 }
+
 function HandleMJPeng(node,msg,off)
 {
 	mylog("off:"+off+"---msg:"+msg);
@@ -626,13 +584,15 @@ function HandleMJPeng(node,msg,off)
 			AddNewCard(node,"up","peng",tData.lastPut,off);
 		}
 		//删掉俩张stand
-		if(off==0)	RemoveBackNode(node,"mjhand",2,tData.lastPut);
-		else if(off==3) RemoveBackNode(node,"standPri",2);
-		else RemoveFrontNode(node,"standPri",2);
+		if(off==0)
+            RemoveBackNode(node,"mjhand",2,tData.lastPut);
+		else if(off==3)
+            RemoveBackNode(node,"standPri",2);
+		else
+            RemoveFrontNode(node,"standPri",2);
 
 		RestoreCardLayout(node,off);
 		RestoreCardLayout(fnode,fromOff[0]);
-
 	}
 }
 function RemoveFrontNode(node,name,num,tag)
@@ -655,21 +615,21 @@ function RemoveFrontNode(node,name,num,tag)
 	if(num!=0) mylog(node.name+" RemoveFrontNode fail "+name+" "+tag);
 }
 
-
 function RemoveNewOutCard(node)
 {
 	var children=node.children;
-	for (var i = 0; i < children.length; i++) {
-	var ci=children[i];
-	if (ci.name == "newout") 
-	{
-		ci.removeFromParent(true);
-	}
+	for (var i = 0; i < children.length; i++)
+    {
+        var ci=children[i];
+        if (ci.name == "newout")
+        {
+            ci.removeFromParent(true);
+        }
 	}
 }
+
 function RemoveBackNode(node,name,num,tag)
 {
-
 	var children =node.children;
 	for(var i=children.length-1;i>=0&&num>0;i--)
 	{
@@ -680,7 +640,8 @@ function RemoveBackNode(node,name,num,tag)
 			num--;
 		}
 	}
-	if(num!=0) mylog(node.name+" RemoveBackNode fail "+name+" "+tag);
+	if(num!=0)
+        mylog(node.name+" RemoveBackNode fail "+name+" "+tag);
 }
 
 //父节点  需要克隆的子节点  子节点的新名字  值
@@ -691,14 +652,16 @@ function AddNewCard(node,copy,name,tag,off,specialTAG)
 	cp.visible = true;
     cp.name = name;
 
+    if(copy == "stand" && off == 1)
+    {
+        cp.setFlippedX(true)
+    }
+
     if(specialTAG == "isgang4")
 	{
 		cp.isgang4 = true;
 	}
-    /*else if(specialTAG == "newCard")
-	{
-		cp.isnewCard = true;
-	}*/
+
 	node.addChild(cp);
 	if(tag > 0)
 	{
@@ -719,14 +682,17 @@ function GetUIBind(uidPos,offStore)
 	var uids=tData.uids;
 	var selfIndex=uids.indexOf(SelfUid());
 	var uiOff=(uidPos+4-selfIndex)%4;
-	if(offStore) offStore.push(uiOff);
+
+	if(offStore)
+        offStore.push(uiOff);
+
 	var jsBind=jsclient.playui.jsBind;
 	var ui=[jsBind.down,jsBind.right,jsBind.top,jsBind.left];
 	return ui[uiOff];
 }
+
 function HandleMJGang(node,msg,off)
 {
-	
 	var sData=jsclient.data.sData;
 	var tData=sData.tData;
 	var uids=tData.uids;
@@ -739,17 +705,20 @@ function HandleMJGang(node,msg,off)
 		var fromBind=GetUIBind(msg.from,fromOff);
 		var fnode=fromBind._node;
 		RemoveNewOutCard(fnode);
-		if(off==0)	    RemoveBackNode(node,"mjhand",3,msg.card);
+		if(off==0)
+            RemoveBackNode(node,"mjhand",3,msg.card);
 		RestoreCardLayout(fnode,fromOff[0]);
 	}
 	else if(msg.gang==2)
 	{
 		RemoveBackNode(node,"peng",3,msg.card);
-		if(off==0)	RemoveBackNode(node,"mjhand",1,msg.card);
+		if(off==0)
+            RemoveBackNode(node,"mjhand",1,msg.card);
 	}
 	else if(msg.gang==3)
 	{
-		if(off==0) RemoveBackNode(node,"mjhand",4,msg.card);
+		if(off==0)
+            RemoveBackNode(node,"mjhand",4,msg.card);
 	}
 	if(off!=0)
 	{
@@ -757,40 +726,43 @@ function HandleMJGang(node,msg,off)
 		{
 			if (msg.gang == 1)
 			{
-			var fromOff=[];
-			var fromBind=GetUIBind(msg.from,fromOff);
-			var fnode=fromBind._node;
-				ShowEatActionAnim(node,ActionType.GANG,off);
-			RemoveNewOutCard(fnode);
-				RemoveBackNode(node,"standPri",3);
-			}else if (msg.gang == 2)
+                var fromOff=[];
+                var fromBind=GetUIBind(msg.from,fromOff);
+                var fnode=fromBind._node;
+                ShowEatActionAnim(node,ActionType.GANG,off);
+                RemoveNewOutCard(fnode);
+                RemoveBackNode(node,"standPri",3);
+			}
+            else if (msg.gang == 2)
 			{
 				RemoveBackNode(node,"peng",3,msg.card);
 				RemoveBackNode(node,"standPri",1);
-			}else if (msg.gang == 3)
+			}
+            else if (msg.gang == 3)
 			{
 				RemoveBackNode(node,"standPri",4);
 			}
-			
-		}else{
-
+		}
+        else
+        {
 			if (msg.gang == 1)
 			{
-			var fromOff=[];
-			var fromBind=GetUIBind(msg.from,fromOff);
-			var fnode=fromBind._node;
-				ShowEatActionAnim(node,ActionType.GANG,off);
-			RemoveNewOutCard(fnode);
-				RemoveFrontNode(node,"standPri",3);
-			}else if (msg.gang == 2)
+                var fromOff=[];
+                var fromBind=GetUIBind(msg.from,fromOff);
+                var fnode=fromBind._node;
+                ShowEatActionAnim(node,ActionType.GANG,off);
+                RemoveNewOutCard(fnode);
+                RemoveFrontNode(node,"standPri",3);
+			}
+            else if (msg.gang == 2)
 			{
 				RemoveFrontNode(node,"peng",3,msg.card);
 				RemoveFrontNode(node,"standPri",1);
-			}else if (msg.gang == 3)
+			}
+            else if (msg.gang == 3)
 			{
 				RemoveFrontNode(node,"standPri",4);
 			}
-			
 		}       
 	}
 	for(var i=0;i<4;i++)
@@ -800,25 +772,24 @@ function HandleMJGang(node,msg,off)
 			if (i==3) 
 			{
 				AddNewCard(node,"down","gang1",0,off,"isgang4").tag = msg.card;
-			}else
+			}
+            else
 			{
 				AddNewCard(node,"up","gang1",msg.card,off);
 			}
-		
-		}else
+		}
+        else
 		{
 			if (i==3) 
 			{
 				AddNewCard(node,"up","gang0",msg.card,off,"isgang4").tag = msg.card;
-			}else
+			}
+            else
 			{
 				AddNewCard(node,"up","gang0",msg.card,off);
 			}
-		
 		}
-		
 	}
-
 
     RestoreCardLayout(node,off);
 
@@ -837,17 +808,19 @@ function RestoreCardLayout(node,off,endonepl)
     if (endonepl) 
     {
     	pl = endonepl;
-    }else
+    }
+    else
     {
     	pl =getUIPlayer(off);
     }
    	var mjhandNum = 0;
    	var children=node.children;
-	for (var i = 0; i < children.length; i++) {
+	for (var i = 0; i < children.length; i++)
+    {
 		var ci = children[i];
 		if(ci.name=="mjhand")
 		{
-				mjhandNum++;
+            mjhandNum++;
 		}
 	}
     if(pl.mjhand&&pl.mjhand.length>0)
@@ -858,10 +831,10 @@ function RestoreCardLayout(node,off,endonepl)
     	{
     		if(pl.isNew||endonepl)
     	    	newVal = pl.mjhand[pl.mjhand.length-1];
-            else newVal=Math.max.apply(null,pl.mjhand);
+            else
+                newVal=Math.max.apply(null,pl.mjhand);
     	}
     }
-
 
 	var up=node.getChildByName("up");
 	var stand=node.getChildByName("stand");
@@ -891,7 +864,8 @@ function RestoreCardLayout(node,off,endonepl)
 			{
 				newC=ci;
 			}
-			else uistand.push(ci);
+			else
+                uistand.push(ci);
 		}
 		else if(ci.name=="standPri")
 		{
@@ -1079,17 +1053,20 @@ function HandleMJPut(node,msg,off,outNum)
 		if (putnum>11) 
 		{
 			out=out1.clone(); 
-		}else
+		}
+        else
 		{
 			out=out0.clone();
 		}
 		if (off==0&&putnum>11) 
 		{
 			node.addChild(out); 
-		}else if(off == 1 ||off == 0)
+		}
+        else if(off == 1 ||off == 0)
 		{
 			node.addChild(out,200-putnum); 
-		}else if(off == 2 ||off == 3)
+		}
+        else if(off == 2 ||off == 3)
 		{
 			node.addChild(out,putnum); 
 		}
@@ -1097,7 +1074,8 @@ function HandleMJPut(node,msg,off,outNum)
 		{
 			node.addChild(out);
 		}
-		for (var i = 0; i < node.children.length; i++) {
+		for (var i = 0; i < node.children.length; i++)
+        {
 			if	(node.children[i].name == "newout") node.children[i].name="out";
 		}
         out.visible=true;
@@ -1121,7 +1099,6 @@ function HandleMJPut(node,msg,off,outNum)
 			{
 				RemoveBackNode(node,"mjhand",1,msg.card);
 			}
-			
 		}
 		else if(off==1)
 		{	
@@ -1147,9 +1124,8 @@ function HandleMJPut(node,msg,off,outNum)
 			endPoint.x = out.x;
 			Midpoint.x = ws.width / 4;
 			Midpoint.y = ws.height / 2;
-			 out.zIndex=putnum;
+            out.zIndex=putnum;
 		}
-		
 		
 		if(outNum>=0)//重连
 		{
@@ -1212,43 +1188,41 @@ function HandleMJPut(node,msg,off,outNum)
 		{
 			out.visible = true;
 			out.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2,endPoint),cc.scaleTo(0.2,oSc)),cc.callFunc(callbackFUNC)));
-			
 		};
 		outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2,Midpoint),cc.scaleTo(0.2,2*oSc))
 			//cc.DelayTime(0.4),cc.callFunc(callbackFUNCROTATION),cc.removeSelf()
-		  )
-		);
+        ));
 		
 		function RemovePutCard(onlySelf)
 		{
 			var delayNum=0.4-(Date.now()-putTime)/1000; if(delayNum<0) delayNum=0;
-			if(!onlySelf)outAction.runAction(cc.sequence(cc.DelayTime(delayNum),cc.callFunc(callbackFUNCROTATION),cc.removeSelf()));
-			else outAction.runAction(cc.sequence(cc.DelayTime(delayNum),cc.removeSelf()));
+
+			if(!onlySelf)
+                outAction.runAction(cc.sequence(cc.DelayTime(delayNum),cc.callFunc(callbackFUNCROTATION),cc.removeSelf()));
+			else
+                outAction.runAction(cc.sequence(cc.DelayTime(delayNum),cc.removeSelf()));
 		}
 		
 		var putTime=Date.now();
-		var outActionBind={
+		var outActionBind=
+        {
 			_event:
 			{
-				 waitPut:function(){RemovePutCard(false)}
-				,MJChi:function(){RemovePutCard(true)}
-				,MJPeng:function(){RemovePutCard(true)}
-				,MJGang:function(){RemovePutCard(true)}
-				,roundEnd:function(){RemovePutCard(true)}
+				waitPut:function(){RemovePutCard(false)},
+                MJChi:function(){RemovePutCard(true)},
+                MJPeng:function(){RemovePutCard(true)},
+                MJGang:function(){RemovePutCard(true)},
+                roundEnd:function(){RemovePutCard(true)}
 			}
-		} 
+		};
+
 		ConnectUI2Logic(outAction,outActionBind);
 		
-		if(!(outNum>=0))RestoreCardLayout(node,off);
+		if(!(outNum>=0))
+            RestoreCardLayout(node,off);
 	}
 }
 
-
-
-
-var imgNames=["_bamboo_","_character_","_dot_","_wind_east","_wind_west","_wind_south","_wind_north","_red","_green","_white"];
-//区分麻将的位置 下 右 下 左 自己的
-var imgOff=["B","R","B","L","M"];
 function setCardPic(node,cd,off)
 {
 	var imgName="";
@@ -1273,6 +1247,7 @@ function setCardPic(node,cd,off)
 	node.runAction(cc.repeatForever(cc.sequence(cc.callFunc(callback),cc.delayTime(1))));
 	
 }
+
 function SetArrowRotation(abk)
 {
 	var sData=jsclient.data.sData;
@@ -1282,7 +1257,6 @@ function SetArrowRotation(abk)
 	selfIndex= (tData.curPlayer+4-selfIndex)%4;
     abk.getChildByName("arrow").rotation=270-90*selfIndex;	
 }
-
 
 function SetCardTouchHandler(standUI,cardui)
 {
@@ -1324,70 +1298,57 @@ function SetCardTouchHandler(standUI,cardui)
 
 function reConectHeadLayout(node)
 {
-		var sData=jsclient.data.sData;
-	 	var tData=sData.tData;
-		var down = node.getChildByName("down").getChildByName("head");
-	 	var top = node.getChildByName("top").getChildByName("head");
-	 	var left = node.getChildByName("left").getChildByName("head");
-	 	var right = node.getChildByName("right").getChildByName("head");
-	 	cc.log("reConectHeadLayout");
-	 	var pl = getUIPlayer(0);
+    var sData=jsclient.data.sData;
+    var tData=sData.tData;
+    var down = node.getChildByName("down").getChildByName("head");
+    var top = node.getChildByName("top").getChildByName("head");
+    var left = node.getChildByName("left").getChildByName("head");
+    var right = node.getChildByName("right").getChildByName("head");
 
-	if (tData.tState == TableState.waitJoin || tData.tState == TableState.roundFinish) {
+    cc.log("reConectHeadLayout");
+
+	if (tData.tState == TableState.waitJoin || tData.tState == TableState.roundFinish)
+    {
 		doLayout(down, [0.125,0.125],[0.5,0.2],[0,0],false,false);
 		doLayout(top,  [0.125,0.125],[0.5,0.8],[0,0],false,false);
 		doLayout(left, [0.125,0.125],[0.2,0.5],[0,0],false,false);
 		doLayout(right,[0.125,0.125],[0.8,0.5],[0,0],false,false);
-
-	
-	 }else{
-
-	 	doLayout(top,  [0.125,0.125],[0.93,0.9],[0,0],false,false);
-
-	 	doLayout(right,[0.125,0.125],[0.93,0.65],[0,0],false,false);
-		doLayout(left, [0.125,0.125],[0.07,0.6],[0,0],false,false);
-		doLayout(down, [0.125,0.125],[0.07,0.35],[0,0],false,false);
 	 }
-	
-	 
-	
+    else
+    {
+        doLayout(top,  [0.125,0.125],[0.93,0.9],[0,0],false,false);
+        doLayout(right,[0.125,0.125],[0.93,0.65],[0,0],false,false);
+        doLayout(left, [0.125,0.125],[0.07,0.6],[0,0],false,false);
+        doLayout(down, [0.125,0.125],[0.07,0.35],[0,0],false,false);
+	 }
 }
 
 function tableStartHeadPlayAction(node)
 {
-	 var sData=jsclient.data.sData;
-	 var tData=sData.tData;
-	cc.log("tableStartHeadPlayAction");
-	var pl = getUIPlayer(0);
-	 //if (CheckArrowVisible()) 
-	 {
-	 	
-	 	var down = node.getChildByName("down").getChildByName("head");
-	 	var top = node.getChildByName("top").getChildByName("head");
-	 	var left = node.getChildByName("left").getChildByName("head");
-	 	var right = node.getChildByName("right").getChildByName("head");
+    var down = node.getChildByName("down").getChildByName("head");
+    var top = node.getChildByName("top").getChildByName("head");
+    var left = node.getChildByName("left").getChildByName("head");
+    var right = node.getChildByName("right").getChildByName("head");
 
-		 doLayout(down, [0.125,0.125],[0.5,0.2],[0,0],false,false);
-		 doLayout(top,  [0.125,0.125],[0.5,0.8],[0,0],false,false);
-		 doLayout(left, [0.125,0.125],[0.25,0.5],[0,0],false,false);
-		 doLayout(right,[0.125,0.125],[0.75,0.5],[0,0],false,false);
+    doLayout(down, [0.125,0.125],[0.5,0.2],[0,0],false,false);
+    doLayout(top,  [0.125,0.125],[0.5,0.8],[0,0],false,false);
+    doLayout(left, [0.125,0.125],[0.25,0.5],[0,0],false,false);
+    doLayout(right,[0.125,0.125],[0.75,0.5],[0,0],false,false);
 
-		 doLayout(top,  [0.125,0.125],[0.93,0.9],[0,0],false,false);
+    doLayout(top,  [0.125,0.125],[0.93,0.9],[0,0],false,false);
 
-		 doLayout(right,[0.125,0.125],[0.93,0.65],[0,0],false,false);
-		 doLayout(left, [0.125,0.125],[0.07,0.6],[0,0],false,false);
-		 doLayout(down, [0.125,0.125],[0.07,0.35],[0,0],false,false);
-		 var downPoint = cc.p(down.x,down.y);
-		 var topPoint = cc.p(top.x, top.y);
-		 var rightPoint = cc.p(right.x,right.y);
-		 var leftPoint = cc.p(left.x,left.y);
-	 	down.runAction(cc.moveTo(0.5,downPoint));
-	 	top.runAction(cc.moveTo(0.5,topPoint));
-	 	left.runAction(cc.moveTo(0.5,leftPoint));
-	 	right.runAction(cc.moveTo(0.5,rightPoint));
-	 }
+    doLayout(right,[0.125,0.125],[0.93,0.65],[0,0],false,false);
+    doLayout(left, [0.125,0.125],[0.07,0.6],[0,0],false,false);
+    doLayout(down, [0.125,0.125],[0.07,0.35],[0,0],false,false);
+    var downPoint = cc.p(down.x,down.y);
+    var topPoint = cc.p(top.x, top.y);
+    var rightPoint = cc.p(right.x,right.y);
+    var leftPoint = cc.p(left.x,left.y);
+    down.runAction(cc.moveTo(0.5,downPoint));
+    top.runAction(cc.moveTo(0.5,topPoint));
+    left.runAction(cc.moveTo(0.5,leftPoint));
+    right.runAction(cc.moveTo(0.5,rightPoint));
 }
-
 
 function InitPlayerNameAndCoin(node,off)
 {
@@ -1395,117 +1356,116 @@ function InitPlayerNameAndCoin(node,off)
 	if(!pl) return;
 	
 	var tData=jsclient.data.sData.tData;
-	var bind={
-		head:{
-			name:{
+	var bind=
+    {
+		head:
+        {
+			name:
+            {
 				_text:function(){ return unescape(pl.info.nickname||pl.info.name);  }
-			}
-			,coin:{
+			},
+            coin:
+            {
 				_visible:true,
-				_run:function(){
-				 changeLabelAtals(this,tData.initCoin+pl.winall);
-
+				_run:function()
+                {
+                    changeLabelAtals(this,tData.initCoin+pl.winall);
 				}
 			}
 		}
-	}
+	};
 	ConnectUI2Logic(node,bind);
-
-
 }
+
 function InitPlayerHandUI(node,off)
 {
 	 var sData=jsclient.data.sData;
 	 var tData=sData.tData;
 	 var pl=getUIPlayer(off);
 	 
-		InitPlayerNameAndCoin(node,off);
-	 if (   tData.tState!=TableState.waitPut
-		     &&tData.tState!=TableState.waitEat
-			 &&tData.tState!=TableState.waitCard) return;
+     InitPlayerNameAndCoin(node,off);
+	 if (tData.tState!=TableState.waitPut &&tData.tState!=TableState.waitEat &&tData.tState!=TableState.waitCard)
+         return;
 			 
         
 			//添加碰
-		for (var i = 0; i < pl.mjpeng.length; i++) {
-			//AddNewCard(node,copy,name,tag,off)
-			for (var j = 0; j < 3; j++) {
-				AddNewCard(node,"up","peng",pl.mjpeng[i],off);
-			}
-		}
-		//添加明杠
-		for (var i = 0; i < pl.mjgang0.length; i++) {
-			
-			for (var j = 0; j <4; j++) {
-				if (j==3) 
-				{
-					AddNewCard(node,"up","gang0",pl.mjgang0[i],off,"isgang4").tag = pl.mjgang0[i];
-				}else
-				{
-					AddNewCard(node,"up","gang0",pl.mjgang0[i],off);
-				}
-				
-			}
-		}
-		//添加暗杠
-		for (var i = 0; i < pl.mjgang1.length; i++) {
-			
-			for (var j = 0; j < 4; j++) {
-				
-					if (j==3) 
-					{
-						AddNewCard(node,"down","gang1",0,off,"isgang4").tag = pl.mjgang1[i];
-					}else
-					{
-						AddNewCard(node,"up","gang1",pl.mjgang1[i],off);
-					}
-					
-					
-			
-			}
-			
-		}
-		//添加吃
-		for (var i = 0; i < pl.mjchi.length; i++) {
-			
-				AddNewCard(node,"up","chi",pl.mjchi[i],off);
-			}
-		//添加打出的牌
-		for (var i = 0; i < pl.mjput.length; i++) {
-			var msg = {card:pl.mjput[i],uid:pl.info.uid};
-			 HandleMJPut(node,msg,off,i);
-			
+    for (var i = 0; i < pl.mjpeng.length; i++) {
+        //AddNewCard(node,copy,name,tag,off)
+        for (var j = 0; j < 3; j++) {
+            AddNewCard(node,"up","peng",pl.mjpeng[i],off);
+        }
+    }
+    //添加明杠
+    for (var i = 0; i < pl.mjgang0.length; i++) {
 
-		}
-		//添加手牌
-			if (pl.mjhand)
-			{
-				for (var i = 0; i < pl.mjhand.length; i++) 
-				{
-					
-					AddNewCard(node,"stand","mjhand",pl.mjhand[i],off);
-				}
-			}else
-			{
-				var CardCount = 0;
-				if (
-				      tData.tState==TableState.waitPut&&tData.uids[tData.curPlayer]==pl.info.uid
-				    //&&pl.mjState==TableState.waitPut
-				) 
-				{
-					CardCount = 14;
-				}else
-				{
-					CardCount = 13;
-				}
-				var upCardCount= CardCount-((pl.mjpeng.length+pl.mjgang0.length+pl.mjgang1.length)*3+pl.mjchi.length);
-				for (var i = 0; i <upCardCount ; i++) {
-						AddNewCard(node,"stand","standPri");
-					}
-				
-			}
-			RestoreCardLayout(node,off);
-	
+        for (var j = 0; j <4; j++) {
+            if (j==3)
+            {
+                AddNewCard(node,"up","gang0",pl.mjgang0[i],off,"isgang4").tag = pl.mjgang0[i];
+            }else
+            {
+                AddNewCard(node,"up","gang0",pl.mjgang0[i],off);
+            }
+
+        }
+    }
+    //添加暗杠
+    for (var i = 0; i < pl.mjgang1.length; i++) {
+
+        for (var j = 0; j < 4; j++) {
+
+                if (j==3)
+                {
+                    AddNewCard(node,"down","gang1",0,off,"isgang4").tag = pl.mjgang1[i];
+                }else
+                {
+                    AddNewCard(node,"up","gang1",pl.mjgang1[i],off);
+                }
+        }
+
+    }
+    //添加吃
+    for (var i = 0; i < pl.mjchi.length; i++) {
+
+            AddNewCard(node,"up","chi",pl.mjchi[i],off);
+        }
+    //添加打出的牌
+    for (var i = 0; i < pl.mjput.length; i++) {
+        var msg = {card:pl.mjput[i],uid:pl.info.uid};
+         HandleMJPut(node,msg,off,i);
+
+
+    }
+    //添加手牌
+        if (pl.mjhand)
+        {
+            for (var i = 0; i < pl.mjhand.length; i++)
+            {
+                AddNewCard(node,"stand","mjhand",pl.mjhand[i],off);
+            }
+        }else
+        {
+            var CardCount = 0;
+            if (
+                  tData.tState==TableState.waitPut&&tData.uids[tData.curPlayer]==pl.info.uid
+                //&&pl.mjState==TableState.waitPut
+            )
+            {
+                CardCount = 14;
+            }else
+            {
+                CardCount = 13;
+            }
+            var upCardCount= CardCount-((pl.mjpeng.length+pl.mjgang0.length+pl.mjgang1.length)*3+pl.mjchi.length);
+            for (var i = 0; i <upCardCount ; i++)
+            {
+                AddNewCard(node,"stand","standPri",0,off);
+            }
+
+        }
+        RestoreCardLayout(node,off);
 }
+
 var playAramTimeID = null;
 function updateArrowbkNumber(node)
 {
@@ -1770,7 +1730,8 @@ function MJGangchange(tag)
 	{
 
 		 MJGang2Net(jsclient.gangCards[0]);
-	}else
+	}
+    else
 	{
 		eat.chi0._node.visible=false;
 		eat.chi1._node.visible=false;
@@ -1783,32 +1744,24 @@ function MJGangchange(tag)
 		eat.guo._node.visible=false;
 		changeuibg._node.visible =true;
 		
-		for (var i = 0; i < jsclient.gangCards.length; i++) {
+		for (var i = 0; i < jsclient.gangCards.length; i++)
+        {
 			if (i==0) 
 			{
 				card9.visible = true;
 				setCardPic(card9,jsclient.gangCards[i],4);
-			}else if(i==1)
+			}
+            else if(i==1)
 			{
 				card7.visible = true;
 				setCardPic(card7,jsclient.gangCards[i],4);
-			}else if(i==2)
+			}
+            else if(i==2)
 			{
 				card5.visible = true;
 				setCardPic(card5,jsclient.gangCards[i],4);
 			}
 		}
-	}
-}
-
-function MJCreateCardsecLayer(name)
-{
-	if(name == "gang")
-	{
-
-	}else if(name=="chi")
-	{
-
 	}
 }
 
@@ -2293,7 +2246,6 @@ function downAndPlayVoice(uid, filePath)
 }
 
 
-
 var play_canHuWith258;
 var play_canHu7;
 var PlayLayer=cc.Layer.extend({
@@ -2366,7 +2318,9 @@ var PlayLayer=cc.Layer.extend({
 				}
 			},
 			DelRoom:CheckDelRoomUI
-		},roundnumImg:
+		},
+
+        roundnumImg:
 		{
 			_layout:[[0.1,0.1],[0.5,0.5],[1,0]]
 			,_event:{
@@ -2389,33 +2343,53 @@ var PlayLayer=cc.Layer.extend({
 					}
 				}
 			}
-		},cardNumImg:{
-			_layout:[[0.1,0.1],[0.5,0.5],[-1.1,0]]
-			,_event:{
-				initSceneData:function(eD){ this.visible=CheckArrowVisible();}
-				,mjhand:function(eD){this.visible=CheckArrowVisible();}
-				,onlinePlayer:function(eD){this.visible=CheckArrowVisible();}
-			}
-			,cardnumAtlas:{
+		},
+
+        cardNumImg:
+        {
+			_layout:[[0.1,0.1],[0.5,0.5],[-1.1,0]],
+            _event:
+            {
+				initSceneData:function(eD)
+                {
+                    this.visible=CheckArrowVisible();
+                },
+
+                mjhand:function(eD)
+                {
+                    this.visible=CheckArrowVisible();
+                },
+
+                onlinePlayer:function(eD)
+                {
+                    this.visible=CheckArrowVisible();
+                }
+			},
+
+            cardnumAtlas:
+            {
 				_text:function()
 				{
 					var sData = jsclient.data.sData;
 					var tData = sData.tData;
 					if(tData) return  (tData.withWind?136:108) - tData.cardNext;
-				},_event:{
+				},
+
+                _event:
+                {
 					waitPut:function()
 					{
-					var sData = jsclient.data.sData;
-					var tData = sData.tData;
-					
-					if(tData) this.setString((tData.withWind?136:108) - tData.cardNext);
-					}
+                        var sData = jsclient.data.sData;
+                        var tData = sData.tData;
 
+                        if(tData)
+                            this.setString((tData.withWind?136:108) - tData.cardNext);
+					}
 				}
 			}
-		}
+		},
 
-		,back:{
+        back:{
 			back:{_layout:[[1.02,1.02],[0.5,0.5],[0,0],true]},
 			clt: 
 			{
@@ -2450,36 +2424,28 @@ var PlayLayer=cc.Layer.extend({
 								//  this.y = play_canHu7.y;
 							 // }
 						 },
-						 _visible:function(){
+						 _visible:function()
+                         {
 							 return jsclient.data.sData.tData.withZhong;
 						 }
-					 }
-					,_event:{
-						initSceneData:function(eD){
-							this.visible=true;
-							if(!jsclient.data.sData.tData.canHuWith258){
-								play_canHu7.y = play_canHuWith258.y;
-							}
+					 },
+                    _event:
+                    {
+                        initSceneData:function(eD)
+                        {
+                            this.visible=true;
+                            if(!jsclient.data.sData.tData.canHuWith258)
+                            {
+                                play_canHu7.y = play_canHuWith258.y;
+                            }
 
-						}
-						,mjhand:function(eD){this.visible=CheckArrowVisible();}
-						,onlinePlayer:function(eD){this.visible=CheckArrowVisible();}
+                        },
+                        mjhand:function(eD){this.visible=CheckArrowVisible();},
+                        onlinePlayer:function(eD){this.visible=CheckArrowVisible();}
 					}
 				}				 
 			},
-			zz_play_back:{
-				_layout:[[0.2,0.2],[0.5,0.5],[0,1.2]],
-				_visible:function(){
-					return jsclient.data.sData.tData.noBigWin;
-				}
-			},
-			sy_name_back:{
-				_layout:[[0.2,0.2],[0.5,0.5],[0,1.2]],
-				_visible:function(){
-					cc.log("sy_name_back");
-					return !jsclient.data.sData.tData.noBigWin;
-				}
-			},
+
 			clb: {_layout:[[0.15,0.15],[0,0],[0.5,0.5]]},
 			crt: {_layout:[[0.15,0.15],[1,1],[-0.5,-0.5]]},
 			crb: {_layout:[[0.15,0.15],[1,0],[-0.5,0.5]]},
@@ -2487,21 +2453,29 @@ var PlayLayer=cc.Layer.extend({
 			barr:{_layout:[[0.01,0.7],[0.995,0.5],[0,0],true]},
 			bart:{_layout:[[0.9,0],[0.5,0.99],[0,0],true]},
 			barb:{_layout:[[0.9,0],[0.5,0.01],[0,0],true]},
+
+			gdmj: {_layout:[[0.2,0.2],[0.5,0.5],[0,1.2]]}
 		},
+
 		banner:
 		{
-			_layout:[[0.878,1],[0.5,0.945],[0,0]]
-			,wifi:{
+			_layout:[[0.878,1],[0.5,0.945],[0,0]],
+            wifi:
+            {
 				_run:function()
 				{
 					updateWIFI(this);
 				}
-			},powerBar:{
+			},
+
+            powerBar:
+            {
 				_run:function()
 				{
 					cc.log("powerBar_run");
 					updatePower(this);
-				},_event:
+				},
+                _event:
 				{
 					nativePower:function(d)
 					{
@@ -2509,22 +2483,28 @@ var PlayLayer=cc.Layer.extend({
 						this.setPercent(Number(d));
 					}
 				}
-			}
-			,tableid:{
-				_event:{
+			},
+
+            tableid:
+            {
+				_event:
+                {
 					initSceneData:function()
 					{
 						this.setString(jsclient.data.sData.tData.tableid);
 					}
 				}
 			},
-			setting:{
-				_click:function(){
+			setting:
+            {
+				_click:function()
+                {
 					var settringLayer = new  SettingLayer();
 					settringLayer.setName("PlayLayerClick");
 					jsclient.Scene.addChild(settringLayer); 
 				}
 			},
+
 			Button_1:
 			{
 				_click:function(){
@@ -2532,18 +2512,7 @@ var PlayLayer=cc.Layer.extend({
 				}
 			}
 		},
-		bianL:{
-			_layout:[[0.15,0.15],[0.199,0.98],[0,0]],
-			_run:function(){
-				this.visible=false;
-			}
-		},
-		bianR:{
-			_layout:[[0.15,0.15],[0.5,0.5],[0,0]],
-			_run:function(){
-				this.visible=false;
-			}
-		},
+
 		arrowbk:
 		{	
 			_layout:[[0.15,0.15],[0.5,0.5],[0,0]],
@@ -2555,7 +2524,8 @@ var PlayLayer=cc.Layer.extend({
 				,MJPeng:function(eD) { SetArrowRotation(this)  }
 				,MJChi:function(eD)  { SetArrowRotation(this)  }
 				,MJGang:function(eD) { SetArrowRotation(this)  }
-			},number:{
+			},
+            number:{
 				_run:function()
 				{
 			
@@ -2595,39 +2565,102 @@ var PlayLayer=cc.Layer.extend({
 				}
 			}
 		},
-		wait:{
+
+		wait:
+        {
+            backHomebtn:
+            {
+                _layout:[[0.13,0.13],[0.35,0.5],[0,0]],
+                _click:function(btn)
+                {
+                    var sData=jsclient.data.sData;
+                    if(sData)
+                    {
+                        if(IsRoomOwner())
+                        {
+                            jsclient.showMsg("返回大厅房间仍然保留\n赶快去邀请好友吧",
+                                function()
+                                {
+                                    jsclient.playui.visible =false;
+                                    sendEvent("returnHome");
+                                },function(){});
+                        }
+                        else
+                        {
+                            jsclient.showMsg("返回大厅房间将退出游戏\n确定退出房间吗",
+                                function()
+                                {
+                                    jsclient.leaveGame();
+                                },function(){});
+                        }
+                    }
+                }
+            },
+
 			wxinvite:
 			{
 				_layout:[[0.13,0.13],[0.5,0.5],[0,0]],
 				_click:function()
 				{
 					var tData=jsclient.data.sData.tData;
-					
-					if(tData.noBigWin)
-						jsclient.native.wxShareUrl(jsclient.remoteCfg.wxShareUrl,"【广东麻将】",
-						   "房间号:"+tData.tableid+",广州麻将,"+tData.roundNum+"局,"+
-						   "速度加入，只等你来【星悦麻将】"
-						);
-					else jsclient.native.wxShareUrl(jsclient.remoteCfg.wxShareUrl,"【广东麻将】",
-						"房间号:"+tData.tableid+",广州麻将,"+tData.roundNum+"局,"+
-						"速度加入，只等你来【星悦麻将】"
-					);
+                    var tableid = tData.tableid;
+                    var withZhong = tData.withZhong;
+                    var canHu7 = tData.canHu7;
+                    var horse = tData.horse;
+                    var roundNum = tData.roundNum;
+
+                    var withZhongTips = withZhong ? "红中鬼牌、" : "";
+                    var canHu7Tips = canHu7 ? "胡7对、" : "";
+                    var horseTips = horse + "马、";
+                    var roundNumTips = roundNum + "局,";
+
+                    log(horseTips);
+
+                    jsclient.native.wxShareUrl(
+                        jsclient.remoteCfg.wxShareUrl,
+                        "【广东麻将】", "房间号:"+tableid+","
+                        +withZhongTips+canHu7Tips+horseTips +roundNumTips
+                        +"速度加入，只等你来【星悦麻将】");
+
+                    //"【广东麻将】房间号:123456, 红中鬼牌、胡7对、6马，4局，速度加入，只等你来【星悦麻将】
 				}
 			},
+
 			delroom:
 			{
 				_layout:[[0.13,0.13],[0.65,0.5],[0,0]],
-				_click:function(){
+				_click:function()
+                {
 					jsclient.delRoom(true);
 				}
 			},
-            _event:{
-				initSceneData:function(eD){ this.visible=CheckInviteVisible();	},
-				addPlayer:function(eD){ this.visible=CheckInviteVisible();},removePlayer:function(eD){ this.visible=CheckInviteVisible();}
+
+            _event:
+            {
+                returnPlayerLayer:function()
+                {
+                    jsclient.playui.visible =true;
+                },
+
+				initSceneData:function(eD)
+                {
+                    this.visible = CheckInviteVisible();
+                },
+
+				addPlayer:function(eD)
+                {
+                    this.visible=CheckInviteVisible();
+                },
+
+                removePlayer:function(eD)
+                {
+                    this.visible=CheckInviteVisible();
+                }
 			}
 		},
-		down:{
-			
+
+		down:
+        {
 			head:
 			{
 				kuang:
@@ -2745,9 +2778,11 @@ var PlayLayer=cc.Layer.extend({
 				MJTick:function(eD){ setOffline(this,0); }
 			}
 		},
-		right:{
-			  
-			head:{
+
+		right:
+        {
+			head:
+            {
                 kuang:
                 {
                     _run:function ()
@@ -2755,28 +2790,31 @@ var PlayLayer=cc.Layer.extend({
                         this.zIndex = 2;
                     }
                 },
-					zhuang:{
-						_run:function()
-						{
-							this.visible =false;
-						},_event:{
-							waitPut:function(){showPlayerZhuangLogo(this,1);}
-							,initSceneData:function(){if(CheckArrowVisible()) showPlayerZhuangLogo(this,1);}
-						}
-					},chatbg:{_run:function(){this.getParent().zIndex = 500;},chattext:{_event:{
+                zhuang:{
+                    _run:function()
+                    {
+                        this.visible =false;
+                    }
+                    ,_event:
+                    {
+                        waitPut:function(){showPlayerZhuangLogo(this,1);},
+                        initSceneData:function(){if(CheckArrowVisible()) showPlayerZhuangLogo(this,1);}
+                    }
+                },
+                chatbg:{_run:function(){this.getParent().zIndex = 500;},chattext:{_event:{
 
-							MJChat:function(msg){
-								
-								showchat(this,1,msg);
-							},playVoice:function (voicePath)
-							{
-								jsclient.data._tempMessage.msg = voicePath;
-								showchat(this,1, jsclient.data._tempMessage);
-							}
-					}}}
-					,_click:function(btn){ showPlayerInfo(1,btn);	 },
-					
-					
+                        MJChat:function(msg){
+
+                            showchat(this,1,msg);
+                        },playVoice:function (voicePath)
+                        {
+                            jsclient.data._tempMessage.msg = voicePath;
+                            showchat(this,1, jsclient.data._tempMessage);
+                        }
+                }}},
+                _click:function(btn){ showPlayerInfo(1,btn);
+                },
+
 			},
 			
 			ready:{ _layout:[[0.07,0.07],[0.5,0.5],[2,0]], 
@@ -2948,8 +2986,7 @@ var PlayLayer=cc.Layer.extend({
 				MJTick:function(eD){ setOffline(this,2); }
 			}
 		},
-		
-		
+
 		left:{
 			head:{
                 kuang:
@@ -3046,7 +3083,8 @@ var PlayLayer=cc.Layer.extend({
 				MJTick:function(eD){ setOffline(this,3); }
 			}
 		},
-		eat:{
+
+        eat:{
 			
 			chi0:{_visible:false,_layout:[[0,0.1],[0.5,0],[1.3,2.5]]
 				,_touch:function(btn,eT){ if(eT==2) MJChichange(btn.tag); }
@@ -3161,7 +3199,9 @@ var PlayLayer=cc.Layer.extend({
 				initSceneData:function(eD){ CheckEatVisible(jsclient.playui.jsBind.eat); }
 				
 			}
-		},chat_btn:
+		},
+
+        chat_btn:
 		{
 			_layout:[[0.12,0.12],[0.933,0.4],[0,0]]
 			,_click:function()
@@ -3169,16 +3209,19 @@ var PlayLayer=cc.Layer.extend({
 					var chatlayer= new ChatLayer();
 					jsclient.Scene.addChild(chatlayer); 	
 			}
-		},voice_btn:
+		},
+
+        voice_btn:
 		{
 			_layout:[[0.12,0.12],[0.933,0.25],[0,0]],
-			_run:function () {
+			_run:function ()
+            {
 				initVData();
 				cc.eventManager.addListener(getTouchListener(), this);
 				//ios隐藏
 				//if(cc.sys.OS_IOS==cc.sys.os) this.visible=false;
-			}
-			,_touch:function(btn,eT)
+			},
+            _touch:function(btn,eT)
 			{
 				// 点击开始录音 松开结束录音,并且上传至服务器, 然后通知其他客户端去接受录音消息, 播放
 				if(eT == 0)
@@ -3192,12 +3235,14 @@ var PlayLayer=cc.Layer.extend({
 				{
 					cancelRecord();
 				}
-			},_event:
+			},
+            _event:
 			{
 				cancelRecord: function ()
 				{
 					jsclient.native.HelloOC("cancelRecord !!!");
 				},
+
 				uploadRecord: function(filePath)
 				{
 					if (filePath)
@@ -3208,7 +3253,9 @@ var PlayLayer=cc.Layer.extend({
 					{
 						jsclient.native.HelloOC("No voice file update");
 					}
-				},sendVoice: function (fullFilePath)
+				},
+
+                sendVoice: function (fullFilePath)
 				{
 					if (!fullFilePath)
 					{
@@ -3223,7 +3270,9 @@ var PlayLayer=cc.Layer.extend({
 
 					jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"downAndPlayVoice",uid:SelfUid() ,type:3, msg:fileName ,num:jsclient.data._JiaheTempTime});
 					jsclient.native.HelloOC("download file");
-				},downAndPlayVoice:function (msg)
+				},
+
+                downAndPlayVoice:function (msg)
 				{
 					jsclient.native.HelloOC("downloadPlayVoice ok");
 					jsclient.data._tempMessage = msg;
@@ -3232,43 +3281,10 @@ var PlayLayer=cc.Layer.extend({
 				}
 			}
 		},
-		backHomebtn:
-		{
-			_layout:[[0.13,0.13],[0.35,0.5],[0,0]]
-			,_click:function(btn)
-			{
-				var sData=jsclient.data.sData;
-				if(sData)
-				{
-					if(IsRoomOwner())
-					{
-						jsclient.showMsg("返回大厅房间仍然保留\n赶快去邀请好友吧",
-						function(){
-							jsclient.playui.visible =false;
-				            sendEvent("returnHome");
-						},function(){});
-					}
-					else
-					{
-						jsclient.showMsg("返回大厅房间将退出游戏\n确定退出房间吗",
-						function(){
-							jsclient.leaveGame();
-						},function(){});
-					}
-				}
-
-			},_event:{
-				returnPlayerLayer:function()
-				{
-					jsclient.playui.visible =true;
-				},initSceneData:function(eD){ this.visible=CheckInviteVisible();}
-				,addPlayer:function(eD){ this.visible=CheckInviteVisible();}
-				,removePlayer:function(eD){ this.visible=CheckInviteVisible();}
-			}
-		}
-		
 	},
-	ctor:function () {
+
+	ctor:function ()
+    {
 	    this._super();
 	    var playui = ccs.load(res.Play_json);
         playMusic("bgFight");

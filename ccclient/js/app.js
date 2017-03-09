@@ -164,7 +164,7 @@ jsclient.showPlayerInfo=function(info)
 {
 	jsclient.uiPara=info;
 	jsclient.Scene.addChild(new UserInfoLayer());
-}
+};
 
 jsclient.restartGame=function()
 {
@@ -172,7 +172,7 @@ jsclient.restartGame=function()
 		jsclient.gamenet.disconnect();
 
 	sendEvent("restartGame");
-}
+};
 
 jsclient.changeIdLayer = function ()
 {
@@ -183,7 +183,7 @@ jsclient.changeIdLayer = function ()
 	{
 		jsclient.Scene.addChild(new ChangeIDLayer());
 	}
-}
+};
 
 jsclient.exportDataLayer = function ()
 {
@@ -194,7 +194,7 @@ jsclient.exportDataLayer = function ()
 	{
 		jsclient.Scene.addChild(new ExportDataLayer());
 	}
-}
+};
 
 jsclient.leaveGame=function()
 {
@@ -208,7 +208,7 @@ jsclient.leaveGame=function()
 		}
 		jsclient.unblock();
 	});
-}
+};
 
 jsclient.getPlayLogOne=function(now,logid)
 {
@@ -222,7 +222,7 @@ jsclient.getPlayLogOne=function(now,logid)
 		sendEvent("playLogOne",rtn.data["mjlog"]);
 		}
 	});
-}
+};
 
 jsclient.getPlayLog=function()
 {
@@ -238,7 +238,7 @@ jsclient.getPlayLog=function()
 		
 	});
 	
-}
+};
 
 jsclient.logout=function()
 {
@@ -250,16 +250,17 @@ jsclient.logout=function()
 		sendEvent("logout");
 		jsclient.unblock();
 	});
-}
+};
 
 jsclient.joinGame=function(tableid)
 {
 	jsclient.block();
 
-
 	var joinPara={roomid:"symj1"};	
-	if(tableid) joinPara.tableid=tableid;
-	else  joinPara.roomid="symj2";
+	if(tableid)
+        joinPara.tableid=tableid;
+	else
+        joinPara.roomid="symj2";
 	
 	jsclient.gamenet.request("pkplayer.handler.JoinGame",joinPara,
 	function(rtn)
@@ -268,26 +269,20 @@ jsclient.joinGame=function(tableid)
 		if(rtn.result!=0)
 		{
 			jsclient.unblock();
-			if(rtn.result==ZJHCode.roomFull) jsclient.showMsg("房间已经满");
-			if(rtn.result==ZJHCode.roomNotFound) jsclient.showMsg("房间不存在");
+
+			if(rtn.result==ZJHCode.roomFull)
+                jsclient.showMsg("房间已经满");
+
+			if(rtn.result==ZJHCode.roomNotFound)
+                jsclient.showMsg("房间不存在");
 		}
 	});
-}
+};
 
-jsclient.createRoom=function(round,canEatHu,withWind,canEat,noBigWin,canHu7,canHuWith258,withZhong)
+jsclient.createRoom=function(round,canEatHu,withWind,canEat,noBigWin,canHu7,canHuWith258,withZhong,horse)
 {
 	jsclient.block();
-	//if(noBigWin) {
-	//	withWind=false;
-	//	canEat=false;
-	//}
-	//else {
-	//	canEatHu=false;
-	//	canHu7=true;
-	//	canHuWith258=false;
-	//	withZhong = false;
-	//}
-	jsclient.gamenet.request("pkplayer.handler.CreateVipTable",{round:round,canEatHu:canEatHu,withWind:withWind,canEat:canEat,noBigWin:noBigWin,canHu7:canHu7,canHuWith258:canHuWith258,withZhong:withZhong},
+	jsclient.gamenet.request("pkplayer.handler.CreateVipTable",{round:round,canEatHu:canEatHu,withWind:withWind,canEat:canEat,noBigWin:noBigWin,canHu7:canHu7,canHuWith258:canHuWith258,withZhong:withZhong, horse:horse},
 	function(rtn)
 	{
 	   jsclient.unblock();
@@ -297,11 +292,11 @@ jsclient.createRoom=function(round,canEatHu,withWind,canEat,noBigWin,canHu7,canH
 		   jsclient.joinGame(rtn.vipTable);
 	   }
 	});
-}
+};
 
 jsclient.tickGame=function(tickType)
 {
-	return;
+    return;
 	if(jsclient.lastMJTick>0)
 	{
 		if(jsclient.lastMJTick<Date.now()-15000)
@@ -314,25 +309,23 @@ jsclient.tickGame=function(tickType)
 	       jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"MJTick",tickType:tickType});	
 		}
 	}
-}
+};
 
 jsclient.tickServer=function()
 {
 	if(jsclient.gamenet)
-		jsclient.gamenet.request("pkcon.handler.tickServer",{},function(rtn){
-			mylog("tick");
-		});
-}
+		jsclient.gamenet.request("pkcon.handler.tickServer",{},function(rtn){mylog("tick");});
+};
 
 jsclient.openWeb=function(para)
 {
     sendEvent("openWeb",para);
-}
+};
 
 jsclient.showMsg=function(msg,yesfunc,nofunc,style)
 {
     sendEvent("popUpMsg",{msg:msg,yes:yesfunc,no:nofunc,style:(style || "")});
-}
+};
 
 jsclient.delRoom=function(yes)
 {
@@ -340,354 +333,376 @@ jsclient.delRoom=function(yes)
 	if(sData.tData.tState==TableState.waitJoin&&sData.tData.uids[0]!=SelfUid())
 	  jsclient.leaveGame();
 	else jsclient.gamenet.request("pkroom.handler.tableMsg",{cmd:"DelRoom",yes:yes});
-}
+};
+
+//地理位置
+jsclient.geographicalPos = function(latitude,longitude)
+{
+    if(jsclient.gamenet)
+        jsclient.gamenet.request("pkcon.handler.geographicalPos",{latitude:latitude, longitude:longitude},function(rtn){});
+};
 
 jsclient.netCallBack =
 {
-	   loadWxHead:[0.01,function(d){}]
-	   ,MJChat:[0,function(d){}]
-   	   ,downAndPlayVoice:[0,function(d){}]
-	   ,initSceneData:[0,function(d)
-	   {
-		   mylog("initSceneData");
-		   if(d.tData.roundNum<=-2)
-		   {
-			   jsclient.leaveGame();
-			   return -1;
-		   }else
-		   {
-			   jsclient.data.sData=d;
-			   d.serverNow-=Date.now();
-			   if(!jsclient.playui)  jsclient.Scene.addChild(new PlayLayer());
-			   sendEvent("clearCardUI");
-		   }
-	   }],reinitSceneData:[0,function(d)
-	   {
-		   mylog("reinitSceneData");
-		   jsclient.data.sData=d;
-		   d.serverNow-=Date.now();
-		   if(!jsclient.replayui)  jsclient.Scene.addChild(newReplayLayer());
-		   sendEvent("clearCardUI");
-	   }]
-	  ,removePlayer:[0,function(d){
+	loadWxHead:[0.01,function(d){}],
+
+    MJChat:[0,function(d){}],
+
+    downAndPlayVoice:[0,function(d){}],
+
+    initSceneData:[0,function(d)
+   {
+       mylog("initSceneData");
+       if(d.tData.roundNum<=-2)
+       {
+           jsclient.leaveGame();
+           return -1;
+       }else
+       {
+           jsclient.data.sData=d;
+           d.serverNow-=Date.now();
+           if(!jsclient.playui)  jsclient.Scene.addChild(new PlayLayer());
+           sendEvent("clearCardUI");
+       }
+   }],
+
+    reinitSceneData:[0,function(d)
+   {
+       mylog("reinitSceneData");
+       jsclient.data.sData=d;
+       d.serverNow-=Date.now();
+       if(!jsclient.replayui)  jsclient.Scene.addChild(newReplayLayer());
+       sendEvent("clearCardUI");
+   }],
+
+    removePlayer:[0,function(d){
 		  var sData=jsclient.data.sData;
 	      cc.log("delete player "+d.uid);
 		  delete sData.players[d.uid];
 		  sData.tData=d.tData;
 		  mylog(JSON.stringify(Object.keys(sData.players)));
-	   }]
-	  ,addPlayer:[0,function(d){
+	   }],
+
+    addPlayer:[0,function(d){
 		  var sData=jsclient.data.sData;
 		  sData.players[d.player.info.uid]=d.player;
 		  sData.tData=d.tData;
 		cc.log(JSON.stringify(sData.tData));
-	  }]
-	  ,updateInfo:[0,function(info)
-	  {
-		  var pinfo=jsclient.data.pinfo;
-		  for(var pty in info) pinfo[pty]=info[pty];
-	  }]
-	  ,moveHead:[1,function(){}]
-	  ,mjhand:[0,function(d)
-	  {
-		  sendEvent("clearCardUI");
-		  var sData=jsclient.data.sData;
-		  sData.tData=d.tData;
-		  for(var uid in sData.players)
-		  {
-			var pl=sData.players[uid];
-			pl.mjpeng=[]; 
-			pl.mjgang0=[];
-			pl.mjgang1=[];
-			pl.mjchi=[]; 
-			pl.mjput=[];	
-            delete pl.mjhand;	
-            pl.mjState=TableState.waitPut;			
-			if(uid==SelfUid())
-			{
-				pl.mjhand=d.mjhand;
-				pl.mjpeng4=[];
-			}
-		  }
-		  playEffect("shuffle");
-	  }]
-	  ,MJPass:[0,function(d){
-		  var sData=jsclient.data.sData;
-		  var tData=sData.tData;
-		  var pl=sData.players[SelfUid()];
-		  pl.mjState=d.mjState;
-		  mylog("MJPass");
-	  }]
-	  ,MJPut:[0.8,function(d)
-	  {   
-		  var sData=jsclient.data.sData;
-		  var tData=sData.tData;
-		  tData.lastPut=d.card;
-		  tData.tState=TableState.waitEat;
-		  tData.putType=d.putType;
-		  var pl=sData.players[d.uid];
-		  pl.mjput.push(d.card);
-		  
-		  playEffect("nv/"+d.card);
-		  
-		  if(d.uid==SelfUid())
-		  {
-			  pl.mjhand.splice(pl.mjhand.indexOf(d.card),1);
-			  pl.mjState=TableState.waitPut;
-			  pl.skipHu=false;
-		  }
-		  else
-		  {
-			  sData.players[SelfUid()+""].mjState=TableState.waitEat;
-		  }
-		  mylog("myput "+d.card);
-	  }]
-	  ,newCard:[0,function(d)
-	  {
-		  var sData=jsclient.data.sData;
-		  var pl=sData.players[SelfUid()+""];
-		  var hands=pl.mjhand;
-		  pl.isNew=true;
-		  hands.push(d);
 	  }],
-	  waitPut:[0,function(d)
-	  {
-		  var sData=jsclient.data.sData;
-		  sData.tData=d;
-		  sData.players[SelfUid()+""].mjState=TableState.waitPut;
-		  playEffect("give");
-		  //mylog("waitPut "+d.curPlayer+" "+d.uids[d.curPlayer]);
-	  }],
-	  MJChi:[0,function(d)
-	  {
-		  var sData=jsclient.data.sData;
-		  sData.tData=d.tData;
-		  
-		  var tData=sData.tData; 
-		  var uids=tData.uids;
-		  var cds=d.mjchi;
-		  cds.sort(function(a,b){return a-b});
-		  
-		  //mylog("MJChi "+d.mjchi+" "+d.from+" "+tData.curPlayer);
-		  
-		  playEffect("nv/chi");
-		  var pl=sData.players[uids[tData.curPlayer]];
-		  var lp=sData.players[uids[d.from]];
-		  for(var i=0;i<cds.length;i++)
-		  {
-			  pl.mjchi.push(cds[i]);
-			  pl.isNew=false;
-			  if(i==d.pos)
-			  {
-				  var mjput=lp.mjput;
-				  if(mjput.length>0&&mjput[mjput.length-1]==cds[i])
-				  {
-					  mjput.length=mjput.length-1;
-				  }
-				  else  mylog("eat error from");
-			  }
-			  else if(uids[tData.curPlayer]==SelfUid())
-			  {
-				  pl.mjState=TableState.waitPut;
-				  var mjhand=pl.mjhand;
-				  var idx=mjhand.indexOf(cds[i]);
-				  if(idx>=0)
-				  {
-					  mjhand.splice(idx,1);
-				  }
-				  else mylog("eat error to");
-			  }
-		  }
-	  }],
-	  
-	  MJPeng:[0,function(d)
-	  {
-		  var sData=jsclient.data.sData;
-		  sData.tData=d.tData;
-		  var tData=sData.tData; 
-		  var uids=tData.uids;
-		  var cd=tData.lastPut;
-		  
-		  mylog("MJPeng "+cd+" "+d.from+" "+tData.curPlayer);
 
-		  playEffect("nv/peng");
-		  var pl=sData.players[uids[tData.curPlayer]];
-		  var lp=sData.players[uids[d.from]];
-		  pl.mjpeng.push(cd);
-		  var mjput=lp.mjput;
-		  if(mjput.length>0&&mjput[mjput.length-1]==cd)
-		  {
-			  mjput.length=mjput.length-1;
-		  }
-		  else  mylog("peng error from");
-		  if(uids[tData.curPlayer]==SelfUid())
-		  {
-			  pl.mjState=TableState.waitPut;
-			  pl.isNew=false;
-			  var mjhand=pl.mjhand;
-			  var idx=mjhand.indexOf(cd);
-			  if(idx>=0)
-			  {
-				  mjhand.splice(idx,1);
-			  }
-			  else mylog("eat error to");
-			  idx=mjhand.indexOf(cd);
-			  if(idx>=0)
-			  {
-				  mjhand.splice(idx,1);
-			  }
-			  else mylog("eat error to");
-			  if(mjhand.indexOf(cd)>=0)  pl.mjpeng4.push(cd);
-		  }
-	  }]				  
-	  ,MJGang:[0,function(d)
-	  {
-		  //mylog("MJGang "+d.card+" "+d.gang+" "+d.from);
-		  playEffect("nv/gang");
-		  var sData=jsclient.data.sData;
-		  var tData=sData.tData; 
-		  var uids=tData.uids;
-		  var cd=d.card;
-		  var pl=sData.players[d.uid];
-		  if(d.gang==1)
-		  {
-			  pl.mjgang0.push(cd);
-			  if(d.uid==SelfUid())
-			  {
-				  pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
-				  pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
-				  pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
-			  }
-			  
-			  var lp=sData.players[uids[d.from]];
-			  var mjput=lp.mjput;
-			  if(mjput.length>0&&mjput[mjput.length-1]==cd)
-			  {
-				  mjput.length=mjput.length-1;
-			  }
-			  else  mylog("gang error from");
-			  pl.isNew=false;
-		  }
-		  else if(d.gang==2)
-		  {
-			  pl.mjgang0.push(cd);
-			  pl.mjpeng.splice(pl.mjpeng.indexOf(cd),1);
-			  if(d.uid==SelfUid())
-			  {
-				  pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
-			  }
-		  }
-		  else if(d.gang==3)
-		  {
-			  pl.mjgang1.push(cd);
-			  if(d.uid==SelfUid())
-			  {
-				  pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
-				  pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
-				  pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
-				  pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
-			  }
-		  }
-		  tData.curPlayer=tData.uids.indexOf(d.uid);
-		  tData.lastPut=cd;
-		  if(!tData.noBigWin||(d.gang==2&&tData.canEatHu)) tData.putType=d.gang;
-		  
-		  tData.tState=TableState.waitEat;
-		  
-		  if(d.uid==SelfUid())
-		  {
-			  pl.mjState=TableState.waitCard;
-		  }
-		  else
-		  {
-			  sData.players[SelfUid()+""].mjState=TableState.waitEat;
-		  }
-			  
-		  
-	  }]	
-	  ,roundEnd:[0,function(d)//数据
-	  {
-			var sData=jsclient.data.sData;
-			sData.tData=d.tData; 
-			for(var uid in d.players)
-			{
-			  var pl=d.players[uid];
-			  var plLocal=sData.players[uid];
-			  for(var pty in pl)  plLocal[pty]=pl[pty];
-			}
-			if(sData.tData.winner>=0) playEffect("nv/hu");
-			if(d.playInfo&&jsclient.data.playLog)
-			{
-				jsclient.data.playLog.logs.push(d.playInfo);
-			}
-	  }]
-	  ,
-	  endRoom:[0,function(d)
-	  {   
-	        jsclient.endRoomMsg=d; 
-	        if(d.playInfo&&jsclient.data.playLog)
-			{
-				jsclient.data.playLog.logs.push(d.playInfo);
-			}
-	  }]
-	  ,
-	  onlinePlayer:[0,function(d)
-	  {
-		  var sData=jsclient.data.sData;
-		  if(sData)
-		  {
-			  sData.players[d.uid].onLine=d.onLine;
-			  sData.players[d.uid].mjState=d.mjState;
-		  }
-	  }]
-	  ,MJTick:[0,function(msg){
-		  var sData=jsclient.data.sData;
-		  jsclient.lastMJTick=Date.now();
-		  if(sData)
-		  {
-			  var tickStr="";
-			  for(var uid in msg.players)
-			  {
-				  var pl=msg.players[uid];  tickStr+=pl.tickType+"|";
-				  var PL=sData.players[uid];
-				  if(PL)
-				  {
-					  
-					  if(pl.tickType<0|| pl.mjTickAt+10000<msg.serverNow )
-					  {
-						  PL.onLine=false;
-					  }
-					  else
-					  {
-						  PL.onLine=true;
-					  }
-				  }
-			  }
-			  mylog("mjtick "+tickStr);
-		  }
-	  }]
-     ,DelRoom:[0,function(dr)
-	  {
-			var sData=jsclient.data.sData;
-			sData.tData=dr.tData;
-			for(var uid in dr.players)
-			{
-			  var pl=dr.players[uid];
-			  sData.players[uid].delRoom=pl.delRoom;
-			}
-			if(dr.nouid.length>=1)
-			{
-				jsclient.showMsg("玩家 "+GetUidNames(dr.nouid)+ " 不同意解散房间");
-			}
-	  }]
-	
-}
+    updateInfo:[0,function(info)
+    {
+        var pinfo=jsclient.data.pinfo;
+		 for(var pty in info) pinfo[pty]=info[pty];
+    }],
+
+    moveHead:[1,function(){}],
+
+    mjhand:[0,function(d)
+	{
+        sendEvent("clearCardUI");
+        var sData=jsclient.data.sData;
+        sData.tData=d.tData;
+        for(var uid in sData.players)
+        {
+        var pl=sData.players[uid];
+        pl.mjpeng=[];
+        pl.mjgang0=[];
+        pl.mjgang1=[];
+        pl.mjchi=[];
+        pl.mjput=[];
+        delete pl.mjhand;
+        pl.mjState=TableState.waitPut;
+        if(uid==SelfUid())
+        {
+            pl.mjhand=d.mjhand;
+            pl.mjpeng4=[];
+        }
+        }
+        playEffect("shuffle");
+    }],
+
+    MJPass:[0,function(d)
+    {
+        var sData=jsclient.data.sData;
+        var tData=sData.tData;
+        var pl=sData.players[SelfUid()];
+        pl.mjState=d.mjState;
+        mylog("MJPass");
+    }],
+
+    MJPut:[0.8,function(d)
+    {
+        var sData=jsclient.data.sData;
+        var tData=sData.tData;
+        tData.lastPut=d.card;
+        tData.tState=TableState.waitEat;
+        tData.putType=d.putType;
+        var pl=sData.players[d.uid];
+        pl.mjput.push(d.card);
+
+        playEffect("nv/"+d.card);
+
+        if(d.uid==SelfUid())
+        {
+          pl.mjhand.splice(pl.mjhand.indexOf(d.card),1);
+          pl.mjState=TableState.waitPut;
+          pl.skipHu=false;
+        }
+        else
+        {
+          sData.players[SelfUid()+""].mjState=TableState.waitEat;
+        }
+        mylog("myput "+d.card);
+    }],
+
+    newCard:[0,function(d)
+    {
+        var sData=jsclient.data.sData;
+        var pl=sData.players[SelfUid()+""];
+        var hands=pl.mjhand;
+        pl.isNew=true;
+        hands.push(d);
+    }],
+
+    waitPut:[0,function(d)
+    {
+        var sData=jsclient.data.sData;
+        sData.tData=d;
+        sData.players[SelfUid()+""].mjState=TableState.waitPut;
+        playEffect("give");
+    }],
+
+    MJChi:[0,function(d)
+    {
+        var sData=jsclient.data.sData;
+        sData.tData=d.tData;
+
+        var tData=sData.tData;
+        var uids=tData.uids;
+        var cds=d.mjchi;
+        cds.sort(function(a,b){return a-b});
+
+        //mylog("MJChi "+d.mjchi+" "+d.from+" "+tData.curPlayer);
+
+        playEffect("nv/chi");
+        var pl=sData.players[uids[tData.curPlayer]];
+        var lp=sData.players[uids[d.from]];
+        for(var i=0;i<cds.length;i++)
+        {
+          pl.mjchi.push(cds[i]);
+          pl.isNew=false;
+          if(i==d.pos)
+          {
+              var mjput=lp.mjput;
+              if(mjput.length>0&&mjput[mjput.length-1]==cds[i])
+              {
+                  mjput.length=mjput.length-1;
+              }
+              else  mylog("eat error from");
+          }
+          else if(uids[tData.curPlayer]==SelfUid())
+          {
+              pl.mjState=TableState.waitPut;
+              var mjhand=pl.mjhand;
+              var idx=mjhand.indexOf(cds[i]);
+              if(idx>=0)
+              {
+                  mjhand.splice(idx,1);
+              }
+              else mylog("eat error to");
+          }
+        }
+    }],
+
+    MJPeng:[0,function(d)
+    {
+        var sData=jsclient.data.sData;
+        sData.tData=d.tData;
+        var tData=sData.tData;
+        var uids=tData.uids;
+        var cd=tData.lastPut;
+
+        mylog("MJPeng "+cd+" "+d.from+" "+tData.curPlayer);
+
+        playEffect("nv/peng");
+        var pl=sData.players[uids[tData.curPlayer]];
+        var lp=sData.players[uids[d.from]];
+        pl.mjpeng.push(cd);
+        var mjput=lp.mjput;
+        if(mjput.length>0&&mjput[mjput.length-1]==cd)
+        {
+          mjput.length=mjput.length-1;
+        }
+        else  mylog("peng error from");
+        if(uids[tData.curPlayer]==SelfUid())
+        {
+          pl.mjState=TableState.waitPut;
+          pl.isNew=false;
+          var mjhand=pl.mjhand;
+          var idx=mjhand.indexOf(cd);
+          if(idx>=0)
+          {
+              mjhand.splice(idx,1);
+          }
+          else mylog("eat error to");
+          idx=mjhand.indexOf(cd);
+          if(idx>=0)
+          {
+              mjhand.splice(idx,1);
+          }
+          else mylog("eat error to");
+          if(mjhand.indexOf(cd)>=0)  pl.mjpeng4.push(cd);
+        }
+    }],
+
+    MJGang:[0,function(d)
+    {
+        playEffect("nv/gang");
+        var sData=jsclient.data.sData;
+        var tData=sData.tData;
+        var uids=tData.uids;
+        var cd=d.card;
+        var pl=sData.players[d.uid];
+        if(d.gang==1)
+        {
+          pl.mjgang0.push(cd);
+          if(d.uid==SelfUid())
+          {
+              pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
+              pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
+              pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
+          }
+
+          var lp=sData.players[uids[d.from]];
+          var mjput=lp.mjput;
+          if(mjput.length>0&&mjput[mjput.length-1]==cd)
+          {
+              mjput.length=mjput.length-1;
+          }
+          else  mylog("gang error from");
+          pl.isNew=false;
+        }
+        else if(d.gang==2)
+        {
+          pl.mjgang0.push(cd);
+          pl.mjpeng.splice(pl.mjpeng.indexOf(cd),1);
+          if(d.uid==SelfUid())
+          {
+              pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
+          }
+        }
+        else if(d.gang==3)
+        {
+          pl.mjgang1.push(cd);
+          if(d.uid==SelfUid())
+          {
+              pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
+              pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
+              pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
+              pl.mjhand.splice(pl.mjhand.indexOf(cd),1);
+          }
+        }
+        tData.curPlayer=tData.uids.indexOf(d.uid);
+        tData.lastPut=cd;
+        if(!tData.noBigWin||(d.gang==2&&tData.canEatHu)) tData.putType=d.gang;
+
+        tData.tState=TableState.waitEat;
+
+        if(d.uid==SelfUid())
+        {
+          pl.mjState=TableState.waitCard;
+        }
+        else
+        {
+          sData.players[SelfUid()+""].mjState=TableState.waitEat;
+        }
+    }],
+
+    roundEnd:[0,function(d)//数据
+    {
+        var sData=jsclient.data.sData;
+        sData.tData=d.tData;
+        for(var uid in d.players)
+        {
+          var pl=d.players[uid];
+          var plLocal=sData.players[uid];
+          for(var pty in pl)  plLocal[pty]=pl[pty];
+        }
+        if(sData.tData.winner>=0) playEffect("nv/hu");
+        if(d.playInfo&&jsclient.data.playLog)
+        {
+            jsclient.data.playLog.logs.push(d.playInfo);
+        }
+    }],
+
+    endRoom:[0,function(d)
+    {
+        jsclient.endRoomMsg=d;
+        if(d.playInfo&&jsclient.data.playLog)
+        {
+            jsclient.data.playLog.logs.push(d.playInfo);
+        }
+    }],
+
+    onlinePlayer:[0,function(d)
+    {
+        var sData=jsclient.data.sData;
+        if(sData)
+        {
+          sData.players[d.uid].onLine=d.onLine;
+          sData.players[d.uid].mjState=d.mjState;
+        }
+    }],
+
+    MJTick:[0,function(msg)
+    {
+        var sData=jsclient.data.sData;
+        jsclient.lastMJTick=Date.now();
+        if(sData)
+        {
+            var tickStr="";
+            for(var uid in msg.players)
+            {
+                var pl=msg.players[uid];  tickStr+=pl.tickType+"|";
+                var PL=sData.players[uid];
+                if(PL)
+                {
+
+                    if(pl.tickType<0|| pl.mjTickAt+10000<msg.serverNow )
+                    {
+                      PL.onLine=false;
+                    }
+                    else
+                    {
+                      PL.onLine=true;
+                    }
+                }
+            }
+            mylog("mjtick "+tickStr);
+        }
+    }],
+
+    DelRoom:[0,function(dr)
+    {
+        var sData=jsclient.data.sData;
+        sData.tData=dr.tData;
+        for(var uid in dr.players)
+        {
+          var pl=dr.players[uid];
+          sData.players[uid].delRoom=pl.delRoom;
+        }
+        if(dr.nouid.length>=1)
+        {
+            jsclient.showMsg("玩家 "+GetUidNames(dr.nouid)+ " 不同意解散房间");
+        }
+    }]
+};
 
 jsclient.NetMsgQueue=[];
 
 jsclient.native =
 {
- 
    wxLogin:function()
    {
   		try {
@@ -695,35 +710,41 @@ jsclient.native =
 			{
 				//Native发送_event:WX_USER_LOGIN  返回信息为json通过json中是否有nickName判断登录是否成功
 				jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "StartWxLogin", "()V");
-			}else if (cc.sys.OS_IOS==cc.sys.os)
+			}
+            else if (cc.sys.OS_IOS==cc.sys.os)
 			{
 				//Native发送_event:WX_USER_LOGIN  返回信息为json通过json中是否有nickName判断登录是否成功
 				jsb.reflection.callStaticMethod("AppController","sendAuthRequest");
 			}
-		}catch (e)
+		}
+        catch (e)
 		{
 			jsclient.native.HelloOC("wxLogin throw: " + JSON.stringify(e));
 		}
    	  
-   }
-   ,wxShareUrl:function(url, title, description)
+   },
+
+    wxShareUrl:function(url, title, description)
    {
 	 try{
 		 if (cc.sys.OS_ANDROID == cc.sys.os)
 		 {
 
 			 jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "StartShareWebViewWxSceneSession", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",url, title,description);
-		 }else if(cc.sys.OS_IOS==cc.sys.os)
+		 }
+         else if(cc.sys.OS_IOS==cc.sys.os)
 		 {
 			 jsb.reflection.callStaticMethod("AppController","wxShareUrl:AndText:AndUrl:",title,description,url);
 		 }
-	 }catch(e)
+	 }
+     catch(e)
 	 {
 		 jsclient.native.HelloOC("wxShareUrl throw: " + JSON.stringify(e));
 	 }
 
-   }
-   ,wxShareImage:function()
+   },
+
+    wxShareImage:function()
    {
 	   try {
 		   var writePath = jsb.fileUtils.getWritablePath();
@@ -731,126 +752,147 @@ jsclient.native =
 		   if (cc.sys.OS_ANDROID == cc.sys.os)
 		   {
 			   //脚本通知c++截屏 event:capture_screen c++收到后返回截屏结果信息captureScreen_OK captureScreen_False成功本函数响应
-
 			   jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "StartShareTextureWxSceneSession", "(Ljava/lang/String;)V",writePath + textrueName);
-
-		   }else if (cc.sys.OS_IOS==cc.sys.os)
+		   }
+           else if (cc.sys.OS_IOS==cc.sys.os)
 		   {
 			   //脚本通知c++截屏 event:capture_screen c++收到后返回截屏结果信息captureScreen_OK captureScreen_False成功本函数响应
 			   jsb.reflection.callStaticMethod("AppController","wxShareTexture:",writePath + textrueName);
 		   }
-	   }catch(e)
+	   }
+       catch(e)
 	   {
 		   jsclient.native.HelloOC("wxShareImage throw: " + JSON.stringify(e));
 	   }
 
-   }
-    ,wxShareText:function(text)
+   },
+
+    wxShareText:function(text)
    {
-	try{
-		if(cc.sys.OS_ANDROID == cc.sys.os)
-		{
-			jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "StartShareTextWxSceneSession", "(Ljava/lang/String;)V",text);
+        try{
+            if(cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "StartShareTextWxSceneSession", "(Ljava/lang/String;)V",text);
+            }
+            else if (cc.sys.OS_IOS==cc.sys.os)
+            {
 
-		}else if (cc.sys.OS_IOS==cc.sys.os)
-		{
+            }
+        }
+        catch (e)
+        {
+            jsclient.native.HelloOC("wxShareText throw: " + JSON.stringify(e));
+        }
+   },
 
-		}
-	}catch (e)
-	{
-		jsclient.native.HelloOC("wxShareText throw: " + JSON.stringify(e));
-	}
-   }
-   ,NativeBattery:function()
+    NativeBattery:function()
    {
 	   try {
 		   if (cc.sys.OS_ANDROID == cc.sys.os)
 		   {
 			   jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity","NativeBattery","()V");
-		   }else if(cc.sys.OS_IOS==cc.sys.os)
+		   }
+           else if(cc.sys.OS_IOS==cc.sys.os)
 		   {
 			   jsb.reflection.callStaticMethod("AppController","NativeBattery");
 		   }
-	   }catch (e)
+	   }
+       catch (e)
 	   {
 		   jsclient.native.HelloOC("NativeBattery throw: " + JSON.stringify(e));
 	   }
-   }
-   ,NativeVibrato:function()
+   },
+
+    NativeVibrato:function()
    {
   	try {
 		if (cc.sys.OS_ANDROID == cc.sys.os)
 		{
 			jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity","NativeVibrato","(Ljava/lang/String;Ljava/lang/String;)V","100,300,100,300","false");
-		}else if(cc.sys.OS_IOS==cc.sys.os)
+		}
+        else if(cc.sys.OS_IOS==cc.sys.os)
 		{
 			jsb.reflection.callStaticMethod("AppController","NativeVibrato");
 		}
-	}catch (e)
+	}
+    catch (e)
 	{
 		jsclient.native.HelloOC("NativeVibrato throw: " + JSON.stringify(e));
 	}
    },
-   StartRecord:function (filePath, fileName)
+
+    StartRecord:function (filePath, fileName)
    {
 	  try{
 		  if (cc.sys.OS_ANDROID == cc.sys.os)
 		  {
 			  jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity","startRecord","(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",String(filePath), String(fileName));
-		  }else if(cc.sys.OS_IOS==cc.sys.os)
+		  }
+          else if(cc.sys.OS_IOS==cc.sys.os)
 		  {
 			  jsb.reflection.callStaticMethod("AppController","startRecord:lajioc:", String(filePath), String(fileName));
 		  }
-	  }catch (e)
+	  }
+      catch (e)
 	  {
 		  jsclient.native.HelloOC("StartRecord throw: " + JSON.stringify(e));
 	  }
    },
-   EndRecord: function (eventName)
+
+    EndRecord: function (eventName)
    {
 	  try{
 		  if (cc.sys.OS_ANDROID == cc.sys.os)
 		  {
 			  jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity","endRecord","(Ljava/lang/String;)V", String(eventName));
-		  }else if(cc.sys.OS_IOS==cc.sys.os)
+		  }
+          else if(cc.sys.OS_IOS==cc.sys.os)
 		  {
 			  jsb.reflection.callStaticMethod("AppController","endRecord:", String(eventName));
 		  }
-	  }catch (e){
+	  }catch (e)
+      {
 		  jsclient.native.HelloOC("EndRecord throw: " + JSON.stringify(e));
 	  }
    },
-  UploadFile: function (fullFileName, url, eventName)
+
+    UploadFile: function (fullFileName, url, eventName)
    {
-	 try {
-		 if (cc.sys.OS_ANDROID == cc.sys.os)
-		 {
-			 jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity","uploadFile","(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", String(fullFileName), String(url), String(eventName));
-		 }else if(cc.sys.OS_IOS==cc.sys.os)
-		 {
-			 jsb.reflection.callStaticMethod("AppController","uploadFile:url:eventName:", String(fullFileName), String(url), String(eventName));
-		 }
-	 }catch (e)
-	 {
-		 jsclient.native.HelloOC("UploadFile throw: " + JSON.stringify(e));
-	 }
+        try {
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity","uploadFile","(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", String(fullFileName), String(url), String(eventName));
+            }
+            else if(cc.sys.OS_IOS==cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("AppController","uploadFile:url:eventName:", String(fullFileName), String(url), String(eventName));
+            }
+        }
+        catch (e)
+        {
+            jsclient.native.HelloOC("UploadFile throw: " + JSON.stringify(e));
+        }
    },
-   DownLoadFile:function (filePath, fileName, url, eventName)
+
+    DownLoadFile:function (filePath, fileName, url, eventName)
    {
 	  try{
 		  if (cc.sys.OS_ANDROID == cc.sys.os)
 		  {
 			  jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity","downLoadFile","(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", String(filePath), String(fileName), String(url), String(eventName));
-		  }else if(cc.sys.OS_IOS==cc.sys.os)
+		  }
+          else if(cc.sys.OS_IOS==cc.sys.os)
 		  {
 			  jsb.reflection.callStaticMethod("AppController","downloadFile:fileName:url:eventName:", String(filePath), String(fileName), String(url), String(eventName));
 		  }
-	  }catch (e)
+	  }
+      catch (e)
 	  {
 		  jsclient.native.HelloOC("DownLoadFile throw: " + JSON.stringify(e));
 	  }
    },
-   HelloOC:function(message)
+
+    HelloOC:function(message)
    {
 	  try {
 		  if (cc.sys.OS_ANDROID == cc.sys.os)
@@ -865,8 +907,67 @@ jsclient.native =
 	  {
 		  console.log("虽然我挂掉了,但是我还是坚持打印了了log: " + String(message));
 	  }
-   }
-}
+   },
+
+    //计算两个玩家之间的距离
+    CalculateLineDistance:function(latitude1, longitude1, latitude2, longitude2)
+    {
+        try{
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                return jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "CalculateDistance",
+                    "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+                    String(latitude1), String(longitude1), String(latitude2), String(longitude2));
+            }
+            else if(cc.sys.OS_IOS==cc.sys.os)
+            {
+
+            }
+        }
+        catch(e)
+        {
+            jsclient.native.HelloOC("CalculateLineDistance throw: " + JSON.stringify(e));
+        }
+    },
+
+    //获取玩家纬度
+    GetLatitudePos:function()
+    {
+        try{
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                return jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "getLatitudePos", "()Ljava/lang/String;");
+            }
+            else if(cc.sys.OS_IOS==cc.sys.os)
+            {
+
+            }
+        }
+        catch(e)
+        {
+            jsclient.native.HelloOC("getLatitudePos throw: " + JSON.stringify(e));
+        }
+    },
+
+    //获取玩家经度
+    GetLongitudePos:function()
+    {
+        try{
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                return jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "getLongitudePos", "()Ljava/lang/String;");
+            }
+            else if(cc.sys.OS_IOS==cc.sys.os)
+            {
+
+            }
+        }
+        catch(e)
+        {
+            jsclient.native.HelloOC("getLatitudePos throw: " + JSON.stringify(e));
+        }
+    },
+};
 
 
 var JSScene = cc.Scene.extend({

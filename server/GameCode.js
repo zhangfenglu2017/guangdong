@@ -24,6 +24,9 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 	  pickGang23:6  //摸牌开杠补牌自摸
 	}  
 	function GetHuType(td,pl,cd) {
+		for(var i=0;i<pl.mjhand.length;i++){
+			GLog("pl.mjhand["+i+"]===="+pl.mjhand[i]);
+		}
 		var huType=majiang.canHu(!td.canHu7,pl.mjhand,cd,td.canHuWith258,td.withZhong);
 		pl.huType=huType;
 		return huType;
@@ -172,14 +175,17 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 			tData.roundNum=this.createPara.round;    //剩余
 			tData.canEatHu=this.createPara.canEatHu; //是否可以吃胡
 			tData.withWind=this.createPara.withWind; //是否可以带风
+			//tData.withWind = false;
+			GLog("tData.withWind=====" + tData.withWind);
 			tData.canEat=this.createPara.canEat;     //是否可以吃
 			tData.noBigWin=false;//this.createPara.noBigWin; //是否邵阳玩法
-			//tData.canHu7=isUndefined(this.createPara.canHu7) ? false:this.createPara.canHu7; //是否可以七对
+			tData.canHu7=isUndefined(this.createPara.canHu7) ? false:this.createPara.canHu7; //是否可以七对
 			//tData.canHuWith258=isUndefined(this.createPara.canHuWith258) ? false:this.createPara.canHuWith258; //只能258做将
 			tData.withZhong=isUndefined(this.createPara.withZhong) ? false:this.createPara.withZhong; //红中赖子
 			tData.canHuWith258=false;
-			tData.canHu7=false;
-
+			//tData.canHu7=false;
+			tData.horse = this.createPara.horse;
+			GLog("initAddPlayer  horse==="+tData.horse);
 			//init data 
 			//if(tData.noBigWin) {
 			//	tData.withWind=false;
@@ -283,7 +289,7 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 			tData.cardNext=0;
 			tData.tState=TableState.waitCard;
 			tData.winner=-1;
-			
+			GLog("startGame  horse==="+tData.horse);
 			var cards=this.cards;
 			for(var i=0;i<4;i++)
 		    {
@@ -306,15 +312,15 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 				pl.mjpeng4=[]; //碰的时候还有一张牌
 				pl.picknum=0;
 
-				//pl.mjMa=[];//个人马
+				pl.mjMa=[];//个人马
 				//pl.left4Ma=[];//剩余麻将中的前4个 作为马
-				if(isFirst)
-				{
+				//if(isFirst)
+				//{
 					var maCards = majiang.initMa(i);
 					for(var j=0;j<maCards.length; j++){
 						pl.mjMa.push(maCards[j]);
 					}
-				}
+				//}
 
 				for(var j=0;j<13;j++)
 				{
@@ -358,11 +364,21 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 			pls.push(p);
 		});
 
+		//判断是否是鬼牌模式
+		var horse = tData.horse;
+		//鬼牌模式 判断胡牌是否含鬼牌 无会 增加2匹马
+		if(tData.withZhong)
+		{
+			if(pl){
+				if(!majiang.isHuWithHongZhong(pl)) horse = horse +2;
+			}
+		}
+		GLog("endGame  horse==="+horse);
 		//不管胡不胡都给每位玩家 传送left4Ma
 		for(var z=0;z<pls.length;z++)
 		{
 			pls[z].left4Ma.length = 0;
-			for(var i=0;i<4;i++){
+			for(var i=0;i<horse;i++){
 				pls[z].left4Ma.push(tb.cards[tData.cardNext+i]);
 			}
 		}
@@ -420,7 +436,8 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 					
 					//var is13=pi.huType==13;
 					//var allHand=pi.winType>=WinType.eatGangPut&&majiang.OnlyHand(pi);
-					//var num2=pi.huType==7?1:0;	if(num2==1&&majiang.canGang1([],pi.mjhand,[]).length>0) num2=2;
+					var num2=pi.huType==7?1:0;	if(num2==1&&majiang.canGang1([],pi.mjhand,[]).length>0) num2=2;
+					GLog("num2======="+num2);
 					//var num3=(num2>0||is13)?0:majiang.All3(pi);
 					//var sameColor=is13?false:majiang.SameColor(pi);
 					//var baseWin=1;
@@ -480,6 +497,12 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 						//杠上花
 						if(pi.winType == WinType.pickGang23){
 							pi.mjdesc.push("杠上花");
+							judgeType = 1;
+						}
+						//判断 7对 普通7对 有杠龙7对
+						if(num2>0)
+						{
+							pi.mjdesc.push(num2>1?"龙七对":"七对");
 							judgeType = 1;
 						}
 
@@ -580,7 +603,8 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 					pi.baseWin=baseWin;
 					var isGangShangHua = false;
 
-					var maFan = 1;
+					//var maFan = 1;//算翻
+					var maFan = 1;//算分
 					var maCount = 0;
 
 					switch(majiang.getMaPrice(pi))
@@ -590,16 +614,44 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 							maFan =1;
 							break;
 						case 1:
-							maFan *=2;
+							//maFan *=2;
+							maFan = 2;
 							maCount = 1;
 							break;
 						case 2:
-							maFan *=4;
+							//maFan *=4;
+							maFan = 4;
 							maCount = 2;
 							break;
 						case 3:
-							maFan *=8;
+							//maFan *=8;
+							maFan = 6;
 							maCount = 3;
+							break;
+						case 4:
+							//maFan *=16;
+							maFan = 8;
+							maCount = 4;
+							break;
+						case 5:
+							//maFan *=32;
+							maFan = 10;
+							maCount = 5;
+							break;
+						case 6:
+							//maFan *=64;
+							maFan = 12;
+							maCount = 6;
+							break;
+						case 7:
+							//maFan *=128;
+							maFan = 14;
+							maCount = 7;
+							break;
+						case 8:
+							//maFan *=256;
+							maFan = 16;
+							maCount = 8;
 							break;
 					}
 
@@ -634,51 +686,16 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 						//var maCount = 0;
 						if(pi.winType==WinType.pickGang1){//点杠
 							if(pj.uid!=tData.uids[tData.lastPutPlayer])	continue;
-							//switch(majiang.getMaPrice(pi))//上一个点杠的玩家
-							//{
-							//	case 0:
-							//		maCount = 0;
-							//		maFan =1;
-							//		break;
-							//	case 1:
-							//		maCount = 1;
-							//		maFan *=2;
-							//		break;
-							//	case 2:
-							//		maCount = 2;
-							//		maFan *=4;
-							//		break;
-							//	case 3:
-							//		maCount = 3;
-							//		maFan *=8;
-							//		break;
-							//}
-							baseWin = maFan * 3 ;
+							baseWin = maFan * 3 +3;
 							judgeType = 1;
 							isGangShangHua = true;
+							pi.baseWin=3;
 						}
 						else
 						{
-							//switch(majiang.getMaPrice(pi))
-							//{
-							//	case 0:
-							//		maCount = 0;
-							//		maFan =1;
-							//		break;
-							//	case 1:
-							//		maFan *=2;
-							//		maCount = 1;
-							//		break;
-							//	case 2:
-							//		maFan *=4;
-							//		maCount = 2;
-							//		break;
-							//	case 3:
-							//		maFan *=8;
-							//		maCount = 3;
-							//		break;
-							//}
-							baseWin = maFan;
+							if(maFan == 1) baseWin = maFan;
+							else baseWin = maFan + 1;
+							pi.baseWin=1;
 						}
 
 						pi.winone+=roundWin*baseWin;
@@ -688,8 +705,8 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 						pi.mjdesc.push("杠上花");
 					}
 
-					pi.baseWin=baseWin;
-					if(maFan != 1) pi.mjdesc.push("买马X"+ maCount);
+					//pi.baseWin=baseWin;
+					if(maFan != 1) pi.mjdesc.push("买马"+ maCount);
 					if(judgeType == 0)
 					{
 						pi.mjdesc.push("平胡");
@@ -786,7 +803,11 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 		var callNum = 0;
 		if(tb.AllPlayerCheck(function(pl){ return pl.mjState==TableState.waitCard}))
 		{
-			if(tData.cardNext<cards.length-4)
+			var horse = tData.horse;
+			//鬼牌模式 多预留2匹马
+			if(tData.withZhong) horse = horse +2;
+			GLog("SendNewCard  horse==="+horse);
+			if(tData.cardNext<cards.length-horse)
 			{
 				var newCard=cards[tData.cardNext++];
 				if(tData.putType==0||tData.putType==4)tData.curPlayer=(tData.curPlayer+1)%4;
@@ -1093,9 +1114,12 @@ module.exports = function(app,server,gameid,Player,Table,TableGroup,TableManager
 		GLog("Table.prototype.MJGang");
 		next(null,null); //if(this.GamePause()) return;
 		var tData=this.tData;
+		var horse = tData.horse;
+		//鬼牌模式 多预留2匹马
+		if(tData.withZhong) horse = horse +2;
 		if(	
-            //最后五张不能杠
-		    tData.cardNext<(this.cards.length - 4)
+            //最后1+horse张不能杠
+		    tData.cardNext<(this.cards.length - horse)
 		    &&
 			(
 			  //吃牌杠

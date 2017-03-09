@@ -32,8 +32,13 @@ import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 import org.cocos2dx.lib.Cocos2dxHelper;
 
-
-
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationClient;
+import com.amap.api.location.AMapLocationClientOption;
+import com.amap.api.location.AMapLocationClientOption.AMapLocationMode;
+import com.amap.api.location.AMapLocationListener;
+import com.amap.api.maps.AMapUtils;
+import com.amap.api.maps.model.LatLng;
 import com.happyplay.pop.popAlert;
 
 
@@ -46,6 +51,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Bitmap.CompressFormat;
@@ -64,14 +72,26 @@ import com.tencent.mm.sdk.modelmsg.*;
 import android.util.Log;
 
 import java.io.*;
+import java.math.BigDecimal;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.sql.Date;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 import android.view.WindowManager;
 import android.widget.Toast;
 
 public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandler 
+	implements AMapLocationListener
 {
 	
-    
+	public AMapLocationClientOption mLocationOption = null;
+	public AMapLocationClient mlocationClient = null;
+	public double latitudePos = 0.0;//纬度坐标
+	public double longitudePos = 0.0;//获取经度
+    	
 	public static String AppID="wx073b364e22383a0d";
 	public static String AppSecret="b3faacee5a142ca523dc3f31fd4b0ece";	
 	private  BatteryReceiver receiver=null;
@@ -87,8 +107,10 @@ public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandl
 	static boolean isRecording = false;
 	static boolean isStartRecording = false;
 	//----------------录音------------
+	
 	static boolean canSend = true;
-	public   class BatteryReceiver extends BroadcastReceiver
+	
+	public class BatteryReceiver extends BroadcastReceiver
     {
 
 		@Override
@@ -573,6 +595,28 @@ public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandl
         vibrato = new VibratorUtil();
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         regToWx();
+        
+        mlocationClient = new AMapLocationClient(this);
+        //初始化定位参数
+        mLocationOption = new AMapLocationClientOption();
+      //设置定位监听
+        mlocationClient.setLocationListener(this);
+      //设置定位模式为高精度模式，Battery_Saving为低功耗模式，Device_Sensors是仅设备模式
+        mLocationOption.setLocationMode(AMapLocationMode.Hight_Accuracy);
+        //设置定位间隔,单位毫秒,默认为2000ms
+        mLocationOption.setInterval(2000);
+        //设置定位参数
+        mlocationClient.setLocationOption(mLocationOption);
+	 // 此方法为每隔固定时间会发起一次定位请求，为了减少电量消耗或网络流量消耗，
+	 // 注意设置合适的定位时间的间隔（最小间隔支持为2000ms），并且在合适时间调用stopLocation()方法来取消定位请求
+	 // 在定位结束后，在合适的生命周期调用onDestroy()方法
+	 // 在单次定位情况下，定位无论成功与否，都无需调用stopLocation()方法移除请求，定位sdk内部会移除
+	 //启动定位
+        mlocationClient.startLocation();
+        
+        String sha1 = sHA1(this);
+        Log.e("gaode", "广东麻将SHA1:" + sha1);
+        
     }
 	
 	@Override
@@ -586,8 +630,120 @@ public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandl
         
         return glSurfaceView;
     }
-	
 
+
+	@Override
+	public void onLocationChanged(AMapLocation amapLocation) {
+		// TODO Auto-generated method stub
+		if (amapLocation != null) {
+	        if (amapLocation.getErrorCode() == 0) {
+	        //定位成功回调信息，设置相关消息
+	        int locationType = amapLocation.getLocationType();//获取当前定位结果来源，如网络定位结果，详见定位类型表
+	        double latitude = amapLocation.getLatitude();//获取纬度
+	        double longitude = amapLocation.getLongitude();//获取经度
+	        float accuracy = amapLocation.getAccuracy();//获取精度信息
+	        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	        Date date = new Date(amapLocation.getTime());
+	        df.format(date);//定位时间
+	        
+	        Log.e("gaode", "位置来源"+locationType+"纬度"+latitude+"经度"+longitude+"精确度"+accuracy);
+	        //结束定位
+	        mlocationClient.onDestroy();
+	        
+	        this.latitudePos = latitude;//纬度坐标
+	    	this.longitudePos = longitude;//
+	        
+	        
+	    } else {
+	              //显示错误信息ErrCode是错误码，errInfo是错误信息，详见错误码表。
+	        Log.e("AmapError","location Error, ErrCode:"
+	            + amapLocation.getErrorCode() + ", errInfo:"
+	            + amapLocation.getErrorInfo());
+	        }
+	    }
+		
+	}
+	
+	//获取纬度坐标
+	public String getLatitudePos(){
+		return this.latitudePos+"";
+	}
+	
+	//获取经度坐标
+	public String getLongitudePos(){
+		return this.longitudePos+"";
+	}
+	
+		
+	//计算两点之间的距离
+	public String calculateLineDistance(String latitude1, String longitude1, 
+			String latitude2, String longitude2) {
+		
+		BigDecimal bLatitude1 = new BigDecimal(latitude1);
+		double la1 =  bLatitude1.doubleValue();
+		
+		BigDecimal bLongitude1 = new BigDecimal(longitude1);
+		double lo1 =  bLongitude1.doubleValue();
+		
+		BigDecimal bLatitude2 = new BigDecimal(latitude2);
+		double la2 =  bLatitude2.doubleValue();
+		
+		BigDecimal bLongitude2 = new BigDecimal(longitude2);
+		double lo2 =  bLongitude2.doubleValue();
+		
+		float distance = 0;
+		
+        LatLng start = new LatLng(la1, lo1);
+		LatLng end = new LatLng(la2,lo2);
+		distance = AMapUtils.calculateLineDistance(start, end);
+		//保留小数点后1位
+		DecimalFormat df = new DecimalFormat("0.0");
+		String result = df.format(distance);
+		
+		Log.e("gaode","玩家A和玩家B之间的距离为："+ distance);
+		
+		return result;
+		
+	}
+	
+	
+	
+	//获取apk 对应的 sal值
+	public static String sHA1(Context context) {
+	    try {
+	        PackageInfo info = context.getPackageManager().getPackageInfo(
+	            context.getPackageName(), PackageManager.GET_SIGNATURES);
+	        byte[] cert = info.signatures[0].toByteArray();
+	        MessageDigest md = MessageDigest.getInstance("SHA1");
+	        byte[] publicKey = md.digest(cert);
+	        StringBuffer hexString = new StringBuffer();
+	        for (int i = 0; i < publicKey.length; i++) {
+	            String appendString = Integer.toHexString(0xFF & publicKey[i])
+	                .toUpperCase(Locale.US);
+	            if (appendString.length() == 1)
+	                hexString.append("0");
+	                hexString.append(appendString);
+	                hexString.append(":");
+	        }
+	        return hexString.toString();
+	    } catch (NameNotFoundException e) {
+	        e.printStackTrace();
+	    } catch (NoSuchAlgorithmException e) {
+	        e.printStackTrace();
+	    }
+	    return null;
+	}
+	
+	public static String CalculateDistance(String latitude1, String longitude1, 
+			String latitude2, String longitude2){
+		
+		if(ccActivity!=null)
+		{
+			return ccActivity.calculateLineDistance(latitude1,longitude1,latitude2,longitude2);
+		}
+		
+		return "0";
+	}
 
 	
 }

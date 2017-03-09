@@ -1,6 +1,6 @@
 {
   "ID": "3237f4d0-a445-4d5d-99d7-4fb5421f2113",
-  "Version": "3.10.0.0",
+  "Version": "2.3.4",
   "Name": "Play",
   "Content": {
     "Content": {
@@ -403,96 +403,6 @@
                   "Y": 134.0
                 },
                 "Name": "crt",
-                "ctype": "ImageViewObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "play-yli/guangdongmajiang.png",
-                  "Plist": ""
-                },
-                "Scale9OriginX": 71,
-                "Scale9OriginY": 16,
-                "Scale9Width": 58,
-                "Scale9Height": 24,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 647.3794,
-                  "Y": 431.0854
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "LeftMargin": 547.3794,
-                "RightMargin": -747.3794,
-                "TopMargin": -459.0854,
-                "BottomMargin": 403.0854,
-                "Tag": 659,
-                "ActionTag": -1248610960,
-                "Size": {
-                  "X": 200.0,
-                  "Y": 56.0
-                },
-                "Name": "zz_play_back",
-                "ctype": "ImageViewObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "play-yli/guangdongmajiang.png",
-                  "Plist": ""
-                },
-                "Scale9OriginX": 70,
-                "Scale9OriginY": 18,
-                "Scale9Width": 60,
-                "Scale9Height": 20,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 645.3652,
-                  "Y": 433.7854
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "LeftMargin": 545.3652,
-                "RightMargin": -745.3652,
-                "TopMargin": -461.7854,
-                "BottomMargin": 405.7854,
-                "Tag": 658,
-                "ActionTag": -1844040449,
-                "Size": {
-                  "X": 200.0,
-                  "Y": 56.0
-                },
-                "Name": "sy_name_back",
                 "ctype": "ImageViewObjectData"
               },
               {
@@ -1073,6 +983,51 @@
                   "Y": 134.0
                 },
                 "Name": "clb",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/guangdongmajiang.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 71,
+                "Scale9OriginY": 16,
+                "Scale9Width": 58,
+                "Scale9Height": 24,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 647.3794,
+                  "Y": 431.0854
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 547.3794,
+                "RightMargin": -747.3794,
+                "TopMargin": -459.0854,
+                "BottomMargin": 403.0854,
+                "Tag": 659,
+                "ActionTag": -1248610960,
+                "Size": {
+                  "X": 200.0,
+                  "Y": 56.0
+                },
+                "Name": "gdmj",
                 "ctype": "ImageViewObjectData"
               }
             ],
@@ -2227,7 +2182,7 @@
                       "Y": -0.0824
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -2410,7 +2365,7 @@
                       "Y": -0.3106
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -3538,7 +3493,7 @@
                       "Y": -0.0757
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -3721,7 +3676,7 @@
                       "Y": -0.3222
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -4797,7 +4752,7 @@
                       "Y": -0.0905
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -4980,7 +4935,7 @@
                       "Y": -0.3223
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -6057,7 +6012,7 @@
                       "Y": -0.0734
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -6240,7 +6195,7 @@
                       "Y": -0.3225
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -6462,8 +6417,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 181.9752,
-                      "Y": -16.4862
+                      "X": -58.0249,
+                      "Y": 63.5137
                     },
                     "Scale": {
                       "ScaleX": 0.8,
@@ -6472,17 +6427,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 1.4217,
-                      "Y": -0.133
+                      "X": -0.4533,
+                      "Y": 0.5122
                     },
                     "PreSize": {
                       "X": 0.8672,
                       "Y": 0.9758
                     },
-                    "LeftMargin": 126.4752,
-                    "RightMargin": -109.4752,
-                    "TopMargin": 79.9862,
-                    "BottomMargin": -76.9862,
+                    "LeftMargin": -113.5249,
+                    "RightMargin": 130.5249,
+                    "TopMargin": -0.0137,
+                    "BottomMargin": 3.0137,
                     "Tag": 299,
                     "ActionTag": -443005947,
                     "Size": {
@@ -6836,8 +6791,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 651.1098,
-                  "Y": 365.0282
+                  "X": 650.0,
+                  "Y": 365.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -6853,10 +6808,10 @@
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 566.1098,
-                "RightMargin": -736.1098,
-                "TopMargin": -397.5282,
-                "BottomMargin": 332.5282,
+                "LeftMargin": 565.0,
+                "RightMargin": -735.0,
+                "TopMargin": -397.5,
+                "BottomMargin": 332.5,
                 "Tag": 623,
                 "ActionTag": 963092211,
                 "Size": {
@@ -6911,8 +6866,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 839.85,
-                  "Y": 364.3159
+                  "X": 850.0,
+                  "Y": 365.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -6928,10 +6883,10 @@
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 754.85,
-                "RightMargin": -924.85,
-                "TopMargin": -396.8159,
-                "BottomMargin": 331.8159,
+                "LeftMargin": 765.0,
+                "RightMargin": -935.0,
+                "TopMargin": -397.5,
+                "BottomMargin": 332.5,
                 "Tag": 649,
                 "ActionTag": -1917350536,
                 "Size": {
@@ -6939,6 +6894,81 @@
                   "Y": 65.0
                 },
                 "Name": "delroom",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/btn_return_press.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/btn_return_press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/btn_return_normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 140,
+                "Scale9Height": 43,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 450.0,
+                  "Y": 365.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 365.0,
+                "RightMargin": -535.0,
+                "TopMargin": -397.5,
+                "BottomMargin": 332.5,
+                "Tag": 367,
+                "ActionTag": -205225343,
+                "Size": {
+                  "X": 170.0,
+                  "Y": 65.0
+                },
+                "Name": "backHomebtn",
                 "ctype": "ButtonObjectData"
               }
             ],
@@ -6949,96 +6979,6 @@
             },
             "Name": "wait",
             "ctype": "SingleNodeObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "play-yli/floor_07.png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 67,
-            "Scale9OriginY": 10,
-            "Scale9Width": 70,
-            "Scale9Height": 13,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 198.58,
-              "Y": 724.6992
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.1551,
-              "Y": 1.0065
-            },
-            "PreSize": {
-              "X": 0.1594,
-              "Y": 0.0458
-            },
-            "LeftMargin": 96.58,
-            "RightMargin": 979.42,
-            "TopMargin": -21.1992,
-            "BottomMargin": 708.1992,
-            "Tag": 358,
-            "ActionTag": 599373007,
-            "Size": {
-              "X": 204.0,
-              "Y": 33.0
-            },
-            "Name": "bianL",
-            "ctype": "ImageViewObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "play-yli/floor_07.png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 67,
-            "Scale9OriginY": 10,
-            "Scale9Width": 70,
-            "Scale9Height": 13,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 1087.01,
-              "Y": 725.4979
-            },
-            "Scale": {
-              "ScaleX": -1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.8492,
-              "Y": 1.0076
-            },
-            "PreSize": {
-              "X": 0.1656,
-              "Y": 0.0458
-            },
-            "LeftMargin": 981.01,
-            "RightMargin": 86.99,
-            "TopMargin": -21.9979,
-            "BottomMargin": 708.9979,
-            "Tag": 359,
-            "ActionTag": -1616866803,
-            "Size": {
-              "X": 212.0,
-              "Y": 33.0
-            },
-            "Name": "bianR",
-            "ctype": "ImageViewObjectData"
           },
           {
             "FileData": {
@@ -7295,7 +7235,7 @@
                   "Y": 0.3117
                 },
                 "LeftMargin": 450.1502,
-                "RightMargin": 563.8499,
+                "RightMargin": 563.8498,
                 "TopMargin": 22.2156,
                 "BottomMargin": 30.7844,
                 "Tag": 187,
@@ -7848,8 +7788,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 631.0609,
-                  "Y": 241.8864
+                  "X": 597.9736,
+                  "Y": 246.1328
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -7865,10 +7805,10 @@
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 590.5609,
-                "RightMargin": -671.5609,
-                "TopMargin": -276.3864,
-                "BottomMargin": 207.3864,
+                "LeftMargin": 557.4736,
+                "RightMargin": -638.4736,
+                "TopMargin": -280.6328,
+                "BottomMargin": 211.6328,
                 "Tag": 138,
                 "Children": [
                   {
@@ -10383,81 +10323,6 @@
             },
             "Name": "voice_btn",
             "ctype": "ButtonObjectData"
-          },
-          {
-            "FontSize": 14,
-            "ButtonText": "",
-            "TextColor": {
-              "R": 65,
-              "G": 65,
-              "B": 70
-            },
-            "DisabledFileData": {
-              "Type": "Normal",
-              "Path": "play-yli/btn_return_press.png",
-              "Plist": ""
-            },
-            "PressedFileData": {
-              "Type": "Normal",
-              "Path": "play-yli/btn_return_press.png",
-              "Plist": ""
-            },
-            "NormalFileData": {
-              "Type": "Normal",
-              "Path": "play-yli/btn_return_normal.png",
-              "Plist": ""
-            },
-            "Scale9Enable": true,
-            "Scale9OriginX": 15,
-            "Scale9OriginY": 11,
-            "Scale9Width": 140,
-            "Scale9Height": 43,
-            "OutlineColor": {
-              "G": 0,
-              "B": 0
-            },
-            "ShadowColor": {
-              "R": 110,
-              "G": 110,
-              "B": 110
-            },
-            "ShadowOffsetX": 2.0,
-            "ShadowOffsetY": -2.0,
-            "TouchEnable": true,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 448.6751,
-              "Y": 364.0736
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.3505,
-              "Y": 0.5057
-            },
-            "PreSize": {
-              "X": 0.1328,
-              "Y": 0.0903
-            },
-            "LeftMargin": 363.6751,
-            "RightMargin": 746.3249,
-            "TopMargin": 323.4264,
-            "BottomMargin": 331.5736,
-            "Tag": 367,
-            "ActionTag": -205225343,
-            "Size": {
-              "X": 170.0,
-              "Y": 65.0
-            },
-            "Name": "backHomebtn",
-            "ctype": "ButtonObjectData"
           }
         ],
         "Size": {
@@ -10527,7 +10392,6 @@
         "play-yli/floor_03.png",
         "play-yli/floor_05.png",
         "play-yli/floor_06.png",
-        "play-yli/floor_07.png",
         "play-yli/floor_08.png",
         "play-yli/guangdongmajiang.png",
         "play-yli/icon_electricity_01.png",

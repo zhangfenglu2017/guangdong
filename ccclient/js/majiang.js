@@ -379,6 +379,21 @@
         return rtn;
     }
 
+    majiang.isHuWithHongZhong = function(pl){
+        var test = [pl.mjhand, pl.mjpeng, pl.mjgang0, pl.mjgang1, pl.mjchi];
+        var noHongCount = 0;
+        for(var i = 0;i<test.length;i++){
+            var cds = test[i];
+            if (cds.indexOf(71) == -1 ) {
+                noHongCount++;
+            }
+        }
+        if(noHongCount >= test.length){
+           // console.log("不含红中");
+            return false;
+        }else return true;
+    }
+
     majiang.HunYiSe = function (pl) {
         var test = [pl.mjhand, pl.mjpeng, pl.mjgang0, pl.mjgang1, pl.mjchi];
         var errorCount = 0;
@@ -426,7 +441,7 @@
                 if( pl.mjMa[i] == pl.left4Ma[j]) counts++;
             }
         }
-        return counts;//0 1 2 3
+        return counts;//0 1 2 3 4
     }
 
 
@@ -842,7 +857,24 @@
         }
         return false;
     }
-    
+
+    function is4HongZhong(cds,cd)
+    {
+        var tmp=[];   for(var i=0;i<cds.length;i++) tmp.push(cds[i]);
+        if(cd) tmp.push(cd); cds=tmp;
+        cds.sort(function(a,b){return a-b});
+        var count = 0;
+        for(var i =0;i<cds.length;i++){
+            console.log(cds[i]);
+            if(cds[i]==71){
+                count++;
+            }
+        }
+        console.log("count==="+count);
+        if(count == 4) return true;
+        return false;
+    }
+
     function can_7_Hu(cds,cd,with258,withHun){
         var tmp=[];   for(var i=0;i<cds.length;i++) tmp.push(cds[i]);
         if(cd) tmp.push(cd); cds=tmp;
@@ -902,6 +934,11 @@
     //癞子胡法
     function canHunHu (no7,cds,cd,with258,withHun) {
 
+        //摸到4个红中 胡
+        for(var i=0;i<cds.length;i++){
+            console.log("cds["+i+"]========" + cds[i]);
+        }
+        if(is4HongZhong(cds,cd)) return 100;
         //首先执行能否胡7对
         if(!no7){
             var isHu7 = can_7_Hu(cds,cd,with258,withHun);
@@ -1422,11 +1459,13 @@
              ,[8,5,15,14,16,81,6,27,21,22,17,13,12,91]
              ,*/
             //[15,17,23,18,16,23,15,15]
-            [6,7,14,15,15,16,16,16,17,17,18,26,26,8]
+            //[6,7,14,15,15,16,16,16,17,17,18,26,26]
+            [6,71,71,71,71,16,16,16,17,17,18,26,26]
         ];
         for(var i=0;i<hu.length;i++)
         {
-            console.info( majiang.canHu(false,hu[i])+" "+hu[i]);
+            //console.info( majiang.canHu(false,hu[i])+"     "+hu[i]);
+            console.info( majiang.canHu(false,hu[i],2,false,true)+"     "+hu[i]);
         }
     }
     function TestcanGang1()
@@ -1452,7 +1491,8 @@
     {
         var tests=
             [
-                {name:"", mjpeng:[2,18],mjgang0:[],mjgang1:[],mjchi:[],mjhand:[4,4,4,5,5,5,5,6],mjdesc:[],baseWin:0 }
+                //{name:"", mjpeng:[2,18],mjgang0:[],mjgang1:[],mjchi:[],mjhand:[4,4,4,5,5,5,5,6],mjdesc:[],baseWin:0 },
+                {name:"", mjpeng:[],mjgang0:[],mjgang1:[],mjchi:[],mjhand:[2,2,2,2,4,4,5,5,11,11,12,12,13,13],mjdesc:[],baseWin:0 }
                 ,{name:"", mjpeng:[],mjgang0:[],mjgang1:[],mjchi:[],mjhand:[],mjdesc:[],baseWin:0 }
                 ,{name:"", mjpeng:[],mjgang0:[],mjgang1:[],mjchi:[],mjhand:[],mjdesc:[],baseWin:0 }
                 ,{name:"", mjpeng:[],mjgang0:[],mjgang1:[],mjchi:[],mjhand:[],mjdesc:[],baseWin:0 }
@@ -1535,6 +1575,18 @@
         }
     }
 
+    function testHuWithHongZhong(){
+        var pl = {
+            mjhand:[21,21,21,  22,22,22, 23,23,23, 24,24,24,  25,25],
+            mjpeng:[],
+            mjgang0:[],
+            mjgang1:[],
+            mjchi:[],
+        }
+        majiang.isHuWithHongZhong(pl);
+
+    }
+
     function testHuHongZhong(){
         var pl = {
             mjhand:[21,21,21,  22,22,22, 23,23,23, 24,24,24,  25,25],
@@ -1545,13 +1597,20 @@
         }
         canHuZhong(false, pl.mjhand, 0, false);
     }
+    function test4HongZhong(){
+        var cards = [1,2,3,4,5,6,7,8,11,12,71,71,71];
+        cd = 71;
+        return is4HongZhong(cards,cd);
+    }
     function DoTest()
     {
+        //testHuWithHongZhong();
+        //test4HongZhong();
         //TestAll_3();
-        //TestCardType();
+        TestCardType();
         //TestRandomCards();
         //testHuHongZhong();
-        //TestHu();
+        TestHu();
         //TestcanGang1();
         //TestChi();
         //console.info(majiang.canGang0([2,3,4,3,3],3));

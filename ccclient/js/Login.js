@@ -26,6 +26,7 @@
 					unblock=false;
 					getGuest();
 				}
+				
 			}
 			else if(rtn.result==ZJHCode.serverFull)
 			{
@@ -126,20 +127,20 @@
 			},
 
 			wechatLogin:
-			{	
+			{
 			   _layout:[[0.6,0.1],[0.5,0.7],[0,-3]],
 				_click:function(btn,etype)
 				{
 					if(agreeNode.isSelected())
 					{
-						// if(cc.sys.OS_WINDOWS == cc.sys.os)
-						// {
-						// 	LoginAsGuest();
-						// }
-						// else {
+						if(cc.sys.OS_WINDOWS == cc.sys.os)
+						{
+							LoginAsGuest();
+						}
+						else
+                        {
 							if (jsclient.native) jsclient.native.wxLogin();
-						// }
-						//else LoginAsGuest();
+						}
 					}
 				},
 				legal:
@@ -165,6 +166,7 @@
 					}
 					if((cc.sys.OS_WINDOWS == cc.sys.os) || jsclient.remoteCfg.guestLogin)
 					{
+
 					}else {
 						//doLayout(this,[0.6,0.1],[0.5,0.4],[0,0]);
 					}
@@ -173,7 +175,7 @@
 			},
 
 			guestLogin:
-			{	
+			{
 			    _visible:function()
 				{
 					return (cc.sys.OS_WINDOWS == cc.sys.os) || jsclient.remoteCfg.guestLogin;
@@ -184,7 +186,7 @@
 					{
 						doLayout(this,[0.6,0.1],[0.5,0.4],[0,0]);
 					}
-					else 
+					else
 					{
 						this.visible=false;
 						//doLayout(this,[0.6,0.1],[0.4,0.7],[1.2,-3]);

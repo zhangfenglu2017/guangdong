@@ -4,33 +4,8 @@
 
 (function()
 {
-    var createui,round4,round8,price,canEatHu,withWind,canEat,noBigWin,yesBigWin,playinfotext1,playinfotext2,posXoffset,zimohu;
-    var other_play_method_text,canHuWith258,canHu7,withZhong;
-
-    function checkChildVisible()
-    {
-        // var select = noBigWin.isSelected();
-        // if (select)
-        // {
-        //     yesBigWin.setSelected(false);
-        //     playinfotext1.visible =false;
-        //     playinfotext2.visible =true;
-        //     withWind.visible = false;
-        //     canEat.visible =false;
-        //     canEatHu.visible = true;
-        //     canEatHu.x=withWind.x;
-        // }
-        // else
-        // {
-        //     yesBigWin.setSelected(true);
-        //     playinfotext1.visible =true;
-        //     playinfotext2.visible =false;
-        //      withWind.visible = true;
-        //     canEat.visible =true;
-        //     canEatHu.visible = false;
-        //     canEatHu.x=posXoffset;
-        // }
-    }
+    var createui,round4,round8,Joker,gdmj,canHu7,ma2,ma4,ma6;
+    var horse = 2;
 
     CreateLayer = cc.Layer.extend(
     {
@@ -53,18 +28,9 @@
                     this.opacity = 0;
                 },
 
-
-                //标题
-                table:
-                {
-                    // _layout:[[0.6,0.6],[0.5,0.9],[0,0]]
-                },
-
                 //返回
                 close:
-                {   //缩放 位置  旋转
-                    // _layout:[[0.2,0.2],[0.94,0.92],[0,0]],
-
+                {
                     _click:function()
                     {
                         createui.removeFromParent(true);
@@ -74,124 +40,131 @@
                 play_method_text:
                 {
                     //选择广州麻将
-                    noBigWin:
+                    gdmj:
                     {
                         _run:function()
                         {
                             this.setTouchEnabled(false);
-                            noBigWin = this;
+                            gdmj = this;
                         }
-
-                        // _check:function(sender, type)
-                        // {
-                        //     switch (type)
-                        //     {
-                        //         case ccui.CheckBox.EVENT_SELECTED:
-                        //              yesBigWin.setSelected(false);
-                        //              other_play_method_text.visible = true;
-                        //              playinfotext1.visible =false;
-                        //              playinfotext2.visible =true;
-                        //              withWind.visible = false;
-                        //              canEat.visible =false;
-                        //              canEatHu.visible = true;
-                        //              canEatHu.x=withWind.x;
-                        //             break;
-                        //         case ccui.CheckBox.EVENT_UNSELECTED:
-                        //              yesBigWin.setSelected(true);
-                        //              other_play_method_text.visible = false;
-                        //              playinfotext1.visible =true;
-                        //              playinfotext2.visible =false;
-                        //              withWind.visible = true;
-                        //              canEat.visible =true;
-                        //              canEatHu.visible = false;
-                        //              canEatHu.x=posXoffset;
-                        //             break;
-                        //     }
-                        // }
-                     },
-
-                     yesBigWin:
-                     {
-                        _run:function()
-                        {
-                            this.setVisible(false);
-                            yesBigWin = this;
-                        }
-
-                        // _check:function(sender, type)
-                        // {
-                        //     switch (type)
-                        //     {
-                        //         case ccui.CheckBox.EVENT_SELECTED:
-                        //              noBigWin.setSelected(false);
-                        //              other_play_method_text.visible=false;
-                        //              playinfotext1.visible =true;
-                        //              playinfotext2.visible =false;
-                        //              withWind.visible = true;
-                        //              canEat.visible =true;
-                        //              canEatHu.visible = false;
-                        //              canEatHu.x=posXoffset;
-                        //             break;
-                        //         case ccui.CheckBox.EVENT_UNSELECTED:
-                        //              noBigWin.setSelected(true);
-                        //              other_play_method_text.visible=true;
-                        //              playinfotext1.visible =false;
-                        //              playinfotext2.visible =true;
-                        //              withWind.visible = false;
-                        //              canEat.visible =false;
-                        //              canEatHu.visible = true;
-                        //               canEatHu.x=withWind.x;
-                        //
-                        //             break;
-                        //     }
-                        // }
-                     },
-
-                    playinfotext1:
-                    {
-                        _run:function(){ playinfotext1 = this;}
                     },
+                },
 
-                    playinfotext2:
+                playType:
+                {
+                    Joker:
                     {
                         _run:function()
                         {
-                            this.setVisible(false);
-                            playinfotext2 = this;
+                            Joker = this;
+                        },
+                    },
+                    canHu7:
+                    {
+                        _run:function()
+                        {
+                            canHu7 = this;
                         },
                     }
                 },
 
-                other_play_method_text:
+                horse:
                 {
-                    _run:function ()
-                    {
-                        this.setVisible(false);
-                        other_play_method_text = this;
-                    },
-
-                    canHuWith258:
+                    ma2:
                     {
                         _run:function ()
                         {
-                            this.setVisible(false);
-                            canHuWith258 = this;
-                        }
-                    },
-                    canHu7:{
-                        _run:function ()
+                            ma2 = this;
+                        },
+                        _check:function ()
                         {
-                            this.setVisible(false);
-                            canHu7 = this;
+                            horse = 2;
+                            ma2.setSelected(true);
+                            ma2.setTouchEnabled(false);
+                            ma4.setSelected(false);
+                            ma4.setTouchEnabled(true);
+                            ma6.setSelected(false);
+                            ma6.setTouchEnabled(true);
                         }
                     },
 
-                    withZhong:
+                    ma4:
                     {
                         _run:function ()
                         {
-                            this.setVisible(false);
-                            withZhong = this;
+                            ma4 = this;
+                        },
+                        _check:function ()
+                        {
+                            horse = 4;
+                            ma2.setSelected(false);
+                            ma2.setTouchEnabled(true);
+                            ma4.setSelected(true);
+                            ma4.setTouchEnabled(false);
+                            ma6.setSelected(false);
+                            ma6.setTouchEnabled(true);
+                        }
+                    },
+
+                    ma6:
+                    {
+                        _run:function ()
+                        {
+                            ma6 = this;
+                        },
+                        _check:function ()
+                        {
+                            horse = 6;
+                            ma2.setSelected(false);
+                            ma2.setTouchEnabled(true);
+                            ma4.setSelected(false);
+                            ma4.setTouchEnabled(true);
+                            ma6.setSelected(true);
+                            ma6.setTouchEnabled(false);
+                        }
+                    },
+                },
+
+                round:
+                {
+                    round4:
+                    {
+                        _run:function()
+                        {
+                            round4 = this;
+                        },
+
+                        _check:function(sender, type)
+                        {
+                            switch (type)
+                            {
+                                case ccui.CheckBox.EVENT_SELECTED:
+                                    round8.setSelected(false);
+                                    break;
+                                case ccui.CheckBox.EVENT_UNSELECTED:
+                                    round8.setSelected(true);
+                                    break;
+                            }
+                        }
+                    },
+
+                    round8:
+                    {
+                        _run:function()
+                        {
+                            round8 = this;
+                        },
+                        _check:function(sender, type)
+                        {
+                            switch (type)
+                            {
+                                case ccui.CheckBox.EVENT_SELECTED:
+                                    round4.setSelected(false);
+                                    break;
+                                case ccui.CheckBox.EVENT_UNSELECTED:
+                                    round4.setSelected(true);
+                                    break;
+                            }
                         }
                     }
                 },
@@ -208,23 +181,17 @@
                        if(haveMoney >= needMoney)
                        {
                            jsclient.createRoom(
-                               // isRound4?"round4":"round8",
-                               // false,//canEatHu.isSelected(),
-                               // true,//withWind.isSelected(),
-                               // false, //canEat.isSelected(),
-                               // false,//,noBigWin.isSelected(),
-                               // false,//canHu7.isSelected(),
-                               // false,//canHuWith258.isSelected(),
-                               // true//withZhong.isSelected()
                                isRound4?"round4":"round8", //4局或8局
-                               false,                       //胡
-                               true,                       //
-                               false,                       //吃
+                               false,                      //胡
+                               true,                       //风
+                               false,                      //吃
                                true,                       //广州麻将
-                               false,                       //7
-                               false,                       //258
-                               withWind.isSelected()        //红中
+                               canHu7.isSelected(),        //7
+                               false,                      //258
+                               Joker.isSelected(),        //红中
+                               horse                      //几匹马
                            );
+                           log("创建房间的马数：" + horse);
                        }
                        else
                        {
@@ -235,139 +202,6 @@
                     }
                 },
 
-                money:
-                {
-                    _visible:function()
-                    {
-                        return false;
-                        //!jsclient.remoteCfg.hideMoney;
-                    },
-                    price:
-                    {
-                        _run:function()
-                        {
-                            this.setVisible(false);
-                            price = this;
-                        }
-                    }
-                },
-
-                playType:
-                {
-                    canEat:
-                    {
-                        _run:function()
-                        {
-                            this.setVisible(false);
-                            canEat=this;
-                        }
-                    },
-
-                    withWind:
-                    {
-                        _run:function(){ withWind = this;},
-
-                        _check:function()
-                        {
-                            // var touchState = this.isSelected();
-                            // this.setSelected(!touchState);
-                        }
-                    },
-
-                    canEatHu:
-                    {
-                        _run:function()
-                        {
-                            this.setVisible(false);
-                            canEatHu = this;
-                            posXoffset = canEatHu.x;
-                        },
-
-                            // _check:function(sender, type)
-                            // {
-                            //     switch (type)
-                            //     {
-                            //     case ccui.CheckBox.EVENT_SELECTED:
-                            //         zimohu.setSelected(false);
-                            //         break;
-                            //     case ccui.CheckBox.EVENT_UNSELECTED:
-                            //         zimohu.setSelected(true);
-                            //         break;
-                            //     }
-                            // },
-
-                        zimohu:
-                        {
-                            _run:function()
-                            {
-                                this.setVisible(false);
-                                zimohu = this;
-                            }
-
-                            // _check:function(sender, type)
-                            // {
-                            //     switch (type)
-                            //     {
-                            //     case ccui.CheckBox.EVENT_SELECTED:
-                            //         canEatHu.setSelected(false);
-                            //         break;
-                            //     case ccui.CheckBox.EVENT_UNSELECTED:
-                            //          canEatHu.setSelected(true);
-                            //         break;
-                            //
-                            //     }
-                            // }
-                        }
-                    }
-                },
-
-                round:
-                {
-                    round4:
-                    {
-                        _run:function()
-                        {
-                            round4 = this;
-                        },
-
-                        _check:function(sender, type)
-                        {
-                            switch (type)
-                            {
-                            case ccui.CheckBox.EVENT_SELECTED:
-                                 round8.setSelected(false);
-                                 // price.setString(jsclient.data.gameInfo.gdmj.round4);
-                                break;
-                            case ccui.CheckBox.EVENT_UNSELECTED:
-                                 round8.setSelected(true);
-                                 // price.setString(jsclient.data.gameInfo.gdmj.round8);
-                                break;
-                            }
-                        }
-                    },
-
-                    round8:
-                    {
-                         _run:function()
-                         {
-                             round8 = this;
-                         },
-                        _check:function(sender, type)
-                        {
-                            switch (type)
-                            {
-                            case ccui.CheckBox.EVENT_SELECTED:
-                                  round4.setSelected(false);
-                                  // price.setString(jsclient.data.gameInfo.gdmj.round8);
-                                break;
-                            case ccui.CheckBox.EVENT_UNSELECTED:
-                                  round4.setSelected(true);
-                                  // price.setString(jsclient.data.gameInfo.gdmj.round4);
-                                break;
-                            }
-                        }
-                    }
-                }
             }
         },
 
@@ -376,10 +210,9 @@
             this._super();
             var jsonui = ccs.load(res.Create_json);
             ConnectUI2Logic(jsonui.node,this.jsBind);
-            // price.setString(round4.isSelected()?jsclient.data.gameInfo.gdmj.round4:jsclient.data.gameInfo.gdmj.round8);
-            // checkChildVisible();
             this.addChild(jsonui.node);
             createui = this;
+            horse = 2;
             return true;
         }
     });

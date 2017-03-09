@@ -1,6 +1,6 @@
 {
   "ID": "ba5d3ff2-2add-48a9-bcc6-f3e59cb9dc66",
-  "Version": "3.10.0.0",
+  "Version": "2.3.4",
   "Name": "endOne",
   "Content": {
     "Content": {
@@ -75,8 +75,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 112.2782,
-              "Y": 364.2079
+              "X": 112.2783,
+              "Y": 475.9558
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -86,16 +86,16 @@
             "IconVisible": false,
             "PrePosition": {
               "X": 0.0877,
-              "Y": 0.5058
+              "Y": 0.661
             },
             "PreSize": {
               "X": 0.1539,
               "Y": 0.0806
             },
-            "LeftMargin": 13.7782,
-            "RightMargin": 1069.2218,
-            "TopMargin": 326.7921,
-            "BottomMargin": 335.2079,
+            "LeftMargin": 13.7783,
+            "RightMargin": 1069.2217,
+            "TopMargin": 215.0442,
+            "BottomMargin": 446.9558,
             "Tag": 115,
             "Children": [
               {
@@ -113,8 +113,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 52.0004,
-                  "Y": -55.9975
+                  "X": 50.0,
+                  "Y": -55.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -123,17 +123,16 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.264,
-                  "Y": -0.9655
+                  "X": 0.2538,
+                  "Y": -0.9483
                 },
                 "PreSize": {
                   "X": 0.5076,
                   "Y": 2.2241
                 },
-                "LeftMargin": 2.0004,
-                "RightMargin": 94.9996,
-                "TopMargin": 49.4975,
-                "BottomMargin": -120.4975,
+                "RightMargin": 97.0,
+                "TopMargin": 48.5,
+                "BottomMargin": -119.5,
                 "Tag": 78,
                 "ActionTag": 1099363115,
                 "Size": {
@@ -158,8 +157,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 129.0006,
-                  "Y": -57.998
+                  "X": 130.0,
+                  "Y": -55.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -168,17 +167,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.6548,
-                  "Y": -1.0
+                  "X": 0.6599,
+                  "Y": -0.9483
                 },
                 "PreSize": {
                   "X": 0.5076,
                   "Y": 2.2241
                 },
-                "LeftMargin": 79.0006,
-                "RightMargin": 17.9994,
-                "TopMargin": 51.498,
-                "BottomMargin": -122.498,
+                "LeftMargin": 80.0,
+                "RightMargin": 17.0,
+                "TopMargin": 48.5,
+                "BottomMargin": -119.5,
                 "Tag": 79,
                 "ActionTag": 681291460,
                 "Size": {
@@ -203,8 +202,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 54.0004,
-                  "Y": -158.9991
+                  "X": 50.0,
+                  "Y": -160.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -213,17 +212,16 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.2741,
-                  "Y": -2.7414
+                  "X": 0.2538,
+                  "Y": -2.7586
                 },
                 "PreSize": {
                   "X": 0.5076,
                   "Y": 2.2241
                 },
-                "LeftMargin": 4.0004,
-                "RightMargin": 92.9996,
-                "TopMargin": 152.4991,
-                "BottomMargin": -223.4991,
+                "RightMargin": 97.0,
+                "TopMargin": 153.5,
+                "BottomMargin": -224.5,
                 "Tag": 119,
                 "ActionTag": -2084276445,
                 "Size": {
@@ -248,8 +246,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 129.0007,
-                  "Y": -160.999
+                  "X": 130.0,
+                  "Y": -160.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -258,17 +256,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.6548,
-                  "Y": -2.7758
+                  "X": 0.6599,
+                  "Y": -2.7586
                 },
                 "PreSize": {
                   "X": 0.5076,
                   "Y": 2.2241
                 },
-                "LeftMargin": 79.0007,
-                "RightMargin": 17.9993,
-                "TopMargin": 154.499,
-                "BottomMargin": -225.499,
+                "LeftMargin": 80.0,
+                "RightMargin": 17.0,
+                "TopMargin": 153.5,
+                "BottomMargin": -224.5,
                 "Tag": 80,
                 "ActionTag": -198425050,
                 "Size": {
@@ -276,6 +274,185 @@
                   "Y": 129.0
                 },
                 "Name": "mjtx3",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/Light.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 33,
+                "Scale9OriginY": 42,
+                "Scale9Width": 34,
+                "Scale9Height": 45,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 50.0,
+                  "Y": -265.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2538,
+                  "Y": -4.569
+                },
+                "PreSize": {
+                  "X": 0.5076,
+                  "Y": 2.2241
+                },
+                "RightMargin": 97.0,
+                "TopMargin": 258.5,
+                "BottomMargin": -329.5,
+                "Tag": 119,
+                "ActionTag": 1181335492,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 129.0
+                },
+                "Name": "mjtx4",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/Light.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 33,
+                "Scale9OriginY": 42,
+                "Scale9Width": 34,
+                "Scale9Height": 45,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 130.0,
+                  "Y": -265.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6599,
+                  "Y": -4.569
+                },
+                "PreSize": {
+                  "X": 0.5076,
+                  "Y": 2.2241
+                },
+                "LeftMargin": 80.0,
+                "RightMargin": 17.0,
+                "TopMargin": 258.5,
+                "BottomMargin": -329.5,
+                "Tag": 118,
+                "ActionTag": 202867123,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 129.0
+                },
+                "Name": "mjtx5",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/Light.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 33,
+                "Scale9OriginY": 42,
+                "Scale9Width": 34,
+                "Scale9Height": 45,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 55.0,
+                  "Y": -370.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2792,
+                  "Y": -6.3793
+                },
+                "PreSize": {
+                  "X": 0.5076,
+                  "Y": 2.2241
+                },
+                "LeftMargin": 5.0,
+                "RightMargin": 92.0,
+                "TopMargin": 363.5,
+                "BottomMargin": -434.5,
+                "Tag": 117,
+                "ActionTag": 1850265179,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 129.0
+                },
+                "Name": "mjtx6",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/Light.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 33,
+                "Scale9OriginY": 42,
+                "Scale9Width": 34,
+                "Scale9Height": 45,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 130.0,
+                  "Y": -370.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6599,
+                  "Y": -6.3793
+                },
+                "PreSize": {
+                  "X": 0.5076,
+                  "Y": 2.2241
+                },
+                "LeftMargin": 80.0,
+                "RightMargin": 17.0,
+                "TopMargin": 363.5,
+                "BottomMargin": -434.5,
+                "Tag": 116,
+                "ActionTag": 608862592,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 129.0
+                },
+                "Name": "mjtx7",
                 "ctype": "ImageViewObjectData"
               },
               {
@@ -293,8 +470,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 52.0005,
-                  "Y": -55.9995
+                  "X": 50.0,
+                  "Y": -55.0
                 },
                 "Scale": {
                   "ScaleX": 0.6,
@@ -303,17 +480,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.264,
-                  "Y": -0.9655
+                  "X": 0.2538,
+                  "Y": -0.9483
                 },
                 "PreSize": {
                   "X": 0.4975,
                   "Y": 2.6207
                 },
-                "LeftMargin": 3.0005,
-                "RightMargin": 95.9995,
-                "TopMargin": 37.9995,
-                "BottomMargin": -131.9995,
+                "LeftMargin": 1.0,
+                "RightMargin": 98.0,
+                "TopMargin": 37.0,
+                "BottomMargin": -131.0,
                 "Tag": 114,
                 "Children": [
                   {
@@ -385,8 +562,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 129.0013,
-                  "Y": -57.9997
+                  "X": 130.0,
+                  "Y": -55.0
                 },
                 "Scale": {
                   "ScaleX": 0.6,
@@ -395,17 +572,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.6548,
-                  "Y": -1.0
+                  "X": 0.6599,
+                  "Y": -0.9483
                 },
                 "PreSize": {
                   "X": 0.4975,
                   "Y": 2.6207
                 },
-                "LeftMargin": 80.0013,
-                "RightMargin": 18.9987,
-                "TopMargin": 39.9997,
-                "BottomMargin": -133.9997,
+                "LeftMargin": 81.0,
+                "RightMargin": 18.0,
+                "TopMargin": 37.0,
+                "BottomMargin": -131.0,
                 "Tag": 116,
                 "Children": [
                   {
@@ -477,8 +654,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 54.0005,
-                  "Y": -158.9991
+                  "X": 50.0,
+                  "Y": -160.0
                 },
                 "Scale": {
                   "ScaleX": 0.6,
@@ -487,17 +664,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.2741,
-                  "Y": -2.7414
+                  "X": 0.2538,
+                  "Y": -2.7586
                 },
                 "PreSize": {
                   "X": 0.4975,
                   "Y": 2.6207
                 },
-                "LeftMargin": 5.0005,
-                "RightMargin": 93.9995,
-                "TopMargin": 140.9991,
-                "BottomMargin": -234.9991,
+                "LeftMargin": 1.0,
+                "RightMargin": 98.0,
+                "TopMargin": 142.0,
+                "BottomMargin": -236.0,
                 "Tag": 117,
                 "Children": [
                   {
@@ -569,8 +746,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 129.0013,
-                  "Y": -160.9992
+                  "X": 130.0,
+                  "Y": -160.0
                 },
                 "Scale": {
                   "ScaleX": 0.6,
@@ -579,17 +756,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.6548,
-                  "Y": -2.7758
+                  "X": 0.6599,
+                  "Y": -2.7586
                 },
                 "PreSize": {
                   "X": 0.4975,
                   "Y": 2.6207
                 },
-                "LeftMargin": 80.0013,
-                "RightMargin": 18.9987,
-                "TopMargin": 142.9992,
-                "BottomMargin": -236.9992,
+                "LeftMargin": 81.0,
+                "RightMargin": 18.0,
+                "TopMargin": 142.0,
+                "BottomMargin": -236.0,
                 "Tag": 118,
                 "Children": [
                   {
@@ -649,6 +826,374 @@
               {
                 "FileData": {
                   "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg2.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 50.0,
+                  "Y": -265.0
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2538,
+                  "Y": -4.569
+                },
+                "PreSize": {
+                  "X": 0.4975,
+                  "Y": 2.6207
+                },
+                "LeftMargin": 1.0,
+                "RightMargin": 98.0,
+                "TopMargin": 247.0,
+                "BottomMargin": -341.0,
+                "Tag": 120,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 26,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 50.0,
+                      "Y": 65.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5102,
+                      "Y": 0.4276
+                    },
+                    "PreSize": {
+                      "X": 0.7551,
+                      "Y": 0.6579
+                    },
+                    "LeftMargin": 13.0,
+                    "RightMargin": 11.0,
+                    "TopMargin": 37.0,
+                    "BottomMargin": 15.0,
+                    "Tag": 121,
+                    "ActionTag": 2124248410,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 309715719,
+                "Size": {
+                  "X": 98.0,
+                  "Y": 152.0
+                },
+                "Name": "mjbk5",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg2.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 130.0,
+                  "Y": -265.0
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6599,
+                  "Y": -4.569
+                },
+                "PreSize": {
+                  "X": 0.4975,
+                  "Y": 2.6207
+                },
+                "LeftMargin": 81.0,
+                "RightMargin": 18.0,
+                "TopMargin": 247.0,
+                "BottomMargin": -341.0,
+                "Tag": 122,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 26,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 50.0,
+                      "Y": 65.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5102,
+                      "Y": 0.4276
+                    },
+                    "PreSize": {
+                      "X": 0.7551,
+                      "Y": 0.6579
+                    },
+                    "LeftMargin": 13.0,
+                    "RightMargin": 11.0,
+                    "TopMargin": 37.0,
+                    "BottomMargin": 15.0,
+                    "Tag": 123,
+                    "ActionTag": -2088810577,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -430555054,
+                "Size": {
+                  "X": 98.0,
+                  "Y": 152.0
+                },
+                "Name": "mjbk6",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg2.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 55.0,
+                  "Y": -370.0
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2792,
+                  "Y": -6.3793
+                },
+                "PreSize": {
+                  "X": 0.4975,
+                  "Y": 2.6207
+                },
+                "LeftMargin": 6.0,
+                "RightMargin": 93.0,
+                "TopMargin": 352.0,
+                "BottomMargin": -446.0,
+                "Tag": 124,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 26,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 50.0,
+                      "Y": 65.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5102,
+                      "Y": 0.4276
+                    },
+                    "PreSize": {
+                      "X": 0.7551,
+                      "Y": 0.6579
+                    },
+                    "LeftMargin": 13.0,
+                    "RightMargin": 11.0,
+                    "TopMargin": 37.0,
+                    "BottomMargin": 15.0,
+                    "Tag": 125,
+                    "ActionTag": -1853604658,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 735544710,
+                "Size": {
+                  "X": 98.0,
+                  "Y": 152.0
+                },
+                "Name": "mjbk7",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg2.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 130.0,
+                  "Y": -370.0
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6599,
+                  "Y": -6.3793
+                },
+                "PreSize": {
+                  "X": 0.4975,
+                  "Y": 2.6207
+                },
+                "LeftMargin": 81.0,
+                "RightMargin": 18.0,
+                "TopMargin": 352.0,
+                "BottomMargin": -446.0,
+                "Tag": 126,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 26,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 50.0,
+                      "Y": 65.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5102,
+                      "Y": 0.4276
+                    },
+                    "PreSize": {
+                      "X": 0.7551,
+                      "Y": 0.6579
+                    },
+                    "LeftMargin": 13.0,
+                    "RightMargin": 11.0,
+                    "TopMargin": 37.0,
+                    "BottomMargin": 15.0,
+                    "Tag": 127,
+                    "ActionTag": -2071968151,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 1283780826,
+                "Size": {
+                  "X": 98.0,
+                  "Y": 152.0
+                },
+                "Name": "mjbk8",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
                   "Path": "gameEndNew/mazz.png",
                   "Plist": ""
                 },
@@ -661,8 +1206,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 52.0005,
-                  "Y": -55.9975
+                  "X": 50.0,
+                  "Y": -55.0
                 },
                 "Scale": {
                   "ScaleX": 0.6,
@@ -671,17 +1216,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.264,
-                  "Y": -0.9655
+                  "X": 0.2538,
+                  "Y": -0.9483
                 },
                 "PreSize": {
                   "X": 0.533,
                   "Y": 2.7241
                 },
-                "LeftMargin": -0.4995,
-                "RightMargin": 92.4995,
-                "TopMargin": 34.9975,
-                "BottomMargin": -134.9975,
+                "LeftMargin": -2.5,
+                "RightMargin": 94.5,
+                "TopMargin": 34.0,
+                "BottomMargin": -134.0,
                 "Tag": 279,
                 "ActionTag": 1334905655,
                 "Size": {
@@ -706,8 +1251,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 129.0002,
-                  "Y": -57.998
+                  "X": 130.0,
+                  "Y": -55.0
                 },
                 "Scale": {
                   "ScaleX": 0.6,
@@ -716,17 +1261,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.6548,
-                  "Y": -1.0
+                  "X": 0.6599,
+                  "Y": -0.9483
                 },
                 "PreSize": {
                   "X": 0.533,
                   "Y": 2.7241
                 },
-                "LeftMargin": 76.5002,
-                "RightMargin": 15.4998,
-                "TopMargin": 36.998,
-                "BottomMargin": -136.998,
+                "LeftMargin": 77.5,
+                "RightMargin": 14.5,
+                "TopMargin": 34.0,
+                "BottomMargin": -134.0,
                 "Tag": 280,
                 "ActionTag": 1383544573,
                 "Size": {
@@ -751,8 +1296,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 54.0005,
-                  "Y": -158.9989
+                  "X": 50.0,
+                  "Y": -160.0
                 },
                 "Scale": {
                   "ScaleX": 0.6,
@@ -761,17 +1306,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.2741,
-                  "Y": -2.7414
+                  "X": 0.2538,
+                  "Y": -2.7586
                 },
                 "PreSize": {
                   "X": 0.533,
                   "Y": 2.7241
                 },
-                "LeftMargin": 1.5005,
-                "RightMargin": 90.4995,
-                "TopMargin": 137.9989,
-                "BottomMargin": -237.9989,
+                "LeftMargin": -2.5,
+                "RightMargin": 94.5,
+                "TopMargin": 139.0,
+                "BottomMargin": -239.0,
                 "Tag": 281,
                 "ActionTag": 1733189702,
                 "Size": {
@@ -796,8 +1341,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 129.0002,
-                  "Y": -160.9988
+                  "X": 130.0,
+                  "Y": -160.0
                 },
                 "Scale": {
                   "ScaleX": 0.6,
@@ -806,17 +1351,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.6548,
-                  "Y": -2.7758
+                  "X": 0.6599,
+                  "Y": -2.7586
                 },
                 "PreSize": {
                   "X": 0.533,
                   "Y": 2.7241
                 },
-                "LeftMargin": 76.5002,
-                "RightMargin": 15.4998,
-                "TopMargin": 139.9988,
-                "BottomMargin": -239.9988,
+                "LeftMargin": 77.5,
+                "RightMargin": 14.5,
+                "TopMargin": 139.0,
+                "BottomMargin": -239.0,
                 "Tag": 282,
                 "ActionTag": 283270882,
                 "Size": {
@@ -824,6 +1369,186 @@
                   "Y": 158.0
                 },
                 "Name": "mjzz4",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/mazz.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 50.0,
+                  "Y": -265.0
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2538,
+                  "Y": -4.569
+                },
+                "PreSize": {
+                  "X": 0.533,
+                  "Y": 2.7241
+                },
+                "LeftMargin": -2.5,
+                "RightMargin": 94.5,
+                "TopMargin": 244.0,
+                "BottomMargin": -344.0,
+                "Tag": 130,
+                "ActionTag": 1977008083,
+                "Size": {
+                  "X": 105.0,
+                  "Y": 158.0
+                },
+                "Name": "mjzz5",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/mazz.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 130.0,
+                  "Y": -265.0
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6599,
+                  "Y": -4.569
+                },
+                "PreSize": {
+                  "X": 0.533,
+                  "Y": 2.7241
+                },
+                "LeftMargin": 77.5,
+                "RightMargin": 14.5,
+                "TopMargin": 244.0,
+                "BottomMargin": -344.0,
+                "Tag": 131,
+                "ActionTag": -1224726293,
+                "Size": {
+                  "X": 105.0,
+                  "Y": 158.0
+                },
+                "Name": "mjzz6",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/mazz.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 55.0,
+                  "Y": -370.0
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2792,
+                  "Y": -6.3793
+                },
+                "PreSize": {
+                  "X": 0.533,
+                  "Y": 2.7241
+                },
+                "LeftMargin": 2.5,
+                "RightMargin": 89.5,
+                "TopMargin": 349.0,
+                "BottomMargin": -449.0,
+                "Tag": 132,
+                "ActionTag": 1701966830,
+                "Size": {
+                  "X": 105.0,
+                  "Y": 158.0
+                },
+                "Name": "mjzz7",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/mazz.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 34,
+                "Scale9OriginY": 52,
+                "Scale9Width": 30,
+                "Scale9Height": 48,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 130.0,
+                  "Y": -370.0
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6599,
+                  "Y": -6.3793
+                },
+                "PreSize": {
+                  "X": 0.533,
+                  "Y": 2.7241
+                },
+                "LeftMargin": 77.5,
+                "RightMargin": 14.5,
+                "TopMargin": 349.0,
+                "BottomMargin": -449.0,
+                "Tag": 133,
+                "ActionTag": -1046036153,
+                "Size": {
+                  "X": 105.0,
+                  "Y": 158.0
+                },
+                "Name": "mjzz8",
                 "ctype": "ImageViewObjectData"
               }
             ],
