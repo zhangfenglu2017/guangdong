@@ -66,13 +66,13 @@
                 <BallPressedData Type="Normal" Path="set/slither.png" Plist="" />
                 <BallDisabledData Type="Normal" Path="set/slither.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="close" ActionTag="813085948" Tag="1149" IconVisible="False" LeftMargin="603.8400" RightMargin="-53.8400" TopMargin="-47.1400" BottomMargin="382.1400" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="115" Scale9Height="121" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="close" ActionTag="813085948" Tag="1149" IconVisible="False" LeftMargin="603.8402" RightMargin="-53.8402" TopMargin="-48.1401" BottomMargin="383.1401" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="115" Scale9Height="121" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="145.0000" Y="143.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="676.3400" Y="453.6400" />
+                <Position X="676.3402" Y="454.6401" />
                 <Scale ScaleX="0.7500" ScaleY="0.7500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9732" Y="0.9490" />
+                <PrePosition X="0.9732" Y="0.9511" />
                 <PreSize X="0.2086" Y="0.2992" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Normal" Path="webview/btn_close_press.png" Plist="" />

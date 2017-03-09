@@ -1,149 +1,154 @@
 
 
-
 function newReplayLayer()
 {
-    var TableState =
-    {
-        waitJoin: 1,
-        waitReady: 2,
-        waitPut: 3,
-        waitEat: 4,
-        waitCard: 5,
-        roundFinish: 6,
-        isReady: 7
-    };
+    // var TableState =
+    // {
+    //     waitJoin: 1,
+    //     waitReady: 2,
+    //     waitPut: 3,
+    //     waitEat: 4,
+    //     waitCard: 5,
+    //     roundFinish: 6,
+    //     isReady: 7
+    // };
 
     //图片提示
-    var ActionType =
-    {
-        CHI: 1,
-        PENG: 2,
-        GANG: 3,
-        LIANG: 4,
-        HU: 5,
-        GUO: 6,
-        FLOWER: 7
-    };
+    // var ActionType =
+    // {
+    //     CHI: 1,
+    //     PENG: 2,
+    //     GANG: 3,
+    //     LIANG: 4,
+    //     HU: 5,
+    //     GUO: 6,
+    //     FLOWER: 7
+    // };
 
-    function ShowEatActionAnim(node, actType, off)
-    {
-        if (off == 0)
-            return;
+    // function ShowEatActionAnim(node, actType, off)
+    // {
+    //     if (off == 0)
+    //         return;
+    //
+    //     var eatNode = node.getChildByName("effectStateAct");
+    //     var childActionNode = null;
+    //     var callback = function ()
+    //     {
+    //         childActionNode.visible = false;
+    //     };
+    //
+    //     switch (actType) {
+    //         case ActionType.CHI:
+    //             childActionNode = eatNode.getChildByName("ef_chi");
+    //             childActionNode.visible = true;
+    //             childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
+    //             break;
+    //         case ActionType.GANG:
+    //             childActionNode = eatNode.getChildByName("ef_gang");
+    //             childActionNode.visible = true;
+    //             childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
+    //             break;
+    //         case ActionType.PENG:
+    //             childActionNode = eatNode.getChildByName("ef_peng");
+    //             childActionNode.visible = true;
+    //             childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
+    //             break;
+    //         case ActionType.LIANG:
+    //         // 	childActionNode=eatNode.getChildByName("ef_chi");
+    //         case ActionType.HU:
+    //             childActionNode = eatNode.getChildByName("ef_hu");
+    //             childActionNode.visible = true;
+    //             childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
+    //             break;
+    //         case ActionType.FLOWER:
+    //             childActionNode = eatNode.getChildByName("ef_hua");
+    //             childActionNode.visible = true;
+    //             childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
+    //             break;
+    //         default:
+    //             break;
+    //     }
+    //
+    // }
 
-        var eatNode = node.getChildByName("effectStateAct");
-        var childActionNode = null;
-        var callback = function ()
-        {
-            childActionNode.visible = false;
-        };
+    // function SelfUid() {
+    //     return jsclient.data.pinfo.uid
+    // }
 
-        switch (actType) {
-            case ActionType.CHI:
-                childActionNode = eatNode.getChildByName("ef_chi");
-                childActionNode.visible = true;
-                childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
-                break;
-            case ActionType.GANG:
-                childActionNode = eatNode.getChildByName("ef_gang");
-                childActionNode.visible = true;
-                childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
-                break;
-            case ActionType.PENG:
-                childActionNode = eatNode.getChildByName("ef_peng");
-                childActionNode.visible = true;
-                childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
-                break;
-            case ActionType.LIANG:
-            // 	childActionNode=eatNode.getChildByName("ef_chi");
-            case ActionType.HU:
-                childActionNode = eatNode.getChildByName("ef_hu");
-                childActionNode.visible = true;
-                childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
-                break;
-            case ActionType.FLOWER:
-                childActionNode = eatNode.getChildByName("ef_hua");
-                childActionNode.visible = true;
-                childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
-                break;
-            default:
-                break;
-        }
+    // function IsMyTurn() {
+    //     var sData = jsclient.data.sData;
+    //     var tData = sData.tData;
+    //     return SelfUid() == tData.uids[tData.curPlayer];
+    // }
 
-    }
-
-    function SelfUid() {
-        return jsclient.data.pinfo.uid
-    }
-
-    function IsMyTurn() {
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
-        return SelfUid() == tData.uids[tData.curPlayer];
-    }
-
-    function PutAwayCard(cdui, cd) {
-        var children = cdui.parent.children;
-        var mjhandNum = 0;
-        //var newCard;
-        var standUI = cdui.parent.getChildByName("stand");
-        for (var i = 0; i < children.length; i++) {
-            if (children[i].name == "mjhand") {
-                /*if (children[i].isnewCard) 
-                 {
-                 newCard=children[i];
-                 }*/
-
-                if (children[i].y > standUI.y + 10)
-                    children[i].y = standUI.y;
-                mjhandNum++;
-            }
-        }
-        var pl = getUIPlayer(0);
-        if (mjhandNum == pl.mjhand.length) {
-            jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "MJPut", card: cd});
-            jsclient.lastPutPos = {x: cdui.x, y: cdui.y};
-            //if(newCard) newCard.isnewCard=false;
-            HandleMJPut(cdui.parent, {uid: SelfUid(), card: cd}, 0);
-
-        }
-
-
-    }
+    // function PutAwayCard(cdui, cd) {
+    //     var children = cdui.parent.children;
+    //     var mjhandNum = 0;
+    //     var standUI = cdui.parent.getChildByName("stand");
+    //     for (var i = 0; i < children.length; i++)
+    //     {
+    //         if (children[i].name == "mjhand")
+    //         {
+    //             if (children[i].y > standUI.y + 10)
+    //                 children[i].y = standUI.y;
+    //             mjhandNum++;
+    //         }
+    //     }
+    //
+    //     var pl = getUIPlayer(0);
+    //     if(!pl)
+    //         return;
+    //
+    //     if (mjhandNum == pl.mjhand.length)
+    //     {
+    //         jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "MJPut", card: cd});
+    //         jsclient.lastPutPos = {x: cdui.x, y: cdui.y};
+    //         HandleMJPut(cdui.parent, {uid: SelfUid(), card: cd}, 0);
+    //     }
+    // }
 
     jsclient.MJPass2Net = function () {
         var sData = jsclient.data.sData;
         var tData = sData.tData;
-        if (IsMyTurn() && tData.tState == TableState.waitPut) {
+        if (IsMyTurn() && tData.tState == TableState.waitPut)
+        {
             var cduis = jsclient.replayui.jsBind.down._node.children;
             var pl = jsclient.data.sData.players[SelfUid()];
             var lastCard = pl.mjhand[pl.mjhand.length - 1];
-            for (var i = cduis.length - 1; i >= 0; i--) {
-                if (cduis[i].tag == lastCard) {
+            for (var i = cduis.length - 1; i >= 0; i--)
+            {
+                if (cduis[i].tag == lastCard)
+                {
                     PutAwayCard(cduis[i], lastCard);
                     break;
                 }
             }
         }
-        else {
+        else
+        {
             var pl = getUIPlayer(0);
-            if (jsclient.replayui.jsBind.eat.hu._node.visible) {
+
+            if(pl == null)
+                return;
+
+            if (jsclient.replayui.jsBind.eat.hu._node.visible)
+            {
                 pl.skipHu = true;
             }
             jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "MJPass"});
 
             pl.mjState = TableState.waitCard;
-            CheckEatVisible(jsclient.replayui.jsBind.eat);
+            // CheckEatVisible(jsclient.replayui.jsBind.eat);
         }
     }
 
-    function MJGang2Net(cd) {
-        jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "MJGang", card: cd});
-    }
+    // function MJGang2Net(cd) {
+    //     jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "MJGang", card: cd});
+    // }
 
-    function MJChi2Net(pos) {
-        jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "MJChi", pos: pos});
-    }
+    // function MJChi2Net(pos) {
+    //     jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "MJChi", pos: pos});
+    // }
 
     function MJHu2Net() {
         jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "MJHu"});
@@ -153,48 +158,47 @@ function newReplayLayer()
         jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "MJPeng"});
     }
 
-    function ShowMjChiCard(node, off)
+    // function ShowMjChiCard(node, off)
+    // {
+    // }
+    //
+    // function CheckChangeuiVisible()
+    // {
+    //     jsclient.replayui.jsBind.eat.changeui.changeuibg._node.visible = false;
+    // }
+    //
+    // function ShowSkipHu()
+    // {
+    //     var jsonui = ccs.load("res/SkipHu.json");
+    //     doLayout(jsonui.node.getChildByName("Image_1"), [0.2, 0.2], [0.5, 0.3], [0, 0]);
+    //     jsclient.Scene.addChild(jsonui.node);
+    //     jsonui.node.runAction(cc.sequence(cc.delayTime(2), cc.removeSelf()));
+    // }
+
+    // function CheckEatVisible(eat)
+    // {
+    //
+    // }
+
+    function SetPlayerVisible(node, off)
     {
-    }
-
-    function CheckChangeuiVisible()
-    {
-        jsclient.replayui.jsBind.eat.changeui.changeuibg._node.visible = false;
-    }
-
-    function ShowSkipHu()
-    {
-        var jsonui = ccs.load("res/SkipHu.json");
-        doLayout(jsonui.node.getChildByName("Image_1"), [0.2, 0.2], [0.5, 0.3], [0, 0]);
-        jsclient.Scene.addChild(jsonui.node);
-        jsonui.node.runAction(cc.sequence(cc.delayTime(2), cc.removeSelf()));
-    }
-
-    function CheckEatVisible(eat)
-    {
-
-    }
-
-    function SetPlayerVisible(node, off) {
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
         var pl = getUIPlayer(off);
 
         var head = node.getChildByName("head");
         var name = head.getChildByName("name");
         var offline = head.getChildByName("offline");
         var coin = head.getChildByName("coin");
-        if (pl) {
+        if (pl)
+        {
             name.visible = true;
             coin.visible = false;
             offline.visible = false;
             //coin.visible =true;
-            //jsclient.loadWxHead(pl.info.uid,pl.info.headimgurl);
             jsclient.loadWxHead(pl.info.headimgurl, head, 64, 62, 0.2, 1, "WxHead");
             setOffline(node, off);
-            //if (pl.mjpeng) {InitPlayerHandUI(node,off);} 
-
-        } else {
+        }
+        else
+        {
             name.visible = false;
             offline.visible = false;
             coin.visible = false;
@@ -203,51 +207,52 @@ function newReplayLayer()
         }
     }
 
-    function CheckInviteVisible() {
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
-        if (TableState.waitJoin == tData.tState) {
-            return Object.keys(sData.players).length < 4;
-        }
-        else {
-            return false;
-        }
-    }
+    // function CheckInviteVisible() {
+    //     var sData = jsclient.data.sData;
+    //     var tData = sData.tData;
+    //     if (TableState.waitJoin == tData.tState) {
+    //         return Object.keys(sData.players).length < 4;
+    //     }
+    //     else {
+    //         return false;
+    //     }
+    // }
 
-    function CheckArrowVisible() {
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
+    // function CheckArrowVisible() {
+    //     var sData = jsclient.data.sData;
+    //     var tData = sData.tData;
+    //
+    //     //mylog("CheckArrowVisible "+tData.tState);
+    //
+    //     if (TableState.waitPut == tData.tState
+    //         || TableState.waitEat == tData.tState
+    //         || TableState.waitCard == tData.tState
+    //     ) {
+    //         return true;
+    //     }
+    //     else {
+    //         return false;
+    //     }
+    // }
 
-        //mylog("CheckArrowVisible "+tData.tState);
+    // function clearCardUI(node) {
+    //     mylog("clearCardUI");
+    //     var children = node.children;
+    //     for (var i = 0; i < children.length; i++) {
+    //         var ni = children[i];
+    //         if (ni.getName() != "effectStateAct" &&
+    //             ni.name != "head" && ni.name != "up" &&
+    //             ni.name != "down" && ni.name != "stand" &&
+    //             ni.name != "out0" && ni.name != "out1" &&
+    //             ni.getName() != "ready")
+    //         {
+    //             ni.removeFromParent(true);
+    //         }
+    //     }
+    // }
 
-        if (TableState.waitPut == tData.tState
-            || TableState.waitEat == tData.tState
-            || TableState.waitCard == tData.tState
-        ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    function clearCardUI(node) {
-        mylog("clearCardUI");
-        var children = node.children;
-        for (var i = 0; i < children.length; i++) {
-            var ni = children[i];
-            if (ni.getName() != "effectStateAct" &&
-                ni.name != "head" && ni.name != "up" &&
-                ni.name != "down" && ni.name != "stand" &&
-                ni.name != "out0" && ni.name != "out1" &&
-                ni.getName() != "ready")
-            {
-                ni.removeFromParent(true);
-            }
-        }
-    }
-
-    function HandleNewCard(node, msg, off) {
+    function HandleNewCard(node, msg, off)
+    {
         /*
          *去除过期的newcard 标签
          *
@@ -266,77 +271,103 @@ function newReplayLayer()
          */
         var pl = getUIPlayer(off);
 
-        if (uids[tData.curPlayer] == pl.info.uid)
+        if(pl == null)
+            return;
+        var curIndex = tData.curPlayer;
+        if(curIndex >= uids.length)
+            curIndex = 2;
+        if (uids[curIndex] == pl.info.uid)
         {
             mylog("uids[tData.curPlayeroff" + off);
-            if (off == 0) {
+            if (off == 0)
+            {
                 AddNewCard(node, "stand", "mjhand", msg, off);
             }
-            else if (pl.mjhand) {
+            else if (pl.mjhand)
+            {
                 AddNewCard(node, "up", "mjhand", msg, off);
             }
             RestoreCardLayout(node, off);
         }
-
     }
 
-    function HandleWaitPut(node, msg, off) {
+    function HandleWaitPut(node, msg, off)
+    {
         var sData = jsclient.data.sData;
         var tData = sData.tData;
         var uids = tData.uids;
         var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
         var pl = getUIPlayer(off);
-        if (tData.curPlayer == selfIndex && !pl.mjhand) {
+
+        if(pl == null)
+            return;
+
+        if (tData.curPlayer == selfIndex && !pl.mjhand)
+        {
             AddNewCard(node, "stand", "standPri");
             RestoreCardLayout(node, off);
-        } else {
+        }
+        else
+        {
             RestoreCardLayout(node, off);
         }
     }
 
-    function HandleMJChi(node, msg, off) {
+    function HandleMJChi(node, msg, off)
+    {
         var sData = jsclient.data.sData;
         var tData = sData.tData;
         var uids = tData.uids;
         var pl = getUIPlayer(off);
+        if(pl == null)
+            return;
+
         var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
-        if (tData.curPlayer == selfIndex) {
+        if (tData.curPlayer == selfIndex)
+        {
             var fromOff = [];
             var fromBind = GetUIBind(msg.from, fromOff);
             var fnode = fromBind._node;
             RemoveNewOutCard(fnode);
 
             var cds = msg.mjchi;
-            for (var i = 0; i < cds.length; i++) {
+            for (var i = 0; i < cds.length; i++)
+            {
                 AddNewCard(node, "up", "chi", cds[i], off);
                 if (pl.mjhand && cds[i] != tData.lastPut)
                     RemoveBackNode(node, "mjhand", 1, cds[i]);
             }
             //删掉俩张stand&&
-            if (off == 3 && !pl.mjhand)      RemoveBackNode(node, "standPri", 2);
-            else if (off != 0 && !pl.mjhand) RemoveFrontNode(node, "standPri", 2);
+            if (off == 3 && !pl.mjhand)
+                RemoveBackNode(node, "standPri", 2);
+            else if (off != 0 && !pl.mjhand)
+                RemoveFrontNode(node, "standPri", 2);
 
             RestoreCardLayout(node, off);
             RestoreCardLayout(fnode, fromOff[0]);
         }
     }
 
-    function HandleMJPeng(node, msg, off) {
-
-        mylog("off:" + off + "---msg:" + msg);
-
+    function HandleMJPeng(node, msg, off)
+    {
         var sData = jsclient.data.sData;
         var tData = sData.tData;
         var uids = tData.uids;
         var pl = getUIPlayer(off);
-        var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
-        if (tData.curPlayer == selfIndex) {
+
+        if (pl == null)
+            return;
+
+        // var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
+        if (IsCurPlayerTurn(off))
+        {
             var fromOff = [];
             var fromBind = GetUIBind(msg.from, fromOff);
             var fnode = fromBind._node;
             ShowEatActionAnim(node, ActionType.PENG, off);
             RemoveNewOutCard(fnode);
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < 3; i++)
+            {
                 AddNewCard(node, "up", "peng", tData.lastPut, off);
             }
             //删掉俩张stand
@@ -353,72 +384,72 @@ function newReplayLayer()
         }
     }
 
-    function RemoveFrontNode(node, name, num, tag) {
-        var children = node.children;
-
-        for (var i = 0; i < children.length && num > 0; i++) {
-            var ci = children[i];
-
-            if (ci.name == name && (!(tag > 0) || ci.tag == tag)) {
-                ci.removeFromParent(true);
-                num--;
-            }
-        }
-
-        if (num != 0) mylog(node.name + " RemoveFrontNode fail " + name + " " + tag);
-    }
+    // function RemoveFrontNode(node, name, num, tag) {
+    //     var children = node.children;
+    //
+    //     for (var i = 0; i < children.length && num > 0; i++) {
+    //         var ci = children[i];
+    //
+    //         if (ci.name == name && (!(tag > 0) || ci.tag == tag)) {
+    //             ci.removeFromParent(true);
+    //             num--;
+    //         }
+    //     }
+    //
+    //     if (num != 0) mylog(node.name + " RemoveFrontNode fail " + name + " " + tag);
+    // }
     
-    function RemoveNewOutCard(node) {
-        var children = node.children;
-        for (var i = 0; i < children.length; i++) {
-            var ci = children[i];
-            if (ci.name == "newout") {
-                ci.removeFromParent(true);
-            }
-        }
-    }
+    // function RemoveNewOutCard(node) {
+    //     var children = node.children;
+    //     for (var i = 0; i < children.length; i++) {
+    //         var ci = children[i];
+    //         if (ci.name == "newout") {
+    //             ci.removeFromParent(true);
+    //         }
+    //     }
+    // }
 
-    function RemoveBackNode(node, name, num, tag) {
+    // function RemoveBackNode(node, name, num, tag) {
+    //
+    //     var children = node.children;
+    //     for (var i = children.length - 1; i >= 0 && num > 0; i--) {
+    //         var ci = children[i];
+    //         if (ci.name == name && (!(tag > 0) || ci.tag == tag)) {
+    //             ci.removeFromParent(true);
+    //             num--;
+    //         }
+    //     }
+    //     if (num != 0) mylog(node.name + " RemoveBackNode fail " + name + " " + tag);
+    // }
 
-        var children = node.children;
-        for (var i = children.length - 1; i >= 0 && num > 0; i--) {
-            var ci = children[i];
-            if (ci.name == name && (!(tag > 0) || ci.tag == tag)) {
-                ci.removeFromParent(true);
-                num--;
-            }
-        }
-        if (num != 0) mylog(node.name + " RemoveBackNode fail " + name + " " + tag);
-    }
-
-    function AddNewCard(node, copy, name, tag, off, specialTAG) {
-        var cpnode = node.getChildByName(copy);
-        var cp = cpnode.clone();
-        cp.visible = true;
-        cp.name = name;
-        if (specialTAG == "isgang4") {
-
-            cp.isgang4 = true;
-        }
-        /*else if(specialTAG == "newCard")
-         {
-         cp.isnewCard = true;
-         }*/
-        node.addChild(cp);
-        if (tag > 0) {
-            var count;
-            if (name == "mjhand" && off == 0) {
-                count = 4;
-            } else {
-                count = off;
-            }
-            setCardPic(cp, tag, count);
-            if (name == "mjhand") {
-                SetCardTouchHandler(cpnode, cp);
-            }
-        }
-        return cp;
-    }
+    // function AddNewCard(node, copy, name, tag, off, specialTAG) {
+    //     var cpnode = node.getChildByName(copy);
+    //     var cp = cpnode.clone();
+    //     cp.visible = true;
+    //     cp.name = name;
+    //     if (specialTAG == "isgang4") {
+    //
+    //         cp.isgang4 = true;
+    //     }
+    //     /*else if(specialTAG == "newCard")
+    //      {
+    //      cp.isnewCard = true;
+    //      }*/
+    //     node.addChild(cp);
+    //     if (tag > 0) {
+    //         var count;
+    //         if (name == "mjhand" && off == 0) {
+    //             count = 4;
+    //         } else {
+    //             count = off;
+    //         }
+    //         setCardPic(cp, tag, count);
+    //         if (name == "mjhand") {
+    //             SetCardTouchHandler(cpnode, cp);
+    //         }
+    //     }
+    //     return cp;
+    // }
 
     function GetUIBind(uidPos, offStore) {
         var sData = jsclient.data.sData;
@@ -426,7 +457,15 @@ function newReplayLayer()
         var uids = tData.uids;
         var selfIndex = uids.indexOf(SelfUid());
         var uiOff = (uidPos + 4 - selfIndex) % 4;
-        if (offStore) offStore.push(uiOff);
+
+        //三人麻将需要修正
+        if(IsThreeTable() && uiOff==2){
+            uiOff = 3;
+        }
+
+        if (offStore)
+            offStore.push(uiOff);
+
         var jsBind = jsclient.replayui.jsBind;
         var ui = [jsBind.down, jsBind.right, jsBind.top, jsBind.left];
         return ui[uiOff];
@@ -434,12 +473,27 @@ function newReplayLayer()
 
     function HandleMJGang(node, msg, off) {
 
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
-        var uids = tData.uids;
-        var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
+        // var sData = jsclient.data.sData;
+        // var tData = sData.tData;
+        // var uids = tData.uids;
+        // if(!tData.maxPlayer)
+        //     tData.maxPlayer = 4;
+        // var tag = off;
+        // if (IsThreeTable())
+        // {
+        //     if(off == 3)
+        //         tag = 2;
+        // }
+        // var selfIndex=(uids.indexOf(SelfUid())+tag)%tData.maxPlayer;
+        //
+        // if (uids[selfIndex] != msg.uid) return;
+
+        if(getUIPlayerUid(off) != msg.uid)
+            return;
+
         var pl = getUIPlayer(off);
-        if (uids[selfIndex] != msg.uid) return;
+        if(pl == null)
+            return;
 
         if (msg.gang == 1)
         {
@@ -459,12 +513,17 @@ function newReplayLayer()
             if (off == 0)
                 RemoveBackNode(node, "mjhand", 1, msg.card);
         }
-        else if (msg.gang == 3) {
+        else if (msg.gang == 3)
+        {
             if (off == 0) RemoveBackNode(node, "mjhand", 4, msg.card);
         }
-        if (off != 0) {
-            if (off == 3) {
-                if (msg.gang == 1) {
+
+        if (off != 0)
+        {
+            if (off == 3)
+            {
+                if (msg.gang == 1)
+                {
                     var fromOff = [];
                     var fromBind = GetUIBind(msg.from, fromOff);
                     var fnode = fromBind._node;
@@ -549,10 +608,10 @@ function newReplayLayer()
         RestoreCardLayout(node, off);
     }
 
-    function TagOrder(na, nb) 
-    {
-        return na.tag - nb.tag
-    }
+    // function TagOrder(na, nb)
+    // {
+    //     return na.tag - nb.tag
+    // }
 
     function RestoreCardLayout(node, off, endonepl)
     {
@@ -873,61 +932,91 @@ function newReplayLayer()
         }
     }
 
-    function HandleMJPut(node, msg, off, outNum) 
+    function HandleMJPut(node, msg, off, outNum)
     {
-
         var sData = jsclient.data.sData;
         var tData = sData.tData;
-        var uids = tData.uids;
-        var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
-        if (uids[selfIndex] == msg.uid) {
+        // var uids = tData.uids;
+        // var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
+        // if (uids[selfIndex] == msg.uid)
+
+        if(getUIPlayerUid(off) == msg.uid)
+        {
             var pl = sData.players[msg.uid];
-            var putnum = outNum >= 0 ? outNum : (pl.mjput.length - (off == 0 ? 0 : 1));
+            var putnum = outNum >= 0 ? outNum : (pl.mjput.length - (off == 0 ? 1 : 1));
             var out0 = node.getChildByName("out0");
             var out1 = node.getChildByName("out1");
+            var out2 = node.getChildByName("out2");
             var oSize = out0.getSize();
             var oSc = out0.scale;
 
             var out;
-            if (putnum > 11) 
+            if (putnum > 23)
+            {
+                out = out2.clone();
+            }
+            else if(putnum > 11)
             {
                 out = out1.clone();
-            } else 
+            }
+            else
             {
                 out = out0.clone();
             }
-            if (off == 0 && putnum > 11)
+
+            if(off == 0 && putnum > 23)
             {
                 node.addChild(out);
-            } else if (off == 1 || off == 0) 
+            }
+            else if (off == 0 && putnum > 11)
+            {
+                node.addChild(out, 100 - putnum);
+            }
+            else if (off == 1 || off == 0)
             {
                 node.addChild(out, 200 - putnum);
-            } else if (off == 2 || off == 3)
+            }
+            else if (off == 2 || off == 3)
             {
                 node.addChild(out, putnum);
             }
-            else 
+            else
             {
                 node.addChild(out);
             }
-            for (var i = 0; i < node.children.length; i++) {
+
+            for (var i = 0; i < node.children.length; i++)
+            {
                 if (node.children[i].name == "newout")
                     node.children[i].name = "out";
             }
+
             out.visible = true;
             out.name = "out";
             setCardPic(out, msg.card, off);
             var endPoint = cc.p(0, 0);
             var Midpoint = cc.p(0, 0);
             var ws = cc.director.getWinSize();
-            if (putnum > 11) 
+
+            if (putnum > 23)
+            {
+                out.x = out2.x;
+                out.y = out2.y;
+                putnum -= 24;
+            }
+            else if (putnum > 11)
             {
                 out.x = out1.x;
                 out.y = out1.y;
                 putnum -= 12;
             }
-            var mjhand = getUIPlayer(off).mjhand;
-            if (off == 0) 
+
+            var player = getUIPlayer(off);
+            if(!player)
+                return;
+
+            var mjhand = player.mjhand;
+            if (off == 0)
             {
                 endPoint.y = out.y;
                 endPoint.x = out.x + oSize.width * oSc * putnum;
@@ -943,11 +1032,11 @@ function newReplayLayer()
             {
                 if (!(outNum >= 0))
                 {
-                    if (mjhand) 
+                    if (mjhand)
                     {
                         RemoveBackNode(node, "mjhand", 1, msg.card);
                     }
-                    else 
+                    else
                     {
                         RemoveFrontNode(node, "standPri", 1);
                     }
@@ -966,8 +1055,8 @@ function newReplayLayer()
                     if (mjhand)
                     {
                         RemoveBackNode(node, "mjhand", 1, msg.card);
-                    } 
-                    else 
+                    }
+                    else
                     {
                         RemoveFrontNode(node, "standPri", 1);
                     }
@@ -984,8 +1073,8 @@ function newReplayLayer()
                     if (mjhand)
                     {
                         RemoveBackNode(node, "mjhand", 1, msg.card);
-                    } 
-                    else 
+                    }
+                    else
                     {
                         RemoveFrontNode(node, "standPri", 1);
                     }
@@ -1000,11 +1089,12 @@ function newReplayLayer()
 
             if (outNum >= 0)//重连
             {
-                if ((outNum == pl.mjput.length - 1) && tData.curPlayer == selfIndex && tData.tState == TableState.waitEat)
+                // if ((outNum == pl.mjput.length - 1) && tData.curPlayer == selfIndex && tData.tState == TableState.waitEat)
+                if ((outNum == pl.mjput.length - 1) && IsCurPlayerTurn(off) && tData.tState == TableState.waitEat)
                 {
-                    
+
                 }
-                else 
+                else
                 {
                     out.x = endPoint.x;
                     out.y = endPoint.y;
@@ -1033,14 +1123,14 @@ function newReplayLayer()
             setCardPic(outAction, msg.card, 2);
 
             outAction.scale = oSc;
-            
+
             outAction.zIndex = 200;
             if (off == 0 && jsclient.lastPutPos)
             {
                 outAction.x = jsclient.lastPutPos.x;
                 outAction.y = jsclient.lastPutPos.y;
             }
-            else 
+            else
             {
                 outAction.x = node.getChildByName("stand").x;
                 outAction.y = node.getChildByName("stand").y;
@@ -1062,7 +1152,7 @@ function newReplayLayer()
 
             };
             outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, Midpoint), cc.scaleTo(0.2, 2 * oSc))
-                    //cc.DelayTime(0.4),cc.callFunc(callbackFUNCROTATION),cc.removeSelf()
+                //cc.DelayTime(0.4),cc.callFunc(callbackFUNCROTATION),cc.removeSelf()
                 )
             );
 
@@ -1106,7 +1196,14 @@ function newReplayLayer()
                 }
             };
 
-            ConnectUI2Logic(outAction, outActionBind);
+            if (jsclient.majiang.isFlower8(msg.card))
+            {
+                RemovePutCard(true); //MJFlower
+            }
+            else
+            {
+                ConnectUI2Logic(outAction, outActionBind);
+            }
 
             if (!(outNum >= 0))
                 RestoreCardLayout(node, off);
@@ -1116,166 +1213,171 @@ function newReplayLayer()
     // var imgNames = ["_bamboo_", "_character_", "_dot_", "_wind_east", "_wind_west", "_wind_south", "_wind_north", "_red", "_green", "_white"];
     // var imgOff = ["B", "R", "B", "L", "M"];
 
-    function setCardPic(node, cd, off)
-    {
-        // var imgName = "";
-        // if(cd<30)
-        // {
-        // 	imgName=imgOff[off] + imgNames[Math.floor(cd/10)]+cd%10;
-        // }
-        // else
-        // {
-        //     imgName=imgOff[off] + imgNames[Math.floor(cd/10)];
-        // }
-        var imgName = "mj_" + cd + ".png";
-        node.tag = cd;
-        // var callback = function () {
-        // node.loadTexture(imgName+".png",ccui.Widget.PLIST_TEXTURE  );
-        var num = node.getChildByName("num");
-        if (num != null)
-            num.loadTexture(imgName, ccui.Widget.PLIST_TEXTURE);
-        // };
-        // node.stopAllActions();
-        // node.runAction(cc.repeatForever(cc.sequence(cc.callFunc(callback), cc.delayTime(1))));
-    }
+    // function setCardPic(node, cd, off)
+    // {
+    //     // var imgName = "";
+    //     // if(cd<30)
+    //     // {
+    //     // 	imgName=imgOff[off] + imgNames[Math.floor(cd/10)]+cd%10;
+    //     // }
+    //     // else
+    //     // {
+    //     //     imgName=imgOff[off] + imgNames[Math.floor(cd/10)];
+    //     // }
+    //     var imgName = "mj_" + cd + ".png";
+    //     node.tag = cd;
+    //     // var callback = function () {
+    //     // node.loadTexture(imgName+".png",ccui.Widget.PLIST_TEXTURE  );
+    //     var num = node.getChildByName("num");
+    //     if (num != null)
+    //         num.loadTexture(imgName, ccui.Widget.PLIST_TEXTURE);
+    //     // };
+    //     // node.stopAllActions();
+    //     // node.runAction(cc.repeatForever(cc.sequence(cc.callFunc(callback), cc.delayTime(1))));
+    // }
 
-    function SetArrowRotation(abk)
-    {
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
-        var uids = tData.uids;
-        var selfIndex = uids.indexOf(SelfUid());
-        selfIndex = (tData.curPlayer + 4 - selfIndex) % 4;
-        abk.getChildByName("arrow").rotation = 270 - 90 * selfIndex;
-    }
+    // function SetArrowRotation(abk)
+    // {
+    //     var sData = jsclient.data.sData;
+    //     var tData = sData.tData;
+    //     var uids = tData.uids;
+    //     var selfIndex = uids.indexOf(SelfUid());
+    //     selfIndex = (tData.curPlayer + 4 - selfIndex) % 4;
+    //     abk.getChildByName("arrow").rotation = 270 - 90 * selfIndex;
+    // }
 
-    function SetCardTouchHandler(standUI, cardui)
-    {
-        cardui.addTouchEventListener(function (btn, tp)
-        {
-            if (tp != 2) return;
-            var sData = jsclient.data.sData;
-            var tData = sData.tData;
-            if (!IsMyTurn() || tData.tState != TableState.waitPut)
-            {
-                mylog("not my turn");
-                return;
-            }
+    // function SetCardTouchHandler(standUI, cardui)
+    // {
+    //     cardui.addTouchEventListener(function (btn, tp)
+    //     {
+    //         if (tp != 2)
+    //             return;
+    //
+    //         var sData = jsclient.data.sData;
+    //         var tData = sData.tData;
+    //         if (!IsMyTurn() || tData.tState != TableState.waitPut)
+    //         {
+    //             mylog("not my turn");
+    //             return;
+    //         }
+    //
+    //         if (btn.y >= standUI.y + 10)
+    //         {
+    //             PutAwayCard(cardui, cardui.tag);
+    //         }
+    //         else
+    //         {
+    //             var mjhandNum = 0;
+    //             var children = btn.getParent().children;
+    //             for (var i = 0; i < children.length; i++)
+    //             {
+    //                 if (children[i].name == "mjhand")
+    //                 {
+    //                     mjhandNum++;
+    //                     if (children[i].y > standUI.y + 10)
+    //                         children[i].y = standUI.y;
+    //                 }
+    //             }
+    //             if (mjhandNum == getUIPlayer(0).mjhand.length)
+    //             {
+    //                 btn.y = standUI.y + 20;
+    //             }
+    //         }
+    //
+    //     }, cardui);
+    // }
 
-            if (btn.y >= standUI.y + 10)
-            {
-                PutAwayCard(cardui, cardui.tag);
-            }
-            else
-            {
-                var mjhandNum = 0;
-                var children = btn.getParent().children;
-                for (var i = 0; i < children.length; i++)
-                {
-                    if (children[i].name == "mjhand")
-                    {
-                        mjhandNum++;
-                        if (children[i].y > standUI.y + 10)
-                            children[i].y = standUI.y;
-                    }
-                }
-                if (mjhandNum == getUIPlayer(0).mjhand.length)
-                {
-                    btn.y = standUI.y + 20;
-                }
-            }
+    // function reConectHeadLayout(node)
+    // {
+    //     var sData = jsclient.data.sData;
+    //     var tData = sData.tData;
+    //     var down = node.getChildByName("down").getChildByName("head");
+    //     var top = node.getChildByName("top").getChildByName("head");
+    //     var left = node.getChildByName("left").getChildByName("head");
+    //     var right = node.getChildByName("right").getChildByName("head");
+    //     cc.log("reConectHeadLayout");
+    //     var pl = getUIPlayer(0);
+    //
+    //     if (tData.tState == TableState.waitJoin || tData.tState == TableState.roundFinish)
+    //     {
+    //         doLayout(down, [0.13, 0.13], [0.5, 0.2], [0, 0], false, false);
+    //         doLayout(top, [0.13, 0.13], [0.5, 0.8], [0, 0], false, false);
+    //         doLayout(left, [0.13, 0.13], [0.25, 0.5], [0, 0], false, false);
+    //         doLayout(right, [0.13, 0.13], [0.75, 0.5], [0, 0], false, false);
+    //     }
+    //     else
+    //     {
+    //         doLayout(top, [0.125, 0.125], [0.93, 0.9], [0, 0], false, false);
+    //         doLayout(right, [0.125, 0.125], [0.93, 0.65], [0, 0], false, false);
+    //         doLayout(left, [0.125, 0.125], [0.07, 0.6], [0, 0], false, false);
+    //         doLayout(down, [0.125, 0.125], [0.07, 0.35], [0, 0], false, false);
+    //     }
+    // }
 
-        }, cardui);
-    }
-
-    function reConectHeadLayout(node)
-    {
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
-        var down = node.getChildByName("down").getChildByName("head");
-        var top = node.getChildByName("top").getChildByName("head");
-        var left = node.getChildByName("left").getChildByName("head");
-        var right = node.getChildByName("right").getChildByName("head");
-        cc.log("reConectHeadLayout");
-        var pl = getUIPlayer(0);
-
-        if (tData.tState == TableState.waitJoin || tData.tState == TableState.roundFinish)
-        {
-            doLayout(down, [0.13, 0.13], [0.5, 0.2], [0, 0], false, false);
-            doLayout(top, [0.13, 0.13], [0.5, 0.8], [0, 0], false, false);
-            doLayout(left, [0.13, 0.13], [0.25, 0.5], [0, 0], false, false);
-            doLayout(right, [0.13, 0.13], [0.75, 0.5], [0, 0], false, false);
-        }
-        else
-        {
-            doLayout(top, [0.125, 0.125], [0.93, 0.9], [0, 0], false, false);
-            doLayout(right, [0.125, 0.125], [0.93, 0.65], [0, 0], false, false);
-            doLayout(left, [0.125, 0.125], [0.07, 0.6], [0, 0], false, false);
-            doLayout(down, [0.125, 0.125], [0.07, 0.35], [0, 0], false, false);
-        }
-    }
-
-    function tableStartHeadPlayAction(node)
-    {
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
-        cc.log("tableStartHeadPlayAction");
-        var pl = getUIPlayer(0);
-        //if (CheckArrowVisible()) 
-        {
-            var down = node.getChildByName("down").getChildByName("head");
-            var top = node.getChildByName("top").getChildByName("head");
-            var left = node.getChildByName("left").getChildByName("head");
-            var right = node.getChildByName("right").getChildByName("head");
-            doLayout(down, [0.13, 0.13], [0.5, 0.2], [0, 0], false, false);
-            doLayout(top, [0.13, 0.13], [0.5, 0.8], [0, 0], false, false);
-            doLayout(left, [0.13, 0.13], [0.25, 0.5], [0, 0], false, false);
-            doLayout(right, [0.13, 0.13], [0.75, 0.5], [0, 0], false, false);
-
-            doLayout(top, [0.125, 0.125], [0.93, 0.9], [0, 0], false, false);
-
-            doLayout(right, [0.125, 0.125], [0.93, 0.65], [0, 0], false, false);
-            doLayout(left, [0.125, 0.125], [0.07, 0.6], [0, 0], false, false);
-            doLayout(down, [0.125, 0.125], [0.07, 0.35], [0, 0], false, false);
-            var downPoint = cc.p(down.x, down.y);
-            var topPoint = cc.p(top.x, top.y);
-            var rightPoint = cc.p(right.x, right.y);
-            var leftPoint = cc.p(left.x, left.y);
-            down.runAction(cc.moveTo(0.5, downPoint));
-            top.runAction(cc.moveTo(0.5, topPoint));
-            left.runAction(cc.moveTo(0.5, leftPoint));
-            right.runAction(cc.moveTo(0.5, rightPoint));
-        }
-    }
+    // function tableStartHeadPlayAction(node)
+    // {
+    //     var sData = jsclient.data.sData;
+    //     var tData = sData.tData;
+    //     cc.log("tableStartHeadPlayAction");
+    //     var pl = getUIPlayer(0);
+    //     //if (CheckArrowVisible())
+    //     {
+    //         var down = node.getChildByName("down").getChildByName("head");
+    //         var top = node.getChildByName("top").getChildByName("head");
+    //         var left = node.getChildByName("left").getChildByName("head");
+    //         var right = node.getChildByName("right").getChildByName("head");
+    //         doLayout(down, [0.13, 0.13], [0.5, 0.2], [0, 0], false, false);
+    //         doLayout(top, [0.13, 0.13], [0.5, 0.8], [0, 0], false, false);
+    //         doLayout(left, [0.13, 0.13], [0.25, 0.5], [0, 0], false, false);
+    //         doLayout(right, [0.13, 0.13], [0.75, 0.5], [0, 0], false, false);
+    //
+    //         doLayout(top, [0.125, 0.125], [0.93, 0.9], [0, 0], false, false);
+    //
+    //         doLayout(right, [0.125, 0.125], [0.93, 0.65], [0, 0], false, false);
+    //         doLayout(left, [0.125, 0.125], [0.07, 0.6], [0, 0], false, false);
+    //         doLayout(down, [0.125, 0.125], [0.07, 0.35], [0, 0], false, false);
+    //         var downPoint = cc.p(down.x, down.y);
+    //         var topPoint = cc.p(top.x, top.y);
+    //         var rightPoint = cc.p(right.x, right.y);
+    //         var leftPoint = cc.p(left.x, left.y);
+    //         down.runAction(cc.moveTo(0.5, downPoint));
+    //         top.runAction(cc.moveTo(0.5, topPoint));
+    //         left.runAction(cc.moveTo(0.5, leftPoint));
+    //         right.runAction(cc.moveTo(0.5, rightPoint));
+    //     }
+    // }
     
-    function InitPlayerNameAndCoin(node, off)
-    {
-        var pl = getUIPlayer(off);
-        if (!pl)
-            return;
-
-        var tData = jsclient.data.sData.tData;
-        var bind =
-        {
-            head:
-            {
-                name:
-                {
-                    _text: function ()
-                    {
-                        return unescape(pl.info.nickname || pl.info.name || "玩家");
-                    }
-                }
-            }
-        };
-        ConnectUI2Logic(node, bind);
-    }
+    // function InitPlayerNameAndCoin(node, off)
+    // {
+    //     var pl = getUIPlayer(off);
+    //     if (!pl)
+    //         return;
+    //
+    //     var tData = jsclient.data.sData.tData;
+    //     var bind =
+    //     {
+    //         head:
+    //         {
+    //             name:
+    //             {
+    //                 _text: function ()
+    //                 {
+    //                     return unescape(pl.info.nickname || pl.info.name || "玩家");
+    //                 }
+    //             }
+    //         }
+    //     };
+    //     ConnectUI2Logic(node, bind);
+    // }
 
     function InitPlayerHandUI(node, off)
     {
         var sData = jsclient.data.sData;
         var tData = sData.tData;
         var pl = getUIPlayer(off);
+
+        if(pl == null)
+            return;
 
         InitPlayerNameAndCoin(node, off);
         if (tData.tState != TableState.waitPut
@@ -1361,6 +1463,10 @@ function newReplayLayer()
             else if (off == 3)
             {
                 pl.mjhand = plmjhand3;
+                if(IsThreeTable())
+                {
+                    pl.mjhand = plmjhand2;
+                }
             }
             for (var i = 0; i < pl.mjhand.length; i++)
             {
@@ -1388,152 +1494,160 @@ function newReplayLayer()
         RestoreCardLayout(node, off);
     }
 
-    var playAramTimeID = null;
-    function updateArrowbkNumber(node)
-    {
-        node.setString("10");
-        var number = function ()
-        {
-            if (node.getString() == 0)
-            {
-                node.cleanup();
-            }
-            else
-            {
-                var number = node.getString() - 1;
-                if (number > 9)
-                {
-                    node.setString(number);
-                } else
-                {
-                    node.setString("0" + number);
-                    var sData = jsclient.data.sData;
-                    var tData = sData.tData;
-                    var uids = tData.uids;
-                    if (uids[tData.curPlayer] == SelfUid())
-                    {
-                        if (number == 3)
-                        {
-                            playAramTimeID = playEffect("timeup_alarm");
-                        }
-                        else if (number == 0)
-                        {
-                            jsclient.native.NativeVibrato();
-                        }
-                    }
-                }
-            }
-        };
+    // var playAramTimeID = null;
+    // function updateArrowbkNumber(node)
+    // {
+    //     node.setString("10");
+    //     var number = function ()
+    //     {
+    //         if (node.getString() == 0)
+    //         {
+    //             node.cleanup();
+    //         }
+    //         else
+    //         {
+    //             var number = node.getString() - 1;
+    //             if (number > 9)
+    //             {
+    //                 node.setString(number);
+    //             }
+    //             else
+    //             {
+    //                 node.setString("0" + number);
+    //                 var sData = jsclient.data.sData;
+    //                 var tData = sData.tData;
+    //                 var uids = tData.uids;
+    //                 if (uids[tData.curPlayer] == SelfUid())
+    //                 {
+    //                     if (number == 3)
+    //                     {
+    //                         playAramTimeID = playEffect("timeup_alarm");
+    //                     }
+    //                     else if (number == 0)
+    //                     {
+    //                         jsclient.native.NativeVibrato();
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     };
+    //
+    //     node.runAction(cc.repeatForever(cc.sequence(cc.delayTime(1.0), cc.callFunc(number, node))));
+    // }
 
-        node.runAction(cc.repeatForever(cc.sequence(cc.delayTime(1.0), cc.callFunc(number, node))));
-    }
-
-    function getUIPlayer(off)
-    {
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
-        var uids = tData.uids;
-        var selfIndex = uids.indexOf(SelfUid());
-        selfIndex = (selfIndex + off) % 4;
-        if (selfIndex < uids.length)   return sData.players[uids[selfIndex]];
-        return null;
-    }
-
-    function getUIHead(off)
-    {
-        var pl = getUIPlayer(off);
-        if (!pl)
-            return {};
-
-        return {uid: pl.info.uid, url: pl.info.headimgurl};
-    }
-
-    function setWxHead(node, d, off)
-    {
-        if (d.uid == getUIHead(off).uid) {
-            var sp = new cc.Sprite(d.img);
-            sp.setName("WxHead");
-            node.addChild(sp);
-            doLayout(sp, [0.8, 0.8], [0.5, 0.5], [-0.01, 0.04], false, true);
-        }
-    }
+    // function getUIPlayer(off)
+    // {
+    //     var sData = jsclient.data.sData;
+    //     var tData = sData.tData;
+    //     var uids = tData.uids;
+    //     var selfIndex = uids.indexOf(SelfUid());
+    //     if(IsThreeTable()){
+    //         if(off==3){
+    //             off = 2;
+    //         }else if(off==2){
+    //             return null;
+    //         }
+    //     }
+    //
+    //     if (!tData.maxPlayer)
+    //         tData.maxPlayer = 4;
+    //
+    //     selfIndex = (selfIndex + off) % tData.maxPlayer;
+    //
+    //     if (selfIndex < uids.length)
+    //         return sData.players[uids[selfIndex]];
+    //
+    //     return null;
+    // }
 
     function setOffline(node, off)
     {
 
     }
 
-    function showPlayerInfo(off, node)
+    // function showPlayerInfo(off, node)
+    // {
+    //     var tData = jsclient.data.sData.tData;
+    //     var pl = getUIPlayer(off);
+    //     if (pl)
+    //     {
+    //         jsclient.showPlayerInfo(pl.info);
+    //     }
+    //     return;
+    //
+    //     var names = [];
+    //     for (var i = 0; i < node.children.length; i++)
+    //     {
+    //         names.push(node.children[i].name + "|" + node.children[i].tag);
+    //     }
+    //     cc.log(names);
+    //
+    // }
+
+    // function checkBaoJiuZhuangLogo(node, off) {
+    //     var sData = jsclient.data.sData;
+    //     var tData = sData.tData;
+    //     var pl = getUIPlayer(off);
+    //     if (pl.baojiu) {
+    //         cc.log("测试 报九张数据=============================" + pl.baojiu.num);
+    //         if (pl.baojiu.num == 4) cc.log("使此人报九的人是=============================" + pl.baojiu.putCardPlayer[0]);
+    //     }
+    //
+    //     if (pl && pl.baojiu.num >= 3 && tData.gameType == 2) {
+    //         node.visible = true;
+    //         node.zIndex = 80;
+    //     } else node.visible = false;
+    //
+    // }
+
+    // function showPlayerLinkZhuangLogo(node, off) {
+    //
+    //     var sData = jsclient.data.sData;
+    //     var tData = sData.tData;
+    //     var pl = getUIPlayer(off);
+    //     node.zIndex = 100;
+    //     if (tData) {
+    //         if (tData.gameType == 3 && tData.jiejieGao && tData.uids[tData.zhuang] == pl.info.uid) {
+    //             node.visible = true;
+    //             //var linkZhuang = node.getChildByName("linkZhuang");
+    //             var path = "res/play-yli/zhuang_" + pl.linkZhuang + ".png";
+    //             cc.log("path = " + path);
+    //             node.loadTexture(path);
+    //             node.setVisible(true);
+    //         } else {
+    //             node.visible = false;
+    //         }
+    //
+    //     }
+    // }
+
+    function showPlayerZhuangLogo(node, off)
     {
-        var tData = jsclient.data.sData.tData;
-        var pl = getUIPlayer(off);
-        if (pl)
-        {
-            jsclient.showPlayerInfo(pl.info);
-        }
-        return;
-
-        var names = [];
-        for (var i = 0; i < node.children.length; i++)
-        {
-            names.push(node.children[i].name + "|" + node.children[i].tag);
-        }
-        cc.log(names);
-
-    }
-
-    function checkBaoJiuZhuangLogo(node, off) {
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
-        var pl = getUIPlayer(off);
-        if (pl.baojiu) {
-            cc.log("测试 报九张数据=============================" + pl.baojiu.num);
-            if (pl.baojiu.num == 4) cc.log("使此人报九的人是=============================" + pl.baojiu.putCardPlayer[0]);
-        }
-
-        if (pl && pl.baojiu.num >= 3 && tData.gameType == 2) {
-            node.visible = true;
-            node.zIndex = 80;
-        } else node.visible = false;
-
-    }
-
-    function showPlayerLinkZhuangLogo(node, off) {
 
         var sData = jsclient.data.sData;
         var tData = sData.tData;
         var pl = getUIPlayer(off);
+
+        if(pl == null)
+            return;
+
         node.zIndex = 100;
-        if (tData) {
-            if (tData.gameType == 3 && tData.jiejieGao && tData.uids[tData.zhuang] == pl.info.uid) {
-                node.visible = true;
-                //var linkZhuang = node.getChildByName("linkZhuang");
-                var path = "res/play-yli/zhuang_" + pl.linkZhuang + ".png";
-                cc.log("path = " + path);
-                node.loadTexture(path);
-                node.setVisible(true);
-            } else {
-                node.visible = false;
+        if (tData)
+        {
+            if (tData.uids[tData.zhuang] == pl.info.uid)
+            {
+                if (node.getName() == "zhuang")
+                    node.visible = true;
+            }
+            else
+            {
+                if (node.getName() == "zhuang")
+                    node.visible = false;
             }
 
         }
-    }
-
-    function showPlayerZhuangLogo(node, off) {
-
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
-        var pl = getUIPlayer(off);
-        node.zIndex = 100;
-        if (tData) {
-            if (tData.uids[tData.zhuang] == pl.info.uid) {
-                if (node.getName() == "zhuang") node.visible = true;
-            } else {
-                if (node.getName() == "zhuang") node.visible = false;
-            }
-
-        }
-        if (tData.gameType == 2 && node.getName() == "hua") {
+        if (tData.gameType == 2 && node.getName() == "hua")
+        {
             node.setVisible(true);
             node.getChildByName("hua_num").setString("" + pl.mjflower.length);
         }
@@ -1548,71 +1662,49 @@ function newReplayLayer()
         //     }
         // }
 
-        if (tData.gameType == 3 && tData.jiejieGao) {
-            if (tData) {
-                if (node.getName() == "zhuang") node.visible = false;
+        if (tData.gameType == 3 && tData.jiejieGao)
+        {
+            if (tData)
+            {
+                if (node.getName() == "zhuang")
+                    node.visible = false;
             }
         }
     }
 
-    function updatePower(node)
-    {
-        var callNative = jsclient.native.NativeBattery;
-        node.runAction(cc.repeatForever(cc.sequence(cc.callFunc(callNative), cc.DelayTime(30))));
-    }
+    // function CheckDelRoomUI()
+    // {
+    //     var sData = jsclient.data.sData;
+    //     if (sData.tData.delEnd != 0 && !jsclient.delroomui)
+    //     {
+    //         jsclient.Scene.addChild(new DelRoomLayer());
+    //     }
+    //     else if (sData.tData.delEnd == 0 && jsclient.delroomui)
+    //     {
+    //         jsclient.delroomui.removeFromParent(true);
+    //         delete jsclient.delroomui;
+    //     }
+    // }
 
-    function updateWIFI(node)
-    {
-        var callback = function () {
-            var ms = jsclient.reqPingPong / 1000.0;
-            cc.log("ms" + ms);
-            if (ms < 0.3) {
-                node.loadTexture("Z_wifi_1.png", ccui.Widget.PLIST_TEXTURE);
-            } else if (ms < 0.6) {
-                node.loadTexture("Z_wifi_2.png", ccui.Widget.PLIST_TEXTURE);
-            } else if (ms < 1) {
-                node.loadTexture("Z_wifi_3.png", ccui.Widget.PLIST_TEXTURE);
-            } else {
-                node.loadTexture("Z_wifi_4.png", ccui.Widget.PLIST_TEXTURE);
-            }
-        };
-
-        node.runAction(cc.repeatForever(cc.sequence(cc.callFunc(callback), cc.DelayTime(5))));
-    }
-
-    function CheckDelRoomUI()
-    {
-        var sData = jsclient.data.sData;
-        if (sData.tData.delEnd != 0 && !jsclient.delroomui)
-        {
-            jsclient.Scene.addChild(new DelRoomLayer());
-        }
-        else if (sData.tData.delEnd == 0 && jsclient.delroomui)
-        {
-            jsclient.delroomui.removeFromParent(true);
-            delete jsclient.delroomui;
-        }
-    }
-
-    function CheckReadyVisible(node, off)
-    {
-        if (off < 0)
-        {
-            node.visible = false;
-            return false;
-        }
-        var p0 = getUIPlayer(off);
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
-
-        if (p0 && p0.mjState == TableState.isReady && tData.tState != TableState.waitJoin)
-        {
-            node.visible = true;
-        } else {
-            node.visible = false;
-        }
-        return node.visible;
-    }
+    // function CheckReadyVisible(node, off)
+    // {
+    //     if (off < 0)
+    //     {
+    //         node.visible = false;
+    //         return false;
+    //     }
+    //     var p0 = getUIPlayer(off);
+    //     var sData = jsclient.data.sData;
+    //     var tData = sData.tData;
+    //
+    //     if (p0 && p0.mjState == TableState.isReady && tData.tState != TableState.waitJoin)
+    //     {
+    //         node.visible = true;
+    //     } else {
+    //         node.visible = false;
+    //     }
+    //     return node.visible;
+    // }
 
     function MJChichange(tag)
     {
@@ -1624,113 +1716,113 @@ function newReplayLayer()
 
     }
 
-    function emojiPlayAction(node, num)
-    {
-
-        var framename;
-        var number = 0;
-        var arry = [];
-        var delaytime = 0;
-        var sumtime = 0;
-        var playtime = 3;
-        var imgSize;
-        switch (num) {
-            case 0:
-                framename = "happy";
-                delaytime = 0.1;
-                break;
-            case 1:
-                framename = "angry";
-                delaytime = 0.15;
-                break;
-            case 2:
-                framename = "smaile";
-                delaytime = 0.2;
-                break;
-            case 3:
-                framename = "han";
-                delaytime = 0.2;
-                break;
-            case 4:
-                framename = "zhiya";
-                delaytime = 0.2;
-                break;
-            case 5:
-                framename = "shihua";
-                delaytime = 0.2;
-                break;
-            case 6:
-                framename = "jiong";
-                delaytime = 0.23;
-                break;
-            case 7:
-                framename = "sleep";
-                delaytime = 0.2;
-                break;
-            case 8:
-                framename = "fennu";
-                delaytime = 0.2;
-                break;
-            case 9:
-                framename = "yun";
-                delaytime = 0.2;
-                break;
-            case 10:
-                framename = "lihai";
-                delaytime = 0.2;
-                break;
-            case 11:
-                framename = "touxiang";
-                delaytime = 0.2;
-                break;
-            case 12:
-                framename = "se";
-                delaytime = 0.2;
-                break;
-            case 13:
-                framename = "huaixiao";
-                delaytime = 0.2;
-                break;
-            case 14:
-                framename = "shaoxiang";
-                delaytime = 0.2;
-                break;
-            default:
-                break;
-
-        }
-        for (var i = 0; i < 15; i++) {
-            var frame = cc.spriteFrameCache.getSpriteFrame(framename + i + ".png");
-
-            if (frame) {
-                imgSize = frame.getOriginalSize();
-                arry.push(framename + i);
-            }
-        }
-        //var animation = new cc.Animation(arry,0.3);
-        //var animate = cc.animate(animation);
-        var callback = function () {
-
-            if (arry.length == number) {
-                number = 0;
-
-            }
-            cc.log("||" + arry[number] + ".png");
-            node.loadTexture(arry[number] + ".png", ccui.Widget.PLIST_TEXTURE);
-            number++;
-            sumtime = sumtime + delaytime;
-            if (sumtime > playtime) {
-                node.cleanup();
-                node.visible = false;
-            }
-
-        };
-        node.cleanup();
-        node.visible = true;
-        node.setSize(imgSize);
-        node.runAction(cc.repeatForever(cc.sequence(cc.callFunc(callback), cc.delayTime(delaytime))));
-
-    }
+    // function emojiPlayAction(node, num)
+    // {
+    //
+    //     var framename;
+    //     var number = 0;
+    //     var arry = [];
+    //     var delaytime = 0;
+    //     var sumtime = 0;
+    //     var playtime = 3;
+    //     var imgSize;
+    //     switch (num) {
+    //         case 0:
+    //             framename = "happy";
+    //             delaytime = 0.1;
+    //             break;
+    //         case 1:
+    //             framename = "angry";
+    //             delaytime = 0.15;
+    //             break;
+    //         case 2:
+    //             framename = "smaile";
+    //             delaytime = 0.2;
+    //             break;
+    //         case 3:
+    //             framename = "han";
+    //             delaytime = 0.2;
+    //             break;
+    //         case 4:
+    //             framename = "zhiya";
+    //             delaytime = 0.2;
+    //             break;
+    //         case 5:
+    //             framename = "shihua";
+    //             delaytime = 0.2;
+    //             break;
+    //         case 6:
+    //             framename = "jiong";
+    //             delaytime = 0.23;
+    //             break;
+    //         case 7:
+    //             framename = "sleep";
+    //             delaytime = 0.2;
+    //             break;
+    //         case 8:
+    //             framename = "fennu";
+    //             delaytime = 0.2;
+    //             break;
+    //         case 9:
+    //             framename = "yun";
+    //             delaytime = 0.2;
+    //             break;
+    //         case 10:
+    //             framename = "lihai";
+    //             delaytime = 0.2;
+    //             break;
+    //         case 11:
+    //             framename = "touxiang";
+    //             delaytime = 0.2;
+    //             break;
+    //         case 12:
+    //             framename = "se";
+    //             delaytime = 0.2;
+    //             break;
+    //         case 13:
+    //             framename = "huaixiao";
+    //             delaytime = 0.2;
+    //             break;
+    //         case 14:
+    //             framename = "shaoxiang";
+    //             delaytime = 0.2;
+    //             break;
+    //         default:
+    //             break;
+    //
+    //     }
+    //     for (var i = 0; i < 15; i++) {
+    //         var frame = cc.spriteFrameCache.getSpriteFrame(framename + i + ".png");
+    //
+    //         if (frame) {
+    //             imgSize = frame.getOriginalSize();
+    //             arry.push(framename + i);
+    //         }
+    //     }
+    //     //var animation = new cc.Animation(arry,0.3);
+    //     //var animate = cc.animate(animation);
+    //     var callback = function () {
+    //
+    //         if (arry.length == number) {
+    //             number = 0;
+    //
+    //         }
+    //         cc.log("||" + arry[number] + ".png");
+    //         node.loadTexture(arry[number] + ".png", ccui.Widget.PLIST_TEXTURE);
+    //         number++;
+    //         sumtime = sumtime + delaytime;
+    //         if (sumtime > playtime) {
+    //             node.cleanup();
+    //             node.visible = false;
+    //         }
+    //
+    //     };
+    //     node.cleanup();
+    //     node.visible = true;
+    //     node.setSize(imgSize);
+    //     node.runAction(cc.repeatForever(cc.sequence(cc.callFunc(callback), cc.delayTime(delaytime))));
+    //
+    // }
 
     function showReplaycaneat(ed)
     {
@@ -1777,43 +1869,44 @@ function newReplayLayer()
         eatlogo.runAction(cc.sequence(cc.scaleTo(0.3, osc), cc.delayTime(0.3), cc.callFunc(callback)));
     }
 
-    function showchat(node, off, msg)
-    {
-        var pl = getUIPlayer(off);
-        var uid = msg.uid;
-        var type = msg.type;
-        var message = msg.msg;
-
-        if (pl && msg.uid == pl.info.uid) {
-            if (type == 0) {
-                node.getParent().visible = true;
-                node.setString(message);
-                var callback = function () {
-                    node.getParent().visible = false;
-                };
-
-                node.getParent().width = node.stringLength * node.fontSize + 72;
-                node.runAction(cc.sequence(cc.delayTime(2.5), cc.callFunc(callback)));
-            } else if (type == 1) {
-                node.getParent().visible = true;
-                node.setString(message);
-                var callback = function () {
-                    node.getParent().visible = false;
-                };
-                var musicnum = msg.num + 1;
-
-                var one = node.getCustomSize().width / 20.0;
-                node.getParent().width = node.stringLength * node.fontSize + 72;
-                playEffect("fix_msg_" + musicnum);
-                node.runAction(cc.sequence(cc.delayTime(2.5), cc.callFunc(callback)));
-            } else if (type == 2) {
-                var em_node = node.getParent().getParent().getChildByName("emoji");
-                emojiPlayAction(em_node, msg.num);
-            }
-        }
-    }
+    // function showchat(node, off, msg)
+    // {
+    //     var pl = getUIPlayer(off);
+    //     var uid = msg.uid;
+    //     var type = msg.type;
+    //     var message = msg.msg;
+    //
+    //     if (pl && msg.uid == pl.info.uid) {
+    //         if (type == 0) {
+    //             node.getParent().visible = true;
+    //             node.setString(message);
+    //             var callback = function () {
+    //                 node.getParent().visible = false;
+    //             };
+    //
+    //             node.getParent().width = node.stringLength * node.fontSize + 72;
+    //             node.runAction(cc.sequence(cc.delayTime(2.5), cc.callFunc(callback)));
+    //         } else if (type == 1) {
+    //             node.getParent().visible = true;
+    //             node.setString(message);
+    //             var callback = function () {
+    //                 node.getParent().visible = false;
+    //             };
+    //             var musicnum = msg.num + 1;
+    //
+    //             var one = node.getCustomSize().width / 20.0;
+    //             node.getParent().width = node.stringLength * node.fontSize + 72;
+    //             playEffect("fix_msg_" + musicnum);
+    //             node.runAction(cc.sequence(cc.delayTime(2.5), cc.callFunc(callback)));
+    //         } else if (type == 2) {
+    //             var em_node = node.getParent().getParent().getChildByName("emoji");
+    //             emojiPlayAction(em_node, msg.num);
+    //         }
+    //     }
+    // }
     
-    function rePlayCardNext(node) {
+    function rePlayCardNext(node)
+    {
         var sData = jsclient.data.sData;
         var tData = sData.tData;
 
@@ -2320,6 +2413,7 @@ function newReplayLayer()
 
                 out0: {_layout: [[0, 0.08], [0.5, 0], [-5.5, 3.5]], _visible: false},
                 out1: {_layout: [[0, 0.08], [0.5, 0], [-5.5, 4.4]], _visible: false},
+                out2: {_layout: [[0, 0.08], [0.5, 0], [-5.5, 5.3]], _visible: false},
                 effectStateAct: {
                     _run: function () {
                         this.zIndex = 100;
@@ -2517,6 +2611,7 @@ function newReplayLayer()
 
                 out0: {_layout: [[0, 0.06], [1, 0.5], [-4.3, -3.8]], _visible: false},
                 out1: {_layout: [[0, 0.06], [1, 0.5], [-5.3, -3.8]], _visible: false},
+                out2: {_layout: [[0, 0.06], [1, 0.5], [-6.3, -3.8]], _visible: false},
                 effectStateAct: {
                     //_layout:[[0.1,0.1],[0.1,0.5],[0,0],true],
                     _run: function () {
@@ -2607,6 +2702,12 @@ function newReplayLayer()
             },
 
             top: {
+                _run:function()
+                {
+                    if (IsThreeTable())
+                        this.visible = false;
+                },
+
                 head: {
                     kuang: {
                         _run: function () {
@@ -2712,6 +2813,7 @@ function newReplayLayer()
 
                 out0: {_layout: [[0, 0.08], [0.5, 1], [5.5, -3.5]], _visible: false},
                 out1: {_layout: [[0, 0.08], [0.5, 1], [5.5, -4.4]], _visible: false},
+                out2: {_layout: [[0, 0.08], [0.5, 1], [5.5, -5.3]], _visible: false},
                 effectStateAct: {
                     _run: function () {
                         this.zIndex = 100;
@@ -2905,6 +3007,7 @@ function newReplayLayer()
 
                 out0: {_layout: [[0, 0.06], [0, 0.5], [4, 3.8]], _visible: false},
                 out1: {_layout: [[0, 0.06], [0, 0.5], [5, 3.8]], _visible: false},
+                out2: {_layout: [[0, 0.06], [0, 0.5], [6, 3.8]], _visible: false},
                 effectStateAct: {
                     _run: function () {
                         this.zIndex = 100;

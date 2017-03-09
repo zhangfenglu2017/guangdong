@@ -2,9 +2,9 @@ module.exports = function(app,server,gameid){return {
    info:{   round4:2, round8:3 },
    rooms:
    {
-	   symj1:{name:"symj1",scene:"", full:4,type:"symj",removeLess:true,reconnect:true,vip:true},
-	   symj2:{name:"symj2",scene:"", full:4,type:"symj",removeLess:true,reconnect:true,vip:false},
-	   scmj1:{name:"scmj1",scene:"", full:4,type:"scmj"}
+	   symj1:{name:"symj1",scene:"", full:3,type:"symj",removeLess:true,reconnect:true,vip:true},
+	   symj2:{name:"symj2",scene:"", full:3,type:"symj",removeLess:true,reconnect:true,vip:false},
+	   scmj1:{name:"scmj1",scene:"", full:3,type:"scmj"}
    },
    viptable:
    {

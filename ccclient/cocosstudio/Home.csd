@@ -118,7 +118,7 @@
             <PreSize X="0.2219" Y="0.1417" />
             <FileData Type="Normal" Path="home-yli/floor_11.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title" ActionTag="1392491195" Tag="16" IconVisible="False" LeftMargin="443.5000" RightMargin="423.5000" TopMargin="2.0000" BottomMargin="582.0000" LeftEage="102" RightEage="102" TopEage="34" BottomEage="34" Scale9OriginX="102" Scale9OriginY="34" Scale9Width="209" Scale9Height="68" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="title" ActionTag="1392491195" Tag="16" IconVisible="False" LeftMargin="443.5000" RightMargin="423.5000" TopMargin="2.9998" BottomMargin="581.0002" LeftEage="102" RightEage="102" TopEage="34" BottomEage="34" Scale9OriginX="102" Scale9OriginY="34" Scale9Width="209" Scale9Height="68" ctype="ImageViewObjectData">
             <Size X="413.0000" Y="136.0000" />
             <Children>
               <AbstractNodeData Name="scroll" ActionTag="976010434" Tag="43" IconVisible="False" HorizontalEdge="LeftEdge" LeftMargin="-85.4899" RightMargin="-51.5101" TopMargin="148.3540" BottomMargin="-52.3540" TouchEnable="True" ClipAble="True" BackColorAlpha="93" ColorAngle="90.0000" Scale9Enable="True" LeftEage="193" RightEage="193" TopEage="14" BottomEage="14" Scale9OriginX="193" Scale9OriginY="14" Scale9Width="200" Scale9Height="12" ScrollDirectionType="Horizontal" ctype="ScrollViewObjectData">
@@ -162,10 +162,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="650.0000" Y="650.0000" />
+            <Position X="650.0000" Y="649.0002" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5078" Y="0.9028" />
+            <PrePosition X="0.5078" Y="0.9014" />
             <PreSize X="0.3227" Y="0.1889" />
             <FileData Type="Normal" Path="home-yli/logo_02.png" Plist="" />
           </AbstractNodeData>

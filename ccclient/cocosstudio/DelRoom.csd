@@ -96,13 +96,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="player2" ActionTag="569487359" Tag="45" IconVisible="False" LeftMargin="107.8369" RightMargin="91.1631" TopMargin="238.0817" BottomMargin="206.9183" FontSize="32" LabelText="玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="player2" ActionTag="569487359" Tag="45" IconVisible="False" LeftMargin="106.8370" RightMargin="92.1630" TopMargin="238.0817" BottomMargin="206.9183" FontSize="32" LabelText="玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="496.0000" Y="33.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="107.8369" Y="223.4183" />
+                <Position X="106.8370" Y="223.4183" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="228" G="192" B="112" />
-                <PrePosition X="0.1552" Y="0.4674" />
+                <PrePosition X="0.1537" Y="0.4674" />
                 <PreSize X="0.7137" Y="0.0690" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

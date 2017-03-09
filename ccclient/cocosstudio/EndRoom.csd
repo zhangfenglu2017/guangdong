@@ -33,13 +33,13 @@
                 <FileData Type="Normal" Path="dissolveRoomNew/t_dissolution_05.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="info" ActionTag="2068191731" Tag="42" IconVisible="False" LeftMargin="97.3899" RightMargin="101.6101" TopMargin="128.3161" BottomMargin="250.6839" FontSize="32" LabelText="玩家[abcdhdfafdsij]申请解散房间&#xA;玩家[abcdhdfafdsij]申请解散房间&#xA;玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="info" ActionTag="2068191731" Tag="42" IconVisible="False" LeftMargin="97.3901" RightMargin="101.6099" TopMargin="127.3157" BottomMargin="251.6843" FontSize="32" LabelText="玩家[abcdhdfafdsij]申请解散房间&#xA;玩家[abcdhdfafdsij]申请解散房间&#xA;玩家[abcdhdfafdsij]申请解散房间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="496.0000" Y="99.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="345.3899" Y="300.1839" />
+                <Position X="345.3901" Y="301.1843" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="228" G="192" B="112" />
-                <PrePosition X="0.4970" Y="0.6280" />
+                <PrePosition X="0.4970" Y="0.6301" />
                 <PreSize X="0.7137" Y="0.2071" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

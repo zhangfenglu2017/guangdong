@@ -718,6 +718,9 @@ var playLogInfoItem = {};
             {
                 _text: function ()
                 {
+                    if(item.players[3] == null || item.players[3].nickname == null)
+                        return "";
+
                     return unescape(item.players[3].nickname) + ":" + item.players[3].winall;
                 }
             },
@@ -883,7 +886,6 @@ var updatelayer_itme_node;
 
     function BindLogItem(ui, item, num)
     {
-
         for (var i = 0; i < playLogIfoArry[num - 1].length; i++)
         {
             if (playLogIfoArry[num - 1][i] == "players")
@@ -891,7 +893,7 @@ var updatelayer_itme_node;
                 for (var id in playLogIfoArry[num - 1][i + 1])
                 {
 
-                    for (var j = 0; j < 4; j++)
+                    for (var j = 0; j < item.players.length; j++)
                     {
                         if (item.players[j].nickname == playLogIfoArry[num - 1][i + 1][id]["info"]["nickname"])
                         {
@@ -904,7 +906,7 @@ var updatelayer_itme_node;
             else if (playLogIfoArry[num - 1][i] == "roundEnd")
             {
 
-                for (var j = 0; j < 4; j++)
+                for (var j = 0; j < item.players.length; j++)
                 {
                     var _uid = item.players[j].uid;
                     item.players[j].winone = playLogIfoArry[num - 1][i + 1]["players"][_uid].winone;
@@ -958,6 +960,9 @@ var updatelayer_itme_node;
             {
                 _text: function ()
                 {
+                    if(item.players[3] == null || item.players[3].nickname == null)
+                        return "";
+
                     return unescape(item.players[3].nickname) + ":" + item.players[3].winone;
                 }
             },
@@ -1029,9 +1034,11 @@ var updatelayer_itme_node;
                 var tData = logMsg[msgCount + 2];
                 var selfIndex = tData.uids.indexOf(SelfUid());
                 var zhuangIndex = tData.zhuang;
-                for (var j = 0; j < 4; j++)
+                if (!tData.maxPlayer)
+                    tData.maxPlayer = 4;
+                for (var j = 0; j < tData.maxPlayer; j++)
                 {
-                    var cardOff = (selfIndex + j + 4 - zhuangIndex) % 4;
+                    var cardOff = (selfIndex + j + tData.maxPlayer - zhuangIndex) % tData.maxPlayer;
                     if (j == 0)
                     {
                         for (var z = 0; z < 13; z++)
@@ -1115,13 +1122,15 @@ var updatelayer_itme_node;
                 object = logMsg[msgCount + 1];
                 arry[1] = object;
                 sendEvent("QueueNetMsg", arry);
-                var tData = logMsg[msgCount + 1].tData;
-                var curuid = tData.uids[tData.curPlayer];
+
+
+                var tData =  logMsg[msgCount+1].tData;
+                var  curuid= tData.uids[tData.curPlayer];
                 var ed = {};
                 for (var i = 0; i < 4; i++)
                 {
                     var pl = getUIPlayer(i);
-                    if (curuid == pl.info.uid)
+                    if (pl && curuid == pl.info.uid)
                     {
                         var sData=jsclient.data.sData.tData;
                         ed.off = i;
@@ -1144,7 +1153,7 @@ var updatelayer_itme_node;
                 for (var i = 0; i < 4; i++)
                 {
                     var pl = getUIPlayer(i);
-                    if (logMsg[msgCount + 1].uid == pl.info.uid)
+                    if (pl && logMsg[msgCount + 1].uid == pl.info.uid)
                     {
                         var sData=jsclient.data.sData.tData;
                         ed.off = i;
@@ -1163,13 +1172,14 @@ var updatelayer_itme_node;
                 object = logMsg[msgCount + 1];
                 arry[1] = object;
                 sendEvent("QueueNetMsg", arry);
-                var tData = logMsg[msgCount + 1].tData;
-                var curuid = tData.uids[tData.curPlayer];
+
+                var tData =  logMsg[msgCount+1].tData;
+                var curuid= tData.uids[tData.curPlayer];
                 var ed = {};
                 for (var i = 0; i < 4; i++)
                 {
                     var pl = getUIPlayer(i);
-                    if (curuid == pl.info.uid)
+                    if (pl && curuid == pl.info.uid)
                     {
                         var sData=jsclient.data.sData.tData;
                         ed.off = i;
@@ -1181,6 +1191,8 @@ var updatelayer_itme_node;
             }
             else if (logMsg[msgCount] == "roundEnd")
             {
+                var sData=jsclient.data.sData;
+                var tData=sData.tData;
                 var players = logMsg[msgCount + 1].players;
                 var ed = {};
                 var uid;
@@ -1191,10 +1203,10 @@ var updatelayer_itme_node;
                         uid = i;
                     }
                 }
-                for (var i = 0; i < 4; i++)
+                for (var i = 0; i < tData.maxPlayer; i++)
                 {
                     var pl = getUIPlayer(i);
-                    if (uid == pl.info.uid)
+                    if (pl && uid == pl.info.uid)
                     {
                         var sData=jsclient.data.sData.tData;
                         ed.off = i;

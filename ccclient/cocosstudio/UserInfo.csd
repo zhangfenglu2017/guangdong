@@ -57,13 +57,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="-435973507" Tag="124" IconVisible="False" LeftMargin="286.0276" RightMargin="24.9724" TopMargin="116.3206" BottomMargin="328.6794" IsCustomSize="True" FontSize="32" LabelText="程序员程序员" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="-435973507" Tag="124" IconVisible="False" LeftMargin="285.0279" RightMargin="25.9721" TopMargin="116.3206" BottomMargin="328.6794" IsCustomSize="True" FontSize="32" LabelText="程序员程序员" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="384.0000" Y="33.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="286.0276" Y="345.1794" />
+                <Position X="285.0279" Y="345.1794" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="228" G="192" B="112" />
-                <PrePosition X="0.4116" Y="0.7221" />
+                <PrePosition X="0.4101" Y="0.7221" />
                 <PreSize X="0.5525" Y="0.0690" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

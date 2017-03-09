@@ -58,13 +58,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="emoji" ActionTag="447726356" Tag="177" IconVisible="False" LeftMargin="270.9040" RightMargin="450.0960" TopMargin="40.6909" BottomMargin="524.3091" TouchEnable="True" ctype="CheckBoxObjectData">
+              <AbstractNodeData Name="emoji" ActionTag="447726356" Tag="177" IconVisible="False" LeftMargin="271.9040" RightMargin="449.0960" TopMargin="40.6909" BottomMargin="524.3091" TouchEnable="True" ctype="CheckBoxObjectData">
                 <Size X="217.0000" Y="77.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="379.4040" Y="562.8091" />
+                <Position X="380.4040" Y="562.8091" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4045" Y="0.8766" />
+                <PrePosition X="0.4055" Y="0.8766" />
                 <PreSize X="0.2313" Y="0.1199" />
                 <NormalBackFileData Type="Normal" Path="playerchat/btn_expression_press.png" Plist="" />
                 <PressedBackFileData Type="Normal" Path="playerchat/btn_expression_normal.png" Plist="" />

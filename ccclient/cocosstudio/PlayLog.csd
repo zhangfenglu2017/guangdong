@@ -70,13 +70,13 @@
           <AbstractNodeData Name="item" ActionTag="1836370536" Alpha="234" Tag="128" IconVisible="False" LeftMargin="-430.9200" RightMargin="-625.0800" TopMargin="-266.1800" BottomMargin="127.1800" TouchEnable="True" Scale9Enable="True" LeftEage="25" RightEage="25" TopEage="26" BottomEage="26" Scale9OriginX="25" Scale9OriginY="26" Scale9Width="1006" Scale9Height="87" ctype="ImageViewObjectData">
             <Size X="1056.0000" Y="139.0000" />
             <Children>
-              <AbstractNodeData Name="Image_1" ActionTag="-538930658" Tag="836" IconVisible="False" LeftMargin="-0.1013" RightMargin="0.1013" TopMargin="0.4705" BottomMargin="-0.4705" LeftEage="348" RightEage="348" TopEage="45" BottomEage="45" Scale9OriginX="348" Scale9OriginY="45" Scale9Width="360" Scale9Height="49" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_1" ActionTag="-538930658" Tag="836" IconVisible="False" LeftMargin="-0.1013" RightMargin="0.1013" TopMargin="-0.5000" BottomMargin="0.5000" LeftEage="348" RightEage="348" TopEage="45" BottomEage="45" Scale9OriginX="348" Scale9OriginY="45" Scale9Width="360" Scale9Height="49" ctype="ImageViewObjectData">
                 <Size X="1056.0000" Y="139.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="527.8987" Y="69.0295" />
+                <Position X="527.8987" Y="70.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4999" Y="0.4966" />
+                <PrePosition X="0.4999" Y="0.5036" />
                 <PreSize X="1.0000" Y="1.0000" />
                 <FileData Type="Normal" Path="gameEndNew/floor_11.png" Plist="" />
               </AbstractNodeData>

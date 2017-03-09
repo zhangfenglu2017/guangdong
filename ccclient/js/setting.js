@@ -31,29 +31,36 @@ function setMusicVolume(v)
 	return v;
 }
 var SettingLayer = cc.Layer.extend({
-	jsBind:{
-		block:{
+	jsBind:
+    {
+		block:
+        {
 			_layout:[[1,1],[0.5,0.5],[0,0],true]
 		},
 		back:
-		{	_layout:[[0.54,0.66],[0.5,0.5],[0,0]],
-		    close:{
-				_click:function(){
+		{
+			_layout:[[0.54,0.66],[0.5,0.5],[0,0]],
+		    close:
+            {
+				_click:function()
+                {
 					jsclient.setui.removeFromParent(true);
 				}
 			},
-			delBtn:{
-				
-				_click:function(){
+			delBtn:
+            {
+				_click:function()
+                {
 					jsclient.delRoom(true);
 					jsclient.setui.removeFromParent(true);
 				}
-			}
-			,
+			},
+
 			exitBtn:
 			{
 				_visible:jsclient.playui,
-				_click:function(){
+				_click:function()
+                {
                    jsclient.logout();
 				   jsclient.setui.removeFromParent(true);
 				}

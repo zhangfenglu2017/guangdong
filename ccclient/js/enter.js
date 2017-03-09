@@ -67,7 +67,7 @@ var EnterLayer = cc.Layer.extend({
 		back:
 		{
 			_layout:[[0.8,0.8],[0.5,0.5],[0,0]],
-
+            
             close:
             {
 				_click:function(btn,evt)

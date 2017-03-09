@@ -42,13 +42,13 @@
                 <PreSize X="0.2633" Y="0.1324" />
                 <FileData Type="Normal" Path="addRoomNew/t_shuru.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="close" ActionTag="305568070" Tag="1334" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="843.2343" RightMargin="-50.2343" TopMargin="-47.3085" BottomMargin="546.3085" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="115" Scale9Height="121" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="close" ActionTag="305568070" Tag="1334" IconVisible="False" LeftMargin="842.5000" RightMargin="-49.5000" TopMargin="-44.5000" BottomMargin="543.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="115" Scale9Height="121" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="145.0000" Y="143.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="915.7343" Y="617.8085" />
+                <Position X="915.0000" Y="615.0000" />
                 <Scale ScaleX="0.7500" ScaleY="0.7500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9763" Y="0.9623" />
+                <PrePosition X="0.9755" Y="0.9579" />
                 <PreSize X="0.1546" Y="0.2227" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Normal" Path="createRoomNew/btn_close_press.png" Plist="" />

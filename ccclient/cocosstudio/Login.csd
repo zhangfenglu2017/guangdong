@@ -29,13 +29,13 @@
           <AbstractNodeData Name="wechatLogin" ActionTag="-36530676" Tag="7" IconVisible="False" LeftMargin="386.2674" RightMargin="624.7326" TopMargin="377.7882" BottomMargin="241.2118" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="239" Scale9Height="79" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="269.0000" Y="101.0000" />
             <Children>
-              <AbstractNodeData Name="Image_2" ActionTag="-1657155349" Tag="9" IconVisible="False" LeftMargin="-67.8885" RightMargin="-72.1115" TopMargin="139.8141" BottomMargin="-83.8141" LeftEage="134" RightEage="134" TopEage="14" BottomEage="14" Scale9OriginX="134" Scale9OriginY="14" Scale9Width="141" Scale9Height="17" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_2" ActionTag="-1657155349" Tag="9" IconVisible="False" LeftMargin="-64.8884" RightMargin="-75.1116" TopMargin="139.8141" BottomMargin="-83.8141" LeftEage="134" RightEage="134" TopEage="14" BottomEage="14" Scale9OriginX="134" Scale9OriginY="14" Scale9Width="141" Scale9Height="17" ctype="ImageViewObjectData">
                 <Size X="409.0000" Y="45.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="136.6115" Y="-61.3141" />
+                <Position X="139.6116" Y="-61.3141" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5078" Y="-0.6071" />
+                <PrePosition X="0.5190" Y="-0.6071" />
                 <PreSize X="1.5204" Y="0.4455" />
                 <FileData Type="Normal" Path="loading/ot-1.png" Plist="" />
               </AbstractNodeData>

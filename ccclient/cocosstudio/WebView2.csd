@@ -111,13 +111,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="guize" ActionTag="-1101429020" Tag="27" IconVisible="False" LeftMargin="42.5839" RightMargin="1146.4161" TopMargin="57.5060" BottomMargin="118.4940" LeftEage="30" RightEage="30" TopEage="179" BottomEage="179" Scale9OriginX="30" Scale9OriginY="179" Scale9Width="31" Scale9Height="186" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="guize" ActionTag="-1101429020" Tag="27" IconVisible="False" LeftMargin="42.5839" RightMargin="1146.4161" TopMargin="56.5059" BottomMargin="119.4941" LeftEage="30" RightEage="30" TopEage="179" BottomEage="179" Scale9OriginX="30" Scale9OriginY="179" Scale9Width="31" Scale9Height="186" ctype="ImageViewObjectData">
                 <Size X="91.0000" Y="544.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="88.0839" Y="390.4940" />
+                <Position X="88.0839" Y="391.4941" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0688" Y="0.5424" />
+                <PrePosition X="0.0688" Y="0.5437" />
                 <PreSize X="0.0711" Y="0.7556" />
                 <FileData Type="Normal" Path="webview/t_rule.png" Plist="" />
               </AbstractNodeData>

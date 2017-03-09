@@ -19,7 +19,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="back" ActionTag="-108244162" Tag="1144" IconVisible="False" LeftMargin="174.2500" RightMargin="167.7500" TopMargin="39.8400" BottomMargin="38.1600" LeftEage="169" RightEage="169" TopEage="141" BottomEage="141" Scale9OriginX="169" Scale9OriginY="141" Scale9Width="600" Scale9Height="360" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="back" ActionTag="-108244162" Tag="1144" IconVisible="False" LeftMargin="174.2500" RightMargin="167.7500" TopMargin="39.0000" BottomMargin="39.0000" LeftEage="169" RightEage="169" TopEage="141" BottomEage="141" Scale9OriginX="169" Scale9OriginY="141" Scale9Width="600" Scale9Height="360" ctype="ImageViewObjectData">
             <Size X="938.0000" Y="642.0000" />
             <Children>
               <AbstractNodeData Name="backg" ActionTag="-1539876950" Tag="1176" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="54.5000" RightMargin="54.5000" TopMargin="88.0054" BottomMargin="63.9946" LeftEage="273" RightEage="273" TopEage="122" BottomEage="122" Scale9OriginX="273" Scale9OriginY="122" Scale9Width="283" Scale9Height="127" ctype="ImageViewObjectData">
@@ -69,10 +69,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="643.2500" Y="359.1600" />
+            <Position X="643.2500" Y="360.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5025" Y="0.4988" />
+            <PrePosition X="0.5025" Y="0.5000" />
             <PreSize X="0.7328" Y="0.8917" />
             <FileData Type="Normal" Path="playerchat/window-big.png" Plist="" />
           </AbstractNodeData>
@@ -111,10 +111,10 @@
                 <PreSize X="1.0000" Y="1.0000" />
                 <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="close" ActionTag="1589965576" Tag="1073" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="0.3231" RightMargin="-2.3231" TopMargin="-2.5001" BottomMargin="-0.4999" LeftEage="34" RightEage="34" TopEage="52" BottomEage="52" Scale9OriginX="34" Scale9OriginY="52" Scale9Width="30" Scale9Height="48" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="close" ActionTag="1589965576" Tag="1073" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="0.3230" RightMargin="-2.3230" TopMargin="-2.5032" BottomMargin="-0.4968" LeftEage="34" RightEage="34" TopEage="52" BottomEage="52" Scale9OriginX="34" Scale9OriginY="52" Scale9Width="30" Scale9Height="48" ctype="ImageViewObjectData">
                 <Size X="100.0000" Y="155.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="50.3231" Y="77.0001" />
+                <Position X="50.3230" Y="77.0032" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5135" Y="0.5066" />

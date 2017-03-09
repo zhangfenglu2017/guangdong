@@ -335,7 +335,7 @@
                 },
                 "Position": {
                   "X": 527.8987,
-                  "Y": 69.0295
+                  "Y": 70.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -345,7 +345,7 @@
                 "IconVisible": false,
                 "PrePosition": {
                   "X": 0.4999,
-                  "Y": 0.4966
+                  "Y": 0.5036
                 },
                 "PreSize": {
                   "X": 1.0,
@@ -353,8 +353,8 @@
                 },
                 "LeftMargin": -0.1013,
                 "RightMargin": 0.1013,
-                "TopMargin": 0.4705,
-                "BottomMargin": -0.4705,
+                "TopMargin": -0.5,
+                "BottomMargin": 0.5,
                 "Tag": 836,
                 "ActionTag": -538930658,
                 "Size": {

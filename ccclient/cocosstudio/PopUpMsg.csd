@@ -22,13 +22,13 @@
           <AbstractNodeData Name="back" ActionTag="1752009386" Tag="69" IconVisible="False" LeftMargin="-347.5000" RightMargin="-347.5000" TopMargin="-239.0000" BottomMargin="-239.0000" LeftEage="170" RightEage="170" TopEage="127" BottomEage="127" Scale9OriginX="170" Scale9OriginY="127" Scale9Width="355" Scale9Height="224" ctype="ImageViewObjectData">
             <Size X="695.0000" Y="478.0000" />
             <Children>
-              <AbstractNodeData Name="msg" ActionTag="-1709109701" Tag="165" IconVisible="False" LeftMargin="88.7222" RightMargin="86.2778" TopMargin="182.6784" BottomMargin="185.3216" IsCustomSize="True" FontSize="32" LabelText="请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值。" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="msg" ActionTag="-1709109701" Tag="165" IconVisible="False" LeftMargin="88.7226" RightMargin="86.2774" TopMargin="181.6783" BottomMargin="186.3217" IsCustomSize="True" FontSize="32" LabelText="请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值。&#xA;请添加联系以下微信号,进行充值。" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="520.0000" Y="110.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="348.7222" Y="240.3216" />
+                <Position X="348.7226" Y="241.3217" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="228" G="192" B="112" />
-                <PrePosition X="0.5018" Y="0.5028" />
+                <PrePosition X="0.5018" Y="0.5049" />
                 <PreSize X="0.7482" Y="0.2301" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

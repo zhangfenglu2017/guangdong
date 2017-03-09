@@ -146,6 +146,7 @@ jsclient.loadWxHead = function (url, node, posx, posy, scale, zindex, name, tag)
 };
 
 jsclient.showPlayerInfo = function (info) {
+    if(jsclient.userInfoLayerUi) return;//暂时解决多点触摸问题
     jsclient.uiPara = info;
     jsclient.Scene.addChild(new UserInfoLayer());
 };
@@ -249,8 +250,11 @@ jsclient.joinGame = function (tableid) {
 };
 
 jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7,
-                                canHuWith258, withZhong, horse, jjg, fanGui, fanNum)
+                                canHuWith258, withZhong, horse, jjg, fanGui, fanNum, isSanRen)
 {
+    //是否三人
+    var playerCount = isSanRen? 3:4;
+
     jsclient.block();
     jsclient.gamenet.request("pkplayer.handler.CreateVipTable", {
             gameType: gameType,
@@ -265,7 +269,8 @@ jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noB
             horse: horse,
             jiejieGao: jjg,
             fanGui:fanGui,
-            fanNum:fanNum
+            fanNum:fanNum,
+            maxPlayer:playerCount
         },
         function (rtn) {
             jsclient.unblock();

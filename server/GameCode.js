@@ -2,7 +2,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     var gameLog = [];
 
     function GLog(log) {
-        return;
+         return;
         app.FileWork(gameLog, __dirname + "/log.txt", log)
     }
 
@@ -64,38 +64,38 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         if (tData.withZhong || tData.fanGui) horse + 2;
         if (tData.jiejieGao) //此局多预留2匹马
         {
-                switch (self.players[tData.uids[tData.zhuang]].linkZhuang) {
-                    case 1:
-                        //horse = horse + 2;
-                        break;
-                    case 2:
-                        horse = horse + 2;
-                        break;
-                    case 3:
-                        horse = horse + 4;
-                        break;
-                    case 4:
-                        horse = horse + 6;
-                        break;
-                    case 5:
-                        horse = horse + 8;
-                        break;
-                    case 6:
-                        horse = horse + 10;
-                        break;
-                    case 7:
-                        horse = horse + 12;
-                        break;
-                    case 8:
-                        horse = horse + 14;
-                        break;
-                }
+            switch (self.players[tData.uids[tData.zhuang]].linkZhuang) {
+                case 1:
+                    //horse = horse + 2;
+                    break;
+                case 2:
+                    horse = horse + 2;
+                    break;
+                case 3:
+                    horse = horse + 4;
+                    break;
+                case 4:
+                    horse = horse + 6;
+                    break;
+                case 5:
+                    horse = horse + 8;
+                    break;
+                case 6:
+                    horse = horse + 10;
+                    break;
+                case 7:
+                    horse = horse + 12;
+                    break;
+                case 8:
+                    horse = horse + 14;
+                    break;
+            }
 
         }
         if (leftCard > horse && majiang.canGang0(pl.mjhand, cd))        eatFlag += 4;
         if ((leftCard >= 2) && majiang.canPeng(pl.mjhand, cd))         eatFlag += 2;
         if ((leftCard > 2 || tData.noBigWin) && tData.canEat &&
-            tData.uids[(tData.curPlayer + 1) % 4] == pl.uid && //下家限制
+            tData.uids[(tData.curPlayer + 1) % tData.maxPlayer] == pl.uid && //下家限制
             majiang.canChi(pl.mjhand, cd).length > 0
         ) eatFlag += 1;
         GLog("GetShenZhenEatFlag eatFlag=-------------" + eatFlag);
@@ -122,7 +122,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         GLog("是否是鸡胡=====" + isJiHu);
 
         //if(!pl.skipHu  && GetHuType(tData,pl,cd)>0 && (tData.canEatHu||tData.putType==4 || !isJiHu)) { eatFlag+=8; GLog("eatFlag="+eatFlag +" " + pl.info.name + " 第"+ tData.uids.indexOf(pl.uid)+"个人可胡");}
-        if (!pl.skipHu && GetHuType(tData, pl, cd) > 0 && (tData.canEatHu || tData.putType == 4 || isJiHu > 0)) {
+        if (!pl.skipHu && GetHuType(tData, pl, cd) > 0 && isJiHu > 0 || (tData.canEatHu || (tData.putType == 4 && isJiHu > 0) ) ) {
             eatFlag += 8;
             GLog("eatFlag=" + eatFlag + " " + pl.info.name + " 第" + tData.uids.indexOf(pl.uid) + "个人可胡");
         }
@@ -136,7 +136,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             GLog("eatFlag=" + eatFlag + " " + pl.info.name + " 第" + tData.uids.indexOf(pl.uid) + "个人可碰");
         }
         if ((leftCard > horse) && tData.canEat &&
-            tData.uids[(tData.curPlayer + 1) % 4] == pl.uid && //下家限制
+            tData.uids[(tData.curPlayer + 1) % tData.maxPlayer] == pl.uid && //下家限制
             majiang.canChi(pl.mjhand, cd).length > 0
         ) {
             eatFlag += 1;
@@ -173,7 +173,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         //    majiang.canChi(pl.mjhand,cd).length>0
         // ) eatFlag+=1;
         if ((leftCard > 2 || tData.noBigWin) && tData.canEat &&
-            tData.uids[(tData.curPlayer + 1) % 4] == pl.uid && //下家限制
+            tData.uids[(tData.curPlayer + 1) % tData.maxPlayer] == pl.uid && //下家限制
             majiang.canChi(pl.mjhand, cd).length > 0
         ) eatFlag += 1;
         GLog("GetGuangDongEatFlag eatFlag=-------------" + eatFlag);
@@ -295,7 +295,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             GLog("eatFlag=" + eatFlag + " " + pl.info.name + " 第" + tData.uids.indexOf(pl.uid) + "个人可碰");
         }
         if ((leftCard > 0) && tData.canEat &&
-            tData.uids[(tData.curPlayer + 1) % 4] == pl.uid && //下家限制
+            tData.uids[(tData.curPlayer + 1) % tData.maxPlayer] == pl.uid && //下家限制
             majiang.canChi(pl.mjhand, cd).length > 0
         ) {
             eatFlag += 1;
@@ -359,7 +359,8 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             gameType: GamesType.GANG_DONG,
             jiejieGao: false,
             fanNum:0, //0 翻起胡 1翻起胡 3翻起胡
-            jiPingHuCircleWind:{curCircleWind:0, allZhuangPlayer: []}// 0东圈 1南圈 2西圈 3北圈 所有做过庄的玩家
+            jiPingHuCircleWind:{curCircleWind:0, allZhuangPlayer: []},// 0东圈 1南圈 2西圈 3北圈 所有做过庄的玩家
+            maxPlayer:4,//默认为4人房
         };
     }
     //断线重连
@@ -408,7 +409,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var uids = this.tData.uids;
         if (this.tData.roundNum > -2) {
             if (uids.indexOf(pl.uid) < 0) {
-                if (uids.length == 4 && uids.indexOf(0) < 0) return false;
+                if (uids.length == this.tData.maxPlayer && uids.indexOf(0) < 0) return false;
                 return true;
             }
             else return true;
@@ -466,6 +467,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             tData.jiejieGao = self.createPara.jiejieGao;
             tData.fanGui = self.createPara.fanGui;
             if(tData.withZhong && tData.fanGui) {tData.withZhong = true;tData.fanGui = false;};
+            tData.maxPlayer = isUndefined(self.createPara.maxPlayer) ? 4 :self.createPara.maxPlayer;//几人房
             GLog("游戏类型:" + tData.gameType);
             GLog("风牌:" + tData.withWind);
             GLog("能吃:" + tData.canEat);
@@ -476,14 +478,15 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             GLog("马数:" + tData.horse);
             GLog("节节高:" + tData.jiejieGao);
             GLog("翻鬼：" + tData.fanGui);
+            GLog("几人房：" + tData.maxPlayer);
         }
         if (tData.owner == -1) {
             tData.owner = pl.uid;
-           // pl.linkZhuang = 0;
+            // pl.linkZhuang = 0;
         }
         var uids = tData.uids;
         if (uids.indexOf(pl.uid) < 0) {
-            if (uids.length < 4) uids.push(pl.uid);
+            if (uids.length < tData.maxPlayer) uids.push(pl.uid);
             else {
                 for (var i = 0; i < uids.length; i++)
                     if (uids[i] == 0) {
@@ -536,6 +539,8 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             tData.horse = self.createPara.horse;
             tData.fanGui = self.createPara.fanGui;
             if(tData.withZhong && tData.fanGui) {tData.withZhong = true;tData.fanGui = false;};
+            tData.maxPlayer = isUndefined(self.createPara.maxPlayer) ? 4 :self.createPara.maxPlayer;//几人房
+
             GLog("游戏类型:" + tData.gameType);
             GLog("风牌:" + tData.withWind);
             GLog("能吃:" + tData.canEat);
@@ -545,11 +550,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             GLog("总局数:" + tData.roundAll);
             GLog("马数:" + tData.horse);
             GLog("翻鬼：" + tData.fanGui);
+            GLog("几人房：" + tData.maxPlayer);
         }
         if (tData.owner == -1)    tData.owner = pl.uid;
         var uids = tData.uids;
         if (uids.indexOf(pl.uid) < 0) {
-            if (uids.length < 4) uids.push(pl.uid);
+            if (uids.length < tData.maxPlayer) uids.push(pl.uid);
             else {
                 for (var i = 0; i < uids.length; i++)
                     if (uids[i] == 0) {
@@ -599,6 +605,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             tData.canHuWith258 = false;
             tData.gameType = self.createPara.gameType;//惠州麻将 2
             tData.horse = self.createPara.horse;
+            tData.maxPlayer = isUndefined(self.createPara.maxPlayer) ? 4 :self.createPara.maxPlayer;//几人房
             GLog("游戏类型:" + tData.gameType);
             GLog("风牌:" + tData.withWind);
             GLog("能吃:" + tData.canEat);
@@ -607,11 +614,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             GLog("能吃胡:" + tData.canEatHu);
             GLog("总局数:" + tData.roundAll);
             GLog("马数:" + tData.horse);
+            GLog("几人房：" + tData.maxPlayer);
         }
         if (tData.owner == -1)    tData.owner = pl.uid;
         var uids = tData.uids;
         if (uids.indexOf(pl.uid) < 0) {
-            if (uids.length < 4) uids.push(pl.uid);
+            if (uids.length < tData.maxPlayer) uids.push(pl.uid);
             else {
                 for (var i = 0; i < uids.length; i++)
                     if (uids[i] == 0) {
@@ -669,6 +677,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             //tData.horse = self.createPara.horse;
             tData.horse = 0;
             tData.fanNum = self.createPara.fanNum;
+            tData.maxPlayer = isUndefined(self.createPara.maxPlayer) ? 4 :self.createPara.maxPlayer;//几人房
             GLog("游戏类型:" + tData.gameType);
             GLog("风牌:" + tData.withWind);
             GLog("能吃:" + tData.canEat);
@@ -678,11 +687,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             GLog("总局数:" + tData.roundAll);
             GLog("马数:" + tData.horse);
             GLog("起胡番数："+tData.fanNum + "番起胡");
+            GLog("几人房：" + tData.maxPlayer);
         }
         if (tData.owner == -1)    tData.owner = pl.uid;
         var uids = tData.uids;
         if (uids.indexOf(pl.uid) < 0) {
-            if (uids.length < 4) uids.push(pl.uid);
+            if (uids.length < tData.maxPlayer) uids.push(pl.uid);
             else {
                 for (var i = 0; i < uids.length; i++)
                     if (uids[i] == 0) {
@@ -763,7 +773,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
     function startGameForJiPingHu(self){
         GLog("Table.prototype.startGameForJiPingHu");
-        if (self.tData.roundNum > 0 && self.PlayerCount() == 4
+        if (self.tData.roundNum > 0 && self.PlayerCount() == self.tData.maxPlayer
             && self.AllPlayerCheck(function (pl) {
                 return pl.mjState == TableState.isReady
             })) {
@@ -807,7 +817,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 }
                 else
                 {
-                    tData.curPlayer = (tData.zhuang + 1) % 4;
+                    tData.curPlayer = (tData.zhuang + 1) % tData.maxPlayer;
                     tData.zhuang = tData.curPlayer;
                     isLianZhuang = false;
                 }
@@ -815,12 +825,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
             if(tData.jiPingHuCircleWind.allZhuangPlayer.indexOf(tData.zhuang) < 0) tData.jiPingHuCircleWind.allZhuangPlayer.push(tData.zhuang);
             else{
-                if(tData.jiPingHuCircleWind.allZhuangPlayer.length == 4 && !isLianZhuang)
+                if(tData.jiPingHuCircleWind.allZhuangPlayer.length == tData.maxPlayer && !isLianZhuang)
                 {
                     tData.jiPingHuCircleWind.allZhuangPlayer.length = 0;
                     tData.jiPingHuCircleWind.allZhuangPlayer = [];
                     tData.jiPingHuCircleWind.allZhuangPlayer.push(tData.zhuang);
-                    tData.jiPingHuCircleWind.curCircleWind = (tData.jiPingHuCircleWind.curCircleWind + 1) % 4;
+                    tData.jiPingHuCircleWind.curCircleWind = (tData.jiPingHuCircleWind.curCircleWind + 1) % tData.maxPlayer;
                 }
             }
             GLog("第"+ (tData.roundAll - tData.roundNum + 1) + "局  圈风为" + tData.jiPingHuCircleWind.curCircleWind );
@@ -830,8 +840,8 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             tData.winner = -1;
             GLog("startGame  horse===" + tData.horse);
             var cards = self.cards;
-            for (var i = 0; i < 4; i++) {
-                var pl = self.players[tData.uids[(i + tData.zhuang) % 4]];
+            for (var i = 0; i < tData.maxPlayer; i++) {
+                var pl = self.players[tData.uids[(i + tData.zhuang) % tData.maxPlayer]];
                 if (!isFirst && pl.uid == tData.uids[tData.zhuang]) pl.linkZhuang += 1;
                 if (!isFirst && pl.uid != tData.uids[tData.zhuang]) pl.linkZhuang = 1;
                 if (isFirst) pl.linkZhuang = 1;
@@ -858,7 +868,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 pl.mjMa = [];//个人马
                 pl.baojiu = {num: 0, putCardPlayer: []};
                 pl.skipHu = false;
-                pl.fengWei = (tData.jiPingHuCircleWind.curCircleWind + i)%4;
+                pl.fengWei = (tData.jiPingHuCircleWind.curCircleWind + i)%tData.maxPlayer;
                 pl.baoZiMo = {putCardPlayer:[],isOk:false};
                 var maCards = majiang.initMa(i);
                 for (var j = 0; j < maCards.length; j++) {
@@ -871,8 +881,8 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 if (pl.onLine)pl.notify("mjhand", {mjhand: pl.mjhand, tData: tData});
             }
 
-            for (var i = 0; i < 4; i++) {
-                var pl = self.players[tData.uids[(i + tData.zhuang) % 4]];
+            for (var i = 0; i < tData.maxPlayer; i++) {
+                var pl = self.players[tData.uids[(i + tData.zhuang) % tData.maxPlayer]];
                 GLog("此人："+pl.uid + "风位是："+pl.fengWei);
             }
 
@@ -892,7 +902,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 }));//玩家
             }
             tData.putType = 0;
-            tData.curPlayer = (tData.curPlayer + 3) % 4;
+            tData.curPlayer = (tData.curPlayer + 3) % tData.maxPlayer;
 
             mjlog.push("mjhand", self.cards, app.CopyPtys(tData));//开始
             SendNewCard(self);//开始后第一张发牌
@@ -901,7 +911,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     }
     function startGameForShenZhen(self) {
         GLog("Table.prototype.startGameForShenZhen");
-        if (self.tData.roundNum > 0 && self.PlayerCount() == 4
+        if (self.tData.roundNum > 0 && self.PlayerCount() == self.tData.maxPlayer
             && self.AllPlayerCheck(function (pl) {
                 return pl.mjState == TableState.isReady
             })) {
@@ -969,13 +979,13 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             tData.winner = -1;
             GLog("startGame  horse===" + tData.horse);
             var cards = self.cards;
-            for (var i = 0; i < 4; i++) {
-                var pl = self.players[tData.uids[(i + tData.zhuang) % 4]];
-               // if (!isFirst && pl.uid != tData.uids[tData.zhuang]) pl.linkZhuang = 0;
-               // if (!isFirst && pl.uid == tData.uids[tData.zhuang]) pl.linkZhuang += 1;
+            for (var i = 0; i < tData.maxPlayer; i++) {
+                var pl = self.players[tData.uids[(i + tData.zhuang) % tData.maxPlayer]];
+                // if (!isFirst && pl.uid != tData.uids[tData.zhuang]) pl.linkZhuang = 0;
+                // if (!isFirst && pl.uid == tData.uids[tData.zhuang]) pl.linkZhuang += 1;
 
                 //if (!isFirst && pl.uid != tData.uids[tData.zhuang]) pl.linkZhuang = 1;
-               // if (isFirst) pl.linkZhuang = 0;
+                // if (isFirst) pl.linkZhuang = 0;
                 GLog("查看此人连庄 uid：" + pl.uid + " 连庄次数：" + pl.linkZhuang);
                 pl.mjState = TableState.waitCard;
                 pl.eatFlag = 0;
@@ -1026,7 +1036,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 }));//玩家
             }
             tData.putType = 0;
-            tData.curPlayer = (tData.curPlayer + 3) % 4;
+            tData.curPlayer = (tData.curPlayer + 3) % tData.maxPlayer;
             mjlog.push("mjhand", self.cards, app.CopyPtys(tData));//开始
             SendNewCard(self);//开始后第一张发牌
         }
@@ -1039,7 +1049,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             case GamesType.GANG_DONG:
             case GamesType.HUI_ZHOU:
             {
-                if (this.tData.roundNum > 0 && this.PlayerCount() == 4
+                if (this.tData.roundNum > 0 && this.PlayerCount() == tData.maxPlayer
                     && this.AllPlayerCheck(function (pl) {
                         return pl.mjState == TableState.isReady
                     })) {
@@ -1092,8 +1102,8 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     tData.winner = -1;
                     GLog("startGame  horse===" + tData.horse);
                     var cards = this.cards;
-                    for (var i = 0; i < 4; i++) {
-                        var pl = this.players[tData.uids[(i + tData.zhuang) % 4]];
+                    for (var i = 0; i < tData.maxPlayer; i++) {
+                        var pl = this.players[tData.uids[(i + tData.zhuang) % tData.maxPlayer]];
                         pl.mjState = TableState.waitCard;
                         pl.eatFlag = 0;
                         pl.winone = 0;   //当前局赢多少
@@ -1147,7 +1157,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                         }));//玩家
                     }
                     tData.putType = 0;
-                    tData.curPlayer = (tData.curPlayer + 3) % 4;
+                    tData.curPlayer = (tData.curPlayer + tData.maxPlayer - 1) % tData.maxPlayer;
                     mjlog.push("mjhand", this.cards, app.CopyPtys(tData));//开始
                     SendNewCard(this);//开始后第一张发牌
                 }
@@ -1226,7 +1236,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         for (var i = 0; i < pls.length; i++) {
             var pi = pls[i];
             //pi.winone+=(pi.mjgang1.length*2+pi.mjgang0.length)*3;
-            pi.winone += (pi.mjgang1.length * 2 + pi.mjgang0.length) * 3;
+            pi.winone += (pi.mjgang1.length * 2 + pi.mjgang0.length) * (tData.maxPlayer - 1);
 
             if (pi.mjgang0.length > 0) pi.mjdesc.push(pi.mjgang0.length + "明杠");
             for (var g = 0; g < pi.mjgang0.length; g++) {
@@ -1379,44 +1389,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     var maFan = 0;//算分
                     var maCount = 0;
 
-                    switch (majiang.getMaPrice(pi)) {
-                        case 0:
-                            maCount = 0;
-                            maFan = 0;
-                            break;
-                        case 1:
-                            maFan = 2;
-                            maCount = 1;
-                            break;
-                        case 2:
-                            maFan = 4;
-                            maCount = 2;
-                            break;
-                        case 3:
-                            maFan = 6;
-                            maCount = 3;
-                            break;
-                        case 4:
-                            maFan = 8;
-                            maCount = 4;
-                            break;
-                        case 5:
-                            maFan = 10;
-                            maCount = 5;
-                            break;
-                        case 6:
-                            maFan = 12;
-                            maCount = 6;
-                            break;
-                        case 7:
-                            maFan = 14;
-                            maCount = 7;
-                            break;
-                        case 8:
-                            maFan = 16;
-                            maCount = 8;
-                            break;
-                    }
+                    //var zhongMaNum = majiang.getMaPrice(pi);
+                    //maFan = 2 * zhongMaNum;
+                    //maCount = zhongMaNum;
+
+                    maFan = 2 * majiang.getMaPrice(pi);
+                    maCount = majiang.getMaPrice(pi);
 
                     if (maCount > 0) baseWin = baseWin + maFan;
                     for (var j = 0; j < pls.length; j++) {
@@ -1430,7 +1408,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             //pj.mjdesc.push("杠炮");
                             isQiangGangHu = true;
                             baseWin = baseWin * 3;
-                           // pi.baseWin = pi.baseWin * 3;
+                            // pi.baseWin = pi.baseWin * 3;
                             pi.baseWin = 1;
                         }
                         else {
@@ -1534,7 +1512,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         for (var i = 0; i < pls.length; i++) {
             var pi = pls[i];
             //pi.winone+=(pi.mjgang1.length*2+pi.mjgang0.length)*3;
-            pi.winone += (pi.mjgang1.length * 2 + pi.mjgang0.length) * 3;
+            pi.winone += (pi.mjgang1.length * 2 + pi.mjgang0.length) * (tData.maxPlayer - 1);
 
             if (pi.mjgang0.length > 0) pi.mjdesc.push(pi.mjgang0.length + "明杠");
             for (var g = 0; g < pi.mjgang0.length; g++) {
@@ -1642,45 +1620,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     var maFan = 0;//算分
                     var maCount = 0;
 
-                    switch (majiang.getMaPrice(pi)) {
-                        case 0:
-                            maCount = 0;
-                            maFan = 0;
-                            break;
-                        case 1:
-                            maFan = 2;
-                            maCount = 1;
-                            break;
-                        case 2:
-                            maFan = 4;
-                            maCount = 2;
-                            break;
-                        case 3:
-                            maFan = 6;
-                            maCount = 3;
-                            break;
-                        case 4:
-                            maFan = 8;
-                            maCount = 4;
-                            break;
-                        case 5:
-                            maFan = 10;
-                            maCount = 5;
-                            break;
-                        case 6:
-                            maFan = 12;
-                            maCount = 6;
-                            break;
-                        case 7:
-                            maFan = 14;
-                            maCount = 7;
-                            break;
-                        case 8:
-                            maFan = 16;
-                            maCount = 8;
-                            break;
-                    }
+                    //var zhongMaNum = majiang.getMaPrice(pi);
+                    //maFan = 2 * zhongMaNum;
+                    //maCount = zhongMaNum;
 
+                    maFan = 2 * majiang.getMaPrice(pi);
+                    maCount = majiang.getMaPrice(pi);
                     if (maCount > 0) baseWin = baseWin + maFan;
                     for (var j = 0; j < pls.length; j++) {
                         var pj = pls[j];
@@ -1815,6 +1760,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         }
         GLog("endGame  horse===" + horse);
         //不管胡不胡都给每位玩家 传送left4Ma
+        GLog("eneGameforGuangDong pls.length======"+pls.length);
         for (var z = 0; z < pls.length; z++) {
             // pls[z].left4Ma.length = 0;
             pls[z].left4Ma=[];
@@ -1827,7 +1773,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         for (var i = 0; i < pls.length; i++) {
             var pi = pls[i];
             //pi.winone+=(pi.mjgang1.length*2+pi.mjgang0.length)*3;
-            pi.winone += (pi.mjgang1.length * 2 + pi.mjgang0.length) * 3;
+            pi.winone += (pi.mjgang1.length * 2 + pi.mjgang0.length) * (tData.maxPlayer - 1);
 
             if (pi.mjgang0.length > 0) pi.mjdesc.push(pi.mjgang0.length + "明杠");
             for (var g = 0; g < pi.mjgang0.length; g++) {
@@ -1836,8 +1782,13 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     if (j != i) {
                         var pj = pls[j];
                         if (ganguid >= 0 && pj.uid != tData.uids[ganguid]) continue;
-                        if (ganguid >= 0) {
-                            pj.winone -= 3;
+                        //if (ganguid > 0 && pj.uid == tData.uids[ganguid]) {
+                        //    pj.winone -= (tData.maxPlayer - 1);
+                        //    pj.mjdesc.push("点杠");
+                        //}
+                        if(ganguid >= 0)
+                        {
+                            pj.winone -= (tData.maxPlayer - 1);
                             pj.mjdesc.push("点杠");
                         }
                         else pj.winone -= 1;
@@ -1892,7 +1843,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             des = "混一色";
                             judgeType = 1;
                         }
-                        if (num3 == 1) {
+                        if (num3 == 1 || num3 == 2) {
                             des = "碰碰胡";
                             if (sameColor) des = "清碰";
 
@@ -1903,7 +1854,12 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                         if (des != "")    pi.mjdesc.push(des);
 
                         //天胡
-                        if (tData.cardNext == 53 && tData.curPlayer == tData.zhuang && pi.winType >= WinType.pickNormal) {
+                        if (
+                            (
+                                (tData.cardNext == 53 && tData.maxPlayer == 4) ||
+                                (tData.cardNext == 40 && tData.maxPlayer == 3)
+                            )
+                            && tData.curPlayer == tData.zhuang && pi.winType >= WinType.pickNormal) {
                             pi.mjdesc.push("天胡");
                             judgeType = 1;
                         }
@@ -1928,7 +1884,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                         }
 
                         if (pi.winType == WinType.pickGang23 || pi.winType == WinType.pickGang1) {
-                             pi.mjdesc.push("杠上花");
+                            pi.mjdesc.push("杠上花");
                             judgeType = 1;
                         }
                         //判断 7对 普通7对 有杠龙7对
@@ -1947,51 +1903,20 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     var maFan = 1;//算分
                     var maCount = 0;
 
-                    switch (majiang.getMaPrice(pi)) {
-                        case 0:
-                            maCount = 0;
-                            maFan = 1;
-                            break;
-                        case 1:
-                            //maFan *=2;
-                            maFan = 2;
-                            maCount = 1;
-                            break;
-                        case 2:
-                            //maFan *=4;
-                            maFan = 4;
-                            maCount = 2;
-                            break;
-                        case 3:
-                            //maFan *=8;
-                            maFan = 6;
-                            maCount = 3;
-                            break;
-                        case 4:
-                            //maFan *=16;
-                            maFan = 8;
-                            maCount = 4;
-                            break;
-                        case 5:
-                            //maFan *=32;
-                            maFan = 10;
-                            maCount = 5;
-                            break;
-                        case 6:
-                            //maFan *=64;
-                            maFan = 12;
-                            maCount = 6;
-                            break;
-                        case 7:
-                            //maFan *=128;
-                            maFan = 14;
-                            maCount = 7;
-                            break;
-                        case 8:
-                            //maFan *=256;
-                            maFan = 16;
-                            maCount = 8;
-                            break;
+                    //var zhongMaNum = majiang.getMaPrice(pi);
+                    //if(zhongMaNum == 0){
+                    //    maFan = 1;
+                    //    maCount = zhongMaNum;
+                    //}else{
+                    //    maFan = 2 * zhongMaNum;
+                    //    maCount = zhongMaNum;
+                    //}
+                    if(majiang.getMaPrice(pi) == 0){
+                        maFan = 1;
+                        maCount = majiang.getMaPrice(pi);
+                    }else{
+                        maFan = 2 * majiang.getMaPrice(pi);
+                        maCount = majiang.getMaPrice(pi);
                     }
 
                     for (var j = 0; j < pls.length; j++) {
@@ -2015,8 +1940,10 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             judgeType = 1;
                             isQiangGangHu = true;
                             //pi.mjdesc.push("抢杠胡");
-                            if(maFan == 1)  baseWin = 3*2;
-                            else baseWin = maFan * 3 + 3 * 2;
+                           // if(maFan == 1)  baseWin = 3*2;
+                            if(maFan == 1)  baseWin = (tData.maxPlayer - 1)*2;
+                           // else baseWin = maFan * 3 + 3 * 2;
+                            else baseWin = maFan * (tData.maxPlayer - 1) + (tData.maxPlayer - 1) * 2;
                             //pi.baseWin = 3;
                             pi.baseWin = 1;//都让这么改了
 
@@ -2037,7 +1964,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             //judgeType = 1;
                             //isGangShangHua = true;
                             //pi.baseWin=3;
-                          //  isGangShangHua = true;
+                            //  isGangShangHua = true;
                             pi.baseWin = 1;
                             judgeType = 1;
                         }
@@ -2065,6 +1992,22 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     }
                 }
             }
+
+            for(var i=0;i<pls.length;i++){
+                GLog("");
+                if(pls[i].winType > 0)
+                {
+                    GLog("赢得玩家  " + pls[i].uid + " 赢得分:"+pls[i].winone + " 描述：" + pls[i].mjdesc );
+                }
+                else{
+                    GLog("输得玩家  " + pls[i].uid + " 赢得分:"+pls[i].winone + " 描述：" + pls[i].mjdesc );
+                }
+                GLog("");
+            }
+            GLog("赢得玩家的分====" + pl.winone);
+            GLog("最终     胡家类型：" + pl.winType);
+            GLog("pi.desc===="+pl.mjdesc);
+
         }
         else {
             tData.winner = -1;
@@ -2683,7 +2626,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
             if (tData.cardNext < cards.length - horse) {
                 var newCard = cards[tData.cardNext++];
-                if (tData.putType == 0 || tData.putType == 4)tData.curPlayer = (tData.curPlayer + 1) % 4;
+                if (tData.putType == 0 || tData.putType == 4)tData.curPlayer = (tData.curPlayer + 1) % tData.maxPlayer;
                 var uid = tData.uids[tData.curPlayer];
                 pl = tb.getPlayer(uid);
                 pl.mjhand.push(newCard);
@@ -2777,22 +2720,22 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     {
                         if(tData.withZhong) guiString = "1";
                         if(tData.fanGui) guiString = "2";
-                        inc["t1_r"+tData.roundAll + "_h" + tData.horse + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0) + + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0)] = 1;
+                        inc["t1_r"+tData.roundAll + "_h" + tData.horse + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) + "_s"+tData.maxPlayer] = 1;
                     }
                         break;
                     case GamesType.HUI_ZHOU:
-                        inc["t2_r"+tData.roundAll + "_h" + tData.horse + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0) + + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) + "_j" + (tData.jiejieGao ? 1:0)] = 1;
+                        inc["t2_r"+tData.roundAll + "_h" + tData.horse + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) + "_j" + (tData.jiejieGao ? 1:0)+ "_s"+tData.maxPlayer] = 1;
                         break;
                     case GamesType.SHEN_ZHEN:
                     {
                         if(tData.withZhong) guiString = "1";
                         if(tData.fanGui) guiString = "2";
-                        inc["t3_r"+tData.roundAll + "_h" + tData.horse + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0) + + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0)] = 1;
+                        inc["t3_r"+tData.roundAll + "_h" + tData.horse + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0)+ "_s"+tData.maxPlayer] = 1;
                     }
                         break;
                     case GamesType.JI_PING_HU:
                     {
-                        inc["t4_r"+tData.roundAll  + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p1" ] = 1; //_p1 默认为点炮的意思
+                        inc["t4_r"+tData.roundAll  + "_g" + guiString + "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p1" + "_s"+tData.maxPlayer] = 1; //_p1 默认为点炮的意思
                     }
                         break;
                 }
@@ -3028,7 +2971,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             && tData.tState == TableState.waitEat
             && pl.mjState == TableState.waitEat
             && tData.uids[tData.curPlayer] != pl.uid
-            && tData.uids[(tData.curPlayer + 1) % 4] == pl.uid//下家限制
+            && tData.uids[(tData.curPlayer + 1) % tData.maxPlayer] == pl.uid//下家限制
         ) {
             //此处必须保证没有其他玩家想 胡牌 碰牌 杠牌
             if (self.AllPlayerCheck(function (p) {
@@ -3116,7 +3059,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     && tData.tState == TableState.waitEat
                     && pl.mjState == TableState.waitEat
                     && tData.uids[tData.curPlayer] != pl.uid
-                    && tData.uids[(tData.curPlayer + 1) % 4] == pl.uid//下家限制
+                    && tData.uids[(tData.curPlayer + 1) % tData.maxPlayer] == pl.uid//下家限制
                 ) {
                     //此处必须保证没有其他玩家想 胡牌 碰牌 杠牌
                     if (this.AllPlayerCheck(function (p) {
@@ -3383,7 +3326,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     });
                     tData.tState = TableState.waitPut;
                     pl.baojiu.num++;
-                   // GLog(pl.info.name + " 碰的次数：" + pl.baojiu.num);
+                    // GLog(pl.info.name + " 碰的次数：" + pl.baojiu.num);
                     if (pl.baojiu.num == 4) pl.baojiu.putCardPlayer.push(lastPlayer);
 
 
@@ -3624,7 +3567,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             else {
                 GLog("没杠");
                 tData.putType = 0;
-                tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % 4;
+                tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % tData.maxPlayer;
             }
             tData.tState = TableState.waitEat;
             SendNewCard(self); //杠后尝试补牌
@@ -3714,13 +3657,13 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     {
                         GLog("tData.canEatHu" + tData.canEatHu + "  msg.gang = " + msg.gang + "   hType = " + hType);
                         if (tData.canEatHu) {
-                            if (msg.gang != 3 || hType == 13) {
+                            if (msg.gang != 3 || hType == 13  && tData.gameType != 1) {
                                 p.mjState = TableState.waitEat;
                                 p.eatFlag = 8;
                             }
                         }
                         else {
-                            if (msg.gang != 3 || hType == 13 || (hType == 7 && msg.gang != 3 )) {
+                            if (msg.gang != 3 || (hType == 13 && tData.gameType != 1) || (hType == 7 && msg.gang != 3 )) {
                                 p.mjState = TableState.waitEat;
                                 p.eatFlag = 8;
                             }
@@ -3749,7 +3692,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             else {
                 GLog("没杠");
                 tData.putType = 0;
-                tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % 4;
+                tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % tData.maxPlayer;
             }
             tData.tState = TableState.waitEat;
             SendNewCard(self); //杠后尝试补牌
@@ -3874,9 +3817,10 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             self.AllPlayerRun(function (p) {
                 p.mjState = TableState.waitCard;
                 p.eatFlag = 0;
-                
+                var isJiHu = 0;
                 if ((canEatGang || msg.gang == 3) && p != pl && !p.skipHu) {
                     var hType = GetHuType(tData, p, msg.card);//开杠测试
+                    isJiHu = majiang.prejudgeHuType(p, msg.card);
                     GLog("hType" + hType);
                     if (hType > 0 )//开杠胡
                     {
@@ -3886,6 +3830,14 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             p.mjState = TableState.waitEat;
                             p.eatFlag = 8;
                         }
+                        //if ((hType == 13 || msg.gang != 3) && isJiHu > 0) {
+                        //    p.mjState = TableState.waitEat;
+                        //    p.eatFlag = 8;
+                        //}
+                        //if ((hType == 13 || msg.gang != 3) && isJiHu > 0) {
+                        //    p.mjState = TableState.waitEat;
+                        //    p.eatFlag = 8;
+                        //}
 
                     }
                 }
@@ -3905,7 +3857,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
                 GLog("没杠")
                 tData.putType = 0;
-                tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % 4;
+                tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % tData.maxPlayer;
             }
             tData.tState = TableState.waitEat;
             SendNewCard(self); //杠后尝试补牌
@@ -4152,7 +4104,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             }
                         }
                         else {
-                            if (msg.gang != 3 && hType != 13) {
+                            if (msg.gang != 3 && msg.gang != 1 || hType != 13) {
                                 p.mjState = TableState.waitEat;
                                 p.eatFlag = 8;
                             }
@@ -4197,7 +4149,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             else {
                 GLog("没杠")
                 tData.putType = 0;
-                tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % 4;
+                tData.curPlayer = (tData.uids.indexOf(pl.uid) + 3) % tData.maxPlayer;
             }
             tData.tState = TableState.waitEat;
             SendNewCard(self); //杠后尝试补牌
@@ -4233,7 +4185,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     function HighPlayerHuForGuangDong(tb, pl){
         var tData=tb.tData;
         var uids=tData.uids;
-        for (var i = (tData.curPlayer + 1) % 4; uids[i] != pl.uid; i = (i + 1) % 4) {
+        for (var i = (tData.curPlayer + 1) % tData.maxPlayer; uids[i] != pl.uid; i = (i + 1) % tData.maxPlayer) {
             if (tb.players[uids[i]].eatFlag >= 8) {
                 return true;
             }
@@ -4245,7 +4197,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     function HighPlayerHuForShenZhen(tb, pl){
         var tData=tb.tData;
         var uids=tData.uids;
-        for (var i = (tData.curPlayer + 1) % 4; uids[i] != pl.uid; i = (i + 1) % 4) {
+        for (var i = (tData.curPlayer + 1) % tData.maxPlayer; uids[i] != pl.uid; i = (i + 1) % tData.maxPlayer) {
             if (tb.players[uids[i]].eatFlag >= 8) {
                 return true;
             }
@@ -4260,9 +4212,9 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
         GLog("出牌的那个人 uid 是" + uids[tData.curPlayer]);
 
-        var h1Man = tb.players[uids[(tData.curPlayer + 1) % 4]];
-        var h2Man = tb.players[uids[(tData.curPlayer + 2) % 4]];
-        var h3Man = tb.players[uids[(tData.curPlayer + 3) % 4]];
+        var h1Man = tb.players[uids[(tData.curPlayer + 1) % tData.maxPlayer]];
+        var h2Man = tb.players[uids[(tData.curPlayer + 2) % tData.maxPlayer]];
+        var h3Man = tb.players[uids[(tData.curPlayer + 3) % tData.maxPlayer]];
 
 
         var h1ManType = majiang.prejudgeHuType(h1Man, tData.lastPut);
@@ -4272,9 +4224,9 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
         GLog("点胡的那个人uid：" + pl.uid);
         GLog("");
-        GLog("h1Man" + (tData.curPlayer + 1) % 4 + " uid:" + h1Man.uid + "胡牌类型：" + h1ManType + "是否过胡：" + h1Man.skipHu);
-        GLog("h2Man" + (tData.curPlayer + 2) % 4 + " uid:" + h2Man.uid + "胡牌类型：" + h2ManType + "是否过胡：" + h1Man.skipHu);
-        GLog("h3Man" + (tData.curPlayer + 3) % 4 + " uid:" + h3Man.uid + "胡牌类型：" + h3ManType + "是否过胡：" + h1Man.skipHu);
+        GLog("h1Man" + (tData.curPlayer + 1) % tData.maxPlayer + " uid:" + h1Man.uid + "胡牌类型：" + h1ManType + "是否过胡：" + h1Man.skipHu);
+        GLog("h2Man" + (tData.curPlayer + 2) % tData.maxPlayer + " uid:" + h2Man.uid + "胡牌类型：" + h2ManType + "是否过胡：" + h1Man.skipHu);
+        GLog("h3Man" + (tData.curPlayer + 3) % tData.maxPlayer + " uid:" + h3Man.uid + "胡牌类型：" + h3ManType + "是否过胡：" + h1Man.skipHu);
         GLog("");
 
         //检查出所有玩家 的胡 是否有 13幺和字一色 同时出现 按逆时针 符合牌型点炮  没有 按 点炮逆时针 点炮
@@ -4373,7 +4325,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
 
         else {
             GLog("走了 之前 按顺序的截胡")
-            for (var i = (tData.curPlayer + 1) % 4; uids[i] != pl.uid; i = (i + 1) % 4) {
+            for (var i = (tData.curPlayer + 1) % tData.maxPlayer; uids[i] != pl.uid; i = (i + 1) % tData.maxPlayer) {
                 if (tb.players[uids[i]].eatFlag >= 8) {
                     return true;
                 }
@@ -4426,7 +4378,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             !pl.skipHu
             && tData.tState == TableState.waitEat && pl.mjState == TableState.waitEat && tData.uids[tData.curPlayer] != pl.uid && pl.eatFlag >= 8
             && (tData.putType > 0 || tData.canEatHu)
-           /* &&!HighPlayerHuForShenZhen(self,pl)*/// 邵阳麻将可以多家胡
+        /* &&!HighPlayerHuForShenZhen(self,pl)*/// 邵阳麻将可以多家胡
         ) {
             GLog("点炮胡 抢杠胡 ");
             if (tData.tState == TableState.waitEat) {
@@ -4488,7 +4440,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         //自摸胡
         if (
             tData.tState == TableState.waitPut && pl.mjState == TableState.waitPut && pl.isNew
-            && tData.uids[tData.curPlayer] == pl.uid && GetHuType(tData, pl) > 0//自摸测试
+            && tData.uids[tData.curPlayer] == pl.uid && GetHuType(tData, pl) > 0 && GetHuType(tData, pl) != 13//自摸测试
         ) {
             //补摸
             if (tData.putType > 0 && tData.putType < 4) {
@@ -4702,7 +4654,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             && pl.mjState == TableState.waitEat
             && tData.uids[tData.curPlayer] != pl.uid
             && pl.eatFlag >= 8
-            //&& !HighPlayerHu(self, pl)// 邵阳麻将可以多家胡 //&&(tData.putType>0||tData.canEatHu)
+        //&& !HighPlayerHu(self, pl)// 邵阳麻将可以多家胡 //&&(tData.putType>0||tData.canEatHu)
         ) {
             GLog("点炮胡 抢杠胡 ");
             if (tData.tState == TableState.waitEat) {
@@ -4728,13 +4680,13 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 }
                 else return;
                 //一炮多响
-               // var huMembers = [];
+                // var huMembers = [];
                 self.AllPlayerRun(function (p) {
                     GLog("p.uid====" + p.uid + "=====    pl.uid" + pl.uid);
                     if (p.mjState == TableState.waitEat && p.eatFlag >= 8 ) {
                         p.mjhand.push(tData.lastPut);
                         p.winType = winType;
-                       // huMembers.push(p);
+                        // huMembers.push(p);
                     }
                 });
                 //if(huMembers.length >= 2) {
@@ -4788,7 +4740,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
             var yesuid = [];
             var nouid = [];
             if (msg.yes) {
-                if (this.PlayerCount() < 4) {
+                if (this.PlayerCount() < tData.maxPlayer) {
                     RoomEnd(this, {reason: 0});
                     return;//人数不足
                 }
@@ -4810,7 +4762,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             return true;
                         }
                         return false;
-                    }) >= 3) {
+                    }) >= (tData.maxPlayer - 1)) {
                     RoomEnd(this, {reason: 2, yesuid: yesuid});
                     return; //同意
                 }

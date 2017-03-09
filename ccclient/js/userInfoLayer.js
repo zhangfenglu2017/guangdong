@@ -10,7 +10,8 @@ function ShowSameIP(msg)
 		},
 		back:
 		{
-            _layout:[[0.5,0.5],[0.5,0.5],[0,0]],
+            _layout:[[0.54,0.66],[0.5,0.5],[0,0]],
+
 		    msg:
             {
                 _text:function()
@@ -76,7 +77,7 @@ function ShowSameGeog(msg)
             },
             back:
             {
-                _layout:[[0.5,0.5],[0.5,0.5],[0,0]],
+                _layout:[[0.54,0.65],[0.5,0.5],[0,0]],
                 msg:
                 {
                     _text:function()

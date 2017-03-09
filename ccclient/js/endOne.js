@@ -2,10 +2,13 @@
 //2016年7月14日 20:29:44
 //单次结算界面
 
-
-
-function SetEndOnePlayerUI(node, off) {
+function SetEndOnePlayerUI(node, off)
+{
     var pl = getUIPlayer(off);
+
+    if(pl == null)
+        return;
+
     node = node.getChildByName("head");
     var uibind =
     {
@@ -170,7 +173,8 @@ function DelRoomAgree(node, off) {
 }
 
 //是否同意解散房间
-function DelRoomVisible(node) {
+function DelRoomVisible(node) 
+{
     var pl = getUIPlayer(0);
     node.visible = pl.delRoom == 0;
 }
@@ -203,8 +207,13 @@ function DelRoomTime(node) {
                 },
 
                 back: {
-                    _layout: [[0.5, 0.5], [0.5, 0.5], [0, 0]],
+                    _layout: [[0.54, 0.65], [0.5, 0.5], [0, 0]],
 
+                    time: {
+                        _run: function () {
+                            DelRoomTime(this);
+                        }
+                    },
                     player0: {
                         _run: function () {
                             DelRoomAgree(this, 0);
@@ -213,10 +222,6 @@ function DelRoomTime(node) {
                             DelRoom: function () {
                                 DelRoomAgree(this, 0);
                             }
-                        }
-                    }, time: {
-                        _run: function () {
-                            DelRoomTime(this);
                         }
                     },
                     player1: {
@@ -241,10 +246,22 @@ function DelRoomTime(node) {
                     },
                     player3: {
                         _run: function () {
+                            if (IsThreeTable())
+                            {
+                                this.visible = false;
+                                return;
+                            }
+
                             DelRoomAgree(this, 3);
                         },
                         _event: {
                             DelRoom: function () {
+
+                                if (IsThreeTable())
+                                {
+                                    return;
+                                }
+
                                 DelRoomAgree(this, 3);
                             }
                         }
@@ -308,7 +325,8 @@ function DelRoomTime(node) {
                 block: {_layout: [[1, 1], [0.5, 0.5], [0, 0], true]},
 
                 back: {
-                    _layout: [[0.5, 0.5], [0.5, 0.5], [0, 0]],
+                    // _layout: [[1, 1], [0.5, 0.5], [0, 0]],
+                    _layout:[[0.54,0.66],[0.5,0.5],[0,0]],
 
                     tohome: {
                         _click: function () {
@@ -361,14 +379,20 @@ function checkShowBaoJiuZhang(pl) {
 }
 
 //判断显示不显示买马  有人赢 才显示
-function checkShowMa() {
+function checkShowMa()
+{
     var show = false;
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 4; i++)
+    {
         var pl = getUIPlayer(i);
-        if (jsclient.majiang.CardCount(pl) == 14 && pl.winType > 0 && jsclient.data.sData.tData.horse > 0) {
-            show = true;
-            break;
+
+        if(pl)
+        {
+            if (jsclient.majiang.CardCount(pl) == 14 && pl.winType > 0 && jsclient.data.sData.tData.horse > 0) {
+                show = true;
+                break;
+            }
         }
     }
 
@@ -378,10 +402,16 @@ function checkShowMa() {
 //判断中马没有
 function checkMjMa(off) {
     var pl = null;
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 4; i++)
+    {
         pl = getUIPlayer(i);
-        if (jsclient.majiang.CardCount(pl) == 14 && pl.winType > 0) {
-            break;
+
+        if(pl)
+        {
+            if (jsclient.majiang.CardCount(pl) == 14 && pl.winType > 0)
+            {
+                break;
+            }
         }
     }
 
@@ -406,10 +436,15 @@ function checkMjMa(off) {
 function checkWinCount()
 {
     var plCount = 0;
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 4; i++)
+    {
         pl = getUIPlayer(i);
-        if (jsclient.majiang.CardCount(pl) == 14 && pl.winType > 0) {
-            plCount ++;
+        if(pl)
+        {
+            if (jsclient.majiang.CardCount(pl) == 14 && pl.winType > 0)
+            {
+                plCount ++;
+            }
         }
     }
 
@@ -420,7 +455,8 @@ function checkWinCount()
 }
 
 //设置买马的牌
-function setMjMa(node, off) {
+function setMjMa(node, off)
+{
     var pl = getUIPlayer(0);
     var cd = pl.left4Ma[off];
     if (cd != null) {
@@ -724,16 +760,33 @@ var EndOneLayer = cc.Layer.extend(
             pingju: {
                 _layout: [[0.25, 0.25], [0.06, 0.9], [0, 0]],
 
-                _visible: function () {
+                _visible: function ()
+                {
                     var pl0 = getUIPlayer(0);
                     var pl1 = getUIPlayer(1);
                     var pl2 = getUIPlayer(2);
                     var pl3 = getUIPlayer(3);
 
-                    if (pl0 && pl1 && pl2 && pl3) {
-                        if (pl0.winone == 0 && pl1.winone == 0 && pl2.winone == 0 && pl3.winone == 0) {
-                            //如果都没赢，就荒了
-                            return false;
+                    if(IsThreeTable())
+                    {
+                        if (pl0 && pl1 && pl3)
+                        {
+                            if (pl0.winone == 0 && pl1.winone == 0 && pl3.winone == 0)
+                            {
+                                //如果都没赢，就荒了
+                                return false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (pl0 && pl1 && pl2 && pl3)
+                        {
+                            if (pl0.winone == 0 && pl1.winone == 0 && pl2.winone == 0 && pl3.winone == 0)
+                            {
+                                //如果都没赢，就荒了
+                                return false;
+                            }
                         }
                     }
 
@@ -746,23 +799,36 @@ var EndOneLayer = cc.Layer.extend(
 
             huang: {
                 _layout: [[0.25, 0.25], [0.06, 0.9], [0, 0]],
-                _visible: function () {
-                    return false;
-                },
-
-                _run: function () {
+                _visible: function ()
+                {
                     var pl0 = getUIPlayer(0);
                     var pl1 = getUIPlayer(1);
                     var pl2 = getUIPlayer(2);
                     var pl3 = getUIPlayer(3);
 
-                    if (pl0 && pl1 && pl2 && pl3) {
-                        if (pl0.winone == 0 && pl1.winone == 0 && pl2.winone == 0 && pl3.winone == 0) {
+                    if(IsThreeTable())
+                    {
+                        if (pl0.winone == 0 && pl1.winone == 0 && pl3.winone == 0)
+                        {
                             //如果都没赢，就荒了
-                            this.setVisible(true);
+                            return true;
                         }
                     }
-                }
+                    else
+                    {
+                        if (pl0 && pl1 && pl2 && pl3)
+                        {
+                            if (pl0.winone == 0 && pl1.winone == 0 && pl2.winone == 0 && pl3.winone == 0)
+                            {
+                                //如果都没赢，就荒了
+                                return true;
+                            }
+                        }
+                    }
+
+                    return false;
+                },
+
             },
 
             share: {
@@ -809,6 +875,12 @@ var EndOneLayer = cc.Layer.extend(
                 winNum: {_layout: [[0.05, 0.05], [0.83, 0.8], [0, 0]]},
 
                 _run: function () {
+
+                    if (IsThreeTable())
+                    {
+                        this.y -= 50;
+                    }
+
                     SetEndOnePlayerUI(this, 0);
                 },
 
@@ -834,6 +906,12 @@ var EndOneLayer = cc.Layer.extend(
                 winNum: {_layout: [[0.05, 0.05], [0.83, 0.62], [0, 0]]},
 
                 _run: function () {
+
+                    if (IsThreeTable())
+                    {
+                        this.y -= 50;
+                    }
+
                     SetEndOnePlayerUI(this, 1);
                 }
             },
@@ -858,7 +936,14 @@ var EndOneLayer = cc.Layer.extend(
                 winNum: {_layout: [[0.05, 0.05], [0.83, 0.44], [0, 0]]},
 
                 _run: function () {
-                    SetEndOnePlayerUI(this, 2);
+
+                    if (IsThreeTable())
+                    {
+                        this.y -= 50;
+                        SetEndOnePlayerUI(this, 3);
+                    }
+                    else
+                        SetEndOnePlayerUI(this, 2);
                 }
             },
 
@@ -882,7 +967,14 @@ var EndOneLayer = cc.Layer.extend(
                 winNum: {_layout: [[0.05, 0.05], [0.83, 0.26], [0, 0]]},
 
                 _run: function () {
-                    SetEndOnePlayerUI(this, 3);
+
+                    if (IsThreeTable())
+                    {
+                        this.visible = false;
+                    }
+                    else
+                        SetEndOnePlayerUI(this, 3);
+
                 }
             }
         },
@@ -897,7 +989,7 @@ var EndOneLayer = cc.Layer.extend(
             var tData = sData.tData;
 
             var selfUid = SelfUid();
-            var zoff = (tData.zhuang + 4 - tData.uids.indexOf(selfUid)) % 4;
+            var zoff = (tData.zhuang + tData.maxPlayer - tData.uids.indexOf(selfUid)) % tData.maxPlayer;
             var zhuang = this.jsBind["head" + zoff].head.zhuang._node;
             var linkZhuang = this.jsBind["head" + zoff].head.linkZhuang._node;
             if (tData.gameType == 3 && tData.jiejieGao) {

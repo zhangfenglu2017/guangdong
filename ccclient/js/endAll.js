@@ -2,14 +2,14 @@
 //2016年7月15日 11:48:03
 //全局结算界面
 
-
-
-
 function SetEndAllPlayerUI(node,off)
 {
 	var sData = jsclient.data.sData;
 	var tData = sData.tData;
 	var pl = getUIPlayer(off);
+
+    if(pl == null)
+        return;
 
     //名称  分数 房主
 	var uibind =
@@ -75,11 +75,17 @@ function SetEndAllPlayerUI(node,off)
     for (var i = 0; i < 4; i++)
     {
         var play = getUIPlayer(i);
-        MaxWinAll = MaxWinAll>play.winall?MaxWinAll:play.winall;
+        if(play)
+            MaxWinAll = MaxWinAll>play.winall?MaxWinAll:play.winall;
     }
 
     if (MaxWinAll > 0 && MaxWinAll == pl.winall)
     {
+        if (IsThreeTable())
+        {
+            if (off == 3)
+                off = 2;
+        }
         win.visible = true;
     }
 }
@@ -137,7 +143,15 @@ var EndAllLayer = cc.Layer.extend(
                 _run:function() {this.visible =false;this.zIndex =100;}
             },
 
-            _run:function(){ SetEndAllPlayerUI(this,0); }
+            _run:function(){
+
+                if (IsThreeTable())
+                {
+                    this.y -= 50;
+                }
+
+                SetEndAllPlayerUI(this,0);
+            }
         },
 
         head1:
@@ -149,7 +163,15 @@ var EndAllLayer = cc.Layer.extend(
                 _run:function(){this.visible =false;this.zIndex =100;}
             },
 
-		    _run:function(){ SetEndAllPlayerUI(this,1); }
+		    _run:function(){
+
+                if (IsThreeTable())
+                {
+                    this.y -= 50;
+                }
+
+                SetEndAllPlayerUI(this,1);
+            }
         },
 
         head2:
@@ -161,7 +183,16 @@ var EndAllLayer = cc.Layer.extend(
                 _run: function () {this.visible = false;this.zIndex = 100;}
             },
 
-            _run:function(){ SetEndAllPlayerUI(this,2); }
+            _run:function(){
+                if (IsThreeTable())
+                {
+                    SetEndAllPlayerUI(this,3);
+                    this.y -= 50;
+                }
+                else
+                    SetEndAllPlayerUI(this,2);
+
+            }
 
         },
 
@@ -174,13 +205,64 @@ var EndAllLayer = cc.Layer.extend(
                 _run:function(){this.visible =false;this.zIndex =100;}
             },
 
-            _run:function(){ SetEndAllPlayerUI(this,3); }
+            _run:function(){
+
+                if (IsThreeTable())
+                    this.visible = false;
+                else
+                    SetEndAllPlayerUI(this,3);
+            }
         },
 
-        backbar0: {_layout: [[0.85, 1], [0.55, 0.8], [0, 0]]},
-        backbar1: {_layout: [[0.85, 1], [0.55, 0.62], [0, 0]]},
-        backbar2: {_layout: [[0.85, 1], [0.55, 0.44], [0, 0]]},
-        backbar3: {_layout: [[0.85, 1], [0.55, 0.26], [0, 0]]},
+        backbar0:
+        {
+            _layout: [[0.85, 1], [0.55, 0.8], [0, 0]],
+
+            _run:function()
+            {
+                if (IsThreeTable())
+                {
+                    this.y -= 50;
+                }
+            }
+
+        },
+        backbar1:
+        {
+            _layout: [[0.85, 1], [0.55, 0.62], [0, 0]],
+
+            _run:function()
+            {
+                if (IsThreeTable())
+                {
+                    this.y -= 50;
+                }
+            }
+        },
+        backbar2:
+        {
+            _layout: [[0.85, 1], [0.55, 0.44], [0, 0]],
+
+            _run:function()
+            {
+                if (IsThreeTable())
+                {
+                    this.y -= 50;
+                }
+            }
+        },
+        backbar3:
+        {
+            _layout: [[0.85, 1], [0.55, 0.26], [0, 0]],
+
+            _run:function()
+            {
+                if (IsThreeTable())
+                {
+                    this.visible = false;
+                }
+            }
+        },
 	},
     ctor:function () 
     {

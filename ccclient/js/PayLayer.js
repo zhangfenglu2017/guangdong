@@ -17,7 +17,8 @@ function NewPopMsgLayer(uiPara)
 				}
 			},
 			back:
-			{	_layout:[[0.54,0.66],[0.5,0.5],[0,0]],
+			{
+				_layout:[[0.54,0.66],[0.5,0.5],[0,0]],
 				no:{
 					_visible:function(){ return !!uiPara.no;  }
 					,_click:function(){

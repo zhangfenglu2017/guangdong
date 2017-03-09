@@ -1206,6 +1206,98 @@
               {
                 "FileData": {
                   "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg1.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 11,
+                "Scale9OriginY": 18,
+                "Scale9Width": 76,
+                "Scale9Height": 116,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 862.0532,
+                  "Y": 470.4679
+                },
+                "Scale": {
+                  "ScaleX": 0.4,
+                  "ScaleY": 0.4
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 813.0532,
+                "RightMargin": -911.0532,
+                "TopMargin": -546.4679,
+                "BottomMargin": 394.4679,
+                "Tag": 492,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 26,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 50.0,
+                      "Y": 90.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5102,
+                      "Y": 0.5921
+                    },
+                    "PreSize": {
+                      "X": 0.7551,
+                      "Y": 0.6579
+                    },
+                    "LeftMargin": 13.0,
+                    "RightMargin": 11.0,
+                    "TopMargin": 12.0,
+                    "BottomMargin": 40.0,
+                    "Tag": 493,
+                    "ActionTag": -771873748,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 78241483,
+                "Size": {
+                  "X": 98.0,
+                  "Y": 152.0
+                },
+                "Name": "out2",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
                   "Path": "play-yli/Photo_frame_01.png",
                   "Plist": ""
                 },
@@ -2629,6 +2721,100 @@
               {
                 "FileData": {
                   "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg3.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 16,
+                "Scale9OriginY": 13,
+                "Scale9Width": 90,
+                "Scale9Height": 72,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 350.5195,
+                  "Y": 503.0418
+                },
+                "Scale": {
+                  "ScaleX": 0.4,
+                  "ScaleY": 0.4
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 289.5195,
+                "RightMargin": -411.5195,
+                "TopMargin": -552.0418,
+                "BottomMargin": 454.0418,
+                "Tag": 494,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 26,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 60.0,
+                      "Y": 66.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "RotationSkewX": 90.0,
+                    "RotationSkewY": 90.0,
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4918,
+                      "Y": 0.6735
+                    },
+                    "PreSize": {
+                      "X": 0.6066,
+                      "Y": 1.0204
+                    },
+                    "LeftMargin": 23.0,
+                    "RightMargin": 25.0,
+                    "TopMargin": -18.0,
+                    "BottomMargin": 16.0,
+                    "Tag": 495,
+                    "ActionTag": 1359808250,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 279750933,
+                "Size": {
+                  "X": 122.0,
+                  "Y": 98.0
+                },
+                "Name": "out2",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
                   "Path": "play-yli/Photo_frame_01.png",
                   "Plist": ""
                 },
@@ -2757,7 +2943,7 @@
                       "X": 80.0,
                       "Y": 20.0
                     },
-                    "Name": " name",
+                    "Name": "name",
                     "ctype": "TextObjectData"
                   },
                   {
@@ -2848,7 +3034,7 @@
                       "Y": 124.0
                     },
                     "VisibleForFrame": false,
-                    "Name": " offline",
+                    "Name": "offline",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3955,6 +4141,98 @@
                   "Y": 152.0
                 },
                 "Name": "stand",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg1.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 11,
+                "Scale9OriginY": 18,
+                "Scale9Width": 76,
+                "Scale9Height": 116,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 366.8206,
+                  "Y": 271.5418
+                },
+                "Scale": {
+                  "ScaleX": 0.4,
+                  "ScaleY": 0.4
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 317.8206,
+                "RightMargin": -415.8206,
+                "TopMargin": -347.5418,
+                "BottomMargin": 195.5418,
+                "Tag": 496,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 26,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 50.0,
+                      "Y": 90.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5102,
+                      "Y": 0.5921
+                    },
+                    "PreSize": {
+                      "X": 0.7551,
+                      "Y": 0.6579
+                    },
+                    "LeftMargin": 13.0,
+                    "RightMargin": 11.0,
+                    "TopMargin": 12.0,
+                    "BottomMargin": 40.0,
+                    "Tag": 497,
+                    "ActionTag": 703008689,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 1092441944,
+                "Size": {
+                  "X": 98.0,
+                  "Y": 152.0
+                },
+                "Name": "out2",
                 "ctype": "ImageViewObjectData"
               },
               {
@@ -5557,6 +5835,98 @@
                   "Y": 98.0
                 },
                 "Name": "out1",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "MaJiangNew/mj_bg3.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 16,
+                "Scale9OriginY": 13,
+                "Scale9Width": 90,
+                "Scale9Height": 72,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 931.6228,
+                  "Y": 226.8464
+                },
+                "Scale": {
+                  "ScaleX": 0.38,
+                  "ScaleY": 0.38
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 870.6228,
+                "RightMargin": -992.6228,
+                "TopMargin": -275.8464,
+                "BottomMargin": 177.8464,
+                "Tag": 498,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MaJiangNew/mj_91.png",
+                      "Plist": ""
+                    },
+                    "Scale9Width": 74,
+                    "Scale9Height": 100,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 60.0,
+                      "Y": 65.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "RotationSkewX": -90.0,
+                    "RotationSkewY": -90.0,
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4918,
+                      "Y": 0.6633
+                    },
+                    "PreSize": {
+                      "X": 0.6066,
+                      "Y": 1.0204
+                    },
+                    "LeftMargin": 23.0,
+                    "RightMargin": 25.0,
+                    "TopMargin": -17.0,
+                    "BottomMargin": 15.0,
+                    "Tag": 499,
+                    "ActionTag": -1139590728,
+                    "Size": {
+                      "X": 74.0,
+                      "Y": 100.0
+                    },
+                    "Name": "num",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -1586393597,
+                "Size": {
+                  "X": 122.0,
+                  "Y": 98.0
+                },
+                "Name": "out2",
                 "ctype": "ImageViewObjectData"
               },
               {
@@ -10840,8 +11210,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 1216.4219,
-              "Y": 177.2159
+              "X": 1216.4221,
+              "Y": 178.2159
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -10851,16 +11221,16 @@
             "IconVisible": false,
             "PrePosition": {
               "X": 0.9503,
-              "Y": 0.2461
+              "Y": 0.2475
             },
             "PreSize": {
               "X": 0.057,
               "Y": 0.1028
             },
-            "LeftMargin": 1179.9219,
-            "RightMargin": 27.0781,
-            "TopMargin": 505.7841,
-            "BottomMargin": 140.2159,
+            "LeftMargin": 1179.9221,
+            "RightMargin": 27.0779,
+            "TopMargin": 504.7841,
+            "BottomMargin": 141.2159,
             "Tag": 133,
             "ActionTag": 1600943711,
             "Size": {

@@ -122,6 +122,7 @@
                         self1Ma6: null,
                         self1Round4: null,
                         self1Round8: null,
+                        selfSanRen: null,
 
                         _run: function () {
                             gamemjs[1] = this;
@@ -205,6 +206,12 @@
                                     self1CanHu7 = this;
                                 }
                             },
+
+                            sanren: {
+                                _run: function () {
+                                    selfSanRen = this;
+                                }
+                            }
 
                         },
 
@@ -311,7 +318,8 @@
                                         horse,                     //几匹马
                                         false,                     //节节高
                                         self1FanGui.isSelected(),   //翻鬼
-                                        0                           //番
+                                        0,                          //番
+                                        selfSanRen.isSelected()     //人数
                                     );
                                 }
                                 else {
@@ -487,7 +495,8 @@
                                         horse,                     //几匹马
                                         false,                      //节节高
                                         false,                       //翻鬼
-                                        0                            //番
+                                        0,                           //番
+                                        false                        //人数
                                     );
                                 }
                                 else {
@@ -700,7 +709,8 @@
                                         horse,                     //几匹马
                                         self3JJG.isSelected(),      //节节高
                                         self3FanGui.isSelected(),    //翻鬼
-                                        0                              //番
+                                        0,                              //番
+                                        false                        //人数
                                     );
                                 }
                                 else {
@@ -860,7 +870,8 @@
                                         0,                         //几匹马
                                         false,                    //节节高
                                         false,                    //翻鬼
-                                        fannum                     //番
+                                        fannum,                     //番
+                                        false                        //人数
                                     );
                                 }
                                 else {

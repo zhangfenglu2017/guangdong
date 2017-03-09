@@ -1,3 +1,6 @@
+
+
+
 (function () {
     var mjcards = [
         1, 2, 3, 4, 5, 6, 7, 8, 9,
@@ -874,6 +877,12 @@
 
     majiang.HunYiSe = function (pl) {
         var test = [pl.mjhand, pl.mjpeng, pl.mjgang0, pl.mjgang1, pl.mjchi];
+        var fengPai = [31,41,51,61,71,81,91];
+        var allFengPaiCounts = 0;
+        for(var i=0;i<pl.mjhand.length;i++){
+            if(fengPai.indexOf(pl.mjhand[i]) != -1) allFengPaiCounts++;
+        }
+        if(allFengPaiCounts >= pl.mjhand.length) return false; //全是风牌 则不是混一色
         var errorCount = 0;
         var color = -1;
 
@@ -1463,6 +1472,12 @@
         if (oddCards.length > 0) {//有单牌
             if (withHun) {
                 if (hunCards.length == oddCards.length) {//单牌数==红中数
+                    if (with258 && (ispair258 || isodd258)) {
+                        return true;
+                    } else
+                        return true;
+                }
+                if(oddCards.length < hunCards.length && hunCards.length == 3 ){
                     if (with258 && (ispair258 || isodd258)) {
                         return true;
                     } else
@@ -2108,6 +2123,12 @@
     }
     majiang.SameColor = function (pl) {
         var test = [pl.mjhand, pl.mjpeng, pl.mjgang0, pl.mjgang1, pl.mjchi];
+        var fengPai = [31,41,51,61,71,81,91];
+        var allFengPaiCounts = 0;
+        for(var i=0;i<pl.mjhand.length;i++){
+            if(fengPai.indexOf(pl.mjhand[i]) != -1) allFengPaiCounts++;
+        }
+        if(allFengPaiCounts >= pl.mjhand.length) return true; //全是风牌 则是清一色
         var color = -1;
         for (var i = 0; i < test.length; i++) {
             var cds = test[i];
@@ -2444,6 +2465,18 @@
         else  console.log("不可以胡");
     }
 
+    function testHunYiSe(){
+        var pl = {
+            mjhand: [71,31, 31, 31, 41, 41, 41, 51, 51, 51,61,61,61,81],
+            mjpeng: [],
+            mjgang0: [],
+            mjgang1: [],
+            mjchi: [],
+        }
+        var isHunYiSe = majiang.HunYiSe(pl);
+        if(isHunYiSe) console.log("是混一色");
+        else console.log("不是混一色");
+    }
     function DoTest() {
         //testZiYiSe();
         //testHuWithHongZhong();
@@ -2465,6 +2498,7 @@
         //testDaSanYuan();
         //testGetHuTypeForShenZhen();
         //testCanHuForGui();
+        //testHunYiSe();
     }
 
     if (typeof(jsclient) != "undefined") {

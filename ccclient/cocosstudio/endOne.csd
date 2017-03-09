@@ -404,13 +404,13 @@
             <PreSize X="0.1672" Y="0.2903" />
             <FileData Type="Normal" Path="gameEndNew/t_lost.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="share" ActionTag="-600402216" Tag="1596" IconVisible="False" LeftMargin="422.9997" RightMargin="687.0003" TopMargin="647.5000" BottomMargin="7.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="share" ActionTag="-600402216" Tag="1596" IconVisible="False" LeftMargin="424.9998" RightMargin="685.0002" TopMargin="647.4999" BottomMargin="7.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="170.0000" Y="65.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="507.9997" Y="40.0000" />
+            <Position X="509.9998" Y="40.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3969" Y="0.0556" />
+            <PrePosition X="0.3984" Y="0.0556" />
             <PreSize X="0.1328" Y="0.0903" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />

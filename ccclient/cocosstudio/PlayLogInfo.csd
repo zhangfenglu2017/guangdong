@@ -16,10 +16,10 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="gameEndNew/bac-3.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="table" ActionTag="1946438988" Tag="311" IconVisible="False" LeftMargin="-571.8500" RightMargin="525.8500" TopMargin="-57.9285" BottomMargin="11.9285" ctype="SpriteObjectData">
+          <AbstractNodeData Name="table" ActionTag="1946438988" Tag="311" IconVisible="False" LeftMargin="-594.3501" RightMargin="503.3501" TopMargin="-307.9286" BottomMargin="-236.0714" ctype="SpriteObjectData">
             <Size X="91.0000" Y="544.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-548.8500" Y="34.9285" />
+            <Position X="-548.8501" Y="35.9286" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
