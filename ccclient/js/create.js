@@ -153,6 +153,7 @@
                         self1Ma2: null,
                         self1Ma4: null,
                         self1Ma6: null,
+                        self1MaBom: null,
                         self1Round4: null,
                         self1Round8: null,
                         self1JJG:null,
@@ -262,6 +263,18 @@
                             jjg:{
                                 _run: function () {
                                     self1JJG = this;
+                                },
+
+                                _click:function(){
+
+                                    if(self1MaBom.isSelected())
+                                    {
+                                        self1MaBom.setSelected(false);
+                                        self1MaBom.setTouchEnabled(true);
+
+                                        self1Ma2.setSelected(true);
+                                        self1Ma2.setTouchEnabled(false);
+                                    }
                                 }
                             }
                         },
@@ -278,6 +291,9 @@
                                     self1Ma4.setTouchEnabled(true);
                                     self1Ma6.setSelected(false);
                                     self1Ma6.setTouchEnabled(true);
+
+                                    self1MaBom.setSelected(false);
+                                    self1MaBom.setTouchEnabled(true);
                                 }
                             },
 
@@ -292,6 +308,9 @@
                                     self1Ma4.setTouchEnabled(false);
                                     self1Ma6.setSelected(false);
                                     self1Ma6.setTouchEnabled(true);
+
+                                    self1MaBom.setSelected(false);
+                                    self1MaBom.setTouchEnabled(true);
                                 }
                             },
 
@@ -306,8 +325,33 @@
                                     self1Ma4.setTouchEnabled(true);
                                     self1Ma6.setSelected(true);
                                     self1Ma6.setTouchEnabled(false);
+
+                                    self1MaBom.setSelected(false);
+                                    self1MaBom.setTouchEnabled(true);
                                 }
                             },
+
+                            mabaozha: {
+
+                                _run:function () {
+                                    self1MaBom = this;
+                                },
+
+                                _click: function () {
+                                    self1Ma2.setSelected(false);
+                                    self1Ma2.setTouchEnabled(true);
+                                    self1Ma4.setSelected(false);
+                                    self1Ma4.setTouchEnabled(true);
+                                    self1Ma6.setSelected(false);
+                                    self1Ma6.setTouchEnabled(true);
+
+                                    self1MaBom.setSelected(true);
+                                    self1MaBom.setTouchEnabled(false);
+
+                                    self1JJG.setSelected(false);
+                                    self1JJG.setTouchEnabled(true);
+                                }
+                            }
                         },
 
                         round: {
@@ -364,6 +408,8 @@
                                     horse = 4;
                                 else if (self1Ma6.isSelected())
                                     horse = 6;
+                                else if(self1MaBom.isSelected())
+                                    horse = 1;
 
                                 if (haveMoney >= needMoney)
                                 {
@@ -380,6 +426,7 @@
                                         self1Zhong.isSelected(),    //红中鬼牌
                                         false,                      //红中为马
                                         horse,                     //几匹马
+                                        self1MaBom.isSelected(),   //爆炸马
                                         self1JJG.isSelected(),     //节节高
                                         self1FanGui.isSelected(),   //翻鬼
                                         0,                          //番
@@ -578,6 +625,7 @@
                                         false,                     //中为鬼牌
                                         false,                      //中为马
                                         horse,                     //几匹马
+                                        false,                      //爆炸马
                                         false,                      //节节高
                                         false,                       //翻鬼
                                         0,                           //番
@@ -812,6 +860,7 @@
                                         self3Zhong.isSelected(),    //鬼牌
                                         false,                      //中为马
                                         horse,                     //几匹马
+                                        false,                      //爆炸马
                                         self3JJG.isSelected(),      //节节高
                                         self3FanGui.isSelected(),    //翻鬼
                                         0,                            //番
@@ -992,6 +1041,7 @@
                                         false,                     //鬼牌
                                         false,                     //中为马
                                         0,                         //几匹马
+                                        false,                      //爆炸马
                                         false,                    //节节高
                                         false,                    //翻鬼
                                         fannum,                     //番
@@ -1390,6 +1440,7 @@
                                         self5Zhong.isSelected(),    //红中鬼牌
                                         self5ZhongIsMa.isSelected(),//红中算马
                                         horse,                     //几匹马
+                                        false,                      //爆炸马
                                         false,                     //节节高
                                         self5FanGui.isSelected(),   //翻鬼
                                         0,                          //番
@@ -1761,6 +1812,7 @@
                                         self6Zhong.isSelected(),    //红中鬼牌
                                         false,                      //红中算马
                                         horse,                     //几匹马
+                                        false,                      //爆炸马
                                         false,                     //节节高
                                         self6FanGui.isSelected(),   //翻鬼
                                         0,                          //番
@@ -1793,6 +1845,7 @@
                         self7Ma2: null,
                         self7Ma4: null,
                         self7Ma6: null,
+                        self7MaBom: null,
                         self7Round4: null,
                         self7Round8: null,
                         self7JJG:null,
@@ -1902,6 +1955,18 @@
                             jjg:{
                                 _run: function () {
                                     self7JJG = this;
+                                },
+
+                                _click:function(){
+
+                                    if(self7MaBom.isSelected())
+                                    {
+                                        self7MaBom.setSelected(false);
+                                        self7MaBom.setTouchEnabled(true);
+
+                                        self7Ma2.setSelected(true);
+                                        self7Ma2.setTouchEnabled(false);
+                                    }
                                 }
                             }
                         },
@@ -1918,6 +1983,9 @@
                                     self7Ma4.setTouchEnabled(true);
                                     self7Ma6.setSelected(false);
                                     self7Ma6.setTouchEnabled(true);
+
+                                    self7MaBom.setSelected(false);
+                                    self7MaBom.setTouchEnabled(true);
                                 }
                             },
 
@@ -1932,6 +2000,9 @@
                                     self7Ma4.setTouchEnabled(false);
                                     self7Ma6.setSelected(false);
                                     self7Ma6.setTouchEnabled(true);
+
+                                    self7MaBom.setSelected(false);
+                                    self7MaBom.setTouchEnabled(true);
                                 }
                             },
 
@@ -1946,8 +2017,33 @@
                                     self7Ma4.setTouchEnabled(true);
                                     self7Ma6.setSelected(true);
                                     self7Ma6.setTouchEnabled(false);
+
+                                    self7MaBom.setSelected(false);
+                                    self7MaBom.setTouchEnabled(true);
                                 }
                             },
+
+                            mabaozha: {
+
+                                _run:function () {
+                                    self7MaBom = this;
+                                },
+
+                                _click: function () {
+                                    self7Ma2.setSelected(false);
+                                    self7Ma2.setTouchEnabled(true);
+                                    self7Ma4.setSelected(false);
+                                    self7Ma4.setTouchEnabled(true);
+                                    self7Ma6.setSelected(false);
+                                    self7Ma6.setTouchEnabled(true);
+
+                                    self7MaBom.setSelected(true);
+                                    self7MaBom.setTouchEnabled(false);
+
+                                    self7JJG.setSelected(false);
+                                    self7JJG.setTouchEnabled(true);
+                                }
+                            }
                         },
 
                         round: {
@@ -2005,6 +2101,8 @@
                                     horse = 4;
                                 else if (self7Ma6.isSelected())
                                     horse = 6;
+                                else if(self7MaBom.isSelected())
+                                    horse = 1;
 
                                 if (haveMoney >= needMoney)
                                 {
@@ -2021,6 +2119,7 @@
                                         self7Zhong.isSelected(),    //红中鬼牌
                                         false,                      //红中为马
                                         horse,                     //几匹马
+                                        self7MaBom.isSelected(),   //爆炸马
                                         self7JJG.isSelected(),     //节节高
                                         self7FanGui.isSelected(),   //翻鬼
                                         0,                          //番

@@ -971,6 +971,51 @@
                       {
                         "FileData": {
                           "Type": "Normal",
+                          "Path": "play-yli/baozhama.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 14,
+                        "Scale9OriginY": 6,
+                        "Scale9Width": 64,
+                        "Scale9Height": 16,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 67.9994,
+                          "Y": -109.9012
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "LeftMargin": 7.9994,
+                        "RightMargin": -127.9994,
+                        "TopMargin": 92.4012,
+                        "BottomMargin": -127.4012,
+                        "Tag": 593,
+                        "ActionTag": 655992857,
+                        "Size": {
+                          "X": 120.0,
+                          "Y": 35.0
+                        },
+                        "Name": "mabaozha",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
                           "Path": "play-yli/kehu.png",
                           "Plist": ""
                         },
@@ -13024,6 +13069,7 @@
         "play-yli/bac_edge_xia.png",
         "play-yli/bac_edge_you.png",
         "play-yli/bac_edge_zuo.png",
+        "play-yli/baozhama.png",
         "play-yli/btn_Arrange_normal.png",
         "play-yli/btn_Arrange_press.png",
         "play-yli/btn_chat_normal.png",

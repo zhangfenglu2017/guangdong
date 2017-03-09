@@ -2949,6 +2949,19 @@
         if(myObject && myObject.tData.fanGui && myObject.tData.gui == card) return true;
         return false;
     }
+
+    //推倒胡爆炸马算法
+    majiang.getMaCountsForBaoZhaMa = function(card)
+    {
+        //东西南北中发白酒算5个马
+        var fengPai = [31,41,51,61,71,81,91];
+        if(fengPai.indexOf(card) != -1) return 5;
+        //抓到1就是中10个马
+        var yiPai = [1,11,21];
+        if(yiPai.indexOf(card) != -1) return 10;
+        return (card % 10);
+    }
+
     //癞子判断
     majiang.All3New = function(pl)
     {

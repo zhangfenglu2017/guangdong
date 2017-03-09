@@ -420,6 +420,12 @@ function checkMjMa(off) {
     if (pl == null)
         return false;
 
+    var sData = jsclient.data.sData;
+    var tData = sData.tData;
+
+    if(tData.baozhama)
+        return true;
+
     var mjMa = pl.mjMa;
     var mj = pl.left4Ma[off];
 
@@ -1029,6 +1035,11 @@ function showEndMa() {
     var scale = cardNode.scale;
 
     switch (cardCount) {
+        case 1:
+            sposx = 430;
+            sposy = 300;
+            offx = 0;
+            break;
         case 2:
             sposx = 350;
             sposy = 300;

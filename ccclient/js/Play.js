@@ -719,7 +719,7 @@ function CheckEatVisible(eat)
             //判断红中癞子
             var horse = 0;
             var rtn;
-            if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+            if ((jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui) && !jsclient.data.sData.tData.baozhama && jsclient.data.sData.tData.horse >= 2)
                 horse = jsclient.data.sData.tData.horse + 2;
             else
                 horse = jsclient.data.sData.tData.horse;
@@ -884,7 +884,7 @@ function CheckEatVisible(eat)
             {
                 var horse = 0;
                 var rtn;
-                if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
+                if ((jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui) && !jsclient.data.sData.tData.baozhama && jsclient.data.sData.tData.horse >= 2)
                     horse = jsclient.data.sData.tData.horse + 2;
                 else
                     horse = jsclient.data.sData.tData.horse;
@@ -4381,6 +4381,7 @@ var PlayLayer = cc.Layer.extend(
                 },
 
                 LeaveGame: function () {
+                    jsclient.runningHeartbeat = false;
                     jsclient.playui.removeFromParent(true);
                     delete jsclient.playui;
                     playMusic("bgMain");
@@ -4415,6 +4416,7 @@ var PlayLayer = cc.Layer.extend(
                 logout: function () {
                     if (jsclient.playui)
                     {
+                        jsclient.runningHeartbeat = false;
                         jsclient.playui.removeFromParent(true);
                         delete jsclient.playui;
                     }
@@ -4604,6 +4606,13 @@ var PlayLayer = cc.Layer.extend(
                         maima6: {
                             _visible: function () {
                                 return (jsclient.data.sData.tData.horse == 6);
+                            },
+                        },
+
+                        mabaozha:
+                        {
+                            _visible: function () {
+                                return jsclient.data.sData.tData.baozhama;
                             },
                         },
 
@@ -4981,6 +4990,7 @@ var PlayLayer = cc.Layer.extend(
                         var canFan7 = tData.canFan7;
                         var feng = tData.withWind;
                         var horse = tData.horse;
+                        var maBoom = tData.baozhama;
                         var roundNum = tData.roundNum;
                         var fanGui = tData.fanGui;
                         var jiejieGao = tData.jiejieGao;
@@ -5006,6 +5016,11 @@ var PlayLayer = cc.Layer.extend(
                         // var gui4huBeiNumTips = gui4huBeiNum == 1 ? "" : "4鬼牌翻倍";
                         // var guiJiaMaTips = guiJiaMa ? "有鬼牌玩法时,胡牌时牌型中无鬼加2马" : "";
                         // var guiJiaBeiTips = guiJiaBei ? "有鬼牌玩法时,胡牌时牌型中无鬼翻1倍" : "";
+
+                        if(maBoom)
+                        {
+                            horseTips = "爆炸马、"
+                        }
 
                         if (gameType == 1)
                             gameTypeTips = maxPlayer == 4 ? "【广州麻将】": "【三人推倒胡】";
@@ -6398,6 +6413,11 @@ var PlayLayer = cc.Layer.extend(
                 if (jsclient.game_on_show) jsclient.tickGame(0);
             }), cc.delayTime(7))));
             jsclient.playui = this;
+
+            if( !jsclient.runningHeartbeat ) {
+                this.runAction(cc.repeatForever(cc.sequence(cc.callFunc(jsclient.heartbeatGame), cc.DelayTime(5))));
+                jsclient.runningHeartbeat = true;
+            }
 
             return true;
         },

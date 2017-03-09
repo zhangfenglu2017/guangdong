@@ -328,7 +328,7 @@ jsclient.joinGame = function (tableid) {
 };
 
 jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7,canFan7,
-                                canHuWith258, withZhong, zhongIsMa, horse, jjg, fanGui, fanNum, maxPlayer,
+                                canHuWith258, withZhong, zhongIsMa, horse, baoZhaMa, jjg, fanGui, fanNum, maxPlayer,
                                 canBigWin, guiJiaMa, guiJiaBei, gui4Hu, gui4huBeiNum)
 {
     jsclient.block();
@@ -345,6 +345,7 @@ jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noB
             withZhong: withZhong,
             zhongIsMa:zhongIsMa,
             horse: horse,
+            baozhama:baoZhaMa,
             jiejieGao: jjg,
             fanGui:fanGui,
             fanNum:fanNum,
@@ -522,6 +523,45 @@ jsclient.dateInRectDate = function (myTime, startTime, endTime) {
     return (myTime_Num >= startTime_Num && myTime_Num <= endTime_Num);
 };
 
+
+jsclient.heartbeatGame = function() {
+    // 初始化心跳计数
+    if(typeof(jsclient.heartbeatCount) == "undefined"){
+        jsclient.heartbeatCount = 0;
+    }
+    jsclient.heartbeatCount ++;
+    if( jsclient.heartbeatCount > 3 ){
+        jsclient.showMsg("连接已断开，请重新登陆", function(){jsclient.restartGame()} );
+    }
+
+    jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "HeartBeat"}, function (ed) {
+        if( !jsclient || !jsclient.data || !jsclient.data.sData ){
+            return;
+        }
+        jsclient.heartbeatCount = 0;
+
+        for (var idx in jsclient.data.sData.players){
+            var pl = jsclient.data.sData.players[idx];
+            var uid = pl.info.uid;
+            if( uid == SelfUid() ){
+                continue;
+            }
+
+            if(ed[uid] < 0 || ed[uid] >= 10000){
+                if( jsclient.data.sData.players[uid].onLine ) {
+                    jsclient.data.sData.players[uid].onLine = false;
+                    sendEvent("onlinePlayer", {uid: uid, onLine: false, mjState: pl.mjState});
+                }
+            }
+            else{
+                if( !jsclient.data.sData.players[uid].onLine ) {
+                    jsclient.data.sData.players[uid].onLine = true;
+                    sendEvent("onlinePlayer", {uid: uid, onLine: true, mjState: pl.mjState});
+                }
+            }
+        }
+    });
+};
 
 jsclient.netCallBack =
 {

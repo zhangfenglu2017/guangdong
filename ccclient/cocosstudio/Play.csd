@@ -212,6 +212,16 @@
                         <PreSize X="0.0000" Y="0.0000" />
                         <FileData Type="Normal" Path="play-yli/6pi.png" Plist="" />
                       </AbstractNodeData>
+                      <AbstractNodeData Name="mabaozha" ActionTag="655992857" Tag="593" IconVisible="False" LeftMargin="7.9994" RightMargin="-127.9994" TopMargin="92.4012" BottomMargin="-127.4012" LeftEage="14" RightEage="14" TopEage="6" BottomEage="6" Scale9OriginX="14" Scale9OriginY="6" Scale9Width="64" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="120.0000" Y="35.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="67.9994" Y="-109.9012" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="play-yli/baozhama.png" Plist="" />
+                      </AbstractNodeData>
                       <AbstractNodeData Name="canHu7" ActionTag="-686523840" Tag="655" IconVisible="False" LeftMargin="16.9990" RightMargin="-136.9990" TopMargin="132.4018" BottomMargin="-167.4018" LeftEage="14" RightEage="14" TopEage="6" BottomEage="6" Scale9OriginX="14" Scale9OriginY="6" Scale9Width="64" Scale9Height="16" ctype="ImageViewObjectData">
                         <Size X="120.0000" Y="35.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
