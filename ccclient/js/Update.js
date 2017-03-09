@@ -1,25 +1,26 @@
-(function () {
+(function () 
+{
 
     var jindu = 1,isAlready=false;
     function upText()
     {
         jindu++;
-        //console.log(jindu);
-        if(jindu<=99) {
+        if(jindu<=99)
+        {
             if(jindu !=99)  bar.setPercent(jindu);
             loadTitle.setString("资源正在加载中(" + jindu + "%)");
-        } else{
+        } else
+        {
             if(jindu==100)  GetRemoteCfg();
         }
     }
-    function setProgressPercent(p) {
+    function setProgressPercent(p)
+    {
         if(p==100)
         {
             isAlready = false;
             //jsclient.updateui.schedule(upText,0.01);
         }
-
-
         else
         {
             bar.setPercent(p);
@@ -81,6 +82,14 @@
     }
 
     function GetRemoteIP() {
+
+        if (cc.sys.OS_WINDOWS == cc.sys.os)
+        {
+            jsclient.remoteIP = "192.168.1.1";
+            GetRemoteCfg();
+            return;
+        };
+
         var xhr = cc.loader.getXMLHttpRequest();
         xhr.open("GET", "http://ip.taobao.com/service/getIpInfo2.php?ip=myip");
         xhr.onreadystatechange = function () {
@@ -240,219 +249,350 @@
 })();
 
 
-(function () {
+//消息、联系我们
+(function ()
+{
+    var webViewLayer, uiPara, title, des, cont_us, message,contact_us;
 
-    var webViewLayer, uiPara, webView, title, des, cont_us;
-    var message,contact_us;
-    WebViewLayer = cc.Layer.extend({
-        jsBind: {
-            block: {
-                _layout: [[1, 1], [0.5, 0.5], [0, 0], true],
+    WebViewLayer = cc.Layer.extend(
+    {
+        jsBind:
+        {
+            block:
+            {
+                _layout: [[1, 1], [0.5, 0.5], [0, 0], true]
             },
-            back: {
-               // _layout: [[0.9, 0.8], [0.5, 0.45], [0, 0], 2]
-               // _layout: [[0.73, 0.89], [0.5, 0.5], [0, 0], 2],
-                _layout: [[0, 0.89], [0.5, 0.5], [0, 0]]
-                , title: {
-                    _run: function () {
+            back:
+            {
+                _layout: [[0, 0.89], [0.5, 0.5], [0, 0]],
+
+                title:
+                {
+                    _run: function ()
+                    {
                         title = this;
                     }
-                }
-                , des: {
-                    _run: function () {
+                },
+                des:
+                {
+                    _run: function ()
+                    {
                         des = this;
                     }
-                }
-                , cont_us: {
-                    _run: function () {
+                },
+                cont_us:
+                {
+                    _run: function ()
+                    {
                         cont_us = this;
                     }
                 },
-                message:{
-                    _run:function(){
+
+                message:
+                {
+                    _run:function()
+                    {
                         message = this;
                     },
+
                     _check:function(sender, type)
                     {
-                        switch (type) {
-                            case ccui.CheckBox.EVENT_SELECTED:
-                                contact_us.selected = false;
-                                title.visible = true;
-                                des.visible = true;
-                                cont_us.visible = false;
-                                break;
-                            case ccui.CheckBox.EVENT_UNSELECTED:
-                                contact_us.selected = true;
-                                title.visible = false;
-                                des.visible = false;
-                                cont_us.visible = true;
-                                break;
+                        switch (type)
+                        {
+                        case ccui.CheckBox.EVENT_SELECTED:
+                            contact_us.selected = false;
+                            title.visible = true;
+                            des.visible = true;
+                            cont_us.visible = false;
+                            break;
+                        case ccui.CheckBox.EVENT_UNSELECTED:
+                            contact_us.selected = true;
+                            title.visible = false;
+                            des.visible = false;
+                            cont_us.visible = true;
+                            break;
                         }
                     }
                 },
-                contact_us:{
-                    _run:function(){
+                contact_us:
+                {
+                    _run:function()
+                    {
                         contact_us = this;
                     },
                     _check:function(sender, type)
                     {
-                        switch (type) {
-                            case ccui.CheckBox.EVENT_SELECTED:
-                                message.selected = false;
-                                title.visible = false;
-                                des.visible = false;
-                                cont_us.visible = true;
-                                break;
-                            case ccui.CheckBox.EVENT_UNSELECTED:
-                                message.selected = true;
-                                title.visible = true;
-                                des.visible = true;
-                                cont_us.visible = false;
-                                break;
+                        switch (type)
+                        {
+                        case ccui.CheckBox.EVENT_SELECTED:
+                            message.selected = false;
+                            title.visible = false;
+                            des.visible = false;
+                            cont_us.visible = true;
+                            break;
+                        case ccui.CheckBox.EVENT_UNSELECTED:
+                            message.selected = true;
+                            title.visible = true;
+                            des.visible = true;
+                            cont_us.visible = false;
+                            break;
                         }
-
                     }
                 },
-                close:{
-                    _click: function () {
+
+                close:
+                {
+                    _click: function ()
+                    {
                         webViewLayer.removeFromParent(true);
                     }
                 }
-
             }
-
         },
-        ctor: function () {
+        ctor: function ()
+        {
             this._super();
             var web = ccs.load("res/WebView.json");
-            uiPara = jsclient.uiPara;
+            // uiPara = jsclient.uiPara;
             ConnectUI2Logic(web.node, this.jsBind);
             title.setVisible(false);
             des.setVisible(false);
             cont_us.setVisible(false);
-            if (ccui.WebView) {
-                if (uiPara.noticeSwitch == 1) {
-                    /*
-                     **取得服务器json
-                     */
-                    var xhr = cc.loader.getXMLHttpRequest();
-                    xhr.open("GET", "http://gdmj.coolgamebox.com:800/gdmj/notice.json");
-                    xhr.onreadystatechange = function () {
-                        if (xhr.readyState == 4 && xhr.status == 200) {
-                            var js = JSON.parse(xhr.responseText);
-                            var noticeJson = js;
 
-                            if (title && des && cont_us) {
-                                title.setString(noticeJson.title);
-                                des.setString(noticeJson.desc);
-                                cont_us.setString(noticeJson.contact);
-                                title.visible = true;
-                                des.visible = true;
-                                //cont_us.visible = true;
-                            }
+            var url = jsclient.remoteCfg.noticeUrl;
+            log("联系我们：" + url);
+            if (ccui.WebView)
+            {
+                var xhr = cc.loader.getXMLHttpRequest();
+                // xhr.open("GET", "http://gdmj.coolgamebox.com:800/gdmj/notice.json");
+
+                xhr.open("GET", url);
+                xhr.onreadystatechange = function ()
+                {
+                    if (xhr.readyState == 4 && xhr.status == 200)
+                    {
+                        var js = JSON.parse(xhr.responseText);
+                        var noticeJson = js;
+                        if (title && des && cont_us)
+                        {
+                            title.setString(noticeJson.title);
+                            des.setString(noticeJson.desc);
+                            cont_us.setString(noticeJson.contact);
+                            title.visible = true;
+                            des.visible = true;
+                            //cont_us.visible = true;
                         }
                     }
-                    xhr.onerror = function (event) {
-                    }
-                    xhr.send();
-                }
+                };
+                xhr.onerror = function (event)
+                {
+                };
+                xhr.send();
             }
             this.addChild(web.node);
             webViewLayer = this;
         }
-
-
     });
 
 })();
 
-//wanfa and xieyi
+//用户协议
+(function ()
+{
+    var webViewLayer1, uiPara, webView, scroll;
 
-(function () {
-
-    var webViewLayer1, uiPara, webView;
-    var guize,xieyi,scroll;
-    WebViewLayer1 = cc.Layer.extend({
-        jsBind: {
-            block: {
+    WebViewLayer1 = cc.Layer.extend(
+    {
+        jsBind:
+        {
+            block:
+            {
                 _layout: [[1, 1], [0.5, 0.5], [0, 0],2],
-                back: {
-                    // _layout: [[0.9, 0.8], [0.5, 0.45], [0, 0], 2]
-                    // _layout: [[0.73, 0.89], [0.5, 0.5], [0, 0], 2],
-                    // _layout: [[0.94, 0.82], [0.5, 0.5], [0, 0],5]
-                    // _layout: [[0, 0.75], [0.5, 0.5], [0, 0],true]
-                   // _layout: [[0.82,0], [0.5, 0.5], [0, 0]]
-                    scroll:{
-                        _run:function(){
+                back:
+                {
+                    scroll:
+                    {
+                        _run:function()
+                        {
                             scroll = this;
                         }
                     }
-                }
-                , yes: {
-                   // _layout: [[0, 0.1], [1, 1], [-2,-0.5],true],
-                    _click: function () {
+                },
+                yes:
+                {
+                    _click: function ()
+                    {
                         webViewLayer1.removeFromParent(true);
                     }
                 },
-                guize:{
-                    _run:function(){
-                        guize = this;
-                    }
-                },
-                xieyi:{
-                    _run:function(){
-                        xieyi = this;
-                    }
-                }
             },
-
-
-
         },
-        ctor: function () {
+        ctor:function ()
+        {
             this._super();
             var web = ccs.load("res/WebView1.json");
-            uiPara = jsclient.uiPara;
             ConnectUI2Logic(web.node, this.jsBind);
-            if (ccui.WebView) {
-                if (uiPara.noticeSwitch == 0) {
-                    if(jsclient.uiPara.help == true)
-                    {
-                        //guize
-                        guize.setVisible(true);
-                        xieyi.setVisible(false);
-                    }else
-                    {
-                        //xieyi
-                        guize.setVisible(false);
-                        xieyi.setVisible(true);
-                    }
-                    var bkNode = this.jsBind.block.back._node;
-                    var cSize = bkNode.getCustomSize();
-                    var screen = jsclient.size;
-                    webView = new ccui.WebView(uiPara.url);
-                    webView.name = "webView";
-                    // webView.setContentSize(cSize.width * 0.7 * bkNode.scaleX, cSize.height * 0.7 * bkNode.scaleY);
-                    //webView.setPosition(bkNode.x, bkNode.y);
 
-                    webView.setContentSize(cSize.width*bkNode.scaleX*0.82,cSize.height*bkNode.scaleY*0.75);
-                    webView.setPosition(bkNode.x-cSize.width*0.125,bkNode.y-cSize.height* 0.025);
-                    webView.color = cc.color(254, 231, 197);
-                    webView.setScalesPageToFit(true);
-                    //web.node.addChild(webView);
-                    bkNode.addChild(webView);
-                    webView.setEventListener(ccui.WebView.EventType.LOADED, function () {
-                        webView.visible = true;
-                    });
-                    webView.visible = false;
-                }
-
+            var url = jsclient.remoteCfg.legalUrl;
+            log("协议：" + jsclient.remoteCfg.legalUrl);
+            if (ccui.WebView)
+            {
+                var bkNode = this.jsBind.block.back._node;
+                var cSize = bkNode.getCustomSize();
+                webView = new ccui.WebView(url);
+                webView.name = "webView";
+                webView.setContentSize(cSize.width*bkNode.scaleX*0.82,cSize.height*bkNode.scaleY*0.75);
+                webView.setPosition(bkNode.x-cSize.width*0.125,bkNode.y-cSize.height* 0.025);
+                webView.color = cc.color(254, 231, 197);
+                webView.setScalesPageToFit(true);
+                bkNode.addChild(webView);
+                webView.setEventListener(ccui.WebView.EventType.LOADED, function ()
+                {
+                    webView.visible = true;
+                });
+                webView.visible = false;
             }
             this.addChild(web.node);
             webViewLayer1 = this;
         }
+    });
 
+})();
 
+//游戏玩法
+(function ()
+{
+    var webViewLayer2, uiPara, webView, scroll, gdmjtable, hzhmjtable, help;
+
+    function createWebViewByUrl(url)
+    {
+        log("玩法：" + url);
+        if (ccui.WebView)
+        {
+            var cSize = help.getCustomSize();
+            webView = new ccui.WebView(url);
+            webView.setContentSize(cSize.width, cSize.height);
+            webView.setPosition(400,220);
+            webView.color = cc.color(254, 231, 197);
+            webView.setScalesPageToFit(true);
+            help.addChild(webView);
+            webView.setEventListener(ccui.WebView.EventType.LOADED, function ()
+            {
+                webView.visible = true;
+            });
+            webView.visible = false;
+        }
+    }
+
+    function setPanelContentByType(type)
+    {
+        var helpType = type;
+        var url1 = jsclient.remoteCfg.help1Url;
+        var url2 = jsclient.remoteCfg.help2Url;
+
+        switch(helpType)
+        {
+        case 1:
+            gdmjtable.setBright(false);
+            gdmjtable.setEnabled(false);
+            // gdmjtable.setTouchEnabled(false);
+            // gdmjtable.setVisible(false);
+
+            hzhmjtable.setBright(true);
+            hzhmjtable.setEnabled(true);
+            // hzhmjtable.setTouchEnabled(true);
+            // hzhmjtable.setVisible(true);
+
+            createWebViewByUrl(url1);
+
+            break;
+        case 2:
+
+            gdmjtable.setBright(true);
+            gdmjtable.setEnabled(true);
+            // gdmjtable.setTouchEnabled(true);
+            // gdmjtable.setVisible(true);
+
+            hzhmjtable.setBright(false);
+            hzhmjtable.setEnabled(false);
+            // hzhmjtable.setTouchEnabled(false);
+            // hzhmjtable.setVisible(false);
+
+            createWebViewByUrl(url2);
+
+            break;
+        }
+    }
+
+    WebViewLayer2 = cc.Layer.extend({
+        jsBind:
+        {
+            block:
+            {
+                _layout: [[1, 1], [0.5, 0.5], [0, 0],2],
+                back:
+                {
+                    scroll:
+                    {
+                        _run:function()
+                        {
+                            scroll = this;
+                        }
+                    }
+                },
+                gdmjtable:
+                {
+                    _run:function ()
+                    {
+                        gdmjtable = this;
+                    },
+
+                    _click:function()
+                    {
+                        setPanelContentByType(1);
+                    }
+                },
+
+                hzhmjtable:
+                {
+                    _run:function ()
+                    {
+                        hzhmjtable = this;
+                    },
+
+                    _click:function ()
+                    {
+                        setPanelContentByType(2);
+                    }
+                },
+
+                help:
+                {
+                    _run:function ()
+                    {
+                        help = this;
+                    }
+                },
+
+                yes:
+                {
+                    _click: function ()
+                    {
+                        webViewLayer2.removeFromParent(true);
+                    }
+                },
+            },
+        },
+        ctor:function ()
+        {
+            this._super();
+            var web = ccs.load("res/WebView2.json");
+            ConnectUI2Logic(web.node, this.jsBind);
+            this.addChild(web.node);
+            webViewLayer2 = this;
+
+            setPanelContentByType(1);
+        }
     });
 
 })();

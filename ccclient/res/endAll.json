@@ -577,7 +577,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "png/fangzhu.png",
+                  "Path": "gameEndNew/fangzhu.png",
                   "Plist": ""
                 },
                 "Scale9OriginX": 17,
@@ -917,7 +917,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "png/fangzhu.png",
+                  "Path": "gameEndNew/fangzhu.png",
                   "Plist": ""
                 },
                 "Scale9OriginX": 17,
@@ -1257,7 +1257,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "png/fangzhu.png",
+                  "Path": "gameEndNew/fangzhu.png",
                   "Plist": ""
                 },
                 "Scale9OriginX": 17,
@@ -1650,7 +1650,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "png/fangzhu.png",
+                  "Path": "gameEndNew/fangzhu.png",
                   "Plist": ""
                 },
                 "Scale9OriginX": 17,
@@ -1806,12 +1806,12 @@
         "gameEndNew/btn_return_press.png",
         "gameEndNew/btn_share_normal.png",
         "gameEndNew/btn_share_press.png",
+        "gameEndNew/fangzhu.png",
         "gameEndNew/floor_11.png",
         "gameEndNew/Photo_frame_01.png",
         "gameEndNew/Photo_frame_02.png",
         "gameEndNew/t_big_win.png",
-        "gameEndNew/t_end.png",
-        "png/fangzhu.png"
+        "gameEndNew/t_end.png"
       ],
       "ctype": "GameFileData"
     }

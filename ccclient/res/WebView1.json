@@ -270,51 +270,6 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "webview/t_rule.png",
-                  "Plist": ""
-                },
-                "Scale9OriginX": 30,
-                "Scale9OriginY": 179,
-                "Scale9Width": 31,
-                "Scale9Height": 186,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 88.0839,
-                  "Y": 390.494
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.0688,
-                  "Y": 0.5424
-                },
-                "PreSize": {
-                  "X": 0.0711,
-                  "Y": 0.7556
-                },
-                "LeftMargin": 42.5839,
-                "RightMargin": 1146.4161,
-                "TopMargin": 57.506,
-                "BottomMargin": 118.494,
-                "Tag": 27,
-                "ActionTag": -1101429020,
-                "Size": {
-                  "X": 91.0,
-                  "Y": 544.0
-                },
-                "Name": "guize",
-                "ctype": "ImageViewObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
                   "Path": "webview/t_yonghuxieyi.png",
                   "Plist": ""
                 },
@@ -381,7 +336,6 @@
         "webview/btn-return.png",
         "webview/btn-return-press.png",
         "webview/floor_14.png",
-        "webview/t_rule.png",
         "webview/t_yonghuxieyi.png"
       ],
       "ctype": "GameFileData"

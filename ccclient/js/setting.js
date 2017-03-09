@@ -190,7 +190,11 @@ function SendChatMsg(byClick)
 {
 	if (input.string) 
 	{
-		MJChat(SelfUid(),CHAT_TYPE_INPUT,input.string,0);
+		//新增代码
+        mylog("屏蔽字判断1：" + input.string);
+	    var newString = checkChatWords(input.string);
+
+		MJChat(SelfUid(),CHAT_TYPE_INPUT,newString,0);
 	}
 	if(byClick) input.didNotSelectSelf();
 	mylog("send "+byClick);
@@ -342,6 +346,7 @@ window.ChatLayer = cc.Layer.extend({
         this.addChild(chatui.node);
 		playerChatLayer = this;
         return true;
+
 	}
 });
 

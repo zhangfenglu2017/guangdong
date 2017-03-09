@@ -19,59 +19,59 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="back" ActionTag="-422875379" Tag="161" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="417.5000" RightMargin="417.5000" TopMargin="222.5000" BottomMargin="222.5000" LeftEage="169" RightEage="169" TopEage="90" BottomEage="90" Scale9OriginX="169" Scale9OriginY="90" Scale9Width="107" Scale9Height="95" ctype="ImageViewObjectData">
-            <Size X="445.0000" Y="275.0000" />
+          <AbstractNodeData Name="back" ActionTag="-422875379" Tag="161" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="292.5000" RightMargin="292.5000" TopMargin="121.0000" BottomMargin="121.0000" LeftEage="169" RightEage="169" TopEage="90" BottomEage="90" Scale9OriginX="169" Scale9OriginY="90" Scale9Width="357" Scale9Height="298" ctype="ImageViewObjectData">
+            <Size X="695.0000" Y="478.0000" />
             <Children>
-              <AbstractNodeData Name="inputimg" ActionTag="-592319972" Tag="173" IconVisible="False" LeftMargin="71.9521" RightMargin="73.0479" TopMargin="40.0787" BottomMargin="174.9213" LeftEage="217" RightEage="217" TopEage="19" BottomEage="19" Scale9OriginX="217" Scale9OriginY="19" Scale9Width="226" Scale9Height="22" ctype="ImageViewObjectData">
-                <Size X="300.0000" Y="60.0000" />
+              <AbstractNodeData Name="inputimg" ActionTag="-592319972" Tag="173" IconVisible="False" LeftMargin="161.5863" RightMargin="233.4137" TopMargin="104.4420" BottomMargin="303.5580" LeftEage="217" RightEage="217" TopEage="19" BottomEage="19" Scale9OriginX="217" Scale9OriginY="19" Scale9Width="238" Scale9Height="32" ctype="ImageViewObjectData">
+                <Size X="300.0000" Y="70.0000" />
                 <Children>
-                  <AbstractNodeData Name="playerId" ActionTag="1801553502" Tag="172" IconVisible="False" LeftMargin="4.5757" RightMargin="-4.5757" TopMargin="16.7200" BottomMargin="-6.7200" TouchEnable="True" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="请输入玩家ID" MaxLengthEnable="True" MaxLengthText="20" ctype="TextFieldObjectData">
+                  <AbstractNodeData Name="playerId" ActionTag="1801553502" Tag="172" IconVisible="False" LeftMargin="12.7241" RightMargin="-12.7241" TopMargin="10.4229" BottomMargin="9.5771" TouchEnable="True" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="请输入玩家ID" MaxLengthEnable="True" MaxLengthText="20" ctype="TextFieldObjectData">
                     <Size X="300.0000" Y="50.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="154.5757" Y="18.2800" />
+                    <Position X="162.7241" Y="34.5771" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="0" G="0" B="0" />
-                    <PrePosition X="0.5153" Y="0.3047" />
-                    <PreSize X="1.0000" Y="0.8333" />
+                    <PrePosition X="0.5424" Y="0.4940" />
+                    <PreSize X="1.0000" Y="0.7143" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="221.9521" Y="204.9213" />
+                <Position X="311.5863" Y="338.5580" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4988" Y="0.7452" />
-                <PreSize X="0.6742" Y="0.2182" />
-                <FileData Type="Normal" Path="setting/input.png" Plist="" />
+                <PrePosition X="0.4483" Y="0.7083" />
+                <PreSize X="0.4317" Y="0.1464" />
+                <FileData Type="Normal" Path="playerchat/floor_14.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="inputimg1" ActionTag="1189530067" Tag="70" IconVisible="False" LeftMargin="70.9500" RightMargin="74.0500" TopMargin="119.0800" BottomMargin="95.9200" LeftEage="217" RightEage="217" TopEage="19" BottomEage="19" Scale9OriginX="217" Scale9OriginY="19" Scale9Width="226" Scale9Height="22" ctype="ImageViewObjectData">
-                <Size X="300.0000" Y="60.0000" />
+              <AbstractNodeData Name="inputimg1" ActionTag="1189530067" Tag="70" IconVisible="False" LeftMargin="160.3626" RightMargin="234.6374" TopMargin="196.4811" BottomMargin="211.5189" LeftEage="60" RightEage="60" TopEage="19" BottomEage="19" Scale9OriginX="60" Scale9OriginY="19" Scale9Width="552" Scale9Height="32" ctype="ImageViewObjectData">
+                <Size X="300.0000" Y="70.0000" />
                 <Children>
-                  <AbstractNodeData Name="homeId" ActionTag="528517019" Tag="71" IconVisible="False" LeftMargin="4.5757" RightMargin="-4.5757" TopMargin="16.7190" BottomMargin="-6.7190" TouchEnable="True" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="请输入房间ID" MaxLengthEnable="True" MaxLengthText="20" ctype="TextFieldObjectData">
+                  <AbstractNodeData Name="homeId" ActionTag="528517019" Tag="71" IconVisible="False" LeftMargin="20.8726" RightMargin="-20.8726" TopMargin="18.5704" BottomMargin="1.4296" TouchEnable="True" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="请输入房间ID" MaxLengthEnable="True" MaxLengthText="20" ctype="TextFieldObjectData">
                     <Size X="300.0000" Y="50.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="154.5757" Y="18.2810" />
+                    <Position X="170.8726" Y="26.4296" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="0" G="0" B="0" />
-                    <PrePosition X="0.5153" Y="0.3047" />
-                    <PreSize X="1.0000" Y="0.8333" />
+                    <PrePosition X="0.5696" Y="0.3776" />
+                    <PreSize X="1.0000" Y="0.7143" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="220.9500" Y="125.9200" />
+                <Position X="310.3626" Y="246.5189" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4965" Y="0.4579" />
-                <PreSize X="0.6742" Y="0.2182" />
-                <FileData Type="Normal" Path="setting/input.png" Plist="" />
+                <PrePosition X="0.4466" Y="0.5157" />
+                <PreSize X="0.4317" Y="0.1464" />
+                <FileData Type="Normal" Path="playerchat/floor_14.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="send_btn" ActionTag="2046280070" Tag="174" IconVisible="False" LeftMargin="20.5894" RightMargin="244.4106" TopMargin="202.8693" BottomMargin="32.1307" TouchEnable="True" FontSize="18" ButtonText="导出回放数据" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="send_btn" ActionTag="2046280070" Tag="174" IconVisible="False" LeftMargin="131.4103" RightMargin="383.5897" TopMargin="308.0864" BottomMargin="129.9136" TouchEnable="True" FontSize="18" ButtonText="导出回放数据" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="180.0000" Y="40.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="110.5894" Y="52.1307" />
+                <Position X="221.4103" Y="149.9136" />
                 <Scale ScaleX="1.0500" ScaleY="1.0500" />
                 <CColor A="255" R="0" G="128" B="0" />
-                <PrePosition X="0.2485" Y="0.1896" />
-                <PreSize X="0.4045" Y="0.1455" />
+                <PrePosition X="0.3186" Y="0.3136" />
+                <PreSize X="0.2590" Y="0.0837" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Normal" Path="Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Normal" Path="Default/Button_Press.png" Plist="" />
@@ -79,14 +79,14 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="send_list_btn" ActionTag="-937043249" Tag="289" IconVisible="False" LeftMargin="242.5895" RightMargin="22.4105" TopMargin="202.8692" BottomMargin="32.1308" TouchEnable="True" FontSize="18" ButtonText="导出战绩列表" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="send_list_btn" ActionTag="-937043249" Tag="289" IconVisible="False" LeftMargin="353.4093" RightMargin="161.5907" TopMargin="308.0864" BottomMargin="129.9136" TouchEnable="True" FontSize="18" ButtonText="导出战绩列表" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="180.0000" Y="40.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="332.5895" Y="52.1308" />
+                <Position X="443.4093" Y="149.9136" />
                 <Scale ScaleX="1.0500" ScaleY="1.0500" />
                 <CColor A="255" R="0" G="128" B="0" />
-                <PrePosition X="0.7474" Y="0.1896" />
-                <PreSize X="0.4045" Y="0.1455" />
+                <PrePosition X="0.6380" Y="0.3136" />
+                <PreSize X="0.2590" Y="0.0837" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Normal" Path="Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Normal" Path="Default/Button_Press.png" Plist="" />
@@ -94,18 +94,18 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="close" ActionTag="375650805" Tag="681" IconVisible="False" LeftMargin="395.5311" RightMargin="-5.5311" TopMargin="-12.4832" BottomMargin="231.4832" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="25" Scale9Height="34" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="55.0000" Y="56.0000" />
+              <AbstractNodeData Name="close" ActionTag="375650805" Tag="681" IconVisible="False" LeftMargin="581.9503" RightMargin="-31.9503" TopMargin="-40.4009" BottomMargin="375.4009" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="115" Scale9Height="121" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="145.0000" Y="143.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="423.0311" Y="259.4832" />
+                <Position X="654.4503" Y="446.9009" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9506" Y="0.9436" />
-                <PreSize X="0.1236" Y="0.2036" />
+                <PrePosition X="0.9417" Y="0.9349" />
+                <PreSize X="0.2086" Y="0.2992" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="PlistSubImage" Path="close_h.png" Plist="png/Z_close.plist" />
-                <PressedFileData Type="PlistSubImage" Path="close_h.png" Plist="png/Z_close.plist" />
-                <NormalFileData Type="PlistSubImage" Path="close.png" Plist="png/Z_close.plist" />
+                <DisabledFileData Type="Normal" Path="createRoomNew/btn_close_press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="createRoomNew/btn_close_press.png" Plist="" />
+                <NormalFileData Type="Normal" Path="createRoomNew/btn_close_normal.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -115,8 +115,8 @@
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="0.3477" Y="0.3819" />
-            <FileData Type="Normal" Path="loading/loading_bg.png" Plist="" />
+            <PreSize X="0.5430" Y="0.6639" />
+            <FileData Type="Normal" Path="set/window-small.png" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

@@ -138,7 +138,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "gradeNew/t_achievement.png",
+              "Path": "webview/t_achievement.png",
               "Plist": ""
             },
             "BlendFunc": {
@@ -237,8 +237,10 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
-                "Scale9Width": 1,
-                "Scale9Height": 1,
+                "Scale9OriginX": -187,
+                "Scale9OriginY": -95,
+                "Scale9Width": 374,
+                "Scale9Height": 190,
                 "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
@@ -365,7 +367,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "gradeNew/floor_15.png",
+                  "Path": "webview/floor_15.png",
                   "Plist": ""
                 },
                 "Scale9OriginX": 84,
@@ -796,8 +798,8 @@
         "gameEndNew/btn-return-press.png",
         "gameEndNew/floor_11.png",
         "gameEndNew/touming.png",
-        "gradeNew/floor_15.png",
-        "gradeNew/t_achievement.png"
+        "webview/floor_15.png",
+        "webview/t_achievement.png"
       ],
       "ctype": "GameFileData"
     }

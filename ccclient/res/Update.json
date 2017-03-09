@@ -17,7 +17,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "update/z_loading.png",
+              "Path": "loading/bac_01.png",
               "Plist": ""
             },
             "Scale9OriginX": 422,
@@ -58,13 +58,13 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "update/logo_01.png",
+              "Path": "loading/logo_01.png",
               "Plist": ""
             },
-            "Scale9OriginX": 282,
-            "Scale9OriginY": 92,
-            "Scale9Width": 292,
-            "Scale9Height": 97,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 15,
+            "Scale9Width": 826,
+            "Scale9Height": 251,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -103,7 +103,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "update/loading_01.png",
+              "Path": "loading/loading_01.png",
               "Plist": ""
             },
             "Scale9OriginX": 63,
@@ -144,7 +144,7 @@
                 "ProgressInfo": 0,
                 "ImageFileData": {
                   "Type": "Normal",
-                  "Path": "update/loading_02.png",
+                  "Path": "loading/loading_02.png",
                   "Plist": ""
                 },
                 "AnchorPoint": {
@@ -172,18 +172,18 @@
                 "PercentWidthEnabled": true,
                 "PercentHeightEnabled": true,
                 "PreSize": {
-                  "X": 0.97,
-                  "Y": 0.81
+                  "X": 1.0,
+                  "Y": 1.0
                 },
-                "LeftMargin": 8.769,
-                "RightMargin": 7.881,
-                "TopMargin": 4.914,
-                "BottomMargin": 4.966,
+                "LeftMargin": 0.444,
+                "RightMargin": -0.444,
+                "TopMargin": -0.026,
+                "BottomMargin": 0.026,
                 "Tag": 76,
                 "ActionTag": -1526766623,
                 "Size": {
-                  "X": 538.35,
-                  "Y": 42.12
+                  "X": 555.0,
+                  "Y": 52.0
                 },
                 "Name": "bar",
                 "ctype": "LoadingBarObjectData"
@@ -257,10 +257,10 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "update/loading_01.png",
-        "update/loading_02.png",
-        "update/logo_01.png",
-        "update/z_loading.png"
+        "loading/bac_01.png",
+        "loading/loading_01.png",
+        "loading/loading_02.png",
+        "loading/logo_01.png"
       ],
       "ctype": "GameFileData"
     }

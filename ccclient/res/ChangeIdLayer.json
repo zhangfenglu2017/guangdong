@@ -67,13 +67,13 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "loading/loading_bg.png",
+              "Path": "set/window-small.png",
               "Plist": ""
             },
             "Scale9OriginX": 169,
             "Scale9OriginY": 90,
-            "Scale9Width": 107,
-            "Scale9Height": 95,
+            "Scale9Width": 357,
+            "Scale9Height": 298,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -95,32 +95,32 @@
               "Y": 0.5
             },
             "PreSize": {
-              "X": 0.3477,
-              "Y": 0.3819
+              "X": 0.543,
+              "Y": 0.6639
             },
-            "LeftMargin": 417.5,
-            "RightMargin": 417.5,
-            "TopMargin": 222.5,
-            "BottomMargin": 222.5,
+            "LeftMargin": 292.5,
+            "RightMargin": 292.5,
+            "TopMargin": 121.0,
+            "BottomMargin": 121.0,
             "Tag": 161,
             "Children": [
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "setting/input.png",
+                  "Path": "playerchat/floor_14.png",
                   "Plist": ""
                 },
-                "Scale9OriginX": 217,
+                "Scale9OriginX": 15,
                 "Scale9OriginY": 19,
-                "Scale9Width": 226,
-                "Scale9Height": 22,
+                "Scale9Width": 642,
+                "Scale9Height": 32,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 221.9521,
-                  "Y": 204.9213
+                  "X": 358.7214,
+                  "Y": 276.6202
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -129,17 +129,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.4988,
-                  "Y": 0.7452
+                  "X": 0.5161,
+                  "Y": 0.5787
                 },
                 "PreSize": {
-                  "X": 0.6742,
-                  "Y": 0.2182
+                  "X": 0.4317,
+                  "Y": 0.1464
                 },
-                "LeftMargin": 71.9521,
-                "RightMargin": 73.0479,
-                "TopMargin": 40.0787,
-                "BottomMargin": 174.9213,
+                "LeftMargin": 208.7214,
+                "RightMargin": 186.2786,
+                "TopMargin": 166.3798,
+                "BottomMargin": 241.6202,
                 "Tag": 173,
                 "Children": [
                   {
@@ -155,8 +155,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 154.5757,
-                      "Y": 18.281
+                      "X": 159.5757,
+                      "Y": 34.2828
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -169,17 +169,17 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5153,
-                      "Y": 0.3047
+                      "X": 0.5319,
+                      "Y": 0.4898
                     },
                     "PreSize": {
                       "X": 1.0,
-                      "Y": 0.8333
+                      "Y": 0.7143
                     },
-                    "LeftMargin": 4.5757,
-                    "RightMargin": -4.5757,
-                    "TopMargin": 16.719,
-                    "BottomMargin": -6.719,
+                    "LeftMargin": 9.5757,
+                    "RightMargin": -9.5757,
+                    "TopMargin": 10.7172,
+                    "BottomMargin": 9.2828,
                     "Tag": 172,
                     "ActionTag": 1801553502,
                     "Size": {
@@ -193,7 +193,7 @@
                 "ActionTag": -592319972,
                 "Size": {
                   "X": 300.0,
-                  "Y": 60.0
+                  "Y": 70.0
                 },
                 "Name": "inputimg",
                 "ctype": "ImageViewObjectData"
@@ -243,8 +243,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 224.7751,
-                  "Y": 121.1445
+                  "X": 330.5909,
+                  "Y": 107.5252
                 },
                 "Scale": {
                   "ScaleX": 1.05,
@@ -257,17 +257,17 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.5051,
-                  "Y": 0.4405
+                  "X": 0.4757,
+                  "Y": 0.2249
                 },
                 "PreSize": {
-                  "X": 0.4045,
-                  "Y": 0.1455
+                  "X": 0.259,
+                  "Y": 0.0837
                 },
-                "LeftMargin": 134.7751,
-                "RightMargin": 130.2249,
-                "TopMargin": 133.8555,
-                "BottomMargin": 101.1445,
+                "LeftMargin": 240.5909,
+                "RightMargin": 274.4091,
+                "TopMargin": 350.4748,
+                "BottomMargin": 87.5252,
                 "Tag": 174,
                 "ActionTag": 2046280070,
                 "Size": {
@@ -286,25 +286,25 @@
                   "B": 70
                 },
                 "DisabledFileData": {
-                  "Type": "PlistSubImage",
-                  "Path": "close_h.png",
-                  "Plist": "png/Z_close.plist"
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
                 },
                 "PressedFileData": {
-                  "Type": "PlistSubImage",
-                  "Path": "close_h.png",
-                  "Plist": "png/Z_close.plist"
+                  "Type": "Normal",
+                  "Path": "createRoomNew/btn_close_press.png",
+                  "Plist": ""
                 },
                 "NormalFileData": {
-                  "Type": "PlistSubImage",
-                  "Path": "close.png",
-                  "Plist": "png/Z_close.plist"
+                  "Type": "Normal",
+                  "Path": "createRoomNew/btn_close_normal.png",
+                  "Plist": ""
                 },
                 "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
-                "Scale9Width": 25,
-                "Scale9Height": 34,
+                "Scale9Width": 115,
+                "Scale9Height": 121,
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -322,8 +322,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 423.0311,
-                  "Y": 259.4832
+                  "X": 674.2836,
+                  "Y": 459.9666
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -332,22 +332,22 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.9506,
-                  "Y": 0.9436
+                  "X": 0.9702,
+                  "Y": 0.9623
                 },
                 "PreSize": {
-                  "X": 0.1236,
-                  "Y": 0.2036
+                  "X": 0.2086,
+                  "Y": 0.2992
                 },
-                "LeftMargin": 395.5311,
-                "RightMargin": -5.5311,
-                "TopMargin": -12.4832,
-                "BottomMargin": 231.4832,
+                "LeftMargin": 601.7836,
+                "RightMargin": -51.7836,
+                "TopMargin": -53.4666,
+                "BottomMargin": 388.4666,
                 "Tag": 681,
                 "ActionTag": 375650805,
                 "Size": {
-                  "X": 55.0,
-                  "Y": 56.0
+                  "X": 145.0,
+                  "Y": 143.0
                 },
                 "Name": "close",
                 "ctype": "ButtonObjectData"
@@ -355,8 +355,8 @@
             ],
             "ActionTag": -422875379,
             "Size": {
-              "X": 445.0,
-              "Y": 275.0
+              "X": 695.0,
+              "Y": 478.0
             },
             "Name": "back",
             "ctype": "ImageViewObjectData"
@@ -370,13 +370,14 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
+        "createRoomNew/btn_close_normal.png",
+        "createRoomNew/btn_close_press.png",
+        "Default/Button_Disable.png",
         "Default/Button_Disable.png",
         "Default/Button_Normal.png",
         "Default/Button_Press.png",
-        "loading/loading_bg.png",
-        "png/Z_close.plist",
-        "png/Z_close.png",
-        "setting/input.png"
+        "playerchat/floor_14.png",
+        "set/window-small.png"
       ],
       "ctype": "GameFileData"
     }

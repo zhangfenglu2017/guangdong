@@ -15,8 +15,8 @@
         "Children": [
           {
             "FileData": {
-              "Type": "Default",
-              "Path": "Default/ImageFile.png",
+              "Type": "Normal",
+              "Path": "play-yli/Z_money_frame.png",
               "Plist": ""
             },
             "Scale9OriginX": 28,
@@ -121,7 +121,7 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
-        "Default/ImageFile.png"
+        "play-yli/Z_money_frame.png"
       ],
       "ctype": "GameFileData"
     }

@@ -10,6 +10,8 @@ var TableState={
 	waitCard:5,
 	roundFinish:6,
 	isReady:7
+	
+	
 }
 	var ActionType={//图片提示
 		CHI:1,
@@ -18,6 +20,8 @@ var TableState={
 		LIANG:4,
 		HU:5,
 		GUO:6
+        
+        
 	};
 	function ShowEatActionAnim(node,actType,off)
 	{
@@ -50,14 +54,18 @@ var TableState={
 				childActionNode.visible=true;
 				childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
 				break;
-			// case ActionType.LIANG:
+			case ActionType.LIANG:
 			// 	childActionNode=eatNode.getChildByName("ef_chi");
-			// 	;
-			case ActionType.HU:
-				childActionNode=eatNode.getChildByName("ef_hu");
-				childActionNode.visible=true;
-				childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
-				break;
+            case ActionType.HU:
+                childActionNode=eatNode.getChildByName("ef_hu");
+                childActionNode.visible=true;
+                childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
+                break;
+            case ActionType.FLOWER:
+                childActionNode = eatNode.getChildByName("ef_hua");
+                childActionNode.visible = true;
+                childActionNode.runAction(cc.sequence(cc.delayTime(1.5), cc.callFunc(callback)));
+                break;
 			default:
 				break;
 		}
@@ -451,14 +459,12 @@ function SetPlayerVisible(node,off)
 	
 	var head=node.getChildByName("head");
 	var name= head.getChildByName("name");
-	var moneybk= head.getChildByName("moneybk");
 	var offline= head.getChildByName("offline");
 	var coin= head.getChildByName("coin");
 	if(pl)
 	{
 		name.visible =true;
 		coin.visible = false;
-		//moneybk.visible =true;
 		//offline.visible =true;
 		//coin.visible =true;
 		//jsclient.loadWxHead(pl.info.uid,pl.info.headimgurl);
@@ -469,7 +475,6 @@ function SetPlayerVisible(node,off)
 	}else
 	{
 		name.visible =false;
-		moneybk.visible =false;
 		offline.visible =false;
 		coin.visible =false;
 		var WxHead=head.getChildByName("WxHead");
@@ -599,6 +604,7 @@ function HandleMJChi(node,msg,off)
 		RestoreCardLayout(fnode,fromOff[0]);
 	}
 }
+
 function HandleMJPeng(node,msg,off)
 {
 	// var sData=jsclient.data.sData;
@@ -2128,6 +2134,17 @@ function rePlayCardNext(node)
 		if(tData.withWind && !tData.withZhong) leftCard = 136 - tData.cardNext;
 		if(!tData.withWind && tData.withZhong) leftCard = 108 + 4 - tData.cardNext;
 		if(!tData.withWind && !tData.withZhong) leftCard = 108 - tData.cardNext;
+		switch (jsclient.data.sData.tData.gameType){
+			case 1:
+				leftCard = leftCard;
+				break;
+			case 2:
+				leftCard = leftCard + 8;
+				break;
+			default :
+				leftCard = leftCard;
+				break;
+		}
 		node.setString(leftCard);
 		//node.setString((tData.withWind?136:108) - tData.cardNext);
 	}
@@ -2225,13 +2242,15 @@ var rePlayLayer=cc.Layer.extend({
 				}
 			}
 		},cardNumImg:{
-			_layout:[[0.1,0.1],[0.5,0.5],[-1.1,0]]
-			,_event:{
-				reinitSceneData:function(eD){ this.visible=CheckArrowVisible();}
-				,mjhand:function(eD){this.visible=CheckArrowVisible();}
-				,onlinePlayer:function(eD){this.visible=CheckArrowVisible();}
-			}
-			,cardnumAtlas:{
+			_layout:[[0.1,0.1],[0.5,0.5],[-1.1,0]],
+            _event:
+            {
+				reinitSceneData:function(eD){ this.visible=CheckArrowVisible();},
+                mjhand:function(eD){this.visible=CheckArrowVisible();},
+                onlinePlayer:function(eD){this.visible=CheckArrowVisible();}
+			},
+            cardnumAtlas:
+            {
 				_text:function()
 				{
 					var sData = jsclient.data.sData;
@@ -2244,8 +2263,18 @@ var rePlayLayer=cc.Layer.extend({
 						if(tData.withWind && !tData.withZhong) leftCard = 136  - tData.cardNext;
 						if(!tData.withWind && tData.withZhong) leftCard = 108 + 4 - tData.cardNext;
 						if(!tData.withWind && !tData.withZhong) leftCard = 108 - tData.cardNext;
+						switch (jsclient.data.sData.tData.gameType){
+							case 1:
+								leftCard = leftCard;
+								break;
+							case 2:
+								leftCard = leftCard + 8;
+								break;
+							default :
+								leftCard = leftCard;
+								break;
+						}
 						return leftCard;
-						//return  (tData.withWind?136:108) - tData.cardNext;
 					}
 				},_event:{
 					waitPut:function()
@@ -2264,73 +2293,73 @@ var rePlayLayer=cc.Layer.extend({
 					},newCard:function(){
 						rePlayCardNext(this);
 					}
-
 				}
 			}
-		}
-		,back:{
+		},
+
+        back:
+        {
 			back:{_layout:[[0,1],[0.5,0.5],[0,0],true]},
 			clt:
 			{
-				_layout:[[0.15,0.15],[0,1],[0.5,-0.5]]
-				,play:{
-
-				canEat:{
-					_visible:function(){
-						return false;//jsclient.data.sData.tData.canEat;
-					}},
-				zzmj:{_visible:function(){   return false;/*jsclient.data.sData.tData.noBigWin; */   }},
-				symj:{_visible:function(){   return  false;/*!jsclient.data.sData.tData.noBigWin;   */  }},
-				canEatHu:{_visible:function(){ return  false;/*jsclient.data.sData.tData.canEatHu;  */  }},
-				withWind:{_visible:function(){ return  false;/*jsclient.data.sData.tData.withWind;  */  }},
-				canHu7:{
-					_run:function(){ play_canHu7=this; },
-					_visible:function(){
-						return false;//(jsclient.data.sData.tData.noBigWin&&jsclient.data.sData.tData.canHu7);
-					}
+				_layout:[[0.15,0.15],[0,1],[0.5,-0.5]],
+				play:
+                {
+                    _visible:function()
+                    {
+                        return jsclient.data.sData.tData.withZhong;
+                    }
 				},
-				canHuWith258:{
-					_run:function(){ play_canHuWith258=this; },
-					_visible:function(){ return  false;/*jsclient.data.sData.tData.canHuWith258;*/  }
-				},
-				canHu_hongzhong:{
-					_run:function(){
-						// if((!play_canHuWith258.visible)&&(!play_canHu7.visible)){
-						// this.y = play_canHuWith258.y;
-						// }else if((play_canHuWith258.visible)&&(play_canHu7.visible)){
-						//
-						// }else{
-						//  this.y = play_canHu7.y;
-						// }
-					},
-					_visible:function(){
-						return jsclient.data.sData.tData.withZhong;
-					}
-				}
-				,_event:{
-					initSceneData:function(eD){
+                _event:
+                {
+					initSceneData:function(eD)
+                    {
 						this.visible=true;
-						if(!jsclient.data.sData.tData.canHuWith258){
-							play_canHu7.y = play_canHuWith258.y;
-						}
+					},
+                    mjhand:function(eD)
+                    {
+                        this.visible=CheckArrowVisible();
+                    },
+                    onlinePlayer:function(eD)
+                    {
+                        this.visible=CheckArrowVisible();
+                    }
+				}
 
-					}
-					,mjhand:function(eD){this.visible=CheckArrowVisible();}
-					,onlinePlayer:function(eD){this.visible=CheckArrowVisible();}
-				}
-			}
 			},
-			zz_play_back:{
+			hzmj:
+            {
 				_layout:[[0.2,0.2],[0.5,0.5],[0,1.2]],
-				_visible:function(){
-					return jsclient.data.sData.tData.noBigWin;
+				_visible:function()
+                {
+					if(jsclient.data.sData.tData.gameType==2)
+                        return true;
+					else
+                        return false;
 				}
 			},
-			sy_name_back:{
+
+			gdmj:
+            {
 				_layout:[[0.2,0.2],[0.5,0.5],[0,1.2]],
-				_visible:function(){
-					cc.log("sy_name_back");
-					return !jsclient.data.sData.tData.noBigWin;
+				_visible:function()
+                {
+					if(jsclient.data.sData.tData.gameType==1)
+                        return true;
+					else
+                        return false;
+				}
+			},
+
+			sy_name_back:
+            {
+				_layout:[[0.2,0.2],[0.5,0.5],[0,1.2]],
+				_visible:function()
+                {
+					if(jsclient.data.sData.tData.gameType==1)
+                        return true;
+					else
+                        return false;
 				}
 			},
 			clb: {_layout:[[0.15,0.15],[0,0],[0.5,0.5]]},
@@ -2344,6 +2373,22 @@ var rePlayLayer=cc.Layer.extend({
 		banner:
 		{
 			_layout:[[0.878,1],[0.5,0.945],[0,0]],
+
+			tableid:
+			{
+                _text:function()
+                {
+                    return jsclient.data.sData.tData.tableid;
+                },
+
+				_event:
+				{
+					initSceneData:function()
+					{
+						this.setString(jsclient.data.sData.tData.tableid);
+					}
+				}
+			},
 		},
 
 		arrowbk:
@@ -2522,6 +2567,12 @@ var rePlayLayer=cc.Layer.extend({
 					}
 
 				},
+                ef_hua:{
+                    _layout:[[0.1,0.1],[0.5,0.25],[0,0],true],
+                    _run:function(){
+                        this.visible=false;
+                    }
+                },
 				ef_hu:
 				{
 					_layout:[[0.2,0.2],[0.5,0.25],[0,0],true],
@@ -2634,6 +2685,12 @@ var rePlayLayer=cc.Layer.extend({
 						this.visible=false;
 					}
 				},
+                ef_hua:{
+                    _layout:[[0.1,0.1],[0.5,0.25],[0,0],true],
+                    _run:function(){
+                        this.visible=false;
+                    }
+                },
 				ef_hu:
 				{
 					_layout:[[0.2,0.2],[0.7,0.5],[0,0],true],
@@ -2742,6 +2799,12 @@ var rePlayLayer=cc.Layer.extend({
 						this.visible=false;
 					}
 				},
+                ef_hua:{
+                    _layout:[[0.1,0.1],[0.5,0.25],[0,0],true],
+                    _run:function(){
+                        this.visible=false;
+                    }
+                },
 				ef_hu:
 				{
 					_layout:[[0.2,0.2],[0.5,0.7],[0,0],true],
@@ -2849,6 +2912,12 @@ var rePlayLayer=cc.Layer.extend({
 						this.visible=false;
 					}
 				},
+                ef_hua:{
+                    _layout:[[0.1,0.1],[0.5,0.25],[0,0],true],
+                    _run:function(){
+                        this.visible=false;
+                    }
+                },
 				ef_hu:
 				{
 					_layout:[[0.2,0.2],[0.5,0.5],[0,0],true],

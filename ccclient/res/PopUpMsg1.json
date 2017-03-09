@@ -170,18 +170,18 @@
                   "B": 70
                 },
                 "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
+                  "Type": "Normal",
+                  "Path": "dissolveRoomNew/btn_dle_normal1.png",
                   "Plist": ""
                 },
                 "PressedFileData": {
                   "Type": "Normal",
-                  "Path": "popupmsg/btn_dle_normal1.png",
+                  "Path": "dissolveRoomNew/btn_dle_normal1.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "popupmsg/btn_dle_normal.png",
+                  "Path": "dissolveRoomNew/btn_dle_normal.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
@@ -245,18 +245,18 @@
                   "B": 70
                 },
                 "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
+                  "Type": "Normal",
+                  "Path": "dissolveRoomNew/btn_confirm_press.png",
                   "Plist": ""
                 },
                 "PressedFileData": {
                   "Type": "Normal",
-                  "Path": "popupmsg/btn_confirm_press.png",
+                  "Path": "dissolveRoomNew/btn_confirm_press.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "popupmsg/btn_confirm_normal.png",
+                  "Path": "dissolveRoomNew/btn_confirm_normal.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
@@ -329,11 +329,10 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
-        "Default/Button_Disable.png",
-        "popupmsg/btn_confirm_normal.png",
-        "popupmsg/btn_confirm_press.png",
-        "popupmsg/btn_dle_normal.png",
-        "popupmsg/btn_dle_normal1.png",
+        "dissolveRoomNew/btn_confirm_normal.png",
+        "dissolveRoomNew/btn_confirm_press.png",
+        "dissolveRoomNew/btn_dle_normal.png",
+        "dissolveRoomNew/btn_dle_normal1.png",
         "set/window-small.png"
       ],
       "ctype": "GameFileData"

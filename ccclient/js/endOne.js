@@ -18,6 +18,14 @@ function SetEndOnePlayerUI(node, off)
                 }
             },
 
+            baojiuzhang:
+            {
+                _visible: function ()
+                {
+                    this.zIndex = 100;
+                    return checkShowBaoJiuZhang(pl);
+                },
+            },
             name:
             {
                 _text: function ()
@@ -389,6 +397,16 @@ function DelRoomTime(node)
 
 
 })();
+
+
+//报九张是否显示
+function checkShowBaoJiuZhang(pl)
+{
+    if(pl.winType == 4 && pl.baojiu.num == 4) return true;
+    return false;
+}
+
+
 
 //判断显示不显示买马  有人赢 才显示
 function checkShowMa()
@@ -904,21 +922,7 @@ var EndOneLayer = cc.Layer.extend(
         var zhuang = this.jsBind["head" + zoff].head.zhuang._node;
         zhuang.visible = true;
         zhuang.zIndex = 10;
-
-        //new
-        //  var pl = sData.players[SelfUid() + ""];
-        //测试
-        //  for(var i=0;i<4;i++)
-        //  {
-        //      var pl = getUIPlayer(i);
-        //      //console.log("==============================="+pl.mjMa.length);
-        //      for(var j=0;j<pl.mjMa.length;j++){
-        //          console.log("------------ma--------------"+j+"------"+pl.mjMa[j]);
-        //      }
-        //  }
-
-        // pl.left4Ma
-
+        
         return true;
     }
 });

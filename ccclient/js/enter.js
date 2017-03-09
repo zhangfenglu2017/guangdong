@@ -17,7 +17,7 @@ function EnterAddNumber(n)
         jsclient.entercode.length = 0;
 	else
         change = false;
-
+                                  
 	if(change) 
 	{
 	   sendEvent("EnterAddText");
@@ -100,7 +100,8 @@ var EnterLayer = cc.Layer.extend({
 			}
 		}
 	},
-    ctor:function () {
+    ctor:function ()
+	{
         this._super();
         var enterui = ccs.load(res.Enter_json);
 		ConnectUI2Logic(enterui.node,this.jsBind);

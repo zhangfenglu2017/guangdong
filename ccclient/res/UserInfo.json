@@ -117,7 +117,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "userinfo/line.png",
+                  "Path": "dissolveRoomNew/line.png",
                   "Plist": ""
                 },
                 "Scale9OriginX": 187,
@@ -162,7 +162,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "userinfo/t_dissolution_01.png",
+                  "Path": "dissolveRoomNew/t_dissolution_01.png",
                   "Plist": ""
                 },
                 "Scale9OriginX": 185,
@@ -441,7 +441,52 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "userinfo/Diamonds.png",
+                  "Path": "play-yli/Photo_frame_02.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 35,
+                "Scale9OriginY": 35,
+                "Scale9Width": 58,
+                "Scale9Height": 54,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 181.7554,
+                  "Y": 268.9473
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2615,
+                  "Y": 0.5627
+                },
+                "PreSize": {
+                  "X": 0.1842,
+                  "Y": 0.2594
+                },
+                "LeftMargin": 117.7554,
+                "RightMargin": 449.2446,
+                "TopMargin": 147.0527,
+                "BottomMargin": 206.9473,
+                "Tag": 120,
+                "ActionTag": -1754177170,
+                "Size": {
+                  "X": 128.0,
+                  "Y": 124.0
+                },
+                "Name": "headImg",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "home-yli/Diamonds.png",
                   "Plist": ""
                 },
                 "Scale9OriginX": 7,
@@ -535,104 +580,13 @@
                   "X": 22.0,
                   "Y": 19.0
                 },
-                "VisibleForFrame": false,
                 "Name": "coin",
                 "ctype": "ImageViewObjectData"
               },
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "userinfo/Photo_frame_02.png",
-                  "Plist": ""
-                },
-                "Scale9OriginX": 35,
-                "Scale9OriginY": 35,
-                "Scale9Width": 58,
-                "Scale9Height": 54,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 181.7554,
-                  "Y": 268.9473
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.2615,
-                  "Y": 0.5627
-                },
-                "PreSize": {
-                  "X": 0.1842,
-                  "Y": 0.2594
-                },
-                "LeftMargin": 117.7554,
-                "RightMargin": 449.2446,
-                "TopMargin": 147.0527,
-                "BottomMargin": 206.9473,
-                "Tag": 120,
-                "ActionTag": -1754177170,
-                "Size": {
-                  "X": 128.0,
-                  "Y": 124.0
-                },
-                "Name": "headImg",
-                "ctype": "ImageViewObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "userinfo/Photo_frame_04.png",
-                  "Plist": ""
-                },
-                "Scale9OriginX": 35,
-                "Scale9OriginY": 35,
-                "Scale9Width": 58,
-                "Scale9Height": 54,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 181.7603,
-                  "Y": 268.9501
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.2615,
-                  "Y": 0.5627
-                },
-                "PreSize": {
-                  "X": 0.1842,
-                  "Y": 0.2594
-                },
-                "LeftMargin": 117.7603,
-                "RightMargin": 449.2397,
-                "TopMargin": 147.0499,
-                "BottomMargin": 206.9501,
-                "Tag": 219,
-                "ActionTag": -786577488,
-                "Size": {
-                  "X": 128.0,
-                  "Y": 124.0
-                },
-                "Name": "headImgBg",
-                "ctype": "ImageViewObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "userinfo/Diamonds.png",
+                  "Path": "home-yli/Diamonds.png",
                   "Plist": ""
                 },
                 "Scale9OriginX": 7,
@@ -644,7 +598,7 @@
                   "ScaleY": 0.705
                 },
                 "Position": {
-                  "X": 298.2007,
+                  "X": 303.2007,
                   "Y": 209.3801
                 },
                 "Scale": {
@@ -654,15 +608,15 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.4291,
+                  "X": 0.4363,
                   "Y": 0.438
                 },
                 "PreSize": {
                   "X": 0.0317,
                   "Y": 0.0397
                 },
-                "LeftMargin": 286.5693,
-                "RightMargin": 386.4307,
+                "LeftMargin": 291.5693,
+                "RightMargin": 381.4307,
                 "TopMargin": 263.0149,
                 "BottomMargin": 195.9851,
                 "Tag": 694,
@@ -803,12 +757,11 @@
       "UsedResources": [
         "createRoomNew/btn_close_normal.png",
         "createRoomNew/btn_close_press.png",
-        "set/window-small.png",
-        "userinfo/Diamonds.png",
-        "userinfo/line.png",
-        "userinfo/Photo_frame_02.png",
-        "userinfo/Photo_frame_04.png",
-        "userinfo/t_dissolution_01.png"
+        "dissolveRoomNew/line.png",
+        "dissolveRoomNew/t_dissolution_01.png",
+        "home-yli/Diamonds.png",
+        "play-yli/Photo_frame_02.png",
+        "set/window-small.png"
       ],
       "ctype": "GameFileData"
     }

@@ -1,6 +1,5 @@
 (function(){
-	
-	
+    
 	function f_login(mail,code,isLocalGuest)
 	{
         var geogData = {};
@@ -156,9 +155,10 @@
                 {
 					_click:function()
                     {
-						jsclient.openWeb({url:jsclient.remoteCfg.legalUrl,help:false,noticeSwitch:0});
+						jsclient.openWeb(1);
 					}
 				},
+
 				agree:
                 {
 					_run:function(){ agreeNode = this;}
@@ -166,7 +166,7 @@
 				_run:function()
 				{
                     //IOS提审用
-					if(jsclient.remoteCfg.guestLogin)
+                    if(jsclient.remoteCfg.guestLogin)
 					{
 						this.touchEnabled = false;
 						this.setCascadeOpacityEnabled(false);
@@ -226,14 +226,19 @@
 
 			version:
             {
-				_layout:[[0.1,0.1],[0.97,0.02],[0,0]],
+				_layout:[[0.1,0.1],[0.96,0.02],[0,0]],
 				_run:function ()
                 {
 					var ver = "ver:" + jsclient.resVersion;
 					this.setString(ver);
-                    this.setVisible(false);
 				}
 			},
+
+            fitnessTips:
+            {
+                _layout:[[0.7,0.7],[0.5,0.16],[0,0]],
+            },
+
 
             _keyboard:
 			{

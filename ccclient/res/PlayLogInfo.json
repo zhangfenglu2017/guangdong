@@ -62,7 +62,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "gradeNew/t_achievement.png",
+              "Path": "webview/t_achievement.png",
               "Plist": ""
             },
             "BlendFunc": {
@@ -91,10 +91,10 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -594.35,
-            "RightMargin": 503.35,
-            "TopMargin": -306.9285,
-            "BottomMargin": -237.0715,
+            "LeftMargin": -571.85,
+            "RightMargin": 525.85,
+            "TopMargin": -57.9285,
+            "BottomMargin": 11.9285,
             "Tag": 311,
             "ActionTag": 1946438988,
             "Size": {
@@ -364,7 +364,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "gradeNew/floor_15.png",
+                  "Path": "webview/floor_15.png",
                   "Plist": ""
                 },
                 "Scale9OriginX": 84,
@@ -780,17 +780,17 @@
                 },
                 "DisabledFileData": {
                   "Type": "Normal",
-                  "Path": "gradeNew/btn_playback_press.png",
+                  "Path": "dissolveRoomNew/btn_playback_press.png",
                   "Plist": ""
                 },
                 "PressedFileData": {
                   "Type": "Normal",
-                  "Path": "gradeNew/btn_playback_press.png",
+                  "Path": "dissolveRoomNew/btn_playback_press.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "gradeNew/btn_playback_normal.png",
+                  "Path": "dissolveRoomNew/btn_playback_normal.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
@@ -865,15 +865,15 @@
       },
       "UsedResources": [
         "Default/Button_Disable.png",
+        "dissolveRoomNew/btn_playback_normal.png",
+        "dissolveRoomNew/btn_playback_press.png",
         "gameEndNew/bac-3.png",
         "gameEndNew/btn-return.png",
         "gameEndNew/btn-return-press.png",
         "gameEndNew/floor_11.png",
         "gameEndNew/touming.png",
-        "gradeNew/btn_playback_normal.png",
-        "gradeNew/btn_playback_press.png",
-        "gradeNew/floor_15.png",
-        "gradeNew/t_achievement.png"
+        "webview/floor_15.png",
+        "webview/t_achievement.png"
       ],
       "ctype": "GameFileData"
     }

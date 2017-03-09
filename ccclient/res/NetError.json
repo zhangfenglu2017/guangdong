@@ -83,19 +83,19 @@
             },
             "PressedFileData": {
               "Type": "Normal",
-              "Path": "png/Z_zhunbei2dianji.png",
+              "Path": "dissolveRoomNew/btn_agree01_press.png",
               "Plist": ""
             },
             "NormalFileData": {
               "Type": "Normal",
-              "Path": "png/Z_zhunbei2.png",
+              "Path": "dissolveRoomNew/btn_agree01_normal.png",
               "Plist": ""
             },
             "Scale9Enable": true,
             "Scale9OriginX": 15,
             "Scale9OriginY": 11,
-            "Scale9Width": 147,
-            "Scale9Height": 30,
+            "Scale9Width": 140,
+            "Scale9Height": 43,
             "OutlineColor": {
               "G": 0,
               "B": 0
@@ -130,15 +130,15 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -88.5,
-            "RightMargin": -88.5,
-            "TopMargin": -26.0,
-            "BottomMargin": -26.0,
+            "LeftMargin": -85.0,
+            "RightMargin": -85.0,
+            "TopMargin": -32.5,
+            "BottomMargin": -32.5,
             "Tag": 5,
             "ActionTag": 1090726936,
             "Size": {
-              "X": 177.0,
-              "Y": 52.0
+              "X": 170.0,
+              "Y": 65.0
             },
             "Name": "restart",
             "ctype": "ButtonObjectData"
@@ -153,8 +153,8 @@
       },
       "UsedResources": [
         "Default/Button_Disable.png",
-        "png/Z_zhunbei2.png",
-        "png/Z_zhunbei2dianji.png"
+        "dissolveRoomNew/btn_agree01_normal.png",
+        "dissolveRoomNew/btn_agree01_press.png"
       ],
       "ctype": "GameFileData"
     }

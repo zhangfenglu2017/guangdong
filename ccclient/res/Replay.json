@@ -408,20 +408,20 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "play-yli/guangdongmajiang.png",
+                  "Path": "play-yli/bac_corner_03.png",
                   "Plist": ""
                 },
-                "Scale9OriginX": 71,
-                "Scale9OriginY": 16,
-                "Scale9Width": 58,
-                "Scale9Height": 24,
+                "Scale9OriginX": 27,
+                "Scale9OriginY": 28,
+                "Scale9Width": 44,
+                "Scale9Height": 78,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 647.3794,
-                  "Y": 431.0854
+                  "X": 41.6137,
+                  "Y": 49.4774
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -437,62 +437,17 @@
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 547.3794,
-                "RightMargin": -747.3794,
-                "TopMargin": -459.0854,
-                "BottomMargin": 403.0854,
-                "Tag": 839,
-                "ActionTag": 1296889993,
+                "LeftMargin": -7.3863,
+                "RightMargin": -90.6137,
+                "TopMargin": -116.4774,
+                "BottomMargin": -17.5226,
+                "Tag": 853,
+                "ActionTag": 1527128695,
                 "Size": {
-                  "X": 200.0,
-                  "Y": 56.0
+                  "X": 98.0,
+                  "Y": 134.0
                 },
-                "Name": "zz_play_back",
-                "ctype": "ImageViewObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "play-yli/guangdongmajiang.png",
-                  "Plist": ""
-                },
-                "Scale9OriginX": 70,
-                "Scale9OriginY": 18,
-                "Scale9Width": 60,
-                "Scale9Height": 20,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 645.3652,
-                  "Y": 433.7854
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "LeftMargin": 545.3652,
-                "RightMargin": -745.3652,
-                "TopMargin": -461.7854,
-                "BottomMargin": 405.7854,
-                "Tag": 840,
-                "ActionTag": -81328211,
-                "Size": {
-                  "X": 200.0,
-                  "Y": 56.0
-                },
-                "Name": "sy_name_back",
+                "Name": "clb",
                 "ctype": "ImageViewObjectData"
               },
               {
@@ -557,321 +512,6 @@
                     "TopMargin": 134.0,
                     "Tag": 842,
                     "Children": [
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "settlement/canEat.png",
-                          "Plist": ""
-                        },
-                        "BlendFunc": {
-                          "Src": 1,
-                          "Dst": 771
-                        },
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 63.9681,
-                          "Y": 20.9498
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "PreSize": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "LeftMargin": 21.4681,
-                        "RightMargin": -106.4681,
-                        "TopMargin": -32.4498,
-                        "BottomMargin": 9.4498,
-                        "Tag": 843,
-                        "ActionTag": -1638334738,
-                        "Size": {
-                          "X": 85.0,
-                          "Y": 23.0
-                        },
-                        "Name": "canEat",
-                        "ctype": "SpriteObjectData"
-                      },
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "settlement/zzmj.png",
-                          "Plist": ""
-                        },
-                        "BlendFunc": {
-                          "Src": 1,
-                          "Dst": 771
-                        },
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 63.9681,
-                          "Y": 46.7116
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "PreSize": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "LeftMargin": 21.4681,
-                        "RightMargin": -106.4681,
-                        "TopMargin": -58.2116,
-                        "BottomMargin": 35.2116,
-                        "Tag": 844,
-                        "ActionTag": -1032627232,
-                        "Size": {
-                          "X": 85.0,
-                          "Y": 23.0
-                        },
-                        "Name": "zzmj",
-                        "ctype": "SpriteObjectData"
-                      },
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "settlement/symj.png",
-                          "Plist": ""
-                        },
-                        "BlendFunc": {
-                          "Src": 1,
-                          "Dst": 771
-                        },
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 63.9681,
-                          "Y": 47.3097
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "PreSize": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "LeftMargin": 21.4681,
-                        "RightMargin": -106.4681,
-                        "TopMargin": -57.8097,
-                        "BottomMargin": 36.8097,
-                        "Tag": 845,
-                        "ActionTag": 414045947,
-                        "Size": {
-                          "X": 85.0,
-                          "Y": 21.0
-                        },
-                        "Name": "symj",
-                        "ctype": "SpriteObjectData"
-                      },
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "settlement/canEatHu.png",
-                          "Plist": ""
-                        },
-                        "BlendFunc": {
-                          "Src": 1,
-                          "Dst": 771
-                        },
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 54.057,
-                          "Y": 21.5113
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "PreSize": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "LeftMargin": 22.557,
-                        "RightMargin": -85.557,
-                        "TopMargin": -32.5113,
-                        "BottomMargin": 10.5113,
-                        "Tag": 846,
-                        "ActionTag": -2079439198,
-                        "Size": {
-                          "X": 63.0,
-                          "Y": 22.0
-                        },
-                        "Name": "canEatHu",
-                        "ctype": "SpriteObjectData"
-                      },
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "settlement/withWind.png",
-                          "Plist": ""
-                        },
-                        "BlendFunc": {
-                          "Src": 1,
-                          "Dst": 771
-                        },
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 130.4091,
-                          "Y": 46.4974
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "PreSize": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "LeftMargin": 108.4091,
-                        "RightMargin": -152.4091,
-                        "TopMargin": -56.9974,
-                        "BottomMargin": 35.9974,
-                        "Tag": 847,
-                        "ActionTag": -1477848950,
-                        "Size": {
-                          "X": 44.0,
-                          "Y": 21.0
-                        },
-                        "Name": "withWind",
-                        "ctype": "SpriteObjectData"
-                      },
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "settlement/withWind.png",
-                          "Plist": ""
-                        },
-                        "Scale9OriginX": 14,
-                        "Scale9OriginY": 6,
-                        "Scale9Width": 16,
-                        "Scale9Height": 9,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 41.6927,
-                          "Y": -21.6982
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "PreSize": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "LeftMargin": 19.6927,
-                        "RightMargin": -63.6927,
-                        "TopMargin": 11.1982,
-                        "BottomMargin": -32.1982,
-                        "Tag": 848,
-                        "ActionTag": 1616594751,
-                        "Size": {
-                          "X": 44.0,
-                          "Y": 21.0
-                        },
-                        "Name": "canHu7",
-                        "ctype": "ImageViewObjectData"
-                      },
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "settlement/withWind.png",
-                          "Plist": ""
-                        },
-                        "Scale9OriginX": 14,
-                        "Scale9OriginY": 6,
-                        "Scale9Width": 16,
-                        "Scale9Height": 9,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 62.9459,
-                          "Y": -0.3586
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "PreSize": {
-                          "X": 0.0,
-                          "Y": 0.0
-                        },
-                        "LeftMargin": 40.9459,
-                        "RightMargin": -84.9459,
-                        "TopMargin": -10.1414,
-                        "BottomMargin": -10.8586,
-                        "Tag": 849,
-                        "ActionTag": -928436890,
-                        "Size": {
-                          "X": 44.0,
-                          "Y": 21.0
-                        },
-                        "Name": "canHuWith258",
-                        "ctype": "ImageViewObjectData"
-                      },
                       {
                         "FileData": {
                           "Type": "Normal",
@@ -1032,20 +672,20 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "play-yli/bac_corner_03.png",
+                  "Path": "play-yli/guangzhoumajiang.png",
                   "Plist": ""
                 },
-                "Scale9OriginX": 27,
-                "Scale9OriginY": 28,
-                "Scale9Width": 44,
-                "Scale9Height": 78,
+                "Scale9OriginX": 71,
+                "Scale9OriginY": 16,
+                "Scale9Width": 58,
+                "Scale9Height": 24,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 41.6137,
-                  "Y": 49.4774
+                  "X": 647.38,
+                  "Y": 430.05
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1061,17 +701,62 @@
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": -7.3863,
-                "RightMargin": -90.6137,
-                "TopMargin": -116.4774,
-                "BottomMargin": -17.5226,
-                "Tag": 853,
-                "ActionTag": 1527128695,
+                "LeftMargin": 547.38,
+                "RightMargin": -747.38,
+                "TopMargin": -458.05,
+                "BottomMargin": 402.05,
+                "Tag": 1884,
+                "ActionTag": -115531509,
                 "Size": {
-                  "X": 98.0,
-                  "Y": 134.0
+                  "X": 200.0,
+                  "Y": 56.0
                 },
-                "Name": "clb",
+                "Name": "gdmj",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/huizhoumajiang.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 71,
+                "Scale9OriginY": 16,
+                "Scale9Width": 58,
+                "Scale9Height": 24,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 647.38,
+                  "Y": 431.05
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 547.38,
+                "RightMargin": -747.38,
+                "TopMargin": -459.05,
+                "BottomMargin": 403.05,
+                "Tag": 569,
+                "ActionTag": -800266413,
+                "Size": {
+                  "X": 200.0,
+                  "Y": 56.0
+                },
+                "Name": "hzmj",
                 "ctype": "ImageViewObjectData"
               }
             ],
@@ -1110,7 +795,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "png/Z_zhunbeizhuangt.png",
+                  "Path": "play-yli/Z_zhunbeizhuangt.png",
                   "Plist": ""
                 },
                 "BlendFunc": {
@@ -1743,51 +1428,6 @@
                     "ctype": "SpriteObjectData"
                   },
                   {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "playing/other/Z_money_frame.png",
-                      "Plist": ""
-                    },
-                    "BlendFunc": {
-                      "Src": 1,
-                      "Dst": 771
-                    },
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 64.2302,
-                      "Y": -35.5609
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.5018,
-                      "Y": -0.2868
-                    },
-                    "PreSize": {
-                      "X": 0.6719,
-                      "Y": 0.2177
-                    },
-                    "LeftMargin": 21.2302,
-                    "RightMargin": 20.7698,
-                    "TopMargin": 146.0609,
-                    "BottomMargin": -49.0609,
-                    "Tag": 1102,
-                    "ActionTag": -649304604,
-                    "Size": {
-                      "X": 86.0,
-                      "Y": 27.0
-                    },
-                    "Name": "moneybk",
-                    "ctype": "SpriteObjectData"
-                  },
-                  {
                     "FontSize": 24,
                     "LabelText": "1000",
                     "HorizontalAlignmentType": "HT_Center",
@@ -1858,8 +1498,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 23.8863,
-                      "Y": 24.4095
+                      "X": 103.0,
+                      "Y": 25.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1868,17 +1508,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.1866,
-                      "Y": 0.1969
+                      "X": 0.8047,
+                      "Y": 0.2016
                     },
                     "PreSize": {
                       "X": 0.4297,
                       "Y": 0.4435
                     },
-                    "LeftMargin": -3.6137,
-                    "RightMargin": 76.6137,
-                    "TopMargin": 72.0905,
-                    "BottomMargin": -3.0905,
+                    "LeftMargin": 75.5,
+                    "RightMargin": -2.5,
+                    "TopMargin": 71.5,
+                    "BottomMargin": -2.5,
                     "Tag": 1104,
                     "ActionTag": 1603790703,
                     "Size": {
@@ -1891,7 +1531,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "playing/other/chatbg_top.png",
+                      "Path": "playerchat/chatbg_top.png",
                       "Plist": ""
                     },
                     "Scale9Enable": true,
@@ -1903,8 +1543,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 107.8695,
-                      "Y": -13.8615
+                      "X": -157.4159,
+                      "Y": -18.9302
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1913,17 +1553,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.8427,
-                      "Y": -0.1118
+                      "X": -1.2298,
+                      "Y": -0.1527
                     },
                     "PreSize": {
                       "X": 1.2188,
                       "Y": 0.5323
                     },
-                    "LeftMargin": 107.8695,
-                    "RightMargin": -135.8695,
-                    "TopMargin": 104.8615,
-                    "BottomMargin": -46.8615,
+                    "LeftMargin": -157.4159,
+                    "RightMargin": 129.4159,
+                    "TopMargin": 109.9302,
+                    "BottomMargin": -51.9302,
                     "Tag": 1105,
                     "Children": [
                       {
@@ -2036,20 +1676,122 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "chat/happy.png",
+                      "Path": "play-yli/icon_hua.png",
                       "Plist": ""
                     },
-                    "Scale9OriginX": 36,
-                    "Scale9OriginY": 39,
-                    "Scale9Width": 39,
-                    "Scale9Height": 43,
+                    "Scale9OriginX": 13,
+                    "Scale9OriginY": 9,
+                    "Scale9Width": 40,
+                    "Scale9Height": 19,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 181.9752,
-                      "Y": -16.4862
+                      "X": 71.0,
+                      "Y": -86.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5547,
+                      "Y": -0.6935
+                    },
+                    "PreSize": {
+                      "X": 0.8438,
+                      "Y": 0.4677
+                    },
+                    "LeftMargin": 17.0,
+                    "RightMargin": 3.0,
+                    "TopMargin": 181.0,
+                    "BottomMargin": -115.0,
+                    "Tag": 459,
+                    "Children": [
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 30,
+                        "LabelText": "0",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 151.4698,
+                          "Y": 31.1727
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 238,
+                          "G": 244,
+                          "B": 5
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 1.4025,
+                          "Y": 0.5375
+                        },
+                        "PreSize": {
+                          "X": 1.6667,
+                          "Y": 0.5172
+                        },
+                        "LeftMargin": 61.4698,
+                        "RightMargin": -133.4698,
+                        "TopMargin": 11.8273,
+                        "BottomMargin": 16.1727,
+                        "Tag": 460,
+                        "ActionTag": -1996405706,
+                        "Size": {
+                          "X": 180.0,
+                          "Y": 30.0
+                        },
+                        "Name": "hua_num",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 920094177,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 58.0
+                    },
+                    "Name": "hua",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Default",
+                      "Path": "Default/ImageFile.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 10,
+                    "Scale9OriginY": 7,
+                    "Scale9Width": 26,
+                    "Scale9Height": 32,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -71.4784,
+                      "Y": -2.9659
                     },
                     "Scale": {
                       "ScaleX": 0.8,
@@ -2058,17 +1800,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 1.4217,
-                      "Y": -0.133
+                      "X": -0.5584,
+                      "Y": -0.0239
                     },
                     "PreSize": {
                       "X": 0.8672,
                       "Y": 0.9758
                     },
-                    "LeftMargin": 126.4752,
-                    "RightMargin": -109.4752,
-                    "TopMargin": 79.9862,
-                    "BottomMargin": -76.9862,
+                    "LeftMargin": -126.9784,
+                    "RightMargin": 143.9784,
+                    "TopMargin": 66.4659,
+                    "BottomMargin": -63.4659,
                     "Tag": 1108,
                     "ActionTag": -2134053632,
                     "Size": {
@@ -2334,6 +2076,51 @@
                     },
                     "Name": "ef_hu",
                     "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/t_hua.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 35,
+                    "Scale9OriginY": 34,
+                    "Scale9Width": 37,
+                    "Scale9Height": 37,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 869.9938,
+                      "Y": 493.1622
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 816.4938,
+                    "RightMargin": -923.4938,
+                    "TopMargin": -545.6622,
+                    "BottomMargin": 440.6622,
+                    "Tag": 462,
+                    "ActionTag": 802400993,
+                    "Size": {
+                      "X": 107.0,
+                      "Y": 105.0
+                    },
+                    "Name": "ef_hua",
+                    "ctype": "ImageViewObjectData"
                   }
                 ],
                 "ActionTag": -1962133297,
@@ -2380,7 +2167,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "png/Z_zhunbeizhuangt.png",
+                  "Path": "play-yli/Z_zhunbeizhuangt.png",
                   "Plist": ""
                 },
                 "BlendFunc": {
@@ -2931,51 +2718,6 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "playing/other/Z_money_frame.png",
-                      "Plist": ""
-                    },
-                    "BlendFunc": {
-                      "Src": 1,
-                      "Dst": 771
-                    },
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 67.8406,
-                      "Y": -33.5603
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.53,
-                      "Y": -0.2706
-                    },
-                    "PreSize": {
-                      "X": 0.6719,
-                      "Y": 0.2177
-                    },
-                    "LeftMargin": 24.8406,
-                    "RightMargin": 17.1594,
-                    "TopMargin": 144.0603,
-                    "BottomMargin": -47.0603,
-                    "Tag": 1072,
-                    "ActionTag": -2066852324,
-                    "Size": {
-                      "X": 86.0,
-                      "Y": 27.0
-                    },
-                    "Name": "moneybk",
-                    "ctype": "SpriteObjectData"
-                  },
-                  {
-                    "FileData": {
-                      "Type": "Normal",
                       "Path": "play-yli/Photo_frame_02.png",
                       "Plist": ""
                     },
@@ -3134,8 +2876,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 23.3913,
-                      "Y": 25.8175
+                      "X": 103.0,
+                      "Y": 25.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3144,17 +2886,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.1827,
-                      "Y": 0.2082
+                      "X": 0.8047,
+                      "Y": 0.2016
                     },
                     "PreSize": {
                       "X": 0.4297,
                       "Y": 0.4435
                     },
-                    "LeftMargin": -4.1087,
-                    "RightMargin": 77.1087,
-                    "TopMargin": 70.6825,
-                    "BottomMargin": -1.6825,
+                    "LeftMargin": 75.5,
+                    "RightMargin": -2.5,
+                    "TopMargin": 71.5,
+                    "BottomMargin": -2.5,
                     "Tag": 1076,
                     "ActionTag": 1493494586,
                     "Size": {
@@ -3167,7 +2909,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "playing/other/chatbg_lt.png",
+                      "Path": "playerchat/chatbg_lt.png",
                       "Plist": ""
                     },
                     "Scale9Enable": true,
@@ -3311,14 +3053,14 @@
                   },
                   {
                     "FileData": {
-                      "Type": "Normal",
-                      "Path": "chat/happy.png",
+                      "Type": "Default",
+                      "Path": "Default/ImageFile.png",
                       "Plist": ""
                     },
-                    "Scale9OriginX": 36,
-                    "Scale9OriginY": 39,
-                    "Scale9Width": 39,
-                    "Scale9Height": 43,
+                    "Scale9OriginX": 10,
+                    "Scale9OriginY": 7,
+                    "Scale9Width": 26,
+                    "Scale9Height": 32,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
@@ -3353,6 +3095,108 @@
                     },
                     "VisibleForFrame": false,
                     "Name": "emoji",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/icon_hua.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 13,
+                    "Scale9OriginY": 9,
+                    "Scale9Width": 40,
+                    "Scale9Height": 19,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 77.6459,
+                      "Y": -92.8428
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.6066,
+                      "Y": -0.7487
+                    },
+                    "PreSize": {
+                      "X": 0.8438,
+                      "Y": 0.4677
+                    },
+                    "LeftMargin": 23.6459,
+                    "RightMargin": -3.6459,
+                    "TopMargin": 187.8428,
+                    "BottomMargin": -121.8428,
+                    "Tag": 457,
+                    "Children": [
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 30,
+                        "LabelText": "0",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 151.4698,
+                          "Y": 31.1727
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 238,
+                          "G": 244,
+                          "B": 5
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 1.4025,
+                          "Y": 0.5375
+                        },
+                        "PreSize": {
+                          "X": 1.6667,
+                          "Y": 0.5172
+                        },
+                        "LeftMargin": 61.4698,
+                        "RightMargin": -133.4698,
+                        "TopMargin": 11.8273,
+                        "BottomMargin": 16.1727,
+                        "Tag": 458,
+                        "ActionTag": -90340875,
+                        "Size": {
+                          "X": 180.0,
+                          "Y": 30.0
+                        },
+                        "Name": "hua_num",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 1105609329,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 58.0
+                    },
+                    "Name": "hua",
                     "ctype": "ImageViewObjectData"
                   }
                 ],
@@ -3405,8 +3249,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 380.52,
-                      "Y": 490.0
+                      "X": 367.4945,
+                      "Y": 393.0239
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3422,10 +3266,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 327.02,
-                    "RightMargin": -434.02,
-                    "TopMargin": -542.5,
-                    "BottomMargin": 437.5,
+                    "LeftMargin": 313.9945,
+                    "RightMargin": -420.9945,
+                    "TopMargin": -445.5239,
+                    "BottomMargin": 340.5239,
                     "Tag": 1082,
                     "ActionTag": 783634639,
                     "Size": {
@@ -3540,8 +3384,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 380.5902,
-                      "Y": 246.3683
+                      "X": 374.8022,
+                      "Y": 380.9797
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3557,10 +3401,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 327.0902,
-                    "RightMargin": -434.0902,
-                    "TopMargin": -298.8683,
-                    "BottomMargin": 193.8683,
+                    "LeftMargin": 321.3022,
+                    "RightMargin": -428.3022,
+                    "TopMargin": -433.4797,
+                    "BottomMargin": 328.4797,
                     "Tag": 1085,
                     "ActionTag": 353134674,
                     "Size": {
@@ -3614,6 +3458,51 @@
                     },
                     "Name": "ef_hu",
                     "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/t_hua.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 35,
+                    "Scale9OriginY": 34,
+                    "Scale9Width": 37,
+                    "Scale9Height": 37,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 374.8467,
+                      "Y": 386.1879
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 321.3467,
+                    "RightMargin": -428.3467,
+                    "TopMargin": -438.6879,
+                    "BottomMargin": 333.6879,
+                    "Tag": 463,
+                    "ActionTag": -2055015541,
+                    "Size": {
+                      "X": 107.0,
+                      "Y": 105.0
+                    },
+                    "Name": "ef_hua",
+                    "ctype": "ImageViewObjectData"
                   }
                 ],
                 "ActionTag": 1307866597,
@@ -3660,7 +3549,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "png/Z_zhunbeizhuangt.png",
+                  "Path": "play-yli/Z_zhunbeizhuangt.png",
                   "Plist": ""
                 },
                 "BlendFunc": {
@@ -4253,51 +4142,6 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "playing/other/Z_money_frame.png",
-                      "Plist": ""
-                    },
-                    "BlendFunc": {
-                      "Src": 1,
-                      "Dst": 771
-                    },
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 67.0874,
-                      "Y": -35.5603
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.5241,
-                      "Y": -0.2868
-                    },
-                    "PreSize": {
-                      "X": 0.6719,
-                      "Y": 0.2177
-                    },
-                    "LeftMargin": 24.0874,
-                    "RightMargin": 17.9126,
-                    "TopMargin": 146.0603,
-                    "BottomMargin": -49.0603,
-                    "Tag": 1044,
-                    "ActionTag": 670354880,
-                    "Size": {
-                      "X": 86.0,
-                      "Y": 27.0
-                    },
-                    "Name": "moneybk",
-                    "ctype": "SpriteObjectData"
-                  },
-                  {
-                    "FileData": {
-                      "Type": "Normal",
                       "Path": "play-yli/Photo_frame_03.png",
                       "Plist": ""
                     },
@@ -4456,8 +4300,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 24.9276,
-                      "Y": 25.0623
+                      "X": 103.0,
+                      "Y": 25.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4466,17 +4310,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.1947,
-                      "Y": 0.2021
+                      "X": 0.8047,
+                      "Y": 0.2016
                     },
                     "PreSize": {
                       "X": 0.4297,
                       "Y": 0.4435
                     },
-                    "LeftMargin": -2.5724,
-                    "RightMargin": 75.5724,
-                    "TopMargin": 71.4377,
-                    "BottomMargin": -2.4377,
+                    "LeftMargin": 75.5,
+                    "RightMargin": -2.5,
+                    "TopMargin": 71.5,
+                    "BottomMargin": -2.5,
                     "Tag": 1048,
                     "ActionTag": 717610265,
                     "Size": {
@@ -4489,7 +4333,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "playing/other/chatbg_ld.png",
+                      "Path": "playerchat/chatbg_ld.png",
                       "Plist": ""
                     },
                     "Scale9Enable": true,
@@ -4633,14 +4477,14 @@
                   },
                   {
                     "FileData": {
-                      "Type": "Normal",
-                      "Path": "chat/happy.png",
+                      "Type": "Default",
+                      "Path": "Default/ImageFile.png",
                       "Plist": ""
                     },
-                    "Scale9OriginX": 36,
-                    "Scale9OriginY": 39,
-                    "Scale9Width": 39,
-                    "Scale9Height": 43,
+                    "Scale9OriginX": 10,
+                    "Scale9OriginY": 7,
+                    "Scale9Width": 26,
+                    "Scale9Height": 32,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
@@ -4675,6 +4519,108 @@
                     },
                     "VisibleForFrame": false,
                     "Name": "emoji",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/icon_hua.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 13,
+                    "Scale9OriginY": 9,
+                    "Scale9Width": 40,
+                    "Scale9Height": 19,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 63.3265,
+                      "Y": -99.5245
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4947,
+                      "Y": -0.8026
+                    },
+                    "PreSize": {
+                      "X": 0.8438,
+                      "Y": 0.4677
+                    },
+                    "LeftMargin": 9.3265,
+                    "RightMargin": 10.6735,
+                    "TopMargin": 194.5245,
+                    "BottomMargin": -128.5245,
+                    "Tag": 455,
+                    "Children": [
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 30,
+                        "LabelText": "0",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 151.4698,
+                          "Y": 31.1727
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 238,
+                          "G": 244,
+                          "B": 5
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 1.4025,
+                          "Y": 0.5375
+                        },
+                        "PreSize": {
+                          "X": 1.6667,
+                          "Y": 0.5172
+                        },
+                        "LeftMargin": 61.4698,
+                        "RightMargin": -133.4698,
+                        "TopMargin": 11.8273,
+                        "BottomMargin": 16.1727,
+                        "Tag": 456,
+                        "ActionTag": -1835892523,
+                        "Size": {
+                          "X": 180.0,
+                          "Y": 30.0
+                        },
+                        "Name": "hua_num",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 1735414663,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 58.0
+                    },
+                    "Name": "hua",
                     "ctype": "ImageViewObjectData"
                   }
                 ],
@@ -4903,8 +4849,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 865.9095,
-                      "Y": 489.9999
+                      "X": 622.7451,
+                      "Y": 497.2409
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4920,10 +4866,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 737.9095,
-                    "RightMargin": -993.9095,
-                    "TopMargin": -616.4999,
-                    "BottomMargin": 363.4999,
+                    "LeftMargin": 494.7451,
+                    "RightMargin": -750.7451,
+                    "TopMargin": -623.7409,
+                    "BottomMargin": 370.7409,
                     "Tag": 1058,
                     "ActionTag": -1367964547,
                     "Size": {
@@ -4931,6 +4877,51 @@
                       "Y": 253.0
                     },
                     "Name": "ef_hu",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/t_hua.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 35,
+                    "Scale9OriginY": 34,
+                    "Scale9Width": 37,
+                    "Scale9Height": 37,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 629.4634,
+                      "Y": 502.116
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 575.9634,
+                    "RightMargin": -682.9634,
+                    "TopMargin": -554.616,
+                    "BottomMargin": 449.616,
+                    "Tag": 464,
+                    "ActionTag": -1542635048,
+                    "Size": {
+                      "X": 107.0,
+                      "Y": 105.0
+                    },
+                    "Name": "ef_hua",
                     "ctype": "ImageViewObjectData"
                   }
                 ],
@@ -4978,7 +4969,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "png/Z_zhunbeizhuangt.png",
+                  "Path": "play-yli/Z_zhunbeizhuangt.png",
                   "Plist": ""
                 },
                 "BlendFunc": {
@@ -5568,51 +5559,6 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "playing/other/Z_money_frame.png",
-                      "Plist": ""
-                    },
-                    "BlendFunc": {
-                      "Src": 1,
-                      "Dst": 771
-                    },
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 67.087,
-                      "Y": -35.5603
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.5241,
-                      "Y": -0.2868
-                    },
-                    "PreSize": {
-                      "X": 0.6719,
-                      "Y": 0.2177
-                    },
-                    "LeftMargin": 24.087,
-                    "RightMargin": 17.913,
-                    "TopMargin": 146.0603,
-                    "BottomMargin": -49.0603,
-                    "Tag": 1016,
-                    "ActionTag": -2013698347,
-                    "Size": {
-                      "X": 86.0,
-                      "Y": 27.0
-                    },
-                    "Name": "moneybk",
-                    "ctype": "SpriteObjectData"
-                  },
-                  {
-                    "FileData": {
-                      "Type": "Normal",
                       "Path": "play-yli/Photo_frame_03.png",
                       "Plist": ""
                     },
@@ -5726,8 +5672,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 23.5037,
-                      "Y": 25.2238
+                      "X": 103.0,
+                      "Y": 25.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -5736,17 +5682,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.1836,
-                      "Y": 0.2034
+                      "X": 0.8047,
+                      "Y": 0.2016
                     },
                     "PreSize": {
                       "X": 0.4297,
                       "Y": 0.4435
                     },
-                    "LeftMargin": -3.9963,
-                    "RightMargin": 76.9963,
-                    "TopMargin": 71.2762,
-                    "BottomMargin": -2.2762,
+                    "LeftMargin": 75.5,
+                    "RightMargin": -2.5,
+                    "TopMargin": 71.5,
+                    "BottomMargin": -2.5,
                     "Tag": 1019,
                     "ActionTag": 1017364827,
                     "Size": {
@@ -5759,7 +5705,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "playing/other/chatbg_rd.png",
+                      "Path": "playerchat/chatbg_rd.png",
                       "Plist": ""
                     },
                     "Scale9Enable": true,
@@ -5904,14 +5850,14 @@
                   },
                   {
                     "FileData": {
-                      "Type": "Normal",
-                      "Path": "chat/happy.png",
+                      "Type": "Default",
+                      "Path": "Default/ImageFile.png",
                       "Plist": ""
                     },
-                    "Scale9OriginX": 36,
-                    "Scale9OriginY": 39,
-                    "Scale9Width": 39,
-                    "Scale9Height": 43,
+                    "Scale9OriginX": 10,
+                    "Scale9OriginY": 7,
+                    "Scale9Width": 26,
+                    "Scale9Height": 32,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
@@ -5946,6 +5892,108 @@
                     },
                     "VisibleForFrame": false,
                     "Name": "emoji",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/icon_hua.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 13,
+                    "Scale9OriginY": 9,
+                    "Scale9Width": 40,
+                    "Scale9Height": 19,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 71.041,
+                      "Y": -86.2387
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.555,
+                      "Y": -0.6955
+                    },
+                    "PreSize": {
+                      "X": 0.8438,
+                      "Y": 0.4677
+                    },
+                    "LeftMargin": 17.041,
+                    "RightMargin": 2.959,
+                    "TopMargin": 181.2387,
+                    "BottomMargin": -115.2387,
+                    "Tag": 453,
+                    "Children": [
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 30,
+                        "LabelText": "0",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 151.4698,
+                          "Y": 31.1727
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 238,
+                          "G": 244,
+                          "B": 5
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 1.4025,
+                          "Y": 0.5375
+                        },
+                        "PreSize": {
+                          "X": 1.6667,
+                          "Y": 0.5172
+                        },
+                        "LeftMargin": 61.4698,
+                        "RightMargin": -133.4698,
+                        "TopMargin": 11.8273,
+                        "BottomMargin": 16.1727,
+                        "Tag": 454,
+                        "ActionTag": -604438366,
+                        "Size": {
+                          "X": 180.0,
+                          "Y": 30.0
+                        },
+                        "Name": "hua_num",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 1804916841,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 58.0
+                    },
+                    "Name": "hua",
                     "ctype": "ImageViewObjectData"
                   }
                 ],
@@ -6203,6 +6251,51 @@
                     },
                     "Name": "ef_hu",
                     "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/t_hua.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 35,
+                    "Scale9OriginY": 34,
+                    "Scale9Width": 37,
+                    "Scale9Height": 37,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 4.562,
+                      "Y": 3.7985
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -48.938,
+                    "RightMargin": -58.062,
+                    "TopMargin": -56.2985,
+                    "BottomMargin": -48.7015,
+                    "Tag": 461,
+                    "ActionTag": 1407472539,
+                    "Size": {
+                      "X": 107.0,
+                      "Y": 105.0
+                    },
+                    "Name": "ef_hua",
+                    "ctype": "ImageViewObjectData"
                   }
                 ],
                 "ActionTag": -601034040,
@@ -6221,96 +6314,6 @@
             },
             "Name": "right",
             "ctype": "SingleNodeObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "play-yli/floor_07.png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 67,
-            "Scale9OriginY": 10,
-            "Scale9Width": 70,
-            "Scale9Height": 13,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": -69.4357,
-              "Y": 60.569
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": -0.0542,
-              "Y": 0.0841
-            },
-            "PreSize": {
-              "X": 0.1594,
-              "Y": 0.0458
-            },
-            "LeftMargin": -171.4357,
-            "RightMargin": 1247.4357,
-            "TopMargin": 642.931,
-            "BottomMargin": 44.069,
-            "Tag": 856,
-            "ActionTag": 115296396,
-            "Size": {
-              "X": 204.0,
-              "Y": 33.0
-            },
-            "Name": "bianL",
-            "ctype": "ImageViewObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "play-yli/floor_07.png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 67,
-            "Scale9OriginY": 10,
-            "Scale9Width": 70,
-            "Scale9Height": 13,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 824.9872,
-              "Y": 61.3664
-            },
-            "Scale": {
-              "ScaleX": -1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.6445,
-              "Y": 0.0852
-            },
-            "PreSize": {
-              "X": 0.1594,
-              "Y": 0.0458
-            },
-            "LeftMargin": 722.9872,
-            "RightMargin": 353.0128,
-            "TopMargin": 642.1336,
-            "BottomMargin": 44.8664,
-            "Tag": 857,
-            "ActionTag": 1978868641,
-            "Size": {
-              "X": 204.0,
-              "Y": 33.0
-            },
-            "Name": "bianR",
-            "ctype": "ImageViewObjectData"
           },
           {
             "FileData": {
@@ -6795,7 +6798,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "playing/other/roundnumbg.png",
+              "Path": "play-yli/roundnumbg.png",
               "Plist": ""
             },
             "Scale9OriginX": 30,
@@ -7007,7 +7010,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "playing/other/roundnumbg.png",
+              "Path": "play-yli/roundnumbg.png",
               "Plist": ""
             },
             "Scale9OriginX": 30,
@@ -7762,7 +7765,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "setting/pai_bottom.png",
+                      "Path": "play-yli/pai_bottom.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 75,
@@ -7807,7 +7810,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "setting/penggang_bottom.png",
+                      "Path": "play-yli/penggang_bottom.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 24,
@@ -7965,19 +7968,19 @@
                 },
                 "PressedFileData": {
                   "Type": "Normal",
-                  "Path": "png/pghg/Z_gang_light.png",
+                  "Path": "play-yli/btn_gang_press.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "png/pghg/Z_gang.png",
+                  "Path": "play-yli/btn_gang_normal.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
                 "Scale9Width": 51,
-                "Scale9Height": 47,
+                "Scale9Height": 60,
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -7995,8 +7998,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 631.0609,
-                  "Y": 241.8864
+                  "X": 631.061,
+                  "Y": 271.8865
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -8012,10 +8015,10 @@
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 590.5609,
-                "RightMargin": -671.5609,
-                "TopMargin": -276.3864,
-                "BottomMargin": 207.3864,
+                "LeftMargin": 590.561,
+                "RightMargin": -671.561,
+                "TopMargin": -312.8865,
+                "BottomMargin": 230.8865,
                 "Tag": 952,
                 "Children": [
                   {
@@ -8033,8 +8036,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 97.3997,
-                      "Y": 38.6006
+                      "X": 114.3994,
+                      "Y": 41.6004
                     },
                     "Scale": {
                       "ScaleX": 0.6,
@@ -8043,17 +8046,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 1.2025,
-                      "Y": 0.5594
+                      "X": 1.4123,
+                      "Y": 0.5073
                     },
                     "PreSize": {
                       "X": 1.2099,
-                      "Y": 2.2029
+                      "Y": 1.8537
                     },
-                    "LeftMargin": 48.3997,
-                    "RightMargin": -65.3997,
-                    "TopMargin": -45.6006,
-                    "BottomMargin": -37.3994,
+                    "LeftMargin": 65.3994,
+                    "RightMargin": -82.3994,
+                    "TopMargin": -35.6004,
+                    "BottomMargin": -34.3996,
                     "Tag": 953,
                     "Children": [
                       {
@@ -8071,8 +8074,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 68.4553,
-                          "Y": 43.0908
+                          "X": 46.6669,
+                          "Y": 63.3333
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -8081,17 +8084,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.6985,
-                          "Y": 0.2835
+                          "X": 0.4762,
+                          "Y": 0.4167
                         },
                         "PreSize": {
                           "X": 0.7551,
                           "Y": 0.6579
                         },
-                        "LeftMargin": 31.4553,
-                        "RightMargin": -7.4553,
-                        "TopMargin": 58.9092,
-                        "BottomMargin": -6.9092,
+                        "LeftMargin": 9.6669,
+                        "RightMargin": 14.3331,
+                        "TopMargin": 38.6667,
+                        "BottomMargin": 13.3333,
                         "Tag": 1115,
                         "ActionTag": 1566323041,
                         "Size": {
@@ -8114,7 +8117,7 @@
                 "ActionTag": -1825344072,
                 "Size": {
                   "X": 81.0,
-                  "Y": 69.0
+                  "Y": 82.0
                 },
                 "Name": "gang1",
                 "ctype": "ButtonObjectData"
@@ -8134,19 +8137,19 @@
                 },
                 "PressedFileData": {
                   "Type": "Normal",
-                  "Path": "png/pghg/Z_gang_light.png",
+                  "Path": "play-yli/btn_gang_press.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "png/pghg/Z_gang.png",
+                  "Path": "play-yli/btn_gang_normal.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
                 "Scale9Width": 51,
-                "Scale9Height": 47,
+                "Scale9Height": 60,
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -8165,7 +8168,7 @@
                 },
                 "Position": {
                   "X": 631.0609,
-                  "Y": 318.2031
+                  "Y": 368.2031
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -8183,8 +8186,8 @@
                 },
                 "LeftMargin": 590.5609,
                 "RightMargin": -671.5609,
-                "TopMargin": -352.7031,
-                "BottomMargin": 283.7031,
+                "TopMargin": -409.2031,
+                "BottomMargin": 327.2031,
                 "Tag": 954,
                 "Children": [
                   {
@@ -8202,8 +8205,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 98.0,
-                      "Y": 44.0003
+                      "X": 113.9998,
+                      "Y": 41.9997
                     },
                     "Scale": {
                       "ScaleX": 0.6,
@@ -8212,17 +8215,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 1.2099,
-                      "Y": 0.6377
+                      "X": 1.4074,
+                      "Y": 0.5122
                     },
                     "PreSize": {
                       "X": 1.2099,
-                      "Y": 2.2029
+                      "Y": 1.8537
                     },
-                    "LeftMargin": 49.0,
-                    "RightMargin": -66.0,
-                    "TopMargin": -51.0003,
-                    "BottomMargin": -31.9997,
+                    "LeftMargin": 64.9998,
+                    "RightMargin": -81.9998,
+                    "TopMargin": -35.9997,
+                    "BottomMargin": -34.0003,
                     "Tag": 955,
                     "Children": [
                       {
@@ -8240,8 +8243,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 85.122,
-                          "Y": 26.4241
+                          "X": 47.1221,
+                          "Y": 62.4237
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -8250,17 +8253,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.8686,
-                          "Y": 0.1738
+                          "X": 0.4808,
+                          "Y": 0.4107
                         },
                         "PreSize": {
                           "X": 0.7551,
                           "Y": 0.6579
                         },
-                        "LeftMargin": 48.122,
-                        "RightMargin": -24.122,
-                        "TopMargin": 75.5759,
-                        "BottomMargin": -23.5759,
+                        "LeftMargin": 10.1221,
+                        "RightMargin": 13.8779,
+                        "TopMargin": 39.5763,
+                        "BottomMargin": 12.4237,
                         "Tag": 1116,
                         "ActionTag": 1583771687,
                         "Size": {
@@ -8283,7 +8286,7 @@
                 "ActionTag": -998658718,
                 "Size": {
                   "X": 81.0,
-                  "Y": 69.0
+                  "Y": 82.0
                 },
                 "Name": "gang2",
                 "ctype": "ButtonObjectData"
@@ -8359,7 +8362,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "setting/penggang_bottom.png",
+                      "Path": "play-yli/penggang_bottom.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 24,
@@ -8371,8 +8374,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 31.168,
-                      "Y": 35.0663
+                      "X": 38.0972,
+                      "Y": 41.1294
                     },
                     "Scale": {
                       "ScaleX": 1.2,
@@ -8381,17 +8384,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.3848,
-                      "Y": 0.4276
+                      "X": 0.4703,
+                      "Y": 0.5016
                     },
                     "PreSize": {
                       "X": 0.9136,
                       "Y": 0.8537
                     },
-                    "LeftMargin": -5.832,
-                    "RightMargin": 12.832,
-                    "TopMargin": 11.9337,
-                    "BottomMargin": 0.0663,
+                    "LeftMargin": 1.0972,
+                    "RightMargin": 5.9028,
+                    "TopMargin": 5.8706,
+                    "BottomMargin": 6.1294,
                     "Tag": 957,
                     "ActionTag": -2124282494,
                     "Size": {
@@ -8481,7 +8484,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "setting/pai_bottom.png",
+                      "Path": "play-yli/pai_bottom.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 75,
@@ -8526,7 +8529,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "setting/penggang_bottom.png",
+                      "Path": "play-yli/penggang_bottom.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 24,
@@ -8538,8 +8541,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 35.0669,
-                      "Y": 35.7158
+                      "X": 45.4602,
+                      "Y": 34.8502
                     },
                     "Scale": {
                       "ScaleX": 1.2,
@@ -8548,17 +8551,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.4329,
-                      "Y": 0.4356
+                      "X": 0.5612,
+                      "Y": 0.425
                     },
                     "PreSize": {
                       "X": 0.9136,
                       "Y": 0.8537
                     },
-                    "LeftMargin": -1.9331,
-                    "RightMargin": 8.9331,
-                    "TopMargin": 11.2842,
-                    "BottomMargin": 0.7158,
+                    "LeftMargin": 8.4602,
+                    "RightMargin": -1.4602,
+                    "TopMargin": 12.1498,
+                    "BottomMargin": -0.1498,
                     "Tag": 960,
                     "ActionTag": 926157053,
                     "Size": {
@@ -8740,7 +8743,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "setting/pai_bottom.png",
+                      "Path": "play-yli/pai_bottom.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 75,
@@ -8785,7 +8788,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "setting/penggang_bottom.png",
+                      "Path": "play-yli/penggang_bottom.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 24,
@@ -8999,7 +9002,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "setting/pai_bottom.png",
+                      "Path": "play-yli/pai_bottom.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 75,
@@ -9044,7 +9047,7 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "setting/penggang_bottom.png",
+                      "Path": "play-yli/penggang_bottom.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 24,
@@ -9056,8 +9059,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 29.8714,
-                      "Y": 29.2217
+                      "X": 45.4617,
+                      "Y": 36.1509
                     },
                     "Scale": {
                       "ScaleX": 1.2,
@@ -9066,17 +9069,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.3688,
-                      "Y": 0.3564
+                      "X": 0.5613,
+                      "Y": 0.4409
                     },
                     "PreSize": {
                       "X": 0.9136,
                       "Y": 0.8537
                     },
-                    "LeftMargin": -7.1286,
-                    "RightMargin": 14.1286,
-                    "TopMargin": 17.7783,
-                    "BottomMargin": -5.7783,
+                    "LeftMargin": 8.4617,
+                    "RightMargin": -1.4617,
+                    "TopMargin": 10.8491,
+                    "BottomMargin": 1.1509,
                     "Tag": 970,
                     "ActionTag": -1645927540,
                     "Size": {
@@ -9193,8 +9196,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 128.91,
-                      "Y": 28.249
+                      "X": 121.1123,
+                      "Y": 133.9172
                     },
                     "Scale": {
                       "ScaleX": 0.6,
@@ -9203,17 +9206,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 1.5915,
-                      "Y": 0.3445
+                      "X": 1.4952,
+                      "Y": 1.6331
                     },
                     "PreSize": {
                       "X": 1.2099,
                       "Y": 1.8537
                     },
-                    "LeftMargin": 79.91,
-                    "RightMargin": -96.91,
-                    "TopMargin": -22.249,
-                    "BottomMargin": -47.751,
+                    "LeftMargin": 72.1123,
+                    "RightMargin": -89.1123,
+                    "TopMargin": -127.9172,
+                    "BottomMargin": 57.9172,
                     "Tag": 973,
                     "Children": [
                       {
@@ -9231,8 +9234,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 66.6667,
-                          "Y": 43.3334
+                          "X": 51.5259,
+                          "Y": 61.7203
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -9241,17 +9244,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.6803,
-                          "Y": 0.2851
+                          "X": 0.5258,
+                          "Y": 0.4061
                         },
                         "PreSize": {
                           "X": 0.7551,
                           "Y": 0.6579
                         },
-                        "LeftMargin": 29.6667,
-                        "RightMargin": -5.6667,
-                        "TopMargin": 58.6666,
-                        "BottomMargin": -6.6666,
+                        "LeftMargin": 14.5259,
+                        "RightMargin": 9.4741,
+                        "TopMargin": 40.2797,
+                        "BottomMargin": 11.7203,
                         "Tag": 1000,
                         "ActionTag": -1081013027,
                         "Size": {
@@ -9267,7 +9270,6 @@
                       "X": 98.0,
                       "Y": 152.0
                     },
-                    "VisibleForFrame": false,
                     "Name": "card2",
                     "ctype": "ImageViewObjectData"
                   },
@@ -9286,8 +9288,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 172.6013,
-                      "Y": 27.4977
+                      "X": 122.3637,
+                      "Y": 235.3696
                     },
                     "Scale": {
                       "ScaleX": 0.6,
@@ -9296,17 +9298,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 2.1309,
-                      "Y": 0.3353
+                      "X": 1.5107,
+                      "Y": 2.8704
                     },
                     "PreSize": {
                       "X": 1.2099,
                       "Y": 1.8537
                     },
-                    "LeftMargin": 123.6013,
-                    "RightMargin": -140.6013,
-                    "TopMargin": -21.4977,
-                    "BottomMargin": -48.5023,
+                    "LeftMargin": 73.3637,
+                    "RightMargin": -90.3637,
+                    "TopMargin": -229.3696,
+                    "BottomMargin": 159.3696,
                     "Tag": 974,
                     "Children": [
                       {
@@ -9324,8 +9326,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 83.3333,
-                          "Y": 26.6668
+                          "X": 49.8023,
+                          "Y": 64.5234
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -9334,17 +9336,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.8503,
-                          "Y": 0.1754
+                          "X": 0.5082,
+                          "Y": 0.4245
                         },
                         "PreSize": {
                           "X": 0.7551,
                           "Y": 0.6579
                         },
-                        "LeftMargin": 46.3333,
-                        "RightMargin": -22.3333,
-                        "TopMargin": 75.3332,
-                        "BottomMargin": -23.3332,
+                        "LeftMargin": 12.8023,
+                        "RightMargin": 11.1977,
+                        "TopMargin": 37.4766,
+                        "BottomMargin": 14.5234,
                         "Tag": 1001,
                         "ActionTag": 1999531752,
                         "Size": {
@@ -9360,7 +9362,6 @@
                       "X": 98.0,
                       "Y": 152.0
                     },
-                    "VisibleForFrame": false,
                     "Name": "card3",
                     "ctype": "ImageViewObjectData"
                   }
@@ -9388,19 +9389,19 @@
                 },
                 "PressedFileData": {
                   "Type": "Normal",
-                  "Path": "png/pghg/chi.png",
+                  "Path": "play-yli/btn_chi_press.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "png/pghg/chi.png",
+                  "Path": "play-yli/btn_chi_normal.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
-                "Scale9Width": 29,
-                "Scale9Height": 39,
+                "Scale9Width": 51,
+                "Scale9Height": 60,
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -9418,8 +9419,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 736.8393,
-                  "Y": 250.8865
+                  "X": 776.6828,
+                  "Y": 269.9414
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -9435,15 +9436,15 @@
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 707.3393,
-                "RightMargin": -766.3393,
-                "TopMargin": -281.3865,
-                "BottomMargin": 220.3865,
+                "LeftMargin": 736.1828,
+                "RightMargin": -817.1828,
+                "TopMargin": -310.9414,
+                "BottomMargin": 228.9414,
                 "Tag": 975,
                 "ActionTag": 1896546829,
                 "Size": {
-                  "X": 59.0,
-                  "Y": 61.0
+                  "X": 81.0,
+                  "Y": 82.0
                 },
                 "Name": "chi1",
                 "ctype": "ButtonObjectData"
@@ -9463,19 +9464,19 @@
                 },
                 "PressedFileData": {
                   "Type": "Normal",
-                  "Path": "png/pghg/chi.png",
+                  "Path": "play-yli/btn_chi_press.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "png/pghg/chi.png",
+                  "Path": "play-yli/btn_chi_normal.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
-                "Scale9Width": 29,
-                "Scale9Height": 39,
+                "Scale9Width": 51,
+                "Scale9Height": 60,
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -9493,8 +9494,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 735.8392,
-                  "Y": 319.2032
+                  "X": 776.5494,
+                  "Y": 368.5729
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -9510,15 +9511,15 @@
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 706.3392,
-                "RightMargin": -765.3392,
-                "TopMargin": -349.7032,
-                "BottomMargin": 288.7032,
+                "LeftMargin": 736.0494,
+                "RightMargin": -817.0494,
+                "TopMargin": -409.5729,
+                "BottomMargin": 327.5729,
                 "Tag": 976,
                 "ActionTag": 538292022,
                 "Size": {
-                  "X": 59.0,
-                  "Y": 61.0
+                  "X": 81.0,
+                  "Y": 82.0
                 },
                 "Name": "chi2",
                 "ctype": "ButtonObjectData"
@@ -10405,7 +10406,7 @@
                       {
                         "FileData": {
                           "Type": "Normal",
-                          "Path": "setting/penggang_bottom.png",
+                          "Path": "play-yli/penggang_bottom.png",
                           "Plist": ""
                         },
                         "Scale9OriginX": 24,
@@ -10443,13 +10444,13 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "png/pghg/Z_guo.png",
+                              "Path": "play-yli/btn_guo_normal.png",
                               "Plist": ""
                             },
                             "Scale9OriginX": 24,
                             "Scale9OriginY": 22,
-                            "Scale9Width": 25,
-                            "Scale9Height": 25,
+                            "Scale9Width": 33,
+                            "Scale9Height": 38,
                             "TouchEnable": true,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
@@ -10470,20 +10471,19 @@
                               "Y": 0.4603
                             },
                             "PreSize": {
-                              "X": 0.9865,
-                              "Y": 0.9857
+                              "X": 1.0946,
+                              "Y": 1.1714
                             },
-                            "LeftMargin": 4.2783,
-                            "RightMargin": -3.2783,
-                            "TopMargin": 3.2794,
-                            "BottomMargin": -2.2794,
+                            "LeftMargin": 0.2783,
+                            "RightMargin": -7.2783,
+                            "TopMargin": -3.2206,
+                            "BottomMargin": -8.7794,
                             "Tag": 998,
                             "ActionTag": -77966048,
                             "Size": {
-                              "X": 73.0,
-                              "Y": 69.0
+                              "X": 81.0,
+                              "Y": 82.0
                             },
-                            "VisibleForFrame": false,
                             "Name": "guo",
                             "ctype": "ImageViewObjectData"
                           },
@@ -10499,12 +10499,12 @@
                             "Scale9Height": 20,
                             "TouchEnable": true,
                             "AnchorPoint": {
-                              "ScaleX": 0.53,
-                              "ScaleY": 0.3914
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 40.5163,
-                              "Y": 18.4904
+                              "X": 41.9332,
+                              "Y": 29.4123
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -10513,17 +10513,17 @@
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.5475,
-                              "Y": 0.2641
+                              "X": 0.5667,
+                              "Y": 0.4202
                             },
                             "PreSize": {
                               "X": 0.9865,
                               "Y": 1.0571
                             },
-                            "LeftMargin": 1.8263,
-                            "RightMargin": -0.8263,
-                            "TopMargin": 6.4732,
-                            "BottomMargin": -10.4732,
+                            "LeftMargin": 5.4332,
+                            "RightMargin": -4.4332,
+                            "TopMargin": 3.5877,
+                            "BottomMargin": -7.5877,
                             "Tag": 999,
                             "ActionTag": -811711906,
                             "Size": {
@@ -10923,20 +10923,20 @@
                   "Plist": ""
                 },
                 "PressedFileData": {
-                  "Type": "Normal",
-                  "Path": "wait/kuaijin_h.png",
+                  "Type": "Default",
+                  "Path": "Default/Button_Press.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "wait/kuaijin.png",
+                  "Type": "Default",
+                  "Path": "Default/Button_Normal.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
-                "Scale9Width": 29,
-                "Scale9Height": 31,
+                "Scale9Width": 16,
+                "Scale9Height": 14,
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -10999,20 +10999,20 @@
                   "Plist": ""
                 },
                 "PressedFileData": {
-                  "Type": "Normal",
-                  "Path": "wait/kuaitui_j.png",
+                  "Type": "Default",
+                  "Path": "Default/Button_Press.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "wait/kuaitui.png",
+                  "Type": "Default",
+                  "Path": "Default/Button_Normal.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
-                "Scale9Width": 29,
-                "Scale9Height": 31,
+                "Scale9Width": 16,
+                "Scale9Height": 14,
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -11155,8 +11155,10 @@
       },
       "UsedResources": [
         "animate/voice/0.png",
-        "chat/happy.png",
         "Default/Button_Disable.png",
+        "Default/Button_Normal.png",
+        "Default/Button_Press.png",
+        "Default/ImageFile.png",
         "MaJiangNew/mj_71.png",
         "MaJiangNew/mj_91.png",
         "MaJiangNew/mj_bg1.png",
@@ -11166,12 +11168,10 @@
         "MaJiangNew/mj_bg5.png",
         "MaJiangNew/mj_bg6.png",
         "MaJiangNew/mj_bg7.png",
-        "playing/other/chatbg_ld.png",
-        "playing/other/chatbg_lt.png",
-        "playing/other/chatbg_rd.png",
-        "playing/other/chatbg_top.png",
-        "playing/other/roundnumbg.png",
-        "playing/other/Z_money_frame.png",
+        "playerchat/chatbg_ld.png",
+        "playerchat/chatbg_lt.png",
+        "playerchat/chatbg_rd.png",
+        "playerchat/chatbg_top.png",
         "play-yli/bac_02.png",
         "play-yli/bac_corner_01.png",
         "play-yli/bac_corner_02.png",
@@ -11212,14 +11212,17 @@
         "play-yli/floor_03.png",
         "play-yli/floor_05.png",
         "play-yli/floor_06.png",
-        "play-yli/floor_07.png",
         "play-yli/floor_08.png",
-        "play-yli/guangdongmajiang.png",
+        "play-yli/guangzhoumajiang.png",
+        "play-yli/huizhoumajiang.png",
         "play-yli/icon_electricity_01.png",
         "play-yli/icon_electricity_02.png",
+        "play-yli/icon_hua.png",
         "play-yli/icon_zhuang.png",
         "play-yli/other/Z_wifi.plist",
         "play-yli/other/Z_wifi.png",
+        "play-yli/pai_bottom.png",
+        "play-yli/penggang_bottom.png",
         "play-yli/Photo_frame_01.png",
         "play-yli/Photo_frame_02.png",
         "play-yli/Photo_frame_03.png",
@@ -11231,27 +11234,14 @@
         "play-yli/reVideo/btn_suspend_normal.png",
         "play-yli/reVideo/btn_suspend_press.png",
         "play-yli/reVideo/floor_16.png",
+        "play-yli/roundnumbg.png",
         "play-yli/t_chi.png",
         "play-yli/t_gang.png",
         "play-yli/t_guo.png",
+        "play-yli/t_hua.png",
         "play-yli/t_peng.png",
         "play-yli/t-hu.png",
-        "png/pghg/chi.png",
-        "png/pghg/Z_gang.png",
-        "png/pghg/Z_gang_light.png",
-        "png/pghg/Z_guo.png",
-        "png/Z_zhunbeizhuangt.png",
-        "setting/pai_bottom.png",
-        "setting/penggang_bottom.png",
-        "settlement/canEat.png",
-        "settlement/canEatHu.png",
-        "settlement/symj.png",
-        "settlement/withWind.png",
-        "settlement/zzmj.png",
-        "wait/kuaijin.png",
-        "wait/kuaijin_h.png",
-        "wait/kuaitui.png",
-        "wait/kuaitui_j.png"
+        "play-yli/Z_zhunbeizhuangt.png"
       ],
       "ctype": "GameFileData"
     }

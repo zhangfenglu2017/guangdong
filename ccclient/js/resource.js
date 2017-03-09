@@ -1,6 +1,5 @@
 var res = {
-    // Update_bk:"res/login/z_loading.png",
-	Update_bk:"res/login/z_login.png",
+    Update_bk:"res/login/z_login.png",
 
 	Updae_json:"res/Update.json",
 	Login_json:"res/Login.json",
@@ -15,22 +14,6 @@ var res = {
 	EndOne_json:"res/endOne.json",
 	EndAll_json:"res/endAll.json",
 
-	// CreateRoom_json:"res/createRoom.json",
-    //
-	// PlayMJ_png:"res/playing/MJ/bottom/Z_bottom.png",
-	// PlayMJ_plist:"res/playing/MJ/bottom/Z_bottom.plist",
-    //
-	// PlayMJ_left_png:"res/playing/MJ/left/Z_left.png",
-	// PlayMJ_left_plist:"res/playing/MJ/left/Z_left.plist",
-    //
-	// PlayMJ_right_png:"res/playing/MJ/right/Z_right.png",
-	// PlayMJ_right_plist:"res/playing/MJ/right/Z_right.plist",
-    //
-	// PlayMJ_my_png:"res/playing/MJ/my/Z_my.png",
-	// PlayMJ_my_plist:"res/playing/MJ/my/Z_my.plist",
-    //
-	// PlayMJ_MJ_png:"res/playing/MJ/mjEmpty.png",
-	// PlayMJ_MJ_plist:"res/playing/MJ/mjEmpty.plist",
 
     PlayMJ_my_png:"res/MaJiangNew/z_mj.png",
     PlayMJ_my_plist:"res/MaJiangNew/z_mj.plist",
@@ -43,11 +26,6 @@ var g_resources = [];
 for (var i in res) {
     g_resources.push(res[i]);
 }
-// cc.spriteFrameCache.addSpriteFrames("res/playing/MJ/bottom/Z_bottom.plist");
-// cc.spriteFrameCache.addSpriteFrames("res/playing/MJ/mjEmpty.plist");
-// cc.spriteFrameCache.addSpriteFrames("res/playing/MJ/my/Z_my.plist");
-// cc.spriteFrameCache.addSpriteFrames("res/playing/MJ/right/Z_right.plist");
-// cc.spriteFrameCache.addSpriteFrames("res/playing/MJ/left/Z_left.plist");
 
 cc.spriteFrameCache.addSpriteFrames("res/MaJiangNew/z_mj.plist");
 cc.spriteFrameCache.addSpriteFrames("res/playerchat/emoji_action_texture.plist");
@@ -59,6 +37,7 @@ var DelRoomLayer;
 var EndRoomLayer;
 var WebViewLayer;
 var WebViewLayer1;
+var WebViewLayer2;
 var PlayLogLayer;
 var UserInfoLayer;
 var LoginLayer;
@@ -76,7 +55,7 @@ function sendEvent(eName,ePara)
 var lognum = 0;
 function mylog(txt)
 {
-	if( cc.sys.OS_WINDOWS != cc.sys.os ) 
+	if( cc.sys.OS_WINDOWS != cc.sys.os )
 		return;
 
 	if(!jsclient.Scene) 

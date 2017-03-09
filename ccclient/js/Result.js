@@ -5,6 +5,7 @@
    Fail:1,
    
    
+   
    verifyPlayerFail:2,
    emailUsed:3,
    emailValid:4,
@@ -15,6 +16,7 @@
    alreadyInGame:9, 
    keepInGame:10, 
    //
+   
    
  
    sqlError:30,

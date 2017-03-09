@@ -88,7 +88,7 @@ function getServerByRandForPort(parts)
 //加载默认头像
 function loadDefaultHead(node, posx, posy, scale, zindex, name, tag)
 {
-	url = "res/gameEndNew/Photo_frame_man.png";
+	url = "res/play-yli/Photo_frame_man.png";
 	var sprite = new cc.Sprite(url);
 	sprite.x = posx;
 	sprite.y = posy;
@@ -108,7 +108,7 @@ function ClipHead(node, url, posx, posy, scale, zindex, name, tag)
 	{
 		 if (!err && texture)
 		 {
-			 var stencil = new cc.Sprite("res/png/Photo_frame_05.png");   //可以是精灵，也可以DrawNode画的各种图形
+			 var stencil = new cc.Sprite("res/play-yli/Photo_frame_05.png");   //可以是精灵，也可以DrawNode画的各种图形
 
 			 //1.创建裁剪节点
 			 var clipper = new cc.ClippingNode(stencil);   //创建裁剪节点ClippingNode对象  带模板
@@ -286,12 +286,12 @@ jsclient.joinGame=function(tableid)
 	});
 };
 
-jsclient.createRoom=function(round,canEatHu,withWind,canEat,noBigWin,canHu7,canHuWith258,withZhong,horse)
+jsclient.createRoom=function(round,canEatHu,withWind,canEat,noBigWin,canHu7,canHuWith258,withZhong,horse,gameType)
 {
 	jsclient.block();
 	jsclient.gamenet.request("pkplayer.handler.CreateVipTable",{
         round:round,canEatHu:canEatHu, withWind:withWind,canEat:canEat,noBigWin:noBigWin,
-        canHu7:canHu7,canHuWith258:canHuWith258,withZhong:withZhong, horse:horse},
+        canHu7:canHu7,canHuWith258:canHuWith258,withZhong:withZhong, horse:horse, gameType:gameType},
         function(rtn)
         {
            jsclient.unblock();
@@ -328,7 +328,7 @@ jsclient.tickServer=function()
 
 jsclient.openWeb=function(para)
 {
-    sendEvent("openWeb",para);
+    sendEvent("openWeb", para);
 };
 
 jsclient.showMsg=function(msg,yesfunc,nofunc,style)
@@ -420,6 +420,10 @@ jsclient.netCallBack =
         pl.mjgang1=[];
         pl.mjchi=[];
         pl.mjput=[];
+        pl.mjflower = [];
+         pl.skipPeng = [];
+        pl.baojiu = {num:0,putCardPlayer:[]};
+        pl.skipHu = false;
         delete pl.mjhand;
         pl.mjState=TableState.waitPut;
         if(uid==SelfUid())
@@ -430,13 +434,31 @@ jsclient.netCallBack =
         }
         playEffect("shuffle");
     }],
-
+    MJFlower: [0, function (d) {
+        playEffect("nv/flower");
+        var sData = jsclient.data.sData;
+        var pl = sData.players[d.uid];
+        if (d.uid == SelfUid()) {
+            var idx = pl.mjhand.indexOf(d.card);
+            if(idx >= 0)
+            {
+                pl.mjhand.splice(idx, 1);
+            }
+        }
+        pl.mjflower.push(d.card);
+        cc.log("HuiZhou：　MJFlower: pl.mjflower.length = " + pl.mjflower.length);
+    }],
     MJPass:[0,function(d)
     {
+        console.log("------------------------------MJPass");
         var sData=jsclient.data.sData;
         var tData=sData.tData;
         var pl=sData.players[SelfUid()];
         pl.mjState=d.mjState;
+        pl.skipPeng = d.skipPeng;
+        pl.skipHu = d.skipHu;
+        console.log("pl.skipPeng.length=" + pl.skipPeng.length);
+        console.log("pl.skipHu---"+pl.skipHu);
         mylog("MJPass");
     }],
 
@@ -449,7 +471,8 @@ jsclient.netCallBack =
         tData.putType=d.putType;
         var pl=sData.players[d.uid];
         pl.mjput.push(d.card);
-
+        pl.skipPeng = [];
+        pl.skipHu = false;
         playEffect("nv/"+d.card);
 
         if(d.uid==SelfUid())
@@ -536,6 +559,26 @@ jsclient.netCallBack =
 
         playEffect("nv/peng");
         var pl=sData.players[uids[tData.curPlayer]];
+
+        switch (jsclient.data.sData.tData.gameType){
+            case 1:
+                break;
+            case 2:
+            {
+                pl.baojiu = d.baojiu;
+                if(pl.baojiu.num == 3){
+                    console.log(pl.info.name + "报九");
+                }
+                if(pl.baojiu.num == 4){
+                    console.log(  "被"+ pl.baojiu.putCardPlayer[0]+"报九");
+                }
+            }
+                break;
+            default :
+                break;
+        }
+
+
         var lp=sData.players[uids[d.from]];
         pl.mjpeng.push(cd);
         var mjput=lp.mjput;
@@ -774,7 +817,7 @@ jsclient.native =
 	   }
 
    },
-
+      
     wxShareText:function(text)
    {
         try{
@@ -920,22 +963,26 @@ jsclient.native =
     //计算两个玩家之间的距离
     CalculateLineDistance:function(latitude1, longitude1, latitude2, longitude2)
     {
-        return 0;
-
         if(latitude1 == 0 || longitude1 == 0|| latitude2 == 0 || longitude2 == 0)
             return 0;
 
         try{
             if (cc.sys.OS_ANDROID == cc.sys.os)
             {
-                return jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "CalculateDistance",
+                var dis = jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "CalculateDistance",
                     "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
                     String(latitude1), String(longitude1), String(latitude2), String(longitude2));
+
+                return dis * 1;
             }
             else if(cc.sys.OS_IOS==cc.sys.os)
             {
-                return jsb.reflection.callStaticMethod("AppController","calculateDistance:lon1:lat2:lon2:",
+                var dis = jsb.reflection.callStaticMethod("AppController","calculateDistance:lon1:lat2:lon2:",
                     String(latitude1),String(longitude1),String(latitude2),String(longitude2));
+
+                var disVar = parseFloat(dis).toFixed(1);
+
+                return disVar;
             }
             else
             {
@@ -954,8 +1001,6 @@ jsclient.native =
     //获取玩家纬度
     GetLatitudePos:function()
     {
-        return 0;
-
         try{
             if (cc.sys.OS_ANDROID == cc.sys.os)
             {
@@ -980,8 +1025,6 @@ jsclient.native =
     //获取玩家经度
     GetLongitudePos:function()
     {
-        return 0;
-
         try{
             if (cc.sys.OS_ANDROID == cc.sys.os)
             {
@@ -1006,18 +1049,29 @@ jsclient.native =
 
 
 var JSScene = cc.Scene.extend({
-    jsBind:{
-        _event:{
-            openWeb:function(para)
+    jsBind:
+    {
+        _event:
+        {
+            openWeb:function(type)
             {
-                jsclient.uiPara=para;
-				//judge guize xieyi xiaoxi
-				if(para.noticeSwitch == 0){
-					this.addChild(new WebViewLayer1());
-				}else
-				{
+                // jsclient.uiPara = para;
+
+				if(type == 0)
+                {
+                    //消息、联系方式
 					this.addChild(new WebViewLayer());
 				}
+                else if(type == 1)
+				{
+                    //用户协议
+					this.addChild(new WebViewLayer1());
+				}
+                else if(type == 2)
+                {
+                    //游戏玩法
+                    this.addChild(new WebViewLayer2());
+                }
             },
 
             popUpMsg:function(pmsg)
@@ -1201,11 +1255,5 @@ var JSScene = cc.Scene.extend({
         ConnectUI2Logic(this,this.jsBind);
         this.addChild(new UpdateLayer());
         this.addChild(new BlockLayer());
-        // this.addChild(new EndOneLayer());
-        // this.addChild(new EndAllLayer());
-        // this.addChild(newReplayLayer());
-
-       
-
     }
 });

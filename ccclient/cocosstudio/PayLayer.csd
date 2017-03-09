@@ -22,15 +22,15 @@
           <AbstractNodeData Name="back" ActionTag="-1408617351" Tag="24" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="132.5000" RightMargin="132.5000" TopMargin="81.0000" BottomMargin="81.0000" LeftEage="169" RightEage="169" TopEage="141" BottomEage="141" Scale9OriginX="169" Scale9OriginY="141" Scale9Width="357" Scale9Height="196" ctype="ImageViewObjectData">
             <Size X="695.0000" Y="478.0000" />
             <Children>
-              <AbstractNodeData Name="lessMoney" ActionTag="-493111790" Tag="162" IconVisible="False" LeftMargin="58.6625" RightMargin="74.3375" TopMargin="0.5627" BottomMargin="407.4373" ctype="SpriteObjectData">
+              <AbstractNodeData Name="lessMoney" ActionTag="-493111790" Tag="162" IconVisible="False" LeftMargin="316.6625" RightMargin="332.3375" TopMargin="12.5627" BottomMargin="419.4373" ctype="SpriteObjectData">
                 <Size X="562.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="339.6625" Y="442.4373" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4887" Y="0.9256" />
-                <PreSize X="0.8086" Y="0.1464" />
-                <FileData Type="Normal" Path="paylayer/t_dissolution_03.png" Plist="" />
+                <PreSize X="0.0662" Y="0.0962" />
+                <FileData Type="Normal" Path="dissolveRoomNew/t_dissolution_03.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="text" ActionTag="796993175" Tag="120" IconVisible="False" LeftMargin="121.4750" RightMargin="33.5250" TopMargin="152.1219" BottomMargin="255.8781" IsCustomSize="True" FontSize="28" LabelText="请联系所在群主或添加以下微信号。" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

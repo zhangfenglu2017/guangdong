@@ -1,11 +1,14 @@
-function NewPopMsgLayer(uiPara) {
+function NewPopMsgLayer(uiPara)
+{
     var popui;
 	var PopMsgLayer = cc.Layer.extend({
-		jsBind:{
+		jsBind:
+        {
 			block:{
 				_layout:[[1,1],[0.5,0.5],[0,0],true],
 				_event:{
-					connect:function(){
+					connect:function()
+					{
 						popui.removeFromParent(true);
 					}
 				}
@@ -46,8 +49,6 @@ function NewPopMsgLayer(uiPara) {
 
 	
 };
-
-
 
 var payLayerText;
 var PayLayer = cc.Layer.extend({

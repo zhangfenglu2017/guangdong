@@ -129,7 +129,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2520" Y="0.2251" />
                 <PreSize X="0.4219" Y="0.2339" />
-                <FileData Type="Normal" Path="png/fangzhu.png" Plist="" />
+                <FileData Type="Normal" Path="gameEndNew/fangzhu.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="id" ActionTag="-885953658" Tag="526" IconVisible="False" LeftMargin="136.5412" RightMargin="-208.5412" TopMargin="82.5132" BottomMargin="5.4868" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="200.0000" Y="36.0000" />
@@ -206,7 +206,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2442" Y="0.2171" />
                 <PreSize X="0.4219" Y="0.2339" />
-                <FileData Type="Normal" Path="png/fangzhu.png" Plist="" />
+                <FileData Type="Normal" Path="gameEndNew/fangzhu.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="id" ActionTag="1399326168" Tag="525" IconVisible="False" LeftMargin="135.2187" RightMargin="-207.2187" TopMargin="76.2993" BottomMargin="11.7007" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="200.0000" Y="36.0000" />
@@ -283,7 +283,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2288" Y="0.2168" />
                 <PreSize X="0.4219" Y="0.2339" />
-                <FileData Type="Normal" Path="png/fangzhu.png" Plist="" />
+                <FileData Type="Normal" Path="gameEndNew/fangzhu.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="id" ActionTag="441248151" Tag="524" IconVisible="False" LeftMargin="140.8273" RightMargin="-212.8273" TopMargin="71.5859" BottomMargin="16.4141" IsCustomSize="True" FontSize="36" LabelText="IDIDIDID" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="200.0000" Y="36.0000" />
@@ -371,7 +371,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2286" Y="0.2090" />
                 <PreSize X="0.4219" Y="0.2339" />
-                <FileData Type="Normal" Path="png/fangzhu.png" Plist="" />
+                <FileData Type="Normal" Path="gameEndNew/fangzhu.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="win" ActionTag="778416962" Tag="37" IconVisible="False" LeftMargin="1001.5000" RightMargin="-1070.5000" TopMargin="15.5000" BottomMargin="11.5000" ctype="SpriteObjectData">
                 <Size X="197.0000" Y="97.0000" />

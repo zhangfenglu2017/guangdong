@@ -82,7 +82,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="cont_us" ActionTag="1990133175" VisibleForFrame="False" Tag="34" IconVisible="False" LeftMargin="81.3100" RightMargin="76.6900" TopMargin="272.9600" BottomMargin="69.0400" IsCustomSize="True" FontSize="36" LabelText="祝您玩的愉快！产品建议或举报请联系：qq3446098400&#xA;，我们将竭诚为您服务！" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="cont_us" ActionTag="1990133175" Tag="34" IconVisible="False" LeftMargin="81.3100" RightMargin="76.6900" TopMargin="272.9600" BottomMargin="69.0400" IsCustomSize="True" FontSize="36" LabelText="祝您玩的愉快！产品建议或举报请联系：qq3446098400&#xA;，我们将竭诚为您服务！" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="780.0000" Y="300.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="471.3100" Y="219.0400" />

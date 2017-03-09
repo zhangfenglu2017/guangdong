@@ -109,7 +109,8 @@ function ShowSameGeog(msg)
 
             }
         },
-        ctor:function () {
+        ctor:function ()
+        {
             this._super();
             sameGeogUI=this;
             var jsonui = ccs.load("res/SameIP.json");
@@ -122,8 +123,8 @@ function ShowSameGeog(msg)
     jsclient.Scene.addChild(new SameGeogInfo());
 }
 
-(function(){
-
+(function()
+{
     var pinfo;
     UserInfoLayer = cc.Layer.extend(
     {
@@ -211,8 +212,6 @@ function ShowSameGeog(msg)
                 {
                     _text:function ()
                     {
-                        return"";
-
                         var sData=jsclient.data.sData;
                         if(!sData)
                             return "";
@@ -222,6 +221,7 @@ function ShowSameGeog(msg)
                             return "";
 
                         var plays = [];
+                        var ipmsg = "";
                         var index = 0;
                         for(var uid  in pls)
                         {
@@ -232,11 +232,18 @@ function ShowSameGeog(msg)
                             if(pl.info.uid == selfUid)
                                 continue;
 
+                            var geogData = pl.info.geogData;
+                            if(geogData.latitude <= 0 || geogData.longitude <= 0)
+                            {
+                                ipmsg = ipmsg + "未获取" + unescape(pl.info.nickname||pl.info.name) + "的地理位置.\n";
+
+                                continue;
+                            }
+
                             plays[index] = pl;
                             index++;
                         }
 
-                        var ipmsg = "";
                         for(var i = 0; i < plays.length; i++ )
                         {
                             var pi1 = plays[i];
@@ -250,7 +257,7 @@ function ShowSameGeog(msg)
                                 var distance = jsclient.native.CalculateLineDistance(
                                     geogData1.latitude, geogData1.longitude, geogData2.latitude, geogData2.longitude);
 
-                                if(distance <= 100  && distance > 0)
+                                if(distance < 100  && distance > 0)
                                 {
                                     ipmsg = ipmsg + unescape(pi1.info.nickname||pi1.info.name) + "和"
                                     + unescape(pi2.info.nickname||pi2.info.name) + "相距小于" + distance + "米\n";

@@ -117,7 +117,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "paylayer/t_dissolution_03.png",
+                  "Path": "dissolveRoomNew/t_dissolution_03.png",
                   "Plist": ""
                 },
                 "BlendFunc": {
@@ -143,13 +143,13 @@
                   "Y": 0.9256
                 },
                 "PreSize": {
-                  "X": 0.8086,
-                  "Y": 0.1464
+                  "X": 0.0662,
+                  "Y": 0.0962
                 },
-                "LeftMargin": 58.6625,
-                "RightMargin": 74.3375,
-                "TopMargin": 0.5627,
-                "BottomMargin": 407.4373,
+                "LeftMargin": 316.6625,
+                "RightMargin": 332.3375,
+                "TopMargin": 12.5627,
+                "BottomMargin": 419.4373,
                 "Tag": 162,
                 "ActionTag": -493111790,
                 "Size": {
@@ -355,7 +355,7 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "paylayer/t_dissolution_03.png",
+        "dissolveRoomNew/t_dissolution_03.png",
         "set/window-small.png",
         "webview/btn_close_normal.png",
         "webview/btn_close_press.png"

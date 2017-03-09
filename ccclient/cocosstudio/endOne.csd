@@ -483,6 +483,16 @@
                     <PreSize X="1.0000" Y="1.0000" />
                     <FileData Type="Normal" Path="gameEndNew/Photo_frame_02.png" Plist="" />
                   </AbstractNodeData>
+                  <AbstractNodeData Name="baojiuzhang" ActionTag="1124681274" Tag="98" IconVisible="False" LeftMargin="1.0000" RightMargin="-1.0000" TopMargin="2.0000" BottomMargin="-2.0000" LeftEage="42" RightEage="42" TopEage="40" BottomEage="40" Scale9OriginX="42" Scale9OriginY="40" Scale9Width="44" Scale9Height="44" ctype="ImageViewObjectData">
+                    <Size X="128.0000" Y="124.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="65.0000" Y="60.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5078" Y="0.4839" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="play-yli/Photo_frame_06.png" Plist="" />
+                  </AbstractNodeData>
                   <AbstractNodeData Name="zhuang" ActionTag="107729654" Tag="172" IconVisible="False" LeftMargin="15.5100" RightMargin="77.4900" TopMargin="86.2733" BottomMargin="2.7267" ctype="SpriteObjectData">
                     <Size X="35.0000" Y="35.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -494,13 +504,13 @@
                     <FileData Type="Normal" Path="play-yli/icon_zhuang.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="name" ActionTag="2052780396" Tag="1599" IconVisible="False" LeftMargin="30.0000" RightMargin="-22.0000" TopMargin="132.0000" BottomMargin="-32.0000" IsCustomSize="True" FontSize="24" LabelText="姓名姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="name" ActionTag="2052780396" Tag="1599" IconVisible="False" LeftMargin="13.7495" RightMargin="-5.7495" TopMargin="132.0000" BottomMargin="-32.0000" IsCustomSize="True" FontSize="24" LabelText="姓名姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="120.0000" Y="24.0000" />
                     <AnchorPoint ScaleY="0.5000" />
-                    <Position X="30.0000" Y="-20.0000" />
+                    <Position X="13.7495" Y="-20.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
-                    <PrePosition X="0.2344" Y="-0.1613" />
+                    <PrePosition X="0.1074" Y="-0.1613" />
                     <PreSize X="0.9375" Y="0.1935" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -527,25 +537,25 @@
                     <PreSize X="0.7656" Y="1.2258" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="cardType" ActionTag="2026398694" Tag="1605" IconVisible="False" LeftMargin="442.0000" RightMargin="-530.0000" TopMargin="17.0000" BottomMargin="83.0000" FontSize="24" LabelText="清一色清一色清一色" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="216.0000" Y="24.0000" />
+                  <AbstractNodeData Name="cardType" ActionTag="2026398694" Tag="1605" IconVisible="False" LeftMargin="228.5251" RightMargin="-500.5251" TopMargin="1.2452" BottomMargin="74.7548" IsCustomSize="True" FontSize="28" LabelText="清一色清一色清一色" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="400.0000" Y="48.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="550.0000" Y="95.0000" />
+                    <Position X="428.5251" Y="98.7548" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
-                    <PrePosition X="4.2969" Y="0.7661" />
-                    <PreSize X="1.6875" Y="0.1935" />
+                    <PrePosition X="3.3479" Y="0.7964" />
+                    <PreSize X="3.1250" Y="0.3871" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="winType" ActionTag="1172032648" Tag="1606" IconVisible="False" LeftMargin="721.2000" RightMargin="-665.2000" TopMargin="17.0000" BottomMargin="83.0000" FontSize="24" LabelText="4番4番" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="72.0000" Y="24.0000" />
+                  <AbstractNodeData Name="winType" ActionTag="1172032648" Tag="1606" IconVisible="False" LeftMargin="670.0001" RightMargin="-742.0001" TopMargin="5.0001" BottomMargin="70.9999" IsCustomSize="True" FontSize="28" LabelText="4番4番" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="200.0000" Y="48.0000" />
                     <AnchorPoint ScaleX="0.4000" ScaleY="0.5000" />
-                    <Position X="750.0000" Y="95.0000" />
+                    <Position X="750.0001" Y="94.9999" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
                     <PrePosition X="5.8594" Y="0.7661" />
-                    <PreSize X="0.5625" Y="0.1935" />
+                    <PreSize X="1.5625" Y="0.3871" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -647,13 +657,13 @@
                     <FileData Type="Normal" Path="play-yli/icon_zhuang.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="name" ActionTag="1244931692" Tag="589" IconVisible="False" LeftMargin="30.0000" RightMargin="-22.0000" TopMargin="132.0000" BottomMargin="-32.0000" IsCustomSize="True" FontSize="24" LabelText="姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="name" ActionTag="1244931692" Tag="589" IconVisible="False" LeftMargin="13.7495" RightMargin="-5.7495" TopMargin="132.0001" BottomMargin="-32.0001" IsCustomSize="True" FontSize="24" LabelText="姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="120.0000" Y="24.0000" />
                     <AnchorPoint ScaleY="0.5000" />
-                    <Position X="30.0000" Y="-20.0000" />
+                    <Position X="13.7495" Y="-20.0001" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
-                    <PrePosition X="0.2344" Y="-0.1613" />
+                    <PrePosition X="0.1074" Y="-0.1613" />
                     <PreSize X="0.9375" Y="0.1935" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -680,25 +690,25 @@
                     <PreSize X="0.7656" Y="1.2258" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="cardType" ActionTag="-105439568" Tag="591" IconVisible="False" LeftMargin="442.0000" RightMargin="-530.0000" TopMargin="17.0000" BottomMargin="83.0000" FontSize="24" LabelText="清一色清一色清一色" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="216.0000" Y="24.0000" />
+                  <AbstractNodeData Name="cardType" ActionTag="-105439568" Tag="591" IconVisible="False" LeftMargin="228.3478" RightMargin="-500.3478" TopMargin="2.5005" BottomMargin="73.4995" IsCustomSize="True" FontSize="28" LabelText="清一色清一色清一色" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="400.0000" Y="48.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="550.0000" Y="95.0000" />
+                    <Position X="428.3478" Y="97.4995" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
-                    <PrePosition X="4.2969" Y="0.7661" />
-                    <PreSize X="1.6875" Y="0.1935" />
+                    <PrePosition X="3.3465" Y="0.7863" />
+                    <PreSize X="3.1250" Y="0.3871" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="winType" ActionTag="881574935" Tag="592" IconVisible="False" LeftMargin="721.2000" RightMargin="-665.2000" TopMargin="17.0000" BottomMargin="83.0000" FontSize="24" LabelText="4番4番" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="72.0000" Y="24.0000" />
+                  <AbstractNodeData Name="winType" ActionTag="881574935" Tag="592" IconVisible="False" LeftMargin="670.0001" RightMargin="-742.0001" TopMargin="5.0001" BottomMargin="70.9999" IsCustomSize="True" FontSize="28" LabelText="4番4番" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="200.0000" Y="48.0000" />
                     <AnchorPoint ScaleX="0.4000" ScaleY="0.5000" />
-                    <Position X="750.0000" Y="95.0000" />
+                    <Position X="750.0001" Y="94.9999" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
                     <PrePosition X="5.8594" Y="0.7661" />
-                    <PreSize X="0.5625" Y="0.1935" />
+                    <PreSize X="1.5625" Y="0.3871" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -721,6 +731,16 @@
                     <PrePosition X="3.0078" Y="0.1935" />
                     <PreSize X="0.7656" Y="1.2258" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="baojiuzhang" ActionTag="-1055590317" Tag="99" IconVisible="False" LeftMargin="1.0000" RightMargin="-1.0000" TopMargin="2.0000" BottomMargin="-2.0000" LeftEage="42" RightEage="42" TopEage="40" BottomEage="40" Scale9OriginX="42" Scale9OriginY="40" Scale9Width="44" Scale9Height="44" ctype="ImageViewObjectData">
+                    <Size X="128.0000" Y="124.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="65.0000" Y="60.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5078" Y="0.4839" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="play-yli/Photo_frame_06.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -800,13 +820,13 @@
                     <FileData Type="Normal" Path="play-yli/icon_zhuang.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="name" ActionTag="2003753486" Tag="596" IconVisible="False" LeftMargin="30.0000" RightMargin="-22.0000" TopMargin="132.0000" BottomMargin="-32.0000" IsCustomSize="True" FontSize="24" LabelText="姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="name" ActionTag="2003753486" Tag="596" IconVisible="False" LeftMargin="13.7495" RightMargin="-5.7495" TopMargin="132.0004" BottomMargin="-32.0004" IsCustomSize="True" FontSize="24" LabelText="姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="120.0000" Y="24.0000" />
                     <AnchorPoint ScaleY="0.5000" />
-                    <Position X="30.0000" Y="-20.0000" />
+                    <Position X="13.7495" Y="-20.0004" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
-                    <PrePosition X="0.2344" Y="-0.1613" />
+                    <PrePosition X="0.1074" Y="-0.1613" />
                     <PreSize X="0.9375" Y="0.1935" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -833,25 +853,25 @@
                     <PreSize X="0.7656" Y="1.2258" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="cardType" ActionTag="-1368140419" Tag="598" IconVisible="False" LeftMargin="442.0000" RightMargin="-530.0000" TopMargin="17.0000" BottomMargin="83.0000" FontSize="24" LabelText="清一色清一色清一色" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="216.0000" Y="24.0000" />
+                  <AbstractNodeData Name="cardType" ActionTag="-1368140419" Tag="598" IconVisible="False" LeftMargin="228.3478" RightMargin="-500.3478" TopMargin="2.5005" BottomMargin="73.4995" IsCustomSize="True" FontSize="28" LabelText="清一色清一色清一色" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="400.0000" Y="48.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="550.0000" Y="95.0000" />
+                    <Position X="428.3478" Y="97.4995" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
-                    <PrePosition X="4.2969" Y="0.7661" />
-                    <PreSize X="1.6875" Y="0.1935" />
+                    <PrePosition X="3.3465" Y="0.7863" />
+                    <PreSize X="3.1250" Y="0.3871" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="winType" ActionTag="-606057301" Tag="599" IconVisible="False" LeftMargin="721.2000" RightMargin="-665.2000" TopMargin="17.0000" BottomMargin="83.0000" FontSize="24" LabelText="4番4番" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="72.0000" Y="24.0000" />
+                  <AbstractNodeData Name="winType" ActionTag="-606057301" Tag="599" IconVisible="False" LeftMargin="670.0001" RightMargin="-742.0001" TopMargin="5.0001" BottomMargin="70.9999" IsCustomSize="True" FontSize="28" LabelText="4番4番" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="200.0000" Y="48.0000" />
                     <AnchorPoint ScaleX="0.4000" ScaleY="0.5000" />
-                    <Position X="750.0000" Y="95.0000" />
+                    <Position X="750.0001" Y="94.9999" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
                     <PrePosition X="5.8594" Y="0.7661" />
-                    <PreSize X="0.5625" Y="0.1935" />
+                    <PreSize X="1.5625" Y="0.3871" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -874,6 +894,16 @@
                     <PrePosition X="3.0078" Y="0.1935" />
                     <PreSize X="0.7656" Y="1.2258" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="baojiuzhang" ActionTag="594136328" Tag="101" IconVisible="False" LeftMargin="1.0000" RightMargin="-1.0000" TopMargin="2.0000" BottomMargin="-2.0000" LeftEage="42" RightEage="42" TopEage="40" BottomEage="40" Scale9OriginX="42" Scale9OriginY="40" Scale9Width="44" Scale9Height="44" ctype="ImageViewObjectData">
+                    <Size X="128.0000" Y="124.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="65.0000" Y="60.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5078" Y="0.4839" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="play-yli/Photo_frame_06.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -953,13 +983,13 @@
                     <FileData Type="Normal" Path="play-yli/icon_zhuang.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="name" ActionTag="-1732873602" Tag="603" IconVisible="False" LeftMargin="30.0000" RightMargin="-22.0000" TopMargin="132.1368" BottomMargin="-32.1368" IsCustomSize="True" FontSize="24" LabelText="姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="name" ActionTag="-1732873602" Tag="603" IconVisible="False" LeftMargin="13.7495" RightMargin="-5.7495" TopMargin="132.1368" BottomMargin="-32.1368" IsCustomSize="True" FontSize="24" LabelText="姓名" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="120.0000" Y="24.0000" />
                     <AnchorPoint ScaleY="0.5057" />
-                    <Position X="30.0000" Y="-20.0000" />
+                    <Position X="13.7495" Y="-20.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
-                    <PrePosition X="0.2344" Y="-0.1613" />
+                    <PrePosition X="0.1074" Y="-0.1613" />
                     <PreSize X="0.9375" Y="0.1935" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -986,25 +1016,25 @@
                     <PreSize X="0.7656" Y="1.2258" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="cardType" ActionTag="-1079109547" Tag="605" IconVisible="False" LeftMargin="442.0000" RightMargin="-530.0000" TopMargin="17.0000" BottomMargin="83.0000" FontSize="24" LabelText="清一色清一色清一色" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="216.0000" Y="24.0000" />
+                  <AbstractNodeData Name="cardType" ActionTag="-1079109547" Tag="605" IconVisible="False" LeftMargin="228.3478" RightMargin="-500.3478" TopMargin="2.4999" BottomMargin="73.5001" IsCustomSize="True" FontSize="28" LabelText="清一色清一色清一色" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="400.0000" Y="48.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="550.0000" Y="95.0000" />
+                    <Position X="428.3478" Y="97.5001" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
-                    <PrePosition X="4.2969" Y="0.7661" />
-                    <PreSize X="1.6875" Y="0.1935" />
+                    <PrePosition X="3.3465" Y="0.7863" />
+                    <PreSize X="3.1250" Y="0.3871" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="winType" ActionTag="822435224" Tag="606" IconVisible="False" LeftMargin="721.2000" RightMargin="-665.2000" TopMargin="17.0000" BottomMargin="83.0000" FontSize="24" LabelText="4番4番" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="72.0000" Y="24.0000" />
+                  <AbstractNodeData Name="winType" ActionTag="822435224" Tag="606" IconVisible="False" LeftMargin="670.0001" RightMargin="-742.0001" TopMargin="5.0001" BottomMargin="70.9999" IsCustomSize="True" FontSize="28" LabelText="4番4番" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="200.0000" Y="48.0000" />
                     <AnchorPoint ScaleX="0.4000" ScaleY="0.5000" />
-                    <Position X="750.0000" Y="95.0000" />
+                    <Position X="750.0001" Y="94.9999" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="108" G="37" B="20" />
                     <PrePosition X="5.8594" Y="0.7661" />
-                    <PreSize X="0.5625" Y="0.1935" />
+                    <PreSize X="1.5625" Y="0.3871" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -1027,6 +1057,16 @@
                     <PrePosition X="3.0078" Y="0.1935" />
                     <PreSize X="0.7656" Y="1.2258" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="baojiuzhang" ActionTag="-673383142" Tag="100" IconVisible="False" LeftMargin="1.0000" RightMargin="-1.0000" TopMargin="2.0000" BottomMargin="-2.0000" LeftEage="42" RightEage="42" TopEage="40" BottomEage="40" Scale9OriginX="42" Scale9OriginY="40" Scale9Width="44" Scale9Height="44" ctype="ImageViewObjectData">
+                    <Size X="128.0000" Y="124.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="65.0000" Y="60.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5078" Y="0.4839" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="play-yli/Photo_frame_06.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

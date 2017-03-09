@@ -15,10 +15,15 @@ function GameNet()
 
     function ComputePingPong()
 	{
-	   reqPingPong.push(Date.now()-reqStart); if(reqPingPong.length>5) reqPingPong.splice(0,1);
-	   var pingpong=0;
-	   for(var i=0;i<reqPingPong.length;i++) pingpong+=reqPingPong[i];
-	   jsclient.reqPingPong=pingpong/reqPingPong.length;
+        reqPingPong.push(Date.now()-reqStart);
+        if(reqPingPong.length>5) 
+            reqPingPong.splice(0,1);
+        
+        var pingpong=0;
+        for(var i=0;i<reqPingPong.length;i++) 
+           pingpong+=reqPingPong[i];
+        
+        jsclient.reqPingPong=pingpong/reqPingPong.length;
 	}
 
     this.SetCallBack = function (evt,cb)

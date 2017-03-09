@@ -64,13 +64,13 @@
               <AbstractNodeData Name="moneyback" ActionTag="237765209" Tag="20" IconVisible="False" LeftMargin="108.7668" RightMargin="153.2332" TopMargin="72.4628" BottomMargin="10.5372" Scale9Enable="True" LeftEage="7" RightEage="7" TopEage="6" BottomEage="6" Scale9OriginX="7" Scale9OriginY="6" Scale9Width="8" Scale9Height="7" ctype="ImageViewObjectData">
                 <Size X="22.0000" Y="19.0000" />
                 <Children>
-                  <AbstractNodeData Name="moneyimg" ActionTag="-1678738702" VisibleForFrame="False" Tag="18" IconVisible="False" LeftMargin="105.7209" RightMargin="-105.7209" TopMargin="-162.8692" BottomMargin="162.8692" LeftEage="7" RightEage="7" TopEage="6" BottomEage="6" Scale9OriginX="7" Scale9OriginY="6" Scale9Width="8" Scale9Height="7" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="moneyimg" ActionTag="-1678738702" VisibleForFrame="False" Tag="18" IconVisible="False" LeftMargin="-3.2650" RightMargin="3.2650" TopMargin="-131.4104" BottomMargin="131.4104" LeftEage="7" RightEage="7" TopEage="6" BottomEage="6" Scale9OriginX="7" Scale9OriginY="6" Scale9Width="8" Scale9Height="7" ctype="ImageViewObjectData">
                     <Size X="22.0000" Y="19.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="116.7209" Y="172.3692" />
+                    <Position X="7.7350" Y="140.9104" />
                     <Scale ScaleX="0.8500" ScaleY="0.8500" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="5.3055" Y="9.0721" />
+                    <PrePosition X="0.3516" Y="7.4163" />
                     <PreSize X="1.0000" Y="1.0000" />
                     <FileData Type="Normal" Path="home-yli/Diamonds.png" Plist="" />
                   </AbstractNodeData>

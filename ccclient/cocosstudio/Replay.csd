@@ -92,25 +92,15 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="play-yli/bac_corner_02.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="zz_play_back" ActionTag="1296889993" Tag="839" IconVisible="False" LeftMargin="547.3794" RightMargin="-747.3794" TopMargin="-459.0854" BottomMargin="403.0854" LeftEage="71" RightEage="71" TopEage="16" BottomEage="16" Scale9OriginX="71" Scale9OriginY="16" Scale9Width="58" Scale9Height="24" ctype="ImageViewObjectData">
-                <Size X="200.0000" Y="56.0000" />
+              <AbstractNodeData Name="clb" ActionTag="1527128695" Tag="853" IconVisible="False" LeftMargin="-7.3863" RightMargin="-90.6137" TopMargin="-116.4774" BottomMargin="-17.5226" LeftEage="27" RightEage="27" TopEage="28" BottomEage="28" Scale9OriginX="27" Scale9OriginY="28" Scale9Width="44" Scale9Height="78" ctype="ImageViewObjectData">
+                <Size X="98.0000" Y="134.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="647.3794" Y="431.0854" />
+                <Position X="41.6137" Y="49.4774" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="play-yli/guangdongmajiang.png" Plist="" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="sy_name_back" ActionTag="-81328211" Tag="840" IconVisible="False" LeftMargin="545.3652" RightMargin="-745.3652" TopMargin="-461.7854" BottomMargin="405.7854" LeftEage="70" RightEage="70" TopEage="18" BottomEage="18" Scale9OriginX="70" Scale9OriginY="18" Scale9Width="60" Scale9Height="20" ctype="ImageViewObjectData">
-                <Size X="200.0000" Y="56.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="645.3652" Y="433.7854" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="play-yli/guangdongmajiang.png" Plist="" />
+                <FileData Type="Normal" Path="play-yli/bac_corner_03.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="clt" ActionTag="351239346" Tag="841" IconVisible="False" LeftMargin="-7.2487" RightMargin="-90.7513" TopMargin="-743.1836" BottomMargin="609.1836" LeftEage="27" RightEage="27" TopEage="28" BottomEage="28" Scale9OriginX="27" Scale9OriginY="28" Scale9Width="44" Scale9Height="78" ctype="ImageViewObjectData">
                 <Size X="98.0000" Y="134.0000" />
@@ -118,81 +108,6 @@
                   <AbstractNodeData Name="play" ActionTag="-1281379006" Tag="842" IconVisible="True" RightMargin="98.0000" TopMargin="134.0000" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
-                      <AbstractNodeData Name="canEat" Visible="False" ActionTag="-1638334738" Tag="843" IconVisible="False" LeftMargin="21.4681" RightMargin="-106.4681" TopMargin="-32.4498" BottomMargin="9.4498" ctype="SpriteObjectData">
-                        <Size X="85.0000" Y="23.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="63.9681" Y="20.9498" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="settlement/canEat.png" Plist="" />
-                        <BlendFunc Src="1" Dst="771" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="zzmj" Visible="False" ActionTag="-1032627232" Tag="844" IconVisible="False" LeftMargin="21.4681" RightMargin="-106.4681" TopMargin="-58.2116" BottomMargin="35.2116" ctype="SpriteObjectData">
-                        <Size X="85.0000" Y="23.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="63.9681" Y="46.7116" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="settlement/zzmj.png" Plist="" />
-                        <BlendFunc Src="1" Dst="771" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="symj" Visible="False" ActionTag="414045947" Tag="845" IconVisible="False" LeftMargin="21.4681" RightMargin="-106.4681" TopMargin="-57.8097" BottomMargin="36.8097" ctype="SpriteObjectData">
-                        <Size X="85.0000" Y="21.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="63.9681" Y="47.3097" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="settlement/symj.png" Plist="" />
-                        <BlendFunc Src="1" Dst="771" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="canEatHu" Visible="False" ActionTag="-2079439198" Tag="846" IconVisible="False" LeftMargin="22.5570" RightMargin="-85.5570" TopMargin="-32.5113" BottomMargin="10.5113" ctype="SpriteObjectData">
-                        <Size X="63.0000" Y="22.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="54.0570" Y="21.5113" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="settlement/canEatHu.png" Plist="" />
-                        <BlendFunc Src="1" Dst="771" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="withWind" Visible="False" ActionTag="-1477848950" Tag="847" IconVisible="False" LeftMargin="108.4091" RightMargin="-152.4091" TopMargin="-56.9974" BottomMargin="35.9974" ctype="SpriteObjectData">
-                        <Size X="44.0000" Y="21.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="130.4091" Y="46.4974" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="settlement/withWind.png" Plist="" />
-                        <BlendFunc Src="1" Dst="771" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="canHu7" Visible="False" ActionTag="1616594751" Tag="848" IconVisible="False" LeftMargin="19.6927" RightMargin="-63.6927" TopMargin="11.1982" BottomMargin="-32.1982" LeftEage="14" RightEage="14" TopEage="6" BottomEage="6" Scale9OriginX="14" Scale9OriginY="6" Scale9Width="16" Scale9Height="9" ctype="ImageViewObjectData">
-                        <Size X="44.0000" Y="21.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="41.6927" Y="-21.6982" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="settlement/withWind.png" Plist="" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="canHuWith258" Visible="False" ActionTag="-928436890" Tag="849" IconVisible="False" LeftMargin="40.9459" RightMargin="-84.9459" TopMargin="-10.1414" BottomMargin="-10.8586" LeftEage="14" RightEage="14" TopEage="6" BottomEage="6" Scale9OriginX="14" Scale9OriginY="6" Scale9Width="16" Scale9Height="9" ctype="ImageViewObjectData">
-                        <Size X="44.0000" Y="21.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="62.9459" Y="-0.3586" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="settlement/withWind.png" Plist="" />
-                      </AbstractNodeData>
                       <AbstractNodeData Name="canHu_hongzhong" ActionTag="1975277060" Tag="850" IconVisible="False" LeftMargin="15.9996" RightMargin="-117.9996" TopMargin="-96.9991" BottomMargin="-9.0009" LeftEage="33" RightEage="33" TopEage="34" BottomEage="34" Scale9OriginX="33" Scale9OriginY="34" Scale9Width="36" Scale9Height="38" ctype="ImageViewObjectData">
                         <Size X="102.0000" Y="106.0000" />
                         <Children>
@@ -244,15 +159,25 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="play-yli/bac_corner_01.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="clb" ActionTag="1527128695" Tag="853" IconVisible="False" LeftMargin="-7.3863" RightMargin="-90.6137" TopMargin="-116.4774" BottomMargin="-17.5226" LeftEage="27" RightEage="27" TopEage="28" BottomEage="28" Scale9OriginX="27" Scale9OriginY="28" Scale9Width="44" Scale9Height="78" ctype="ImageViewObjectData">
-                <Size X="98.0000" Y="134.0000" />
+              <AbstractNodeData Name="gdmj" ActionTag="-115531509" Tag="1884" IconVisible="False" LeftMargin="547.3800" RightMargin="-747.3800" TopMargin="-458.0500" BottomMargin="402.0500" LeftEage="71" RightEage="71" TopEage="16" BottomEage="16" Scale9OriginX="71" Scale9OriginY="16" Scale9Width="58" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="200.0000" Y="56.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="41.6137" Y="49.4774" />
+                <Position X="647.3800" Y="430.0500" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="play-yli/bac_corner_03.png" Plist="" />
+                <FileData Type="Normal" Path="play-yli/guangzhoumajiang.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="hzmj" ActionTag="-800266413" Tag="569" IconVisible="False" LeftMargin="547.3800" RightMargin="-747.3800" TopMargin="-459.0500" BottomMargin="403.0500" LeftEage="71" RightEage="71" TopEage="16" BottomEage="16" Scale9OriginX="71" Scale9OriginY="16" Scale9Width="58" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="200.0000" Y="56.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="647.3800" Y="431.0500" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="play-yli/huizhoumajiang.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
@@ -273,7 +198,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="png/Z_zhunbeizhuangt.png" Plist="" />
+                <FileData Type="Normal" Path="play-yli/Z_zhunbeizhuangt.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="up" ActionTag="2109488479" Tag="1089" IconVisible="False" LeftMargin="867.9374" RightMargin="-965.9374" TopMargin="-665.5167" BottomMargin="513.5167" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
@@ -407,17 +332,6 @@
                     <FileData Type="Normal" Path="play-yli/Photo_frame_03.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="moneybk" ActionTag="-649304604" Tag="1102" IconVisible="False" LeftMargin="21.2302" RightMargin="20.7698" TopMargin="146.0609" BottomMargin="-49.0609" ctype="SpriteObjectData">
-                    <Size X="86.0000" Y="27.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="64.2302" Y="-35.5609" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5018" Y="-0.2868" />
-                    <PreSize X="0.6719" Y="0.2177" />
-                    <FileData Type="Normal" Path="playing/other/Z_money_frame.png" Plist="" />
-                    <BlendFunc Src="1" Dst="771" />
-                  </AbstractNodeData>
                   <AbstractNodeData Name="coin" ActionTag="-359860639" Tag="1103" IconVisible="False" LeftMargin="40.2650" RightMargin="39.7350" TopMargin="146.2753" BottomMargin="-46.2753" FontSize="24" LabelText="1000" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
                     <Size X="48.0000" Y="24.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -429,17 +343,17 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="zhuang" ActionTag="1603790703" Tag="1104" IconVisible="False" LeftMargin="-3.6137" RightMargin="76.6137" TopMargin="72.0905" BottomMargin="-3.0905" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="9" Scale9Height="17" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="zhuang" ActionTag="1603790703" Tag="1104" IconVisible="False" LeftMargin="75.5000" RightMargin="-2.5000" TopMargin="71.5000" BottomMargin="-2.5000" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="9" Scale9Height="17" ctype="ImageViewObjectData">
                     <Size X="55.0000" Y="55.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="23.8863" Y="24.4095" />
+                    <Position X="103.0000" Y="25.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1866" Y="0.1969" />
+                    <PrePosition X="0.8047" Y="0.2016" />
                     <PreSize X="0.4297" Y="0.4435" />
                     <FileData Type="Normal" Path="play-yli/icon_zhuang.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="chatbg" ActionTag="1957669668" VisibleForFrame="False" Tag="1105" IconVisible="False" LeftMargin="107.8695" RightMargin="-135.8695" TopMargin="104.8615" BottomMargin="-46.8615" Scale9Enable="True" LeftEage="39" RightEage="39" TopEage="21" BottomEage="21" Scale9OriginX="39" Scale9OriginY="21" Scale9Width="78" Scale9Height="24" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="chatbg" ActionTag="1957669668" VisibleForFrame="False" Tag="1105" IconVisible="False" LeftMargin="-157.4159" RightMargin="129.4159" TopMargin="109.9302" BottomMargin="-51.9302" Scale9Enable="True" LeftEage="39" RightEage="39" TopEage="21" BottomEage="21" Scale9OriginX="39" Scale9OriginY="21" Scale9Width="78" Scale9Height="24" ctype="ImageViewObjectData">
                     <Size X="156.0000" Y="66.0000" />
                     <Children>
                       <AbstractNodeData Name="chattext" ActionTag="83569453" Tag="1106" IconVisible="False" LeftMargin="38.4543" RightMargin="-402.4543" TopMargin="25.9973" BottomMargin="14.0027" FontSize="26" LabelText="哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -466,22 +380,45 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleY="0.5000" />
-                    <Position X="107.8695" Y="-13.8615" />
+                    <Position X="-157.4159" Y="-18.9302" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.8427" Y="-0.1118" />
+                    <PrePosition X="-1.2298" Y="-0.1527" />
                     <PreSize X="1.2188" Y="0.5323" />
-                    <FileData Type="Normal" Path="playing/other/chatbg_top.png" Plist="" />
+                    <FileData Type="Normal" Path="playerchat/chatbg_top.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="emoji" ActionTag="-2134053632" VisibleForFrame="False" Tag="1108" IconVisible="False" LeftMargin="126.4752" RightMargin="-109.4752" TopMargin="79.9862" BottomMargin="-76.9862" LeftEage="36" RightEage="36" TopEage="39" BottomEage="39" Scale9OriginX="36" Scale9OriginY="39" Scale9Width="39" Scale9Height="43" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="hua" ActionTag="920094177" Tag="459" IconVisible="False" LeftMargin="17.0000" RightMargin="3.0000" TopMargin="181.0000" BottomMargin="-115.0000" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="40" Scale9Height="19" ctype="ImageViewObjectData">
+                    <Size X="108.0000" Y="58.0000" />
+                    <Children>
+                      <AbstractNodeData Name="hua_num" ActionTag="-1996405706" Tag="460" IconVisible="False" LeftMargin="61.4698" RightMargin="-133.4698" TopMargin="11.8273" BottomMargin="16.1727" IsCustomSize="True" FontSize="30" LabelText="0" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="180.0000" Y="30.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="151.4698" Y="31.1727" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="238" G="244" B="5" />
+                        <PrePosition X="1.4025" Y="0.5375" />
+                        <PreSize X="1.6667" Y="0.5172" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="71.0000" Y="-86.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5547" Y="-0.6935" />
+                    <PreSize X="0.8438" Y="0.4677" />
+                    <FileData Type="Normal" Path="play-yli/icon_hua.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="emoji" ActionTag="-2134053632" VisibleForFrame="False" Tag="1108" IconVisible="False" LeftMargin="-126.9784" RightMargin="143.9784" TopMargin="66.4659" BottomMargin="-63.4659" LeftEage="36" RightEage="36" TopEage="39" BottomEage="39" Scale9OriginX="10" Scale9OriginY="7" Scale9Width="26" Scale9Height="32" ctype="ImageViewObjectData">
                     <Size X="111.0000" Y="121.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="181.9752" Y="-16.4862" />
+                    <Position X="-71.4784" Y="-2.9659" />
                     <Scale ScaleX="0.8000" ScaleY="0.8000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.4217" Y="-0.1330" />
+                    <PrePosition X="-0.5584" Y="-0.0239" />
                     <PreSize X="0.8672" Y="0.9758" />
-                    <FileData Type="Normal" Path="chat/happy.png" Plist="" />
+                    <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -545,6 +482,16 @@
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="play-yli/t-hu.png" Plist="" />
                   </AbstractNodeData>
+                  <AbstractNodeData Name="ef_hua" ActionTag="802400993" Tag="462" IconVisible="False" LeftMargin="816.4938" RightMargin="-923.4938" TopMargin="-545.6622" BottomMargin="440.6622" LeftEage="35" RightEage="35" TopEage="34" BottomEage="34" Scale9OriginX="35" Scale9OriginY="34" Scale9Width="37" Scale9Height="37" ctype="ImageViewObjectData">
+                    <Size X="107.0000" Y="105.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="869.9938" Y="493.1622" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="play-yli/t_hua.png" Plist="" />
+                  </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
                 <Position />
@@ -572,7 +519,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="png/Z_zhunbeizhuangt.png" Plist="" />
+                <FileData Type="Normal" Path="play-yli/Z_zhunbeizhuangt.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="stand" ActionTag="-929573548" Tag="1061" IconVisible="False" LeftMargin="131.8155" RightMargin="-187.8155" TopMargin="-320.4816" BottomMargin="198.4816" LeftEage="7" RightEage="7" TopEage="19" BottomEage="19" Scale9OriginX="7" Scale9OriginY="19" Scale9Width="42" Scale9Height="84" ctype="ImageViewObjectData">
@@ -685,17 +632,6 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="moneybk" Visible="False" ActionTag="-2066852324" Tag="1072" IconVisible="False" LeftMargin="24.8406" RightMargin="17.1594" TopMargin="144.0603" BottomMargin="-47.0603" ctype="SpriteObjectData">
-                    <Size X="86.0000" Y="27.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="67.8406" Y="-33.5603" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5300" Y="-0.2706" />
-                    <PreSize X="0.6719" Y="0.2177" />
-                    <FileData Type="Normal" Path="playing/other/Z_money_frame.png" Plist="" />
-                    <BlendFunc Src="1" Dst="771" />
-                  </AbstractNodeData>
                   <AbstractNodeData Name="kuang" ActionTag="1883717904" Tag="1073" IconVisible="False" LeftMargin="5.1580" RightMargin="-5.1580" TopMargin="-2.4370" BottomMargin="2.4370" LeftEage="42" RightEage="42" TopEage="40" BottomEage="40" Scale9OriginX="42" Scale9OriginY="40" Scale9Width="44" Scale9Height="44" ctype="ImageViewObjectData">
                     <Size X="128.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -728,13 +664,13 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="zhuang" ActionTag="1493494586" Tag="1076" IconVisible="False" LeftMargin="-4.1087" RightMargin="77.1087" TopMargin="70.6825" BottomMargin="-1.6825" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="9" Scale9Height="17" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="zhuang" ActionTag="1493494586" Tag="1076" IconVisible="False" LeftMargin="75.5000" RightMargin="-2.5000" TopMargin="71.5000" BottomMargin="-2.5000" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="9" Scale9Height="17" ctype="ImageViewObjectData">
                     <Size X="55.0000" Y="55.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="23.3913" Y="25.8175" />
+                    <Position X="103.0000" Y="25.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1827" Y="0.2082" />
+                    <PrePosition X="0.8047" Y="0.2016" />
                     <PreSize X="0.4297" Y="0.4435" />
                     <FileData Type="Normal" Path="play-yli/icon_zhuang.png" Plist="" />
                   </AbstractNodeData>
@@ -770,9 +706,9 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7029" Y="0.9469" />
                     <PreSize X="1.0781" Y="0.5323" />
-                    <FileData Type="Normal" Path="playing/other/chatbg_lt.png" Plist="" />
+                    <FileData Type="Normal" Path="playerchat/chatbg_lt.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="emoji" ActionTag="-598086794" VisibleForFrame="False" Tag="1080" IconVisible="False" LeftMargin="138.5197" RightMargin="-121.5197" TopMargin="35.3348" BottomMargin="-32.3348" LeftEage="36" RightEage="36" TopEage="39" BottomEage="39" Scale9OriginX="36" Scale9OriginY="39" Scale9Width="39" Scale9Height="43" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="emoji" ActionTag="-598086794" VisibleForFrame="False" Tag="1080" IconVisible="False" LeftMargin="138.5197" RightMargin="-121.5197" TopMargin="35.3348" BottomMargin="-32.3348" LeftEage="36" RightEage="36" TopEage="39" BottomEage="39" Scale9OriginX="10" Scale9OriginY="7" Scale9Width="26" Scale9Height="32" ctype="ImageViewObjectData">
                     <Size X="111.0000" Y="121.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="194.0197" Y="28.1652" />
@@ -780,7 +716,30 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="1.5158" Y="0.2271" />
                     <PreSize X="0.8672" Y="0.9758" />
-                    <FileData Type="Normal" Path="chat/happy.png" Plist="" />
+                    <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="hua" ActionTag="1105609329" Tag="457" IconVisible="False" LeftMargin="23.6459" RightMargin="-3.6459" TopMargin="187.8428" BottomMargin="-121.8428" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="40" Scale9Height="19" ctype="ImageViewObjectData">
+                    <Size X="108.0000" Y="58.0000" />
+                    <Children>
+                      <AbstractNodeData Name="hua_num" ActionTag="-90340875" Tag="458" IconVisible="False" LeftMargin="61.4698" RightMargin="-133.4698" TopMargin="11.8273" BottomMargin="16.1727" IsCustomSize="True" FontSize="30" LabelText="0" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="180.0000" Y="30.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="151.4698" Y="31.1727" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="238" G="244" B="5" />
+                        <PrePosition X="1.4025" Y="0.5375" />
+                        <PreSize X="1.6667" Y="0.5172" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="77.6459" Y="-92.8428" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.6066" Y="-0.7487" />
+                    <PreSize X="0.8438" Y="0.4677" />
+                    <FileData Type="Normal" Path="play-yli/icon_hua.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -794,10 +753,10 @@
               <AbstractNodeData Name="effectStateAct" ActionTag="1307866597" Tag="1081" IconVisible="True" LeftMargin="-144.0000" RightMargin="144.0000" TopMargin="10.0000" BottomMargin="-10.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="ef_gang" ActionTag="783634639" Tag="1082" IconVisible="False" LeftMargin="327.0200" RightMargin="-434.0200" TopMargin="-542.5000" BottomMargin="437.5000" LeftEage="35" RightEage="35" TopEage="34" BottomEage="34" Scale9OriginX="35" Scale9OriginY="34" Scale9Width="37" Scale9Height="37" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="ef_gang" ActionTag="783634639" Tag="1082" IconVisible="False" LeftMargin="313.9945" RightMargin="-420.9945" TopMargin="-445.5239" BottomMargin="340.5239" LeftEage="35" RightEage="35" TopEage="34" BottomEage="34" Scale9OriginX="35" Scale9OriginY="34" Scale9Width="37" Scale9Height="37" ctype="ImageViewObjectData">
                     <Size X="107.0000" Y="105.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="380.5200" Y="490.0000" />
+                    <Position X="367.4945" Y="393.0239" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -824,10 +783,10 @@
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="play-yli/t_chi.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="ef_guo" ActionTag="353134674" Tag="1085" IconVisible="False" LeftMargin="327.0902" RightMargin="-434.0902" TopMargin="-298.8683" BottomMargin="193.8683" LeftEage="35" RightEage="35" TopEage="34" BottomEage="34" Scale9OriginX="35" Scale9OriginY="34" Scale9Width="37" Scale9Height="37" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="ef_guo" ActionTag="353134674" Tag="1085" IconVisible="False" LeftMargin="321.3022" RightMargin="-428.3022" TopMargin="-433.4797" BottomMargin="328.4797" LeftEage="35" RightEage="35" TopEage="34" BottomEage="34" Scale9OriginX="35" Scale9OriginY="34" Scale9Width="37" Scale9Height="37" ctype="ImageViewObjectData">
                     <Size X="107.0000" Y="105.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="380.5902" Y="246.3683" />
+                    <Position X="374.8022" Y="380.9797" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -843,6 +802,16 @@
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="play-yli/t-hu.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="ef_hua" ActionTag="-2055015541" Tag="463" IconVisible="False" LeftMargin="321.3467" RightMargin="-428.3467" TopMargin="-438.6879" BottomMargin="333.6879" LeftEage="35" RightEage="35" TopEage="34" BottomEage="34" Scale9OriginX="35" Scale9OriginY="34" Scale9Width="37" Scale9Height="37" ctype="ImageViewObjectData">
+                    <Size X="107.0000" Y="105.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="374.8467" Y="386.1879" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="play-yli/t_hua.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
@@ -871,7 +840,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="png/Z_zhunbeizhuangt.png" Plist="" />
+                <FileData Type="Normal" Path="play-yli/Z_zhunbeizhuangt.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="up" ActionTag="-1118926630" Tag="1032" IconVisible="False" LeftMargin="135.3711" RightMargin="-233.3711" TopMargin="-139.4432" BottomMargin="-12.5568" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
@@ -996,17 +965,6 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="moneybk" Visible="False" ActionTag="670354880" Tag="1044" IconVisible="False" LeftMargin="24.0874" RightMargin="17.9126" TopMargin="146.0603" BottomMargin="-49.0603" ctype="SpriteObjectData">
-                    <Size X="86.0000" Y="27.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="67.0874" Y="-35.5603" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5241" Y="-0.2868" />
-                    <PreSize X="0.6719" Y="0.2177" />
-                    <FileData Type="Normal" Path="playing/other/Z_money_frame.png" Plist="" />
-                    <BlendFunc Src="1" Dst="771" />
-                  </AbstractNodeData>
                   <AbstractNodeData Name="offline" ActionTag="-571900825" Tag="1045" IconVisible="False" LeftMargin="3.2337" RightMargin="-3.2337" TopMargin="-3.6014" BottomMargin="3.6014" ctype="SpriteObjectData">
                     <Size X="128.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -1039,13 +997,13 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="zhuang" ActionTag="717610265" Tag="1048" IconVisible="False" LeftMargin="-2.5724" RightMargin="75.5724" TopMargin="71.4377" BottomMargin="-2.4377" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="9" Scale9Height="17" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="zhuang" ActionTag="717610265" Tag="1048" IconVisible="False" LeftMargin="75.5000" RightMargin="-2.5000" TopMargin="71.5000" BottomMargin="-2.5000" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="9" Scale9Height="17" ctype="ImageViewObjectData">
                     <Size X="55.0000" Y="55.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="24.9276" Y="25.0623" />
+                    <Position X="103.0000" Y="25.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1947" Y="0.2021" />
+                    <PrePosition X="0.8047" Y="0.2016" />
                     <PreSize X="0.4297" Y="0.4435" />
                     <FileData Type="Normal" Path="play-yli/icon_zhuang.png" Plist="" />
                   </AbstractNodeData>
@@ -1081,9 +1039,9 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.6889" Y="0.9343" />
                     <PreSize X="0.9375" Y="0.5323" />
-                    <FileData Type="Normal" Path="playing/other/chatbg_ld.png" Plist="" />
+                    <FileData Type="Normal" Path="playerchat/chatbg_ld.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="emoji" ActionTag="1212230202" VisibleForFrame="False" Tag="1052" IconVisible="False" LeftMargin="118.5197" RightMargin="-101.5197" TopMargin="15.3348" BottomMargin="-12.3348" LeftEage="36" RightEage="36" TopEage="39" BottomEage="39" Scale9OriginX="36" Scale9OriginY="39" Scale9Width="39" Scale9Height="43" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="emoji" ActionTag="1212230202" VisibleForFrame="False" Tag="1052" IconVisible="False" LeftMargin="118.5197" RightMargin="-101.5197" TopMargin="15.3348" BottomMargin="-12.3348" LeftEage="36" RightEage="36" TopEage="39" BottomEage="39" Scale9OriginX="10" Scale9OriginY="7" Scale9Width="26" Scale9Height="32" ctype="ImageViewObjectData">
                     <Size X="111.0000" Y="121.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="174.0197" Y="48.1652" />
@@ -1091,7 +1049,30 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="1.3595" Y="0.3884" />
                     <PreSize X="0.8672" Y="0.9758" />
-                    <FileData Type="Normal" Path="chat/happy.png" Plist="" />
+                    <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="hua" ActionTag="1735414663" Tag="455" IconVisible="False" LeftMargin="9.3265" RightMargin="10.6735" TopMargin="194.5245" BottomMargin="-128.5245" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="40" Scale9Height="19" ctype="ImageViewObjectData">
+                    <Size X="108.0000" Y="58.0000" />
+                    <Children>
+                      <AbstractNodeData Name="hua_num" ActionTag="-1835892523" Tag="456" IconVisible="False" LeftMargin="61.4698" RightMargin="-133.4698" TopMargin="11.8273" BottomMargin="16.1727" IsCustomSize="True" FontSize="30" LabelText="0" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="180.0000" Y="30.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="151.4698" Y="31.1727" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="238" G="244" B="5" />
+                        <PrePosition X="1.4025" Y="0.5375" />
+                        <PreSize X="1.6667" Y="0.5172" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="63.3265" Y="-99.5245" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4947" Y="-0.8026" />
+                    <PreSize X="0.8438" Y="0.4677" />
+                    <FileData Type="Normal" Path="play-yli/icon_hua.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -1145,15 +1126,25 @@
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="play-yli/t_guo.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="ef_hu" ActionTag="-1367964547" Tag="1058" IconVisible="False" LeftMargin="737.9095" RightMargin="-993.9095" TopMargin="-616.4999" BottomMargin="363.4999" LeftEage="84" RightEage="84" TopEage="83" BottomEage="83" Scale9OriginX="84" Scale9OriginY="83" Scale9Width="88" Scale9Height="87" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="ef_hu" ActionTag="-1367964547" Tag="1058" IconVisible="False" LeftMargin="494.7451" RightMargin="-750.7451" TopMargin="-623.7409" BottomMargin="370.7409" LeftEage="84" RightEage="84" TopEage="83" BottomEage="83" Scale9OriginX="84" Scale9OriginY="83" Scale9Width="88" Scale9Height="87" ctype="ImageViewObjectData">
                     <Size X="256.0000" Y="253.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="865.9095" Y="489.9999" />
+                    <Position X="622.7451" Y="497.2409" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="play-yli/t-hu.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="ef_hua" ActionTag="-1542635048" Tag="464" IconVisible="False" LeftMargin="575.9634" RightMargin="-682.9634" TopMargin="-554.6160" BottomMargin="449.6160" LeftEage="35" RightEage="35" TopEage="34" BottomEage="34" Scale9OriginX="35" Scale9OriginY="34" Scale9Width="37" Scale9Height="37" ctype="ImageViewObjectData">
+                    <Size X="107.0000" Y="105.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="629.4634" Y="502.1160" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="play-yli/t_hua.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
@@ -1182,7 +1173,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="png/Z_zhunbeizhuangt.png" Plist="" />
+                <FileData Type="Normal" Path="play-yli/Z_zhunbeizhuangt.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="up" ActionTag="-675855991" Tag="1004" IconVisible="False" LeftMargin="1042.6179" RightMargin="-1164.6179" TopMargin="-286.5436" BottomMargin="188.5436" LeftEage="16" RightEage="16" TopEage="13" BottomEage="13" Scale9OriginX="16" Scale9OriginY="13" Scale9Width="90" Scale9Height="72" ctype="ImageViewObjectData">
@@ -1305,17 +1296,6 @@
                     <PreSize X="1.0000" Y="1.0000" />
                     <FileData Type="Normal" Path="play-yli/Photo_frame_02.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="moneybk" ActionTag="-2013698347" Tag="1016" IconVisible="False" LeftMargin="24.0870" RightMargin="17.9130" TopMargin="146.0603" BottomMargin="-49.0603" ctype="SpriteObjectData">
-                    <Size X="86.0000" Y="27.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="67.0870" Y="-35.5603" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5241" Y="-0.2868" />
-                    <PreSize X="0.6719" Y="0.2177" />
-                    <FileData Type="Normal" Path="playing/other/Z_money_frame.png" Plist="" />
-                    <BlendFunc Src="1" Dst="771" />
-                  </AbstractNodeData>
                   <AbstractNodeData Name="offline" Visible="False" ActionTag="329349120" Tag="1017" IconVisible="False" LeftMargin="6.5028" RightMargin="-6.5028" TopMargin="-8.5439" BottomMargin="8.5439" ctype="SpriteObjectData">
                     <Size X="128.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -1338,13 +1318,13 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="zhuang" ActionTag="1017364827" Tag="1019" IconVisible="False" LeftMargin="-3.9963" RightMargin="76.9963" TopMargin="71.2762" BottomMargin="-2.2762" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="9" Scale9Height="17" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="zhuang" ActionTag="1017364827" Tag="1019" IconVisible="False" LeftMargin="75.5000" RightMargin="-2.5000" TopMargin="71.5000" BottomMargin="-2.5000" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="9" Scale9Height="17" ctype="ImageViewObjectData">
                     <Size X="55.0000" Y="55.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="23.5037" Y="25.2238" />
+                    <Position X="103.0000" Y="25.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1836" Y="0.2034" />
+                    <PrePosition X="0.8047" Y="0.2016" />
                     <PreSize X="0.4297" Y="0.4435" />
                     <FileData Type="Normal" Path="play-yli/icon_zhuang.png" Plist="" />
                   </AbstractNodeData>
@@ -1380,9 +1360,9 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.0504" Y="0.9418" />
                     <PreSize X="1.2188" Y="0.5323" />
-                    <FileData Type="Normal" Path="playing/other/chatbg_rd.png" Plist="" />
+                    <FileData Type="Normal" Path="playerchat/chatbg_rd.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="emoji" ActionTag="374963586" VisibleForFrame="False" Tag="1023" IconVisible="False" LeftMargin="-136.0881" RightMargin="153.0881" TopMargin="6.4332" BottomMargin="-3.4332" LeftEage="36" RightEage="36" TopEage="39" BottomEage="39" Scale9OriginX="36" Scale9OriginY="39" Scale9Width="39" Scale9Height="43" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="emoji" ActionTag="374963586" VisibleForFrame="False" Tag="1023" IconVisible="False" LeftMargin="-136.0881" RightMargin="153.0881" TopMargin="6.4332" BottomMargin="-3.4332" LeftEage="36" RightEage="36" TopEage="39" BottomEage="39" Scale9OriginX="10" Scale9OriginY="7" Scale9Width="26" Scale9Height="32" ctype="ImageViewObjectData">
                     <Size X="111.0000" Y="121.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="-80.5881" Y="57.0668" />
@@ -1390,7 +1370,30 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="-0.6296" Y="0.4602" />
                     <PreSize X="0.8672" Y="0.9758" />
-                    <FileData Type="Normal" Path="chat/happy.png" Plist="" />
+                    <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="hua" ActionTag="1804916841" Tag="453" IconVisible="False" LeftMargin="17.0410" RightMargin="2.9590" TopMargin="181.2387" BottomMargin="-115.2387" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="40" Scale9Height="19" ctype="ImageViewObjectData">
+                    <Size X="108.0000" Y="58.0000" />
+                    <Children>
+                      <AbstractNodeData Name="hua_num" ActionTag="-604438366" Tag="454" IconVisible="False" LeftMargin="61.4698" RightMargin="-133.4698" TopMargin="11.8273" BottomMargin="16.1727" IsCustomSize="True" FontSize="30" LabelText="0" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="180.0000" Y="30.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="151.4698" Y="31.1727" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="238" G="244" B="5" />
+                        <PrePosition X="1.4025" Y="0.5375" />
+                        <PreSize X="1.6667" Y="0.5172" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="71.0410" Y="-86.2387" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5550" Y="-0.6955" />
+                    <PreSize X="0.8438" Y="0.4677" />
+                    <FileData Type="Normal" Path="play-yli/icon_hua.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -1401,7 +1404,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="play-yli/Photo_frame_01.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="effectStateAct" Visible="False" ActionTag="-601034040" Tag="1024" IconVisible="True" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="effectStateAct" ActionTag="-601034040" Tag="1024" IconVisible="True" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="ef_gang" ActionTag="232148817" Tag="1025" IconVisible="False" LeftMargin="-0.3708" RightMargin="-106.6292" TopMargin="-50.6808" BottomMargin="-54.3192" LeftEage="35" RightEage="35" TopEage="34" BottomEage="34" Scale9OriginX="35" Scale9OriginY="34" Scale9Width="37" Scale9Height="37" ctype="ImageViewObjectData">
@@ -1454,6 +1457,16 @@
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="play-yli/t-hu.png" Plist="" />
                   </AbstractNodeData>
+                  <AbstractNodeData Name="ef_hua" ActionTag="1407472539" Tag="461" IconVisible="False" LeftMargin="-48.9380" RightMargin="-58.0620" TopMargin="-56.2985" BottomMargin="-48.7015" LeftEage="35" RightEage="35" TopEage="34" BottomEage="34" Scale9OriginX="35" Scale9OriginY="34" Scale9Width="37" Scale9Height="37" ctype="ImageViewObjectData">
+                    <Size X="107.0000" Y="105.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="4.5620" Y="3.7985" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="play-yli/t_hua.png" Plist="" />
+                  </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
                 <Position />
@@ -1469,26 +1482,6 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="bianL" Visible="False" ActionTag="115296396" Tag="856" IconVisible="False" LeftMargin="-171.4357" RightMargin="1247.4357" TopMargin="642.9310" BottomMargin="44.0690" LeftEage="67" RightEage="67" TopEage="10" BottomEage="10" Scale9OriginX="67" Scale9OriginY="10" Scale9Width="70" Scale9Height="13" ctype="ImageViewObjectData">
-            <Size X="204.0000" Y="33.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-69.4357" Y="60.5690" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="-0.0542" Y="0.0841" />
-            <PreSize X="0.1594" Y="0.0458" />
-            <FileData Type="Normal" Path="play-yli/floor_07.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="bianR" Visible="False" ActionTag="1978868641" Tag="857" IconVisible="False" LeftMargin="722.9872" RightMargin="353.0128" TopMargin="642.1336" BottomMargin="44.8664" LeftEage="67" RightEage="67" TopEage="10" BottomEage="10" Scale9OriginX="67" Scale9OriginY="10" Scale9Width="70" Scale9Height="13" ctype="ImageViewObjectData">
-            <Size X="204.0000" Y="33.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="824.9872" Y="61.3664" />
-            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.6445" Y="0.0852" />
-            <PreSize X="0.1594" Y="0.0458" />
-            <FileData Type="Normal" Path="play-yli/floor_07.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="banner" ActionTag="-2063832094" Tag="854" IconVisible="False" LeftMargin="95.6298" RightMargin="97.3701" TopMargin="-23.7609" BottomMargin="666.7609" LeftEage="220" RightEage="220" TopEage="29" BottomEage="29" Scale9OriginX="220" Scale9OriginY="29" Scale9Width="647" Scale9Height="19" ctype="ImageViewObjectData">
             <Size X="1087.0000" Y="77.0000" />
@@ -1638,7 +1631,7 @@
             <CColor A="255" R="229" G="229" B="229" />
             <PrePosition X="0.6075" Y="0.5123" />
             <PreSize X="0.0859" Y="0.0375" />
-            <FileData Type="Normal" Path="playing/other/roundnumbg.png" Plist="" />
+            <FileData Type="Normal" Path="play-yli/roundnumbg.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="cardNumImg" ActionTag="1895184865" Tag="164" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="459.4320" RightMargin="710.5680" TopMargin="338.3640" BottomMargin="354.6360" LeftEage="30" RightEage="30" TopEage="10" BottomEage="10" Scale9OriginX="30" Scale9OriginY="10" Scale9Width="50" Scale9Height="7" ctype="ImageViewObjectData">
             <Size X="110.0000" Y="27.0000" />
@@ -1683,7 +1676,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4019" Y="0.5113" />
             <PreSize X="0.0859" Y="0.0375" />
-            <FileData Type="Normal" Path="playing/other/roundnumbg.png" Plist="" />
+            <FileData Type="Normal" Path="play-yli/roundnumbg.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="arrowbk" ActionTag="-752025084" Tag="865" IconVisible="False" LeftMargin="571.7892" RightMargin="570.2108" TopMargin="295.9751" BottomMargin="287.0249" LeftEage="36" RightEage="36" TopEage="36" BottomEage="36" Scale9OriginX="36" Scale9OriginY="36" Scale9Width="66" Scale9Height="65" ctype="ImageViewObjectData">
             <Size X="138.0000" Y="137.0000" />
@@ -1729,7 +1722,7 @@
             <PreSize X="0.1078" Y="0.1903" />
             <FileData Type="Normal" Path="play-yli/floor_02.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="wait" Visible="False" ActionTag="442423253" Tag="900" IconVisible="True" PositionPercentXEnabled="True" PositionPercentYEnabled="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="wait" ActionTag="442423253" Tag="900" IconVisible="True" PositionPercentXEnabled="True" PositionPercentYEnabled="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="wxinvite" ActionTag="963092211" Tag="623" IconVisible="False" LeftMargin="562.8400" RightMargin="-732.8400" TopMargin="-394.6685" BottomMargin="329.6685" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -1788,10 +1781,10 @@
           <AbstractNodeData Name="eat" ActionTag="-2072976172" Tag="946" IconVisible="True" RightMargin="1280.0000" TopMargin="720.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="gang0" ActionTag="-484038438" Tag="947" IconVisible="False" LeftMargin="587.8206" RightMargin="-668.8206" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="gang0" Visible="False" ActionTag="-484038438" Tag="947" IconVisible="False" LeftMargin="587.8206" RightMargin="-668.8206" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="81.0000" Y="82.0000" />
                 <Children>
-                  <AbstractNodeData Name="bgground" Visible="False" ActionTag="-2098811282" Tag="948" IconVisible="False" LeftMargin="-120.3629" RightMargin="-28.6371" TopMargin="-12.0383" BottomMargin="-6.9617" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="80" Scale9Height="35" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="bgground" ActionTag="-2098811282" Tag="948" IconVisible="False" LeftMargin="-120.3629" RightMargin="-28.6371" TopMargin="-12.0383" BottomMargin="-6.9617" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="80" Scale9Height="35" ctype="ImageViewObjectData">
                     <Size X="230.0000" Y="101.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="-5.3629" Y="43.5383" />
@@ -1799,9 +1792,9 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="-0.0662" Y="0.5310" />
                     <PreSize X="2.8395" Y="1.2317" />
-                    <FileData Type="Normal" Path="setting/pai_bottom.png" Plist="" />
+                    <FileData Type="Normal" Path="play-yli/pai_bottom.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="bgimg" Visible="False" ActionTag="881450772" Tag="949" IconVisible="False" LeftMargin="1.5294" RightMargin="5.4706" TopMargin="11.9345" BottomMargin="0.0655" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="bgimg" ActionTag="881450772" Tag="949" IconVisible="False" LeftMargin="1.5294" RightMargin="5.4706" TopMargin="11.9345" BottomMargin="0.0655" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
                     <Size X="74.0000" Y="70.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="38.5294" Y="35.0655" />
@@ -1809,7 +1802,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4757" Y="0.4276" />
                     <PreSize X="0.9136" Y="0.8537" />
-                    <FileData Type="Normal" Path="setting/penggang_bottom.png" Plist="" />
+                    <FileData Type="Normal" Path="play-yli/penggang_bottom.png" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="card1" ActionTag="1027441423" Tag="950" IconVisible="False" LeftMargin="-82.1576" RightMargin="65.1576" TopMargin="-34.0000" BottomMargin="-36.0000" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
                     <Size X="98.0000" Y="152.0000" />
@@ -1847,96 +1840,96 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gang1" Visible="False" ActionTag="-1825344072" Tag="952" IconVisible="False" LeftMargin="590.5609" RightMargin="-671.5609" TopMargin="-276.3864" BottomMargin="207.3864" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="47" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="81.0000" Y="69.0000" />
-                <Children>
-                  <AbstractNodeData Name="card" ActionTag="606704668" Tag="953" IconVisible="False" LeftMargin="48.3997" RightMargin="-65.3997" TopMargin="-45.6006" BottomMargin="-37.3994" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
-                    <Size X="98.0000" Y="152.0000" />
-                    <Children>
-                      <AbstractNodeData Name="num" ActionTag="1566323041" Tag="1115" IconVisible="False" LeftMargin="31.4553" RightMargin="-7.4553" TopMargin="58.9092" BottomMargin="-6.9092" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="26" Scale9Height="34" ctype="ImageViewObjectData">
-                        <Size X="74.0000" Y="100.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="68.4553" Y="43.0908" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.6985" Y="0.2835" />
-                        <PreSize X="0.7551" Y="0.6579" />
-                        <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="97.3997" Y="38.6006" />
-                    <Scale ScaleX="0.6000" ScaleY="0.6000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.2025" Y="0.5594" />
-                    <PreSize X="1.2099" Y="2.2029" />
-                    <FileData Type="Normal" Path="MaJiangNew/mj_bg2.png" Plist="" />
-                  </AbstractNodeData>
-                </Children>
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="631.0609" Y="241.8864" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition />
-                <PreSize X="0.0000" Y="0.0000" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="png/pghg/Z_gang_light.png" Plist="" />
-                <NormalFileData Type="Normal" Path="png/pghg/Z_gang.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="gang2" Visible="False" ActionTag="-998658718" Tag="954" IconVisible="False" LeftMargin="590.5609" RightMargin="-671.5609" TopMargin="-352.7031" BottomMargin="283.7031" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="47" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="81.0000" Y="69.0000" />
-                <Children>
-                  <AbstractNodeData Name="card" ActionTag="2010782150" Tag="955" IconVisible="False" LeftMargin="49.0000" RightMargin="-66.0000" TopMargin="-51.0003" BottomMargin="-31.9997" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
-                    <Size X="98.0000" Y="152.0000" />
-                    <Children>
-                      <AbstractNodeData Name="num" ActionTag="1583771687" Tag="1116" IconVisible="False" LeftMargin="48.1220" RightMargin="-24.1220" TopMargin="75.5759" BottomMargin="-23.5759" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="26" Scale9Height="34" ctype="ImageViewObjectData">
-                        <Size X="74.0000" Y="100.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="85.1220" Y="26.4241" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.8686" Y="0.1738" />
-                        <PreSize X="0.7551" Y="0.6579" />
-                        <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="98.0000" Y="44.0003" />
-                    <Scale ScaleX="0.6000" ScaleY="0.6000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.2099" Y="0.6377" />
-                    <PreSize X="1.2099" Y="2.2029" />
-                    <FileData Type="Normal" Path="MaJiangNew/mj_bg2.png" Plist="" />
-                  </AbstractNodeData>
-                </Children>
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="631.0609" Y="318.2031" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition />
-                <PreSize X="0.0000" Y="0.0000" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="png/pghg/Z_gang_light.png" Plist="" />
-                <NormalFileData Type="Normal" Path="png/pghg/Z_gang.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="guo" ActionTag="1722056885" Tag="956" IconVisible="False" LeftMargin="833.4879" RightMargin="-914.4879" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="gang1" ActionTag="-1825344072" Tag="952" IconVisible="False" LeftMargin="590.5610" RightMargin="-671.5610" TopMargin="-312.8865" BottomMargin="230.8865" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="81.0000" Y="82.0000" />
                 <Children>
-                  <AbstractNodeData Name="bgimg" Visible="False" ActionTag="-2124282494" Tag="957" IconVisible="False" LeftMargin="-5.8320" RightMargin="12.8320" TopMargin="11.9337" BottomMargin="0.0663" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="card" ActionTag="606704668" Tag="953" IconVisible="False" LeftMargin="65.3994" RightMargin="-82.3994" TopMargin="-35.6004" BottomMargin="-34.3996" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                    <Size X="98.0000" Y="152.0000" />
+                    <Children>
+                      <AbstractNodeData Name="num" ActionTag="1566323041" Tag="1115" IconVisible="False" LeftMargin="9.6669" RightMargin="14.3331" TopMargin="38.6667" BottomMargin="13.3333" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="26" Scale9Height="34" ctype="ImageViewObjectData">
+                        <Size X="74.0000" Y="100.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="46.6669" Y="63.3333" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.4762" Y="0.4167" />
+                        <PreSize X="0.7551" Y="0.6579" />
+                        <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="114.3994" Y="41.6004" />
+                    <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="1.4123" Y="0.5073" />
+                    <PreSize X="1.2099" Y="1.8537" />
+                    <FileData Type="Normal" Path="MaJiangNew/mj_bg2.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="631.0610" Y="271.8865" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <PressedFileData Type="Normal" Path="play-yli/btn_gang_press.png" Plist="" />
+                <NormalFileData Type="Normal" Path="play-yli/btn_gang_normal.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="gang2" ActionTag="-998658718" Tag="954" IconVisible="False" LeftMargin="590.5609" RightMargin="-671.5609" TopMargin="-409.2031" BottomMargin="327.2031" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="81.0000" Y="82.0000" />
+                <Children>
+                  <AbstractNodeData Name="card" ActionTag="2010782150" Tag="955" IconVisible="False" LeftMargin="64.9998" RightMargin="-81.9998" TopMargin="-35.9997" BottomMargin="-34.0003" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                    <Size X="98.0000" Y="152.0000" />
+                    <Children>
+                      <AbstractNodeData Name="num" ActionTag="1583771687" Tag="1116" IconVisible="False" LeftMargin="10.1221" RightMargin="13.8779" TopMargin="39.5763" BottomMargin="12.4237" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="26" Scale9Height="34" ctype="ImageViewObjectData">
+                        <Size X="74.0000" Y="100.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="47.1221" Y="62.4237" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.4808" Y="0.4107" />
+                        <PreSize X="0.7551" Y="0.6579" />
+                        <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="113.9998" Y="41.9997" />
+                    <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="1.4074" Y="0.5122" />
+                    <PreSize X="1.2099" Y="1.8537" />
+                    <FileData Type="Normal" Path="MaJiangNew/mj_bg2.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="631.0609" Y="368.2031" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <PressedFileData Type="Normal" Path="play-yli/btn_gang_press.png" Plist="" />
+                <NormalFileData Type="Normal" Path="play-yli/btn_gang_normal.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="guo" Visible="False" ActionTag="1722056885" Tag="956" IconVisible="False" LeftMargin="833.4879" RightMargin="-914.4879" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="81.0000" Y="82.0000" />
+                <Children>
+                  <AbstractNodeData Name="bgimg" ActionTag="-2124282494" Tag="957" IconVisible="False" LeftMargin="1.0972" RightMargin="5.9028" TopMargin="5.8706" BottomMargin="6.1294" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
                     <Size X="74.0000" Y="70.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="31.1680" Y="35.0663" />
+                    <Position X="38.0972" Y="41.1294" />
                     <Scale ScaleX="1.2000" ScaleY="1.2000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.3848" Y="0.4276" />
+                    <PrePosition X="0.4703" Y="0.5016" />
                     <PreSize X="0.9136" Y="0.8537" />
-                    <FileData Type="Normal" Path="setting/penggang_bottom.png" Plist="" />
+                    <FileData Type="Normal" Path="play-yli/penggang_bottom.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -1952,10 +1945,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="hu" ActionTag="1703929692" Tag="958" IconVisible="False" LeftMargin="366.0042" RightMargin="-447.0042" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="hu" Visible="False" ActionTag="1703929692" Tag="958" IconVisible="False" LeftMargin="366.0042" RightMargin="-447.0042" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="81.0000" Y="82.0000" />
                 <Children>
-                  <AbstractNodeData Name="bgground" Visible="False" ActionTag="593822317" Tag="959" IconVisible="False" LeftMargin="-116.8823" RightMargin="-32.1177" TopMargin="-14.2798" BottomMargin="-4.7202" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="80" Scale9Height="35" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="bgground" ActionTag="593822317" Tag="959" IconVisible="False" LeftMargin="-116.8823" RightMargin="-32.1177" TopMargin="-14.2798" BottomMargin="-4.7202" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="80" Scale9Height="35" ctype="ImageViewObjectData">
                     <Size X="230.0000" Y="101.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="-1.8823" Y="45.7798" />
@@ -1963,17 +1956,17 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="-0.0232" Y="0.5583" />
                     <PreSize X="2.8395" Y="1.2317" />
-                    <FileData Type="Normal" Path="setting/pai_bottom.png" Plist="" />
+                    <FileData Type="Normal" Path="play-yli/pai_bottom.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="bgimg" Visible="False" ActionTag="926157053" Tag="960" IconVisible="False" LeftMargin="-1.9331" RightMargin="8.9331" TopMargin="11.2842" BottomMargin="0.7158" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="bgimg" ActionTag="926157053" Tag="960" IconVisible="False" LeftMargin="8.4602" RightMargin="-1.4602" TopMargin="12.1498" BottomMargin="-0.1498" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
                     <Size X="74.0000" Y="70.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="35.0669" Y="35.7158" />
+                    <Position X="45.4602" Y="34.8502" />
                     <Scale ScaleX="1.2000" ScaleY="1.2000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4329" Y="0.4356" />
+                    <PrePosition X="0.5612" Y="0.4250" />
                     <PreSize X="0.9136" Y="0.8537" />
-                    <FileData Type="Normal" Path="setting/penggang_bottom.png" Plist="" />
+                    <FileData Type="Normal" Path="play-yli/penggang_bottom.png" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="card1" ActionTag="1136035096" Tag="961" IconVisible="False" LeftMargin="-72.4024" RightMargin="55.4024" TopMargin="-35.5818" BottomMargin="-34.4182" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
                     <Size X="98.0000" Y="152.0000" />
@@ -2011,10 +2004,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="peng" ActionTag="860422122" Tag="963" IconVisible="False" LeftMargin="471.2208" RightMargin="-552.2208" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="peng" Visible="False" ActionTag="860422122" Tag="963" IconVisible="False" LeftMargin="471.2208" RightMargin="-552.2208" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="81.0000" Y="82.0000" />
                 <Children>
-                  <AbstractNodeData Name="bgground" Visible="False" ActionTag="841223175" Tag="964" IconVisible="False" LeftMargin="-112.6107" RightMargin="-36.3893" TopMargin="-7.1509" BottomMargin="-11.8491" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="80" Scale9Height="35" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="bgground" ActionTag="841223175" Tag="964" IconVisible="False" LeftMargin="-112.6107" RightMargin="-36.3893" TopMargin="-7.1509" BottomMargin="-11.8491" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="80" Scale9Height="35" ctype="ImageViewObjectData">
                     <Size X="230.0000" Y="101.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="2.3893" Y="38.6509" />
@@ -2022,9 +2015,9 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.0295" Y="0.4714" />
                     <PreSize X="2.8395" Y="1.2317" />
-                    <FileData Type="Normal" Path="setting/pai_bottom.png" Plist="" />
+                    <FileData Type="Normal" Path="play-yli/pai_bottom.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="bgimg" Visible="False" ActionTag="1672115604" Tag="965" IconVisible="False" LeftMargin="1.7559" RightMargin="5.2441" TopMargin="13.0274" BottomMargin="-1.0274" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="bgimg" ActionTag="1672115604" Tag="965" IconVisible="False" LeftMargin="1.7559" RightMargin="5.2441" TopMargin="13.0274" BottomMargin="-1.0274" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
                     <Size X="74.0000" Y="70.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="38.7559" Y="33.9726" />
@@ -2032,7 +2025,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4785" Y="0.4143" />
                     <PreSize X="0.9136" Y="0.8537" />
-                    <FileData Type="Normal" Path="setting/penggang_bottom.png" Plist="" />
+                    <FileData Type="Normal" Path="play-yli/penggang_bottom.png" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="card1" ActionTag="-1488360580" Tag="966" IconVisible="False" LeftMargin="-83.2672" RightMargin="66.2672" TopMargin="-34.0000" BottomMargin="-36.0000" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
                     <Size X="98.0000" Y="152.0000" />
@@ -2070,10 +2063,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="chi0" ActionTag="2123635293" Tag="968" IconVisible="False" LeftMargin="734.6613" RightMargin="-815.6613" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="chi0" Visible="False" ActionTag="2123635293" Tag="968" IconVisible="False" LeftMargin="734.6613" RightMargin="-815.6613" TopMargin="-221.0000" BottomMargin="139.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="81.0000" Y="82.0000" />
                 <Children>
-                  <AbstractNodeData Name="bgground" Visible="False" ActionTag="645857102" Tag="969" IconVisible="False" LeftMargin="-118.3949" RightMargin="-30.6051" TopMargin="-7.0202" BottomMargin="-11.9798" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="80" Scale9Height="35" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="bgground" ActionTag="645857102" Tag="969" IconVisible="False" LeftMargin="-118.3949" RightMargin="-30.6051" TopMargin="-7.0202" BottomMargin="-11.9798" LeftEage="75" RightEage="75" TopEage="33" BottomEage="33" Scale9OriginX="75" Scale9OriginY="33" Scale9Width="80" Scale9Height="35" ctype="ImageViewObjectData">
                     <Size X="230.0000" Y="101.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="-3.3949" Y="38.5202" />
@@ -2081,17 +2074,17 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="-0.0419" Y="0.4698" />
                     <PreSize X="2.8395" Y="1.2317" />
-                    <FileData Type="Normal" Path="setting/pai_bottom.png" Plist="" />
+                    <FileData Type="Normal" Path="play-yli/pai_bottom.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="bgimg" Visible="False" ActionTag="-1645927540" Tag="970" IconVisible="False" LeftMargin="-7.1286" RightMargin="14.1286" TopMargin="17.7783" BottomMargin="-5.7783" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="bgimg" ActionTag="-1645927540" Tag="970" IconVisible="False" LeftMargin="8.4617" RightMargin="-1.4617" TopMargin="10.8491" BottomMargin="1.1509" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
                     <Size X="74.0000" Y="70.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="29.8714" Y="29.2217" />
+                    <Position X="45.4617" Y="36.1509" />
                     <Scale ScaleX="1.2000" ScaleY="1.2000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.3688" Y="0.3564" />
+                    <PrePosition X="0.5613" Y="0.4409" />
                     <PreSize X="0.9136" Y="0.8537" />
-                    <FileData Type="Normal" Path="setting/penggang_bottom.png" Plist="" />
+                    <FileData Type="Normal" Path="play-yli/penggang_bottom.png" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="card1" ActionTag="-865609784" Tag="971" IconVisible="False" LeftMargin="-81.2654" RightMargin="64.2654" TopMargin="-34.0000" BottomMargin="-36.0000" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
                     <Size X="98.0000" Y="152.0000" />
@@ -2115,47 +2108,47 @@
                     <PreSize X="1.2099" Y="1.8537" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg2.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card2" ActionTag="646428141" VisibleForFrame="False" Tag="973" IconVisible="False" LeftMargin="79.9100" RightMargin="-96.9100" TopMargin="-22.2490" BottomMargin="-47.7510" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="card2" ActionTag="646428141" Tag="973" IconVisible="False" LeftMargin="72.1123" RightMargin="-89.1123" TopMargin="-127.9172" BottomMargin="57.9172" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
                     <Size X="98.0000" Y="152.0000" />
                     <Children>
-                      <AbstractNodeData Name="num" ActionTag="-1081013027" Tag="1000" IconVisible="False" LeftMargin="29.6667" RightMargin="-5.6667" TopMargin="58.6666" BottomMargin="-6.6666" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="26" Scale9Height="34" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="num" ActionTag="-1081013027" Tag="1000" IconVisible="False" LeftMargin="14.5259" RightMargin="9.4741" TopMargin="40.2797" BottomMargin="11.7203" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="26" Scale9Height="34" ctype="ImageViewObjectData">
                         <Size X="74.0000" Y="100.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="66.6667" Y="43.3334" />
+                        <Position X="51.5259" Y="61.7203" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.6803" Y="0.2851" />
+                        <PrePosition X="0.5258" Y="0.4061" />
                         <PreSize X="0.7551" Y="0.6579" />
                         <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="128.9100" Y="28.2490" />
+                    <Position X="121.1123" Y="133.9172" />
                     <Scale ScaleX="0.6000" ScaleY="0.6000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.5915" Y="0.3445" />
+                    <PrePosition X="1.4952" Y="1.6331" />
                     <PreSize X="1.2099" Y="1.8537" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg2.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card3" ActionTag="-335482172" VisibleForFrame="False" Tag="974" IconVisible="False" LeftMargin="123.6013" RightMargin="-140.6013" TopMargin="-21.4977" BottomMargin="-48.5023" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="card3" ActionTag="-335482172" Tag="974" IconVisible="False" LeftMargin="73.3637" RightMargin="-90.3637" TopMargin="-229.3696" BottomMargin="159.3696" LeftEage="11" RightEage="11" TopEage="18" BottomEage="18" Scale9OriginX="11" Scale9OriginY="18" Scale9Width="76" Scale9Height="116" ctype="ImageViewObjectData">
                     <Size X="98.0000" Y="152.0000" />
                     <Children>
-                      <AbstractNodeData Name="num" ActionTag="1999531752" Tag="1001" IconVisible="False" LeftMargin="46.3333" RightMargin="-22.3333" TopMargin="75.3332" BottomMargin="-23.3332" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="26" Scale9Height="34" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="num" ActionTag="1999531752" Tag="1001" IconVisible="False" LeftMargin="12.8023" RightMargin="11.1977" TopMargin="37.4766" BottomMargin="14.5234" LeftEage="24" RightEage="24" TopEage="33" BottomEage="33" Scale9OriginX="24" Scale9OriginY="33" Scale9Width="26" Scale9Height="34" ctype="ImageViewObjectData">
                         <Size X="74.0000" Y="100.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="83.3333" Y="26.6668" />
+                        <Position X="49.8023" Y="64.5234" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.8503" Y="0.1754" />
+                        <PrePosition X="0.5082" Y="0.4245" />
                         <PreSize X="0.7551" Y="0.6579" />
                         <FileData Type="Normal" Path="MaJiangNew/mj_91.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="172.6013" Y="27.4977" />
+                    <Position X="122.3637" Y="235.3696" />
                     <Scale ScaleX="0.6000" ScaleY="0.6000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="2.1309" Y="0.3353" />
+                    <PrePosition X="1.5107" Y="2.8704" />
                     <PreSize X="1.2099" Y="1.8537" />
                     <FileData Type="Normal" Path="MaJiangNew/mj_bg2.png" Plist="" />
                   </AbstractNodeData>
@@ -2173,33 +2166,33 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="chi1" Visible="False" ActionTag="1896546829" Tag="975" IconVisible="False" LeftMargin="707.3393" RightMargin="-766.3393" TopMargin="-281.3865" BottomMargin="220.3865" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="29" Scale9Height="39" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="59.0000" Y="61.0000" />
+              <AbstractNodeData Name="chi1" ActionTag="1896546829" Tag="975" IconVisible="False" LeftMargin="736.1828" RightMargin="-817.1828" TopMargin="-310.9414" BottomMargin="228.9414" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="81.0000" Y="82.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="736.8393" Y="250.8865" />
+                <Position X="776.6828" Y="269.9414" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="png/pghg/chi.png" Plist="" />
-                <NormalFileData Type="Normal" Path="png/pghg/chi.png" Plist="" />
+                <PressedFileData Type="Normal" Path="play-yli/btn_chi_press.png" Plist="" />
+                <NormalFileData Type="Normal" Path="play-yli/btn_chi_normal.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="chi2" Visible="False" ActionTag="538292022" Tag="976" IconVisible="False" LeftMargin="706.3392" RightMargin="-765.3392" TopMargin="-349.7032" BottomMargin="288.7032" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="29" Scale9Height="39" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="59.0000" Y="61.0000" />
+              <AbstractNodeData Name="chi2" ActionTag="538292022" Tag="976" IconVisible="False" LeftMargin="736.0494" RightMargin="-817.0494" TopMargin="-409.5729" BottomMargin="327.5729" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="81.0000" Y="82.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="735.8392" Y="319.2032" />
+                <Position X="776.5494" Y="368.5729" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="png/pghg/chi.png" Plist="" />
-                <NormalFileData Type="Normal" Path="png/pghg/chi.png" Plist="" />
+                <PressedFileData Type="Normal" Path="play-yli/btn_chi_press.png" Plist="" />
+                <NormalFileData Type="Normal" Path="play-yli/btn_chi_normal.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -2410,23 +2403,23 @@
                       <AbstractNodeData Name="guobg" ActionTag="117972105" Tag="997" IconVisible="False" LeftMargin="288.1644" RightMargin="20.8356" TopMargin="0.3125" BottomMargin="15.6875" LeftEage="24" RightEage="24" TopEage="23" BottomEage="23" Scale9OriginX="24" Scale9OriginY="23" Scale9Width="26" Scale9Height="24" ctype="ImageViewObjectData">
                         <Size X="74.0000" Y="70.0000" />
                         <Children>
-                          <AbstractNodeData Name="guo" ActionTag="-77966048" VisibleForFrame="False" Tag="998" IconVisible="False" LeftMargin="4.2783" RightMargin="-3.2783" TopMargin="3.2794" BottomMargin="-2.2794" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="22" BottomEage="22" Scale9OriginX="24" Scale9OriginY="22" Scale9Width="25" Scale9Height="25" ctype="ImageViewObjectData">
-                            <Size X="73.0000" Y="69.0000" />
+                          <AbstractNodeData Name="guo" ActionTag="-77966048" Tag="998" IconVisible="False" LeftMargin="0.2783" RightMargin="-7.2783" TopMargin="-3.2206" BottomMargin="-8.7794" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="22" BottomEage="22" Scale9OriginX="24" Scale9OriginY="22" Scale9Width="33" Scale9Height="38" ctype="ImageViewObjectData">
+                            <Size X="81.0000" Y="82.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="40.7783" Y="32.2206" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition X="0.5511" Y="0.4603" />
-                            <PreSize X="0.9865" Y="0.9857" />
-                            <FileData Type="Normal" Path="png/pghg/Z_guo.png" Plist="" />
+                            <PreSize X="1.0946" Y="1.1714" />
+                            <FileData Type="Normal" Path="play-yli/btn_guo_normal.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="fanhui" ActionTag="-811711906" Tag="999" IconVisible="False" LeftMargin="1.8263" RightMargin="-0.8263" TopMargin="6.4732" BottomMargin="-10.4732" TouchEnable="True" LeftEage="23" RightEage="23" TopEage="27" BottomEage="27" Scale9OriginX="23" Scale9OriginY="27" Scale9Width="27" Scale9Height="20" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="fanhui" ActionTag="-811711906" Tag="999" IconVisible="False" LeftMargin="5.4332" RightMargin="-4.4332" TopMargin="3.5877" BottomMargin="-7.5877" TouchEnable="True" LeftEage="23" RightEage="23" TopEage="27" BottomEage="27" Scale9OriginX="23" Scale9OriginY="27" Scale9Width="27" Scale9Height="20" ctype="ImageViewObjectData">
                             <Size X="73.0000" Y="74.0000" />
-                            <AnchorPoint ScaleX="0.5300" ScaleY="0.3914" />
-                            <Position X="40.5163" Y="18.4904" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="41.9332" Y="29.4123" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5475" Y="0.2641" />
+                            <PrePosition X="0.5667" Y="0.4202" />
                             <PreSize X="0.9865" Y="1.0571" />
                             <FileData Type="Normal" Path="play-yli/btn_fanhui_normal.png" Plist="" />
                           </AbstractNodeData>
@@ -2437,7 +2430,7 @@
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.8490" Y="0.5894" />
                         <PreSize X="0.1932" Y="0.8140" />
-                        <FileData Type="Normal" Path="setting/penggang_bottom.png" Plist="" />
+                        <FileData Type="Normal" Path="play-yli/penggang_bottom.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -2527,7 +2520,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="kuaijin_btn" ActionTag="1703070023" VisibleForFrame="False" Tag="562" IconVisible="False" LeftMargin="341.6454" RightMargin="213.3546" TopMargin="51.9875" BottomMargin="20.0125" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="29" Scale9Height="31" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="kuaijin_btn" ActionTag="1703070023" VisibleForFrame="False" Tag="562" IconVisible="False" LeftMargin="341.6454" RightMargin="213.3546" TopMargin="51.9875" BottomMargin="20.0125" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="59.0000" Y="53.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="371.1454" Y="46.5125" />
@@ -2537,12 +2530,12 @@
                 <PreSize X="0.0961" Y="0.4240" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="wait/kuaijin_h.png" Plist="" />
-                <NormalFileData Type="Normal" Path="wait/kuaijin.png" Plist="" />
+                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="kuaitui_btn" ActionTag="1492571690" VisibleForFrame="False" Tag="563" IconVisible="False" LeftMargin="54.7895" RightMargin="500.2105" TopMargin="50.2502" BottomMargin="21.7498" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="29" Scale9Height="31" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="kuaitui_btn" ActionTag="1492571690" VisibleForFrame="False" Tag="563" IconVisible="False" LeftMargin="54.7895" RightMargin="500.2105" TopMargin="50.2502" BottomMargin="21.7498" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="59.0000" Y="53.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="84.2895" Y="48.2498" />
@@ -2552,8 +2545,8 @@
                 <PreSize X="0.0961" Y="0.4240" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="wait/kuaitui_j.png" Plist="" />
-                <NormalFileData Type="Normal" Path="wait/kuaitui.png" Plist="" />
+                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

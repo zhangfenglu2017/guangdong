@@ -16,7 +16,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="gameEndNew/bac-3.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="table" ActionTag="1946438988" Tag="311" IconVisible="False" LeftMargin="-594.3500" RightMargin="503.3500" TopMargin="-306.9285" BottomMargin="-237.0715" ctype="SpriteObjectData">
+          <AbstractNodeData Name="table" ActionTag="1946438988" Tag="311" IconVisible="False" LeftMargin="-571.8500" RightMargin="525.8500" TopMargin="-57.9285" BottomMargin="11.9285" ctype="SpriteObjectData">
             <Size X="91.0000" Y="544.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-548.8500" Y="34.9285" />
@@ -24,7 +24,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="gradeNew/t_achievement.png" Plist="" />
+            <FileData Type="Normal" Path="webview/t_achievement.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="close" ActionTag="1593421528" Tag="312" IconVisible="False" LeftMargin="515.5400" RightMargin="-590.5400" TopMargin="-361.9943" BottomMargin="291.9943" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="45" Scale9Height="48" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -88,7 +88,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1240" Y="0.5112" />
                 <PreSize X="0.2434" Y="0.9496" />
-                <FileData Type="Normal" Path="gradeNew/floor_15.png" Plist="" />
+                <FileData Type="Normal" Path="webview/floor_15.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="num" ActionTag="-1466756019" Tag="302" IconVisible="False" LeftMargin="15.0900" RightMargin="950.9100" TopMargin="43.7100" BottomMargin="35.2900" FontSize="60" LabelText="120" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="90.0000" Y="60.0000" />
@@ -176,9 +176,9 @@
                 <PrePosition X="0.8526" Y="0.4859" />
                 <PreSize X="0.1610" Y="0.4676" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Normal" Path="gradeNew/btn_playback_press.png" Plist="" />
-                <PressedFileData Type="Normal" Path="gradeNew/btn_playback_press.png" Plist="" />
-                <NormalFileData Type="Normal" Path="gradeNew/btn_playback_normal.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="dissolveRoomNew/btn_playback_press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="dissolveRoomNew/btn_playback_press.png" Plist="" />
+                <NormalFileData Type="Normal" Path="dissolveRoomNew/btn_playback_normal.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

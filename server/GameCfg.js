@@ -13,7 +13,11 @@ module.exports = function(app,server,gameid){return {
    },
    initData:
    {
-	   coin:0,
+	   coin:5000,
 	   money:9
+   },
+   full4create:function(para)// para 是创建房间的参数,比如phz可能返回3或者4
+   {
+      return 4;
    }
 }}

@@ -4,6 +4,7 @@ function changeLabelAtals(node,count)
 	node.setString("" + count);
 	return ;
 
+    
     // var changeLabelAtals_size = node.getVirtualRendererSize();
     // var  stringnum = node.getString();
     // var oneNumwith ;
@@ -43,6 +44,8 @@ function changeLabelAtals(node,count)
     // }
     // node.setSize(size);
     // node.setString(count);
+    
+    
 }
 
 //跑马灯 文字
@@ -226,8 +229,7 @@ var HomeLayer=cc.Layer.extend(
 			_layout:[[0.107,0.107],[1,0.99],[-1.9,-0.6]],
 			_click:function()
             {
-                //jsclient.data.noticeSwitch = 0;
-				 jsclient.openWeb({url:jsclient.remoteCfg.helpUrl, help:true,noticeSwitch:0});
+				jsclient.openWeb(2);
 			}
 		},
 
@@ -257,7 +259,7 @@ var HomeLayer=cc.Layer.extend(
 			_layout:[[0.135,0.135],[0.15,0.075],[0,0]],
 			_click:function()
             {
-				jsclient.openWeb({url:jsclient.remoteCfg.helpUrl, help:false,noticeSwitch:1});
+				jsclient.openWeb(0);
 			}
 		},
 

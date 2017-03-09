@@ -27,7 +27,7 @@ function SetEndAllPlayerUI(node,off)
                 return unescape(pl.info.nickname||pl.info.name)+"";
             }
         },
-
+                        
         id:
         {
             _text:function ()
@@ -82,7 +82,8 @@ function SetEndAllPlayerUI(node,off)
     }
 }
 
-var EndAllLayer = cc.Layer.extend({
+var EndAllLayer = cc.Layer.extend(
+    {
     sprite:null,
 
 	jsBind:
@@ -177,7 +178,8 @@ var EndAllLayer = cc.Layer.extend({
         backbar2: {_layout: [[0.85, 1], [0.55, 0.44], [0, 0]]},
         backbar3: {_layout: [[0.85, 1], [0.55, 0.26], [0, 0]]},
 	},
-    ctor:function () {
+    ctor:function () 
+    {
         this._super();
         var endallui = ccs.load(res.EndAll_json);
 		ConnectUI2Logic(endallui.node,this.jsBind);

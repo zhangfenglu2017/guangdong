@@ -17,13 +17,13 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "login-yli/bac_01.png",
+              "Path": "loading/bac_01.png",
               "Plist": ""
             },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 15,
+            "Scale9Width": 1250,
+            "Scale9Height": 690,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -58,7 +58,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "update/logo_01.png",
+              "Path": "loading/logo_01.png",
               "Plist": ""
             },
             "Scale9OriginX": 282,
@@ -109,18 +109,18 @@
               "B": 70
             },
             "DisabledFileData": {
-              "Type": "Default",
-              "Path": "Default/Button_Disable.png",
+              "Type": "Normal",
+              "Path": "loading/btn_sign_in_press.png",
               "Plist": ""
             },
             "PressedFileData": {
               "Type": "Normal",
-              "Path": "login-yli/btn_sign_in_press.png",
+              "Path": "loading/btn_sign_in_press.png",
               "Plist": ""
             },
             "NormalFileData": {
               "Type": "Normal",
-              "Path": "login-yli/btn_sign_in_normal.png",
+              "Path": "loading/btn_sign_in_normal.png",
               "Plist": ""
             },
             "Scale9Enable": true,
@@ -171,7 +171,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "login-yli/ot-1.png",
+                  "Path": "loading/ot-1.png",
                   "Plist": ""
                 },
                 "Scale9OriginX": 134,
@@ -222,18 +222,18 @@
                   "B": 70
                 },
                 "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
+                  "Type": "Normal",
+                  "Path": "loading/agree.png",
                   "Plist": ""
                 },
                 "PressedFileData": {
                   "Type": "Normal",
-                  "Path": "login-yli/agree.png",
+                  "Path": "loading/agree.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "login-yli/agree.png",
+                  "Path": "loading/agree.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
@@ -292,27 +292,27 @@
                 "CheckedState": true,
                 "NormalBackFileData": {
                   "Type": "Normal",
-                  "Path": "login-yli/lattice.png",
+                  "Path": "loading/lattice.png",
                   "Plist": ""
                 },
                 "PressedBackFileData": {
                   "Type": "Normal",
-                  "Path": "login-yli/lattice.png",
+                  "Path": "loading/lattice.png",
                   "Plist": ""
                 },
                 "DisableBackFileData": {
-                  "Type": "Default",
-                  "Path": "Default/CheckBox_Disable.png",
+                  "Type": "Normal",
+                  "Path": "loading/lattice.png",
                   "Plist": ""
                 },
                 "NodeNormalFileData": {
                   "Type": "Normal",
-                  "Path": "login-yli/Duigou.png",
+                  "Path": "loading/Duigou.png",
                   "Plist": ""
                 },
                 "NodeDisableFileData": {
-                  "Type": "Normal",
-                  "Path": "login-yli/Duigou.png",
+                  "Type": "Default",
+                  "Path": "Default/CheckBoxNode_Disable.png",
                   "Plist": ""
                 },
                 "TouchEnable": true,
@@ -371,18 +371,18 @@
               "B": 70
             },
             "DisabledFileData": {
-              "Type": "Default",
-              "Path": "Default/Button_Disable.png",
+              "Type": "Normal",
+              "Path": "loading/btn_visitor_press.png",
               "Plist": ""
             },
             "PressedFileData": {
               "Type": "Normal",
-              "Path": "login-yli/btn_visitor_press.png",
+              "Path": "loading/btn_visitor_press.png",
               "Plist": ""
             },
             "NormalFileData": {
               "Type": "Normal",
-              "Path": "login-yli/btn_visitor_normal.png",
+              "Path": "loading/btn_visitor_normal.png",
               "Plist": ""
             },
             "Scale9Enable": true,
@@ -485,6 +485,57 @@
             },
             "Name": "version",
             "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 121.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.1681
+            },
+            "PreSize": {
+              "X": 0.875,
+              "Y": 0.0278
+            },
+            "LeftMargin": 80.0,
+            "RightMargin": 80.0,
+            "TopMargin": 589.0,
+            "BottomMargin": 111.0,
+            "Tag": 50,
+            "ActionTag": -1021228742,
+            "Size": {
+              "X": 1120.0,
+              "Y": 20.0
+            },
+            "Name": "fitnessTips",
+            "ctype": "TextObjectData"
           }
         ],
         "Size": {
@@ -495,18 +546,17 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "Default/Button_Disable.png",
-        "Default/CheckBox_Disable.png",
-        "login-yli/agree.png",
-        "login-yli/bac_01.png",
-        "login-yli/btn_sign_in_normal.png",
-        "login-yli/btn_sign_in_press.png",
-        "login-yli/btn_visitor_normal.png",
-        "login-yli/btn_visitor_press.png",
-        "login-yli/Duigou.png",
-        "login-yli/lattice.png",
-        "login-yli/ot-1.png",
-        "update/logo_01.png"
+        "Default/CheckBoxNode_Disable.png",
+        "loading/agree.png",
+        "loading/bac_01.png",
+        "loading/btn_sign_in_normal.png",
+        "loading/btn_sign_in_press.png",
+        "loading/btn_visitor_normal.png",
+        "loading/btn_visitor_press.png",
+        "loading/Duigou.png",
+        "loading/lattice.png",
+        "loading/logo_01.png",
+        "loading/ot-1.png"
       ],
       "ctype": "GameFileData"
     }

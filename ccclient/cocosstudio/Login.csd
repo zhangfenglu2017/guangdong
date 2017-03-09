@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="4" ctype="GameLayerObjectData">
         <Size X="1280.0000" Y="720.0000" />
         <Children>
-          <AbstractNodeData Name="back" ActionTag="-1453471211" Tag="6" IconVisible="False" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="back" ActionTag="-1453471211" Tag="6" IconVisible="False" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="1250" Scale9Height="690" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />
@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="login-yli/bac_01.png" Plist="" />
+            <FileData Type="Normal" Path="loading/bac_01.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="logo" ActionTag="-1046764534" Tag="282" IconVisible="False" LeftMargin="233.1800" RightMargin="190.8201" TopMargin="36.0249" BottomMargin="402.9751" LeftEage="282" RightEage="282" TopEage="92" BottomEage="92" Scale9OriginX="282" Scale9OriginY="92" Scale9Width="292" Scale9Height="97" ctype="ImageViewObjectData">
             <Size X="856.0000" Y="281.0000" />
@@ -24,7 +24,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5165" Y="0.7548" />
             <PreSize X="0.6687" Y="0.3903" />
-            <FileData Type="Normal" Path="update/logo_01.png" Plist="" />
+            <FileData Type="Normal" Path="loading/logo_01.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="wechatLogin" ActionTag="-36530676" Tag="7" IconVisible="False" LeftMargin="386.2674" RightMargin="624.7326" TopMargin="377.7882" BottomMargin="241.2118" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="239" Scale9Height="79" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="269.0000" Y="101.0000" />
@@ -37,7 +37,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5078" Y="-0.6071" />
                 <PreSize X="1.5204" Y="0.4455" />
-                <FileData Type="Normal" Path="login-yli/ot-1.png" Plist="" />
+                <FileData Type="Normal" Path="loading/ot-1.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="legal" ActionTag="-1482008010" Tag="37" IconVisible="False" LeftMargin="16.0229" RightMargin="-29.0229" TopMargin="148.0390" BottomMargin="-76.0390" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="252" Scale9Height="7" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="282.0000" Y="29.0000" />
@@ -48,9 +48,9 @@
                 <PrePosition X="0.6112" Y="-0.6224" />
                 <PreSize X="1.0483" Y="0.2871" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="login-yli/agree.png" Plist="" />
-                <NormalFileData Type="Normal" Path="login-yli/agree.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="loading/agree.png" Plist="" />
+                <PressedFileData Type="Normal" Path="loading/agree.png" Plist="" />
+                <NormalFileData Type="Normal" Path="loading/agree.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -62,11 +62,11 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0885" Y="-0.5668" />
                 <PreSize X="0.1599" Y="0.4653" />
-                <NormalBackFileData Type="Normal" Path="login-yli/lattice.png" Plist="" />
-                <PressedBackFileData Type="Normal" Path="login-yli/lattice.png" Plist="" />
-                <DisableBackFileData Type="Default" Path="Default/CheckBox_Disable.png" Plist="" />
-                <NodeNormalFileData Type="Normal" Path="login-yli/Duigou.png" Plist="" />
-                <NodeDisableFileData Type="Normal" Path="login-yli/Duigou.png" Plist="" />
+                <NormalBackFileData Type="Normal" Path="loading/lattice.png" Plist="" />
+                <PressedBackFileData Type="Normal" Path="loading/lattice.png" Plist="" />
+                <DisableBackFileData Type="Normal" Path="loading/lattice.png" Plist="" />
+                <NodeNormalFileData Type="Normal" Path="loading/Duigou.png" Plist="" />
+                <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -76,9 +76,9 @@
             <PrePosition X="0.4068" Y="0.4052" />
             <PreSize X="0.2102" Y="0.1403" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="login-yli/btn_sign_in_press.png" Plist="" />
-            <NormalFileData Type="Normal" Path="login-yli/btn_sign_in_normal.png" Plist="" />
+            <DisabledFileData Type="Normal" Path="loading/btn_sign_in_press.png" Plist="" />
+            <PressedFileData Type="Normal" Path="loading/btn_sign_in_press.png" Plist="" />
+            <NormalFileData Type="Normal" Path="loading/btn_sign_in_normal.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -91,9 +91,9 @@
             <PrePosition X="0.6438" Y="0.4046" />
             <PreSize X="0.2102" Y="0.1403" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="login-yli/btn_visitor_press.png" Plist="" />
-            <NormalFileData Type="Normal" Path="login-yli/btn_visitor_normal.png" Plist="" />
+            <DisabledFileData Type="Normal" Path="loading/btn_visitor_press.png" Plist="" />
+            <PressedFileData Type="Normal" Path="loading/btn_visitor_press.png" Plist="" />
+            <NormalFileData Type="Normal" Path="loading/btn_visitor_normal.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -105,6 +105,17 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.9475" Y="0.0247" />
             <PreSize X="0.0938" Y="0.0278" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="fitnessTips" ActionTag="-1021228742" Tag="50" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="80.0000" RightMargin="80.0000" TopMargin="589.0000" BottomMargin="111.0000" IsCustomSize="True" FontSize="20" LabelText="抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="1120.0000" Y="20.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="640.0000" Y="121.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.1681" />
+            <PreSize X="0.8750" Y="0.0278" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

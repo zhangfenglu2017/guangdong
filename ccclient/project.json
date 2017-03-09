@@ -30,7 +30,8 @@
         "src/endAll.js",
         "src/app.js",
 		"src/PayLayer.js",
-		"src/userInfoLayer.js"
-
+		"src/userInfoLayer.js",
+        "src/ChatCheckJxlw.js"
+        
     ]
 }

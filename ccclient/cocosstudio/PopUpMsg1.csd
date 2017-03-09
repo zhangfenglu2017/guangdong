@@ -42,9 +42,9 @@
                 <PrePosition X="0.6684" Y="0.2294" />
                 <PreSize X="0.2446" Y="0.1360" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="popupmsg/btn_dle_normal1.png" Plist="" />
-                <NormalFileData Type="Normal" Path="popupmsg/btn_dle_normal.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="dissolveRoomNew/btn_dle_normal1.png" Plist="" />
+                <PressedFileData Type="Normal" Path="dissolveRoomNew/btn_dle_normal1.png" Plist="" />
+                <NormalFileData Type="Normal" Path="dissolveRoomNew/btn_dle_normal.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -57,9 +57,9 @@
                 <PrePosition X="0.3342" Y="0.2294" />
                 <PreSize X="0.2446" Y="0.1360" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="popupmsg/btn_confirm_press.png" Plist="" />
-                <NormalFileData Type="Normal" Path="popupmsg/btn_confirm_normal.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="dissolveRoomNew/btn_confirm_press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="dissolveRoomNew/btn_confirm_press.png" Plist="" />
+                <NormalFileData Type="Normal" Path="dissolveRoomNew/btn_confirm_normal.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
