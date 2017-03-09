@@ -998,6 +998,7 @@ function TagOrder(na, nb) {
 }
 
 function RestoreCardLayout(node, off, endonepl) {
+
     var newC = null;
     var newVal = 0;
     var pl;
@@ -1105,14 +1106,15 @@ function RestoreCardLayout(node, off, endonepl) {
     var slotheigt = upSize.height * upS * 0.3;
     for (var i = 0; i < orders.length; i++) {
         var ci = orders[i];
-        if (off % 2 == 0) {
+
+        if (off % 2 == 0)  {
             if (i != 0) {
                 if (ci.name == orders[i - 1].name) {
 
                     if (ci.isgang4) {
 
                         ci.x = orders[i - 2].x;
-                        ci.y = orders[i - 2].y + upSize.height * upS * 0.3;
+                        ci.y = orders[i - 2].y + upSize.height * upS * 0.2;
                     } else if (orders[i - 1].isgang4) {
                         ci.x = orders[i - 1].x + upSize.width * upS * 2;
                     } else {
@@ -1144,7 +1146,8 @@ function RestoreCardLayout(node, off, endonepl) {
             } else {
                 ci.x = start.x + upSize.width * upS;
             }
-        } else {
+        }
+        else {
             if (i != 0) {
                 if (ci.name == orders[i - 1].name) {
                     if (ci.isgang4) {
@@ -1157,19 +1160,22 @@ function RestoreCardLayout(node, off, endonepl) {
                     }
 
                 } else if (orders[i - 1].name == "standPri") {
-                    ci.y = orders[i - 1].y - upSize.height * upS * 2;
+                    ci.y = orders[i - 1].y - upSize.height * upS * 1.5;
                 } else if (orders[i - 1].name == "gang0") {
                     ci.y = orders[i - 2].y - upSize.height * upS * 0.7 - slotheigt;
                 } else if (orders[i - 1].name == "gang1") {
                     ci.y = orders[i - 2].y - upSize.height * upS * 0.7 - slotheigt;
-                } else {
+                }else {
                     ci.y = orders[i - 1].y - upSize.height * upS * 0.7 - slotheigt;
                 }
 
-
             } else {
                 ci.y = start.y - upSize.height * upS * 0.7;
+
+                if(off == 1)
+                    ci.y = ci.y + 40;
             }
+
 
             if (off == 3) {
                 if (!ci.isgang4) {
@@ -1178,6 +1184,7 @@ function RestoreCardLayout(node, off, endonepl) {
                     ci.zIndex = 200;
                 }
 
+                ci.x = start.x - 10;
             }
 
             if (off == 1) {
@@ -1187,6 +1194,7 @@ function RestoreCardLayout(node, off, endonepl) {
                     ci.zIndex = 200;
                 }
 
+                ci.x = start.x + 20;
             }
         }
 
@@ -1252,7 +1260,7 @@ function HandleMJPut(node, msg, off, outNum) {
         else if (off == 1) {
             if (!(outNum >= 0))RemoveFrontNode(node, "standPri", 1);
             endPoint.y = out.y + oSize.height * oSc * putnum * 0.7;
-            endPoint.x = out.x;
+            endPoint.x = out.x - 10;
             Midpoint.x = ws.width / 4 * 3;
             Midpoint.y = ws.height / 2;
             out.zIndex = 100 - putnum;
@@ -1512,6 +1520,7 @@ function InitPlayerNameAndCoin(node, off) {
 }
 
 function InitPlayerHandUI(node, off) {
+
     var sData = jsclient.data.sData;
     var tData = sData.tData;
     var pl = getUIPlayer(off);
@@ -2899,7 +2908,8 @@ var PlayLayer = cc.Layer.extend(
                 }
             },
 
-            down: {
+            down:
+            {
                 head: {
                     kuang: {
                         _run: function () {
@@ -3004,13 +3014,13 @@ var PlayLayer = cc.Layer.extend(
                         }
                     }
                 },
-                stand: {_layout: [[0.057, 0], [0.5, 0], [7, 0.7]], _visible: false},
+                stand: {_layout: [[0.055, 0], [0.5, 0], [7, 0.7]], _visible: false},
 
-                up: {_layout: [[0.057, 0], [0, 0], [0.8, 0.7]], _visible: false},
-                down: {_layout: [[0.057, 0], [0, 0], [3, 1]], _visible: false},
+                up: {_layout: [[0.055, 0], [0, 0], [0.8, 0.7]], _visible: false},
+                down: {_layout: [[0.055, 0], [0, 0], [3, 1]], _visible: false},
 
-                out1: {_layout: [[0, 0.07], [0.5, 0], [-6, 5.2]], _visible: false},
-                out0: {_layout: [[0, 0.07], [0.5, 0], [-6, 4.5]], _visible: false},
+                out0: {_layout: [[0, 0.08], [0.5, 0], [-5.5, 3.5]], _visible: false},
+                out1: {_layout: [[0, 0.08], [0.5, 0], [-5.5, 4.4]], _visible: false},
                 effectStateAct: {
                     _run: function () {
                         this.zIndex = 100;
@@ -3103,7 +3113,8 @@ var PlayLayer = cc.Layer.extend(
                 }
             },
 
-            right: {
+            right:
+            {
                 head: {
                     kuang: {
                         _run: function () {
@@ -3210,11 +3221,11 @@ var PlayLayer = cc.Layer.extend(
 
                 stand: {_layout: [[0, 0.08], [1, 1], [-7, -2.5]], _visible: false},
 
-                up: {_layout: [[0, 0.05], [1, 0], [-4, 6]], _visible: false},
-                down: {_layout: [[0, 0.05], [1, 0], [-4, 6.3]], _visible: false},
+                up: {_layout: [[0, 0.06], [1, 0], [-4, 6]], _visible: false},
+                down: {_layout: [[0, 0.06], [1, 0], [-4, 6.3]], _visible: false},
 
-                out0: {_layout: [[0, 0.05], [1, 0.5], [-6, -3.8]], _visible: false},
-                out1: {_layout: [[0, 0.05], [1, 0.5], [-7, -3.8]], _visible: false},
+                out0: {_layout: [[0, 0.06], [1, 0.5], [-4.3, -3.8]], _visible: false},
+                out1: {_layout: [[0, 0.06], [1, 0.5], [-5.3, -3.8]], _visible: false},
                 effectStateAct: {
                     //_layout:[[0.1,0.1],[0.1,0.5],[0,0],true],
                     _run: function () {
@@ -3304,7 +3315,8 @@ var PlayLayer = cc.Layer.extend(
                 }
             },
 
-            top: {
+            top:
+            {
                 head: {
                     kuang: {
                         _run: function () {
@@ -3412,8 +3424,8 @@ var PlayLayer = cc.Layer.extend(
                 up: {_layout: [[0, 0.07], [0.5, 1], [6, -2.5]], _visible: false},
                 down: {_layout: [[0, 0.07], [0.5, 1], [6, -2.2]], _visible: false},
 
-                out0: {_layout: [[0, 0.07], [0.5, 1], [5, -4.6]], _visible: false},
-                out1: {_layout: [[0, 0.07], [0.5, 1], [5, -5.3]], _visible: false},
+                out0: {_layout: [[0, 0.08], [0.5, 1], [5.5, -3.5]], _visible: false},
+                out1: {_layout: [[0, 0.08], [0.5, 1], [5.5, -4.4]], _visible: false},
                 effectStateAct: {
                     _run: function () {
                         this.zIndex = 100;
@@ -3501,7 +3513,8 @@ var PlayLayer = cc.Layer.extend(
                 }
             },
 
-            left: {
+            left:
+            {
                 head: {
                     kuang: {
                         _run: function () {
@@ -3608,8 +3621,8 @@ var PlayLayer = cc.Layer.extend(
                 down: {_layout: [[0, 0.05], [0, 1], [3.6, -3]], _visible: false},
                 stand: {_layout: [[0, 0.08], [0, 0], [6.5, 3]], _visible: false},
 
-                out0: {_layout: [[0, 0.05], [0, 0.5], [5.5, 3.7]], _visible: false},
-                out1: {_layout: [[0, 0.05], [0, 0.5], [6.5, 3.7]], _visible: false},
+                out0: {_layout: [[0, 0.06], [0, 0.5], [4, 3.8]], _visible: false},
+                out1: {_layout: [[0, 0.06], [0, 0.5], [5, 3.8]], _visible: false},
                 effectStateAct: {
                     _run: function () {
                         this.zIndex = 100;
@@ -3817,7 +3830,7 @@ var PlayLayer = cc.Layer.extend(
 
                 changeui: {
                     changeuibg: {
-                        _layout: [[0.2, 0.2], [0.5, 0], [0, 0]],
+                        _layout: [[0.4, 0.4], [0.5, 0], [0, 0]],
                         _run: function () {
                             this.y = this.getParent().getParent().getChildByName("chi0").y;
                         },

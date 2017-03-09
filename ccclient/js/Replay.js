@@ -946,7 +946,7 @@ function newReplayLayer() {
                         if (ci.isgang4) {
 
                             ci.x = orders[i - 2].x;
-                            ci.y = orders[i - 2].y + upSize.height * upS * 0.3;
+                            ci.y = orders[i - 2].y + upSize.height * upS * 0.2;
                         } else if (orders[i - 1].isgang4) {
                             ci.x = orders[i - 1].x + upSize.width * upS * 2;
                         } else {
@@ -994,7 +994,7 @@ function newReplayLayer() {
                         }
 
                     } else if (orders[i - 1].name == "standPri") {
-                        ci.y = orders[i - 1].y - upSize.height * upS * 2;
+                        ci.y = orders[i - 1].y - upSize.height * upS * 1.5;
                     } else if (orders[i - 1].name == "gang0") {
                         ci.y = orders[i - 2].y - upSize.height * upS * 0.7 - slotheigt;
                     } else if (orders[i - 1].name == "gang1") {
@@ -1006,6 +1006,9 @@ function newReplayLayer() {
 
                 } else {
                     ci.y = start.y - upSize.height * upS * 0.7;
+
+                    if(off == 1)
+                        ci.y = ci.y + 40;
                 }
 
                 if (off == 3) {
@@ -1015,6 +1018,7 @@ function newReplayLayer() {
                         ci.zIndex = 200;
                     }
 
+                    ci.x = start.x - 10;
                 }
 
                 if (off == 1) {
@@ -1024,6 +1028,7 @@ function newReplayLayer() {
                         ci.zIndex = 200;
                     }
 
+                    ci.x = start.x + 20;
                 }
             }
 
@@ -2540,11 +2545,11 @@ function newReplayLayer() {
 
                 stand: {_layout: [[0, 0.08], [1, 1], [-7, -2.5]], _visible: false},
 
-                up: {_layout: [[0, 0.05], [1, 0], [-4, 6]], _visible: false},
-                down: {_layout: [[0, 0.05], [1, 0], [-4, 6.3]], _visible: false},
+                up: {_layout: [[0, 0.06], [1, 0], [-4, 6]], _visible: false},
+                down: {_layout: [[0, 0.06], [1, 0], [-4, 6.3]], _visible: false},
 
-                out0: {_layout: [[0, 0.06], [1, 0.5], [-4.5, -3.8]], _visible: false},
-                out1: {_layout: [[0, 0.06], [1, 0.5], [-5.5, -3.8]], _visible: false},
+                out0: {_layout: [[0, 0.06], [1, 0.5], [-4.3, -3.8]], _visible: false},
+                out1: {_layout: [[0, 0.06], [1, 0.5], [-5.3, -3.8]], _visible: false},
                 effectStateAct: {
                     //_layout:[[0.1,0.1],[0.1,0.5],[0,0],true],
                     _run: function () {
@@ -2715,8 +2720,8 @@ function newReplayLayer() {
                 up: {_layout: [[0, 0.07], [0.5, 1], [6, -2.5]], _visible: false},
                 down: {_layout: [[0, 0.07], [0.5, 1], [6, -2.2]], _visible: false},
 
-                out0: {_layout: [[0, 0.08], [0.5, 1], [5.2, -3.6]], _visible: false},
-                out1: {_layout: [[0, 0.08], [0.5, 1], [5.2, -4.4]], _visible: false},
+                out0: {_layout: [[0, 0.08], [0.5, 1], [5.5, -3.5]], _visible: false},
+                out1: {_layout: [[0, 0.08], [0.5, 1], [5.5, -4.4]], _visible: false},
                 effectStateAct: {
                     _run: function () {
                         this.zIndex = 100;
@@ -2884,8 +2889,8 @@ function newReplayLayer() {
                 down: {_layout: [[0, 0.05], [0, 1], [3.6, -3]], _visible: false},
                 stand: {_layout: [[0, 0.08], [0, 0], [6.5, 3]], _visible: false},
 
-                out0: {_layout: [[0, 0.06], [0, 0.5], [4, 3.9]], _visible: false},
-                out1: {_layout: [[0, 0.06], [0, 0.5], [5.1, 3.7]], _visible: false},
+                out0: {_layout: [[0, 0.06], [0, 0.5], [4, 3.8]], _visible: false},
+                out1: {_layout: [[0, 0.06], [0, 0.5], [5, 3.8]], _visible: false},
                 effectStateAct: {
                     _run: function () {
                         this.zIndex = 100;

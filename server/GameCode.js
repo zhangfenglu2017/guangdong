@@ -2,6 +2,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
     var gameLog = [];
 
     function GLog(log) {
+        return;
         app.FileWork(gameLog, __dirname + "/log.txt", log)
     }
 
