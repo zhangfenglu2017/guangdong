@@ -494,6 +494,33 @@ var EndOneLayer = cc.Layer.extend(
             back:
             {
                 _layout: [[0, 1], [0.5, 0.5], [0, 0]],
+
+                playTable:
+                {
+                    _text:function()
+                    {
+                        var gameType =  jsclient.data.sData.tData.gameType;
+
+                        if(gameType == 1)
+                            return "广东推倒胡";
+                        else if(gameType == 2)
+                            return "惠州庄麻将";
+                        else if(gameType == 3)
+                            return "香港麻将";
+                        else if(gameType == 4)
+                            return "鸡平胡";
+                        else if(gameType == 5)
+                            return "东莞麻将";
+                        else if(gameType == 6)
+                            return "100张";
+                        else if(gameType == 7)
+                            return "河源百搭";
+                        else if(gameType == 8)
+                            return "潮汕麻将";
+                        else if(gameType == 9)
+                            return "深圳麻将";
+                    }
+                }
             },
 
             gameID:
@@ -1370,3 +1397,6 @@ var ShowMaPanel = cc.Layer.extend({
         return true;
     }
 });
+
+
+

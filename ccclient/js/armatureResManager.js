@@ -3,7 +3,6 @@
  */
 
 
-
 var ArmatureResManager =
 {
     create: function ()

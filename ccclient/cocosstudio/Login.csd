@@ -121,7 +121,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fitnessTips" ActionTag="-1021228742" Tag="50" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="80.0000" RightMargin="80.0000" TopMargin="589.0000" BottomMargin="111.0000" IsCustomSize="True" FontSize="20" LabelText="抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="fitnessTips" ActionTag="-1021228742" VisibleForFrame="False" Tag="50" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="80.0000" RightMargin="80.0000" TopMargin="589.0000" BottomMargin="111.0000" IsCustomSize="True" FontSize="20" LabelText="抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1120.0000" Y="20.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="121.0000" />

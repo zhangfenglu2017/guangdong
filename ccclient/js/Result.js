@@ -42,7 +42,6 @@ var ZJHCode={
    playerNotWaitStart:54,
    
    
-   
    joinActOK:60,
    canNotJoinActInPlay:61,
    joinWrongAct:62,

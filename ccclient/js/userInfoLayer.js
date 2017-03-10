@@ -294,5 +294,3 @@ function ShowSameGeog(msg)
 	
 })();
 
-
-

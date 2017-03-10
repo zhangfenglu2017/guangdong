@@ -18,7 +18,7 @@
 		"src/Result.js",
 		"src/resource.js",
 		"src/majiang.js",
-        "src/Update.js",
+        
         "src/Loading.js",
         "src/Login.js",
         "src/Home.js",
@@ -42,6 +42,7 @@
 		"src/armatureEffect.js",
 		"src/armatureResManager.js",
 		"src/singleObject.js",
-		"src/frameMoveManager.js"
+		"src/frameMoveManager.js",
+        "src/Update.js"
     ]
 }

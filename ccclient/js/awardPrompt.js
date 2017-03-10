@@ -1,5 +1,7 @@
 //获得钻石界面
 
+
+
 (function()
 {
     var layer,diamondNum = 0;

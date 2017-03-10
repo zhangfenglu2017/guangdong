@@ -107,3 +107,6 @@ function GameNet()
     this.resetCallback();	
 	//Object.defineProperty(this,"connected",{get:function(){return 1==pomelo.socket.readyState;}});
 }
+
+
+

@@ -24,6 +24,36 @@ var ActionType =
     ZHONG:8,
 };
 
+// var AutoState =
+// {
+//     autoReady:0,	//进入准备
+//     autoAlarm:1,	//第一次警告
+//     autoYes:2		//进入托管
+// };
+
+function SelfUid()
+{
+    return jsclient.data.pinfo.uid
+}
+
+function IsMyTurn()
+{
+    var sData=jsclient.data.sData;
+    var tData=sData.tData;
+    return SelfUid() == tData.uids[tData.curPlayer];
+}
+
+// function IsTuoGuan(pl)
+// {
+//     return (pl && pl.autoState == AutoState.autoYes);
+// }
+//
+// function IsSelfTuoGuan()
+// {
+//     var pl = getUIPlayer(0);
+//     return (pl && pl.autoState == AutoState.autoYes);
+// }
+
 //是否是三人麻将
 function IsThreeTable()
 {
@@ -85,13 +115,12 @@ function getUIOffByIndex(index)
     var tData=sData.tData;
     var uids=tData.uids;
     var selfIndex=uids.indexOf(SelfUid());
-    var uioff = (index+tData.maxPlayer-selfIndex)%tData.maxPlayer;
+    var uioff = (index+tData.maxPlayer-selfIndex) % tData.maxPlayer;
     //修正uioff
     if(uioff == 2 && IsThreeTable())
     {
         uioff = 3;
     }
-
     return uioff;
 }
 
@@ -603,6 +632,25 @@ function showDefCarCardEffect(node)
     }
 }
 
+//关闭打出去的牌箭头特效
+function closeOutTipsCardEffect(node)
+{
+    var children = node.children;
+    for (var i = 0; i < children.length; i++)
+    {
+        var ci = children[i];
+        if (ci.name == "newout" || ci.name == "out" || ci.name == "out0" || ci.name == "out1" || ci.name == "out2")
+        {
+            var outTips = ci.getChildByName("tips");
+            if(outTips)
+            {
+                outTips.stopAllActions();
+                outTips.visible = false;
+            }
+        }
+    }
+}
+
 //显示麻将听牌提示
 function showCardTipsEffect(cards, pl)
 {
@@ -611,7 +659,7 @@ function showCardTipsEffect(cards, pl)
     var gameType = tData.gameType;
     var mjhand = pl.mjhand;
 
-    if(gameType != 1 && gameType != 2 && gameType != 3)
+    if(gameType != 1 && gameType != 2 && gameType != 3 && gameType != 9)
         return;
 
     if(cards == null || cards.length <= 0)
@@ -673,12 +721,8 @@ function showCardTipsEffect(cards, pl)
             clonePl.mjgang1 = pl.mjgang1;
             clonePl.mjchi = pl.mjchi;
 
-            log("克隆源：" + JSON.stringify(clonePl));
-            
             var temppl = jsclient.majiang.deepCopy(clonePl);
             temppl.mjhand.splice(i, 1);
-
-            log("克隆后：" + JSON.stringify(temppl));
 
             for(var j = 0, k = 0; j < tipsData.length; j++)
             {
@@ -693,13 +737,9 @@ function showCardTipsEffect(cards, pl)
             }
 
             cardTipsData[pl.mjhand[i]] = tempData;
-
-            log("提示听：" + JSON.stringify(cardTipsData));
         }
     }
-
-    // log("听牌数据2： " + JSON.stringify(cardTipsData));
-
+    
     for(var i = 0; i < cards.length; i++)
     {
         var card = cards[i];
@@ -725,7 +765,7 @@ function closeCardTipsEffect(node)
     var tData = sData.tData;
     var gameType = tData.gameType;
 
-    if(gameType != 1 && gameType != 2 && gameType != 3)
+    if(gameType != 1 && gameType != 2 && gameType != 3 && gameType != 9)
         return;
 
     var children = node.children;
@@ -748,7 +788,7 @@ function showCanHuTipsPanel(node, tag)
     var tData = sData.tData;
     var gameType = tData.gameType;
 
-    if(gameType != 1 && gameType != 2 && gameType != 3)
+    if(gameType != 1 && gameType != 2 && gameType != 3 && gameType != 9)
         return;
 
     if(cardTipsData[tag] && cardTipsData[tag].length > 0)
@@ -818,15 +858,17 @@ function showCanHuTipsPanel(node, tag)
     // log("胡牌提示框大小：W " + backSizeW + "  H " + backSizeH + "  R " + cardRow + " C " + cardCol);
 }
 
-
-function SelfUid() {
-    return jsclient.data.pinfo.uid
-}
-
-function IsMyTurn() {
-    var sData = jsclient.data.sData;
-    var tData = sData.tData;
-    return SelfUid() == tData.uids[tData.curPlayer];
+//打开屏蔽层
+function openOutCardShieldLayer(node)
+{
+    var shield = node.getParent().getChildByName("shield");
+    if(shield)
+    {
+        shield.setVisible(true);
+        // shield.setTouchEnabled(true);
+        shield.stopAllActions();
+        shield.runAction(cc.sequence(cc.DelayTime(0.5), cc.callFunc(function(){shield.setVisible(false);})));
+    }
 }
 
 
@@ -853,10 +895,11 @@ function PutAwayCard(cdui, cd)
 
     if (mjhandNum == pl.mjhand.length)
     {
+        cdui.stopAllActions();
+
         jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "MJPut", card: cd});
         jsclient.lastPutPos = {x: cdui.x, y: cdui.y};
         HandleMJPut(cdui.parent, {uid: SelfUid(), card: cd}, 0);
-        cdui.stopAllActions();
     }
 }
 
@@ -1117,10 +1160,235 @@ function RequestZhong()
 }
 
 //
+var cishu = 0;
+function CheckEatVisible1(eat)
+{
+    var sData = jsclient.data.sData;
+    var tData = sData.tData;
+    console.log("============================"+tData.checkRoleFlowerType);
+    if(tData.checkRoleFlowerType>tData.maxPlayer){
+        return;
+    }
+    jsclient.majiang.isClient = true;
+    CheckChangeuiVisible();
+
+    var leftCard = tData.cardsNum - tData.cardNext;
+
+    eat.chi0._node.visible = false;
+    eat.chi1._node.visible = false;
+    eat.chi2._node.visible = false;
+    eat.peng._node.visible = false;
+    eat.gang0._node.visible = false;
+    eat.gang1._node.visible = false;
+    eat.gang2._node.visible = false;
+    eat.hu._node.visible = false;
+    eat.guo._node.visible = false;
+
+    var pl = sData.players[SelfUid() + ""];
+
+    jsclient.gangCards = [];
+    jsclient.eatpos = [];
+    var mj = jsclient.majiang;
+    var vnode = [];
+     cc.log(SelfUid()+"-------------- IsMyTurn = "+IsMyTurn());
+     //gang hu put
+    if (tData.tState == TableState.waitPut && pl.mjState == TableState.waitPut)
+    {
+        if (IsMyTurn())
+        {
+            if (jsclient.data.sData.tData.gameType == 2 )
+            {
+                var flowerCard = RequestFlower();
+                if (flowerCard > 0)
+                {
+                    var cduis = jsclient.playui.jsBind.down._node.children;
+                    var cardIndex = null;
+                    for (var i = cduis.length - 1; i >= 0; i--)
+                    {
+                        if (cduis[i].name == "mjhand" && cduis[i].tag == flowerCard)
+                        {
+                            cardIndex = i;
+                            break;
+                        }
+                    }
+                    if (cardIndex)
+                    {
+                        var callback = function ()
+                        {
+                            PutAwayCard(cduis[cardIndex], flowerCard);
+                        };
+                        cduis[cardIndex].runAction(cc.sequence(cc.delayTime(0.2), cc.callFunc(callback)));
+                        return;
+                    }
+                }
+                else if(tData.checkRoleFlowerType<tData.maxPlayer ){
+                    //if(cishu == 0)
+                    //{
+                    //    cishu = 1;
+                        var tData = jsclient.data.sData.tData;
+                        if(tData.checkRoleFlowerType<tData.maxPlayer)
+                        {
+                            console.log("没花牌 打出去le==================================");
+                            jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "MJPut", card: -2});
+                        }
+                        return;
+                    //}
+
+                }
+                else if(tData.checkRoleFlowerType == tData.maxPlayer)
+                {
+                    if(jsclient.data.sData.tData.gameType == 2)
+                    {
+                        var huhu = mj.canHu(!tData.canHu7, pl.mjhand, 0, tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui,tData.gui4Hu);
+                        if (pl.isNew && huhu > 0
+                            &&  (mj.prejudgeHuType(pl) > 0 || (mj.prejudgeHuType(pl) == 0 && !tData.noCanJiHu) || huhu == 7)//鸡胡且可以鸡胡 或非鸡胡
+                        )
+                        {
+                            vnode.push(eat.hu._node);
+                        }
+                    }
+                    else
+                    {
+                        if (pl.isNew && mj.canHu(!tData.canHu7, pl.mjhand, 0, tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui,tData.gui4Hu) > 0)
+                        {
+                            vnode.push(eat.hu._node);
+                        }
+                    }
+
+
+
+                    //判断红中癞子
+                    var horse = 0;
+                    var rtn;
+                    if ((jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui) && !jsclient.data.sData.tData.baozhama && jsclient.data.sData.tData.horse >= 2 && jsclient.data.sData.tData.guiJiaMa)
+                        horse = jsclient.data.sData.tData.horse + 2;
+                    else
+                        horse = jsclient.data.sData.tData.horse;
+
+                    if ((jsclient.data.sData.tData.gameType == 3 || jsclient.data.sData.tData.gameType == 1) && jsclient.data.sData.tData.jiejieGao)
+                    {
+                        //所有玩家中 连胡数不为0的数
+                        for(var i=0;i<tData.maxPlayer;i++)
+                        {
+                            if(sData.players[tData.uids[i]].linkHu == 0) continue;
+                            horse += (sData.players[tData.uids[i]].linkHu)*2;
+                        }
+                    }
+                    if (horse > 0)
+                        rtn = leftCard > (horse) ? mj.canGang1(pl.mjpeng, pl.mjhand, pl.mjpeng4) : [];
+                    else
+                        rtn = leftCard > (0) ? mj.canGang1(pl.mjpeng, pl.mjhand, pl.mjpeng4) : [];
+
+                    if (rtn.length > 0)
+                    {
+                        jsclient.gangCards = rtn;
+                        if (jsclient.gangCards == 1)
+                        {
+                            eat.gang0.bgground.visible = true;
+                            eat.gang0.card1._node.visible = true;
+                            setCardPic(eat.gang0.card1._node, jsclient.gangCards[0], 0);
+                        }
+                        else
+                        {
+                            eat.gang0.bgground.visible = false;
+                            eat.gang0.card1._node.visible = false;
+                        }
+                        vnode.push(eat.gang0._node);
+                    }
+
+                    if (vnode.length > 0)
+                        vnode.push(eat.guo._node);
+                }
+            }
+        }
+    }
+
+    if(tData.checkRoleFlowerType == tData.maxPlayer)
+    {
+
+        var btnImgs =
+        {
+            "peng": ["res/play-yli/btn_peng_normal.png", "res/play-yli/btn_peng_press.png"],
+            "gang0": ["res/play-yli/btn_gang_normal.png", "res/play-yli/btn_gang_press.png"],
+            "chi0": ["res/play-yli/btn_chi_normal.png", "res/play-yli/btn_chi_press.png"],
+        }
+
+
+        for (var i = 0; i < vnode.length; i++)
+        {
+            vnode[i].visible = true;
+
+            if (vnode[i].getChildByName("card1"))    vnode[i].getChildByName("card1").visible = false;
+            if (vnode[i].getChildByName("bgground")) vnode[i].getChildByName("bgground").visible = false;
+            if (vnode[i].getChildByName("bgimg"))    vnode[i].getChildByName("bgimg").visible = true;
+            var btnName = vnode[i].name;
+
+            if (btnName == "peng" || btnName == "chi0" || btnName == "gang0")
+            {
+                vnode[i].loadTextureNormal(btnImgs[btnName][0]);
+                vnode[i].loadTexturePressed(btnImgs[btnName][1]);
+            }
+
+            if (i == 0)
+            {
+                var cardVal = 0;
+
+                if (vnode[i].getChildByName("bgimg"))
+                    vnode[i].getChildByName("bgimg").visible = false;
+
+                if (btnName == "peng" || btnName == "chi0" || btnName == "gang0")
+                {
+                    vnode[i].loadTextureNormal(btnImgs[btnName][0]);
+                    vnode[i].loadTexturePressed(btnImgs[btnName][1]);
+                }
+                if (btnName == "peng")
+                {
+                    cardVal = tData.lastPut;
+                }
+                else if (btnName == "chi0")
+                {
+                    if (jsclient.eatpos.length == 1)
+                        cardVal = tData.lastPut;
+                }
+                else if (btnName == "gang0")
+                {
+                    if (jsclient.gangCards.length == 1)
+                        cardVal = jsclient.gangCards[0];
+                }
+                else if (btnName == "hu")
+                {
+                    if (IsMyTurn())
+                        cardVal = pl.mjhand[pl.mjhand.length - 1];
+                    else
+                        cardVal = tData.lastPut;
+
+                    //出现胡牌按钮，则不显示听、胡提示
+                    // sendEvent("closeCardTipsEff");
+                }
+
+                if (cardVal && cardVal > 0)
+                {
+                    setCardPic(vnode[0].getChildByName("card1"), cardVal, 0);
+                    vnode[0].getChildByName("card1").visible = true;
+                }
+                vnode[0].getChildByName("bgground").zIndex = -1;
+                vnode[0].getChildByName("bgground").visible = true;
+            }
+            doLayout(vnode[i], [0, 0.12], [0.5, 0], [(1 - vnode.length) / 2.0 + i * 1.7, 2.5], false, false);
+        }
+    }
+}
+
+
+
+//
 function CheckEatVisible(eat)
 {
     var sData = jsclient.data.sData;
     var tData = sData.tData;
+    if(tData.gameType == 2 &&  tData.checkRoleFlowerType<tData.maxPlayer ){
+        return;
+    }
     jsclient.majiang.isClient = true;
     CheckChangeuiVisible();
     
@@ -1145,6 +1413,8 @@ function CheckEatVisible(eat)
     case 8:
         CheckEatVisibleForChaoShan(eat);
         return;
+    case 9:
+        break;
     }
 
     var leftCard = tData.cardsNum - tData.cardNext;
@@ -1162,7 +1432,7 @@ function CheckEatVisible(eat)
     var pl = sData.players[SelfUid() + ""];
     if (pl.mjState == TableState.waitEat || pl.mjState == TableState.waitPut && tData.uids[tData.curPlayer] == SelfUid())
     {
-
+        // sendEvent("openShieldLayer");
     }
     else
         return;
@@ -1171,6 +1441,7 @@ function CheckEatVisible(eat)
     jsclient.eatpos = [];
     var mj = jsclient.majiang;
     var vnode = [];
+
 
     //gang hu put
     if (tData.tState == TableState.waitPut && pl.mjState == TableState.waitPut)
@@ -1198,10 +1469,47 @@ function CheckEatVisible(eat)
                         {
                             PutAwayCard(cduis[cardIndex], flowerCard);
                         };
-                        cduis[cardIndex].runAction(cc.sequence(cc.delayTime(0.4), cc.callFunc(callback)));
+                        cduis[cardIndex].runAction(cc.sequence(cc.delayTime(0.2), cc.callFunc(callback)));
                         return;
                     }
                 }
+                //else if(tData.checkRoleFlowerType<tData.maxPlayer ){
+                //    var cduis = jsclient.playui.jsBind.down._node.children;
+                //    var noHuaNum = 0;
+                //    var num = 0;
+                //    for (var i = cduis.length - 1; i >= 0; i--)
+                //    {
+                //        if (cduis[i].name == "mjhand" && cduis[i].tag < 111)
+                //        {
+                //            noHuaNum++;
+                //        }
+                //        if(cduis[i].name == "mjhand")
+                //            num++;
+                //    }
+                //    console.log("告诉服务器 此人已经没有花牌了" + noHuaNum + "底牌的数量："+ num +"======" +cduis.length);
+                //    if(noHuaNum>= num)
+                //    {
+                //
+                //            jsclient.playui.jsBind.down._node.scheduleOnce(function() {
+                //                cishu ++;
+                //                if(cishu == 1)
+                //                {
+                //                    console.log("告诉服务器 此人已经没有花牌了" + cishu);
+                //                    jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "MJPut", card: -2});
+                //                    return;
+                //                }
+                //
+                //            }, 2);
+                //
+                //
+                //
+                //
+                //
+                //    }
+                //
+                //
+                //
+                //}
             }
 
             if(jsclient.data.sData.tData.gameType == 1)
@@ -1244,7 +1552,7 @@ function CheckEatVisible(eat)
             else
                 horse = jsclient.data.sData.tData.horse;
 
-            if ((jsclient.data.sData.tData.gameType == 3 || jsclient.data.sData.tData.gameType == 1) && jsclient.data.sData.tData.jiejieGao)
+            if ((jsclient.data.sData.tData.gameType == 9 ||jsclient.data.sData.tData.gameType == 3 || jsclient.data.sData.tData.gameType == 1) && jsclient.data.sData.tData.jiejieGao)
             {
                 //所有玩家中 连胡数不为0的数
                 for(var i=0;i<tData.maxPlayer;i++)
@@ -1286,10 +1594,10 @@ function CheckEatVisible(eat)
             var huType = mj.canHu(!tData.canHu7, pl.mjhand, tData.lastPut,
                 tData.canHuWith258, tData.withZhong,tData.fanGui,tData.gui,tData.gui4Hu,tData.nextgui);
 
-            if ((tData.gameType == 1 || tData.gameType == 3 ) && tData.putType == 4 )
+            if ((tData.gameType == 1 || tData.gameType == 3 || tData.gameType == 9) && tData.putType == 4 )
                 huType = 0;
 
-            if (tData.gameType == 1 || tData.gameType == 3 )
+            if (tData.gameType == 1 || tData.gameType == 3 || tData.gameType == 9)
             {
                 if (huType > 0)
                 {
@@ -1376,7 +1684,7 @@ function CheckEatVisible(eat)
                 else
                     horse = jsclient.data.sData.tData.horse;
 
-                if ((tData.gameType == 3 || tData.gameType == 1)&& jsclient.data.sData.tData.jiejieGao)
+                if ((tData.gameType == 9 || tData.gameType == 3 || tData.gameType == 1)&& jsclient.data.sData.tData.jiejieGao)
                 {
                     //所有玩家中 连胡数不为0的数
                     for(var i=0;i<tData.maxPlayer;i++)
@@ -3041,8 +3349,8 @@ function resetZhongForPlayer(node, off)
 
 function HandleMJFlower(node, msg, off)
 {
-    // var sData = jsclient.data.sData;
-    // var tData = sData.tData;
+    var sData = jsclient.data.sData;
+    var tData = sData.tData;
     // var selfIndex = (tData.uids.indexOf(SelfUid()) + off) % 4;
     // if (tData.uids[selfIndex] != msg.uid)
     //     return;
@@ -3078,8 +3386,8 @@ function HandleMJFlower(node, msg, off)
 
 function HandleMJZhong(node, msg, off)
 {
-    // var sData = jsclient.data.sData;
-    // var tData = sData.tData;
+    var sData = jsclient.data.sData;
+    var tData = sData.tData;
     // var selfIndex = (tData.uids.indexOf(SelfUid()) + off) % 4;
     // if (tData.uids[selfIndex] != msg.uid)
     //     return;
@@ -3120,6 +3428,8 @@ function HandleNewCard(node, msg, off)
 {
     AddNewCard(node, "stand", "mjhand", msg, off);
     RestoreCardLayout(node, 0);
+
+    jsclient.cardTouchState = true;
 }
 
 function HandleWaitPut(node, msg, off) {
@@ -3140,6 +3450,8 @@ function HandleMJChi(node, msg, off) {
     var tData = sData.tData;
     // var uids = tData.uids;
     // var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
+
+    jsclient.cardTouchState = true;
 
     if (IsCurPlayerTurn(off))
     {
@@ -3173,6 +3485,8 @@ function HandleMJPeng(node, msg, off) {
     var tData = sData.tData;
     // var uids = tData.uids;
     // var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
+
+    jsclient.cardTouchState = true;
 
     if (IsCurPlayerTurn(off))
     {
@@ -3272,7 +3586,7 @@ function AddNewCard(node, copy, name, tag, off, specialTAG)
         setCardPic(cp, tag, name == "mjhand" ? 4 : off);
         if (name == "mjhand")
         {
-            SetCardTouchHandler(cpnode, cp);
+            // SetCardTouchHandler(cpnode, cp);
         }
     }
     return cp;
@@ -3570,6 +3884,7 @@ function RestoreCardLayout(node, off, endonepl)
         {
             uipeng.push(ci);
         }
+
         /*
          **去掉旧牌的特殊标签
          */
@@ -3636,7 +3951,8 @@ function RestoreCardLayout(node, off, endonepl)
     var slotwith = upSize.width * upS * 0.3;
     var slotheigt = upSize.height * upS * 0.3;
 
-    for (var i = 0; i < orders.length; i++) {
+    for (var i = 0; i < orders.length; i++)
+    {
         var ci = orders[i];
 
         if (off % 2 == 0)
@@ -3650,21 +3966,19 @@ function RestoreCardLayout(node, off, endonepl)
                     {
                         ci.x = orders[i - 2].x;
                         ci.y = orders[i - 2].y + upSize.height * upS * 0.2;
-
-                    } else if (orders[i - 1].isgang4)
+                    }
+                    else if (orders[i - 1].isgang4)
                     {
                         ci.x = orders[i - 1].x + upSize.width * upS * 2;
-
-                    } else
+                    }
+                    else
                     {
                         ci.x = orders[i - 1].x + upSize.width * upS;
-
                     }
                 }
                 else if (orders[i - 1].name == "gang0")
                 {
                     ci.x = orders[i - 2].x + upSize.width * upS + slotwith;
-
                 }
                 else if (orders[i - 1].name == "gang1")
                 {
@@ -3679,7 +3993,6 @@ function RestoreCardLayout(node, off, endonepl)
                  */
                 if (off == 0)
                 {
-
                     if (i == orders.length - 1)
                     {
                         if (newC && endonepl)
@@ -3777,8 +4090,8 @@ function RestoreCardLayout(node, off, endonepl)
     }
 }
 
-function HandleMJPut(node, msg, off, outNum) {
-
+function HandleMJPut(node, msg, off, outNum)
+{
     var sData = jsclient.data.sData;
     var tData = sData.tData;
     // var uids = tData.uids;
@@ -3833,7 +4146,9 @@ function HandleMJPut(node, msg, off, outNum) {
         for (var i = 0; i < node.children.length; i++)
         {
             if (node.children[i].name == "newout")
+            {
                 node.children[i].name = "out";
+            }
         }
 
         out.visible = true;
@@ -3953,44 +4268,92 @@ function HandleMJPut(node, msg, off, outNum) {
          */
 
         //屏蔽
-        var shield = node.getParent().getChildByName("shield");
-        if(shield)
-        {
-            shield.setVisible(true);
-            // shield.setTouchEnabled(true);
-            shield.runAction(cc.sequence(cc.DelayTime(0.5), cc.callFunc(function(){shield.setVisible(false);})));
-        }
+        // var shield = node.getParent().getChildByName("shield");
+        // if(shield)
+        // {
+        //     shield.setVisible(true);
+        //     // shield.setTouchEnabled(true);
+        //     shield.stopAllActions();
+        //     shield.runAction(cc.sequence(cc.DelayTime(0.5), cc.callFunc(function(){shield.setVisible(false);})));
+        // }
+
+        // openOutCardShieldLayer(node);
+        sendEvent("openShieldLayer");
 
         //打牌动画
-        var callbackFUNC = function ()
-        {
-            out.zIndex = zoder;
-        };
+        // var callbackFUNC = function ()
+        // {
+        //     out.zIndex = zoder;
+        // };
         var callbackFUNCROTATION = function ()
         {
-            if(jsclient.data.sData.tData.gameType == 2 && jsclient.majiang.isFlower8(msg.card))
+            if(tData.gameType == 2 && jsclient.majiang.isFlower8(msg.card))
             {
-                out.visible = true;
-                out.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, endPoint), cc.scaleTo(0.1, oSc)), cc.callFunc(callbackFUNC)));
-                outAction.removeFromParent();
-            }else
+                out.visible = false;
+                out.removeFromParent();
+            }
+            else if(tData.gameType == 5 && tData.zhongIsMa && msg.card == 71)
             {
+                out.visible = false;
+                out.removeFromParent();
+            }
+            else
+            {
+                var outTips = out.getChildByName("tips");
+
+                if(outTips)
+                {
+                    //先关闭以前的箭头，在显示现在的箭头
+                    sendEvent("closeOutTipsCard");
+                    outTips.visible = true;
+
+                    if (off == 0)
+                    {
+                        outTips.runAction(cc.repeatForever(cc.sequence(
+                                cc.moveTo(0.5, outTips.x, outTips.y + 10),
+                                cc.moveTo(0.5, outTips.x, outTips.y - 10))));
+                    }
+                    else if (off == 1)
+                    {
+                        outTips.runAction(cc.repeatForever(cc.sequence(
+                            cc.moveTo(0.5, outTips.x - 10, outTips.y),
+                            cc.moveTo(0.5, outTips.x + 10, outTips.y))));
+                    }
+                    else if (off == 2)
+                    {
+                        outTips.runAction(cc.repeatForever(cc.sequence(
+                            cc.moveTo(0.5, outTips.x, outTips.y - 10),
+                            cc.moveTo(0.5, outTips.x, outTips.y + 10))));
+                    }
+                    else if (off == 3)
+                    {
+                        outTips.runAction(cc.repeatForever(cc.sequence(
+                            cc.moveTo(0.5, outTips.x + 10, outTips.y),
+                            cc.moveTo(0.5, outTips.x - 10, outTips.y))));
+                    }
+                }
+
                 out.visible = true;
                 out.zIndex = zoder;
                 out.x = endPoint.x;
                 out.y = endPoint.y;
                 out.scale = oSc;
-                outAction.removeFromParent();
             }
 
-
+            outAction.removeFromParent();
+            
             // out.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, endPoint), cc.scaleTo(0.1, oSc)), cc.callFunc(callbackFUNC)));
         };
 
-        if(jsclient.data.sData.tData.gameType == 2 && jsclient.majiang.isFlower8(msg.card))
-        {
-            outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, Midpoint), cc.scaleTo(0.1, 2 * oSc))));
-        }else
+        // if(tData.gameType == 2 && jsclient.majiang.isFlower8(msg.card))
+        // {
+        //     outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, Midpoint), cc.scaleTo(0.1, 2 * oSc))));
+        // }
+        // else if(tData.gameType == 5 && tData.zhongIsMa && msg.card == 71)
+        // {
+        //     outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, Midpoint), cc.scaleTo(0.1, 2 * oSc))));
+        // }
+        // else
         {
             outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)),cc.callFunc(callbackFUNCROTATION)
                 //cc.DelayTime(0.4),cc.callFunc(callbackFUNCROTATION),cc.removeSelf()
@@ -4008,7 +4371,8 @@ function HandleMJPut(node, msg, off, outNum) {
         function RemovePutCard(onlySelf)
         {
             var delayNum = 0.4 - (Date.now() - putTime) / 1000;
-            if (delayNum < 0) delayNum = 0;
+            if (delayNum < 0) 
+                delayNum = 0;
 
             if (!onlySelf)
                 outAction.runAction(cc.sequence(cc.DelayTime(delayNum), cc.callFunc(callbackFUNCROTATION), cc.removeSelf()));
@@ -4021,36 +4385,42 @@ function HandleMJPut(node, msg, off, outNum) {
         {
             _event:
             {
-                waitPut: function () {
+                waitPut:function ()
+                {
                     RemovePutCard(false)
                 },
-                MJChi: function () {
+                MJChi:function ()
+                {
                     RemovePutCard(true)
                 },
-                MJPeng: function () {
+                MJPeng:function ()
+                {
                     RemovePutCard(true)
                 },
-                MJGang: function () {
+                MJGang:function ()
+                {
                     RemovePutCard(true)
                 },
-                roundEnd: function () {
+                roundEnd: function ()
+                {
                     RemovePutCard(true)
-                }
+                },
             }
         };
 
-        if (jsclient.majiang.isFlower8(msg.card) && jsclient.data.sData.tData.gameType != 7)
-        {
-            RemovePutCard(true); //MJFlower
-        }
-        else if(tData.zhongIsMa && tData.gameType == 5 && msg.card == 71)
-        {
-            RemovePutCard(true); //MJZhong
-        }
-        else
+        // if (tData.gameType != 7 && jsclient.majiang.isFlower8(msg.card))
+        // {
+        //     RemovePutCard(true); //MJFlower
+        // }
+        // else if(tData.gameType == 5 && tData.zhongIsMa && msg.card == 71)
+        // {
+        //     RemovePutCard(true); //MJZhong
+        // }
+        // else
         {
             ConnectUI2Logic(outAction, outActionBind);
         }
+
         if (!(outNum >= 0))
             RestoreCardLayout(node, off);
     }
@@ -4083,6 +4453,227 @@ function SetArrowRotation(abk)
     // selfIndex = (tData.curPlayer + 4 - selfIndex) % 4;
     // abk.getChildByName("arrow").rotation = 270 - 90 * selfIndex;
     abk.getChildByName("arrow").rotation = 270 - 90 * getUIOffByIndex(tData.curPlayer);
+}
+
+function SetTouchCardHeight(downNode,normalCardY)
+{
+    var children = downNode.children;
+    for (var i = 0; i < children.length; i++)
+    {
+        var ci = children[i];
+        if (ci.name == "mjhand")
+        {
+            ci.y = normalCardY;
+        }
+    }
+}
+
+//选中的card
+var selectCard = null;
+function SetTouchListenerEvent(downNode)
+{
+    var startPos;					///起始位置
+    var touchCard;					///触摸点牌
+
+    var cardStartPosition = {};		///选中card位置
+    var DISTANCE_NUM = 100;			///移动距离
+    var normalCardY = 0; 			///正常手牌的高度
+    var putCardY = 0;				///要打出的牌高度
+    var isCanPut = false;			///是否可以打牌
+    var cpnode = downNode.getChildByName("stand");
+    jsclient.cardTouchState = true;
+
+    return{
+        event: cc.EventListener.TOUCH_ONE_BY_ONE,
+        swallowTouches: false,
+        status: null,
+        onTouchBegan: function (touch, event)
+        {
+            var sData = jsclient.data.sData;
+            var tData = sData.tData;
+            // if(tData.tState==TableState.waitChange)
+            // {
+                // return true;
+            // }
+            var children = downNode.children;
+            var target = event.getCurrentTarget();
+            startPos = target.getParent().convertTouchToNodeSpace(touch);
+            isCanPut = false;
+            normalCardY = cpnode.y;
+            // putCardY = cpnode.y + cpnode.scale * cpnode.height / 4;
+            putCardY = cpnode.y + 20;
+
+            if (!IsMyTurn() || tData.tState != TableState.waitPut)
+            {
+                return false;
+            }
+            //防止连续点击打出两张牌
+            if(!jsclient.cardTouchState)
+            {
+                return false;
+            }
+
+            for(var key in cardStartPosition)
+                return false;
+
+            ///开始遍历
+            for (var i = 0; i < children.length; i++)
+            {
+                var ci = children[i];
+                if (ci.name == "mjhand" && ci.enabled)
+                {
+                    var rect = ci.getBoundingBox();
+                    ci.zIndex = 999;
+                    if (cc.rectContainsPoint(rect, startPos))
+                    {
+                        cardStartPosition.x = ci.x;
+                        cardStartPosition.y = ci.y;
+                        selectCard = ci;
+                        touchCard = ci.clone();
+                        touchCard.x = ci.x;
+                        touchCard.y = ci.y;
+                        touchCard.zIndex = 1000;
+                        touchCard.opacity = 110;
+                        touchCard.name = "touchYinYing";
+                        touchCard.tag = ci.tag;
+                        downNode.addChild(touchCard);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        },
+
+        onTouchMoved: function (touch, event)
+        {
+            var target = event.getCurrentTarget();
+            var pos = target.getParent().convertTouchToNodeSpace(touch);
+            var sData = jsclient.data.sData;
+            var tData = sData.tData;
+
+            if (selectCard)
+            {
+                //算出间距
+                var delta = touch.getDelta();
+                selectCard.x = pos.x+delta.x;
+                selectCard.y = pos.y+delta.y;
+                selectCard.zIndex = 1000;
+                var distance = pos.y - startPos.y;
+                if( distance >= DISTANCE_NUM)
+                {
+                    isCanPut = true;
+                }
+                else
+                {
+                    isCanPut = false;
+                }
+
+                //向下拖动至一半时返回最高点
+                if(distance <= 0)
+                {
+                    if(Math.abs(distance) > selectCard.height / 4)
+                    {
+                        SetTouchCardHeight(downNode,normalCardY);
+                        selectCard.x = cardStartPosition.x;
+                        selectCard.y = putCardY;
+                        for (var key in cardStartPosition)
+                            delete cardStartPosition[key];
+
+                        if(touchCard)
+                        {
+                            touchCard.removeFromParent(true);
+                            touchCard = null;
+                        }
+                        selectCard = null;
+                    }
+                    return false;
+                }
+            }
+            return true;
+        },
+
+        onTouchEnded: function (touch, event)
+        {
+            var cardTag = 0;
+
+            if(touchCard)
+            {
+                cardTag = touchCard.tag;
+                touchCard.removeFromParent(true);
+                touchCard = null;
+                if(selectCard == null)
+                {
+                    RestoreCardLayout(downNode,0);
+                }
+            }
+
+            if (selectCard)
+            {
+                if (cardStartPosition.y >= cpnode.y + 10)
+                {
+                    isCanPut = true;
+                }
+
+                if (isCanPut)
+                {
+                    var pos = {x: selectCard.x, y: selectCard.y};
+                    PutAwayCard(selectCard, selectCard.tag, pos);
+                    sendEvent("showDefCardEff");
+                    sendEvent("closeCardTipsEff");
+                    SetTouchCardHeight(downNode,normalCardY);
+                    jsclient.cardTouchState = false;
+                    isCanPut = false;
+                }
+                else
+                {
+                    SetTouchCardHeight(downNode,normalCardY);
+                    var pos = {x: cardStartPosition.x, y: putCardY};
+                    noCardPut(selectCard, pos);
+                    jsclient.lastPutPos = {x: selectCard.x, y: selectCard.y};
+                    // showCanFirstCardTing(getUIPlayer(0), selectCard.tag);
+
+                    if(cardTag != 0)
+                    {
+                        sendEvent("showCardTipsEff", cardTag);
+                        sendEvent("showPutCardEff", cardTag);
+                    }
+                }
+            }
+
+            for (var key in cardStartPosition)
+                delete cardStartPosition[key];
+
+            selectCard = null;
+            // playerPutCardInfo.selectCard = 0;
+            return true;
+        },
+
+        onTouchCancelled: function (touch, event)
+        {
+            jsclient.cardTouchState = true;
+            // playerPutCardInfo.selectCard = 0;
+            SetTouchCardHeight(downNode,normalCardY);
+            for (var key in cardStartPosition)
+                delete cardStartPosition[key];
+
+            selectCard = null;
+            if(touchCard)
+            {
+                touchCard.removeFromParent(true);
+                touchCard = null;
+            }
+            return true;
+        }
+    };
+}
+
+//没有牌打出
+function noCardPut(sCard,pos)
+{
+    sCard.x = pos.x;
+    sCard.y = pos.y;
+
+    //sCard.runAction(cc.sequence(cc.moveTo(0.1, pos)));
 }
 
 //打牌
@@ -4262,7 +4853,6 @@ function getWindDir2(pIdx, windIdx)
 function getCirclWindDir(tData, pl)
 {
     var pIdx = getIndexRingWind(tData, pl.uid);
-    cc.log("getCirclWindDir  tData.jiPingHuCircleWind.curCircleWind ================"+ tData.jiPingHuCircleWind.curCircleWind);
     return getWindDir2(pIdx, tData.jiPingHuCircleWind.curCircleWind);//风圈 0 1 2 3 4
 }
 
@@ -4528,15 +5118,19 @@ function showPlayerLinkZhuangLogo(node, off) {
     }
 
     node.zIndex = 100;
-    if (tData) {
-        if ((tData.gameType == 3 || tData.gameType == 1) && tData.jiejieGao && tData.uids[tData.zhuang] == pl.info.uid) {
+    if (tData)
+    {
+        if ((tData.gameType == 9 || tData.gameType == 3 || tData.gameType == 1) && tData.jiejieGao && tData.uids[tData.zhuang] == pl.info.uid)
+        {
             node.visible = true;
             //var linkZhuang = node.getChildByName("linkZhuang");
             var path = "res/play-yli/zhuang_" + pl.linkZhuang + ".png";
             cc.log("path = " + path);
             node.loadTexture(path);
             node.setVisible(true);
-        } else {
+        }
+        else
+        {
             node.visible = false;
         }
 
@@ -4595,7 +5189,7 @@ function showPlayerZhuangLogo(node, off)
         }
     }
 
-    if ((tData.gameType == 3 || tData.gameType == 1)&& tData.jiejieGao)
+    if ((tData.gameType == 9 || tData.gameType == 3 || tData.gameType == 1)&& tData.jiejieGao)
     {
         if (tData)
         {
@@ -4672,7 +5266,7 @@ function MJChichange(tag)
 //	jsclient.gangCards = [];
 //	jsclient.eatpos = [];
     mylog("chi " + jsclient.eatpos.length);
-    mylog(jsclient.eatpos);
+    // mylog(jsclient.eatpos);
 
     var eat = jsclient.playui.jsBind.eat;
     var changeuibg = eat.changeui.changeuibg;
@@ -5587,30 +6181,40 @@ var PlayLayer = cc.Layer.extend(
                 DelRoom: CheckDelRoomUI
             },
 
-            backimg:{
+            backimg:
+            {
                 _layout: [[1.02, 1.02], [0.5, 0.5], [0, 0], true]
             },
 
-            roundnumImg: {
-                _layout: [[0.1, 0.1], [0.52, 0.5], [1, 0]]
-                , _event: {
-                    initSceneData: function (eD) {
+            roundnumImg:
+            {
+                _layout: [[0.1, 0.1], [0.52, 0.5], [1, 0]],
+                _event: {
+                    initSceneData: function (eD)
+                    {
+                        this.visible = CheckArrowVisible();
+                    },
+                    mjhand: function (eD)
+                    {
+                        this.visible = CheckArrowVisible();
+                    },
+                    onlinePlayer: function (eD)
+                    {
                         this.visible = CheckArrowVisible();
                     }
-                    , mjhand: function (eD) {
-                        this.visible = CheckArrowVisible();
-                    }
-                    , onlinePlayer: function (eD) {
-                        this.visible = CheckArrowVisible();
-                    }
-                }
-                , roundnumAtlas: {
-                    _text: function () {
+                },
+                roundnumAtlas:
+                {
+                    _text: function ()
+                    {
                         var sData = jsclient.data.sData;
                         var tData = sData.tData;
                         if (tData) return tData.roundNum - 1;
-                    }, _event: {
-                        mjhand: function () {
+                    },
+                    _event:
+                    {
+                        mjhand: function ()
+                        {
                             var sData = jsclient.data.sData;
                             var tData = sData.tData;
                             if (tData) return this.setString(tData.roundNum - 1);
@@ -5676,7 +6280,8 @@ var PlayLayer = cc.Layer.extend(
                 }
             },
 
-            back: {
+            back:
+            {
                 // back: {_layout: [[1.02, 1.02], [0.5, 0.5], [0, 0], true]},
                 clt: {
                     _layout: [[0.15, 0.15], [0, 1], [0.5, -0.5]],
@@ -5893,7 +6498,8 @@ var PlayLayer = cc.Layer.extend(
                                     && jsclient.data.sData.tData.gameType != 3
                                     && jsclient.data.sData.tData.gameType != 5
                                     && jsclient.data.sData.tData.gameType != 6
-                                    && jsclient.data.sData.tData.gameType != 8)
+                                    && jsclient.data.sData.tData.gameType != 8
+                                    && jsclient.data.sData.tData.gameType != 9)
                                 {
                                     count++;
                                     tipsImg[count] = this.getChildByName("canHu7");
@@ -5960,7 +6566,8 @@ var PlayLayer = cc.Layer.extend(
                                 }
                                 if(jsclient.data.sData.tData.guiJiaMa
                                     &&  jsclient.data.sData.tData.gameType != 1
-                                    && jsclient.data.sData.tData.gameType != 3)
+                                    && jsclient.data.sData.tData.gameType != 3
+                                    && jsclient.data.sData.tData.gameType != 9)
                                 {
                                     count++;
                                     tipsImg[count] = this.getChildByName("guiJiaMa");
@@ -6182,7 +6789,6 @@ var PlayLayer = cc.Layer.extend(
                             return false;
                     }
                 },
-
                 chshmj: {
                     _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
                     _visible: function ()
@@ -6193,7 +6799,16 @@ var PlayLayer = cc.Layer.extend(
                             return false;
                     }
                 },
-
+                xgmj: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function ()
+                    {
+                        if (jsclient.data.sData.tData.gameType == 9)
+                            return true;
+                        else
+                            return false;
+                    }
+                },
             },
 
             banner:
@@ -6268,9 +6883,11 @@ var PlayLayer = cc.Layer.extend(
 
             },
 
-            arrowbk: {
+            arrowbk:
+            {
                 _layout: [[0.15, 0.15], [0.5, 0.5], [0, 0]],
-                _event: {
+                _event:
+                {
                     initSceneData: function (eD)
                     {
                         this.visible = CheckArrowVisible();
@@ -6297,6 +6914,9 @@ var PlayLayer = cc.Layer.extend(
                     },
 
                     MJFlower: function (eD) {
+                        SetArrowRotation(this);
+                    },
+                    MJFlower1: function (eD) {
                         SetArrowRotation(this);
                     },
                     MJZhong: function (eD) {
@@ -6496,6 +7116,10 @@ var PlayLayer = cc.Layer.extend(
                         {
                             gameTypeTips = "【潮汕麻将】";
                         }
+                        else if(gameType == 9)
+                        {
+                            gameTypeTips = "【深圳麻将】";
+                        }
 
                         jsclient.native.wxShareUrl(
                             jsclient.remoteCfg.wxShareUrl,
@@ -6555,6 +7179,11 @@ var PlayLayer = cc.Layer.extend(
 
             down:
             {
+                _run:function()
+                {
+                    cc.eventManager.addListener(SetTouchListenerEvent(this), this);
+                },
+
                 head:
                 {
                     kuang:
@@ -6846,15 +7475,16 @@ var PlayLayer = cc.Layer.extend(
                     },
                     mjhand: function (eD)
                     {
-                        InitPlayerHandUI(this, 0);
-
                         var shield = this.getParent().getChildByName("shield");
                         if(shield)
                         {
                             shield.setVisible(true);
                             // shield.setTouchEnabled(true);
+                            shield.stopAllActions();
                             shield.runAction(cc.sequence(cc.DelayTime(1), cc.callFunc(function(){shield.setVisible(false);})));
                         }
+
+                        InitPlayerHandUI(this, 0);
                     },
                     roundEnd: function ()
                     {
@@ -6868,6 +7498,7 @@ var PlayLayer = cc.Layer.extend(
                     },
                     MJPut: function (eD)
                     {  //HandleMJPut(this,eD,0);
+                        sendEvent("openShieldLayer");
                     },
                     MJChi: function (eD)
                     {
@@ -6891,10 +7522,28 @@ var PlayLayer = cc.Layer.extend(
                     },
                     MJFlower: function (eD)
                     {
+                        var shield = this.getParent().getChildByName("shield");
+                        if(shield)
+                        {
+                            shield.setVisible(true);
+                            // shield.setTouchEnabled(true);
+                            shield.stopAllActions();
+                            shield.runAction(cc.sequence(cc.DelayTime(1), cc.callFunc(function(){shield.setVisible(false);})));
+                        }
+
                         HandleMJFlower(this, eD, 0);
                     },
                     MJZhong: function (eD)
                     {
+                        var shield = this.getParent().getChildByName("shield");
+                        if(shield)
+                        {
+                            shield.setVisible(true);
+                            // shield.setTouchEnabled(true);
+                            shield.stopAllActions();
+                            shield.runAction(cc.sequence(cc.DelayTime(1), cc.callFunc(function(){shield.setVisible(false);})));
+                        }
+
                         HandleMJZhong(this, eD, 0);
                     },
 
@@ -6915,6 +7564,16 @@ var PlayLayer = cc.Layer.extend(
                         //关闭听牌提示
                         closeCardTipsEffect(this);
                     },
+
+                    closeOutTipsCard:function()
+                    {
+                        closeOutTipsCardEffect(this);
+                    },
+		    
+		    closeOutTipsCard:function()
+                    {
+                        closeOutTipsCardEffect(this);
+                    }
                 }
             },
 
@@ -7154,6 +7813,11 @@ var PlayLayer = cc.Layer.extend(
                     showDefCardEff:function(){
                         //恢复麻将的效果
                         showDefCarCardEffect(this);
+                    },
+
+                    closeOutTipsCard:function()
+                    {
+                        closeOutTipsCardEffect(this);
                     }
                 }
             },
@@ -7399,6 +8063,11 @@ var PlayLayer = cc.Layer.extend(
                     showDefCardEff:function(){
                         //恢复麻将的效果
                         showDefCarCardEffect(this);
+                    },
+
+                    closeOutTipsCard:function()
+                    {
+                        closeOutTipsCardEffect(this);
                     }
                 }
             },
@@ -7634,6 +8303,11 @@ var PlayLayer = cc.Layer.extend(
                     showDefCardEff:function(){
                         //恢复麻将的效果
                         showDefCarCardEffect(this);
+                    },
+
+                    closeOutTipsCard:function()
+                    {
+                        closeOutTipsCardEffect(this);
                     }
                 }
             },
@@ -7949,7 +8623,11 @@ var PlayLayer = cc.Layer.extend(
                         this.runAction(cc.sequence(cc.DelayTime(0.1), cc.callFunc(delayExe)));
                     },
                     MJFlower: function (eD) {
-                        CheckEatVisible(jsclient.playui.jsBind.eat);
+                        CheckEatVisible1(jsclient.playui.jsBind.eat);
+                    },
+                    MJFlower1: function (eD)
+                    {
+                        CheckEatVisible1(jsclient.playui.jsBind.eat);
                     },
                     MJZhong: function (eD) {
                         CheckEatVisible(jsclient.playui.jsBind.eat);

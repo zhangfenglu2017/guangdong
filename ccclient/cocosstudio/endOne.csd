@@ -8,6 +8,29 @@
         <Children>
           <AbstractNodeData Name="back" ActionTag="755369775" Tag="1595" IconVisible="False" LeftMargin="-1.2801" RightMargin="1.2800" TopMargin="-0.0001" BottomMargin="0.0001" TouchEnable="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
+            <Children>
+              <AbstractNodeData Name="diban" ActionTag="106707589" Tag="455" IconVisible="False" LeftMargin="216.5584" RightMargin="881.4417" TopMargin="10.8437" BottomMargin="667.1563" LeftEage="60" RightEage="60" TopEage="13" BottomEage="13" Scale9OriginX="60" Scale9OriginY="13" Scale9Width="62" Scale9Height="16" ctype="ImageViewObjectData">
+                <Size X="182.0000" Y="42.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="307.5584" Y="688.1563" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.2403" Y="0.9558" />
+                <PreSize X="0.1422" Y="0.0583" />
+                <FileData Type="Normal" Path="gameEndNew/diban.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="playTable" ActionTag="-1207544041" Tag="456" IconVisible="False" LeftMargin="242.4738" RightMargin="912.5262" TopMargin="19.0961" BottomMargin="675.9039" FontSize="25" LabelText="血战推倒胡" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="125.0000" Y="25.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="304.9738" Y="688.4039" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="228" G="192" B="112" />
+                <PrePosition X="0.2383" Y="0.9561" />
+                <PreSize X="0.0977" Y="0.0347" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="638.7199" Y="360.0001" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

@@ -232,6 +232,7 @@
           <Image Name="btn_share_press.png" />
           <Image Name="btn-return.png" />
           <Image Name="btn-return-press.png" />
+          <Image Name="diban.png" />
           <Image Name="fangzhu.png" />
           <Image Name="floor_11.png" />
           <Image Name="Light.png" />
@@ -303,6 +304,7 @@
           <Image Name="logo_01_xingyue.png" />
           <Image Name="logo_02_xingyue.png" />
           <Image Name="ot-1.png" />
+          <Image Name="xylogo.png" />
         </Folder>
         <Folder Name="MaJiangNew">
           <PlistImageFolder Image="z_mj.png" PListFile="z_mj.plist" Name=".z_mj_PList.Dir">
@@ -655,6 +657,7 @@
           <Image Name="maduiduihu.png" />
           <Image Name="magendi.png" />
           <Image Name="menqingjiafen.png" />
+          <Image Name="mj_jiantou.png" />
           <Image Name="pai_bottom.png" />
           <Image Name="penggang_bottom.png" />
           <Image Name="Photo_frame_01.png" />
@@ -750,6 +753,7 @@
         <Project Name="Home.csd" Type="Layer" />
         <Project Name="HomeTips.csd" Type="Layer" />
         <Project Name="Login.csd" Type="Layer" />
+        <Project Name="Logo.csd" Type="Layer" />
         <Project Name="NetError.csd" Type="Node" />
         <Project Name="PayLayer.csd" Type="Layer" />
         <Project Name="Play.csd" Type="Layer" />

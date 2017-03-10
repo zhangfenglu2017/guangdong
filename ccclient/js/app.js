@@ -264,6 +264,8 @@ jsclient.leaveGame = function () {
 //    });
 //};
 
+
+
 jsclient.getPlayLogOne = function (item) {
 
     var playUrl = "";
@@ -277,18 +279,19 @@ jsclient.getPlayLogOne = function (item) {
 
             //内网：只能暂时在电脑上测试回放，手机不可以
             // if(!cc.sys.isMobile)
-            //     playUrl="http://"+"114.55.255.22"+"/"+item.url+"/playlog/"+item.now.substr(0,10)+"/"+item.owner+"_"+item.tableid+".json";
-               // playUrl="http://114.55.255.22/playlog/"+item.now.substr(0,10)+"/"+item.owner+"_"+item.tableid+".json";
+            //     playUrl="http://"+"116.62.47.218"+"/"+item.url+"/playlog/"+item.now.substr(0,10)+"/"+item.owner+"_"+item.tableid+".json";
 
             var xhr = cc.loader.getXMLHttpRequest();
             xhr.open("GET", playUrl);
-            xhr.onreadystatechange = function () {
+            xhr.onreadystatechange = function ()
+            {
                 jsclient.unblock();
-                if (xhr.readyState == 4 && xhr.status == 200) {
+                if (xhr.readyState == 4 && xhr.status == 200)
+                {
                     sendEvent("playLogOne",JSON.parse(xhr.responseText));
                 }
-            }
-            xhr.onerror = function (event) {jsclient.unblock(); }
+            };
+            xhr.onerror = function (event) {jsclient.unblock();};
             xhr.send();
         }
     }
@@ -975,7 +978,7 @@ jsclient.netCallBack =
         }
         playEffect("shuffle");
     }],
-    MJFlower: [0, function (d) {
+    MJFlower: [0.1, function (d) {
         playEffect("nv/flower");
         var sData = jsclient.data.sData;
         var pl = sData.players[d.uid];
@@ -985,8 +988,13 @@ jsclient.netCallBack =
                 pl.mjhand.splice(idx, 1);
             }
         }
-        pl.mjflower.push(d.card);
+        if(d.card > 0)
+            pl.mjflower.push(d.card);
         cc.log("HuiZhou：　MJFlower: pl.mjflower.length = " + pl.mjflower.length);
+    }],
+    MJFlower1: [0, function (d) {
+        jsclient.data.sData.tData.checkRoleFlowerType = d.checkRoleFlowerType;
+        jsclient.data.sData.tData.curPlayer = d.curPlayer;
     }],
     MJZhong: [0, function (d) {
         playEffect("nv/71");
@@ -1020,20 +1028,24 @@ jsclient.netCallBack =
         tData.tState = TableState.waitEat;
         tData.putType = d.putType;
         var pl = sData.players[d.uid];
-        pl.mjput.push(d.card);
-        pl.skipPeng = [];
-        pl.skipHu = false;
-        playEffect("nv/" + d.card);
-
-        if (d.uid == SelfUid()) {
-            pl.mjhand.splice(pl.mjhand.indexOf(d.card), 1);
-            pl.mjState = TableState.waitPut;
+        if(pl)
+        {
+            pl.mjput.push(d.card);
+            pl.skipPeng = [];
             pl.skipHu = false;
+            playEffect("nv/" + d.card);
+
+            if (d.uid == SelfUid()) {
+                pl.mjhand.splice(pl.mjhand.indexOf(d.card), 1);
+                pl.mjState = TableState.waitPut;
+                pl.skipHu = false;
+            }
+            else {
+                sData.players[SelfUid() + ""].mjState = TableState.waitEat;
+            }
+            mylog("myput " + d.card);
         }
-        else {
-            sData.players[SelfUid() + ""].mjState = TableState.waitEat;
-        }
-        mylog("myput " + d.card);
+
     }],
 
     newCard: [0, function (d) {
@@ -2039,12 +2051,12 @@ var JSScene = cc.Scene.extend({
     onEnter: function ()
     {
         this._super();
-        // jsclient.gameScene = this;
         setEffectsVolume(-1);
         setMusicVolume(-1);
         ConnectUI2Logic(this, this.jsBind);
-        this.addChild(new UpdateLayer());
+        // this.addChild(new UpdateLayer());
         this.addChild(new BlockLayer());
+        this.addChild(new LogoLayer());
 
         // var createLayer = new CreateLayer();
         // createLayer.setVisible(false);
@@ -2053,3 +2065,5 @@ var JSScene = cc.Scene.extend({
         // this.addChild(new ShowMaPanel());
     }
 });
+
+

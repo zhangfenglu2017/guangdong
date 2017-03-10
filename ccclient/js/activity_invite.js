@@ -1,3 +1,5 @@
+
+
 (function () {
 
     var activity, invite, uiItem, uiList, uiBar, leftImg, rightImg;

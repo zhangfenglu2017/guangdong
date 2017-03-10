@@ -2,6 +2,8 @@
 //新手礼包弹框
 //jian
 
+
+
 (function()
 {
     var input, actCodeLayer;

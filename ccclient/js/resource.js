@@ -2,6 +2,8 @@ var res =
 {
     Update_bk:"res/login/z_login.png",
 
+	Logo_Json:"res/Logo.json",
+
 	Updae_json:"res/Update.json",
 	Login_json:"res/Login.json",
 
@@ -17,7 +19,6 @@ var res =
 
 	ExtGame_json:"res/ExtGame.json",
 	RoomTips_json:"res/roomTips.json",
-
 
     // PlayMJ_my_png:"res/MaJiangNew/z_mj.png",
     // PlayMJ_my_plist:"res/MaJiangNew/z_mj.plist",
@@ -128,6 +129,7 @@ var UserInfoLayer;
 var LoginLayer;
 var UpdateLayer;
 var CreateLayer;
+var LogoLayer;
 var RoomTipsLayer;
 var ChangeIDLayer;
 var ExportDataLayer;
@@ -354,3 +356,5 @@ function ConnectUI2Logic(node,js)
 	js._node = node;
 	//node.userObject=js;
 }
+
+

@@ -52,6 +52,108 @@
             "TopMargin": -0.0001,
             "BottomMargin": 0.0001,
             "Tag": 1595,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "gameEndNew/diban.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 60,
+                "Scale9OriginY": 13,
+                "Scale9Width": 62,
+                "Scale9Height": 16,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 307.5584,
+                  "Y": 688.1563
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2403,
+                  "Y": 0.9558
+                },
+                "PreSize": {
+                  "X": 0.1422,
+                  "Y": 0.0583
+                },
+                "LeftMargin": 216.5584,
+                "RightMargin": 881.4417,
+                "TopMargin": 10.8437,
+                "BottomMargin": 667.1563,
+                "Tag": 455,
+                "ActionTag": 106707589,
+                "Size": {
+                  "X": 182.0,
+                  "Y": 42.0
+                },
+                "Name": "diban",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 25,
+                "LabelText": "血战推倒胡",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 304.9738,
+                  "Y": 688.4039
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 228,
+                  "G": 192,
+                  "B": 112
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2383,
+                  "Y": 0.9561
+                },
+                "PreSize": {
+                  "X": 0.0977,
+                  "Y": 0.0347
+                },
+                "LeftMargin": 242.4738,
+                "RightMargin": 912.5262,
+                "TopMargin": 19.0961,
+                "BottomMargin": 675.9039,
+                "Tag": 456,
+                "ActionTag": -1207544041,
+                "Size": {
+                  "X": 125.0,
+                  "Y": 25.0
+                },
+                "Name": "playTable",
+                "ctype": "TextObjectData"
+              }
+            ],
             "ActionTag": 755369775,
             "Size": {
               "X": 1280.0,
@@ -5477,6 +5579,7 @@
         "gameEndNew/btn_mmjg.png",
         "gameEndNew/btn_share_normal.png",
         "gameEndNew/btn_share_press.png",
+        "gameEndNew/diban.png",
         "gameEndNew/floor_11.png",
         "gameEndNew/Light.png",
         "gameEndNew/mazz.png",

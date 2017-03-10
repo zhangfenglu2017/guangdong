@@ -1,6 +1,7 @@
 
 
 
+
 (function ()
 {
     var activityLayer, activityInvite;

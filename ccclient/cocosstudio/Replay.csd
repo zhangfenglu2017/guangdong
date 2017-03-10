@@ -1788,6 +1788,16 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="play-yli/chaoshanmajiang.png" Plist="" />
               </AbstractNodeData>
+              <AbstractNodeData Name="xgmj" ActionTag="1933827530" Tag="766" IconVisible="False" LeftMargin="547.3801" RightMargin="-747.3801" TopMargin="-459.0500" BottomMargin="403.0500" LeftEage="71" RightEage="71" TopEage="16" BottomEage="16" Scale9OriginX="71" Scale9OriginY="16" Scale9Width="58" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="200.0000" Y="56.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="647.3801" Y="431.0500" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="play-yli/shenzhenmajiang.png" Plist="" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint />
             <Position />

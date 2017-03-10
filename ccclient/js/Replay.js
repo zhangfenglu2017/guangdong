@@ -1207,7 +1207,7 @@ function newReplayLayer()
 
             outAction.scale = oSc;
 
-            outAction.zIndex = 200;
+            outAction.zIndex = 3000;
             if (off == 0 && jsclient.lastPutPos)
             {
                 outAction.x = jsclient.lastPutPos.x;
@@ -1223,28 +1223,31 @@ function newReplayLayer()
              设置出牌动画的方向
              */
 
-            var callbackFUNC = function ()
-            {
-                out.zIndex = zoder;
-
-            };
             var callbackFUNCROTATION = function ()
             {
-                out.visible = true;
-                out.zIndex = zoder;
-                out.x = endPoint.x;
-                out.y = endPoint.y;
-                out.scale = oSc;
+                if(tData.gameType == 2 && jsclient.majiang.isFlower8(msg.card))
+                {
+                    out.visible = false;
+                    out.removeFromParent();
+                }
+                else if(tData.gameType == 5 && tData.zhongIsMa && msg.card == 71)
+                {
+                    out.visible = false;
+                    out.removeFromParent();
+                }
+                else
+                {
+                    out.visible = true;
+                    out.zIndex = zoder;
+                    out.x = endPoint.x;
+                    out.y = endPoint.y;
+                    out.scale = oSc;
+                }
+
                 outAction.removeFromParent();
 
-                // out.visible = true;
-                // out.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)), cc.callFunc(callbackFUNC)));
-
             };
-            // outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, Midpoint), cc.scaleTo(0.2, 2 * oSc))
-            outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)),cc.callFunc(callbackFUNCROTATION)
-                //cc.DelayTime(0.4),cc.callFunc(callbackFUNCROTATION),cc.removeSelf()
-            ));
+            outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)),cc.callFunc(callbackFUNCROTATION)));
 
             function RemovePutCard(onlySelf)
             {
@@ -1286,18 +1289,7 @@ function newReplayLayer()
                 }
             };
 
-            if (jsclient.majiang.isFlower8(msg.card) && jsclient.data.sData.tData.gameType != 7)
-            {
-                RemovePutCard(true); //MJFlower
-            }
-            else if(tData.zhongIsMa && tData.gameType == 5 && msg.card == 71)
-            {
-                RemovePutCard(true); //MJZhong
-            }
-            else
-            {
-                ConnectUI2Logic(outAction, outActionBind);
-            }
+            ConnectUI2Logic(outAction, outActionBind);
 
             if (!(outNum >= 0))
                 RestoreCardLayout(node, off);
@@ -2014,7 +2006,7 @@ function newReplayLayer()
     // }
     
     
-
+    
     var playTips;
     var rePlayLayer = cc.Layer.extend({
         jsBind: 
@@ -2319,7 +2311,8 @@ function newReplayLayer()
                             if (jsclient.data.sData.tData.canHu7
                                 && jsclient.data.sData.tData.gameType != 3
                                 && jsclient.data.sData.tData.gameType != 5
-                                && jsclient.data.sData.tData.gameType != 6)
+                                && jsclient.data.sData.tData.gameType != 6
+                                && jsclient.data.sData.tData.gameType != 9)
                             {
                                 count++;
                                 tipsImg[count] = this.getChildByName("canHu7");
@@ -2384,7 +2377,10 @@ function newReplayLayer()
                                 count++;
                                 tipsImg[count] = this.getChildByName("guiJiaBei");
                             }
-                            if(jsclient.data.sData.tData.guiJiaMa &&  jsclient.data.sData.tData.gameType != 1  && jsclient.data.sData.tData.gameType != 3)
+                            if(jsclient.data.sData.tData.guiJiaMa
+                                &&  jsclient.data.sData.tData.gameType != 1
+                                && jsclient.data.sData.tData.gameType != 3
+                                && jsclient.data.sData.tData.gameType != 9)
                             {
                                 count++;
                                 tipsImg[count] = this.getChildByName("guiJiaMa");
@@ -2582,6 +2578,16 @@ function newReplayLayer()
                             return false;
                     }
                 },
+                xgmj: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function ()
+                    {
+                        if (jsclient.data.sData.tData.gameType == 9)
+                            return true;
+                        else
+                            return false;
+                    }
+                },
             },
             
             banner: {
@@ -2625,7 +2631,14 @@ function newReplayLayer()
                     }
                     , MJGang: function (eD) {
                         SetArrowRotation(this)
-                    }
+                    },
+                    // MJFlower: function (eD) {
+                    //     SetArrowRotation(this);
+                    // },
+                    // MJZhong: function (eD) {
+                    //     SetArrowRotation(this);
+                    // },
+
                 }, number: {
                     _run: function () {
 
@@ -3945,3 +3958,5 @@ function newReplayLayer()
     var rePlayLayer = new rePlayLayer();
     return rePlayLayer;
 }
+
+

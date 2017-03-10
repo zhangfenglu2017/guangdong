@@ -3,7 +3,6 @@
  */
 
 
-
 // 帧循环管理器
 var FrameMoveLayer = cc.Layer.extend(
 {
@@ -18,7 +17,6 @@ var FrameMoveLayer = cc.Layer.extend(
     // update
     update: function(time)
     {
-        //cc.log("============================================================================");
         getArmatureResMgrInst().onFrameMove(time);
     },
 }

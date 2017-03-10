@@ -597,6 +597,7 @@
               "X": 1120.0,
               "Y": 20.0
             },
+            "VisibleForFrame": false,
             "Name": "fitnessTips",
             "ctype": "TextObjectData"
           }

@@ -3,7 +3,6 @@
  */
 
 
-
 // 特效对象，暂无继承，等有了粒子特效，抽象出一个baseEffect
 var ArmatureEffect =
 {

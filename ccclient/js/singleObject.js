@@ -5,6 +5,7 @@
 //============单例对象=============//
 
 
+    
 var getArmatureResMgrInst = (function()
 {
     var inst = null;
@@ -22,7 +23,6 @@ var getArmatureResMgrInst = (function()
 
     return getInstance;
 })();
-
 
 
 

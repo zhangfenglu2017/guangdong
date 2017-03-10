@@ -41,15 +41,17 @@ var BlockLayer = cc.Layer.extend(
         this._super();
         jsclient.block = function()
         {
-            jsclient.blockui.zIndex=1000;
+            jsclient.blockui.zIndex = 1000;
         };
 
         jsclient.unblock = function()
         {
-            jsclient.blockui.zIndex=-1000;
+            jsclient.blockui.zIndex = -1000;
         };
 
         jsclient.unblock();
 
     }
 });
+
+

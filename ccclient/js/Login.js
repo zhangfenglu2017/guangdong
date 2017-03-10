@@ -1,5 +1,6 @@
 
 
+
 (function(){
 
 	function f_login(mail,code,isLocalGuest)
@@ -366,5 +367,6 @@
 	});
 	
 })();
+
 
 

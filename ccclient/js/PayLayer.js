@@ -145,3 +145,5 @@ var PayLayer = cc.Layer.extend({
     }
    
 });
+
+
