@@ -669,9 +669,7 @@
 //游戏玩法
 (function ()
 {
-    var webViewLayer2, uiPara, webView, scroll,
-        bdhmjtable, gdmjtable, hzhmjtable,shzhmjtable,jphmjtable, dgmjtable, ybzhmjtable, srfmjtable,
-        help;
+    var webViewLayer2, uiPara, webView, scroll, tables = [], url = [], help;
 
     function createWebViewByUrl(url)
     {
@@ -695,250 +693,45 @@
 
     function setPanelContentByType(type)
     {
-        var helpType = type;
-        var url1 = jsclient.remoteCfg.help1Url;
-        var url2 = jsclient.remoteCfg.help2Url;
-        var url3 = jsclient.remoteCfg.help3Url;
-        var url4 = jsclient.remoteCfg.help4Url;
-        var url5 = jsclient.remoteCfg.help5Url;
-        var url6 = jsclient.remoteCfg.help6Url;
-        var url7 = jsclient.remoteCfg.help7Url;
-        var url8 = jsclient.remoteCfg.help8Url;
+        // var url1 = jsclient.remoteCfg.help1Url;
+        // var url2 = jsclient.remoteCfg.help2Url;
+        // var url3 = jsclient.remoteCfg.help3Url;
+        // var url4 = jsclient.remoteCfg.help4Url;
+        // var url5 = jsclient.remoteCfg.help5Url;
+        // var url6 = jsclient.remoteCfg.help6Url;
+        // var url7 = jsclient.remoteCfg.help7Url;
+        // var url8 = jsclient.remoteCfg.help8Url;
+        // var url9 = jsclient.remoteCfg.help9Url;
 
-        switch(helpType)
+        url[1] = jsclient.remoteCfg.help1Url;
+        url[2] = jsclient.remoteCfg.help2Url;
+        url[3] = jsclient.remoteCfg.help3Url;
+        url[4] = jsclient.remoteCfg.help4Url;
+        url[5] = jsclient.remoteCfg.help5Url;
+        url[6] = jsclient.remoteCfg.help6Url;
+        url[7] = jsclient.remoteCfg.help7Url;
+        url[8] = jsclient.remoteCfg.help8Url;
+        url[9] = jsclient.remoteCfg.help9Url;
+
+        for(var i = 1; i < tables.length; i++)
         {
-        case 1:
-            bdhmjtable.setBright(true);
-            bdhmjtable.setEnabled(true);
-
-            gdmjtable.setBright(false);
-            gdmjtable.setEnabled(false);
-
-            hzhmjtable.setBright(true);
-            hzhmjtable.setEnabled(true);
-
-            shzhmjtable.setBright(true);
-            shzhmjtable.setEnabled(true);
-
-            jphmjtable.setBright(true);
-            jphmjtable.setEnabled(true);
-
-            dgmjtable.setBright(true);
-            dgmjtable.setEnabled(true);
-
-            ybzhmjtable.setBright(true);
-            ybzhmjtable.setEnabled(true);
-
-            srfmjtable.setBright(true);
-            srfmjtable.setEnabled(true);
-
-            createWebViewByUrl(url1);
-
-            break;
-        case 2:
-
-            bdhmjtable.setBright(true);
-            bdhmjtable.setEnabled(true);
-
-            gdmjtable.setBright(true);
-            gdmjtable.setEnabled(true);
-
-            hzhmjtable.setBright(false);
-            hzhmjtable.setEnabled(false);
-
-            shzhmjtable.setBright(true);
-            shzhmjtable.setEnabled(true);
-
-            jphmjtable.setBright(true);
-            jphmjtable.setEnabled(true);
-
-            dgmjtable.setBright(true);
-            dgmjtable.setEnabled(true);
-
-            ybzhmjtable.setBright(true);
-            ybzhmjtable.setEnabled(true);
-
-            srfmjtable.setBright(true);
-            srfmjtable.setEnabled(true);
-
-            createWebViewByUrl(url2);
-
-            break;
-        case 3:
-
-            bdhmjtable.setBright(true);
-            bdhmjtable.setEnabled(true);
-
-            gdmjtable.setBright(true);
-            gdmjtable.setEnabled(true);
-
-            hzhmjtable.setBright(true);
-            hzhmjtable.setEnabled(true);
-
-            shzhmjtable.setBright(false);
-            shzhmjtable.setEnabled(false);
-
-            jphmjtable.setBright(true);
-            jphmjtable.setEnabled(true);
-
-            dgmjtable.setBright(true);
-            dgmjtable.setEnabled(true);
-
-            ybzhmjtable.setBright(true);
-            ybzhmjtable.setEnabled(true);
-
-            srfmjtable.setBright(true);
-            srfmjtable.setEnabled(true);
-
-            createWebViewByUrl(url3);
-
-            break;
-        case 4:
-
-            bdhmjtable.setBright(true);
-            bdhmjtable.setEnabled(true);
-
-            gdmjtable.setBright(true);
-            gdmjtable.setEnabled(true);
-
-            hzhmjtable.setBright(true);
-            hzhmjtable.setEnabled(true);
-
-            shzhmjtable.setBright(true);
-            shzhmjtable.setEnabled(true);
-
-            jphmjtable.setBright(false);
-            jphmjtable.setEnabled(false);
-
-            dgmjtable.setBright(true);
-            dgmjtable.setEnabled(true);
-
-            ybzhmjtable.setBright(true);
-            ybzhmjtable.setEnabled(true);
-
-            srfmjtable.setBright(true);
-            srfmjtable.setEnabled(true);
-
-            createWebViewByUrl(url4);
-
-            break;
-        case 5:
-
-            bdhmjtable.setBright(true);
-            bdhmjtable.setEnabled(true);
-
-            gdmjtable.setBright(true);
-            gdmjtable.setEnabled(true);
-
-            hzhmjtable.setBright(true);
-            hzhmjtable.setEnabled(true);
-
-            shzhmjtable.setBright(true);
-            shzhmjtable.setEnabled(true);
-
-            jphmjtable.setBright(true);
-            jphmjtable.setEnabled(true);
-
-            dgmjtable.setBright(false);
-            dgmjtable.setEnabled(false);
-
-            ybzhmjtable.setBright(true);
-            ybzhmjtable.setEnabled(true);
-
-            srfmjtable.setBright(true);
-            srfmjtable.setEnabled(true);
-
-            createWebViewByUrl(url5);
-
-            break;
-        case 6:
-
-            bdhmjtable.setBright(true);
-            bdhmjtable.setEnabled(true);
-
-            gdmjtable.setBright(true);
-            gdmjtable.setEnabled(true);
-
-            hzhmjtable.setBright(true);
-            hzhmjtable.setEnabled(true);
-
-            shzhmjtable.setBright(true);
-            shzhmjtable.setEnabled(true);
-
-            jphmjtable.setBright(true);
-            jphmjtable.setEnabled(true);
-
-            dgmjtable.setBright(true);
-            dgmjtable.setEnabled(true);
-
-            ybzhmjtable.setBright(false);
-            ybzhmjtable.setEnabled(false);
-
-            srfmjtable.setBright(true);
-            srfmjtable.setEnabled(true);
-
-            createWebViewByUrl(url6);
-
-            break;
-        case 7:
-
-            bdhmjtable.setBright(true);
-            bdhmjtable.setEnabled(true);
-
-            gdmjtable.setBright(true);
-            gdmjtable.setEnabled(true);
-
-            hzhmjtable.setBright(true);
-            hzhmjtable.setEnabled(true);
-
-            shzhmjtable.setBright(true);
-            shzhmjtable.setEnabled(true);
-
-            jphmjtable.setBright(true);
-            jphmjtable.setEnabled(true);
-
-            dgmjtable.setBright(true);
-            dgmjtable.setEnabled(true);
-
-            ybzhmjtable.setBright(true);
-            ybzhmjtable.setEnabled(true);
-
-            srfmjtable.setBright(false);
-            srfmjtable.setEnabled(false);
-
-            createWebViewByUrl(url7);
-
-            break;
-        case 8:
-
-            bdhmjtable.setBright(false);
-            bdhmjtable.setEnabled(false);
-
-            gdmjtable.setBright(true);
-            gdmjtable.setEnabled(true);
-
-            hzhmjtable.setBright(true);
-            hzhmjtable.setEnabled(true);
-
-            shzhmjtable.setBright(true);
-            shzhmjtable.setEnabled(true);
-
-            jphmjtable.setBright(true);
-            jphmjtable.setEnabled(true);
-
-            dgmjtable.setBright(true);
-            dgmjtable.setEnabled(true);
-
-            ybzhmjtable.setBright(true);
-            ybzhmjtable.setEnabled(true);
-
-            srfmjtable.setBright(true);
-            srfmjtable.setEnabled(true);
-
-            createWebViewByUrl(url8);
-
-            break;
+            var gameTable = tables[i];
+
+            if(i == type)
+            {
+                gameTable.setBright(false);
+                gameTable.setEnabled(false);
+            }
+            else
+            {
+                gameTable.setBright(true);
+                gameTable.setEnabled(true);
+            }
         }
+
+        createWebViewByUrl(url[type]);
+
+
     }
 
     WebViewLayer2 = cc.Layer.extend({
@@ -960,24 +753,11 @@
 
                 ScrollView:
                 {
-                    bdhmjtable:
-                    {
-                        _run:function ()
-                        {
-                            bdhmjtable = this;
-                        },
-
-                        _click:function ()
-                        {
-                            setPanelContentByType(8);
-                        }
-                    },
-
                     gdmjtable:
                     {
                         _run:function ()
                         {
-                            gdmjtable = this;
+                            tables[1] = this;
                         },
 
                         _click:function()
@@ -990,7 +770,7 @@
                     {
                         _run:function ()
                         {
-                            hzhmjtable = this;
+                            tables[2] = this;
                         },
 
                         _click:function ()
@@ -1003,7 +783,7 @@
                     {
                         _run:function ()
                         {
-                            shzhmjtable = this;
+                            tables[3] = this;
                         },
 
                         _click:function ()
@@ -1016,7 +796,7 @@
                     {
                         _run:function ()
                         {
-                            jphmjtable = this;
+                            tables[4] = this;
                         },
 
                         _click:function ()
@@ -1029,7 +809,7 @@
                     {
                         _run:function ()
                         {
-                            dgmjtable = this;
+                            tables[5] = this;
                         },
 
                         _click:function ()
@@ -1042,7 +822,7 @@
                     {
                         _run:function ()
                         {
-                            ybzhmjtable = this;
+                            tables[6] = this;
                         },
 
                         _click:function ()
@@ -1051,11 +831,11 @@
                         }
                     },
 
-                    srfmjtable:
+                    bdhmjtable:
                     {
                         _run:function ()
                         {
-                            srfmjtable = this;
+                            tables[7] = this;
                         },
 
                         _click:function ()
@@ -1063,6 +843,20 @@
                             setPanelContentByType(7);
                         }
                     },
+
+                    chshmjtable:
+                    {
+                        _run:function ()
+                        {
+                            tables[8] = this;
+                        },
+
+                        _click:function ()
+                        {
+                            setPanelContentByType(8);
+                        }
+                    },
+
                 },
 
                 help:
@@ -1100,7 +894,6 @@ var playLogIfoArry = [];
 var playLogInfoItem = {};
 (function ()
 {
-
     var playLogView, uiItem, uiList;
 
     function BindLogItem(ui, item, num)
@@ -1127,7 +920,15 @@ var playLogInfoItem = {};
             {
                 _text: function ()
                 {
-                    return unescape(item.players[0].nickname) + ":" + item.players[0].winall;
+                    return unescape(item.players[0].nickname);
+                }
+            },
+
+            player0num:
+            {
+                _text: function ()
+                {
+                    return ":" + item.players[0].winall;
                 }
             },
 
@@ -1135,7 +936,15 @@ var playLogInfoItem = {};
             {
                 _text: function ()
                 {
-                    return unescape(item.players[1].nickname) + ":" + item.players[1].winall;
+                    return unescape(item.players[1].nickname);
+                }
+            },
+
+            player1num:
+            {
+                _text: function ()
+                {
+                    return ":" + item.players[1].winall;
                 }
             },
 
@@ -1143,7 +952,15 @@ var playLogInfoItem = {};
             {
                 _text: function ()
                 {
-                    return unescape(item.players[2].nickname) + ":" + item.players[2].winall;
+                    return unescape(item.players[2].nickname);
+                }
+            },
+
+            player2num:
+            {
+                _text: function ()
+                {
+                    return ":" + item.players[2].winall;
                 }
             },
 
@@ -1154,7 +971,18 @@ var playLogInfoItem = {};
                     if(item.players[3] == null || item.players[3].nickname == null)
                         return "";
 
-                    return unescape(item.players[3].nickname) + ":" + item.players[3].winall;
+                    return unescape(item.players[3].nickname);
+                }
+            },
+
+            player3num:
+            {
+                _text: function ()
+                {
+                    if(item.players[3] == null || item.players[3].nickname == null)
+                        return "";
+
+                    return ":" + item.players[3].winall;
                 }
             },
 
@@ -1218,7 +1046,6 @@ var playLogInfoItem = {};
                 {
                     playLog: function ()
                     {
-                        cc.log("_event playlog----");
                         var log = jsclient.data.playLog;
                         uiList.removeAllItems();
                         var num = log.logs.length;
@@ -1253,7 +1080,6 @@ var playLogInfoItem = {};
                 {
                     playLogOne: function (msg)
                     {
-
                         playLogIfoArry = [];
                         var arry = [];
                         arry[0] = [];
@@ -1281,7 +1107,6 @@ var playLogInfoItem = {};
 
                         if (msg)
                         {
-
                             jsclient.Scene.addChild(new playLogInfoLayer());
                         }
                     }
@@ -1295,10 +1120,8 @@ var playLogInfoItem = {};
             var web = ccs.load("res/PlayLog.json");
             ConnectUI2Logic(web.node, this.jsBind);
             var playLog = jsclient.data.playLog;
-            cc.log(playLog);
-            if (!playLog){
-                cc.log("jsclient.getPlayLog()");
-                jsclient.getPlayLog();}
+            if (!playLog)
+                jsclient.getPlayLog();
             else
                 this.jsBind.back._event.playLog();
 
@@ -1326,7 +1149,6 @@ var updatelayer_itme_node;
             {
                 for (var id in playLogIfoArry[num - 1][i + 1])
                 {
-
                     for (var j = 0; j < item.players.length; j++)
                     {
                         if (item.players[j].nickname == playLogIfoArry[num - 1][i + 1][id]["info"]["nickname"])
@@ -1339,7 +1161,6 @@ var updatelayer_itme_node;
             }
             else if (playLogIfoArry[num - 1][i] == "roundEnd")
             {
-
                 for (var j = 0; j < item.players.length; j++)
                 {
                     var _uid = item.players[j].uid;
@@ -1370,7 +1191,15 @@ var updatelayer_itme_node;
             {
                 _text: function ()
                 {
-                    return unescape(item.players[0].nickname) + ":" + item.players[0].winone;
+                    return unescape(item.players[0].nickname);
+                }
+            },
+
+            player0num:
+            {
+                _text: function ()
+                {
+                    return ":" + item.players[0].winone;
                 }
             },
 
@@ -1378,7 +1207,15 @@ var updatelayer_itme_node;
             {
                 _text: function ()
                 {
-                    return unescape(item.players[1].nickname) + ":" + item.players[1].winone;
+                    return unescape(item.players[1].nickname);
+                }
+            },
+
+            player1num:
+            {
+                _text: function ()
+                {
+                    return ":" + item.players[1].winone;
                 }
             },
 
@@ -1386,7 +1223,15 @@ var updatelayer_itme_node;
             {
                 _text: function ()
                 {
-                    return unescape(item.players[2].nickname) + ":" + item.players[2].winone;
+                    return unescape(item.players[2].nickname);
+                }
+            },
+
+            player2num:
+            {
+                _text: function ()
+                {
+                    return ":" + item.players[2].winone;
                 }
             },
 
@@ -1397,7 +1242,18 @@ var updatelayer_itme_node;
                     if(item.players[3] == null || item.players[3].nickname == null)
                         return "";
 
-                    return unescape(item.players[3].nickname) + ":" + item.players[3].winone;
+                    return unescape(item.players[3].nickname);
+                }
+            },
+
+            player3num:
+            {
+                _text: function ()
+                {
+                    if(item.players[3] == null || item.players[3].winone == null)
+                        return "";
+
+                    return ":" + item.players[3].winone;
                 }
             },
 
@@ -1424,6 +1280,7 @@ var updatelayer_itme_node;
     function createReplayLayer(msg)
     {
         logMsg = JSON.parse(JSON.stringify(msg));
+
         var arry = [];
         var object = {};
         for (var i = 0; i < logMsg.length; i++)
@@ -1687,7 +1544,7 @@ var updatelayer_itme_node;
                             ed.lastput = tData.lastPut;
 
                         sendEvent("showcaneat",ed);
-                        break;
+                        // break;
                     }
                 }
                 /*var arry = [];
@@ -1696,6 +1553,26 @@ var updatelayer_itme_node;
                  object = logMsg[msgCount+1];
                  arry[1] =object;
                  sendEvent("QueueNetMsg",arry);*/
+
+                //为了显示马，把日志里面的数据 赋值给 sData
+                for (var i = 0; i < tData.maxPlayer; i++)
+                {
+                    players[uids[i]].mjpeng = jsclient.data.sData.players[uids[i]].mjpeng;
+                    players[uids[i]].mjgang0 = jsclient.data.sData.players[uids[i]].mjgang0;
+                    players[uids[i]].mjgang1 = jsclient.data.sData.players[uids[i]].mjgang1;
+                    players[uids[i]].mjchi = jsclient.data.sData.players[uids[i]].mjchi;
+                    players[uids[i]].mjput = jsclient.data.sData.players[uids[i]].mjput;
+                    players[uids[i]].mjput = jsclient.data.sData.players[uids[i]].mjput;
+                }
+
+                jsclient.data.sData.players = players;
+
+                // if(jsclient.replayui)
+                //     jsclient.replayui.addChild(new ShowMaPanel());
+                sendEvent("replayEndShowMa");
+                
+                // log("服务返回玩家回放数据sData：" + JSON.stringify(sData))
+                // log("服务返回玩家回放数据players：" + JSON.stringify(players))
             }
             
             msgCount++;
@@ -1815,8 +1692,6 @@ var updatelayer_itme_node;
                 }
 
             },
-
-
         },
 
         ctor: function ()

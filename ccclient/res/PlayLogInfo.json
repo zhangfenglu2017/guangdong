@@ -459,8 +459,10 @@
                 "ctype": "TextObjectData"
               },
               {
+                "IsCustomSize": true,
                 "FontSize": 24,
                 "LabelText": "房间号:123456dfgdfgsd",
+                "VerticalAlignmentType": "VT_Center",
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -476,8 +478,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 117.5189,
-                  "Y": 95.6529
+                  "X": 120.0,
+                  "Y": 100.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -490,29 +492,31 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.1113,
-                  "Y": 0.6882
+                  "X": 0.1136,
+                  "Y": 0.7194
                 },
                 "PreSize": {
-                  "X": 0.2386,
+                  "X": 0.2841,
                   "Y": 0.1727
                 },
-                "LeftMargin": 117.5189,
-                "RightMargin": 686.4811,
-                "TopMargin": 31.3471,
-                "BottomMargin": 83.6529,
+                "LeftMargin": 120.0,
+                "RightMargin": 636.0,
+                "TopMargin": 27.0,
+                "BottomMargin": 88.0,
                 "Tag": 303,
                 "ActionTag": 1823616311,
                 "Size": {
-                  "X": 252.0,
+                  "X": 300.0,
                   "Y": 24.0
                 },
                 "Name": "tableid",
                 "ctype": "TextObjectData"
               },
               {
+                "IsCustomSize": true,
                 "FontSize": 24,
                 "LabelText": "对战时间对战时sdfsdfsf",
+                "VerticalAlignmentType": "VT_Center",
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -528,8 +532,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 494.1582,
-                  "Y": 95.6529
+                  "X": 500.0,
+                  "Y": 100.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -542,29 +546,31 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.468,
-                  "Y": 0.6882
+                  "X": 0.4735,
+                  "Y": 0.7194
                 },
                 "PreSize": {
-                  "X": 0.25,
+                  "X": 0.2841,
                   "Y": 0.1727
                 },
-                "LeftMargin": 494.1582,
-                "RightMargin": 297.8418,
-                "TopMargin": 31.3471,
-                "BottomMargin": 83.6529,
+                "LeftMargin": 500.0,
+                "RightMargin": 256.0,
+                "TopMargin": 27.0,
+                "BottomMargin": 88.0,
                 "Tag": 304,
                 "ActionTag": -1433864783,
                 "Size": {
-                  "X": 264.0,
+                  "X": 300.0,
                   "Y": 24.0
                 },
                 "Name": "time",
                 "ctype": "TextObjectData"
               },
               {
+                "IsCustomSize": true,
                 "FontSize": 24,
-                "LabelText": "房间号:123456sdfsadsdf",
+                "LabelText": "最多显示这么多文字",
+                "VerticalAlignmentType": "VT_Center",
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -580,8 +586,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 117.5189,
-                  "Y": 63.2632
+                  "X": 120.0,
+                  "Y": 65.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -594,29 +600,31 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.1113,
-                  "Y": 0.4551
+                  "X": 0.1136,
+                  "Y": 0.4676
                 },
                 "PreSize": {
-                  "X": 0.25,
+                  "X": 0.1894,
                   "Y": 0.1727
                 },
-                "LeftMargin": 117.5189,
-                "RightMargin": 674.4811,
-                "TopMargin": 63.7368,
-                "BottomMargin": 51.2632,
+                "LeftMargin": 120.0,
+                "RightMargin": 736.0,
+                "TopMargin": 62.0,
+                "BottomMargin": 53.0,
                 "Tag": 305,
                 "ActionTag": 73636825,
                 "Size": {
-                  "X": 264.0,
+                  "X": 200.0,
                   "Y": 24.0
                 },
                 "Name": "player0",
                 "ctype": "TextObjectData"
               },
               {
+                "IsCustomSize": true,
                 "FontSize": 24,
-                "LabelText": "房间号:12345621233sd",
+                "LabelText": ":1000",
+                "VerticalAlignmentType": "VT_Center",
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -632,8 +640,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 493.1582,
-                  "Y": 63.2632
+                  "X": 340.0,
+                  "Y": 65.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -646,29 +654,85 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.467,
-                  "Y": 0.4551
+                  "X": 0.322,
+                  "Y": 0.4676
                 },
                 "PreSize": {
-                  "X": 0.2273,
+                  "X": 0.0758,
                   "Y": 0.1727
                 },
-                "LeftMargin": 493.1582,
-                "RightMargin": 322.8418,
-                "TopMargin": 63.7368,
-                "BottomMargin": 51.2632,
+                "LeftMargin": 340.0,
+                "RightMargin": 636.0,
+                "TopMargin": 62.0,
+                "BottomMargin": 53.0,
+                "Tag": 853,
+                "ActionTag": -1990511059,
+                "Size": {
+                  "X": 80.0,
+                  "Y": 24.0
+                },
+                "Name": "player0num",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 24,
+                "LabelText": "最多显示这么多文字",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 500.0,
+                  "Y": 65.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4735,
+                  "Y": 0.4676
+                },
+                "PreSize": {
+                  "X": 0.1894,
+                  "Y": 0.1727
+                },
+                "LeftMargin": 500.0,
+                "RightMargin": 356.0,
+                "TopMargin": 62.0,
+                "BottomMargin": 53.0,
                 "Tag": 306,
                 "ActionTag": 1452633493,
                 "Size": {
-                  "X": 240.0,
+                  "X": 200.0,
                   "Y": 24.0
                 },
                 "Name": "player1",
                 "ctype": "TextObjectData"
               },
               {
+                "IsCustomSize": true,
                 "FontSize": 24,
-                "LabelText": "房间号:123456sdfsadsdf",
+                "LabelText": ":1000",
+                "VerticalAlignmentType": "VT_Center",
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -684,8 +748,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 117.5189,
-                  "Y": 30.8733
+                  "X": 720.0,
+                  "Y": 65.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -698,29 +762,85 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.1113,
-                  "Y": 0.2221
+                  "X": 0.6818,
+                  "Y": 0.4676
                 },
                 "PreSize": {
-                  "X": 0.25,
+                  "X": 0.0758,
                   "Y": 0.1727
                 },
-                "LeftMargin": 117.5189,
-                "RightMargin": 674.4811,
-                "TopMargin": 96.1267,
-                "BottomMargin": 18.8733,
+                "LeftMargin": 720.0,
+                "RightMargin": 256.0,
+                "TopMargin": 62.0,
+                "BottomMargin": 53.0,
+                "Tag": 854,
+                "ActionTag": -442172657,
+                "Size": {
+                  "X": 80.0,
+                  "Y": 24.0
+                },
+                "Name": "player1num",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 24,
+                "LabelText": "最多显示这么多文字 ",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 120.0,
+                  "Y": 30.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1136,
+                  "Y": 0.2158
+                },
+                "PreSize": {
+                  "X": 0.1894,
+                  "Y": 0.1727
+                },
+                "LeftMargin": 120.0,
+                "RightMargin": 736.0,
+                "TopMargin": 97.0,
+                "BottomMargin": 18.0,
                 "Tag": 307,
                 "ActionTag": 1397454035,
                 "Size": {
-                  "X": 264.0,
+                  "X": 200.0,
                   "Y": 24.0
                 },
                 "Name": "player2",
                 "ctype": "TextObjectData"
               },
               {
+                "IsCustomSize": true,
                 "FontSize": 24,
-                "LabelText": "房间号:123456sdfdssdf",
+                "LabelText": ":1000\n",
+                "VerticalAlignmentType": "VT_Center",
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -736,8 +856,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 494.1582,
-                  "Y": 30.8734
+                  "X": 340.0,
+                  "Y": 30.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -750,24 +870,130 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.468,
-                  "Y": 0.2221
+                  "X": 0.322,
+                  "Y": 0.2158
                 },
                 "PreSize": {
-                  "X": 0.2386,
+                  "X": 0.0758,
                   "Y": 0.1727
                 },
-                "LeftMargin": 494.1582,
-                "RightMargin": 309.8418,
-                "TopMargin": 96.1266,
-                "BottomMargin": 18.8734,
+                "LeftMargin": 340.0,
+                "RightMargin": 636.0,
+                "TopMargin": 97.0,
+                "BottomMargin": 18.0,
+                "Tag": 855,
+                "ActionTag": 1039771127,
+                "Size": {
+                  "X": 80.0,
+                  "Y": 24.0
+                },
+                "Name": "player2num",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 24,
+                "LabelText": "最多显示这么多文字",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 500.0,
+                  "Y": 30.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4735,
+                  "Y": 0.2158
+                },
+                "PreSize": {
+                  "X": 0.1894,
+                  "Y": 0.1727
+                },
+                "LeftMargin": 500.0,
+                "RightMargin": 356.0,
+                "TopMargin": 97.0,
+                "BottomMargin": 18.0,
                 "Tag": 308,
                 "ActionTag": -802327430,
                 "Size": {
-                  "X": 252.0,
+                  "X": 200.0,
                   "Y": 24.0
                 },
                 "Name": "player3",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 24,
+                "LabelText": ":1000",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 720.0,
+                  "Y": 30.0001
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6818,
+                  "Y": 0.2158
+                },
+                "PreSize": {
+                  "X": 0.0758,
+                  "Y": 0.1727
+                },
+                "LeftMargin": 720.0,
+                "RightMargin": 256.0,
+                "TopMargin": 96.9999,
+                "BottomMargin": 18.0001,
+                "Tag": 856,
+                "ActionTag": -231210735,
+                "Size": {
+                  "X": 80.0,
+                  "Y": 24.0
+                },
+                "Name": "player3num",
                 "ctype": "TextObjectData"
               },
               {

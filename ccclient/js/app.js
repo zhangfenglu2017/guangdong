@@ -7,6 +7,15 @@ function getTimeOff ( time1, time2, maxOff ) {
     return off ;
 }
 
+
+function removeArrayByValue (val)
+{
+    var index = this.indexOf(val);
+    if (index > -1) {
+        this.splice(index, 1);
+    }
+};
+
 function stopEffect(id) {
     cc.audioEngine.stopEffect(id);
 }
@@ -247,13 +256,39 @@ jsclient.leaveGame = function () {
 
 jsclient.getPlayLogOne = function (item) {
 
-    console.log("ip===========" + item.ip);
-    if(item.ip)
+    var playUrl = "";
+    if(item.url)
     {
-        console.log("ip===========" + item.ip);
+        jsclient.block();
+        if(jsclient.remoteCfg.playBackServer)
+        {
+            console.log("ip======"+jsclient.remoteCfg.playBackServer);
+            //item.ip在服务器端存的值是 serverId
+            playUrl="http://"+jsclient.remoteCfg.playBackServer+"/"+item.url+"/playlog/"+item.now.substr(0,10)+"/"+item.owner+"_"+item.tableid+".json";
+            //cc.log("------------ playUrl="+playUrl);
+
+            //内网：只能暂时在电脑上测试回放，手机不可以
+            // if(!cc.sys.isMobile)
+            //     playUrl="http://"+"114.55.255.22"+"/"+item.url+"/playlog/"+item.now.substr(0,10)+"/"+item.owner+"_"+item.tableid+".json";
+               // playUrl="http://114.55.255.22/playlog/"+item.now.substr(0,10)+"/"+item.owner+"_"+item.tableid+".json";
+
+            var xhr = cc.loader.getXMLHttpRequest();
+            xhr.open("GET", playUrl);
+            xhr.onreadystatechange = function () {
+                jsclient.unblock();
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    sendEvent("playLogOne",JSON.parse(xhr.responseText));
+                }
+            }
+            xhr.onerror = function (event) {jsclient.unblock(); }
+            xhr.send();
+        }
+    }
+    else if(item.ip)
+    {
         jsclient.block();
         var xhr = cc.loader.getXMLHttpRequest();
-        var playUrl="http://"+item.ip+":800/playlog/"+item.now.substr(0,10)+"/"+item.owner+"_"+item.tableid+".json";
+        playUrl="http://"+item.ip+":800/playlog/"+item.now.substr(0,10)+"/"+item.owner+"_"+item.tableid+".json";
         xhr.open("GET", playUrl);
         xhr.onreadystatechange = function () {
             jsclient.unblock();
@@ -261,7 +296,7 @@ jsclient.getPlayLogOne = function (item) {
                 sendEvent("playLogOne",JSON.parse(xhr.responseText));
             }
         }
-        xhr.onerror = function (event) {jsclient.unblock(); }
+        xhr.onerror = function (event) {jsclient.unblock(); };
         xhr.send();
     }
     else
@@ -281,7 +316,7 @@ jsclient.getPlayLogOne = function (item) {
 jsclient.getPlayLog = function () {
     jsclient.block();
     jsclient.gamenet.request("pkplayer.handler.getSymjLog", {uid: SelfUid()}, function (rtn) {
-        cc.log("getPlayLog------callback,result:" + rtn.result);
+
         jsclient.unblock();
         if (rtn.result == 0) {
             jsclient.data.playLog = rtn.playLog;
@@ -330,10 +365,11 @@ jsclient.joinGame = function (tableid) {
 jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7,canFan7,
                                 canHuWith258, withZhong, zhongIsMa, horse, baoZhaMa, jjg, fanGui, twogui, fanNum, maxPlayer,
                                 canBigWin, guiJiaMa, guiJiaBei, gui4Hu, gui4huBeiNum, noCanJiHu, canJiHu, maGenDi,maGenDiDuiDuiHu,
-                                menQingJiaFen, baidajihu, baidadahu)
+                                menQingJiaFen, baidajihu, baidadahu, haiDiFanBei, canDianPao)
 {
     jsclient.block();
-    jsclient.gamenet.request("pkplayer.handler.CreateVipTable", {
+    jsclient.gamenet.request("pkplayer.handler.CreateVipTable",
+        {
             gameType: gameType,
             round: round,
             canEatHu: canEatHu,
@@ -363,7 +399,9 @@ jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noB
             maGenDiDuiDuiHu:maGenDiDuiDuiHu,
             menQingJiaFen:menQingJiaFen,
             baidajihu:baidajihu,
-            baidadahu:baidadahu
+            baidadahu:baidadahu,
+            haiDiFanBei:haiDiFanBei,
+            canDianPao:canDianPao
         },
         function (rtn) {
             jsclient.unblock();
@@ -721,7 +759,7 @@ jsclient.netCallBack =
     }],
 
     initSceneData: [0, function (d) {
-        mylog("initSceneData");
+        mylog("initSceneData------------------------------------------------------");
         if (d.tData.roundNum <= -2) {
             jsclient.leaveGame();
             return -1;
@@ -734,10 +772,12 @@ jsclient.netCallBack =
     }],
 
     reinitSceneData: [0, function (d) {
-        mylog("reinitSceneData");
+        mylog("reinitSceneData-------------------------------------------------");
+
         jsclient.data.sData = d;
         d.serverNow -= Date.now();
-        if (!jsclient.replayui)  jsclient.Scene.addChild(newReplayLayer());
+        if (!jsclient.replayui)
+            jsclient.Scene.addChild(newReplayLayer());
         sendEvent("clearCardUI");
     }],
 
@@ -1055,6 +1095,19 @@ jsclient.netCallBack =
         tData.curPlayer = tData.uids.indexOf(d.uid);
         tData.lastPut = cd;
         if (!tData.noBigWin || (d.gang == 2 && tData.canEatHu)) tData.putType = d.gang;
+
+        var pl = sData.players[uids[tData.curPlayer]];
+        switch (jsclient.data.sData.tData.gameType) {
+            case 1:
+                break;
+            case 2:
+            {
+                pl.baojiu = d.baojiu;
+            }
+                break;
+            default :
+                break;
+        }
 
         tData.tState = TableState.waitEat;
 
@@ -1434,6 +1487,8 @@ var JSScene = cc.Scene.extend({
                 if (!jsclient.homeui) {
                     mylog("loginui");
                     this.addChild(new LoginLayer());
+                    //this.addChild(getFrameMoveMgrInst());
+
                     jsclient.unblock();
                 }
                 else {
@@ -1497,8 +1552,13 @@ var JSScene = cc.Scene.extend({
             },
 
             createRoom: function () {
-                this.addChild(new CreateLayer());
+
+                if(jsclient.creatrUI)
+                    jsclient.creatrUI.setVisible(true);
+                else
+                    this.addChild(new CreateLayer());
             },
+            
 
             joinRoom: function () {
                 this.addChild(new EnterLayer());
@@ -1508,13 +1568,16 @@ var JSScene = cc.Scene.extend({
                 jsclient.unblock();
             },
 
-            QueueNetMsg: function (ed) {
+            QueueNetMsg: function (ed)
+            {
                 var oldLen = jsclient.NetMsgQueue.length;
-                if (ed[0] == "mjhand" && ed.length == 2) {
+                if (ed[0] == "mjhand" && ed.length == 2)
                     jsclient.NetMsgQueue.push(["moveHead", {}]);
-                }
+
                 jsclient.NetMsgQueue.push(ed);
-                if (oldLen == 0)    this.startQueueNetMsg();
+
+                if (oldLen == 0)
+                    this.startQueueNetMsg();
             },
 
             cfgUpdate:function (changeValue)
@@ -1602,11 +1665,10 @@ var JSScene = cc.Scene.extend({
         this.addChild(new UpdateLayer());
         this.addChild(new BlockLayer());
 
-        // this.addChild(new EndAllLayer());
+        var createLayer = new CreateLayer();
+        createLayer.setVisible(false);
+        this.addChild(createLayer,9);
 
-        //确保这张图不会被释放掉
-        var majiang = new cc.Sprite("res/MaJiangNew/z_mj.png");
-        majiang.retain();
-
+        // this.addChild(new ShowMaPanel());
     }
 });

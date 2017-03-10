@@ -433,8 +433,7 @@ function newReplayLayer()
                 RemoveFrontNode(node, "standPri", 2);
 
             RestoreCardLayout(node, off);
-            // RestoreCardLayout(fnode, fromOff[0]);
-
+            RestoreCardLayout(fnode, fromOff[0]);
         }
     }
 
@@ -476,34 +475,38 @@ function newReplayLayer()
     //     if (num != 0) mylog(node.name + " RemoveBackNode fail " + name + " " + tag);
     // }
 
-    // function AddNewCard(node, copy, name, tag, off, specialTAG) {
-    //     var cpnode = node.getChildByName(copy);
-    //     var cp = cpnode.clone();
-    //     cp.visible = true;
-    //     cp.name = name;
-    //     if (specialTAG == "isgang4") {
-    //
-    //         cp.isgang4 = true;
-    //     }
-    //     /*else if(specialTAG == "newCard")
-    //      {
-    //      cp.isnewCard = true;
-    //      }*/
-    //     node.addChild(cp);
-    //     if (tag > 0) {
-    //         var count;
-    //         if (name == "mjhand" && off == 0) {
-    //             count = 4;
-    //         } else {
-    //             count = off;
-    //         }
-    //         setCardPic(cp, tag, count);
-    //         if (name == "mjhand") {
-    //             SetCardTouchHandler(cpnode, cp);
-    //         }
-    //     }
-    //     return cp;
-    // }
+    //父节点  需要克隆的子节点  子节点的新名字  值
+    function AddNewCard(node, copy, name, tag, off, specialTAG)
+    {
+        var cpnode = node.getChildByName(copy);
+        var cp = cpnode.clone();
+        cp.visible = true;
+        cp.name = name;
+
+        // var mask = cp.getChildByName("mask");
+        // if(mask)
+        //     mask.visible = false;
+
+        if(name == "gang0"  || name == "gang1")
+            cp.zIndex = 600;
+
+        if (specialTAG == "isgang4")
+        {
+            cp.isgang4 = true;
+        }
+
+        node.addChild(cp);
+        if (tag > 0)
+        {
+            //如果牌有值 就赋值 如果是手牌
+            setCardPic(cp, tag, name == "mjhand" ? 4 : off);
+            if (name == "mjhand")
+            {
+                // SetCardTouchHandler(cpnode, cp);
+            }
+        }
+        return cp;
+    }
 
     function GetUIBind(uidPos, offStore) {
         var sData = jsclient.data.sData;
@@ -528,7 +531,6 @@ function newReplayLayer()
 
     function HandleMJGang(node, msg, off)
     {
-
         // var sData = jsclient.data.sData;
         // var tData = sData.tData;
         // var uids = tData.uids;
@@ -571,7 +573,8 @@ function newReplayLayer()
         }
         else if (msg.gang == 3)
         {
-            if (off == 0) RemoveBackNode(node, "mjhand", 4, msg.card);
+            if (off == 0)
+                RemoveBackNode(node, "mjhand", 4, msg.card);
         }
 
         if (off != 0)
@@ -584,83 +587,107 @@ function newReplayLayer()
                     var fromBind = GetUIBind(msg.from, fromOff);
                     var fnode = fromBind._node;
                     RemoveNewOutCard(fnode);
-                    if (pl.mjhand) {
+                    if (pl.mjhand)
+                    {
                         RemoveBackNode(node, "mjhand", 3, msg.card);
-                    } else {
+                    }
+                    else
+                    {
                         RemoveBackNode(node, "standPri", 3);
                     }
 
-
-                } else if (msg.gang == 2) {
+                }
+                else if (msg.gang == 2)
+                {
                     RemoveBackNode(node, "peng", 3, msg.card);
 
-                    if (pl.mjhand) {
+                    if (pl.mjhand)
+                    {
                         RemoveBackNode(node, "mjhand", 1, msg.card);
-                    } else {
+                    }
+                    else
+                    {
                         RemoveBackNode(node, "standPri", 1);
                     }
-                } else if (msg.gang == 3) {
-
-                    if (pl.mjhand) {
+                }
+                else if (msg.gang == 3)
+                {
+                    if (pl.mjhand)
+                    {
                         RemoveBackNode(node, "mjhand", 4, msg.card);
-                    } else {
+                    }
+                    else
+                    {
                         RemoveBackNode(node, "standPri", 4);
                     }
                 }
-
-            } else {
-
-                if (msg.gang == 1) {
+            }
+            else
+            {
+                if (msg.gang == 1)
+                {
                     var fromOff = [];
                     var fromBind = GetUIBind(msg.from, fromOff);
                     var fnode = fromBind._node;
                     RemoveNewOutCard(fnode);
-                    if (pl.mjhand) {
+                    if (pl.mjhand)
+                    {
                         RemoveBackNode(node, "mjhand", 3, msg.card);
-                    } else {
+                    }
+                    else
+                    {
                         RemoveFrontNode(node, "standPri", 3);
                     }
-
-                } else if (msg.gang == 2) {
+                }
+                else if (msg.gang == 2)
+                {
                     RemoveFrontNode(node, "peng", 3, msg.card);
-                    if (pl.mjhand) {
+                    if (pl.mjhand)
+                    {
                         RemoveBackNode(node, "mjhand", 1, msg.card);
-                    } else {
+                    }
+                    else
+                    {
                         RemoveFrontNode(node, "standPri", 1);
                     }
 
-                } else if (msg.gang == 3) {
-                    if (pl.mjhand) {
+                } else if (msg.gang == 3)
+                {
+                    if (pl.mjhand)
+                    {
                         RemoveBackNode(node, "mjhand", 4, msg.card);
-                    } else {
+                    }
+                    else
+                    {
                         RemoveFrontNode(node, "standPri", 4);
                     }
-
                 }
-
             }
         }
         for (var i = 0; i < 4; i++)
         {
-            if (msg.gang == 3) {
-                if (i == 3) {
+            if (msg.gang == 3)
+            {
+                if (i == 3)
+                {
                     AddNewCard(node, "down", "gang1", 0, off, "isgang4").tag = msg.card;
-                } else {
+                } else
+                {
                     AddNewCard(node, "up", "gang1", msg.card, off);
                 }
-
-            } else {
-                if (i == 3) {
+            }
+            else
+            {
+                if (i == 3)
+                {
                     AddNewCard(node, "up", "gang0", msg.card, off, "isgang4").tag = msg.card;
-                } else {
+                }
+                else
+                {
                     AddNewCard(node, "up", "gang0", msg.card, off);
                 }
-
             }
-
         }
-
-
         RestoreCardLayout(node, off);
     }
 
@@ -1252,7 +1279,7 @@ function newReplayLayer()
                 }
             };
 
-            if (jsclient.majiang.isFlower8(msg.card))
+            if (jsclient.majiang.isFlower8(msg.card) && jsclient.data.sData.tData.gameType != 7)
             {
                 RemovePutCard(true); //MJFlower
             }
@@ -1296,15 +1323,16 @@ function newReplayLayer()
     //     // node.runAction(cc.repeatForever(cc.sequence(cc.callFunc(callback), cc.delayTime(1))));
     // }
 
-    // function SetArrowRotation(abk)
-    // {
-    //     var sData = jsclient.data.sData;
-    //     var tData = sData.tData;
-    //     var uids = tData.uids;
-    //     var selfIndex = uids.indexOf(SelfUid());
-    //     selfIndex = (tData.curPlayer + 4 - selfIndex) % 4;
-    //     abk.getChildByName("arrow").rotation = 270 - 90 * selfIndex;
-    // }
+    function SetArrowRotation(abk)
+    {
+        var sData = jsclient.data.sData;
+        var tData = sData.tData;
+        // var uids = tData.uids;
+        // var selfIndex = uids.indexOf(SelfUid());
+        // selfIndex = (tData.curPlayer + 4 - selfIndex) % 4;
+        // abk.getChildByName("arrow").rotation = 270 - 90 * selfIndex;
+        abk.getChildByName("arrow").rotation = 180 - 90 * getUIOffByIndex(tData.curPlayer);
+    }
 
     // function SetCardTouchHandler(standUI, cardui)
     // {
@@ -1892,18 +1920,25 @@ function newReplayLayer()
 
     function showReplaycaneat(ed)
     {
-        var eatlogo = jsclient.replayui.jsBind.eat[ed.eatWhat]._node;
+        // log("显示数据胡：" + JSON.stringify(ed));
+
+        var eatClone = jsclient.replayui.jsBind.eat[ed.eatWhat]._node;
+        var eatlogo = eatClone.clone();
+
+        eatlogo.x = eatClone.x;
+        eatlogo.y = eatClone.y;
+        eatlogo.scale = eatClone.scale;
+
+        eatClone.getParent().addChild(eatlogo);
 
         var off = ed.off;
         if (off == 0)
         {
             doLayout(eatlogo, [0.1, 0.1], [0.5, 0.2], [0, 0], false, false);
-
         }
         else if (off == 2)
         {
             doLayout(eatlogo, [0.1, 0.1], [0.5, 0.8], [0, 0], false, false);
-
         }
         else if (off == 1)
         {
@@ -1971,35 +2006,7 @@ function newReplayLayer()
     //     }
     // }
     
-    function rePlayCardNext(node)
-    {
-        var sData = jsclient.data.sData;
-        var tData = sData.tData;
-
-        if (tData)
-        {
-            var leftCard = 0;
-            if (tData.withWind && tData.withZhong) leftCard = 136 - tData.cardNext;
-            //if(tData.withWind && !tData.withZhong) leftCard = 136 - 4 - tData.cardNext;
-            if (tData.withWind && !tData.withZhong) leftCard = 136 - tData.cardNext;
-            if (!tData.withWind && tData.withZhong) leftCard = 108 + 4 - tData.cardNext;
-            if (!tData.withWind && !tData.withZhong) leftCard = 108 - tData.cardNext;
-            switch (jsclient.data.sData.tData.gameType) {
-                case 1:
-                    leftCard = leftCard;
-                    break;
-                case 2:
-                    leftCard = leftCard + 8;
-                    break;
-                case 7:
-                    leftCard = leftCard + 8;
-                default :
-                    leftCard = leftCard;
-                    break;
-            }
-            node.setString(leftCard);
-        }
-    }
+    
 
     var playTips;
     var rePlayLayer = cc.Layer.extend({
@@ -2110,57 +2117,56 @@ function newReplayLayer()
                 }
             },
 
-            cardNumImg: {
+            cardNumImg:
+            {
                 _layout: [[0.1, 0.1], [0.5, 0.5], [-1.1, 0]],
-                _event: {
-                    reinitSceneData: function (eD) {
+                _event:
+                {
+                    reinitSceneData: function (eD)
+                    {
                         this.visible = CheckArrowVisible();
                     },
-                    mjhand: function (eD) {
+                    mjhand: function (eD)
+                    {
                         this.visible = CheckArrowVisible();
                     },
-                    onlinePlayer: function (eD) {
+                    onlinePlayer: function (eD)
+                    {
                         this.visible = CheckArrowVisible();
                     }
                 },
-                cardnumAtlas: {
-                    _text: function () {
+                cardnumAtlas:
+                {
+                    _event:
+                    {
+                        waitPut: function ()
+                        {
+                            playResidueCardCount(this);
+                        },
+                        MJPut: function ()
+                        {
+                            playResidueCardCount(this);
+                        },
+                        MJGang: function ()
+                        {
+                            playResidueCardCount(this);
+                        },
+                        MJHu: function ()
+                        {
+                            playResidueCardCount(this);
+                        },
+                        newCard: function ()
+                        {
+                            playResidueCardCount(this);
+                        }
+                    },
+
+                    _text: function ()
+                    {
                         var sData = jsclient.data.sData;
                         var tData = sData.tData;
-                        if (tData) {
-                            var leftCard = 0;
-                            if (tData.withWind && tData.withZhong) leftCard = 136 - tData.cardNext;
-                            //if(tData.withWind && !tData.withZhong) leftCard = 136 - 4 - tData.cardNext;
-                            if (tData.withWind && !tData.withZhong) leftCard = 136 - tData.cardNext;
-                            if (!tData.withWind && tData.withZhong) leftCard = 108 + 4 - tData.cardNext;
-                            if (!tData.withWind && !tData.withZhong) leftCard = 108 - tData.cardNext;
-                            switch (jsclient.data.sData.tData.gameType) {
-                                case 1:
-                                    leftCard = leftCard;
-                                    break;
-                                case 2:
-                                    leftCard = leftCard + 8;
-                                    break;
-                                default :
-                                    leftCard = leftCard;
-                                    break;
-                            }
-                            return leftCard;
-                        }
-                    }, _event: {
-                        waitPut: function () {
-                            rePlayCardNext(this);
-                        }
-                        , MJPut: function () {
-                            rePlayCardNext(this);
-                        }, MJGang: function () {
-                            rePlayCardNext(this);
-                        }, MJHu: function () {
-                            rePlayCardNext(this);
-                        }, newCard: function () {
-                            rePlayCardNext(this);
-                        }
-                    }
+                        return (tData.cardsNum - tData.cardNext);
+                    },
                 }
             },
 
@@ -2285,7 +2291,10 @@ function newReplayLayer()
                             var tipsImg = [];
                             tipsImg[count] = this.getChildByName("tableImage");
 
-                            if(jsclient.data.sData.tData.withWind && jsclient.data.sData.tData.gameType != 4 && jsclient.data.sData.tData.gameType != 6)
+                            if(jsclient.data.sData.tData.withWind
+                                && jsclient.data.sData.tData.gameType != 4
+                                && jsclient.data.sData.tData.gameType != 6
+                                && jsclient.data.sData.tData.gameType != 7)
                             {
                                 count++;
                                 tipsImg[count] = this.getChildByName("withWind");
@@ -2300,7 +2309,10 @@ function newReplayLayer()
                                 count++;
                                 tipsImg[count] = this.getChildByName("nodahu");
                             }
-                            if (jsclient.data.sData.tData.canHu7 && jsclient.data.sData.tData.gameType != 3 && jsclient.data.sData.tData.gameType != 5 && jsclient.data.sData.tData.gameType != 6)
+                            if (jsclient.data.sData.tData.canHu7
+                                && jsclient.data.sData.tData.gameType != 3
+                                && jsclient.data.sData.tData.gameType != 5
+                                && jsclient.data.sData.tData.gameType != 6)
                             {
                                 count++;
                                 tipsImg[count] = this.getChildByName("canHu7");
@@ -2355,6 +2367,43 @@ function newReplayLayer()
                                 count++;
                                 tipsImg[count] = this.getChildByName("menqingjiafen");
                             }
+                            if(jsclient.data.sData.tData.gameType == 7 && jsclient.data.sData.tData.canJiHu )
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("canJiHu");
+                            }
+                            if(jsclient.data.sData.tData.guiJiaBei)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("guiJiaBei");
+                            }
+                            if(jsclient.data.sData.tData.guiJiaMa &&  jsclient.data.sData.tData.gameType != 1  && jsclient.data.sData.tData.gameType != 3)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("guiJiaMa");
+                            }
+                            if((jsclient.data.sData.tData.gameType == 5 || jsclient.data.sData.tData.gameType == 6) && (jsclient.data.sData.tData.gui4Hu))
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("gui4Hu");
+                            }
+                            if(jsclient.data.sData.tData.gui4huBeiNum != 1)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("gui4huBeiNum");
+                            }
+                            if(jsclient.data.sData.tData.haiDiFanBei)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("haidibei");
+                            }
+                            if(jsclient.data.sData.tData.canDianPao)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("candianpao");
+                            }
+
+
                             if (jsclient.data.sData.tData.baozhama)
                             {
                                 count++;
@@ -2375,6 +2424,16 @@ function newReplayLayer()
                                 count++;
                                 tipsImg[count] = this.getChildByName("maima6");
                             }
+                            if (jsclient.data.sData.tData.horse == 8)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("maima8");
+                            }
+                            if (jsclient.data.sData.tData.horse == 10)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("maima10");
+                            }
 
                             var tipsNodeArr = this.getChildren();
                             for(var sprImg in tipsNodeArr)
@@ -2384,7 +2443,7 @@ function newReplayLayer()
 
                             height = height + count * 40;
                             this.setContentSize(cc.size(this.getContentSize().width, height));
-                            log("玩法提示框大小：" + height + "  玩法提示个数：" + count);
+                            // log("玩法提示框大小：" + height + "  玩法提示个数：" + count);
 
                             for(var i = 0; i < tipsImg.length; i++)
                             {
@@ -2453,7 +2512,7 @@ function newReplayLayer()
                 gdmj: {
                     _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
                     _visible: function () {
-                        return (jsclient.data.sData.tData.gameType == 1 && !IsThreeTable());
+                        return (jsclient.data.sData.tData.gameType == 1);
                     }
                 },
                 hzmj: {
@@ -2486,12 +2545,6 @@ function newReplayLayer()
                         return jsclient.data.sData.tData.gameType == 6
                     }
                 },
-                srfmj: {
-                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
-                    _visible: function () {
-                        return (jsclient.data.sData.tData.gameType == 1 && IsThreeTable());
-                    }
-                },
                 bddhmj: {
                     _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
                     _visible: function ()
@@ -2511,7 +2564,17 @@ function newReplayLayer()
                         else
                             return false;
                     }
-                }
+                },
+                chshmj: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function ()
+                    {
+                        if (jsclient.data.sData.tData.gameType == 8)
+                            return true;
+                        else
+                            return false;
+                    }
+                },
             },
             
             banner: {
@@ -2851,6 +2914,7 @@ function newReplayLayer()
                     },
                     MJGang: function (eD) {
                         HandleMJGang(this, eD, 0);
+                        // CheckEatVisible(jsclient.replayui.jsBind.eat);
                     },
                     MJPeng: function (eD) {
                         HandleMJPeng(this, eD, 0);
@@ -3082,6 +3146,7 @@ function newReplayLayer()
                     },
                     MJGang: function (eD) {
                         HandleMJGang(this, eD, 1);
+                        // CheckEatVisible(jsclient.replayui.jsBind.eat);
                     },
                     MJPeng: function (eD) {
                         HandleMJPeng(this, eD, 1);
@@ -3314,6 +3379,7 @@ function newReplayLayer()
                     },
                     MJGang: function (eD) {
                         HandleMJGang(this, eD, 2);
+                        // CheckEatVisible(jsclient.replayui.jsBind.eat);
                     },
                     MJPeng: function (eD) {
                         HandleMJPeng(this, eD, 2);
@@ -3539,6 +3605,7 @@ function newReplayLayer()
                     },
                     MJGang: function (eD) {
                         HandleMJGang(this, eD, 3);
+                        // CheckEatVisible(jsclient.replayui.jsBind.eat);
                     },
                     MJPeng: function (eD) {
                         HandleMJPeng(this, eD, 3);
@@ -3628,7 +3695,8 @@ function newReplayLayer()
                         }
                     }
                 },
-                gang1: {
+                gang1:
+                {
                     _visible: false,
                     _layout: [[0, 0.1], [0.5, 0], [-1.7, 3.8]],
                     card: {},
@@ -3636,7 +3704,8 @@ function newReplayLayer()
                     //     if (eT == 2) MJGangchange(btn.tag);
                     // }
                 },
-                gang2: {
+                gang2:
+                {
                     _visible: false,
                     _layout: [[0, 0.1], [0.5, 0], [-1.7, 5.1]],
                     card: {},
@@ -3652,8 +3721,10 @@ function newReplayLayer()
                     // _touch: function (btn, eT) {
                     //     if (eT == 2) jsclient.MJPass2Net();
                     // },
-                    bgimg: {
-                        _run: function () {
+                    bgimg:
+                    {
+                        _run: function ()
+                        {
                             this.zIndex = -1;
                         }
                     }
@@ -3662,16 +3733,21 @@ function newReplayLayer()
                 {
                     _visible: false,
                     _layout: [[0, 0.1], [0.5, 0], [-3, 2.5]],
-                    // _touch: function (btn, eT) {
+                    // _touch: function (btn, eT)
+                    // {
                     //     if (eT == 2) MJHu2Net();
                     // },
-                    bgimg: {
-                        _run: function () {
-                            this.zIndex = 0;
+                    bgimg:
+                    {
+                        _run: function ()
+                        {
+                            this.zIndex = -1;
                         }
                     },
-                    bgground: {
-                        _run: function () {
+                    bgground:
+                    {
+                        _run: function ()
+                        {
                             this.zIndex = -1;
                         }
                     }
@@ -3686,7 +3762,6 @@ function newReplayLayer()
                             this.y = this.getParent().getParent().getChildByName("chi0").y;
                             this.visible = false;
                         }
-
                     }
                 },
 
@@ -3696,102 +3771,165 @@ function newReplayLayer()
                     {
                         showReplaycaneat(ed)
                     },
-
-                    // MJFlower: function (eD) {
-                    //     CheckEatVisible(jsclient.replayui.jsBind.eat);
-                    // },
-                    // MJZhong: function (eD) {
-                    //     CheckEatVisible(jsclient.replayui.jsBind.eat);
-                    // },
-
                 }
             },
-            controllerBg: {
-                _layout: [[0.5, 0.5], [0.5, 0.5], [0, 0]]
-                , play_btn: {
-                    _click: function () {
+
+            controllerBg:
+            {
+                _layout: [[0.5, 0.5], [0.5, 0.5], [0, 0]],
+
+                play_btn:
+                {
+                    _click: function ()
+                    {
                         updatelayer_itme_node.resume();
                     }
-                }
-                , pause_btn: {
-                    _click: function () {
+                },
+
+                pause_btn:
+                {
+                    _click: function ()
+                    {
                         updatelayer_itme_node.pause();
                     }
-                }
-                , kuaijin_btn: {
-                    _click: function () {
+                },
+
+                kuaijin_btn:
+                {
+                    _click: function ()
+                    {
 
                     }
-                }
-                , return_btn: {
-                    _click: function () {
+                },
+
+                return_btn:
+                {
+                    _click: function ()
+                    {
                         updatelayer_itme_node.unscheduleAllCallbacks();
                         jsclient.replayui.removeFromParent(true);
                         jsclient.replayui = null;
                     }
-                }
-                , kuaitui_btn: {
-                    _click: function () {
+                },
+
+                kuaitui_btn:
+                {
+                    _click: function ()
+                    {
 
                     }
-                }
+                },
+
+                ma_btn:
+                {
+                    _event:
+                    {
+                        replayEndShowMa:function ()
+                        {
+                            if(jsclient.data.sData.tData.gameType == 4)
+                                return;
+
+                            this.setBright(true);
+                            this.setTouchEnabled(true);
+                        }
+                    },
+
+                    _run:function()
+                    {
+                        this.setBright(false);
+                        this.setTouchEnabled(false);
+                    },
+                    
+                    _click: function ()
+                    {
+                        if(jsclient.replayui)
+                            jsclient.replayui.addChild(new ShowMaPanel());
+                    },
+                },
             },
             
-            chat_btn: {
+            chat_btn:
+            {
                 _layout: [[0.1, 0.1], [1, 0], [-1, 3.2]]
             },
             
-            voice_btn: {
+            voice_btn:
+            {
                 _layout: [[0.1, 0.1], [1, 0], [-1, 2]]
             },
             
-            backHomebtn: {
-                _layout: [[0.09, 0.09], [0, 1], [1.8, -1.3]]
-                , _click: function (btn) {
+            backHomebtn:
+            {
+                _layout: [[0.09, 0.09], [0, 1], [1.8, -1.3]],
+
+                _click: function (btn)
+                {
                     var sData = jsclient.data.sData;
-                    if (sData) {
-                        if (IsRoomOwner()) {
+                    if (sData)
+                    {
+                        if (IsRoomOwner())
+                        {
                             jsclient.showMsg("返回大厅房间仍然保留\n赶快去邀请好友吧",
-                                function () {
+                                function ()
+                                {
                                     jsclient.playui.visible = false;
                                     sendEvent("returnHome");
-                                }, function () {
-                                });
-                        }
-                        else {
-                            jsclient.showMsg("返回大厅房间将退出游戏\n确定退出房间吗",
-                                function () {
-                                    jsclient.leaveGame();
-                                }, function () {
-                                });
-                        }
-                    }
+                                },
 
-                }, _event: {
-                    returnPlayerLayer: function () {
+                                function ()
+                                {
+                                });
+                        }
+                        else
+                        {
+                            jsclient.showMsg("返回大厅房间将退出游戏\n确定退出房间吗",
+                                function ()
+                                {
+                                    jsclient.leaveGame();
+                                },
+                                function ()
+                                {
+                                });
+                        }
+                    }
+                },
+                _event:
+                {
+                    returnPlayerLayer: function ()
+                    {
                         jsclient.playui.visible = true;
-                    }, reinitSceneData: function (eD) {
+                    },
+
+                    reinitSceneData: function (eD)
+                    {
                         this.visible = CheckInviteVisible();
-                    }
-                    , addPlayer: function (eD) {
+                    },
+
+                    addPlayer: function (eD)
+                    {
                         this.visible = CheckInviteVisible();
-                    }
-                    , removePlayer: function (eD) {
+                    },
+
+                    removePlayer: function (eD)
+                    {
                         this.visible = CheckInviteVisible();
                     }
                 }
             }
 
         },
-        ctor: function () {
+        ctor: function ()
+        {
             this._super();
             var playui = ccs.load("res/Replay.json");
             playMusic("bgFight");
             ConnectUI2Logic(playui.node, this.jsBind);
             this.addChild(playui.node);
             jsclient.lastMJTick = Date.now();
-            this.runAction(cc.repeatForever(cc.sequence(cc.callFunc(function () {
-                if (jsclient.game_on_show) jsclient.tickGame(0);
+            this.runAction(cc.repeatForever(cc.sequence(cc.callFunc(function () 
+            {
+                if (jsclient.game_on_show) 
+                    jsclient.tickGame(0);
             }), cc.delayTime(7))));
             jsclient.replayui = this;
             return true;

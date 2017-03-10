@@ -286,8 +286,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 464.31,
-                  "Y": 118.5132
+                  "X": 469.0007,
+                  "Y": 68.5132
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -298,17 +298,17 @@
                 "PositionPercentXEnabled": true,
                 "PositionPercentYEnabled": true,
                 "PrePosition": {
-                  "X": 0.495,
-                  "Y": 0.1846
+                  "X": 0.5,
+                  "Y": 0.1067
                 },
                 "PreSize": {
                   "X": 0.1812,
                   "Y": 0.1012
                 },
-                "LeftMargin": 379.31,
-                "RightMargin": 388.69,
-                "TopMargin": 490.9868,
-                "BottomMargin": 86.0132,
+                "LeftMargin": 384.0007,
+                "RightMargin": 383.9993,
+                "TopMargin": 540.9868,
+                "BottomMargin": 36.0132,
                 "Tag": 1151,
                 "ActionTag": -410361543,
                 "Size": {
@@ -317,6 +317,64 @@
                 },
                 "Name": "OK",
                 "ctype": "ButtonObjectData"
+              },
+              {
+                "IsBounceEnabled": true,
+                "InnerNodeSize": {
+                  "Width": 750,
+                  "Height": 400
+                },
+                "ScrollDirectionType": "Vertical",
+                "ClipAble": true,
+                "BackColorAlpha": 90,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "G": 150,
+                  "B": 100
+                },
+                "FirstColor": {
+                  "G": 150,
+                  "B": 100
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleY": 1.0
+                },
+                "Position": {
+                  "X": 101.1829,
+                  "Y": 513.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1079,
+                  "Y": 0.7991
+                },
+                "PreSize": {
+                  "X": 0.7996,
+                  "Y": 0.6231
+                },
+                "LeftMargin": 101.1829,
+                "RightMargin": 86.8171,
+                "TopMargin": 129.0,
+                "BottomMargin": 113.0,
+                "Tag": 388,
+                "ActionTag": 333211447,
+                "Size": {
+                  "X": 750.0,
+                  "Y": 400.0
+                },
+                "Alpha": 0,
+                "Name": "ScrollView",
+                "ctype": "ScrollViewObjectData"
               }
             ],
             "ActionTag": -108244162,
@@ -521,8 +579,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 50.323,
-                  "Y": 77.0032
+                  "X": 50.32,
+                  "Y": 77.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -530,8 +588,6 @@
                 },
                 "CColor": {},
                 "IconVisible": false,
-                "PositionPercentXEnabled": true,
-                "PositionPercentYEnabled": true,
                 "PrePosition": {
                   "X": 0.5135,
                   "Y": 0.5066
@@ -540,10 +596,10 @@
                   "X": 1.0204,
                   "Y": 1.0197
                 },
-                "LeftMargin": 0.323,
-                "RightMargin": -2.323,
-                "TopMargin": -2.5032,
-                "BottomMargin": -0.4968,
+                "LeftMargin": 0.32,
+                "RightMargin": -2.32,
+                "TopMargin": -2.5,
+                "BottomMargin": -0.5,
                 "Tag": 1073,
                 "ActionTag": 1589965576,
                 "Size": {

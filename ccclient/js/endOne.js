@@ -384,7 +384,10 @@ function DelRoomTime(node) {
 
 //报九张是否显示
 function checkShowBaoJiuZhang(pl) {
-    if (pl.winType == 4 && pl.baojiu.num == 4) return true;
+    if(pl.huType == jsclient.majiang.HUI_ZHOU_HTYPE.ZIYISE || pl.huType == jsclient.majiang.HUI_ZHOU_HTYPE.DAGE || pl.huType == jsclient.majiang.HUI_ZHOU_HTYPE.QUANYAOJIU)
+    {
+        if ((pl.winType == 4 || pl.winType == 5 || pl.winType == 6 ) && (pl.baojiu && pl.baojiu.num == 4)) return true;
+    }
     return false;
 }
 
@@ -1099,11 +1102,11 @@ var EndOneLayer = cc.Layer.extend(
     });
 
 //显示买马牌
-function showEndMa() {
+function showEndMa()
+{
     var pl = getUIPlayer(0);
     var cardMa = pl.left4Ma;
-    // var cardMa = [1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,21,22,23,24,25,26];
-
+    // var cardMa = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40];
     var index = 0;
     var col = 8;
     var row = 3;
@@ -1118,68 +1121,97 @@ function showEndMa() {
     var cardSize = cardNode.getContentSize();
     var scale = cardNode.scale;
 
-    switch (cardCount) {
-        case 1:
-            sposx = 430;
-            sposy = 300;
-            offx = 0;
-            break;
-        case 2:
-            sposx = 350;
-            sposy = 300;
-            offx = 110;
-            break;
-        case 4:
-            sposx = 230;
-            sposy = 300;
-            offx = 65;
-            break;
-        case 6:
-            sposx = 120;
-            sposy = 300;
-            offx = 55;
-            break;
-        case 8:
-            sposx = 230;
-            sposy = 350;
-            offx = 65;
-            offy = 30;
-            col = 4;
-            break;
-        case 10:
-            sposx = 180;
-            sposy = 350;
-            offx = 65;
-            offy = 30;
-            col = 5;
-            break;
-        case 12:
-            sposx = 150;
-            sposy = 350;
-            offx = 50;
-            offy = 30;
-            col = 6;
-            break;
-        case 14:
-            sposx = 130;
-            sposy = 350;
-            offx = 35;
-            offy = 30;
-            col = 7;
-            break;
-        case 16:
-            sposy = 350;
-            offy = 30;
-            break;
-        case 18:
-            sposx = 120;
-            offx = 55;
-            col = 6;
-            break;
+    //如果超过24个马 就计算 行
+    if(cardCount >= 20)
+    {
+        sposx = 10;
+
+        row = cardCount / col;
+
+        if(cardCount % col > 0)
+            row = row + 1;
+
+        var svSize = ScrollView.getInnerContainerSize();
+        ScrollView.setInnerContainerSize(cc.size(svSize.width, row * ((offy + cardSize.height) * scale)));
     }
 
-    for (var i = 0; i < row; i++) {
-        for (var j = 0; j < col; j++) {
+    switch (cardCount)
+    {
+    case 1:
+        sposx = 330;
+        sposy = 150;
+        offx = 0;
+        break;
+    case 2:
+        sposx = 240;
+        sposy = 150;
+        offx = 110;
+        break;
+    case 4:
+        sposx = 130;
+        sposy = 150;
+        offx = 65;
+        break;
+    case 6:
+        sposx = 210;
+        sposy = 200;
+        offx = 55;
+        col = 3;
+        break;
+    case 8:
+        sposx = 130;
+        sposy = 220;
+        offx = 65;
+        offy = 30;
+        col = 4;
+        break;
+    case 10:
+        sposx = 80;
+        sposy = 220;
+        offx = 65;
+        offy = 30;
+        col = 5;
+        break;
+    case 12:
+        sposx = 50;
+        sposy = 220;
+        offx = 50;
+        offy = 30;
+        col = 6;
+        break;
+    case 14:
+        sposx = 30;
+        sposy = 220;
+        offx = 35;
+        offy = 30;
+        col = 7;
+        break;
+    case 16:
+        sposx = 15;
+        sposy = 220;
+        offy = 30;
+        break;
+    case 18:
+        sposx = 30;
+        sposy = 260;
+        offx = 55;
+        col = 6;
+        break;
+    case 20:
+        sposx = 80;
+        sposy = 280;
+        offx = 55;
+        col = 5;
+        row = 4;
+        break;
+    }
+
+    var svSize = ScrollView.getInnerContainerSize();
+
+    for (var i = 0; i < row; i++)
+    {
+        for (var j = 0; j < col; j++)
+        {
             var cd = cardMa[index];
             index++;
 
@@ -1221,38 +1253,46 @@ function showEndMa() {
 
             cardClone.scale = scale;
             cardClone.x = sposx + j * (cardSize.width * scale + offx);
-            cardClone.y = sposy - i * (cardSize.height * scale + offy);
+            if(cardCount >= 20)
+                cardClone.y =  svSize.height - (i + 1) * (cardSize.height * scale + offy);
+            else
+                cardClone.y =  sposy - i * (cardSize.height * scale + offy);
+
             cardClone.visible = true;
 
             ConnectUI2Logic(cardClone, cadrContent);
-            maBackNode.addChild(cardClone);
+            ScrollView.addChild(cardClone);
             showCardActionAndMa(index - 1, cardClone, index * time);
         }
     }
 }
 
 //翻拍动画(并且判断有没有中马)
-function showCardActionAndMa(cardIndex, cardNode, time) {
+function showCardActionAndMa(cardIndex, cardNode, time)
+{
     var cardBack = cardNode.getChildByName("down");
     var cardImg = cardNode.getChildByName("up");
     var cardOpen = cardNode.getChildByName("open");
     var cardClose = cardNode.getChildByName("close");
 
-    var onActionEnd = function () {
+    var onActionEnd = function ()
+    {
         cardBack.visible = false;
         cardImg.visible = true;
         cardImg.scaleX = 0;
 
-        cardImg.runAction(cc.sequence(cc.scaleTo(0.3, 1, 1), cc.callFunc(function () {
-            if (checkMjMa(cardIndex)) {
-
+        cardImg.runAction(cc.sequence(cc.scaleTo(0.3, 1, 1), cc.callFunc(function ()
+        {
+            if (checkMjMa(cardIndex))
+            {
                 //如果有多人赢，则不显示高亮
                 if(checkWinCount())
                     cardOpen.visible = false;
                 else
                     cardOpen.visible = true;
             }
-            else {
+            else
+            {
                 //如果有多人赢，则不显示遮罩
                 if(checkWinCount())
                     cardClose.visible = false;
@@ -1271,37 +1311,54 @@ function showCardActionAndMa(cardIndex, cardNode, time) {
 }
 
 //结算显示马
-var cardNode, maBackNode;
+var cardNode, maBackNode, ScrollView;
 var ShowMaPanel = cc.Layer.extend({
-    jsBind: {
-
-        block: {
+    jsBind: 
+    {
+        block:
+        {
             _layout: [[1, 1], [0.5, 0.5], [0, 0], true]
         },
-        back: {
+
+        back:
+        {
             _layout: [[0.88, 0.88], [0.5, 0.5], [0, 0]],
 
-            _run: function () {
+            _run: function ()
+            {
                 maBackNode = this;
             },
 
-            OK: {
-                _click: function (btn, eT) {
+            OK:
+            {
+                _click: function (btn, eT)
+                {
                     jsclient.endMaiMa.removeFromParent(true);
                 }
             },
 
+            ScrollView:
+            {
+                _run: function ()
+                {
+                    ScrollView = this;
+                },
+            }
+
         },
 
-        card: {
-            _run: function () {
+        card:
+        {
+            _run: function () 
+            {
                 this.visible = false;
                 cardNode = this;
             }
         }
 
     },
-    ctor: function () {
+    ctor: function () 
+    {
         this._super();
         var endMaiMa = ccs.load("res/ShowMa.json");
         ConnectUI2Logic(endMaiMa.node, this.jsBind);

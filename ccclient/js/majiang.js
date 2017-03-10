@@ -115,6 +115,33 @@
         SHISANYAO: 9,//十三幺
     }
 
+    //潮汕麻将 0平胡 1碰碰胡 2混一色 3清一色 4七小对 5混碰 6清碰 7混七小对 8豪华七小对 9幺九（别的玩法中的杂幺九）10 清七小对 11幺九七小对 12混豪华七对 13清豪华七对 14混幺九
+    // 15十八罗汉 16双豪华七对 17 纯大字 18 纯幺九 19幺九豪华七小对 20纯大字七小对
+    majiang.CHAO_SHAN_HUTYPE = {
+        PINGHU: 0,//平胡
+        PENGPENGHU: 1,//碰碰胡
+        HUNYISE: 2,//混一色
+        QINGYISE: 3,//清一色
+        QIXIAODUI:4,//七小对
+        HUNPENG: 5,//混碰
+        QINGPENG: 6,//清碰
+        HUNQIXIAODUI:7,//混七小对
+        HAOHUAQIXIAODUI:8,//豪华七小对
+        YAOJIU:9,//幺九 别的玩法中的杂幺九
+        QINGQIXIAODUI:10,//清七小对
+        YAOJIUQIXIAODUI:11,//幺九七小对
+        HUNHAOHUAQIDUI:12,//混豪华七对
+        QINGHAOHUAQIDUI:13,//清豪华七对
+        HUNYAOJIU:14,//混幺九
+        SHIBALUOHAN:15,//十八罗汉
+        SHUANGHAOHUAQIDUI:16,//双豪华七对
+        CHUNDAZI:17,//纯大字
+        CHUNYAOJIU:18,//纯幺九
+        YAOJIUHAOHUAQIXIAODUI:19,//幺九豪华七小对
+        CHUNDAZIQIXIAODUI:20,//纯大字七小对
+        SHISANYAO:21,//十三幺
+    }
+
     //惠州牌型枚举
     majiang.HUI_ZHOU_HTYPE = {
         ERROR: -1,//错误类型
@@ -305,6 +332,19 @@
         return true;
     }
 
+    majiang.deepCopy = function(p, c) {
+        var c = c || {};
+        for (var i in p) {
+            if (typeof p[i] === 'object') {
+                c[i] = (p[i].constructor === Array) ? [] : {};
+                majiang.deepCopy(p[i], c[i]);
+            } else {
+                c[i] = p[i];
+            }
+        }
+        return c;
+    }
+
     majiang.getHuTypeNew = function (pi)
     {
         var judge = majiang.HUI_ZHOU_HTYPE.JIHU;
@@ -479,6 +519,125 @@
         return judge;
     }
 
+    //潮汕麻将 0平胡 1碰碰胡 2混一色 3清一色 4七小对 5混碰 6清碰 7混七小对 8豪华七小对 9幺九（别的玩法中的杂幺九）10 清七小对 11幺九七小对 12混豪华七对 13清豪华七对 14混幺九
+    // 15十八罗汉 16双豪华七对 17 纯大字 18 纯幺九 19幺九豪华七小对 20纯大字七小对
+    //服务器端进行的判断
+    majiang.getHuTypeForChaoShan = function(pi)
+    {
+        var qiXiaoDui = false;
+        var haoHuaQiDui = false;
+        var chunDaZi = false;
+        var judge = majiang.CHAO_SHAN_HUTYPE.PINGHU;//0
+        var num3 = majiang.All3(pi);
+        if(pi.huType == 7 ) qiXiaoDui = true;
+        var hunyise = majiang.HunYiSe(pi);
+        if (hunyise) judge = majiang.CHAO_SHAN_HUTYPE.HUNYISE;//2
+        var sameColor = majiang.SameColor(pi);
+        if (sameColor) judge = majiang.CHAO_SHAN_HUTYPE.QINGYISE;//3
+        if(qiXiaoDui) judge = majiang.CHAO_SHAN_HUTYPE.QIXIAODUI;//4
+        if (num3 == 1 || num3 == 2) {
+            judge = majiang.CHAO_SHAN_HUTYPE.PENGPENGHU;//1
+            if (hunyise) judge = majiang.CHAO_SHAN_HUTYPE.HUNPENG;//5
+            if (sameColor) judge = majiang.CHAO_SHAN_HUTYPE.QINGPENG;//6
+        }
+        if (qiXiaoDui && hunyise) judge = majiang.CHAO_SHAN_HUTYPE.HUNQIXIAODUI;//7
+        if(qiXiaoDui && majiang.canGang1([], pi.mjhand, []).length > 0) {
+            haoHuaQiDui = true;
+        }
+        if(haoHuaQiDui) judge = majiang.CHAO_SHAN_HUTYPE.HAOHUAQIXIAODUI;//8
+        var yaoJiu = majiang.zaYaoJiu(pi);
+        if(yaoJiu) judge = majiang.CHAO_SHAN_HUTYPE.YAOJIU;//9
+        if (qiXiaoDui && sameColor) judge = majiang.CHAO_SHAN_HUTYPE.QINGQIXIAODUI;//10
+        var hunYaoJiu = majiang.qingYaoJiu(pi);
+        var chunYaoJiu = majiang.quanYaoJiu(pi);
+        if(qiXiaoDui && (hunYaoJiu || yaoJiu || chunYaoJiu)) judge = majiang.CHAO_SHAN_HUTYPE.YAOJIUQIXIAODUI;//11
+        if(haoHuaQiDui && hunyise) judge = majiang.CHAO_SHAN_HUTYPE.HUNHAOHUAQIDUI;//12
+        if(haoHuaQiDui && sameColor ) judge = majiang.CHAO_SHAN_HUTYPE.QINGHAOHUAQIDUI;//13
+        if(hunYaoJiu) judge = majiang.CHAO_SHAN_HUTYPE.HUNYAOJIU;//14
+        if(majiang.shiBaLuoHan(pi)) judge = majiang.CHAO_SHAN_HUTYPE.SHIBALUOHAN;//15
+        if(haoHuaQiDui && majiang.canGang1([], pi.mjhand, []).length == 2) judge = majiang.CHAO_SHAN_HUTYPE.SHUANGHAOHUAQIDUI;//16
+        if(num3 == 2) chunDaZi = true;
+        if(chunDaZi)  judge = majiang.CHAO_SHAN_HUTYPE.CHUNDAZI;//17
+        if(chunYaoJiu) judge = majiang.CHAO_SHAN_HUTYPE.CHUNYAOJIU; //18
+        if(haoHuaQiDui&& (hunYaoJiu || yaoJiu || chunYaoJiu)) judge = majiang.CHAO_SHAN_HUTYPE.YAOJIUHAOHUAQIXIAODUI;//19
+        if(qiXiaoDui && chunDaZi ) judge = majiang.CHAO_SHAN_HUTYPE.CHUNDAZIQIXIAODUI;//20
+        if(majiang.shiSanYao(pi)) judge = majiang.CHAO_SHAN_HUTYPE.SHISANYAO;//21
+        //if(pi.huType == 13) judge = majiang.CHAO_SHAN_HUTYPE.SHISANYAO;//21
+        return judge;
+    }
+
+    ////潮汕 预判胡牌类型
+    //majiang.prejudgeHuTypeForChaoShan(pi,cd)
+    //{
+    //
+    //}
+
+    //去重 第一个数组参数去重 及 当第二个数组参数 有数据的时候 第二个数组参数 会将第一个数组里的数去除掉
+    majiang.getQuChongCards = function(cardsArray,cds)
+    {
+        var rtn = [];
+        var rtn1 = [];
+        var rtn2 = [];
+        var rtn3 = [];//需要删除的元素
+        for(var i=0;i<cardsArray.length;i++)
+        {
+            rtn.push(cardsArray[i]);
+        }
+        rtn.sort(function (a, b) {
+            return a - b
+        });
+        for(var i=0;i<rtn.length;i++)
+        {
+            if(rtn[i] != rtn[i+1]) rtn1.push(rtn[i]);
+        }
+        for(var i=0;i<rtn1.length;i++)
+        {
+            rtn3.push(rtn1[i]);
+        }
+        if(cds && cds.length > 0)
+        {
+            for(var i=0;i<cds.length;i++)
+            {
+                rtn1.push(cds[i]);
+            }
+            rtn1.sort(function (a, b) {
+                return a - b
+            });
+
+            for(var i=0;i<rtn1.length;i++)
+            {
+                if(rtn1[i] != rtn1[i+1]) rtn2.push(rtn1[i]);
+            }
+
+            for(var d = 0;d< rtn3.length; d++ ) ////要去掉的值
+            {
+                for(var q = 0;q<rtn2.length;q++) ////该从这里去掉
+                {
+                    if(rtn2[q] == rtn3[d])
+                    {
+                        rtn2.splice(q,1);
+                        q = q - 1;
+                    }
+                }
+            }
+
+            return rtn2;
+        }
+        else{
+            return rtn1;
+        }
+
+    }
+
+    //潮汕 十八罗汉
+    majiang.shiBaLuoHan = function(pi)
+    {
+        var mingGangCounts = pi.mjgang0.length;
+        var anGangCounts = pi.mjgang1.length;
+        if(mingGangCounts + anGangCounts == 4) return true;
+        return false;
+    }
+
     //河源百搭  单吊才用
     majiang.getHuTypeForHeYuanBaiDaNewForDanDiao = function(pi)
     {
@@ -510,10 +669,22 @@
     majiang.isDanDiaoHuaFor13 = function(td,pl,is13)
     {
         var cds = [];
+        var paixu = [];
+
         for(var i=0;i<pl.mjhand.length;i++)
         {
             cds.push(pl.mjhand[i]);
+            paixu.push(pl.mjhand[i]);
         }
+
+        paixu.sort(function (a, b) {
+            return a - b
+        });
+        for(var k =0;k<paixu.length;k++)
+        {
+            if(paixu[k] == paixu[k+1]) return false;
+        }
+
         cds.splice(cds.indexOf(cds.length), 1);
         if(is13)
         {
@@ -523,36 +694,15 @@
         }
         return true;
     }
-    //河源百搭 单调花
-    majiang.isDanDiaoHua = function(td,pl)
-    {
-        var cds = [];
-        for(var i=0;i<pl.mjhand.length;i++)
-        {
-            cds.push(pl.mjhand[i]);
-        }
-        cds.splice(cds.indexOf(cds.length), 1);
-        //必须有花鬼 否则false
-        if(!majiang.canFindFlowerForMjhand(cds) ) return false;
-        if(cds.length == 1 && majiang.canFindFlowerForMjhand(cds)) return true;
-        //将手牌（除最后一张 及所有花鬼 及 任何一张牌放置一个数组里）
-        var other = [1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,21,22,23,24,25,26,27,28,29,31,41,51,61,71,81,91];
-        //var cdArray = [];
-        //for(var i=0;i<cds.length;i++)
-        //{
-        //    if(cds[i] != cds[i+1] && cds[i] < 111) cdArray.push(cds[i]);
-        //}
-        for(var i=0;i<other.length;i++)
-        {
-            if(majiang.canHu(!td.canHu7, cds, other[i], td.canHuWith258, td.withZhong,td.fanGui,td.gui,td.gui4Hu,td.nextgui) <= 0)  return false;
-        }
-        return true;
-    }
 
     //河源百搭 花调花
     majiang.isHuaDiaoHuaFor13 = function(td,pl,is13)
     {
         if(!majiang.canFindFlowerForMjhand(pl.mjhand[pl.mjhand.length-1]) ) return false;
+        for(var k =0;k<pl.mjhand.length;k++)
+        {
+            if(pl.mjhand[k] == pl.mjhand[k+1]) return false;
+        }
         if(majiang.isDanDiaoHuaFor13(td,pl,is13)) return true;
     }
 
@@ -560,40 +710,8 @@
     majiang.isHuaDiaoHua = function(td,pl)
     {
         if(!majiang.canFindFlowerForMjhand(pl.mjhand[pl.mjhand.length-1]) ) return false;
-        if(majiang.isDanDiaoHua(td,pl)) return true;
-        return false;
-    }
-
-    //河源百搭 新的单吊花
-    majiang.isDanDiaoHuaNew = function(td,pl,huType)
-    {
-        //最后一张鬼 与 摸的那张牌先做将 先看能不能胡了
-        var lastPut = pl.mjhand[pl.mjhand.length-1];
-        var rtn = [];
-        for(var i=0;i<pl.mjhand.length;i++)
-        {
-            rtn.push(pl.mjhand[i]);
-        }
-        for(var i=0;i<rtn.length;i++)
-        {
-            if(rtn[i] >= 111) {
-                rtn.splice(rtn.indexOf(rtn[i]), 1);
-                break;
-            }
-        }
-        rtn.push(lastPut);
-        if(majiang.canHu(!td.canHu7, rtn, 0, td.canHuWith258, td.withZhong,td.fanGui,td.gui,td.gui4Hu,td.nextgui) <= 0)  return false;
-
-        var test = [];
-        test.mjhand = rtn;
-        test.mjpeng = pl.mjpeng;
-        test.mjgang0 = pl.mjgang0;
-        test.mjgang1 = pl.mjgang1;
-        test.winType = pl.winType;
-        test.mjchi = pl.mjchi;
-        var type = majiang.getHuTypeForHeYuanBaiDa(test);
-        if(type == huType) return true;
-        return false;
+        // if(majiang.isDanDiaoHua(td,pl)) return true;
+        return true;
     }
 
     //东莞 0平胡 1混一色 2大对胡 3清一色 4七对 5龙七对 6混七对 7混龙七对 8清七对 9清龙七对 10混大对 11清大对
@@ -773,6 +891,64 @@
         return false;
     }
 
+    //听牌 客户端
+    majiang.canTingHu = function(mjhand)
+    {
+        Array.prototype.insert = function (index, item) {
+            this.splice(index, 0, item);
+        };
+        var data = {};
+        var withZhong = jsclient.data.sData.tData.withZhong;
+        var gui = jsclient.data.sData.tData.gui;
+        var fanGui = jsclient.data.sData.tData.fanGui;
+        var twogui = jsclient.data.sData.tData.twogui;
+        var canHu7 = jsclient.data.sData.tData.canHu7;
+        var gui4Hu = jsclient.data.sData.tData.gui4Hu;
+        var nextgui = jsclient.data.sData.tData.nextgui;
+
+        var virtualPl = {};
+        virtualPl.mjhand = [];
+        for(var i=0;i<mjhand.length;i++)
+        {
+            virtualPl.mjhand.push(mjhand[i]);
+            data[mjhand[i]+""] = [];
+        }
+        var canTingPai = [1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,21,22,23,24,25,26,27,28,29,31,41,51,61,71,81,91];
+        majiang.isClient = true;
+        var deletHunZiIndexForCanTingPai = 0;
+        var searchHunZiNum = 0;
+        for(var i=0;i<canTingPai.length;i++)
+        {
+            if(majiang.isEqualHunCardForTingPai(canTingPai[i],withZhong,fanGui,twogui,nextgui,gui))
+            {
+                searchHunZiNum++;
+                deletHunZiIndexForCanTingPai = i;
+            }
+        }
+        for(var i=0;i<searchHunZiNum;i++)
+        {
+            canTingPai.splice(canTingPai.indexOf(canTingPai[(deletHunZiIndexForCanTingPai-searchHunZiNum+1)]), 1);
+        }
+
+        for(var i=0;i<virtualPl.mjhand.length;i++)
+        {
+            if(virtualPl.mjhand[i] == virtualPl.mjhand[i+1]) continue;
+            if(majiang.isEqualHunCardForTingPai(virtualPl.mjhand[i],withZhong,fanGui,twogui,nextgui,gui))
+                continue;
+            var deletPai = virtualPl.mjhand[i];
+            virtualPl.mjhand.splice(i,1);
+            for(var j=0;j<canTingPai.length;j++)
+            {
+                if( majiang.canHu(!canHu7, virtualPl.mjhand, canTingPai[j], false, withZhong,fanGui,gui,gui4Hu,nextgui) >0 )
+                {
+                    if(data[mjhand[i] + ""].indexOf(canTingPai[j]) == -1)data[mjhand[i]+""].push(canTingPai[j]);
+                }
+            }
+            virtualPl.mjhand.insert(i,deletPai);
+        }
+        return data;
+    }
+
     //深圳 小四喜 胡牌者完成东、南、西、北其中三组刻子，外加一组对子
     majiang.xiaoSiXi = function (pi) {
         var test = [pi.mjhand, pi.mjpeng, pi.mjgang0, pi.mjgang1, pi.mjchi];
@@ -917,7 +1093,7 @@
             }
             for(var j=0;j<other.length;j++) //除了13幺还有其他牌
             {
-                if(pi.mjhand.indexOf(other[j]) != -1 ) return false;
+                if(pi.mjhand.indexOf(other[j]) != -1 && !majiang.isEqualHunCard(other[j]) ) return false;
             }
             rtn.push(pi.mjhand[i]);
         }
@@ -936,19 +1112,19 @@
         var baiCounts = 0;
         for(var i=0;i<rtn.length;i++)
         {
-            if(rtn[i] == 1) yiTiaoCounts++;
-            if(rtn[i] == 9) jiuTiaoCounts ++;
-            if(rtn[i] == 11) yiWanCounts ++;
-            if(rtn[i] == 19) jiuWanCounts ++;
-            if(rtn[i] == 21 ) yiTongCounts++;
-            if(rtn[i] == 29) jiuTongCounts ++;
-            if(rtn[i] == 31) dongCounts ++;
-            if(rtn[i] == 41) nanCounts ++;
-            if(rtn[i] == 51) xiCounts ++;
-            if(rtn[i] == 61) beiCounts ++;
-            if(rtn[i] == 71) zhongCounts ++;
-            if(rtn[i] == 81) faCounts ++;
-            if(rtn[i] == 91) baiCounts ++;
+            if(rtn[i] == 1 && !majiang.isEqualHunCard(1)) yiTiaoCounts++;
+            if(rtn[i] == 9 && !majiang.isEqualHunCard(9)) jiuTiaoCounts ++;
+            if(rtn[i] == 11 && !majiang.isEqualHunCard(11)) yiWanCounts ++;
+            if(rtn[i] == 19 && !majiang.isEqualHunCard(19)) jiuWanCounts ++;
+            if(rtn[i] == 21 && !majiang.isEqualHunCard(21)) yiTongCounts++;
+            if(rtn[i] == 29 && !majiang.isEqualHunCard(29)) jiuTongCounts ++;
+            if(rtn[i] == 31 && !majiang.isEqualHunCard(31)) dongCounts ++;
+            if(rtn[i] == 41 && !majiang.isEqualHunCard(41)) nanCounts ++;
+            if(rtn[i] == 51 && !majiang.isEqualHunCard(51)) xiCounts ++;
+            if(rtn[i] == 61 && !majiang.isEqualHunCard(61)) beiCounts ++;
+            if(rtn[i] == 71 && !majiang.isEqualHunCard(71)) zhongCounts ++;
+            if(rtn[i] == 81 && !majiang.isEqualHunCard(81)) faCounts ++;
+            if(rtn[i] == 91 && !majiang.isEqualHunCard(91)) baiCounts ++;
         }
         if(yiTiaoCounts > 2 || jiuTiaoCounts > 2 || yiWanCounts > 2 || jiuWanCounts > 2 || yiTongCounts > 2 || jiuTongCounts > 2 || dongCounts > 2 || nanCounts > 2 || xiCounts > 2 || beiCounts > 2 || zhongCounts > 2 || faCounts > 2 || baiCounts > 2) return false;
         //1条
@@ -995,7 +1171,7 @@
             }
             for(var j=0;j<other.length;j++) //除了13幺还有其他牌
             {
-                if(cardss.indexOf(other[j]) != -1 ) return false;
+                if(cardss.indexOf(other[j]) != -1 && !majiang.isEqualHunCard(other[j]) ) return false;
             }
             rtn.push(cardss[i]);
         }
@@ -1014,19 +1190,19 @@
         var baiCounts = 0;
         for(var i=0;i<rtn.length;i++)
         {
-            if(rtn[i] == 1) yiTiaoCounts++;
-            if(rtn[i] == 9) jiuTiaoCounts ++;
-            if(rtn[i] == 11) yiWanCounts ++;
-            if(rtn[i] == 19) jiuWanCounts ++;
-            if(rtn[i] == 21 ) yiTongCounts++;
-            if(rtn[i] == 29) jiuTongCounts ++;
-            if(rtn[i] == 31) dongCounts ++;
-            if(rtn[i] == 41) nanCounts ++;
-            if(rtn[i] == 51) xiCounts ++;
-            if(rtn[i] == 61) beiCounts ++;
-            if(rtn[i] == 71) zhongCounts ++;
-            if(rtn[i] == 81) faCounts ++;
-            if(rtn[i] == 91) baiCounts ++;
+            if(rtn[i] == 1 && !majiang.isEqualHunCard(1)) yiTiaoCounts++;
+            if(rtn[i] == 9 && !majiang.isEqualHunCard(9)) jiuTiaoCounts ++;
+            if(rtn[i] == 11 && !majiang.isEqualHunCard(11)) yiWanCounts ++;
+            if(rtn[i] == 19 && !majiang.isEqualHunCard(19)) jiuWanCounts ++;
+            if(rtn[i] == 21 && !majiang.isEqualHunCard(21)) yiTongCounts++;
+            if(rtn[i] == 29 && !majiang.isEqualHunCard(29)) jiuTongCounts ++;
+            if(rtn[i] == 31 && !majiang.isEqualHunCard(31)) dongCounts ++;
+            if(rtn[i] == 41 && !majiang.isEqualHunCard(41)) nanCounts ++;
+            if(rtn[i] == 51 && !majiang.isEqualHunCard(51)) xiCounts ++;
+            if(rtn[i] == 61 && !majiang.isEqualHunCard(61)) beiCounts ++;
+            if(rtn[i] == 71 && !majiang.isEqualHunCard(71)) zhongCounts ++;
+            if(rtn[i] == 81 && !majiang.isEqualHunCard(81)) faCounts ++;
+            if(rtn[i] == 91 && !majiang.isEqualHunCard(91)) baiCounts ++;
         }
         if(yiTiaoCounts > 2 || jiuTiaoCounts > 2 || yiWanCounts > 2 || jiuWanCounts > 2 || yiTongCounts > 2 || jiuTongCounts > 2 || dongCounts > 2 || nanCounts > 2 || xiCounts > 2 || beiCounts > 2 || zhongCounts > 2 || faCounts > 2 || baiCounts > 2) return false;
         //1条
@@ -1289,22 +1465,6 @@
         return nums;
     }
 
-    //惠州清幺九 （ 杂碰 且必须 含1和9 或 11和19 或 21和29）
-    //majiang.qingYaoJiu = function (pi) {
-    //    var num3 = majiang.All3(pi);
-    //    var zaSe = majiang.zaSe(pi);
-    //    var judeg = false;
-    //    if (num3 == 1 && zaSe) judeg = true;
-    //    if (!judeg) return false;
-    //    var test = [pi.mjhand, pi.mjpeng, pi.mjgang0, pi.mjgang1, pi.mjchi];
-    //    for (var i = 0; i < test.length; i++) {
-    //        var cds = test[i];
-    //        if (cds.indexOf(1) != -1 && cds.indexOf(9) != -1 || cds.indexOf(11) != -1 && cds.indexOf(19) != -1 && cds.indexOf(21) != -1 && cds.indexOf(29) != -1) {
-    //            return true;
-    //        }
-    //    }
-    //    return false;
-    //}
     //惠州清幺九  必须 1种颜色 带风牌
     majiang.qingYaoJiu = function (pi) {
         var test = [pi.mjhand, pi.mjpeng, pi.mjgang0, pi.mjgang1, pi.mjchi];
@@ -1322,7 +1482,7 @@
         {
             return false;
         }
-
+        console.log("==========================1");
         var noFengCds = [];
         for (var i = 0; i < test.length; i++) noFengCds.push(test[i]);
         //含风 去掉风
@@ -1347,60 +1507,35 @@
                 if (cds.indexOf(disCard[q]) != -1) return false;
             }
         }
+
+        //收集 手牌 碰牌 杠牌 所有的 19
+        var all1TO9 = [];
+
         for (var z = 0; z < noFengCds.length; z++) {
-            var cds = noFengCds[z];
-            if((cds.indexOf(1) != -1 || cds.indexOf(9) != -1) && (cds.indexOf(11) != -1 || cds.indexOf(19) != -1 || cds.indexOf(21) != -1 || cds.indexOf(29) != -1)) return false;
-            if((cds.indexOf(11) != -1 || cds.indexOf(19) != -1) && (cds.indexOf(1) != -1 || cds.indexOf(9) != -1 || cds.indexOf(21) != -1 || cds.indexOf(29) != -1)) return false;
-            if((cds.indexOf(21) != -1 || cds.indexOf(29) != -1) && (cds.indexOf(11) != -1 || cds.indexOf(19) != -1 || cds.indexOf(1) != -1 || cds.indexOf(9) != -1)) return false;
-            if ((cds.indexOf(1) != -1 || cds.indexOf(9) != -1) &&  cds.indexOf(19) == -1 &&  cds.indexOf(11) == -1 && cds.indexOf(21) == -1 && cds.indexOf(29) == -1  ) return true;
-            if (cds.indexOf(1) == -1 && cds.indexOf(9) == -1 &&  (cds.indexOf(19) != -1 ||  cds.indexOf(11) != -1) && cds.indexOf(21) == -1 && cds.indexOf(29) == -1  ) return true;
-            if (cds.indexOf(1) == -1 && cds.indexOf(9) == -1 &&  cds.indexOf(19) == -1 &&  cds.indexOf(11) == -1 && (cds.indexOf(21) != -1 || cds.indexOf(29)) != -1  ) return true;
+            var cdss = noFengCds[z];
+            for (var k = 0; k <cdss.length; k++) {
+                if(cdss[k] == 1 || cdss[k] == 9 || cdss[k] == 11 || cdss[k] == 19 || cdss[k] == 21 || cdss[k] == 29)
+                {
+                    all1TO9.push(cdss[k]);
+                }
+            }
+            //if((cds.indexOf(1) != -1 || cds.indexOf(9) != -1) && (cds.indexOf(11) != -1 || cds.indexOf(19) != -1 || cds.indexOf(21) != -1 || cds.indexOf(29) != -1)) return false;
+            //if((cds.indexOf(11) != -1 || cds.indexOf(19) != -1) && (cds.indexOf(1) != -1 || cds.indexOf(9) != -1 || cds.indexOf(21) != -1 || cds.indexOf(29) != -1)) return false;
+            //if((cds.indexOf(21) != -1 || cds.indexOf(29) != -1) && (cds.indexOf(11) != -1 || cds.indexOf(19) != -1 || cds.indexOf(1) != -1 || cds.indexOf(9) != -1)) return false;
+            //if ((cds.indexOf(1) != -1 || cds.indexOf(9) != -1) &&  cds.indexOf(19) == -1 &&  cds.indexOf(11) == -1 && cds.indexOf(21) == -1 && cds.indexOf(29) == -1  ) return true;
+            //if (cds.indexOf(1) == -1 && cds.indexOf(9) == -1 &&  (cds.indexOf(19) != -1 ||  cds.indexOf(11) != -1) && cds.indexOf(21) == -1 && cds.indexOf(29) == -1  ) return true;
+            //if (cds.indexOf(1) == -1 && cds.indexOf(9) == -1 &&  cds.indexOf(19) == -1 &&  cds.indexOf(11) == -1 && (cds.indexOf(21) != -1 || cds.indexOf(29)) != -1  ) return true;
         }
+        if((all1TO9.indexOf(1) != -1 || all1TO9.indexOf(9) != -1) && (all1TO9.indexOf(11) != -1 || all1TO9.indexOf(19) != -1 || all1TO9.indexOf(21) != -1 || all1TO9.indexOf(29) != -1)) return false;
+        if((all1TO9.indexOf(11) != -1 || all1TO9.indexOf(19) != -1) && (all1TO9.indexOf(1) != -1 || all1TO9.indexOf(9) != -1 || all1TO9.indexOf(21) != -1 || all1TO9.indexOf(29) != -1) ) return false;
+        if((all1TO9.indexOf(21) != -1 || all1TO9.indexOf(29) != -1) && (all1TO9.indexOf(11) != -1 || all1TO9.indexOf(19) != -1 || all1TO9.indexOf(1) != -1 || all1TO9.indexOf(9) != -1) ) return false;
+        if((all1TO9.indexOf(1) != -1 || all1TO9.indexOf(9) != -1) && all1TO9.indexOf(11) == -1 && all1TO9.indexOf(19) == -1 && all1TO9.indexOf(21) == -1 && all1TO9.indexOf(29) == -1 ) return true;
+        if((all1TO9.indexOf(1) == -1 && all1TO9.indexOf(9) == -1) && (all1TO9.indexOf(11) != -1 ||  all1TO9.indexOf(19) != -1) && all1TO9.indexOf(21) == -1 && all1TO9.indexOf(29) == -1 ) return true;
+        if (all1TO9.indexOf(1) == -1 && all1TO9.indexOf(9) == -1 &&  all1TO9.indexOf(19) == -1 &&  all1TO9.indexOf(11) == -1 && (all1TO9.indexOf(21) != -1 || all1TO9.indexOf(29)) != -1  ) return true;
+
         return false;
     }
 
-    //惠州杂幺九 必须 含1和19 1和29 或 11和9 或 11和29 或21和9 或 21和19
-    //majiang.zaYaoJiu = function (pi) {
-    //    var test = [pi.mjhand, pi.mjpeng, pi.mjgang0, pi.mjgang1, pi.mjchi];
-    //    var errorCount = 0;
-    //
-    //    for (var i = 0; i < test.length; i++) {
-    //        var cds = test[i];
-    //        if (cds.indexOf(31) == -1 && cds.indexOf(41) == -1 && cds.indexOf(51) == -1 && cds.indexOf(61) == -1 && cds.indexOf(71) == -1 && cds.indexOf(81) == -1 && cds.indexOf(91) == -1) {
-    //            errorCount++;
-    //        } else {
-    //            //console.log("含风");
-    //        }
-    //    }
-    //    if (errorCount >= test.length) //test 中不含风
-    //    {
-    //        return false;
-    //    }
-    //
-    //    var noFengCds = [];
-    //    for (var i = 0; i < test.length; i++) noFengCds.push(test[i]);
-    //    //含风 去掉风
-    //    for (var i = 0; i < noFengCds.length; i++) {
-    //        noFengCds[i] = [];
-    //        for (var k = 0; k < test[i].length; k++) {
-    //            if (test[i][k] < 31) {
-    //                noFengCds[i].push(test[i][k]);
-    //            }
-    //        }
-    //    }
-    //    //判断 除 1 9 还有无其他杂牌
-    //    var disCard = [2, 3, 4, 5, 6, 7, 8, 12, 13, 14, 15, 16, 17, 18, 22, 23, 24, 25, 26, 27, 28];
-    //    for (var z = 0; z < noFengCds.length; z++) {
-    //        var cds = noFengCds[z];
-    //        for (var q = 0; q < disCard.length; q++) {
-    //            if (cds.indexOf(disCard[q]) != -1) return false;
-    //        }
-    //        if (cds.indexOf(1) != -1 && cds.indexOf(19) != -1 || cds.indexOf(1) != -1 && cds.indexOf(29) != -1 || cds.indexOf(11) != -1 && cds.indexOf(9) != -1 || cds.indexOf(11) != -1 && cds.indexOf(29) != -1 || cds.indexOf(21) != -1 && cds.indexOf(9) != -1 || cds.indexOf(21) != -1 && cds.indexOf(19) != -1) {
-    //            return true;
-    //        }
-    //    }
-    //    return false;
-    //}
     //惠州杂幺九 必须 2种颜色以上 带风牌
     majiang.zaYaoJiu = function (pi) {
         var test = [pi.mjhand, pi.mjpeng, pi.mjgang0, pi.mjgang1, pi.mjchi];
@@ -1555,25 +1690,25 @@
 
         for(var i=0;i<pl.mjpeng.length; i++)
         {
-            if(fengPai.indexOf(pl.mjpeng[i]) == -1) allFengPaiCounts2++;
+            if(fengPai.indexOf(pl.mjpeng[i]) != -1) allFengPaiCounts2++;
         }
         if(allFengPaiCounts2 >= pl.mjpeng.length) no2 = true; //全是风牌 则不是混一色
 
         for(var i=0;i<pl.mjgang0.length; i++)
         {
-            if(fengPai.indexOf(pl.mjgang0[i]) == -1) allFengPaiCounts3++;
+            if(fengPai.indexOf(pl.mjgang0[i]) != -1) allFengPaiCounts3++;
         }
         if(allFengPaiCounts3 >= pl.mjgang0.length) no3 = true; //全是风牌 则不是混一色
 
         for(var i=0;i<pl.mjgang1.length; i++)
         {
-            if(fengPai.indexOf(pl.mjgang1[i]) == -1) allFengPaiCounts4++;
+            if(fengPai.indexOf(pl.mjgang1[i]) != -1) allFengPaiCounts4++;
         }
         if(allFengPaiCounts4 >= pl.mjgang1.length) no4 = true; //全是风牌 则不是混一色
 
         for(var i=0;i<pl.mjchi.length; i++)
         {
-            if(fengPai.indexOf(pl.mjchi[i]) == -1) allFengPaiCounts5++;
+            if(fengPai.indexOf(pl.mjchi[i]) != -1) allFengPaiCounts5++;
         }
         if(allFengPaiCounts5 >= pl.mjchi.length) no5 = true; //全是风牌 则不是混一色
 
@@ -1590,7 +1725,6 @@
                 //console.log("含风");
             }
         }
-        console.log("errorCount===" + errorCount);
         if (errorCount >= test.length) //test 中不含风
         {
             return false;
@@ -1695,7 +1829,6 @@
         }
         return counts;//0 1 2 3 4
     }
-
 
     majiang.randomCards = function (withWind, withZhong) {
         //return testCds[(++nextTest)%testCds.length ];
@@ -1976,6 +2109,10 @@
             if (p2 - p1 < 3) {
                 needMinHunNum = (needNum + 1) > needMinHunNum ? needMinHunNum : (needNum + 1);
             }
+            else
+            {
+                needMinHunNum = (needNum + 4) > needMinHunNum ? needMinHunNum : (needNum + 4);
+            }
             return;
         }
         //大于等于3张牌
@@ -2195,13 +2332,15 @@
             return a - b
         });
         var count = 0;
+        // var allPai = "";
         for (var i = 0; i < cds.length; i++) {
-            console.log(cds[i]);
+            // allPai = allPai + cds[i] + ",";
             if (cds[i] == 71) {
                 count++;
             }
         }
-        console.log("count===" + count);
+        // console.log(allPai);
+        // console.log("count===" + count);
         if (count == 4) return true;
         return false;
     }
@@ -2297,6 +2436,151 @@
         return yibaizhangcards[Math.floor(Math.random() * yibaizhangcards.length)];
     }
 
+    //河源百搭7对胡法 判断组成对子后 还剩余的癞子数
+    majiang.can_7_HuForLeftHun = function(cds, cd, with258, withHun, gui,nextgui)
+    {
+        var tmp = [];
+        for (var i = 0; i < cds.length; i++) tmp.push(cds[i]);
+        if (cd) tmp.push(cd);
+        cds = tmp;
+        cds.sort(function (a, b) {
+            return a - b
+        });
+
+        if (cds.length != 14) {
+            return false;
+        }
+        var oddCards = [];
+        var pairs = [];
+        var hunCards = [];
+        var isodd258 = false;
+        var ispair258 = false;
+        for (i = 0; i < cds.length; i++) {
+            if (withHun) {
+                if (gui == cds[i] || nextgui == cds[i] || cds[i] >= 111) {
+                    hunCards.push(cds[i]);
+                    continue;
+                }
+            }
+            if (i == cds.length - 1) {
+                oddCards.push(cds[i]);
+            } else if (cds[i] != cds[i + 1]) {
+                oddCards.push(cds[i]);
+                if (with258 && isCard258(cds[i])) {
+                    isodd258 = true;
+                }
+            } else {
+                if (with258 && isCard258(cds[i])) {
+                    ispair258 = true;
+                }
+                pairs.push(cds[i]);
+                i++;
+            }
+        }
+        if (oddCards.length > 0) {//有单牌
+            if (withHun) {
+                if (hunCards.length == oddCards.length) {//单牌数==红中数
+                    if (with258 && (ispair258 || isodd258)) {
+                        return 1; //可组成单调花的条件
+                    } else
+                        return 1; //可组成单调花的条件
+                }
+                //if(oddCards.length < hunCards.length && (hunCards.length == 3 || hunCards.length == 5 || hunCards.length == 7)){
+                //    if (with258 && (ispair258 || isodd258)) {
+                //        return true;
+                //    } else
+                //        return true;
+                //}
+                if (hunCards.length > oddCards.length && hunCards.length>0 && oddCards.length > 0)
+                {
+                    if( (hunCards.length - oddCards.length) % 2 == 0 ) return 2; //可形成花凋花的条件
+                }
+            }
+        } else {
+            //if (hunCards.length == 2 || hunCards.length == 4 || hunCards.length == 6 || hunCards.length == 8) {
+            //    return true;
+            //} else if (with258) {
+            //    //if (ispair258)
+            //        return true;
+            //} else {
+            //    //return true;
+            //}
+        }
+        return false;
+    }
+
+    //河源百搭 7对护法
+    majiang.can_7_HuForHeYuanBaiDa = function(cds, cd, with258, withHun, gui,nextgui)
+    {
+        var tmp = [];
+        for (var i = 0; i < cds.length; i++) tmp.push(cds[i]);
+        if (cd) tmp.push(cd);
+        cds = tmp;
+        cds.sort(function (a, b) {
+            return a - b
+        });
+
+        if (cds.length != 14) {
+            return false;
+        }
+        var oddCards = [];
+        var pairs = [];
+        var hunCards = [];
+        var isodd258 = false;
+        var ispair258 = false;
+        for (i = 0; i < cds.length; i++) {
+            if (withHun) {
+                if (gui == cds[i] || nextgui == cds[i] || cds[i] >= 111) {
+                    hunCards.push(cds[i]);
+                    continue;
+                }
+            }
+            if (i == cds.length - 1) {
+                oddCards.push(cds[i]);
+            } else if (cds[i] != cds[i + 1]) {
+                oddCards.push(cds[i]);
+                if (with258 && isCard258(cds[i])) {
+                    isodd258 = true;
+                }
+            } else {
+                if (with258 && isCard258(cds[i])) {
+                    ispair258 = true;
+                }
+                pairs.push(cds[i]);
+                i++;
+            }
+        }
+        if (oddCards.length > 0) {//有单牌
+            if (withHun) {
+                if (hunCards.length == oddCards.length) {//单牌数==红中数
+                    if (with258 && (ispair258 || isodd258)) {
+                        return true;
+                    } else
+                        return true;
+                }
+                if(oddCards.length < hunCards.length && (hunCards.length == 3 || hunCards.length == 5 || hunCards.length == 7)){
+                    if (with258 && (ispair258 || isodd258)) {
+                        return true;
+                    } else
+                        return true;
+                }
+                if (hunCards.length > oddCards.length && hunCards.length>0 && oddCards.length > 0)
+                {
+                    if( (hunCards.length - oddCards.length) % 2 == 0 ) return true;
+                }
+            }
+        } else {
+            if (hunCards.length == 2 || hunCards.length == 4 || hunCards.length == 6 || hunCards.length == 8) {
+                return true;
+            } else if (with258) {
+                if (ispair258)
+                    return true;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
     //翻鬼的7对胡
     function can_7_HuForFanGui(cds, cd, with258, withHun, gui,nextgui) {
         var tmp = [];
@@ -2346,6 +2630,78 @@
                         return true;
                 }
                 if(oddCards.length < hunCards.length && (hunCards.length == 3 || hunCards.length == 5 || hunCards.length == 7)){
+                    if (with258 && (ispair258 || isodd258)) {
+                        return true;
+                    } else
+                        return true;
+                }
+                if (hunCards.length > oddCards.length && hunCards.length>0 && oddCards.length > 0)
+                {
+                    if( (hunCards.length - oddCards.length) % 2 == 0 ) return true;
+                }
+            }
+        } else {
+            if (hunCards.length == 2 || hunCards.length == 4 || hunCards.length == 6 || hunCards.length == 8) {
+                return true;
+            } else if (with258) {
+                if (ispair258)
+                    return true;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    majiang.can_7_Hu = function (cds, cd, with258, withHun)
+    {
+        var tmp = [];
+        for (var i = 0; i < cds.length; i++) tmp.push(cds[i]);
+        if (cd) tmp.push(cd);
+        cds = tmp;
+        cds.sort(function (a, b) {
+            return a - b
+        });
+
+        if (cds.length != 14) {
+            return false;
+        }
+        var oddCards = [];
+        var pairs = [];
+        var hunCards = [];
+        var isodd258 = false;
+        var ispair258 = false;
+        for (i = 0; i < cds.length; i++) {
+            if (withHun) {
+                if (isHun(cds[i])) {
+                    hunCards.push(cds[i]);
+                    continue;
+                }
+            }
+            if (i == cds.length - 1) {
+                oddCards.push(cds[i]);
+            } else if (cds[i] != cds[i + 1]) {
+                oddCards.push(cds[i]);
+                if (with258 && isCard258(cds[i])) {
+                    isodd258 = true;
+                }
+            } else {
+                if (with258 && isCard258(cds[i])) {
+                    ispair258 = true;
+                }
+                pairs.push(cds[i]);
+                i++;
+            }
+        }
+        if (oddCards.length > 0) {//有单牌
+            if (withHun) {
+                if (hunCards.length == oddCards.length) {//单牌数==红中数
+                    if (with258 && (ispair258 || isodd258)) {
+                        return true;
+                    } else
+                        return true;
+                }
+                if(oddCards.length < hunCards.length && hunCards.length == 3 ){
                     if (with258 && (ispair258 || isodd258)) {
                         return true;
                     } else
@@ -2644,8 +3000,8 @@
             hasNum = curHunNum - needHunNum;
             isHu3 = isCanHunHu(hasNum, allCards[cardType.feng], with258);
         }
-        console.log("=================需要的needHunNum:" + needHunNum);
-        console.log("----------------- 现实一共有混子curHunNum:" + curHunNum);
+        //console.log("=================需要的needHunNum:" + needHunNum);
+        // console.log("----------------- 现实一共有混子curHunNum:" + curHunNum);
         //放置最后判断能否胡7对
         var isHu7 = false;
         if (!no7) {
@@ -3071,7 +3427,6 @@
     }
 
     function canHuNoZhong(no7, cds, cd, with258) {
-        console.log("===============================");
         var tmp = [];
         for (var i = 0; i < cds.length; i++) tmp.push(cds[i]);
         if (cd) tmp.push(cd);
@@ -3189,6 +3544,125 @@
         }
         return 0;
     }
+
+    majiang.canHuNoZhong = function(no7, cds, cd, with258) {
+        var tmp = [];
+        for (var i = 0; i < cds.length; i++) tmp.push(cds[i]);
+        if (cd) tmp.push(cd);
+        cds = tmp;
+
+        cds.sort(function (a, b) {
+            return a - b
+        });
+        var pair = {};
+        //做将
+        var isWith258 = false;
+        if (with258) {
+            for (var i = 0; i < cds.length; i++) {
+                if (i < cds.length - 1 && cds[i] == cds[i + 1]) {
+                    switch (cds[i]) {
+                        case 2:
+                        case 12:
+                        case 22:
+                        case 5:
+                        case 15:
+                        case 25:
+                        case 8:
+                        case 18:
+                        case 28:
+                            pair[cds[i]] = cds[i];
+                            isWith258 = true;
+                            break;
+                    }
+                }
+            }
+        }
+        else {
+            for (var i = 0; i < cds.length; i++) {
+                if (i < cds.length - 1 && cds[i] == cds[i + 1]) {
+                    pair[cds[i]] = cds[i];
+                }
+            }
+        }
+        if (Object.keys(pair).length == 0) return -1;
+        for (var pairKey in pair) {
+            var pcd = pair[pairKey];
+            var left = [];
+            var pnum = 0;
+            for (var i = 0; i < cds.length; i++) {
+                if (cds[i] == pcd && pnum < 2)
+                    pnum++;
+                else   left.push(cds[i]);
+            }
+            if (left.length == 0) return 1;
+            if (left.length == 12) {
+                var is13 = true, off13 = 0;
+                for (var i = 0; i + off13 < s13.length; i++) {
+                    if (pcd == s13[i]) off13++;
+                    if (left[i] != s13[i + off13]) {
+                        is13 = false;
+                        break;
+                    }
+                }
+                if (off13 == 1 && is13) return 13;
+                var is7 = true;
+                if (no7) {
+                    is7 = false;
+                }
+                else {
+                    for (var i = 0; i < left.length; i += 2) {
+                        if (left[i] != left[i + 1]) {
+                            is7 = false;
+                            break;
+                        }
+                    }
+                }
+                if (is7) {
+                    if (with258) {
+                        if (isWith258) {
+                            return 7;
+                        }
+                        else {
+                            return 0;
+                        }
+                    }
+                    else {
+                        return 7;
+                    }
+                }
+            }
+            var segs = [];
+            var seg = [left[0]];
+            for (var i = 1; i < left.length; i++) {
+                if (canLink(left[i - 1], left[i])) seg.push(left[i]);
+                else {
+                    segs.push(seg);
+                    seg = [left[i]];
+                }
+            }
+            if (seg.length > 0) segs.push(seg);
+            var matchOK = true;
+            for (var i = 0; i < segs.length; i++) {
+                seg = segs[i];
+                if (seg.length % 3 != 0) {
+                    matchOK = false;
+                    break;
+                }
+                for (var m = 0; m < seg.length;) {
+                    if (canMath12(seg, m))      m += 12;
+                    else if (canMath9(seg, m))  m += 9;
+                    else if (canMath6(seg, m))  m += 6;
+                    else if (canMath3(seg, m))  m += 3;
+                    else {
+                        matchOK = false;
+                        break;
+                    }
+                }
+            }
+            if (matchOK) return 1;
+        }
+        return 0;
+    };
 
     majiang.canGang1 = function (peng, hand, peng4) {
         var rtn = [];
@@ -3434,22 +3908,38 @@
 
     majiang.isEqualHunCard = function(card)
     {
-        // console.log(majiang.isClient);
-        if(majiang.isClient && card >= 111) return true;
         if(myObject &&  myObject.tData && myObject.tData.withZhong && card == 71) return true;
         if(myObject && myObject.tData &&　myObject.tData.fanGui && (myObject.tData.gui == card || ( myObject.tData.twogui && myObject.tData.nextgui == card))) return true;
         if(myObject && myObject.tData && myObject.tData.fanGui && myObject.tData.gui == 0 && myObject.tData.nextgui == 0 && card >= 111 ) return true;
+
+        if(majiang.isClient && card >= 111) return true;
+        if(majiang.isClient && jsclient.data.sData.tData.withZhong && card == 71) return true;
+        if(majiang.isClient && jsclient.data.sData.tData.fanGui && (jsclient.data.sData.tData.gui == card || ( jsclient.data.sData.tData.twogui && jsclient.data.sData.tData.nextgui == card))) return true;
+        if(majiang.isClient && jsclient.data.sData.tData.fanGui && jsclient.data.sData.tData.gui == 0 && jsclient.data.sData.tData.nextgui == 0 && card >= 111 ) return true;
         return false;
     }
 
-    //majiang.isEqualHunCard = function(card)
-    //{
-    //    if(card >= 111) return true;
-    //    if(myObject &&  myObject.tData && myObject.tData.withZhong && card == 71) return true;
-    //    if(myObject && myObject.tData &&　myObject.tData.fanGui && (myObject.tData.gui == card || ( myObject.tData.twogui && myObject.tData.nextgui == card))) return true;
-    //    if(myObject && myObject.tData && myObject.tData.fanGui && myObject.tData.gui == 0 && myObject.tData.nextgui == 0 && card >= 111 ) return true;
-    //    return false;
-    //}
+    //河源百搭花鬼胡法 判断 手牌花鬼的数量
+    majiang.getFlowerHunNum = function(pl)
+    {
+        var num = 0;
+        for(var i = 0;i<pl.mjhand.length;i++)
+        {
+            if(pl.mjhand[i] >= 111 )
+                num ++;
+        }
+        return num;
+    }
+
+    //判断听牌（客户端里面是否有鬼）
+    majiang.isEqualHunCardForTingPai = function(card,withZhong,fanGui,twogui,nextgui,gui)
+    {
+        if(majiang.isClient && card >= 111) return true;
+        if(majiang.isClient && withZhong && card == 71) return true;
+        if(majiang.isClient && fanGui && (card == gui || ( twogui && card == nextgui))) return true;
+        if(majiang.isClient && fanGui && gui == 0 && nextgui == 0 && card >= 111 ) return true;
+        return false;
+    }
 
     //推倒胡爆炸马算法
     majiang.getMaCountsForBaoZhaMa = function(card)
@@ -3650,599 +4140,34 @@
         }
         return next;
     }
-    //鸡平胡
-    //
 
-    function TestRandomCards() {
-        var cards = majiang.randomCards();
-        var nums = {};
-        for (var i = 0; i < cards.length; i++) {
-            var cd = cards[i];
-            if (!nums[cd]) nums[cd] = 1;
-            else nums[cd] = nums[cd] + 1;
-        }
-        for (var c in nums) {
-            if (nums[c] != 4) console.error("not 4");
-        }
-        if (Object.keys(nums).length != 34) console.error("not 34");
-    }
-
-    function TestHu() {
-        var hu = [
-            /*
-             [19,5,8,16,2,23,11,6,31,13,26,1,28,81]
-             ,[1,9,11,19,21,29,31,41,51,61,71,81,91,71]
-             ,[1,1, 2,2, 3,3, 4,4, 5,5, 6,6, 7,7]
-             ,[1,2,3,4,4]
-             ,[1,1,2,2,3,3,4,4]
-             ,[8,5,15,14,16,81,6,27,21,22,17,13,12,91]
-             ,*/
-            //[15,17,23,18,16,23,15,15]
-            //[6,7,14,15,15,16,16,16,17,17,18,26,26]
-            [6, 71, 71, 71, 71, 16, 16, 16, 17, 17, 18, 26, 26]
-        ];
-        for (var i = 0; i < hu.length; i++) {
-            //console.info( majiang.canHu(false,hu[i])+"     "+hu[i]);
-            console.info(majiang.canHu(false, hu[i], 2, false, true) + "     " + hu[i]);
-        }
-    }
-
-    function TestcanGang1() {
-        var gang = [
-            [[1], [1, 2, 2, 2, 2]],
-            [[1], [2, 3]],
-        ];
-        for (var i = 0; i < gang.length; i++)
-            console.info(majiang.canGang1(gang[i][0], gang[i][1]));
-    }
-
-    function TestChi() {
-
-        var chi = [
-
-            [1, 2, 4, 5], 3
-
-        ];
-        console.info(majiang.canChi(chi, 3));
-    }
-
-    function TestCardType() {
-        var tests =
-            [
-                //{name:"", mjpeng:[2,18],mjgang0:[],mjgang1:[],mjchi:[],mjhand:[4,4,4,5,5,5,5,6],mjdesc:[],baseWin:0 },
-                {
-                    name: "",
-                    mjpeng: [],
-                    mjgang0: [],
-                    mjgang1: [],
-                    mjchi: [],
-                    mjhand: [2, 2, 2, 2, 4, 4, 5, 5, 11, 11, 12, 12, 13, 13],
-                    mjdesc: [],
-                    baseWin: 0
-                }
-                , {name: "", mjpeng: [], mjgang0: [], mjgang1: [], mjchi: [], mjhand: [], mjdesc: [], baseWin: 0}
-                , {name: "", mjpeng: [], mjgang0: [], mjgang1: [], mjchi: [], mjhand: [], mjdesc: [], baseWin: 0}
-                , {name: "", mjpeng: [], mjgang0: [], mjgang1: [], mjchi: [], mjhand: [], mjdesc: [], baseWin: 0}
-                , {name: "", mjpeng: [], mjgang0: [], mjgang1: [], mjchi: [], mjhand: [], mjdesc: [], baseWin: 0}
-            ];
-        for (var i = 0; i < tests.length; i++) {
-            var pl = tests[i];
-            if (!majiang.NumOK(pl)) {
-                pl.mjdesc.push("牌数不对");
-                pl.huType = -1;
-            }
-            else pl.huType = majiang.canHu(false, pl.mjhand);
-            if (pl.huType == 0) {
-                pl.mjdesc.push("不胡");
-            }
-            else if (pl.huType > 0) {
-                var is13 = pl.huType == 13;
-                var allHand = majiang.OnlyHand(pl);
-                var num2 = pl.huType == 7 ? 1 : 0;
-                if (num2 == 1 && majiang.canGang1([], pl.mjhand).length > 0) num2 = 2;
-                var num3 = (num2 > 0 || is13) ? 0 : majiang.All3(pl);
-                var sameColor = is13 ? false : majiang.SameColor(pl);
-                var baseWin = 1;
-                if (allHand) //门清
-                {
-                    baseWin *= 4;
-                    pl.mjdesc.push("门清");
-                }
-                if (sameColor)//清一色
-                {
-                    baseWin *= 8;
-                    pl.mjdesc.push("清一色");
-                }
-                if (is13) {
-                    baseWin *= 24;
-                    pl.mjdesc.push("十三幺");
-                }
-                if (num2 > 0) {
-                    baseWin *= num2 > 1 ? 16 : 8;
-                    pl.mjdesc.push(num2 > 1 ? "龙七对" : "七巧对");
-                }
-                if (num3 > 0) {
-                    baseWin *= num3 > 1 ? 16 : 8;
-                    pl.mjdesc.push(num3 > 1 ? "风一色" : "大对碰");
-                }
-                if (pl.mjdesc.length == 0) pl.mjdesc.push("平胡");
-                pl.baseWin = baseWin;
-            }
-            console.info(pl.name + " " + pl.mjdesc + "  " + pl.baseWin);
-        }
-    }
-
-    function TestAll_3() {
-        var pl = {
-            mjhand: [21, 21, 21, 22, 22, 22, 23, 23, 23, 24, 24, 24, 25, 25],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        var result = majiang.All3(pl);
-        var sameColor = majiang.SameColor(pl);
-        var hunyise = majiang.HunYiSe(pl);
-        var remind = "";
-        if (result == 1) {
-            remind = "碰碰胡";
-            //清一色
-            if (sameColor)//清一色
-            {
-                remind = "清碰"
-            }
-            //混一色
-            if (hunyise) {
-                remind = "混碰";
-            }
-            console.log(remind);
-        }
-    }
-
-    function testHuWithHongZhong() {
-        var pl = {
-            mjhand: [21, 21, 21, 22, 22, 22, 23, 23, 23, 24, 24, 24, 25, 25],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        majiang.isHuWithHongZhong(pl);
-
-    }
-
-    function testZiYiSe() {
-        var pl = {
-            mjhand: [11, 11, 11, 41, 41, 41, 51, 51, 51, 71, 71, 71, 81, 81],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        if (majiang.ziYiSe(pl)) console.log("字一色");
-        else console.log("不是字一色");
-    }
-
-    function testHuHongZhong() {
-        var pl = {
-            mjhand: [21, 21, 21, 22, 22, 22, 23, 23, 23, 24, 24, 24, 25, 25],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        canHuZhong(false, pl.mjhand, 0, false);
-    }
-
-    function test4HongZhong() {
-        var cards = [1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 71, 71, 71];
-        cd = 71;
-        return is4HongZhong(cards, cd);
-    }
-
-    function testIsJiHu() {
-        var pl = {
-            mjhand: [21, 21, 21, 22, 22, 22, 23, 23, 23, 24, 24, 25, 25],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        var isJiHu = majiang.isJiHu(pl, 24);
-        if (isJiHu) {
-            console.log("是机胡");
-        } else {
-            console.log("不是机胡");
-        }
-        var handDes = "";
-        // for(var i=0;i<majiang.hand.length;i++)
-        // {
-        //     handDes = handDes + majiang.hand[i];
-        // }
-        // console.log("查看手牌：" + handDes);
-        //  var huType = majiang.getHuType(pl);
-        //  console.log("胡的类型："+huType);
-
-    }
-
-    function testIsQingYaoJiu() {
-        var pl = {
-            mjhand: [1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 7, 8, 9],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        var num3 = majiang.All3(pl);
-        if (num3 == 1 || num3 == 2) {
-            var isQingYaoJiu = majiang.qingYaoJiu(pl);
-            if (isQingYaoJiu) console.log("是清幺九");
-            else console.log("不是清幺九");
-        }
-    }
-
-    function testHuType() {
-        console.log("testHuType=====");
-        var pl = {
-            mjhand: [1, 1, 1, 9, 9, 11, 11, 11, 19, 19, 19, 21, 21, 21],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        console.log("testHuType=====");
-        var huType = majiang.getHuType(pl);
-        console.log("testHuType=====" + huType);
-
-    }
-
-    function testDaSanYuan() {
-        var pl = {
-            mjhand: [91, 91, 91, 19, 19, 19, 21, 21],
-            mjpeng: [],
-            mjgang0: [71, 71, 71, 71],
-            mjgang1: [81, 81, 81, 81],
-            mjchi: [],
-        }
-        var isDaSanYuan = majiang.DaSanYuan(pl);
-        if (isDaSanYuan) console.log("是大三元");
-        else console.log("不是大三元");
-    }
-
-    function testGetHuTypeForShenZhen() {
-        var pl = {
-            mjhand: [1, 1, 1, 81, 81, 81, 71, 71, 71, 14, 14],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [61, 61, 61, 61],
-            mjchi: [],
-        }
-        var huTy = majiang.getHuTypeForShenZhen(pl);
-        console.log("=====" + huTy);
-
-
-    }
-
-    function testCanHuForGui() {
-        var pl = {
-            mjhand: [16, 1, 2, 3, 4, 14, 15, 91, 91, 91],
-            mjpeng: [],
-            mjgang0: [18],
-            mjgang1: [],
-            mjchi: [],
-        }
-
-        var isHu = majiang.canHu(false, pl.mjhand, 13, false, false, true, 16);
-        if (isHu > 0) console.log("可以胡");
-        else  console.log("不可以胡");
-    }
-
-    function testHunYiSe(){
-        var pl = {
-            mjhand: [71,31, 31, 31, 41, 41, 41, 51, 51, 51,61,61,61,81],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        var isHunYiSe = majiang.HunYiSe(pl);
-        if(isHunYiSe) console.log("是混一色");
-        else console.log("不是混一色");
-    }
-    function testJiPingHuJiHu(){
-        var pl = {
-            // mjhand: [1,2, 3, 4, 5, 6, 7, 8, 9, 21,22,23,24,24],
-            mjhand: [1,2, 3, 4, 5, 6, 7, 8, 9, 21,22,23,23,23],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        var isJiHu = majiang.pingHu(pl);
-        if(isJiHu) console.log("平胡");
-        else console.log("不是平胡");
-    }
-
-    function testForYiBaiZhang()
-    {
-        var pl = {
-            mjhand: [71,71,71,2,2,2,3,3,3,4,4,4,5,5],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        var desc = "";
-        var huType = majiang.getHuTypeForYiBaiZhang(pl);
-        switch (huType) {
-            case majiang.YI_BAI_ZHANG.PINGHU:
-                desc = "平胡";
-                break;
-            case majiang.YI_BAI_ZHANG.PENGPENGHU:
-                desc = "碰碰胡";
-                break;
-            case majiang.YI_BAI_ZHANG.HUNYISE:
-                desc = "混一色";
-                break;
-            case majiang.YI_BAI_ZHANG.QINGYISE:
-                desc = "清一色";
-                break;
-            case majiang.YI_BAI_ZHANG.HUNPENG:
-                desc = "混碰";
-                break;
-            case majiang.YI_BAI_ZHANG.QINGPENG:
-                desc = "清碰";
-                break;
-            case majiang.YI_BAI_ZHANG.YAOJIU:
-                desc = "幺九";
-                break;
-            case majiang.YI_BAI_ZHANG.ZIYISE:
-                desc = "字一色";
-
-                break;
-            case majiang.YI_BAI_ZHANG.SHISANYAO:
-                desc = "十三幺";
-                break;
-        }
-
-        console.log("一百张 胡的类型："+desc);
-    }
-
-    function testForTest()
-    {
-        function nan (a,b,c)
-        {
-            console.log("c===="+c);
-        }
-        function xi (a,b,f,e)
-        {
-            console.log("e===="+e);
-            console.log("f===="+f);
-        }
-        function dong (a,b,c,d,e,f)
-        {
-            console.log("e===="+e);
-            if(a) nan(a,b,c);
-            else if(b) xi(a,b,e,f);
-        }
-        dong(false,true,1,2,3,4);
-    }
-    function testCanhu()
-    {
-        //majiang.canHu = function (no7, cds, cd, with258, withZhong, fanGui, gui,gui4Hu);
-        majiang.canHu(true,[1,2],5,false,false,false,0,true);
-    }
-    function testQingYaoJiu()
-    {
-        var pl = {
-            // mjhand: [1,2, 3, 4, 5, 6, 7, 8, 9, 21,22,23,24,24],
-            mjhand: [1,1, 9, 9, 9],
-            mjpeng: [29,81],
-            mjgang0: [],
-            mjgang1: [21],
-            mjchi: [],
-        }
-        var isYaoJiu = majiang.qingYaoJiu(pl);
-        if(isYaoJiu) console.log("是幺九");
-        else console.log("不是幺九");
-
-        var isYaoJiu = majiang.zaYaoJiu(pl);
-        if(isYaoJiu) console.log("是混幺九");
-        else console.log("不是混幺九");
-    }
-    //测试用 否则不可打开注释
-    //var myObject = {};
-    //myObject.tData = {};
-    function testForYiBaiZhangLaiZi()
-    {
-
-        var pl = {
-            // mjhand: [1,2, 3, 4, 5, 6, 7, 8, 9, 21,22,23,24,24],
-            mjhand: [71,71,71,71, 2,2,5,5,5,6,6,6,9,9],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        myObject.tData.withZhong = true;
-        var isHu = majiang.getHuTypeForYiBaiZhangNew(pl);
-        if(isHu > 0) console.log(isHu);
-        else console.log("无法胡牌");
-    }
-    function testForHunYiSeForGuangDong()
-    {
-        var pl = {
-            // mjhand: [1,2, 3, 4, 5, 6, 7, 8, 9, 21,22,23,24,24],
-            mjhand: [2,3,4,5,5,5,6,7,8,9,41,41,41,9],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        var hunyise = majiang.HunYiSe(pl);
-        if(hunyise) console.log("混一色");
-
-    }
-    function testHuForShenZhenOfGui()
-    {
-        var pl = {
-            // mjhand: [1,2, 3, 4, 5, 6, 7, 8, 9, 21,22,23,24,24],
-            mjhand: [71,1,1,2,3,4,5,6,6,7,7,8,31,31],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        var huType = majiang.getHuTypeForShenZhenNew(pl);
-        console.log("==="+huType);
-    }
-    function testHuForLaiZi()
-    {
-        var pl = {
-            // mjhand: [1,2, 3, 4, 5, 6, 7, 8, 9, 21,22,23,24,24],
-            mjhand: [71,71,14,15,17,18,22,23,26,26,27,28,29],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-
-        //majiang.canHuNew(no7, cds, cd, with258, withZhong, fanGui, gui,gui4Hu)
-        var isHu =  majiang.canHuNew(true, pl.mjhand, 19, false, true, false, 0,false);
-        console.log("````````````````"+isHu);
-    }
-    function testForQingYaoJIu()
-    {
-        var pl = {
-            // mjhand: [1,2, 3, 4, 5, 6, 7, 8, 9, 21,22,23,24,24],
-            mjhand: [1,1,1,9,9,9,31,31,31,41,41,41,51,51],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-
-        var isQingYaojiu = majiang.qingYaoJiu(pl);
-        console.log("***"+isQingYaojiu);
-    }
-
-    function testForHuiZhou()
-    {
-        var pl = {
-            //mjhand: [1,2,3,4,4,5,6,7,8,9,71,71,71,4],
-            mjhand: [2,2,2,4,4,4,12,12,12,14,16,16,16,14],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-
-        // var isQingYaojiu = majiang.getHuType(pl);
-        var isQingYaojiu = majiang.prejudgeHuType(pl);
-        console.log("***"+isQingYaojiu);
-    }
-    //myObject = {};
-    //myObject.tData = {};
-    //myObject.tData.fanGui = true;
-    function testTwoGui()
-    {
-
-        var tt = majiang.nextGui(9,true);
-        console.log("------"+tt);
-    }
-    function testTest()
-    {
-        qq = [1,2,3,4,5,6]
-
-        var mjhand = [1,2,111];
-        if(!majiang.canFindFlowerForMjhand(mjhand) )
-        {
-            console.log("不含花牌");
-        }else
-        {
-            console.log("含花牌");
-        }
-        var cds = qq;
-        cds.splice(cds.indexOf(cds.length ), 1);
-        for(var i=0;i<qq.length;i++)
-        {
-            console.log("-----"+qq[i]);
-        }
-        for(var j=0;j<cds.length;j++)
-        {
-            console.log("-------------"+cds[j]);
-        }
-    }
-    function testDanDiaoHUa()
-    {
-        majiang.isDanDiaoHua()
-    }
-    function testForDanDiaoAll3()
-    {
-        var pl = {
-            //mjhand: [1,2,3,4,4,5,6,7,8,9,71,71,71,4],
-            mjhand: [111,111,111,4,4,4,12,12,12,14,14,16,16,16],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-        var type =  majiang.All3NewDanDiao(pl);
-        console.log("type =====" +type);
-    }
-    function testHuForHeYuanBaiDa()
-    {
-        var pl = {
-            //mjhand: [1,2,3,4,4,5,6,7,8,9,71,71,71,4],
-            mjhand: [111,111,1,1,9,9,9,9],
-            mjpeng: [],
-            mjgang0: [],
-            mjgang1: [],
-            mjchi: [],
-        }
-
-        var isJiHu = majiang.canHuNew(false, pl.mjhand, 0, false, false, true,0,true,0);
-        console.log("isJihu===="+isJiHu);
-
-    }
     function DoTest() {
-        //testZiYiSe();
-        //testHuWithHongZhong();
-        //test4HongZhong();
-        //TestAll_3();
-        //TestCardType();
-        //TestRandomCards();
-        //testHuHongZhong();
-        //TestHu();
-        //TestcanGang1();
-        //TestChi();
-        //console.info(majiang.canGang0([2,3,4,3,3],3));
-        //console.info(majiang.canPeng([2,3,4,3,3],3));
-        //testIsJiHu();
-        // testIsQingYaoJiu();
-        //testHuType();
-        //var tt = [1,3,4,5,5];
-        //console.log(tt.indexOf(4));
-        //testDaSanYuan();
-        //testGetHuTypeForShenZhen();
-        //testCanHuForGui();
-        //testHunYiSe();
-        //testJiPingHuJiHu();
-        //testForYiBaiZhang();
-        //testForTest();//测试函数多个参数 传递问题
-        //testCanhu();
-        //testQingYaoJiu();
-        //testForYiBaiZhangLaiZi();
-        //testForHunYiSeForGuangDong();
-        //testHuForShenZhenOfGui();
-        //testHuForLaiZi();
-        //testForQingYaoJIu();
-        //testForHuiZhou();
-        //testTwoGui()
-        //testTest();
-        //testDanDiaoHua();
-        //testForDanDiaoAll3();
-        //testHuForHeYuanBaiDa();
+        var pl = {
+            // mjhand: [3,3,3,2,2,2,5,5,5,6,6,6,9,1],
+            mjhand: [3,3,3,2,2,2,5,5,5,6,6,6,9,1],
+            mjpeng: [],
+            mjgang0: [],
+            mjgang1: [],
+            mjchi: [],
+        }
+
+        //var start = new Date().getTime();//起始时间
+        //for(var i=0;i<36;i++)
+        //{
+        //    var isHu = majiang.canHu(false, pl.mjhand, 14, false, false, true, 16);
+        //}
+        //
+        //var end = new Date().getTime()
+        //console.log( (end - start)+"ms");
+        //var end = majiang.qingYaoJiu(pl);
+        //console.log( "======"+end);
+        //console.log(JSON.stringify( majiang.canTingHu(pl.mjhand)));
+        //var end = new Date().getTime();
+        //console.log( (end - start)+"ms");
+
+        //var qq = majiang.canHu(false, pl.mjhand, 9, false, true,false,0,true,0);
+        //console.log( qq+"ms");
+
     }
 
     if (typeof(jsclient) != "undefined") {
@@ -4253,6 +4178,4 @@
         //console.log(Math.pow(2,0) );
         DoTest();
     }
-
-
 })();

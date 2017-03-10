@@ -484,29 +484,6 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="gameEndNew/floor_11.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="winNum" ActionTag="-1168802329" Tag="1607" IconVisible="False" LeftMargin="1030.0000" RightMargin="-1090.0000" TopMargin="-615.0000" BottomMargin="585.0000" FontSize="30" LabelText="+100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="60.0000" Y="30.0000" />
-                <Children>
-                  <AbstractNodeData Name="hu" ActionTag="1121187918" Tag="203" IconVisible="False" LeftMargin="-11.0000" RightMargin="-185.0000" TopMargin="-110.5000" BottomMargin="-112.5000" LeftEage="47" RightEage="47" TopEage="38" BottomEage="38" Scale9OriginX="47" Scale9OriginY="38" Scale9Width="162" Scale9Height="177" ctype="ImageViewObjectData">
-                    <Size X="256.0000" Y="253.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="117.0000" Y="14.0000" />
-                    <Scale ScaleX="0.4000" ScaleY="0.4000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.9500" Y="0.4667" />
-                    <PreSize X="4.2667" Y="8.4333" />
-                    <FileData Type="Normal" Path="gameEndNew/t-hu.png" Plist="" />
-                  </AbstractNodeData>
-                </Children>
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1060.0000" Y="600.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="225" G="0" B="16" />
-                <PrePosition />
-                <PreSize X="0.0000" Y="0.0000" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
               <AbstractNodeData Name="head" ActionTag="-618578942" Tag="1598" IconVisible="False" LeftMargin="236.0000" RightMargin="-364.0000" TopMargin="-652.0000" BottomMargin="528.0000" ctype="SpriteObjectData">
                 <Size X="128.0000" Y="124.0000" />
                 <Children>
@@ -656,6 +633,29 @@
                 <FileData Type="Normal" Path="gameEndNew/Photo_frame_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
+              <AbstractNodeData Name="winNum" ActionTag="-1168802329" Tag="1607" IconVisible="False" LeftMargin="1030.0000" RightMargin="-1090.0000" TopMargin="-615.0000" BottomMargin="585.0000" FontSize="30" LabelText="+100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="60.0000" Y="30.0000" />
+                <Children>
+                  <AbstractNodeData Name="hu" ActionTag="1121187918" Tag="203" IconVisible="False" LeftMargin="-11.0000" RightMargin="-185.0000" TopMargin="-110.5000" BottomMargin="-112.5000" LeftEage="47" RightEage="47" TopEage="38" BottomEage="38" Scale9OriginX="47" Scale9OriginY="38" Scale9Width="162" Scale9Height="177" ctype="ImageViewObjectData">
+                    <Size X="256.0000" Y="253.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="117.0000" Y="14.0000" />
+                    <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="1.9500" Y="0.4667" />
+                    <PreSize X="4.2667" Y="8.4333" />
+                    <FileData Type="Normal" Path="gameEndNew/t-hu.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="1060.0000" Y="600.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="225" G="0" B="16" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint />
             <Position X="7.0000" Y="4.0000" />
@@ -676,29 +676,6 @@
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="gameEndNew/floor_11.png" Plist="" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="winNum" ActionTag="-1228956247" Tag="587" IconVisible="False" LeftMargin="1028.8153" RightMargin="-1088.8153" TopMargin="-465.0000" BottomMargin="435.0000" FontSize="30" LabelText="+100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="60.0000" Y="30.0000" />
-                <Children>
-                  <AbstractNodeData Name="hu" ActionTag="1584850004" Tag="207" IconVisible="False" LeftMargin="-11.0000" RightMargin="-185.0000" TopMargin="-110.5000" BottomMargin="-112.5000" LeftEage="47" RightEage="47" TopEage="38" BottomEage="38" Scale9OriginX="47" Scale9OriginY="38" Scale9Width="162" Scale9Height="177" ctype="ImageViewObjectData">
-                    <Size X="256.0000" Y="253.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="117.0000" Y="14.0000" />
-                    <Scale ScaleX="0.4000" ScaleY="0.4000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.9500" Y="0.4667" />
-                    <PreSize X="4.2667" Y="8.4333" />
-                    <FileData Type="Normal" Path="gameEndNew/t-hu.png" Plist="" />
-                  </AbstractNodeData>
-                </Children>
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1058.8153" Y="450.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="225" G="0" B="16" />
-                <PrePosition />
-                <PreSize X="0.0000" Y="0.0000" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="head" ActionTag="1386251049" Tag="588" IconVisible="False" LeftMargin="236.0000" RightMargin="-364.0000" TopMargin="-512.0000" BottomMargin="388.0000" ctype="SpriteObjectData">
                 <Size X="128.0000" Y="124.0000" />
@@ -849,6 +826,29 @@
                 <FileData Type="Normal" Path="gameEndNew/Photo_frame_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
+              <AbstractNodeData Name="winNum" ActionTag="-1228956247" Tag="587" IconVisible="False" LeftMargin="1028.8153" RightMargin="-1088.8153" TopMargin="-465.0000" BottomMargin="435.0000" FontSize="30" LabelText="+100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="60.0000" Y="30.0000" />
+                <Children>
+                  <AbstractNodeData Name="hu" ActionTag="1584850004" Tag="207" IconVisible="False" LeftMargin="-11.0000" RightMargin="-185.0000" TopMargin="-110.5000" BottomMargin="-112.5000" LeftEage="47" RightEage="47" TopEage="38" BottomEage="38" Scale9OriginX="47" Scale9OriginY="38" Scale9Width="162" Scale9Height="177" ctype="ImageViewObjectData">
+                    <Size X="256.0000" Y="253.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="117.0000" Y="14.0000" />
+                    <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="1.9500" Y="0.4667" />
+                    <PreSize X="4.2667" Y="8.4333" />
+                    <FileData Type="Normal" Path="gameEndNew/t-hu.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="1058.8153" Y="450.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="225" G="0" B="16" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint />
             <Position X="7.0000" Y="4.0000" />
@@ -869,29 +869,6 @@
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="gameEndNew/floor_11.png" Plist="" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="winNum" ActionTag="-2038878610" Tag="594" IconVisible="False" LeftMargin="1030.0000" RightMargin="-1090.0000" TopMargin="-315.0000" BottomMargin="285.0000" FontSize="30" LabelText="+100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="60.0000" Y="30.0000" />
-                <Children>
-                  <AbstractNodeData Name="hu" ActionTag="613880730" Tag="208" IconVisible="False" LeftMargin="-11.0000" RightMargin="-185.0000" TopMargin="-110.5000" BottomMargin="-112.5000" LeftEage="47" RightEage="47" TopEage="38" BottomEage="38" Scale9OriginX="47" Scale9OriginY="38" Scale9Width="162" Scale9Height="177" ctype="ImageViewObjectData">
-                    <Size X="256.0000" Y="253.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="117.0000" Y="14.0000" />
-                    <Scale ScaleX="0.4000" ScaleY="0.4000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.9500" Y="0.4667" />
-                    <PreSize X="4.2667" Y="8.4333" />
-                    <FileData Type="Normal" Path="gameEndNew/t-hu.png" Plist="" />
-                  </AbstractNodeData>
-                </Children>
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1060.0000" Y="300.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="225" G="0" B="16" />
-                <PrePosition />
-                <PreSize X="0.0000" Y="0.0000" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="head" ActionTag="-1884823687" Tag="595" IconVisible="False" LeftMargin="236.0000" RightMargin="-364.0000" TopMargin="-372.0000" BottomMargin="248.0000" ctype="SpriteObjectData">
                 <Size X="128.0000" Y="124.0000" />
@@ -1042,6 +1019,29 @@
                 <FileData Type="Normal" Path="gameEndNew/Photo_frame_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
+              <AbstractNodeData Name="winNum" ActionTag="-2038878610" Tag="594" IconVisible="False" LeftMargin="1030.0000" RightMargin="-1090.0000" TopMargin="-315.0000" BottomMargin="285.0000" FontSize="30" LabelText="+100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="60.0000" Y="30.0000" />
+                <Children>
+                  <AbstractNodeData Name="hu" ActionTag="613880730" Tag="208" IconVisible="False" LeftMargin="-11.0000" RightMargin="-185.0000" TopMargin="-110.5000" BottomMargin="-112.5000" LeftEage="47" RightEage="47" TopEage="38" BottomEage="38" Scale9OriginX="47" Scale9OriginY="38" Scale9Width="162" Scale9Height="177" ctype="ImageViewObjectData">
+                    <Size X="256.0000" Y="253.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="117.0000" Y="14.0000" />
+                    <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="1.9500" Y="0.4667" />
+                    <PreSize X="4.2667" Y="8.4333" />
+                    <FileData Type="Normal" Path="gameEndNew/t-hu.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="1060.0000" Y="300.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="225" G="0" B="16" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint />
             <Position X="7.0000" Y="4.0000" />
@@ -1062,29 +1062,6 @@
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="gameEndNew/floor_11.png" Plist="" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="winNum" ActionTag="1781665316" Tag="601" IconVisible="False" LeftMargin="1030.0000" RightMargin="-1090.0000" TopMargin="-165.0000" BottomMargin="135.0000" FontSize="30" LabelText="+100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="60.0000" Y="30.0000" />
-                <Children>
-                  <AbstractNodeData Name="hu" ActionTag="-1965314691" Tag="209" IconVisible="False" LeftMargin="-11.0000" RightMargin="-185.0000" TopMargin="-110.5000" BottomMargin="-112.5000" LeftEage="47" RightEage="47" TopEage="38" BottomEage="38" Scale9OriginX="47" Scale9OriginY="38" Scale9Width="162" Scale9Height="177" ctype="ImageViewObjectData">
-                    <Size X="256.0000" Y="253.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="117.0000" Y="14.0000" />
-                    <Scale ScaleX="0.4000" ScaleY="0.4000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.9500" Y="0.4667" />
-                    <PreSize X="4.2667" Y="8.4333" />
-                    <FileData Type="Normal" Path="gameEndNew/t-hu.png" Plist="" />
-                  </AbstractNodeData>
-                </Children>
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1060.0000" Y="150.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="225" G="0" B="16" />
-                <PrePosition />
-                <PreSize X="0.0000" Y="0.0000" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="head" ActionTag="-864628463" Tag="602" IconVisible="False" LeftMargin="236.0000" RightMargin="-364.0000" TopMargin="-232.0000" BottomMargin="108.0000" ctype="SpriteObjectData">
                 <Size X="128.0000" Y="124.0000" />
@@ -1234,6 +1211,29 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="gameEndNew/Photo_frame_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="winNum" ActionTag="1781665316" Tag="601" IconVisible="False" LeftMargin="1030.0000" RightMargin="-1090.0000" TopMargin="-165.0000" BottomMargin="135.0000" FontSize="30" LabelText="+100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="60.0000" Y="30.0000" />
+                <Children>
+                  <AbstractNodeData Name="hu" ActionTag="-1965314691" Tag="209" IconVisible="False" LeftMargin="-11.0000" RightMargin="-185.0000" TopMargin="-110.5000" BottomMargin="-112.5000" LeftEage="47" RightEage="47" TopEage="38" BottomEage="38" Scale9OriginX="47" Scale9OriginY="38" Scale9Width="162" Scale9Height="177" ctype="ImageViewObjectData">
+                    <Size X="256.0000" Y="253.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="117.0000" Y="14.0000" />
+                    <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="1.9500" Y="0.4667" />
+                    <PreSize X="4.2667" Y="8.4333" />
+                    <FileData Type="Normal" Path="gameEndNew/t-hu.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="1060.0000" Y="150.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="225" G="0" B="16" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />

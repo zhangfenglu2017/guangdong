@@ -5,6 +5,7 @@
 
 (function () {
 
+    var createui = null;
     var tables = [];
     var gamemjs = [];
     //0 没有，1广州，2惠州，3深圳，4鸡平胡
@@ -40,6 +41,78 @@
             }
         }
     }
+    
+    //读取用户创建房间选项
+    function readCreateRoomCfg()
+    {
+        var path = jsb.fileUtils.getWritablePath();
+        var file =  jsb.fileUtils.getStringFromFile(path + "createRoom.json");
+        log("创建房间cfg： " + file);
+        if(file == null || file == "")
+        {
+            return null;
+        }
+        else
+        {
+            return file;
+        }
+
+    }
+
+    //写入用户创建房间选项
+    function writeCreateRoomCfg(data)
+    {
+        log("写入用户创建房间选项" + JSON.stringify(data));
+        var path = jsb.fileUtils.getWritablePath();
+        jsb.fileUtils.writeStringToFile(JSON.stringify(data), path + "createRoom.json");
+    }
+    
+    //设置创建房间默认选项
+    function setCreateRoomSelected(layer)
+    {
+        var fileData = readCreateRoomCfg();
+        if (fileData == null)
+            return;
+
+        var roomCfg = JSON.parse(fileData);
+        if (roomCfg == null)
+            return;
+
+        for(var gameType in roomCfg)
+        {
+            var game = roomCfg[gameType];
+            log("创建房间游戏 gameType：" + gameType);
+            for (var playType in game)
+            {
+                var cfgType = game[playType];
+                log("创建房间选项 playType：" + playType);
+                for (var playVal in cfgType)
+                {
+                    var cfgVal = cfgType[playVal];
+                    var gamePlayNode = layer.jsBind.back[gameType];
+                    if(gamePlayNode == null)
+                        continue;
+
+                    var gameTypeNode = gamePlayNode[playType];
+                    if(gameTypeNode == null)
+                        continue;
+
+                    var cfgValNode = gameTypeNode._node.getChildByName(playVal);
+                    if(cfgValNode == null)
+                        continue;
+
+                    if(cfgVal != 0 && !cfgValNode.isSelected())
+                    {
+                        log("创建房间值 playVal：" + playVal);
+                        layer.jsBind.back[gameType][playType][playVal]._node.setSelected(true);
+                        layer.jsBind.back[gameType][playType][playVal]._click();
+                        // cfgValNode.setSelected(true);
+                        // cfgValNode._click();
+                    }
+                }
+            }
+        }
+    }
 
     CreateLayer = cc.Layer.extend(
         {
@@ -52,25 +125,34 @@
                 },
 
                 //返回
-                close:
-                {
-                    _layout: [[0.1, 0.1], [0.95, 0.95], [0, 0]],
-                    _click: function ()
-                    {
-                        createui.removeFromParent(true);
-                    }
-                },
+                // close:
+                // {
+                //     _layout: [[0.1, 0.1], [0.95, 0.95], [0, 0]],
+                //     _click: function ()
+                //     {
+                //         createui.removeFromParent(true);
+                //     }
+                // },
 
                 //标题
-                table:
-                {
-                    _layout: [[0.8, 0.8], [0.05, 0.52], [0, 0]],
-                },
+                // table:
+                // {
+                //     _layout: [[0.4, 0.4], [0.5, 0.92], [0, 0]],
+                // },
 
                 //内容
                 back:
                 {
-                    _layout: [[0.9, 1], [0.54, 0.47], [0, 0], 3],
+                    _layout: [[1, 0], [0.5, 0.5], [0, 0],true],
+
+                    close:
+                    {
+                        _click: function ()
+                        {
+                            // createui.removeFromParent(true);
+                            createui.visible = false;
+                        }
+                    },
 
                     TableScrollView:
                     {
@@ -158,7 +240,7 @@
                             }
                         },
 
-                        srfmjtable:
+                        bdhmjtable:
                         {
                             _run: function ()
                             {
@@ -172,7 +254,7 @@
                             }
                         },
 
-                        bdhmjtable:
+                        chshmjtable:
                         {
                             _run: function ()
                             {
@@ -184,7 +266,7 @@
                             {
                                 setPanelContentByType(8);
                             }
-                        }
+                        },
                     },
 
                     gdmj:
@@ -197,12 +279,16 @@
                         self1Feng: null,
                         self1CanHu7: null,
                         self1CanFan7:null,
+                        self1Srmj:null,
                         self1Ma2: null,
                         self1Ma4: null,
                         self1Ma6: null,
+                        self1Ma8: null,
+                        self1Ma10: null,
                         self1MaBom: null,
                         self1Round4: null,
                         self1Round8: null,
+                        self1Round16: null,
                         self1JJG:null,
                         self1OK:null,
 
@@ -236,6 +322,10 @@
 
                             zhong:
                             {
+                                _event:
+                                {
+
+                                },
                                 _run: function ()
                                 {
                                     self1Zhong = this;
@@ -278,7 +368,6 @@
 
                             shuanggui:
                             {
-
                                 _run: function ()
                                 {
                                     self1ShuangGui = this;
@@ -286,7 +375,6 @@
 
                                 _click: function ()
                                 {
-
                                     if(self1FanGui.isSelected() == false)
                                     {
                                         self1Zhong.setSelected(false);
@@ -368,7 +456,6 @@
 
                                 _click:function()
                                 {
-
                                     if(self1MaBom.isSelected())
                                     {
                                         self1MaBom.setSelected(false);
@@ -377,6 +464,18 @@
                                         self1Ma2.setSelected(true);
                                         self1Ma2.setTouchEnabled(false);
                                     }
+                                }
+                            },
+
+                            srmj:
+                            {
+                                _run: function ()
+                                {
+                                    self1Srmj = this;
+                                },
+
+                                _click:function()
+                                {
                                 }
                             }
                         },
@@ -397,6 +496,10 @@
                                     self1Ma4.setTouchEnabled(true);
                                     self1Ma6.setSelected(false);
                                     self1Ma6.setTouchEnabled(true);
+                                    self1Ma8.setSelected(false);
+                                    self1Ma8.setTouchEnabled(true);
+                                    self1Ma10.setSelected(false);
+                                    self1Ma10.setTouchEnabled(true);
 
                                     self1MaBom.setSelected(false);
                                     self1MaBom.setTouchEnabled(true);
@@ -418,6 +521,10 @@
                                     self1Ma4.setTouchEnabled(false);
                                     self1Ma6.setSelected(false);
                                     self1Ma6.setTouchEnabled(true);
+                                    self1Ma8.setSelected(false);
+                                    self1Ma8.setTouchEnabled(true);
+                                    self1Ma10.setSelected(false);
+                                    self1Ma10.setTouchEnabled(true);
 
                                     self1MaBom.setSelected(false);
                                     self1MaBom.setTouchEnabled(true);
@@ -439,6 +546,60 @@
                                     self1Ma4.setTouchEnabled(true);
                                     self1Ma6.setSelected(true);
                                     self1Ma6.setTouchEnabled(false);
+                                    self1Ma8.setSelected(false);
+                                    self1Ma8.setTouchEnabled(true);
+                                    self1Ma10.setSelected(false);
+                                    self1Ma10.setTouchEnabled(true);
+
+                                    self1MaBom.setSelected(false);
+                                    self1MaBom.setTouchEnabled(true);
+                                }
+                            },
+
+                            ma8:
+                            {
+                                _run: function ()
+                                {
+                                    self1Ma8 = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    self1Ma2.setSelected(false);
+                                    self1Ma2.setTouchEnabled(true);
+                                    self1Ma4.setSelected(false);
+                                    self1Ma4.setTouchEnabled(true);
+                                    self1Ma6.setSelected(false);
+                                    self1Ma6.setTouchEnabled(true);
+                                    self1Ma8.setSelected(true);
+                                    self1Ma8.setTouchEnabled(false);
+                                    self1Ma10.setSelected(false);
+                                    self1Ma10.setTouchEnabled(true);
+
+                                    self1MaBom.setSelected(false);
+                                    self1MaBom.setTouchEnabled(true);
+                                }
+                            },
+
+                            ma10:
+                            {
+                                _run: function ()
+                                {
+                                    self1Ma10 = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    self1Ma2.setSelected(false);
+                                    self1Ma2.setTouchEnabled(true);
+                                    self1Ma4.setSelected(false);
+                                    self1Ma4.setTouchEnabled(true);
+                                    self1Ma6.setSelected(false);
+                                    self1Ma6.setTouchEnabled(true);
+                                    self1Ma8.setSelected(false);
+                                    self1Ma8.setTouchEnabled(true);
+                                    self1Ma10.setSelected(true);
+                                    self1Ma10.setTouchEnabled(false);
 
                                     self1MaBom.setSelected(false);
                                     self1MaBom.setTouchEnabled(true);
@@ -461,6 +622,10 @@
                                     self1Ma4.setTouchEnabled(true);
                                     self1Ma6.setSelected(false);
                                     self1Ma6.setTouchEnabled(true);
+                                    self1Ma8.setSelected(false);
+                                    self1Ma8.setTouchEnabled(true);
+                                    self1Ma10.setSelected(false);
+                                    self1Ma10.setTouchEnabled(true);
 
                                     self1MaBom.setSelected(true);
                                     self1MaBom.setTouchEnabled(false);
@@ -486,6 +651,8 @@
                                     self1Round4.setTouchEnabled(false);
                                     self1Round8.setSelected(false);
                                     self1Round8.setTouchEnabled(true);
+                                    self1Round16.setSelected(false);
+                                    self1Round16.setTouchEnabled(true);
 
                                     self1OK.loadTextureNormal("res/createRoomNew/queding_2.png");
                                     self1OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
@@ -505,11 +672,34 @@
                                     self1Round4.setTouchEnabled(true);
                                     self1Round8.setSelected(true);
                                     self1Round8.setTouchEnabled(false);
+                                    self1Round16.setSelected(false);
+                                    self1Round16.setTouchEnabled(true);
 
                                     self1OK.loadTextureNormal("res/createRoomNew/queding_3.png");
                                     self1OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
                                 }
-                            }
+                            },
+
+                            round16:
+                            {
+                                _run: function ()
+                                {
+                                    self1Round16 = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    self1Round4.setSelected(false);
+                                    self1Round4.setTouchEnabled(true);
+                                    self1Round8.setSelected(false);
+                                    self1Round8.setTouchEnabled(true);
+                                    self1Round16.setSelected(true);
+                                    self1Round16.setTouchEnabled(false);
+
+                                    self1OK.loadTextureNormal("res/createRoomNew/queding_5.png");
+                                    self1OK.loadTexturePressed("res/createRoomNew/queding_5_press.png");
+                                }
+                            },
                         },
 
                         //创建,判断金钱
@@ -523,9 +713,23 @@
                             _click: function (btn, evt)
                             {
                                 var majiang = jsclient.data.gameInfo.gdmj;
-                                var isRound = self1Round4.isSelected();
-                                var needMoney = isRound ? majiang.round4 : majiang.round8;
                                 var haveMoney = jsclient.data.pinfo.money;
+
+                                var isRound = "round4";
+                                if(self1Round4.isSelected())
+                                    isRound = "round4";
+                                else if(self1Round8.isSelected())
+                                    isRound = "round8";
+                                else if(self1Round16.isSelected())
+                                    isRound = "round16";
+
+                                var needMoney = majiang.round4;
+                                if(self1Round4.isSelected())
+                                    needMoney = majiang.round4;
+                                else if(self1Round8.isSelected())
+                                    needMoney = majiang.round8;
+                                else if(self1Round16.isSelected())
+                                    needMoney = majiang.round16;
 
                                 var horse = 2;
                                 if (self1Ma2.isSelected())
@@ -534,6 +738,10 @@
                                     horse = 4;
                                 else if (self1Ma6.isSelected())
                                     horse = 6;
+                                else if (self1Ma8.isSelected())
+                                    horse = 8;
+                                else if (self1Ma10.isSelected())
+                                    horse = 10;
                                 else if(self1MaBom.isSelected())
                                     horse = 1;
 
@@ -541,7 +749,7 @@
                                 {
                                     jsclient.createRoom(
                                         1,                        //游戏类型
-                                        isRound ? "round4" : "round8",//4局或8局
+                                        isRound,                  //4局或8局
                                         false,                     //吃胡
                                         self1Feng.isSelected(),     //带风
                                         false,                     //吃
@@ -557,7 +765,7 @@
                                         self1FanGui.isSelected(),   //翻鬼
                                         self1ShuangGui.isSelected(),//双鬼
                                         0,                          //番
-                                        4,                         //人数
+                                        self1Srmj.isSelected() ? 3 : 4,//人数
                                         false,                       //大胡
                                         true,                        //无鬼加码
                                         false,                        //无鬼翻倍
@@ -569,7 +777,9 @@
                                         false,                          //马跟底对对胡
                                         false,                          //门清加分
                                         false,                          //百搭鸡胡
-                                        false                           //百搭大胡
+                                        false,                           //百搭大胡
+                                        false,                           //海底翻倍(潮汕)
+                                        false                           //可点炮(潮汕)
                                     );
                                 }
                                 else 
@@ -577,7 +787,48 @@
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }
-                                createui.removeFromParent(true);
+
+                                var roomCfg =
+                                {
+                                    gdmj:
+                                    {
+                                        playType:
+                                        {
+                                            nozhong: self1Nozhong.isSelected() ? 1:0,
+                                            zhong: self1Zhong.isSelected() ? 1:0,
+                                            fangui:self1FanGui.isSelected() ? 1:0,
+                                            shuanggui:self1ShuangGui.isSelected() ? 1:0,
+                                            nofeng: self1Nofeng.isSelected() ? 1:0,
+                                            feng: self1Feng.isSelected() ? 1:0,
+                                            canHu7: self1CanHu7.isSelected() ? 1:0,
+                                            canFan7:self1CanFan7.isSelected() ? 1:0,
+                                            jjg:self1JJG.isSelected() ? 1:0,
+                                            srmj:self1Srmj.isSelected() ? 1:0,
+                                        },
+                                
+                                        horse:
+                                        {
+                                            mabaozha: self1MaBom.isSelected() ? 1:0,
+                                            ma2: self1Ma2.isSelected() ? 1:0,
+                                            ma4: self1Ma4.isSelected() ? 1:0,
+                                            ma6: self1Ma6.isSelected() ? 1:0,
+                                            ma8: self1Ma8.isSelected() ? 1:0,
+                                            ma10: self1Ma10.isSelected() ? 1:0,
+                                        },
+                                
+                                        round:
+                                        {
+                                            round4: self1Round4.isSelected() ? 1:0,
+                                            round8: self1Round8.isSelected() ? 1:0,
+                                            round16: self1Round16.isSelected() ? 1:0,
+                                        }
+                                    }
+                                
+                                };
+                                
+                                writeCreateRoomCfg(roomCfg);
+                                // createui.removeFromParent(true);
+                                createui.visible = false;
                             }
                         },
                     },
@@ -591,11 +842,15 @@
                         self2MaDiFen:null,
                         self2DuiDuiHu:null,
                         self2MenQing:null,
+                        self2Srmj:null,
                         self2Ma2: null,
                         self2Ma4: null,
                         self2Ma6: null,
+                        self2Ma8: null,
+                        self2Ma10: null,
                         self2Round4: null,
                         self2Round8: null,
+                        self2Round16: null,
                         self2OK:null,
 
                         _run: function ()
@@ -605,7 +860,6 @@
 
                         playType:
                         {
-
                             nofeng:
                             {
                                 _run: function ()
@@ -643,10 +897,10 @@
                                 _run: function ()
                                 {
                                     self2CanHu7 = this;
-                                }
+                                },
 
-                                // _click:function(sender, type)
-                                // {
+                                _click:function(sender, type)
+                                {
                                 //     switch (type)
                                 //     {
                                 //         case ccui.CheckBox.EVENT_SELECTED:
@@ -656,21 +910,23 @@
                                 //             canHu7 = true;
                                 //             break;
                                 //     }
-                                // }
+                                }
                             },
 
                             nojihu:
                             {
-
                                 _run: function ()
                                 {
                                     self2NoJiHu = this;
                                 },
+
+                                _click: function ()
+                                {
+                                }
                             },
 
                             difenma:
                             {
-
                                 _run: function ()
                                 {
                                     self2MaDiFen = this;
@@ -709,6 +965,22 @@
                                 {
                                     self2MenQing = this;
                                 },
+
+                                _click: function ()
+                                {
+                                }
+                            },
+
+                            srmj:
+                            {
+                                _run: function ()
+                                {
+                                    self2Srmj = this;
+                                },
+
+                                _click:function()
+                                {
+                                }
                             }
                         },
 
@@ -728,6 +1000,10 @@
                                     self2Ma4.setTouchEnabled(true);
                                     self2Ma6.setSelected(false);
                                     self2Ma6.setTouchEnabled(true);
+                                    self2Ma8.setSelected(false);
+                                    self2Ma8.setTouchEnabled(true);
+                                    self2Ma10.setSelected(false);
+                                    self2Ma10.setTouchEnabled(true);
                                 }
                             },
 
@@ -745,6 +1021,10 @@
                                     self2Ma4.setTouchEnabled(false);
                                     self2Ma6.setSelected(false);
                                     self2Ma6.setTouchEnabled(true);
+                                    self2Ma8.setSelected(false);
+                                    self2Ma8.setTouchEnabled(true);
+                                    self2Ma10.setSelected(false);
+                                    self2Ma10.setTouchEnabled(true);
                                 }
                             },
 
@@ -762,8 +1042,55 @@
                                     self2Ma4.setTouchEnabled(true);
                                     self2Ma6.setSelected(true);
                                     self2Ma6.setTouchEnabled(false);
+                                    self2Ma8.setSelected(false);
+                                    self2Ma8.setTouchEnabled(true);
+                                    self2Ma10.setSelected(false);
+                                    self2Ma10.setTouchEnabled(true);
                                 }
                             },
+
+                            ma8:
+                            {
+                                _run: function ()
+                                {
+                                    self2Ma8 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self2Ma2.setSelected(false);
+                                    self2Ma2.setTouchEnabled(true);
+                                    self2Ma4.setSelected(false);
+                                    self2Ma4.setTouchEnabled(true);
+                                    self2Ma6.setSelected(false);
+                                    self2Ma6.setTouchEnabled(true);
+                                    self2Ma8.setSelected(true);
+                                    self2Ma8.setTouchEnabled(false);
+                                    self2Ma10.setSelected(false);
+                                    self2Ma10.setTouchEnabled(true);
+                                }
+                            },
+
+                            ma10:
+                            {
+                                _run: function ()
+                                {
+                                    self2Ma10 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self2Ma2.setSelected(false);
+                                    self2Ma2.setTouchEnabled(true);
+                                    self2Ma4.setSelected(false);
+                                    self2Ma4.setTouchEnabled(true);
+                                    self2Ma6.setSelected(false);
+                                    self2Ma6.setTouchEnabled(true);
+                                    self2Ma8.setSelected(false);
+                                    self2Ma8.setTouchEnabled(true);
+                                    self2Ma10.setSelected(true);
+                                    self2Ma10.setTouchEnabled(false);
+                                }
+                            },
+
                         },
 
                         round:
@@ -781,6 +1108,8 @@
                                     self2Round4.setTouchEnabled(false);
                                     self2Round8.setSelected(false);
                                     self2Round8.setTouchEnabled(true);
+                                    self2Round16.setSelected(false);
+                                    self2Round16.setTouchEnabled(true);
 
                                     self2OK.loadTextureNormal("res/createRoomNew/queding_2.png");
                                     self2OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
@@ -799,9 +1128,31 @@
                                     self2Round4.setTouchEnabled(true);
                                     self2Round8.setSelected(true);
                                     self2Round8.setTouchEnabled(false);
+                                    self2Round16.setSelected(false);
+                                    self2Round16.setTouchEnabled(true);
 
                                     self2OK.loadTextureNormal("res/createRoomNew/queding_3.png");
                                     self2OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
+                                }
+                            },
+
+                            round16:
+                            {
+                                _run: function ()
+                                {
+                                    self2Round16 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self2Round4.setSelected(false);
+                                    self2Round4.setTouchEnabled(true);
+                                    self2Round8.setSelected(false);
+                                    self2Round8.setTouchEnabled(true);
+                                    self2Round16.setSelected(true);
+                                    self2Round16.setTouchEnabled(false);
+
+                                    self2OK.loadTextureNormal("res/createRoomNew/queding_5.png");
+                                    self2OK.loadTexturePressed("res/createRoomNew/queding_5_press.png");
                                 }
                             }
                         },
@@ -816,9 +1167,23 @@
                             _click: function (btn, evt)
                             {
                                 var majiang = jsclient.data.gameInfo.gdmj;
-                                var isRound = self2Round4.isSelected();
-                                var needMoney = isRound ? majiang.round4 : majiang.round8;
                                 var haveMoney = jsclient.data.pinfo.money;
+
+                                var isRound = "round4";
+                                if(self2Round4.isSelected())
+                                    isRound = "round4";
+                                else if(self2Round8.isSelected())
+                                    isRound = "round8";
+                                else if(self2Round16.isSelected())
+                                    isRound = "round16";
+
+                                var needMoney = majiang.round4;
+                                if(self2Round4.isSelected())
+                                    needMoney = majiang.round4;
+                                else if(self2Round8.isSelected())
+                                    needMoney = majiang.round8;
+                                else if(self2Round16.isSelected())
+                                    needMoney = majiang.round16;
 
                                 var horse = 2;
                                 if (self2Ma2.isSelected())
@@ -827,17 +1192,21 @@
                                     horse = 4;
                                 else if (self2Ma6.isSelected())
                                     horse = 6;
+                                else if (self2Ma8.isSelected())
+                                    horse = 8;
+                                else if (self2Ma10.isSelected())
+                                    horse = 10;
 
                                 if (haveMoney >= needMoney)
                                 {
                                     jsclient.createRoom(
                                         2,                        //游戏类型
-                                        isRound ? "round4" : "round8",//4局或8局
+                                        isRound,                    //4局或8局
                                         false,                     //吃胡
                                         self2Feng.isSelected(),     //带风
                                         false,                     //吃
                                         true,                      //无效参数
-                                        false,                     //7
+                                        self2CanHu7.isSelected(),  //7
                                         false,                      //7加番
                                         false,                     //258
                                         false,                     //中为鬼牌
@@ -848,7 +1217,7 @@
                                         false,                       //翻鬼
                                         false,                      //双鬼
                                         0,                           //番
-                                        4,                          //人数
+                                        self2Srmj.isSelected() ? 3 : 4,//人数
                                         false,                       //大胡
                                         true,                        //无鬼加码
                                         false,                        //无鬼翻倍
@@ -860,7 +1229,9 @@
                                         self2DuiDuiHu.isSelected(),   //马跟底对对胡
                                         self2MenQing.isSelected(),     //门清加分
                                         false,                          //百搭鸡胡
-                                        false                           //百搭大胡
+                                        false,                           //百搭大胡
+                                        false,                           //海底翻倍(潮汕)
+                                        false                           //可点炮(潮汕)
                                     );
                                 }
                                 else
@@ -868,7 +1239,45 @@
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }
-                                createui.removeFromParent(true);
+
+                                var roomCfg =
+                                {
+                                    hzhmj:
+                                    {
+                                        playType:
+                                        {
+                                            nofeng: self2Nofeng.isSelected() ? 1:0,
+                                            feng: self2Feng.isSelected() ? 1:0,
+                                            nojihu: self2NoJiHu.isSelected() ? 1:0,
+                                            difenma:self2MaDiFen.isSelected() ? 1:0,
+                                            duiduihu:self2DuiDuiHu.isSelected() ? 1:0,
+                                            menqing:self2MenQing.isSelected() ? 1:0,
+                                            canHu7:self2CanHu7.isSelected() ? 1:0,
+                                            srmj:self2Srmj.isSelected() ? 1:0,
+                                        },
+
+                                        horse:
+                                        {
+                                            ma2: self2Ma2.isSelected() ? 1:0,
+                                            ma4: self2Ma4.isSelected() ? 1:0,
+                                            ma6: self2Ma6.isSelected() ? 1:0,
+                                            ma8: self2Ma8.isSelected() ? 1:0,
+                                            ma10: self2Ma10.isSelected() ? 1:0,
+                                        },
+
+                                        round:
+                                        {
+                                            round4: self2Round4.isSelected() ? 1:0,
+                                            round8: self2Round8.isSelected() ? 1:0,
+                                            round16: self2Round16.isSelected() ? 1:0,
+                                        }
+                                    }
+
+                                };
+
+                                writeCreateRoomCfg(roomCfg);
+                                // createui.removeFromParent(true);
+                                createui.visible = false;
                             }
                         },
                     },
@@ -881,13 +1290,17 @@
                         self3Nofeng: null,
                         self3Feng: null,
                         self3JJG: null,
+                        self3Srmj:null,
                         self3MaDiFen:null,
                         self3DuiDuiHu:null,
                         self3Ma2: null,
                         self3Ma4: null,
                         self3Ma6: null,
+                        self3Ma8: null,
+                        self3Ma10: null,
                         self3Round4: null,
                         self3Round8: null,
+                        self3Round16: null,
                         self3OK:null,
 
                         _run: function ()
@@ -988,12 +1401,15 @@
                                 _run: function ()
                                 {
                                     self3JJG = this;
+                                },
+
+                                _click: function ()
+                                {
                                 }
                             },
 
                             difenma:
                             {
-
                                 _run: function ()
                                 {
                                     self3MaDiFen = this;
@@ -1008,7 +1424,6 @@
 
                             duiduihu:
                             {
-
                                 _run: function ()
                                 {
                                     self3DuiDuiHu = this;
@@ -1020,6 +1435,18 @@
                                         self3MaDiFen.setSelected(true);
                                 }
                             },
+
+                            srmj:
+                            {
+                                _run: function ()
+                                {
+                                    self3Srmj = this;
+                                },
+
+                                _click:function()
+                                {
+                                }
+                            }
                         },
 
                         horse:
@@ -1038,6 +1465,10 @@
                                     self3Ma4.setTouchEnabled(true);
                                     self3Ma6.setSelected(false);
                                     self3Ma6.setTouchEnabled(true);
+                                    self3Ma8.setSelected(false);
+                                    self3Ma8.setTouchEnabled(true);
+                                    self3Ma10.setSelected(false);
+                                    self3Ma10.setTouchEnabled(true);
                                 }
                             },
 
@@ -1055,6 +1486,10 @@
                                     self3Ma4.setTouchEnabled(false);
                                     self3Ma6.setSelected(false);
                                     self3Ma6.setTouchEnabled(true);
+                                    self3Ma8.setSelected(false);
+                                    self3Ma8.setTouchEnabled(true);
+                                    self3Ma10.setSelected(false);
+                                    self3Ma10.setTouchEnabled(true);
                                 }
                             },
 
@@ -1072,6 +1507,52 @@
                                     self3Ma4.setTouchEnabled(true);
                                     self3Ma6.setSelected(true);
                                     self3Ma6.setTouchEnabled(false);
+                                    self3Ma8.setSelected(false);
+                                    self3Ma8.setTouchEnabled(true);
+                                    self3Ma10.setSelected(false);
+                                    self3Ma10.setTouchEnabled(true);
+                                }
+                            },
+
+                            ma8:
+                            {
+                                _run: function ()
+                                {
+                                    self3Ma8 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self3Ma2.setSelected(false);
+                                    self3Ma2.setTouchEnabled(true);
+                                    self3Ma4.setSelected(false);
+                                    self3Ma4.setTouchEnabled(true);
+                                    self3Ma6.setSelected(false);
+                                    self3Ma6.setTouchEnabled(true);
+                                    self3Ma8.setSelected(true);
+                                    self3Ma8.setTouchEnabled(false);
+                                    self3Ma10.setSelected(false);
+                                    self3Ma10.setTouchEnabled(true);
+                                }
+                            },
+
+                            ma10:
+                            {
+                                _run: function ()
+                                {
+                                    self3Ma10 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self3Ma2.setSelected(false);
+                                    self3Ma2.setTouchEnabled(true);
+                                    self3Ma4.setSelected(false);
+                                    self3Ma4.setTouchEnabled(true);
+                                    self3Ma6.setSelected(false);
+                                    self3Ma6.setTouchEnabled(true);
+                                    self3Ma8.setSelected(false);
+                                    self3Ma8.setTouchEnabled(true);
+                                    self3Ma10.setSelected(true);
+                                    self3Ma10.setTouchEnabled(false);
                                 }
                             },
                         },
@@ -1091,6 +1572,8 @@
                                     self3Round4.setTouchEnabled(false);
                                     self3Round8.setSelected(false);
                                     self3Round8.setTouchEnabled(true);
+                                    self3Round16.setSelected(false);
+                                    self3Round16.setTouchEnabled(true);
 
                                     self3OK.loadTextureNormal("res/createRoomNew/queding_2.png");
                                     self3OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
@@ -1109,9 +1592,31 @@
                                     self3Round4.setTouchEnabled(true);
                                     self3Round8.setSelected(true);
                                     self3Round8.setTouchEnabled(false);
+                                    self3Round16.setSelected(false);
+                                    self3Round16.setTouchEnabled(true);
 
                                     self3OK.loadTextureNormal("res/createRoomNew/queding_3.png");
                                     self3OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
+                                }
+                            },
+
+                            round16:
+                            {
+                                _run: function ()
+                                {
+                                    self3Round16 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self3Round4.setSelected(false);
+                                    self3Round4.setTouchEnabled(true);
+                                    self3Round8.setSelected(false);
+                                    self3Round8.setTouchEnabled(true);
+                                    self3Round16.setSelected(true);
+                                    self3Round16.setTouchEnabled(false);
+
+                                    self3OK.loadTextureNormal("res/createRoomNew/queding_5.png");
+                                    self3OK.loadTexturePressed("res/createRoomNew/queding_5_press.png");
                                 }
                             }
                         },
@@ -1126,9 +1631,23 @@
                             _click: function (btn, evt)
                             {
                                 var majiang = jsclient.data.gameInfo.gdmj;
-                                var isRound = self3Round4.isSelected();
-                                var needMoney = isRound ? majiang.round4 : majiang.round8;
                                 var haveMoney = jsclient.data.pinfo.money;
+
+                                var isRound = "round4";
+                                if(self3Round4.isSelected())
+                                    isRound = "round4";
+                                else if(self3Round8.isSelected())
+                                    isRound = "round8";
+                                else if(self3Round16.isSelected())
+                                    isRound = "round16";
+
+                                var needMoney = majiang.round4;
+                                if(self3Round4.isSelected())
+                                    needMoney = majiang.round4;
+                                else if(self3Round8.isSelected())
+                                    needMoney = majiang.round8;
+                                else if(self3Round16.isSelected())
+                                    needMoney = majiang.round16;
 
                                 var horse = 2;
                                 if (self3Ma2.isSelected())
@@ -1137,12 +1656,16 @@
                                     horse = 4;
                                 else if (self3Ma6.isSelected())
                                     horse = 6;
+                                else if (self3Ma8.isSelected())
+                                    horse = 8;
+                                else if (self3Ma10.isSelected())
+                                    horse = 10;
 
                                 if (haveMoney >= needMoney)
                                 {
                                     jsclient.createRoom(
                                         3,                        //游戏类型
-                                        isRound ? "round4" : "round8",//4局或8局
+                                        isRound,                   //4局或8局
                                         false,                     //吃胡
                                         self3Feng.isSelected(),     //带风
                                         false,                     //吃
@@ -1158,7 +1681,7 @@
                                         self3FanGui.isSelected(),    //翻鬼
                                         false,                      //双鬼
                                         0,                            //番
-                                        4,                            //人数
+                                        self3Srmj.isSelected() ? 3 : 4,//人数
                                         false,                       //大胡
                                         true,                        //无鬼加码
                                         false,                        //无鬼翻倍
@@ -1170,7 +1693,9 @@
                                         self3DuiDuiHu.isSelected(),  //马跟底对对胡
                                         false,                          //门清加分
                                         false,                          //百搭鸡胡
-                                        false                           //百搭大胡
+                                        false,                           //百搭大胡
+                                        false,                           //海底翻倍(潮汕)
+                                        false                           //可点炮(潮汕)
                                     );
                                 }
                                 else
@@ -1178,7 +1703,46 @@
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }
-                                createui.removeFromParent(true);
+
+                                var roomCfg =
+                                {
+                                    shzhmj:
+                                    {
+                                        playType:
+                                        {
+                                            nozhong: self3Nozhong.isSelected() ? 1:0,
+                                            zhong: self3Zhong.isSelected() ? 1:0,
+                                            fangui:self3FanGui.isSelected() ? 1:0,
+                                            nofeng: self3Nofeng.isSelected() ? 1:0,
+                                            feng: self3Feng.isSelected() ? 1:0,
+                                            difenma: self3MaDiFen.isSelected() ? 1:0,
+                                            duiduihu:self3DuiDuiHu.isSelected() ? 1:0,
+                                            jjg:self3JJG.isSelected() ? 1:0,
+                                            srmj:self3Srmj.isSelected() ? 1:0,
+                                        },
+
+                                        horse:
+                                        {
+                                            ma2: self3Ma2.isSelected() ? 1:0,
+                                            ma4: self3Ma4.isSelected() ? 1:0,
+                                            ma6: self3Ma6.isSelected() ? 1:0,
+                                            ma8: self3Ma8.isSelected() ? 1:0,
+                                            ma10: self3Ma10.isSelected() ? 1:0,
+                                        },
+
+                                        round:
+                                        {
+                                            round4: self3Round4.isSelected() ? 1:0,
+                                            round8: self3Round8.isSelected() ? 1:0,
+                                            round16: self3Round16.isSelected() ? 1:0,
+                                        }
+                                    }
+
+                                };
+
+                                writeCreateRoomCfg(roomCfg);
+                                // createui.removeFromParent(true);
+                                createui.visible = false;
                             }
                         },
                     },
@@ -1336,7 +1900,6 @@
                         //创建,判断金钱
                         yes:
                         {
-
                             _run:function ()
                             {
                                 self4OK = this;
@@ -1355,7 +1918,6 @@
                                     fannum = 1;
                                 else if(self4Fan3.isSelected())
                                     fannum = 3;
-
 
                                 if (haveMoney >= needMoney)
                                 {
@@ -1389,7 +1951,9 @@
                                         false,                          //马跟底对对胡
                                         false,                          //门清加分
                                         false,                          //百搭鸡胡
-                                        false                           //百搭大胡
+                                        false,                           //百搭大胡
+                                        false,                           //海底翻倍(潮汕)
+                                        false                           //可点炮(潮汕)
                                     );
                                 }
                                 else
@@ -1397,7 +1961,34 @@
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }
-                                createui.removeFromParent(true);
+
+                                var roomCfg =
+                                {
+                                    jphmj:
+                                    {
+                                        playType:
+                                        {
+                                        },
+
+                                        fanshu:
+                                        {
+                                            fan0: self4Fan0.isSelected() ? 1:0,
+                                            fan1: self4Fan1.isSelected() ? 1:0,
+                                            fan3: self4Fan3.isSelected() ? 1:0,
+                                        },
+
+                                        round:
+                                        {
+                                            round4: self4Round4.isSelected() ? 1:0,
+                                            round8: self4Round8.isSelected() ? 1:0,
+                                        }
+                                    }
+
+                                };
+
+                                writeCreateRoomCfg(roomCfg);
+                                // createui.removeFromParent(true);
+                                createui.visible = false;
                             }
                         },
                     },
@@ -1494,7 +2085,7 @@
                                     if(!self5NoGuiHu.isSelected())
                                         self5NoGuiHu.setSelected(true);
 
-                                    if(!self5NoGuiMa.isSelected())
+                                    if(!self5NoGuiMa.isSelected() && !self5NoGuiBei.isSelected())
                                         self5NoGuiMa.setSelected(true);
                                 }
                             },
@@ -1524,7 +2115,7 @@
                                     if(!self5NoGuiHu.isSelected())
                                         self5NoGuiHu.setSelected(true);
 
-                                    if(!self5NoGuiMa.isSelected())
+                                    if(!self5NoGuiMa.isSelected() && !self5NoGuiBei.isSelected())
                                         self5NoGuiMa.setSelected(true);
                                 }
                             },
@@ -1864,7 +2455,9 @@
                                         self5DuiDuiHu.isSelected(),  //马跟底对对胡
                                         false,                          //门清加分
                                         false,                          //百搭鸡胡
-                                        false                           //百搭大胡
+                                        false,                           //百搭大胡
+                                        false,                           //海底翻倍(潮汕)
+                                        false                           //可点炮(潮汕)
                                     );
                                 }
                                 else
@@ -1872,7 +2465,47 @@
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }
-                                createui.removeFromParent(true);
+
+                                var roomCfg =
+                                {
+                                    dgmj:
+                                    {
+                                        playType:
+                                        {
+                                            nozhong: self5Nozhong.isSelected() ? 1:0,
+                                            zhong: self5Zhong.isSelected() ? 1:0,
+                                            fangui:self5FanGui.isSelected() ? 1:0,
+                                            nofeng: self5Nofeng.isSelected() ? 1:0,
+                                            feng: self5Feng.isSelected() ? 1:0,
+                                            zhongisma: self5ZhongIsMa.isSelected() ? 1:0,
+                                            noguihu:self5NoGuiHu.isSelected() ? 1:0,
+                                            noguibei:self5NoGuiBei.isSelected() ? 1:0,
+                                            noguima:self5NoGuiMa.isSelected() ? 1:0,
+                                            gui4hu:self5Gui4Hu.isSelected() ? 1:0,
+                                            gui4bei:self5Gui4Bei.isSelected() ? 1:0,
+                                            difenma:self5MaDiFen.isSelected() ? 1:0,
+                                            duiduihu:self5DuiDuiHu.isSelected() ? 1:0,
+                                        },
+
+                                        horse:
+                                        {
+                                            ma2: self5Ma2.isSelected() ? 1:0,
+                                            ma4: self5Ma4.isSelected() ? 1:0,
+                                            ma6: self5Ma6.isSelected() ? 1:0,
+                                        },
+
+                                        round:
+                                        {
+                                            round4: self5Round4.isSelected() ? 1:0,
+                                            round8: self5Round8.isSelected() ? 1:0,
+                                        }
+                                    }
+
+                                };
+
+                                writeCreateRoomCfg(roomCfg);
+                                // createui.removeFromParent(true);
+                                createui.visible = false;
                             }
                         },
                     },
@@ -1963,7 +2596,7 @@
                                     if(!self6NoGuiHu.isSelected())
                                         self6NoGuiHu.setSelected(true);
 
-                                    if(!self6NoGuiMa.isSelected())
+                                    if(!self6NoGuiMa.isSelected() && !self6NoGuiBei.isSelected())
                                         self6NoGuiMa.setSelected(true);
                                 }
                             },
@@ -1993,7 +2626,7 @@
                                     if(!self6NoGuiHu.isSelected())
                                         self6NoGuiHu.setSelected(true);
 
-                                    if(!self6NoGuiMa.isSelected())
+                                    if(!self6NoGuiMa.isSelected() && !self6NoGuiBei.isSelected())
                                         self6NoGuiMa.setSelected(true);
                                 }
                             },
@@ -2296,7 +2929,9 @@
                                         self6DuiDuiHu.isSelected(),   //马跟底对对胡
                                         false,                         //门清加分
                                         false,                          //百搭鸡胡
-                                        false                           //百搭大胡
+                                        false,                           //百搭大胡
+                                        false,                           //海底翻倍(潮汕)
+                                        false                           //可点炮(潮汕)
                                     );
                                 }
                                 else
@@ -2304,397 +2939,46 @@
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }
-                                createui.removeFromParent(true);
-                            }
-                        },
-                    },
 
-                    srfmj:
-                    {
-                        self7Nozhong: null,
-                        self7Zhong: null,
-                        self7FanGui:null,
-                        self7ShuangGui:null,
-                        self7Nofeng: null,
-                        self7Feng: null,
-                        self7CanHu7: null,
-                        self7CanFan7:null,
-                        self7Ma2: null,
-                        self7Ma4: null,
-                        self7Ma6: null,
-                        self7MaBom: null,
-                        self7Round4: null,
-                        self7Round8: null,
-                        self7JJG:null,
-                        self7OK:null,
-
-                        _run: function ()
-                        {
-                            gamemjs[7] = this;
-                        },
-
-                        playType:
-                        {
-                            nozhong:
-                            {
-                                _run: function ()
+                                var roomCfg =
                                 {
-                                    self7Nozhong = this;
-                                },
-
-                                _click: function ()
-                                {
-                                    self7Zhong.setSelected(false);
-                                    self7Zhong.setTouchEnabled(true);
-                                    self7Nozhong.setSelected(true);
-                                    self7Nozhong.setTouchEnabled(false);
-                                    self7FanGui.setSelected(false);
-                                    self7FanGui.setTouchEnabled(true);
-
-                                    self7ShuangGui.setSelected(false);
-                                    self7ShuangGui.setTouchEnabled(true);
-                                }
-                            },
-
-                            zhong:
-                            {
-                                _run: function ()
-                                {
-                                    self7Zhong = this;
-                                },
-
-                                _click: function ()
-                                {
-                                    self7Zhong.setSelected(true);
-                                    self7Zhong.setTouchEnabled(false);
-                                    self7Nozhong.setSelected(false);
-                                    self7Nozhong.setTouchEnabled(true);
-                                    self7FanGui.setSelected(false);
-                                    self7FanGui.setTouchEnabled(true);
-
-                                    self7ShuangGui.setSelected(false);
-                                    self7ShuangGui.setTouchEnabled(true);
-                                }
-                            },
-
-                            fangui:
-                            {
-                                _run: function ()
-                                {
-                                    self7FanGui = this;
-                                },
-
-                                _click: function ()
-                                {
-                                    self7Zhong.setSelected(false);
-                                    self7Zhong.setTouchEnabled(true);
-                                    self7Nozhong.setSelected(false);
-                                    self7Nozhong.setTouchEnabled(true);
-                                    self7FanGui.setSelected(true);
-                                    self7FanGui.setTouchEnabled(false);
-
-                                    self7ShuangGui.setSelected(false);
-                                    self7ShuangGui.setTouchEnabled(true);
-                                }
-                            },
-
-                            shuanggui:
-                            {
-
-                                _run: function ()
-                                {
-                                    self7ShuangGui = this;
-                                },
-
-                                _click: function ()
-                                {
-                                    if(self7FanGui.isSelected() == false)
+                                    ybzhmj:
                                     {
-                                        self7Zhong.setSelected(false);
-                                        self7Zhong.setTouchEnabled(true);
-                                        self7Nozhong.setSelected(false);
-                                        self7Nozhong.setTouchEnabled(true);
-                                        self7FanGui.setSelected(true);
-                                        self7FanGui.setTouchEnabled(false);
+                                        playType:
+                                        {
+                                            nozhong: self6Nozhong.isSelected() ? 1:0,
+                                            zhong: self6Zhong.isSelected() ? 1:0,
+                                            fangui:self6FanGui.isSelected() ? 1:0,
+                                            nodahu: self6NoDaHu.isSelected() ? 1:0,
+                                            dahu: self6DaHu.isSelected() ? 1:0,
+                                            noguihu:self6NoGuiHu.isSelected() ? 1:0,
+                                            noguibei:self6NoGuiBei.isSelected() ? 1:0,
+                                            noguima:self6NoGuiMa.isSelected() ? 1:0,
+                                            gui4hu:self6Gui4Hu.isSelected() ? 1:0,
+                                            gui4bei:self6Gui4Bei.isSelected() ? 1:0,
+                                            difenma:self6MaDiFen.isSelected() ? 1:0,
+                                            duiduihu:self6DuiDuiHu.isSelected() ? 1:0,
+                                        },
+
+                                        horse:
+                                        {
+                                            ma2: self6Ma2.isSelected() ? 1:0,
+                                            ma4: self6Ma4.isSelected() ? 1:0,
+                                            ma6: self6Ma6.isSelected() ? 1:0,
+                                        },
+
+                                        round:
+                                        {
+                                            round4: self6Round4.isSelected() ? 1:0,
+                                            round8: self6Round8.isSelected() ? 1:0,
+                                        }
                                     }
-                                }
-                            },
 
-                            nofeng:
-                            {
-                                _run: function ()
-                                {
-                                    self7Nofeng = this;
-                                },
+                                };
 
-                                _click: function ()
-                                {
-                                    self7Feng.setSelected(false);
-                                    self7Feng.setTouchEnabled(true);
-                                    self7Nofeng.setSelected(true);
-                                    self7Nofeng.setTouchEnabled(false);
-                                }
-                            },
-
-                            feng:
-                            {
-                                _run: function ()
-                                {
-                                    self7Feng = this;
-                                },
-
-                                _click: function ()
-                                {
-                                    self7Feng.setSelected(true);
-                                    self7Feng.setTouchEnabled(false);
-                                    self7Nofeng.setSelected(false);
-                                    self7Nofeng.setTouchEnabled(true);
-                                }
-                            },
-
-                            canHu7:
-                            {
-                                _run: function ()
-                                {
-                                    self7CanHu7 = this;
-                                },
-                                _click:function()
-                                {
-                                    if(self7CanFan7.isSelected())
-                                        self7CanFan7.setSelected(false);
-                                }
-                            },
-
-                            canFan7:
-                            {
-                                _run: function ()
-                                {
-                                    self7CanFan7 = this;
-                                },
-
-                                _click:function()
-                                {
-                                    if(!self7CanHu7.isSelected())
-                                        self7CanHu7.setSelected(true);
-                                }
-                            },
-
-                            jjg:
-                            {
-                                _run: function ()
-                                {
-                                    self7JJG = this;
-                                },
-
-                                _click:function()
-                                {
-
-                                    if(self7MaBom.isSelected())
-                                    {
-                                        self7MaBom.setSelected(false);
-                                        self7MaBom.setTouchEnabled(true);
-
-                                        self7Ma2.setSelected(true);
-                                        self7Ma2.setTouchEnabled(false);
-                                    }
-                                }
-                            }
-                        },
-
-                        horse:
-                        {
-                            ma2:
-                            {
-                                _run: function ()
-                                {
-                                    self7Ma2 = this;
-                                },
-                                _click: function ()
-                                {
-                                    self7Ma2.setSelected(true);
-                                    self7Ma2.setTouchEnabled(false);
-                                    self7Ma4.setSelected(false);
-                                    self7Ma4.setTouchEnabled(true);
-                                    self7Ma6.setSelected(false);
-                                    self7Ma6.setTouchEnabled(true);
-
-                                    self7MaBom.setSelected(false);
-                                    self7MaBom.setTouchEnabled(true);
-                                }
-                            },
-
-                            ma4:
-                            {
-                                _run: function ()
-                                {
-                                    self7Ma4 = this;
-                                },
-                                _click: function ()
-                                {
-                                    self7Ma2.setSelected(false);
-                                    self7Ma2.setTouchEnabled(true);
-                                    self7Ma4.setSelected(true);
-                                    self7Ma4.setTouchEnabled(false);
-                                    self7Ma6.setSelected(false);
-                                    self7Ma6.setTouchEnabled(true);
-
-                                    self7MaBom.setSelected(false);
-                                    self7MaBom.setTouchEnabled(true);
-                                }
-                            },
-
-                            ma6:
-                            {
-                                _run: function ()
-                                {
-                                    self7Ma6 = this;
-                                },
-                                _click: function ()
-                                {
-                                    self7Ma2.setSelected(false);
-                                    self7Ma2.setTouchEnabled(true);
-                                    self7Ma4.setSelected(false);
-                                    self7Ma4.setTouchEnabled(true);
-                                    self7Ma6.setSelected(true);
-                                    self7Ma6.setTouchEnabled(false);
-
-                                    self7MaBom.setSelected(false);
-                                    self7MaBom.setTouchEnabled(true);
-                                }
-                            },
-
-                            mabaozha:
-                            {
-
-                                _run:function ()
-                                {
-                                    self7MaBom = this;
-                                },
-
-                                _click: function ()
-                                {
-                                    self7Ma2.setSelected(false);
-                                    self7Ma2.setTouchEnabled(true);
-                                    self7Ma4.setSelected(false);
-                                    self7Ma4.setTouchEnabled(true);
-                                    self7Ma6.setSelected(false);
-                                    self7Ma6.setTouchEnabled(true);
-
-                                    self7MaBom.setSelected(true);
-                                    self7MaBom.setTouchEnabled(false);
-
-                                    self7JJG.setSelected(false);
-                                    self7JJG.setTouchEnabled(true);
-                                }
-                            }
-                        },
-
-                        round:
-                        {
-                            round4:
-                            {
-                                _run: function ()
-                                {
-                                    self7Round4 = this;
-                                },
-
-                                _click: function ()
-                                {
-                                    self7Round4.setSelected(true);
-                                    self7Round4.setTouchEnabled(false);
-                                    self7Round8.setSelected(false);
-                                    self7Round8.setTouchEnabled(true);
-
-                                    self7OK.loadTextureNormal("res/createRoomNew/queding_2.png");
-                                    self7OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
-                                }
-                            },
-
-                            round8:
-                            {
-                                _run: function ()
-                                {
-                                    self7Round8 = this;
-                                },
-                                _click: function ()
-                                {
-                                    self7Round4.setSelected(false);
-                                    self7Round4.setTouchEnabled(true);
-                                    self7Round8.setSelected(true);
-                                    self7Round8.setTouchEnabled(false);
-
-                                    self7OK.loadTextureNormal("res/createRoomNew/queding_3.png");
-                                    self7OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
-                                }
-                            }
-                        },
-
-                        //创建,判断金钱
-                        yes:
-                        {
-                            _run:function ()
-                            {
-                                self7OK = this;
-                            },
-
-                            _click: function (btn, evt)
-                            {
-                                var majiang = jsclient.data.gameInfo.gdmj;
-                                var isRound = self7Round4.isSelected();
-                                var needMoney = isRound ? majiang.round4 : majiang.round8;
-                                var haveMoney = jsclient.data.pinfo.money;
-
-                                var horse = 2;
-                                if (self7Ma2.isSelected())
-                                    horse = 2;
-                                else if (self7Ma4.isSelected())
-                                    horse = 4;
-                                else if (self7Ma6.isSelected())
-                                    horse = 6;
-                                else if(self7MaBom.isSelected())
-                                    horse = 1;
-
-                                if (haveMoney >= needMoney)
-                                {
-                                    jsclient.createRoom(
-                                        1,                        //游戏类型
-                                        isRound ? "round4" : "round8",//4局或8局
-                                        false,                     //吃胡
-                                        self7Feng.isSelected(),     //带风
-                                        false,                     //吃
-                                        true,                      //无效参数
-                                        self7CanHu7.isSelected(),   //7
-                                        self7CanFan7.isSelected(),  //7对加番
-                                        false,                     //258
-                                        self7Zhong.isSelected(),    //红中鬼牌
-                                        false,                      //红中为马
-                                        horse,                     //几匹马
-                                        self7MaBom.isSelected(),   //爆炸马
-                                        self7JJG.isSelected(),     //节节高
-                                        self7FanGui.isSelected(),   //翻鬼
-                                        self7ShuangGui.isSelected(),//双鬼
-                                        0,                          //番
-                                        3,                         //人数
-                                        false,                       //大胡
-                                        true,                        //无鬼加码
-                                        false,                        //无鬼翻倍
-                                        true,                         //4鬼胡牌
-                                        1,                             //4鬼加倍
-                                        false,                        //不可鸡胡
-                                        false,                      //可鸡胡
-                                        false,                         //马跟底
-                                        false,                          //马跟底对对胡
-                                        false,                          //门清加分
-                                        false,                          //百搭鸡胡
-                                        false                           //百搭大胡
-                                    );
-                                }
-                                else
-                                {
-                                    jsclient.uiPara = {lessMoney: true};
-                                    jsclient.Scene.addChild(new PayLayer());
-                                }
-                                createui.removeFromParent(true);
+                                writeCreateRoomCfg(roomCfg);
+                                // createui.removeFromParent(true);
+                                createui.visible = false;
                             }
                         },
                     },
@@ -2722,7 +3006,7 @@
 
                         _run: function ()
                         {
-                            gamemjs[8] = this;
+                            gamemjs[7] = this;
                         },
 
                         playType:
@@ -2817,6 +3101,9 @@
                                 {
                                     self8Magendi = this;
                                 },
+                                _click: function ()
+                                {
+                                }
                             },
 
                             canHu7:
@@ -3079,7 +3366,9 @@
                                         false,                          //马跟底对对胡
                                         false,                          //门清加分
                                         self8Bdjihu.isSelected(),       //百搭鸡胡
-                                        self8Bddahu.isSelected()        //百搭大胡
+                                        self8Bddahu.isSelected(),        //百搭大胡
+                                        false,                           //海底翻倍(潮汕)
+                                        false                           //可点炮(潮汕)
                                     );
                                 }
                                 else
@@ -3087,7 +3376,292 @@
                                     jsclient.uiPara = {lessMoney: true};
                                     jsclient.Scene.addChild(new PayLayer());
                                 }
-                                createui.removeFromParent(true);
+
+                                var roomCfg =
+                                {
+                                    bdhmj:
+                                    {
+                                        playType:
+                                        {
+                                            bddahu: self8Bddahu.isSelected() ? 1:0,
+                                            jihu: self8JiHu.isSelected() ? 1:0,
+                                            bdjihu:self8Bdjihu.isSelected() ? 1:0,
+                                            magendi:self8Magendi.isSelected() ? 1:0,
+                                            wuhuahu: self8Wuhuahu.isSelected() ? 1:0,
+                                            wuhuajiabei: self8Wuhuajiabei.isSelected() ? 1:0,
+                                            wuhuajiama: self8Wuhuajiama.isSelected() ? 1:0,
+                                            canHu7: self8CanHu7.isSelected() ? 1:0,
+                                            canFan7: self8CanFan7.isSelected() ? 1:0,
+                                        },
+
+                                        horse:
+                                        {
+                                            ma2: self8Ma2.isSelected() ? 1:0,
+                                            ma4: self8Ma4.isSelected() ? 1:0,
+                                            ma6: self8Ma6.isSelected() ? 1:0,
+                                        },
+
+                                        round:
+                                        {
+                                            round4: self8Round4.isSelected() ? 1:0,
+                                            round8: self8Round8.isSelected() ? 1:0,
+                                        }
+                                    }
+
+                                };
+
+                                writeCreateRoomCfg(roomCfg);
+                                // createui.removeFromParent(true);
+                                createui.visible = false;
+                            }
+                        },
+                    },
+
+                    chshmj:
+                    {
+                        self9CanDianPao: null,
+                        self9MaDiFen:null,
+                        self9HaiDiBei:null,
+                        self9Ma2: null,
+                        self9Ma4: null,
+                        self9Ma6: null,
+                        self9Round4: null,
+                        self9Round8: null,
+                        self9OK:null,
+
+                        _run: function ()
+                        {
+                            gamemjs[8] = this;
+                        },
+
+                        playType:
+                        {
+
+                            candianpao:
+                            {
+                                _run: function ()
+                                {
+                                    self9CanDianPao = this;
+                                },
+                                _click: function ()
+                                {
+                                }
+                            },
+
+                            difenma:
+                            {
+
+                                _run: function ()
+                                {
+                                    self9MaDiFen = this;
+                                },
+                                _click: function ()
+                                {
+                                }
+                            },
+
+                            hidifanbei:
+                            {
+
+                                _run: function ()
+                                {
+                                    self9HaiDiBei = this;
+                                },
+                                _click: function ()
+                                {
+                                }
+                            }
+                        },
+
+                        horse:
+                        {
+                            ma2:
+                            {
+                                _run: function ()
+                                {
+                                    self9Ma2 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self9Ma2.setSelected(true);
+                                    self9Ma2.setTouchEnabled(false);
+                                    self9Ma4.setSelected(false);
+                                    self9Ma4.setTouchEnabled(true);
+                                    self9Ma6.setSelected(false);
+                                    self9Ma6.setTouchEnabled(true);
+                                }
+                            },
+
+                            ma4:
+                            {
+                                _run: function ()
+                                {
+                                    self9Ma4 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self9Ma2.setSelected(false);
+                                    self9Ma2.setTouchEnabled(true);
+                                    self9Ma4.setSelected(true);
+                                    self9Ma4.setTouchEnabled(false);
+                                    self9Ma6.setSelected(false);
+                                    self9Ma6.setTouchEnabled(true);
+                                }
+                            },
+
+                            ma6:
+                            {
+                                _run: function ()
+                                {
+                                    self9Ma6 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self9Ma2.setSelected(false);
+                                    self9Ma2.setTouchEnabled(true);
+                                    self9Ma4.setSelected(false);
+                                    self9Ma4.setTouchEnabled(true);
+                                    self9Ma6.setSelected(true);
+                                    self9Ma6.setTouchEnabled(false);
+                                }
+                            },
+                        },
+
+                        round:
+                        {
+                            round4:
+                            {
+                                _run: function ()
+                                {
+                                    self9Round4 = this;
+                                },
+
+                                _click: function ()
+                                {
+                                    self9Round4.setSelected(true);
+                                    self9Round4.setTouchEnabled(false);
+                                    self9Round8.setSelected(false);
+                                    self9Round8.setTouchEnabled(true);
+
+                                    self9OK.loadTextureNormal("res/createRoomNew/queding_2.png");
+                                    self9OK.loadTexturePressed("res/createRoomNew/queding_2_press.png");
+                                }
+                            },
+
+                            round8:
+                            {
+                                _run: function ()
+                                {
+                                    self9Round8 = this;
+                                },
+                                _click: function ()
+                                {
+                                    self9Round4.setSelected(false);
+                                    self9Round4.setTouchEnabled(true);
+                                    self9Round8.setSelected(true);
+                                    self9Round8.setTouchEnabled(false);
+
+                                    self9OK.loadTextureNormal("res/createRoomNew/queding_3.png");
+                                    self9OK.loadTexturePressed("res/createRoomNew/queding_3_press.png");
+                                }
+                            }
+                        },
+
+                        //创建,判断金钱
+                        yes:
+                        {
+                            _run:function ()
+                            {
+                                self9OK = this;
+                            },
+                            _click: function (btn, evt)
+                            {
+                                var majiang = jsclient.data.gameInfo.gdmj;
+                                var isRound = self9Round4.isSelected();
+                                var needMoney = isRound ? majiang.round4 : majiang.round8;
+                                var haveMoney = jsclient.data.pinfo.money;
+
+                                var horse = 2;
+                                if (self9Ma2.isSelected())
+                                    horse = 2;
+                                else if (self9Ma4.isSelected())
+                                    horse = 4;
+                                else if (self9Ma6.isSelected())
+                                    horse = 6;
+
+                                if (haveMoney >= needMoney)
+                                {
+                                    jsclient.createRoom(
+                                        8,                        //游戏类型
+                                        isRound ? "round4" : "round8",//4局或8局
+                                        false,                     //吃胡
+                                        true,                      //带风
+                                        false,                     //吃
+                                        true,                      //无效参数
+                                        true,                     //7
+                                        false,                      //7加番
+                                        false,                     //258
+                                        false,                     //中为鬼牌
+                                        false,                      //中为马
+                                        horse,                     //几匹马
+                                        false,                      //爆炸马
+                                        false,                      //节节高
+                                        false,                       //翻鬼
+                                        false,                      //双鬼
+                                        0,                           //番
+                                        4,                          //人数
+                                        false,                       //大胡
+                                        false,                        //无鬼加码
+                                        false,                        //无鬼翻倍
+                                        false,                         //4鬼胡牌
+                                        1,                             //4鬼加倍
+                                        false,                       //不可鸡胡
+                                        false,                      //可鸡胡
+                                        self9MaDiFen.isSelected(),    //马跟底
+                                        false,                         //马跟底对对胡
+                                        false,                       //门清加分
+                                        false,                          //百搭鸡胡
+                                        false,                          //百搭大胡
+                                        self9HaiDiBei.isSelected(),     //海底翻倍
+                                        self9CanDianPao.isSelected()    //可点炮(潮汕)
+                                    );
+                                }
+                                else
+                                {
+                                    jsclient.uiPara = {lessMoney: true};
+                                    jsclient.Scene.addChild(new PayLayer());
+                                }
+
+                                var roomCfg =
+                                {
+                                    chshmj:
+                                    {
+                                        playType:
+                                        {
+                                            candianpao: self9CanDianPao.isSelected() ? 1:0,
+                                            difenma: self9MaDiFen.isSelected() ? 1:0,
+                                            hidifanbei:self9HaiDiBei.isSelected() ? 1:0,
+                                        },
+
+                                        horse:
+                                        {
+                                            ma2: self9Ma2.isSelected() ? 1:0,
+                                            ma4: self9Ma4.isSelected() ? 1:0,
+                                            ma6: self9Ma6.isSelected() ? 1:0,
+                                        },
+
+                                        round:
+                                        {
+                                            round4: self9Round4.isSelected() ? 1:0,
+                                            round8: self9Round8.isSelected() ? 1:0,
+                                        }
+                                    }
+
+                                };
+
+                                writeCreateRoomCfg(roomCfg);
+                                // createui.removeFromParent(true);
+                                createui.visible = false;
                             }
                         },
                     },
@@ -3102,6 +3676,10 @@
                 this.addChild(jsonui.node);
                 createui = this;
                 setPanelContentByType(1);
+
+                setCreateRoomSelected(this);
+                jsclient.creatrUI = this;
+
                 return true;
             }
         });

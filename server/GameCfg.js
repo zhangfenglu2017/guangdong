@@ -1,5 +1,5 @@
 module.exports = function(app,server,gameid){return {
-   info:{   round4:2, round8:3 },
+   info:{   round4:2, round8:3,round16:5 },
    rooms:
    {
 	   symj1:{name:"symj1",scene:"", full:3,type:"symj",removeLess:true,reconnect:true,vip:true},
@@ -9,7 +9,8 @@ module.exports = function(app,server,gameid){return {
    viptable:
    {
 	   round4:{round:4, money:2 },
-       round8:{round:8, money:3 }
+       round8:{round:8, money:3 },
+       round16:{round:16, money:5 }
    },
    initData:
    {

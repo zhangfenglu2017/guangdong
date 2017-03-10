@@ -2137,106 +2137,6 @@
                 "ctype": "ImageViewObjectData"
               },
               {
-                "FontSize": 30,
-                "LabelText": "+100",
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 1060.0,
-                  "Y": 600.0
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {
-                  "R": 225,
-                  "G": 0,
-                  "B": 16
-                },
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "LeftMargin": 1030.0,
-                "RightMargin": -1090.0,
-                "TopMargin": -615.0,
-                "BottomMargin": 585.0,
-                "Tag": 1607,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "gameEndNew/t-hu.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 47,
-                    "Scale9OriginY": 38,
-                    "Scale9Width": 162,
-                    "Scale9Height": 177,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 117.0,
-                      "Y": 14.0
-                    },
-                    "Scale": {
-                      "ScaleX": 0.4,
-                      "ScaleY": 0.4
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 1.95,
-                      "Y": 0.4667
-                    },
-                    "PreSize": {
-                      "X": 4.2667,
-                      "Y": 8.4333
-                    },
-                    "LeftMargin": -11.0,
-                    "RightMargin": -185.0,
-                    "TopMargin": -110.5,
-                    "BottomMargin": -112.5,
-                    "Tag": 203,
-                    "ActionTag": 1121187918,
-                    "Size": {
-                      "X": 256.0,
-                      "Y": 253.0
-                    },
-                    "Name": "hu",
-                    "ctype": "ImageViewObjectData"
-                  }
-                ],
-                "ActionTag": -1168802329,
-                "Size": {
-                  "X": 60.0,
-                  "Y": 30.0
-                },
-                "Name": "winNum",
-                "ctype": "TextObjectData"
-              },
-              {
                 "FileData": {
                   "Type": "Normal",
                   "Path": "gameEndNew/Photo_frame_01.png",
@@ -2904,6 +2804,106 @@
                 },
                 "Name": "head",
                 "ctype": "SpriteObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "+100",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1060.0,
+                  "Y": 600.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 225,
+                  "G": 0,
+                  "B": 16
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 1030.0,
+                "RightMargin": -1090.0,
+                "TopMargin": -615.0,
+                "BottomMargin": 585.0,
+                "Tag": 1607,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/t-hu.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 47,
+                    "Scale9OriginY": 38,
+                    "Scale9Width": 162,
+                    "Scale9Height": 177,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 117.0,
+                      "Y": 14.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.4,
+                      "ScaleY": 0.4
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.95,
+                      "Y": 0.4667
+                    },
+                    "PreSize": {
+                      "X": 4.2667,
+                      "Y": 8.4333
+                    },
+                    "LeftMargin": -11.0,
+                    "RightMargin": -185.0,
+                    "TopMargin": -110.5,
+                    "BottomMargin": -112.5,
+                    "Tag": 203,
+                    "ActionTag": 1121187918,
+                    "Size": {
+                      "X": 256.0,
+                      "Y": 253.0
+                    },
+                    "Name": "hu",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -1168802329,
+                "Size": {
+                  "X": 60.0,
+                  "Y": 30.0
+                },
+                "Name": "winNum",
+                "ctype": "TextObjectData"
               }
             ],
             "ActionTag": -1640050335,
@@ -2984,106 +2984,6 @@
                 },
                 "Name": "backbar",
                 "ctype": "ImageViewObjectData"
-              },
-              {
-                "FontSize": 30,
-                "LabelText": "+100",
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 1058.8153,
-                  "Y": 450.0
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {
-                  "R": 225,
-                  "G": 0,
-                  "B": 16
-                },
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "LeftMargin": 1028.8153,
-                "RightMargin": -1088.8153,
-                "TopMargin": -465.0,
-                "BottomMargin": 435.0,
-                "Tag": 587,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "gameEndNew/t-hu.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 47,
-                    "Scale9OriginY": 38,
-                    "Scale9Width": 162,
-                    "Scale9Height": 177,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 117.0,
-                      "Y": 14.0
-                    },
-                    "Scale": {
-                      "ScaleX": 0.4,
-                      "ScaleY": 0.4
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 1.95,
-                      "Y": 0.4667
-                    },
-                    "PreSize": {
-                      "X": 4.2667,
-                      "Y": 8.4333
-                    },
-                    "LeftMargin": -11.0,
-                    "RightMargin": -185.0,
-                    "TopMargin": -110.5,
-                    "BottomMargin": -112.5,
-                    "Tag": 207,
-                    "ActionTag": 1584850004,
-                    "Size": {
-                      "X": 256.0,
-                      "Y": 253.0
-                    },
-                    "Name": "hu",
-                    "ctype": "ImageViewObjectData"
-                  }
-                ],
-                "ActionTag": -1228956247,
-                "Size": {
-                  "X": 60.0,
-                  "Y": 30.0
-                },
-                "Name": "winNum",
-                "ctype": "TextObjectData"
               },
               {
                 "FileData": {
@@ -3753,6 +3653,106 @@
                 },
                 "Name": "head",
                 "ctype": "SpriteObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "+100",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1058.8153,
+                  "Y": 450.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 225,
+                  "G": 0,
+                  "B": 16
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 1028.8153,
+                "RightMargin": -1088.8153,
+                "TopMargin": -465.0,
+                "BottomMargin": 435.0,
+                "Tag": 587,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/t-hu.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 47,
+                    "Scale9OriginY": 38,
+                    "Scale9Width": 162,
+                    "Scale9Height": 177,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 117.0,
+                      "Y": 14.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.4,
+                      "ScaleY": 0.4
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.95,
+                      "Y": 0.4667
+                    },
+                    "PreSize": {
+                      "X": 4.2667,
+                      "Y": 8.4333
+                    },
+                    "LeftMargin": -11.0,
+                    "RightMargin": -185.0,
+                    "TopMargin": -110.5,
+                    "BottomMargin": -112.5,
+                    "Tag": 207,
+                    "ActionTag": 1584850004,
+                    "Size": {
+                      "X": 256.0,
+                      "Y": 253.0
+                    },
+                    "Name": "hu",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -1228956247,
+                "Size": {
+                  "X": 60.0,
+                  "Y": 30.0
+                },
+                "Name": "winNum",
+                "ctype": "TextObjectData"
               }
             ],
             "ActionTag": 1581135791,
@@ -3833,106 +3833,6 @@
                 },
                 "Name": "backbar",
                 "ctype": "ImageViewObjectData"
-              },
-              {
-                "FontSize": 30,
-                "LabelText": "+100",
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 1060.0,
-                  "Y": 300.0
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {
-                  "R": 225,
-                  "G": 0,
-                  "B": 16
-                },
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "LeftMargin": 1030.0,
-                "RightMargin": -1090.0,
-                "TopMargin": -315.0,
-                "BottomMargin": 285.0,
-                "Tag": 594,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "gameEndNew/t-hu.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 47,
-                    "Scale9OriginY": 38,
-                    "Scale9Width": 162,
-                    "Scale9Height": 177,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 117.0,
-                      "Y": 14.0
-                    },
-                    "Scale": {
-                      "ScaleX": 0.4,
-                      "ScaleY": 0.4
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 1.95,
-                      "Y": 0.4667
-                    },
-                    "PreSize": {
-                      "X": 4.2667,
-                      "Y": 8.4333
-                    },
-                    "LeftMargin": -11.0,
-                    "RightMargin": -185.0,
-                    "TopMargin": -110.5,
-                    "BottomMargin": -112.5,
-                    "Tag": 208,
-                    "ActionTag": 613880730,
-                    "Size": {
-                      "X": 256.0,
-                      "Y": 253.0
-                    },
-                    "Name": "hu",
-                    "ctype": "ImageViewObjectData"
-                  }
-                ],
-                "ActionTag": -2038878610,
-                "Size": {
-                  "X": 60.0,
-                  "Y": 30.0
-                },
-                "Name": "winNum",
-                "ctype": "TextObjectData"
               },
               {
                 "FileData": {
@@ -4602,6 +4502,106 @@
                 },
                 "Name": "head",
                 "ctype": "SpriteObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "+100",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1060.0,
+                  "Y": 300.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 225,
+                  "G": 0,
+                  "B": 16
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 1030.0,
+                "RightMargin": -1090.0,
+                "TopMargin": -315.0,
+                "BottomMargin": 285.0,
+                "Tag": 594,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/t-hu.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 47,
+                    "Scale9OriginY": 38,
+                    "Scale9Width": 162,
+                    "Scale9Height": 177,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 117.0,
+                      "Y": 14.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.4,
+                      "ScaleY": 0.4
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.95,
+                      "Y": 0.4667
+                    },
+                    "PreSize": {
+                      "X": 4.2667,
+                      "Y": 8.4333
+                    },
+                    "LeftMargin": -11.0,
+                    "RightMargin": -185.0,
+                    "TopMargin": -110.5,
+                    "BottomMargin": -112.5,
+                    "Tag": 208,
+                    "ActionTag": 613880730,
+                    "Size": {
+                      "X": 256.0,
+                      "Y": 253.0
+                    },
+                    "Name": "hu",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -2038878610,
+                "Size": {
+                  "X": 60.0,
+                  "Y": 30.0
+                },
+                "Name": "winNum",
+                "ctype": "TextObjectData"
               }
             ],
             "ActionTag": -845467139,
@@ -4682,106 +4682,6 @@
                 },
                 "Name": "backbar",
                 "ctype": "ImageViewObjectData"
-              },
-              {
-                "FontSize": 30,
-                "LabelText": "+100",
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 1060.0,
-                  "Y": 150.0
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {
-                  "R": 225,
-                  "G": 0,
-                  "B": 16
-                },
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "LeftMargin": 1030.0,
-                "RightMargin": -1090.0,
-                "TopMargin": -165.0,
-                "BottomMargin": 135.0,
-                "Tag": 601,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "gameEndNew/t-hu.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 47,
-                    "Scale9OriginY": 38,
-                    "Scale9Width": 162,
-                    "Scale9Height": 177,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 117.0,
-                      "Y": 14.0
-                    },
-                    "Scale": {
-                      "ScaleX": 0.4,
-                      "ScaleY": 0.4
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 1.95,
-                      "Y": 0.4667
-                    },
-                    "PreSize": {
-                      "X": 4.2667,
-                      "Y": 8.4333
-                    },
-                    "LeftMargin": -11.0,
-                    "RightMargin": -185.0,
-                    "TopMargin": -110.5,
-                    "BottomMargin": -112.5,
-                    "Tag": 209,
-                    "ActionTag": -1965314691,
-                    "Size": {
-                      "X": 256.0,
-                      "Y": 253.0
-                    },
-                    "Name": "hu",
-                    "ctype": "ImageViewObjectData"
-                  }
-                ],
-                "ActionTag": 1781665316,
-                "Size": {
-                  "X": 60.0,
-                  "Y": 30.0
-                },
-                "Name": "winNum",
-                "ctype": "TextObjectData"
               },
               {
                 "FileData": {
@@ -5451,6 +5351,106 @@
                 },
                 "Name": "head",
                 "ctype": "SpriteObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "+100",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1060.0,
+                  "Y": 150.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 225,
+                  "G": 0,
+                  "B": 16
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 1030.0,
+                "RightMargin": -1090.0,
+                "TopMargin": -165.0,
+                "BottomMargin": 135.0,
+                "Tag": 601,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/t-hu.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 47,
+                    "Scale9OriginY": 38,
+                    "Scale9Width": 162,
+                    "Scale9Height": 177,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 117.0,
+                      "Y": 14.0
+                    },
+                    "Scale": {
+                      "ScaleX": 0.4,
+                      "ScaleY": 0.4
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 1.95,
+                      "Y": 0.4667
+                    },
+                    "PreSize": {
+                      "X": 4.2667,
+                      "Y": 8.4333
+                    },
+                    "LeftMargin": -11.0,
+                    "RightMargin": -185.0,
+                    "TopMargin": -110.5,
+                    "BottomMargin": -112.5,
+                    "Tag": 209,
+                    "ActionTag": -1965314691,
+                    "Size": {
+                      "X": 256.0,
+                      "Y": 253.0
+                    },
+                    "Name": "hu",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 1781665316,
+                "Size": {
+                  "X": 60.0,
+                  "Y": 30.0
+                },
+                "Name": "winNum",
+                "ctype": "TextObjectData"
               }
             ],
             "ActionTag": -167718535,

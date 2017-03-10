@@ -101,69 +101,113 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="tableid" ActionTag="-113143812" Tag="129" IconVisible="False" LeftMargin="117.5189" RightMargin="686.4811" TopMargin="31.3471" BottomMargin="83.6529" FontSize="24" LabelText="房间号:123456dfgdfgsd" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="252.0000" Y="24.0000" />
+              <AbstractNodeData Name="tableid" ActionTag="165171848" Tag="866" IconVisible="False" LeftMargin="120.0000" RightMargin="636.0000" TopMargin="27.0000" BottomMargin="88.0000" IsCustomSize="True" FontSize="24" LabelText="房间号:123456dfgdfgsd" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="300.0000" Y="24.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="117.5189" Y="95.6529" />
+                <Position X="120.0000" Y="100.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="0.1113" Y="0.6882" />
-                <PreSize X="0.2386" Y="0.1727" />
+                <PrePosition X="0.1136" Y="0.7194" />
+                <PreSize X="0.2841" Y="0.1727" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="time" ActionTag="-10047933" Tag="130" IconVisible="False" LeftMargin="494.1582" RightMargin="297.8418" TopMargin="31.3471" BottomMargin="83.6529" FontSize="24" LabelText="对战时间对战时sdfsdfsf" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="264.0000" Y="24.0000" />
+              <AbstractNodeData Name="time" ActionTag="-1393636697" Tag="865" IconVisible="False" LeftMargin="500.0000" RightMargin="256.0000" TopMargin="27.0000" BottomMargin="88.0000" IsCustomSize="True" FontSize="24" LabelText="对战时间对战时sdfsdfsf" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="300.0000" Y="24.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="494.1582" Y="95.6529" />
+                <Position X="500.0000" Y="100.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="0.4680" Y="0.6882" />
-                <PreSize X="0.2500" Y="0.1727" />
+                <PrePosition X="0.4735" Y="0.7194" />
+                <PreSize X="0.2841" Y="0.1727" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="player0" ActionTag="-1340340863" Tag="131" IconVisible="False" LeftMargin="117.5189" RightMargin="674.4811" TopMargin="63.7368" BottomMargin="51.2632" FontSize="24" LabelText="房间号:123456sdfsadsdf" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="264.0000" Y="24.0000" />
+              <AbstractNodeData Name="player0" ActionTag="-638060963" Tag="864" IconVisible="False" LeftMargin="120.0000" RightMargin="736.0000" TopMargin="62.0000" BottomMargin="53.0000" IsCustomSize="True" FontSize="24" LabelText="最多显示这么多文字" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="200.0000" Y="24.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="117.5189" Y="63.2632" />
+                <Position X="120.0000" Y="65.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="0.1113" Y="0.4551" />
-                <PreSize X="0.2500" Y="0.1727" />
+                <PrePosition X="0.1136" Y="0.4676" />
+                <PreSize X="0.1894" Y="0.1727" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="player1" ActionTag="-1440806368" Tag="132" IconVisible="False" LeftMargin="493.1582" RightMargin="322.8418" TopMargin="63.7368" BottomMargin="51.2632" FontSize="24" LabelText="房间号:12345621233sd" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="240.0000" Y="24.0000" />
+              <AbstractNodeData Name="player0num" ActionTag="1494653430" Tag="863" IconVisible="False" LeftMargin="340.0000" RightMargin="636.0000" TopMargin="62.0000" BottomMargin="53.0000" IsCustomSize="True" FontSize="24" LabelText=":1000" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="80.0000" Y="24.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="493.1582" Y="63.2632" />
+                <Position X="340.0000" Y="65.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="0.4670" Y="0.4551" />
-                <PreSize X="0.2273" Y="0.1727" />
+                <PrePosition X="0.3220" Y="0.4676" />
+                <PreSize X="0.0758" Y="0.1727" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="player2" ActionTag="1924321724" Tag="133" IconVisible="False" LeftMargin="117.5189" RightMargin="674.4811" TopMargin="96.1267" BottomMargin="18.8733" FontSize="24" LabelText="房间号:123456sdfsadsdf" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="264.0000" Y="24.0000" />
+              <AbstractNodeData Name="player1" ActionTag="1715234443" Tag="862" IconVisible="False" LeftMargin="500.0000" RightMargin="356.0000" TopMargin="62.0000" BottomMargin="53.0000" IsCustomSize="True" FontSize="24" LabelText="最多显示这么多文字" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="200.0000" Y="24.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="117.5189" Y="30.8733" />
+                <Position X="500.0000" Y="65.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="0.1113" Y="0.2221" />
-                <PreSize X="0.2500" Y="0.1727" />
+                <PrePosition X="0.4735" Y="0.4676" />
+                <PreSize X="0.1894" Y="0.1727" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="player3" ActionTag="30670079" Tag="134" IconVisible="False" LeftMargin="494.1582" RightMargin="309.8418" TopMargin="96.1266" BottomMargin="18.8734" FontSize="24" LabelText="房间号:123456sdfdssdf" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="252.0000" Y="24.0000" />
+              <AbstractNodeData Name="player1num" ActionTag="-1741413550" Tag="861" IconVisible="False" LeftMargin="720.0000" RightMargin="256.0000" TopMargin="62.0000" BottomMargin="53.0000" IsCustomSize="True" FontSize="24" LabelText=":1000" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="80.0000" Y="24.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="494.1582" Y="30.8734" />
+                <Position X="720.0000" Y="65.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="108" G="37" B="20" />
-                <PrePosition X="0.4680" Y="0.2221" />
-                <PreSize X="0.2386" Y="0.1727" />
+                <PrePosition X="0.6818" Y="0.4676" />
+                <PreSize X="0.0758" Y="0.1727" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="player2" ActionTag="167790281" Tag="860" IconVisible="False" LeftMargin="120.0000" RightMargin="736.0000" TopMargin="97.0000" BottomMargin="18.0000" IsCustomSize="True" FontSize="24" LabelText="最多显示这么多文字 " VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="200.0000" Y="24.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="120.0000" Y="30.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="108" G="37" B="20" />
+                <PrePosition X="0.1136" Y="0.2158" />
+                <PreSize X="0.1894" Y="0.1727" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="player2num" ActionTag="-2126298435" Tag="859" IconVisible="False" LeftMargin="340.0000" RightMargin="636.0000" TopMargin="97.0000" BottomMargin="18.0000" IsCustomSize="True" FontSize="24" LabelText=":1000&#xA;" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="80.0000" Y="24.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="340.0000" Y="30.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="108" G="37" B="20" />
+                <PrePosition X="0.3220" Y="0.2158" />
+                <PreSize X="0.0758" Y="0.1727" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="player3" ActionTag="1894416226" Tag="858" IconVisible="False" LeftMargin="500.0000" RightMargin="356.0000" TopMargin="97.0000" BottomMargin="18.0000" IsCustomSize="True" FontSize="24" LabelText="最多显示这么多文字" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="200.0000" Y="24.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="500.0000" Y="30.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="108" G="37" B="20" />
+                <PrePosition X="0.4735" Y="0.2158" />
+                <PreSize X="0.1894" Y="0.1727" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="player3num" ActionTag="963931251" Tag="857" IconVisible="False" LeftMargin="720.0000" RightMargin="256.0000" TopMargin="96.9999" BottomMargin="18.0001" IsCustomSize="True" FontSize="24" LabelText=":1000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="80.0000" Y="24.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="720.0000" Y="30.0001" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="108" G="37" B="20" />
+                <PrePosition X="0.6818" Y="0.2158" />
+                <PreSize X="0.0758" Y="0.1727" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

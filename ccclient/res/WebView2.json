@@ -289,7 +289,7 @@
                     },
                     "Position": {
                       "X": 99.9998,
-                      "Y": 520.0009
+                      "Y": 440.0016
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -299,16 +299,16 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.4545,
-                      "Y": 0.8125
+                      "Y": 0.6875
                     },
                     "PreSize": {
                       "X": 0.9318,
-                      "Y": 0.1219
+                      "Y": 0.1083
                     },
                     "LeftMargin": -2.5002,
                     "RightMargin": 17.5002,
-                    "TopMargin": 80.9991,
-                    "BottomMargin": 481.0009,
+                    "TopMargin": 160.9984,
+                    "BottomMargin": 401.0016,
                     "Tag": 235,
                     "ActionTag": -2001101897,
                     "Size": {
@@ -364,7 +364,7 @@
                     },
                     "Position": {
                       "X": 99.9998,
-                      "Y": 360.0001
+                      "Y": 360.0008
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -378,12 +378,12 @@
                     },
                     "PreSize": {
                       "X": 0.9318,
-                      "Y": 0.1219
+                      "Y": 0.1083
                     },
                     "LeftMargin": -2.5002,
                     "RightMargin": 17.5002,
-                    "TopMargin": 240.9999,
-                    "BottomMargin": 321.0001,
+                    "TopMargin": 240.9992,
+                    "BottomMargin": 321.0008,
                     "Tag": 234,
                     "ActionTag": -1807520407,
                     "Size": {
@@ -439,7 +439,7 @@
                     },
                     "Position": {
                       "X": 99.9998,
-                      "Y": 280.0
+                      "Y": 280.0006
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -453,12 +453,12 @@
                     },
                     "PreSize": {
                       "X": 0.9318,
-                      "Y": 0.1219
+                      "Y": 0.1083
                     },
                     "LeftMargin": -2.5002,
                     "RightMargin": 17.5002,
-                    "TopMargin": 321.0,
-                    "BottomMargin": 241.0,
+                    "TopMargin": 320.9994,
+                    "BottomMargin": 241.0006,
                     "Tag": 352,
                     "ActionTag": 2053477970,
                     "Size": {
@@ -514,7 +514,7 @@
                     },
                     "Position": {
                       "X": 100.0003,
-                      "Y": 199.9998
+                      "Y": 200.0004
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -528,12 +528,12 @@
                     },
                     "PreSize": {
                       "X": 0.9318,
-                      "Y": 0.1219
+                      "Y": 0.1083
                     },
                     "LeftMargin": -2.4997,
                     "RightMargin": 17.4997,
-                    "TopMargin": 401.0002,
-                    "BottomMargin": 160.9998,
+                    "TopMargin": 400.9996,
+                    "BottomMargin": 161.0004,
                     "Tag": 121,
                     "ActionTag": 1725460833,
                     "Size": {
@@ -589,7 +589,7 @@
                     },
                     "Position": {
                       "X": 99.9998,
-                      "Y": 119.9998
+                      "Y": 120.0003
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -603,12 +603,12 @@
                     },
                     "PreSize": {
                       "X": 0.9318,
-                      "Y": 0.1219
+                      "Y": 0.1083
                     },
                     "LeftMargin": -2.5002,
                     "RightMargin": 17.5002,
-                    "TopMargin": 481.0002,
-                    "BottomMargin": 80.9998,
+                    "TopMargin": 480.9997,
+                    "BottomMargin": 81.0003,
                     "Tag": 446,
                     "ActionTag": -1990082813,
                     "Size": {
@@ -664,7 +664,7 @@
                     },
                     "Position": {
                       "X": 100.0003,
-                      "Y": 39.9998
+                      "Y": 40.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -678,12 +678,12 @@
                     },
                     "PreSize": {
                       "X": 0.9318,
-                      "Y": 0.1219
+                      "Y": 0.1083
                     },
                     "LeftMargin": -2.4997,
                     "RightMargin": 17.4997,
-                    "TopMargin": 561.0002,
-                    "BottomMargin": 0.9998,
+                    "TopMargin": 561.0001,
+                    "BottomMargin": 1.0,
                     "Tag": 542,
                     "ActionTag": 1301926382,
                     "Size": {
@@ -691,81 +691,6 @@
                       "Y": 78.0
                     },
                     "Name": "ybzhmjtable",
-                    "ctype": "ButtonObjectData"
-                  },
-                  {
-                    "FontSize": 14,
-                    "ButtonText": "",
-                    "TextColor": {
-                      "R": 65,
-                      "G": 65,
-                      "B": 70
-                    },
-                    "DisabledFileData": {
-                      "Type": "Normal",
-                      "Path": "createRoomNew/y_sanrentuidaohu_normal.png",
-                      "Plist": ""
-                    },
-                    "PressedFileData": {
-                      "Type": "Normal",
-                      "Path": "createRoomNew/y_sanrentuidaohu_normal.png",
-                      "Plist": ""
-                    },
-                    "NormalFileData": {
-                      "Type": "Normal",
-                      "Path": "createRoomNew/y_sanrentuidaohu_press.png",
-                      "Plist": ""
-                    },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 15,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 175,
-                    "Scale9Height": 56,
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
-                    "TouchEnable": true,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 100.0,
-                      "Y": 439.9999
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.4545,
-                      "Y": 0.6875
-                    },
-                    "PreSize": {
-                      "X": 0.9318,
-                      "Y": 0.1219
-                    },
-                    "LeftMargin": -2.5,
-                    "RightMargin": 17.5,
-                    "TopMargin": 161.0001,
-                    "BottomMargin": 400.9999,
-                    "Tag": 657,
-                    "ActionTag": -1303672433,
-                    "Size": {
-                      "X": 205.0,
-                      "Y": 78.0
-                    },
-                    "Name": "srfmjtable",
                     "ctype": "ButtonObjectData"
                   },
                   {
@@ -814,7 +739,82 @@
                     },
                     "Position": {
                       "X": 100.0003,
-                      "Y": 600.0
+                      "Y": 520.0009
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4545,
+                      "Y": 0.8125
+                    },
+                    "PreSize": {
+                      "X": 0.9318,
+                      "Y": 0.1083
+                    },
+                    "LeftMargin": -2.4997,
+                    "RightMargin": 17.4997,
+                    "TopMargin": 80.9991,
+                    "BottomMargin": 481.0009,
+                    "Tag": 816,
+                    "ActionTag": 1975725007,
+                    "Size": {
+                      "X": 205.0,
+                      "Y": 78.0
+                    },
+                    "Name": "bdhmjtable",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_chaoshan_normal.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_chaoshan_normal.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "createRoomNew/y_chaoshan_press.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 175,
+                    "Scale9Height": 56,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 100.0003,
+                      "Y": 600.0017
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -828,19 +828,19 @@
                     },
                     "PreSize": {
                       "X": 0.9318,
-                      "Y": 0.1219
+                      "Y": 0.1083
                     },
                     "LeftMargin": -2.4997,
                     "RightMargin": 17.4997,
-                    "TopMargin": 1.0,
-                    "BottomMargin": 561.0,
-                    "Tag": 816,
-                    "ActionTag": 1975725007,
+                    "TopMargin": 0.9983,
+                    "BottomMargin": 561.0017,
+                    "Tag": 542,
+                    "ActionTag": -1084352525,
                     "Size": {
                       "X": 205.0,
                       "Y": 78.0
                     },
-                    "Name": "bdhmjtable",
+                    "Name": "chshmjtable",
                     "ctype": "ButtonObjectData"
                   }
                 ],
@@ -1036,6 +1036,8 @@
         "createRoomNew/jp-yeqian_press.png",
         "createRoomNew/y_100_1.png",
         "createRoomNew/y_100_2.png",
+        "createRoomNew/y_chaoshan_normal.png",
+        "createRoomNew/y_chaoshan_press.png",
         "createRoomNew/y_donggua_normal.png",
         "createRoomNew/y_donggua_press.png",
         "createRoomNew/y_guangzhoutuidaohu_normal.png",
@@ -1044,8 +1046,6 @@
         "createRoomNew/y_heyuan_2.png",
         "createRoomNew/y_huizhouzhuang_normal.png",
         "createRoomNew/y_huizhouzhuang_press.png",
-        "createRoomNew/y_sanrentuidaohu_normal.png",
-        "createRoomNew/y_sanrentuidaohu_press.png",
         "createRoomNew/y_xianggang_normal.png",
         "createRoomNew/y_xianggang_press.png",
         "Default/Button_Disable.png",

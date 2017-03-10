@@ -117,9 +117,16 @@
           <Image Name="shaizi_anmi9.png" />
         </Folder>
         <Folder Name="createRoomNew">
+          <Image Name="100.png" />
+          <Image Name="100_press.png" />
+          <Image Name="bac4.png" />
           <Image Name="btn_close_normal.png" />
           <Image Name="btn_close_press.png" />
+          <Image Name="ccmj.png" />
+          <Image Name="ccmj_press.png" />
           <Image Name="circle_02.png" />
+          <Image Name="dgmj.png" />
+          <Image Name="dgmj_press.png" />
           <Image Name="diban.png" />
           <Image Name="Duigou.png" />
           <Image Name="fang.png" />
@@ -128,6 +135,14 @@
           <Image Name="floor-9.png" />
           <Image Name="guanbi-normal.png" />
           <Image Name="guanbi-press.png" />
+          <Image Name="gztdh.png" />
+          <Image Name="gztdh_press.png" />
+          <Image Name="hybd.png" />
+          <Image Name="hybd_press.png" />
+          <Image Name="hzz.png" />
+          <Image Name="hzz_press.png" />
+          <Image Name="jph.png" />
+          <Image Name="jph_press.png" />
           <Image Name="jp-yeqian.png" />
           <Image Name="jp-yeqian_press.png" />
           <Image Name="line.png" />
@@ -138,12 +153,21 @@
           <Image Name="queding_2_press.png" />
           <Image Name="queding_3.png" />
           <Image Name="queding_3_press.png" />
+          <Image Name="srtdh.png" />
+          <Image Name="srtdh_press.png" />
+          <Image Name="szmj.png" />
+          <Image Name="szmj_press.png" />
           <Image Name="t_chuangjianfangjian.png" />
+          <Image Name="t_cjfj.png" />
           <Image Name="window-big.png" />
+          <Image Name="xgmj.png" />
+          <Image Name="xgmj_press.png" />
           <Image Name="xianshimianfei.png" />
           <Image Name="xinwanfa.png" />
           <Image Name="y_100_1.png" />
           <Image Name="y_100_2.png" />
+          <Image Name="y_chaoshan_normal.png" />
+          <Image Name="y_chaoshan_press.png" />
           <Image Name="y_donggua_normal.png" />
           <Image Name="y_donggua_press.png" />
           <Image Name="y_guangzhoutuidaohu_normal.png" />
@@ -158,6 +182,8 @@
           <Image Name="y_shenzhen_press.png" />
           <Image Name="y_xianggang_normal.png" />
           <Image Name="y_xianggang_press.png" />
+          <Image Name="zjmj.png" />
+          <Image Name="zjmj_press.png" />
         </Folder>
         <Folder Name="Default">
           <Image Name="Button_Disable.png" />
@@ -523,9 +549,11 @@
             <Image Name="floor_16.png" />
           </Folder>
           <Image Name="100zhang.png" />
+          <Image Name="10pi.png" />
           <Image Name="2pi.png" />
           <Image Name="4pi.png" />
           <Image Name="6pi.png" />
+          <Image Name="8pi.png" />
           <Image Name="bac_02.png" />
           <Image Name="bac_corner_01.png" />
           <Image Name="bac_corner_02.png" />
@@ -568,7 +596,12 @@
           <Image Name="btn_voice_press.png" />
           <Image Name="budaifeng.png" />
           <Image Name="bukejihu.png" />
+          <Image Name="butma1.png" />
+          <Image Name="butma2.png" />
           <Image Name="canJiHu.png" />
+          <Image Name="cardjiantou.png" />
+          <Image Name="cardmask.png" />
+          <Image Name="chaoshanmajiang.png" />
           <Image Name="chulai.png" />
           <Image Name="circleWind0.png" />
           <Image Name="daifeng.png" />
@@ -586,7 +619,9 @@
           <Image Name="floor_06.png" />
           <Image Name="floor_08.png" />
           <Image Name="floor_09.png" />
+          <Image Name="floor_16.png" />
           <Image Name="guangzhoumajiang.png" />
+          <Image Name="haidifanbei.png" />
           <Image Name="huizhoumajiang.png" />
           <Image Name="icon_electricity_01.png" />
           <Image Name="icon_electricity_02.png" />
@@ -600,6 +635,7 @@
           <Image Name="jiejiegao.png" />
           <Image Name="jinqu.png" />
           <Image Name="jph.png" />
+          <Image Name="kedianpao.png" />
           <Image Name="kehu.png" />
           <Image Name="kuang.png" />
           <Image Name="maduiduihu.png" />

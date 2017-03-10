@@ -52,13 +52,13 @@
                 <PreSize X="0.5991" Y="0.1090" />
                 <FileData Type="Normal" Path="gameEndNew/maima__0000.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="OK" ActionTag="-410361543" Tag="1151" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="379.3100" RightMargin="388.6900" TopMargin="490.9868" BottomMargin="86.0132" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="OK" ActionTag="-410361543" Tag="1151" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="384.0007" RightMargin="383.9993" TopMargin="540.9868" BottomMargin="36.0132" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="43" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="170.0000" Y="65.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="464.3100" Y="118.5132" />
+                <Position X="469.0007" Y="68.5132" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4950" Y="0.1846" />
+                <PrePosition X="0.5000" Y="0.1067" />
                 <PreSize X="0.1812" Y="0.1012" />
                 <TextColor A="255" R="255" G="255" B="255" />
                 <DisabledFileData Type="Normal" Path="dissolveRoomNew/btn_confirm_press.png" Plist="" />
@@ -66,6 +66,20 @@
                 <NormalFileData Type="Normal" Path="dissolveRoomNew/btn_confirm_normal.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="ScrollView" ActionTag="333211447" Alpha="0" Tag="388" IconVisible="False" LeftMargin="101.1829" RightMargin="86.8171" TopMargin="129.0000" BottomMargin="113.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="90" ComboBoxIndex="1" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+                <Size X="750.0000" Y="400.0000" />
+                <AnchorPoint ScaleY="1.0000" />
+                <Position X="101.1829" Y="513.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1079" Y="0.7991" />
+                <PreSize X="0.7996" Y="0.6231" />
+                <SingleColor A="255" R="255" G="150" B="100" />
+                <FirstColor A="255" R="255" G="150" B="100" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+                <InnerNodeSize Width="750" Height="400" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -111,10 +125,10 @@
                 <PreSize X="1.0000" Y="1.0000" />
                 <FileData Type="Normal" Path="MaJiangNew/mj_bg1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="close" ActionTag="1589965576" Tag="1073" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="0.3230" RightMargin="-2.3230" TopMargin="-2.5032" BottomMargin="-0.4968" LeftEage="34" RightEage="34" TopEage="52" BottomEage="52" Scale9OriginX="34" Scale9OriginY="52" Scale9Width="30" Scale9Height="48" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="close" ActionTag="1589965576" Tag="1073" IconVisible="False" LeftMargin="0.3200" RightMargin="-2.3200" TopMargin="-2.5000" BottomMargin="-0.5000" LeftEage="34" RightEage="34" TopEage="52" BottomEage="52" Scale9OriginX="34" Scale9OriginY="52" Scale9Width="30" Scale9Height="48" ctype="ImageViewObjectData">
                 <Size X="100.0000" Y="155.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="50.3230" Y="77.0032" />
+                <Position X="50.3200" Y="77.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5135" Y="0.5066" />

@@ -320,6 +320,17 @@
             logIcon.visible = false;
             logIconAnim.scale = logIcon.scale;
 
+
+			/*function callBack()
+			{
+				cc.log("========================这是我自己传入的回调函数======================");
+			}
+
+			var effectHandle = getEffectMgrInst().createEffect(this, "res/animate/play/gang.ExportJson", "gang");
+			getEffectMgrInst().setEffectOffXY(effectHandle, logIcon.x, logIcon.y);
+			getEffectMgrInst().setEffectScale(effectHandle, 1);
+			getEffectMgrInst().playEffect(effectHandle, callBack);*/
+
 			return true;
 	    },
 	});

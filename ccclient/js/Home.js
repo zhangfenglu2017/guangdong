@@ -712,6 +712,7 @@ var HomeTips = cc.Layer.extend({
                         var filepath = dirpath + jsclient.homeTipCfg.Pic;
 
                         this.loadTexture(filepath);
+                        jsclient.homeTips.setVisible(true);
                     }
                 },
             },
@@ -732,6 +733,7 @@ var HomeTips = cc.Layer.extend({
         var tipsui = ccs.load("res/HomeTips.json");
         ConnectUI2Logic(tipsui.node, this.jsBind);
         this.addChild(tipsui.node);
+        this.setVisible(false);
         jsclient.homeTips = this;
         return true;
     }
