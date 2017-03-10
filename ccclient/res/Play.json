@@ -1772,7 +1772,7 @@
                       "Y": -0.0824
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -1951,7 +1951,7 @@
                       "Y": -0.3106
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -3655,7 +3655,7 @@
                       "Y": -0.0905
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -3834,7 +3834,7 @@
                       "Y": -0.3223
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -3920,11 +3920,11 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.7813,
+                      "X": 0.7812,
                       "Y": 0.2339
                     },
                     "PreSize": {
-                      "X": 0.7813,
+                      "X": 0.7812,
                       "Y": 0.4516
                     },
                     "LeftMargin": 50.0,
@@ -5672,7 +5672,7 @@
                       "Y": -0.0757
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -5851,7 +5851,7 @@
                       "Y": -0.3222
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -10315,7 +10315,7 @@
                       "Y": -0.0734
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -10494,7 +10494,7 @@
                       "Y": -0.3225
                     },
                     "PreSize": {
-                      "X": 1.4063,
+                      "X": 1.4062,
                       "Y": 0.2419
                     },
                     "LeftMargin": -26.0,
@@ -10580,11 +10580,11 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.7813,
+                      "X": 0.7812,
                       "Y": 0.2339
                     },
                     "PreSize": {
-                      "X": 0.7813,
+                      "X": 0.7812,
                       "Y": 0.4516
                     },
                     "LeftMargin": 50.0,
@@ -11828,6 +11828,61 @@
                   "Y": 24.0
                 },
                 "Name": "tableid",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 24,
+                "LabelText": "",
+                "HorizontalAlignmentType": "HT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 929.7153,
+                  "Y": 16.5696
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 229,
+                  "G": 188,
+                  "B": 82
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8467,
+                  "Y": 0.2152
+                },
+                "PreSize": {
+                  "X": 0.0911,
+                  "Y": 0.5195
+                },
+                "LeftMargin": 879.7153,
+                "RightMargin": 118.2847,
+                "TopMargin": 40.4304,
+                "BottomMargin": -3.4304,
+                "Tag": 324,
+                "ActionTag": 300119365,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 40.0
+                },
+                "Name": "timer",
                 "ctype": "TextObjectData"
               }
             ],
@@ -15131,8 +15186,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 1200.9751,
-              "Y": 142.6823
+              "X": 1200.0,
+              "Y": 140.0
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -15141,17 +15196,17 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.9383,
-              "Y": 0.1982
+              "X": 0.9375,
+              "Y": 0.1944
             },
             "PreSize": {
               "X": 0.057,
               "Y": 0.1028
             },
-            "LeftMargin": 1164.4751,
-            "RightMargin": 42.5249,
-            "TopMargin": 540.3177,
-            "BottomMargin": 105.6823,
+            "LeftMargin": 1163.5,
+            "RightMargin": 43.5,
+            "TopMargin": 543.0,
+            "BottomMargin": 103.0,
             "Tag": 133,
             "ActionTag": 1600943711,
             "Size": {
@@ -15206,8 +15261,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 1199.9296,
-              "Y": 222.1487
+              "X": 1200.0,
+              "Y": 220.0
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -15216,17 +15271,17 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.9374,
-              "Y": 0.3085
+              "X": 0.9375,
+              "Y": 0.3056
             },
             "PreSize": {
               "X": 0.057,
               "Y": 0.1028
             },
-            "LeftMargin": 1163.4296,
-            "RightMargin": 43.5704,
-            "TopMargin": 460.8513,
-            "BottomMargin": 185.1487,
+            "LeftMargin": 1163.5,
+            "RightMargin": 43.5,
+            "TopMargin": 463.0,
+            "BottomMargin": 183.0,
             "Tag": 305,
             "ActionTag": -417783035,
             "Size": {
@@ -15234,6 +15289,810 @@
               "Y": 74.0
             },
             "Name": "voice_btn",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "play-yli/wang_diban.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 39,
+            "Scale9OriginY": 23,
+            "Scale9Width": 43,
+            "Scale9Height": 25,
+            "AnchorPoint": {
+              "ScaleX": 1.0,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1200.5,
+              "Y": 60.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9379,
+              "Y": 0.0833
+            },
+            "PreSize": {
+              "X": 0.2734,
+              "Y": 0.0986
+            },
+            "LeftMargin": 850.5,
+            "RightMargin": 79.5,
+            "TopMargin": 624.5,
+            "BottomMargin": 24.5,
+            "Tag": 326,
+            "Children": [
+              {
+                "FontSize": 28,
+                "ButtonText": "",
+                "TextColor": {
+                  "B": 0
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_csh2.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_csh2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_csh1.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 31,
+                "Scale9Height": 39,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 260.0,
+                  "Y": 35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.7429,
+                  "Y": 0.493
+                },
+                "PreSize": {
+                  "X": 0.1743,
+                  "Y": 0.8592
+                },
+                "LeftMargin": 229.5,
+                "RightMargin": 59.5,
+                "TopMargin": 5.5,
+                "BottomMargin": 4.5,
+                "Tag": 740,
+                "ActionTag": -847303637,
+                "Size": {
+                  "X": 61.0,
+                  "Y": 61.0
+                },
+                "Name": "csh_bt",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 28,
+                "ButtonText": "",
+                "TextColor": {},
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_qxg2.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_qxg2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_qxg1.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 31,
+                "Scale9Height": 39,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 190.0036,
+                  "Y": 35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5429,
+                  "Y": 0.493
+                },
+                "PreSize": {
+                  "X": 0.1743,
+                  "Y": 0.8592
+                },
+                "LeftMargin": 159.5036,
+                "RightMargin": 129.4964,
+                "TopMargin": 5.5,
+                "BottomMargin": 4.5,
+                "Tag": 327,
+                "ActionTag": 1171094616,
+                "Size": {
+                  "X": 61.0,
+                  "Y": 61.0
+                },
+                "Name": "qxg_bt",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 28,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 0,
+                  "G": 0,
+                  "B": 0
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_shx2.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_shx2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_shx1.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 31,
+                "Scale9Height": 39,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 119.9999,
+                  "Y": 35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.3429,
+                  "Y": 0.493
+                },
+                "PreSize": {
+                  "X": 0.1743,
+                  "Y": 0.8592
+                },
+                "LeftMargin": 89.4999,
+                "RightMargin": 199.5001,
+                "TopMargin": 5.5,
+                "BottomMargin": 4.5,
+                "Tag": 328,
+                "ActionTag": -1477417514,
+                "Size": {
+                  "X": 61.0,
+                  "Y": 61.0
+                },
+                "Name": "shx_bt",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 28,
+                "ButtonText": "",
+                "TextColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_xsh2.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_xsh2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_xsh1.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 31,
+                "Scale9Height": 39,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 49.9998,
+                  "Y": 35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1429,
+                  "Y": 0.493
+                },
+                "PreSize": {
+                  "X": 0.1743,
+                  "Y": 0.8592
+                },
+                "LeftMargin": 19.4998,
+                "RightMargin": 269.5002,
+                "TopMargin": 5.5,
+                "BottomMargin": 4.5,
+                "Tag": 329,
+                "ActionTag": 483607643,
+                "Size": {
+                  "X": 61.0,
+                  "Y": 61.0
+                },
+                "Name": "xsh_bt",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_effzhezhao.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 260.0,
+                  "Y": 35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.7429,
+                  "Y": 0.493
+                },
+                "PreSize": {
+                  "X": 0.1743,
+                  "Y": 0.8592
+                },
+                "LeftMargin": 229.5,
+                "RightMargin": 59.5,
+                "TopMargin": 5.5,
+                "BottomMargin": 4.5,
+                "Tag": 331,
+                "ActionTag": 1456836120,
+                "Size": {
+                  "X": 61.0,
+                  "Y": 61.0
+                },
+                "Name": "zhezhao_1",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_effzhezhao.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 190.0,
+                  "Y": 35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5429,
+                  "Y": 0.493
+                },
+                "PreSize": {
+                  "X": 0.1743,
+                  "Y": 0.8592
+                },
+                "LeftMargin": 159.5,
+                "RightMargin": 129.5,
+                "TopMargin": 5.5,
+                "BottomMargin": 4.5,
+                "Tag": 332,
+                "ActionTag": -199563300,
+                "Size": {
+                  "X": 61.0,
+                  "Y": 61.0
+                },
+                "Name": "zhezhao_2",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_effzhezhao.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 120.0,
+                  "Y": 35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.3429,
+                  "Y": 0.493
+                },
+                "PreSize": {
+                  "X": 0.1743,
+                  "Y": 0.8592
+                },
+                "LeftMargin": 89.5,
+                "RightMargin": 199.5,
+                "TopMargin": 5.5,
+                "BottomMargin": 4.5,
+                "Tag": 333,
+                "ActionTag": -916939879,
+                "Size": {
+                  "X": 61.0,
+                  "Y": 61.0
+                },
+                "Name": "zhezhao_3",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "play-yli/anim_effzhezhao.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 50.0,
+                  "Y": 35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1429,
+                  "Y": 0.493
+                },
+                "PreSize": {
+                  "X": 0.1743,
+                  "Y": 0.8592
+                },
+                "LeftMargin": 19.5,
+                "RightMargin": 269.5,
+                "TopMargin": 5.5,
+                "BottomMargin": 4.5,
+                "Tag": 334,
+                "ActionTag": -399401034,
+                "Size": {
+                  "X": 61.0,
+                  "Y": 61.0
+                },
+                "Name": "zhezhao_4",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "8",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 260.0,
+                  "Y": 35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.7429,
+                  "Y": 0.493
+                },
+                "PreSize": {
+                  "X": 0.0429,
+                  "Y": 0.4225
+                },
+                "LeftMargin": 252.5,
+                "RightMargin": 82.5,
+                "TopMargin": 21.0,
+                "BottomMargin": 20.0,
+                "Tag": 335,
+                "ActionTag": -1952256852,
+                "Size": {
+                  "X": 15.0,
+                  "Y": 30.0
+                },
+                "Name": "miao_1",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "8",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 190.0,
+                  "Y": 35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5429,
+                  "Y": 0.493
+                },
+                "PreSize": {
+                  "X": 0.0429,
+                  "Y": 0.4225
+                },
+                "LeftMargin": 182.5,
+                "RightMargin": 152.5,
+                "TopMargin": 21.0,
+                "BottomMargin": 20.0,
+                "Tag": 336,
+                "ActionTag": 1134437456,
+                "Size": {
+                  "X": 15.0,
+                  "Y": 30.0
+                },
+                "Name": "miao_2",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "8",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 120.0,
+                  "Y": 35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.3429,
+                  "Y": 0.493
+                },
+                "PreSize": {
+                  "X": 0.0429,
+                  "Y": 0.4225
+                },
+                "LeftMargin": 112.5,
+                "RightMargin": 222.5,
+                "TopMargin": 21.0,
+                "BottomMargin": 20.0,
+                "Tag": 337,
+                "ActionTag": -1708061272,
+                "Size": {
+                  "X": 15.0,
+                  "Y": 30.0
+                },
+                "Name": "miao_3",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "8",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 50.0,
+                  "Y": 35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1429,
+                  "Y": 0.493
+                },
+                "PreSize": {
+                  "X": 0.0429,
+                  "Y": 0.4225
+                },
+                "LeftMargin": 42.5,
+                "RightMargin": 292.5,
+                "TopMargin": 21.0,
+                "BottomMargin": 20.0,
+                "Tag": 338,
+                "ActionTag": 1132260256,
+                "Size": {
+                  "X": 15.0,
+                  "Y": 30.0
+                },
+                "Name": "miao_4",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": 1937877857,
+            "Size": {
+              "X": 350.0,
+              "Y": 71.0
+            },
+            "Name": "wang_bk",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 24,
+            "ButtonText": "",
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "play-yli/wang2.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "play-yli/wang2.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "play-yli/wang.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 46,
+            "Scale9Height": 55,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1200.0,
+              "Y": 60.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9375,
+              "Y": 0.0833
+            },
+            "PreSize": {
+              "X": 0.0594,
+              "Y": 0.1069
+            },
+            "LeftMargin": 1162.0,
+            "RightMargin": 42.0,
+            "TopMargin": 621.5,
+            "BottomMargin": 21.5,
+            "Tag": 325,
+            "ActionTag": -40063856,
+            "Size": {
+              "X": 76.0,
+              "Y": 77.0
+            },
+            "Name": "wang_btn",
             "ctype": "ButtonObjectData"
           },
           {
@@ -15323,6 +16182,15 @@
         "play-yli/4pi.png",
         "play-yli/6pi.png",
         "play-yli/8pi.png",
+        "play-yli/anim_csh1.png",
+        "play-yli/anim_csh2.png",
+        "play-yli/anim_effzhezhao.png",
+        "play-yli/anim_qxg1.png",
+        "play-yli/anim_qxg2.png",
+        "play-yli/anim_shx1.png",
+        "play-yli/anim_shx2.png",
+        "play-yli/anim_xsh1.png",
+        "play-yli/anim_xsh2.png",
         "play-yli/bac_02.png",
         "play-yli/bac_corner_01.png",
         "play-yli/bac_corner_02.png",
@@ -15420,6 +16288,9 @@
         "play-yli/t_peng.png",
         "play-yli/t_zhong.png",
         "play-yli/t-hu.png",
+        "play-yli/wang.png",
+        "play-yli/wang_diban.png",
+        "play-yli/wang2.png",
         "play-yli/wudahu.png",
         "play-yli/wufanqihu.png",
         "play-yli/wuGuiJiaBei.png",

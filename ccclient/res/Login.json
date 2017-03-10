@@ -47,6 +47,67 @@
               "Y": 1.0
             },
             "Tag": 6,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 18,
+                "LabelText": "新广出申[2016]2716号  出版号：ISBN 978-7-7979-1352-2  软著登字第1411022号 \n出版单位：北京伯通电子出版社 著作权人：嘉兴乐玩网络科技有限公司",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 640.0,
+                  "Y": 692.64
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 0,
+                  "G": 0,
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.962
+                },
+                "PreSize": {
+                  "X": 0.5203,
+                  "Y": 0.075
+                },
+                "LeftMargin": 307.0,
+                "RightMargin": 307.0,
+                "TopMargin": 0.36,
+                "BottomMargin": 665.64,
+                "Tag": 415,
+                "ActionTag": 1716275576,
+                "Size": {
+                  "X": 666.0,
+                  "Y": 54.0
+                },
+                "VisibleForFrame": false,
+                "Name": "Text_1",
+                "ctype": "TextObjectData"
+              }
+            ],
             "ActionTag": -1453471211,
             "Size": {
               "X": 1280.0,
@@ -58,20 +119,20 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "loading/logo_01.png",
+              "Path": "loading/logo_01_xingyue.png",
               "Plist": ""
             },
             "Scale9OriginX": 282,
             "Scale9OriginY": 92,
-            "Scale9Width": 292,
-            "Scale9Height": 97,
+            "Scale9Width": 181,
+            "Scale9Height": 110,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 661.18,
-              "Y": 543.4751
+              "X": 640.0,
+              "Y": 518.4
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -79,25 +140,26 @@
             },
             "CColor": {},
             "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
             "PrePosition": {
-              "X": 0.5165,
-              "Y": 0.7548
+              "X": 0.5,
+              "Y": 0.72
             },
             "PreSize": {
-              "X": 0.6687,
-              "Y": 0.3903
+              "X": 0.582,
+              "Y": 0.4083
             },
-            "LeftMargin": 233.18,
-            "RightMargin": 190.8201,
-            "TopMargin": 36.0249,
-            "BottomMargin": 402.9751,
+            "LeftMargin": 267.5,
+            "RightMargin": 267.5,
+            "TopMargin": 54.6,
+            "BottomMargin": 371.4,
             "Tag": 282,
             "ActionTag": -1046764534,
             "Size": {
-              "X": 856.0,
-              "Y": 281.0
+              "X": 745.0,
+              "Y": 294.0
             },
-            "VisibleForFrame": false,
             "Name": "logo",
             "ctype": "ImageViewObjectData"
           },
@@ -556,7 +618,7 @@
         "loading/btn_visitor_press.png",
         "loading/Duigou.png",
         "loading/lattice.png",
-        "loading/logo_01.png",
+        "loading/logo_01_xingyue.png",
         "loading/ot-1.png"
       ],
       "ctype": "GameFileData"

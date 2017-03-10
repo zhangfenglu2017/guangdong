@@ -58,20 +58,20 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "loading/logo_01.png",
+              "Path": "loading/logo_01_xingyue.png",
               "Plist": ""
             },
             "Scale9OriginX": 15,
             "Scale9OriginY": 15,
-            "Scale9Width": 826,
-            "Scale9Height": 251,
+            "Scale9Width": 715,
+            "Scale9Height": 264,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 661.1802,
-              "Y": 544.4753
+              "X": 640.0,
+              "Y": 518.4
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -79,23 +79,25 @@
             },
             "CColor": {},
             "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
             "PrePosition": {
-              "X": 0.5165,
-              "Y": 0.7562
+              "X": 0.5,
+              "Y": 0.72
             },
             "PreSize": {
-              "X": 0.6687,
-              "Y": 0.3903
+              "X": 0.582,
+              "Y": 0.4083
             },
-            "LeftMargin": 233.1802,
-            "RightMargin": 190.8198,
-            "TopMargin": 35.0247,
-            "BottomMargin": 403.9753,
+            "LeftMargin": 267.5,
+            "RightMargin": 267.5,
+            "TopMargin": 54.6,
+            "BottomMargin": 371.4,
             "Tag": 111,
             "ActionTag": 1430267486,
             "Size": {
-              "X": 856.0,
-              "Y": 281.0
+              "X": 745.0,
+              "Y": 294.0
             },
             "Name": "logo",
             "ctype": "ImageViewObjectData"
@@ -260,7 +262,7 @@
         "loading/bac_01.png",
         "loading/loading_01.png",
         "loading/loading_02.png",
-        "loading/logo_01.png"
+        "loading/logo_01_xingyue.png"
       ],
       "ctype": "GameFileData"
     }

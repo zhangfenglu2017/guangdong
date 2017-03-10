@@ -1772,11 +1772,46 @@
         //}
         var test = [pl.mjhand, pl.mjpeng, pl.mjgang0, pl.mjgang1, pl.mjchi];
         var fengPai = [31,41,51,61,71,81,91];
-        var allFengPaiCounts = 0;
+        var allFengPaiCounts1 = 0;
+        var allFengPaiCounts2 = 0;
+        var allFengPaiCounts3 = 0;
+        var allFengPaiCounts4 = 0;
+        var allFengPaiCounts5 = 0;
+        var no1 = false;
+        var no2 = false;
+        var no3 = false;
+        var no4 = false;
+        var no5 = false;
         for(var i=0;i<pl.mjhand.length;i++){
-            if(fengPai.indexOf(pl.mjhand[i]) != -1) allFengPaiCounts++;
+            if(fengPai.indexOf(pl.mjhand[i]) != -1) allFengPaiCounts1++;
         }
-        if(allFengPaiCounts >= pl.mjhand.length) return false; //全是风牌 则不是混一色
+        if(allFengPaiCounts1 >= pl.mjhand.length) no1 = true; //全是风牌 则不是混一色
+
+        for(var i=0;i<pl.mjpeng.length; i++)
+        {
+            if(fengPai.indexOf(pl.mjpeng[i]) != -1) allFengPaiCounts2++;
+        }
+        if(allFengPaiCounts2 >= pl.mjpeng.length) no2 = true; //全是风牌 则不是混一色
+
+        for(var i=0;i<pl.mjgang0.length; i++)
+        {
+            if(fengPai.indexOf(pl.mjgang0[i]) != -1) allFengPaiCounts3++;
+        }
+        if(allFengPaiCounts3 >= pl.mjgang0.length) no3 = true; //全是风牌 则不是混一色
+
+        for(var i=0;i<pl.mjgang1.length; i++)
+        {
+            if(fengPai.indexOf(pl.mjgang1[i]) != -1) allFengPaiCounts4++;
+        }
+        if(allFengPaiCounts4 >= pl.mjgang1.length) no4 = true; //全是风牌 则不是混一色
+
+        for(var i=0;i<pl.mjchi.length; i++)
+        {
+            if(fengPai.indexOf(pl.mjchi[i]) != -1) allFengPaiCounts5++;
+        }
+        if(allFengPaiCounts5 >= pl.mjchi.length) no5 = true; //全是风牌 则不是混一色
+
+        if(no1 && no2 && no3 && no4 && no5) return false;
         var errorCount = 0;
         var color = -1;
 

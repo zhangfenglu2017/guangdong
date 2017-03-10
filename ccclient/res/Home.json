@@ -442,6 +442,7 @@
                       "X": 34.0,
                       "Y": 35.0
                     },
+                    "VisibleForFrame": false,
                     "Name": "buyMoney",
                     "ctype": "ButtonObjectData"
                   },
@@ -666,13 +667,13 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "home-yli/logo_02.png",
+              "Path": "loading/logo_02_xingyue.png",
               "Plist": ""
             },
-            "Scale9OriginX": 102,
-            "Scale9OriginY": 34,
-            "Scale9Width": 209,
-            "Scale9Height": 68,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 15,
+            "Scale9Width": 350,
+            "Scale9Height": 120,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -688,17 +689,17 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.5313,
+              "X": 0.5312,
               "Y": 0.9028
             },
             "PreSize": {
-              "X": 0.3227,
-              "Y": 0.1889
+              "X": 0.2969,
+              "Y": 0.2083
             },
-            "LeftMargin": 473.5,
-            "RightMargin": 393.5,
-            "TopMargin": 2.0,
-            "BottomMargin": 582.0,
+            "LeftMargin": 490.0,
+            "RightMargin": 410.0,
+            "TopMargin": -5.0,
+            "BottomMargin": 575.0,
             "Tag": 16,
             "Children": [
               {
@@ -747,17 +748,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.4589,
-                  "Y": -0.2379
+                  "X": 0.4987,
+                  "Y": -0.2157
                 },
                 "PreSize": {
-                  "X": 1.3317,
-                  "Y": 0.2941
+                  "X": 1.4474,
+                  "Y": 0.2667
                 },
                 "HorizontalEdge": "LeftEdge",
                 "LeftMargin": -85.4899,
-                "RightMargin": -51.5101,
-                "TopMargin": 148.354,
+                "RightMargin": -84.5101,
+                "TopMargin": 162.354,
                 "BottomMargin": -52.354,
                 "Tag": 43,
                 "Children": [
@@ -842,16 +843,16 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": -0.2106,
-                  "Y": -0.2206
+                  "X": -0.2289,
+                  "Y": -0.2
                 },
                 "PreSize": {
-                  "X": 0.0969,
-                  "Y": 0.3235
+                  "X": 0.1053,
+                  "Y": 0.2933
                 },
                 "LeftMargin": -106.9981,
-                "RightMargin": 479.9981,
-                "TopMargin": 144.0,
+                "RightMargin": 446.9981,
+                "TopMargin": 158.0,
                 "BottomMargin": -52.0,
                 "Tag": 45,
                 "ActionTag": -1983627610,
@@ -865,8 +866,8 @@
             ],
             "ActionTag": 1392491195,
             "Size": {
-              "X": 413.0,
-              "Y": 136.0
+              "X": 380.0,
+              "Y": 150.0
             },
             "Name": "title",
             "ctype": "ImageViewObjectData"
@@ -1797,9 +1798,9 @@
         "home-yli/jia01.png",
         "home-yli/jiankangyouxi.png",
         "home-yli/joinGame.png",
-        "home-yli/logo_02.png",
         "home-yli/mianfeilingzuan.png",
         "home-yli/xslb.png",
+        "loading/logo_02_xingyue.png",
         "play-yli/btn_news_normal.png",
         "play-yli/btn_news_press.png",
         "play-yli/Photo_frame_01.png",

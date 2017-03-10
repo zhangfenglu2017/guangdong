@@ -1,6 +1,10 @@
 
 // time1, time2 的差值(单位秒),使用的是格林威治标准
 function getTimeOff ( time1, time2, maxOff ) {
+    
+    if(time1 == null || time2 == null)
+        return
+    
     var d1  = Date.parse(time1)/ 1000;
     var d2  = Date.parse(time2)/ 1000;
     var off = d2 - d1;
@@ -132,11 +136,14 @@ function loadDefaultHead(node, posx, posy, scale, zindex, name, tag) {
 
 //裁剪头像
 function ClipHead(node, url, posx, posy, scale, zindex, name, tag) {
-    
+
     cc.loader.loadImg(url, {isCrossOrigin: true}, function (err, texture) 
     {
         if (!err && texture) 
         {
+            if(node == null)
+                return;
+
             var stencil = new cc.Sprite("res/play-yli/Photo_frame_05.png");   //可以是精灵，也可以DrawNode画的各种图形
 
             //1.创建裁剪节点
@@ -232,10 +239,13 @@ jsclient.exportDataLayer = function () {
 jsclient.leaveGame = function () {
     
     jsclient.block();
-    jsclient.gamenet.request("pkplayer.handler.LeaveGame", {}, function (rtn) {
+    jsclient.gamenet.request("pkplayer.handler.LeaveGame", {}, function (rtn)
+    {
         cc.log("leaveGame------callback,result:" + rtn.result);
-        if (rtn.result == 0) {
+        if (rtn.result == 0)
+        {
             delete jsclient.data.sData;
+            
             sendEvent("LeaveGame");
         }
         jsclient.unblock();
@@ -262,10 +272,8 @@ jsclient.getPlayLogOne = function (item) {
         jsclient.block();
         if(jsclient.remoteCfg.playBackServer)
         {
-            console.log("ip======"+jsclient.remoteCfg.playBackServer);
             //item.ip在服务器端存的值是 serverId
             playUrl="http://"+jsclient.remoteCfg.playBackServer+"/"+item.url+"/playlog/"+item.now.substr(0,10)+"/"+item.owner+"_"+item.tableid+".json";
-            //cc.log("------------ playUrl="+playUrl);
 
             //内网：只能暂时在电脑上测试回放，手机不可以
             // if(!cc.sys.isMobile)
@@ -284,24 +292,25 @@ jsclient.getPlayLogOne = function (item) {
             xhr.send();
         }
     }
-    else if(item.ip)
-    {
-        jsclient.block();
-        var xhr = cc.loader.getXMLHttpRequest();
-        playUrl="http://"+item.ip+":800/playlog/"+item.now.substr(0,10)+"/"+item.owner+"_"+item.tableid+".json";
-        xhr.open("GET", playUrl);
-        xhr.onreadystatechange = function () {
-            jsclient.unblock();
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                sendEvent("playLogOne",JSON.parse(xhr.responseText));
-            }
-        }
-        xhr.onerror = function (event) {jsclient.unblock(); };
-        xhr.send();
-    }
+    // else if(item.ip)
+    // {
+    //     jsclient.block();
+    //     var xhr = cc.loader.getXMLHttpRequest();
+    //     playUrl="http://"+item.ip+":800/playlog/"+item.now.substr(0,10)+"/"+item.owner+"_"+item.tableid+".json";
+    //     xhr.open("GET", playUrl);
+    //     xhr.onreadystatechange = function () {
+    //         jsclient.unblock();
+    //         if (xhr.readyState == 4 && xhr.status == 200) {
+    //             sendEvent("playLogOne",JSON.parse(xhr.responseText));
+    //         }
+    //     }
+    //     xhr.onerror = function (event) {jsclient.unblock(); };
+    //     xhr.send();
+    // }
     else
     {
-        var now=item.now; var logid=item.logid;
+        var now=item.now;
+        var logid=item.logid;
         jsclient.block();
         jsclient.gamenet.request("pkcon.handler.getSymjLog",{now:now,logid:logid},function(rtn){
             jsclient.unblock();
@@ -348,9 +357,10 @@ jsclient.joinGame = function (tableid) {
         joinPara.roomid = "symj2";
 
     jsclient.gamenet.request("pkplayer.handler.JoinGame", joinPara,
-        function (rtn) {
-            mylog("joinGame " + rtn.result);
-            if (rtn.result != 0) {
+        function (rtn)
+        {
+            if (rtn.result != 0)
+            {
                 jsclient.unblock();
 
                 if (rtn.result == ZJHCode.roomFull)
@@ -358,9 +368,32 @@ jsclient.joinGame = function (tableid) {
 
                 if (rtn.result == ZJHCode.roomNotFound)
                     jsclient.showMsg("房间不存在");
+
+                if(rtn.result == ZJHCode.zipVersionLow)
+                    jsclient.showMsg("游戏版本过低");
             }
         });
 };
+
+jsclient.getCreateRoomCfg = function () {
+
+    jsclient.gamenet.request("pkplayer.handler.GameCfgField", {fields:["viptable"],gameid:"gdmj"}, function(roomCfg)
+    {
+        log("房间配置文件：" + JSON.stringify(roomCfg));
+        jsclient.data.roomCfg = roomCfg;
+        sendEvent("createRoomCfg", roomCfg);
+    })
+};
+
+// jsclient.getCreateRoomCfg = function () {
+//
+//     jsclient.gamenet.request("pkplayer.handler.GameCfgField", {fields:["viptable"],gameid:"gdmj"}, function(roomCfg)
+//     {
+//         log("房间配置文件：" + JSON.stringify(roomCfg));
+//         jsclient.data.roomCfg = roomCfg;
+//         sendEvent("createRoomCfg", roomCfg);
+//     })
+// };
 
 jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7,canFan7,
                                 canHuWith258, withZhong, zhongIsMa, horse, baoZhaMa, jjg, fanGui, twogui, fanNum, maxPlayer,
@@ -403,11 +436,18 @@ jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noB
             haiDiFanBei:haiDiFanBei,
             canDianPao:canDianPao
         },
-        function (rtn) {
+        function (rtn)
+        {
             jsclient.unblock();
-            if (rtn.result == 0) {
+            if (rtn.result == 0)
+            {
                 jsclient.data.vipTable = rtn.vipTable;
                 jsclient.joinGame(rtn.vipTable);
+            }
+            else if(rtn.result != 0)
+            {
+                if(rtn.result == ZJHCode.zipVersionLow) 
+                    jsclient.showMsg("游戏版本过低");
             }
         });
 };
@@ -573,41 +613,41 @@ jsclient.dateInRectDate = function (myTime, startTime, endTime) {
 
 jsclient.heartbeatGame = function() {
     // 初始化心跳计数
-    if(typeof(jsclient.heartbeatCount) == "undefined"){
-        jsclient.heartbeatCount = 0;
-    }
-    jsclient.heartbeatCount ++;
-    if( jsclient.heartbeatCount > 3 ){
-        jsclient.showMsg("连接已断开，请重新登陆", function(){jsclient.restartGame()} );
-    }
-
-    jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "HeartBeat"}, function (ed) {
-        if( !jsclient || !jsclient.data || !jsclient.data.sData ){
-            return;
-        }
-        jsclient.heartbeatCount = 0;
-
-        for (var idx in jsclient.data.sData.players){
-            var pl = jsclient.data.sData.players[idx];
-            var uid = pl.info.uid;
-            if( uid == SelfUid() ){
-                continue;
-            }
-
-            if(ed[uid] < 0 || ed[uid] >= 10000){
-                if( jsclient.data.sData.players[uid].onLine ) {
-                    jsclient.data.sData.players[uid].onLine = false;
-                    sendEvent("onlinePlayer", {uid: uid, onLine: false, mjState: pl.mjState});
-                }
-            }
-            else{
-                if( !jsclient.data.sData.players[uid].onLine ) {
-                    jsclient.data.sData.players[uid].onLine = true;
-                    sendEvent("onlinePlayer", {uid: uid, onLine: true, mjState: pl.mjState});
-                }
-            }
-        }
-    });
+    // if(typeof(jsclient.heartbeatCount) == "undefined"){
+    //     jsclient.heartbeatCount = 0;
+    // }
+    // jsclient.heartbeatCount ++;
+    // if( jsclient.heartbeatCount > 3 ){
+    //     jsclient.showMsg("心跳连接已断开，请重新登陆", function(){jsclient.restartGame()} );
+    // }
+    //
+    // jsclient.gamenet.request("pkroom.handler.tableMsg", {cmd: "HeartBeat"}, function (ed) {
+    //     if( !jsclient || !jsclient.data || !jsclient.data.sData ){
+    //         return;
+    //     }
+    //     jsclient.heartbeatCount = 0;
+    //
+    //     for (var idx in jsclient.data.sData.players){
+    //         var pl = jsclient.data.sData.players[idx];
+    //         var uid = pl.info.uid;
+    //         if( uid == SelfUid() ){
+    //             continue;
+    //         }
+    //
+    //         if(ed[uid] < 0 || ed[uid] >= 10000){
+    //             if( jsclient.data.sData.players[uid].onLine ) {
+    //                 jsclient.data.sData.players[uid].onLine = false;
+    //                 sendEvent("onlinePlayer", {uid: uid, onLine: false, mjState: pl.mjState});
+    //             }
+    //         }
+    //         else{
+    //             if( !jsclient.data.sData.players[uid].onLine ) {
+    //                 jsclient.data.sData.players[uid].onLine = true;
+    //                 sendEvent("onlinePlayer", {uid: uid, onLine: true, mjState: pl.mjState});
+    //             }
+    //         }
+    //     }
+    // });
 };
 
 
@@ -626,11 +666,12 @@ jsclient.startUpdateHomeTipCfg = function() {
 
             if(jsclient.homeTipCfg.Pic)
             {
-                var url= "http://gdmj.coolgamebox.com:800/gdmj/" + jsclient.homeTipCfg.Pic;
+                // var url= "http://gdmj.coolgamebox.com:800/gdmj/" + jsclient.homeTipCfg.Pic;
+                var url = "http://" + jsclient.downCfgUrl + "/gdmj/" + jsclient.homeTipCfg.Pic;
                 if(url)
                 {
                     log("Home弹窗内容图片：" + url);
-                    jsclient.startUpdateHomeTipCfg22();
+                    jsclient.startUpdateHomeTipCfg22(url);
                 }
             }
         }
@@ -641,7 +682,8 @@ jsclient.startUpdateHomeTipCfg = function() {
     var updatecfg = function ()
     {
         var xhr = cc.loader.getXMLHttpRequest();
-        xhr.open("GET", "http://gdmj.coolgamebox.com:800/gdmj/configurationHome.json");
+        var url = "http://" + jsclient.downCfgUrl + "/gdmj/configurationHome.json";
+        xhr.open("GET", url);
         xhr.onreadystatechange = function ()
         {
             if (xhr.readyState == 4 && xhr.status == 200)
@@ -672,9 +714,9 @@ jsclient.startUpdateHomeTipCfg = function() {
     }
 };
 
-jsclient.startUpdateHomeTipCfg22 = function()
+jsclient.startUpdateHomeTipCfg22 = function(url)
 {
-    var url= "http://gdmj.coolgamebox.com:800/gdmj/" + jsclient.homeTipCfg.Pic;
+    // var url= "http://gdmj.coolgamebox.com:800/gdmj/" + jsclient.homeTipCfg.Pic;
     var dirpath =  jsb.fileUtils.getWritablePath() ;
     var filepath = dirpath + jsclient.homeTipCfg.Pic;
 
@@ -693,7 +735,7 @@ jsclient.startUpdateHomeTipCfg22 = function()
         });
     }
 
-    if( jsb.fileUtils.isFileExist(filepath) )
+    if(jsb.fileUtils.isFileExist(filepath))
     {
         cc.log('Remote is find' + filepath);
         loadEnd();
@@ -704,12 +746,12 @@ jsclient.startUpdateHomeTipCfg22 = function()
     {
         if( typeof data !== 'undefined' )
         {
-            if( !jsb.fileUtils.isDirectoryExist(dirpath + "homeTip"))
+            if(!jsb.fileUtils.isDirectoryExist(dirpath + "homeTip"))
             {
                 jsb.fileUtils.createDirectory(dirpath + "homeTip");
             }
 
-            if( jsb.fileUtils.writeDataToFile(  new Uint8Array(data) , filepath))
+            if( jsb.fileUtils.writeDataToFile(new Uint8Array(data) , filepath))
             {
                 cc.log('Remote write file succeed.');
                 loadEnd();
@@ -747,6 +789,101 @@ jsclient.startUpdateHomeTipCfg22 = function()
     xhr.send();
 };
 
+//提交错误信息
+jsclient.reportErrorCode = function (code)
+{
+    var tempCode = code;
+    var loginData=sys.localStorage.getItem("loginData");
+    if(loginData)
+    {
+        loginData=JSON.parse(loginData);
+        tempCode+=",uid:"+loginData.mail;
+    }
+    var xhr = cc.loader.getXMLHttpRequest();//网络断开原因，上传日志
+    xhr.open("POST", "http://139.129.206.54:3000/gdmj?content=" + base64encode("netConnectFailed =" + tempCode));
+    xhr.onreadystatechange = function () {
+    };
+    xhr.send();
+}
+
+//错误提示准换文字
+function handleMsgCode(code)
+{
+    var errorDes = "";
+    switch (code)
+    {
+        case 2:
+        {
+            errorDes = "请求数据过程中出现异常";
+            break;
+        }
+        case 3:
+        case 4:
+        {
+            errorDes = "操作过程中出现异常";
+            break;
+        }
+        case 11:
+        {
+            errorDes = "链接服务器失败,请重新连接";
+            break;
+        }
+        case 15:
+        {
+            errorDes = "读取配置错误";
+            break;
+        }
+        case 16:
+        {
+            errorDes = "登录链接已断开,请重新连接";
+            break;
+        }
+        case 17:
+        {
+            errorDes = "游戏数据更新失败,请再次更新";
+            break;
+        }
+        default:
+        {
+            errorDes = "网络连接断开,请检查网络设置，重新连接";
+        }
+    }
+    jsclient.showMsg(errorDes,function()
+    {
+        if(code == 11 || code == 17)
+            removeUpdateRes();
+        else
+            jsclient.restartGame();
+    })
+}
+
+//一键修复客户端
+function removeUpdateRes()
+{
+    var basePath = jsb.fileUtils.getWritablePath() + "update/";
+    var arrPaths = ["project.manifest","project.manifest.temp"];
+    jsb.fileUtils.purgeCachedEntries();
+    for(var i = 0;i < arrPaths.length;i++)
+    {
+        var path = basePath + arrPaths[i];
+        if(jsb.fileUtils.isFileExist(path))
+        {
+            cc.log("path file : " + path);
+            jsb.fileUtils.removeFile(path);
+        }
+        if(jsb.fileUtils.isDirectoryExist(path))
+        {
+            cc.log("path dir : " + path);
+            jsb.fileUtils.removeDirectory(path);
+        }
+    }
+
+    jsclient.showMsg("请重新启动客户端",
+        function () {jsclient.restartGame();},
+        function () {jsclient.restartGame();}
+    );
+}
+
 jsclient.netCallBack =
 {
     loadWxHead: [0.01, function (d) {
@@ -759,25 +896,28 @@ jsclient.netCallBack =
     }],
 
     initSceneData: [0, function (d) {
-        mylog("initSceneData------------------------------------------------------");
-        if (d.tData.roundNum <= -2) {
+
+        if (d.tData.roundNum <= -2)
+        {
             jsclient.leaveGame();
             return -1;
         } else {
             jsclient.data.sData = d;
             d.serverNow -= Date.now();
-            if (!jsclient.playui)  jsclient.Scene.addChild(new PlayLayer());
+            if (!jsclient.playui)
+                jsclient.Scene.addChild(new PlayLayer());
+
             sendEvent("clearCardUI");
         }
     }],
 
     reinitSceneData: [0, function (d) {
-        mylog("reinitSceneData-------------------------------------------------");
 
         jsclient.data.sData = d;
         d.serverNow -= Date.now();
         if (!jsclient.replayui)
             jsclient.Scene.addChild(newReplayLayer());
+
         sendEvent("clearCardUI");
     }],
 
@@ -920,7 +1060,6 @@ jsclient.netCallBack =
                 var pl = d.players[uid];
                 sData.players[uid].linkZhuang = pl.linkZhuang;
                 sData.players[uid].linkHu = pl.linkHu;
-                // cc.log("getLinkZhuang===============================================linkZhuang="+ pl.linkZhuang);
             }
         }
         if(d.tData.fanGui) {
@@ -928,24 +1067,19 @@ jsclient.netCallBack =
             sData.tData.fanGui = d.tData.fanGui;
             sData.tData.gui = d.tData.gui;
             jsclient.majiang.gui = sData.tData.gui;
-
-            // console.log("翻出的鬼牌是===============================" + d.tData.gui);
-            // console.log("翻出的鬼牌是===============================" + d.tData.nextgui);
         }
         for (var uid in d.players) {
             var pl = d.players[uid];
             sData.players[uid].linkZhuang = pl.linkZhuang;
-            // cc.log("getLinkZhuang===============================================linkZhuang="+ pl.linkZhuang);
+
             if(sData.tData.gameType == 4)
             {
                 sData.players[uid].fengWei = pl.fengWei;
-                cc.log("此人===============================================uid="+ uid + "风位是：" + pl.fengWei);
             }
         }
         if(sData.tData.gameType == 4)
         {
             sData.tData.jiPingHuCircleWind.curCircleWind = d.tData.jiPingHuCircleWind.curCircleWind;
-
         }
     }],
     MJChi: [0, function (d) {
@@ -958,8 +1092,6 @@ jsclient.netCallBack =
         cds.sort(function (a, b) {
             return a - b
         });
-
-        //mylog("MJChi "+d.mjchi+" "+d.from+" "+tData.curPlayer);
 
         playEffect("nv/chi");
         var pl = sData.players[uids[tData.curPlayer]];
@@ -993,8 +1125,6 @@ jsclient.netCallBack =
         var uids = tData.uids;
         var cd = tData.lastPut;
 
-        mylog("MJPeng " + cd + " " + d.from + " " + tData.curPlayer);
-
         playEffect("nv/peng");
         var pl = sData.players[uids[tData.curPlayer]];
 
@@ -1005,10 +1135,10 @@ jsclient.netCallBack =
             {
                 pl.baojiu = d.baojiu;
                 if (pl.baojiu && pl.baojiu.num == 3) {
-                    console.log(pl.info.name + "报九");
+                    cc.log(pl.info.name + "报九");
                 }
                 if (pl.baojiu && pl.baojiu.num == 4) {
-                    console.log("被" + pl.baojiu.putCardPlayer[0] + "报九");
+                    cc.log("被" + pl.baojiu.putCardPlayer[0] + "报九");
                 }
             }
                 break;
@@ -1016,10 +1146,10 @@ jsclient.netCallBack =
             {
                 pl.baojiu = d.baojiu;
                 if (pl.baojiu && pl.baojiu.num == 3) {
-                    console.log(pl.info.name + "报九");
+                    cc.log(pl.info.name + "报九");
                 }
                 if (pl.baojiu && pl.baojiu.num == 4) {
-                    console.log("被" + pl.baojiu.putCardPlayer[0] + "报九");
+                    cc.log("被" + pl.baojiu.putCardPlayer[0] + "报九");
                 }
             }
                 break;
@@ -1027,15 +1157,18 @@ jsclient.netCallBack =
                 break;
         }
 
-
         var lp = sData.players[uids[d.from]];
         pl.mjpeng.push(cd);
         var mjput = lp.mjput;
-        if (mjput.length > 0 && mjput[mjput.length - 1] == cd) {
+        if (mjput.length > 0 && mjput[mjput.length - 1] == cd)
+        {
             mjput.length = mjput.length - 1;
         }
-        else  mylog("peng error from");
-        if (uids[tData.curPlayer] == SelfUid()) {
+        else
+            mylog("peng error from");
+
+        if (uids[tData.curPlayer] == SelfUid())
+        {
             pl.mjState = TableState.waitPut;
             pl.isNew = false;
             var mjhand = pl.mjhand;
@@ -1043,13 +1176,19 @@ jsclient.netCallBack =
             if (idx >= 0) {
                 mjhand.splice(idx, 1);
             }
-            else mylog("eat error to");
+            else
+                mylog("eat error to");
+
             idx = mjhand.indexOf(cd);
-            if (idx >= 0) {
+            if (idx >= 0)
+            {
                 mjhand.splice(idx, 1);
             }
-            else mylog("eat error to");
-            if (mjhand.indexOf(cd) >= 0)  pl.mjpeng4.push(cd);
+            else
+                mylog("eat error to");
+
+            if (mjhand.indexOf(cd) >= 0)
+                pl.mjpeng4.push(cd);
         }
     }],
 
@@ -1194,7 +1333,17 @@ jsclient.netCallBack =
         if (dr.nouid.length >= 1) {
             jsclient.showMsg("玩家 " + GetUidNames(dr.nouid) + " 不同意解散房间");
         }
-    }]
+    }],
+
+    MJStartVoice:[0.3,function(msg)
+    {
+        jsclient.native.HelloOC("110 app.js MJstartVoice msg = "+JSON.stringify(msg));
+    }],
+
+    MJStopVoice:[0.3,function(msg)
+    {
+        jsclient.native.HelloOC("110 app.js MJStopVoice msg = "+JSON.stringify(msg));
+    }],
 };
 
 jsclient.NetMsgQueue = [];
@@ -1252,6 +1401,25 @@ jsclient.native =
 
     },
 
+    wxShareUrlTimeline: function (url, title, description)
+    {
+        console.log("=======================================");
+        try
+        {
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "StartShareWebViewWxTimeline",
+                    "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", url, title, description);
+            }
+            else if (cc.sys.OS_IOS == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("AppController", "wxShareUrlTimeline:AndText:AndUrl:", title, description, url);
+            }
+        } catch (e)
+        {
+            jsclient.native.HelloOC("wxShareUrlTimeline throw: " + JSON.stringify(e));
+        }
+    },
     wxShareText: function (text) {
         try {
             if (cc.sys.OS_ANDROID == cc.sys.os) {
@@ -1351,13 +1519,17 @@ jsclient.native =
 
     HelloOC: function (message) {
         try {
-            if (cc.sys.OS_ANDROID == cc.sys.os) {
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
                 console.log(String(message));
-            } else if (cc.sys.OS_IOS == cc.sys.os) {
+            } else if (cc.sys.OS_IOS == cc.sys.os)
+            {
                 console.log(String(message));
                 jsb.reflection.callStaticMethod("AppController", "HelloOC:", String(message));
             }
-        } catch (e) {
+        }
+        catch (e)
+        {
             console.log("虽然我挂掉了,但是我还是坚持打印了了log: " + String(message));
         }
     },
@@ -1432,15 +1604,202 @@ jsclient.native =
             return 0;
         }
     },
-};
 
+    GetRemoteIpByAliDun:function()
+    {
+        try{
+            if(!jsclient.aliGroupName)
+            {
+                return;
+            }
+
+            //对 jsclient.aliGroupName 进行处理，添加格式： ", ***额外信息***";
+            //获取额外信息进行拼装
+            var playerUid = sys.localStorage.getItem("uid");
+            if(playerUid)
+            {
+                //第一次是不会有的
+                var extraInfo = jsb.fileUtils.enCodeXXSecretData(playerUid);
+
+                jsclient.aliGroupName = jsclient.aliGroupName +",";
+                jsclient.aliGroupName += extraInfo;
+
+                jsclient.native.ShowLogOnJava("--GetRemoteIpByAliDun" + playerUid);
+            }
+
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "getRemoteIpByAliDun", "(Ljava/lang/String;)Ljava/lang/String;",jsclient.aliGroupName);
+            }
+            else if(cc.sys.OS_IOS==cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("AppController","getRemoteIpByAliDun:", String(jsclient.aliGroupName));
+            }
+        }
+        catch(e)
+        {
+            jsclient.native.ShowLogOnJava("--GetRemoteIpByAliDun throw:" + JSON.stringify(e));
+            jsclient.native.HelloOC("--GetRemoteIpByAliDun throw: " + JSON.stringify(e));
+        }
+    },
+
+    ShowLogOnJava:function(str)
+    {
+        cc.log("--ShowLogOnJava:" + str);
+        return;
+
+        try
+        {
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "ShowLogOnJava", "(Ljava/lang/String;)V",str);
+            }
+            else if(cc.sys.OS_IOS==cc.sys.os)
+            {
+
+            }
+        }
+        catch(e)
+        {
+            jsclient.native.HelloOC("ShowLogOnJava throw: " + JSON.stringify(e));
+        }
+    },
+
+
+    //语音
+    JoinGameVoiceRoom:function (playerId,nickname,roomid)//加入语音房间
+    {
+        jsclient.native.HelloOC("JoinGameVoiceRoom 110 110 110");
+        jsclient.native.ShowLogOnJava("---JoinGameVoiceRoom 1-----------");
+        try
+        {
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                jsclient.native.HelloOC("JoinGameVoiceRoom 110 110 111");
+                jsclient.native.ShowLogOnJava("---JoinGameVoiceRoom A1-----------");
+
+
+                jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "JoinGameVoiceRoom",
+                    "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+                    String(playerId), String(nickname), String(roomid));
+
+                jsclient.native.HelloOC("JoinGameVoiceRoom 110 110 112");
+                jsclient.native.ShowLogOnJava("---JoinGameVoiceRoom A2-----------");
+
+            }
+            else if (cc.sys.OS_IOS == cc.sys.os)
+            {
+                try
+                {
+                    jsb.reflection.callStaticMethod("AppController", "setVoiceRoomID:", roomid);
+                    jsb.reflection.callStaticMethod("AppController", "setVoiceUserName:", JSON.stringify(nickname));
+                    jsb.reflection.callStaticMethod("AppController", "setVoiceUserId:", JSON.stringify(playerId));
+                    jsb.reflection.callStaticMethod("AppController", "JoinGameVoiceRoom");
+                }
+                catch (e)
+                {
+                    cc.log("110 加入语AppController音AndText房间ios e==" + e);
+                }
+            }
+        }
+        catch(e)
+        {
+            cc.log("110 加入语AppController音AndText房间ios e==" + e);
+        }
+    },
+
+    vioceStart:function ()//语音房间开始说话
+    {
+        try
+        {
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "vioceStart", "()V");
+            }
+            else if (cc.sys.OS_IOS == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("AppController", "voiceStart");
+            }
+            return 1;
+        }
+        catch(e)
+        {
+            cc.log("110 加入语AppController音AndText房间ios e==" + e);
+            return 0;
+        }
+    },
+
+    voiceStop:function ()//语音房间结束说话
+    {
+        try
+        {
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "voiceStop", "()V");
+            }
+            else if(cc.sys.OS_IOS == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("AppController","voiceStop");
+            }
+            return 1;
+        }
+        catch(e)
+        {
+            cc.log("110 加入语AppController音AndText房间ios e==" + e);
+            return 0;
+        }
+    },
+
+    leaveRoom:function ()
+    {
+        try
+        {
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "leaveRoom", "()V");
+            }
+            else if(cc.sys.OS_IOS == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("AppController","leaveRoom");
+            }
+            return 1;
+        }
+        catch(e)
+        {
+            cc.log("110 加入语AppController音AndText房间ios e==" + e);
+            return 0;
+        }
+    },
+
+    returnRoom:function ()
+    {
+        try
+        {
+            if (cc.sys.OS_ANDROID == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("org.cocos2dx.javascript.AppActivity", "returnRoom", "()V");
+            }
+            else if(cc.sys.OS_IOS == cc.sys.os)
+            {
+                jsb.reflection.callStaticMethod("AppController","returnRoom");
+            }
+            return 1;
+        }
+        catch(e)
+        {
+            cc.log("110 加入语AppController音AndText房间ios e==" + e);
+            return 0;
+        }
+    }
+};
 
 var JSScene = cc.Scene.extend({
     jsBind:
     {
         _event:
         {
-            openWeb: function (type) {
+            openWeb: function (type) 
+            {
                 // jsclient.uiPara = para;
 
                 if (type == 0) {
@@ -1457,11 +1816,14 @@ var JSScene = cc.Scene.extend({
                 }
             },
 
-            popUpMsg: function (pmsg) {
+            //错误提示框
+            popUpMsg: function (pmsg) 
+            {
                 this.addChild(NewPopMsgLayer(pmsg));
             },
 
-            updateFinish: function () {
+            updateFinish: function () 
+            {
                 if (!jsclient.gamenet)
                     jsclient.gamenet = new GameNet();
 
@@ -1471,63 +1833,91 @@ var JSScene = cc.Scene.extend({
                 var host = parts[0];
                 var port = getServerByRandForPort(parts);
 
+                if(jsclient.remoteIpHost)
+                    host = jsclient.remoteIpHost;
+
+                //写死测试阿里盾
+                // port = 15032;
+
+                if(jsclient.remoteCfg.httpLogin)
+                {
+                    jsclient.httpBase = "http://" + host + ":" +(port + 1000) + "/";
+                    cc.log("updateFinish http Login" + jsclient.httpBase);
+                    sendEvent("connect");
+                }
+
+                jsclient.native.ShowLogOnJava("--- 登陆IP：" + host + "  端口：" + port);
+
                 jsclient.gamenet.disconnect();
-                jsclient.gamenet.connect(host, port,
-                    function () {
-                        sendEvent("connect");
-                    },
-                    function () {
-                        sendEvent("disconnect", 1);
-                    }
-                );
+                jsclient.gamenet.connect(host, port, function () {sendEvent("connect");}, function () {sendEvent("disconnect", 1);});
             },
 
-            connect: function () {
-                jsclient.game_on_show = false;
-                if (!jsclient.homeui) {
-                    mylog("loginui");
+            connect: function ()
+            {
+                if (!jsclient.homeui)
+                {
                     this.addChild(new LoginLayer());
                     //this.addChild(getFrameMoveMgrInst());
-
                     jsclient.unblock();
                 }
-                else {
-                    mylog("auto login");
+                else
+                {
                     jsclient.autoLogin();
                 }
             },
 
-            game_on_hide: function () {
+            game_on_hide: function ()
+            {
                 jsclient.game_on_show = false;
             },
 
-            game_on_show: function () {
+            game_on_show: function ()
+            {
                 jsclient.game_on_show = true;
             },
 
-            disconnect: function (code) {
-                if (!jsclient.remoteCfg || (cc.sys.OS_WINDOWS != cc.sys.os) && ( code != 6 || jsclient.game_on_show)) {
+            disconnect: function (code)
+            {
+                if (!jsclient.remoteCfg || (cc.sys.OS_WINDOWS != cc.sys.os) && ( code != 6 || jsclient.game_on_show))
+                {
                     jsclient.unblock();
-                    jsclient.showMsg("网络连接断开(" + code + ")，请检查网络设置，重新连接", function () {
-                        jsclient.restartGame();
-                    })
+                    handleMsgCode(code);
                 }
-                else {
+                else
+                {
                     jsclient.block();
                     jsclient.game_on_show = true;
-                    mylog("reconnect");
+
                     jsclient.Scene.runAction(cc.sequence(cc.delayTime(0.1), cc.callFunc(
-                        function () {
+                        function ()
+                        {
                             sendEvent("updateFinish");
                         }
                     )));
-
                 }
             },
 
-            loginOK: function (rtn) {
-                
+            loginOK: function (rtn)
+            {
                 jsclient.data = rtn;
+
+                jsclient.native.ShowLogOnJava("----- loginOK"+ JSON.stringify(jsclient.data));
+
+                if(jsclient.data.pinfo.uid)
+                {
+                    jsclient.native.ShowLogOnJava("-- uid="+jsclient.data.pinfo.uid);
+                    sys.localStorage.setItem("uid", "gd_"+jsclient.data.pinfo.uid);	//cjs: QA xxtea or not ??
+                }
+                if(jsclient.data.pinfo.playNum)
+                {
+                    jsclient.native.ShowLogOnJava("-- playNum="+jsclient.data.pinfo.playNum);
+                    sys.localStorage.setItem("playNum", jsclient.data.pinfo.playNum);
+                }
+                else
+                {
+                    sys.localStorage.setItem("playNum", 0);
+                }
+
                 for (var netEvt in jsclient.netCallBack) 
                 {
                     jsclient.gamenet.QueueNetMsgCallback(netEvt);
@@ -1545,26 +1935,37 @@ var JSScene = cc.Scene.extend({
                     jsclient.joinGame(rtn.vipTable);
                 else 
                     sendEvent("LeaveGame");
+
+                jsclient.getCreateRoomCfg();
             },
 
-            logout: function () {
+            logout: function ()
+            {
                 this.addChild(new LoginLayer());
             },
 
-            createRoom: function () {
-
+            createRoom: function ()
+            {
                 if(jsclient.creatrUI)
+                {
                     jsclient.creatrUI.setVisible(true);
+                }
                 else
-                    this.addChild(new CreateLayer());
+                {
+                    this.addChild(new CreateLayer(),9);
+                }
+
+                LoadCreateRoomCfg("gamefree.json");
             },
             
 
-            joinRoom: function () {
+            joinRoom: function ()
+            {
                 this.addChild(new EnterLayer());
             },
 
-            initSceneData: function (data) {
+            initSceneData: function (data)
+            {
                 jsclient.unblock();
             },
 
@@ -1578,29 +1979,7 @@ var JSScene = cc.Scene.extend({
 
                 if (oldLen == 0)
                     this.startQueueNetMsg();
-            },
-
-            cfgUpdate:function (changeValue)
-            {
-                //更新提示
-                if(changeValue && !changeValue.isShowed)
-                    this.addChild(new TipsPanel(), 9);
-
-                //重起提示
-                // if (changeValue && changeValue.severRestart)
-                // {
-                //     if(jsclient.errorLayer)
-                //     {
-                //         jsclient.errorLayer.removeFromParent(true);
-                //         jsclient.errorLayer = null;
-                //         jsclient.Scene.addChild(new ErroPrompt(changeValue.severRestart), 1000);
-                //     }
-                //     else
-                //     {
-                //         jsclient.Scene.addChild(new ErroPrompt(changeValue.severRestart), 1000);
-                //     }
-                // }
-            },
+            }
         },
 
         _keyboard:
@@ -1657,18 +2036,20 @@ var JSScene = cc.Scene.extend({
         }
     },
 
-    onEnter: function () {
+    onEnter: function ()
+    {
         this._super();
+        // jsclient.gameScene = this;
         setEffectsVolume(-1);
         setMusicVolume(-1);
         ConnectUI2Logic(this, this.jsBind);
         this.addChild(new UpdateLayer());
         this.addChild(new BlockLayer());
 
-        var createLayer = new CreateLayer();
-        createLayer.setVisible(false);
-        this.addChild(createLayer,9);
-
+        // var createLayer = new CreateLayer();
+        // createLayer.setVisible(false);
+        // this.addChild(createLayer,9);
+        
         // this.addChild(new ShowMaPanel());
     }
 });

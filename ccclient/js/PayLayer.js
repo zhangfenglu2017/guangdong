@@ -1,15 +1,15 @@
 
-
-
 function NewPopMsgLayer(uiPara)
 {
     var popui;
 	var PopMsgLayer = cc.Layer.extend({
 		jsBind:
         {
-			block:{
+			block:
+			{
 				_layout:[[1,1],[0.5,0.5],[0,0],true],
-				_event:{
+				_event:
+				{
 					connect:function()
 					{
 						popui.removeFromParent(true);
@@ -20,17 +20,26 @@ function NewPopMsgLayer(uiPara)
 			{
 				_layout:[[0.54,0.66],[0.5,0.5],[0,0]],
 				no:{
-					_visible:function(){ return !!uiPara.no;  }
-					,_click:function(){
+					_visible:function()
+					{
+						return !!uiPara.no;
+					},
+					_click:function()
+					{
 						popui.removeFromParent(true);
-						if(uiPara.no) uiPara.no();
+						if(uiPara.no)
+							uiPara.no();
 					}
 				},
-				msg:{
-					_text:function(){ return uiPara.msg; }
+
+				msg:
+				{
+					_text:function(){ return uiPara.msg;}
 				},
-				yes:{
-					_click:function(){
+				yes:
+				{
+					_click:function()
+					{
 						popui.removeFromParent(true);
 						if(uiPara.yes)
                             uiPara.yes();
@@ -38,33 +47,34 @@ function NewPopMsgLayer(uiPara)
 				}
 			}
 		},
-		ctor:function () {
+		ctor:function ()
+		{
 			this._super();
 			var msgui = ccs.load("res/PopUpMsg" + uiPara.style + ".json");
 			ConnectUI2Logic(msgui.node,this.jsBind);
 			this.addChild(msgui.node);
 			return true;
 		}
-	   
 	});
 	   
-    popui=new PopMsgLayer();
-
+    popui = new PopMsgLayer();
     return popui;
-
-	
 };
 
 var payLayerText;
 var PayLayer = cc.Layer.extend({
-	jsBind:{
-		block:{
+	jsBind:
+	{
+		block:
+		{
 			_layout:[[1,1],[0.5,0.5],[0,0],true]
 		},
 		back:
-		{	_layout:[[0.54,0.66],[0.5,0.5],[0,0]],
+		{
+			_layout:[[0.54,0.66],[0.5,0.5],[0,0]],
 		    close:{
-				_click:function(){
+				_click:function()
+				{
 					jsclient.payLayerui.removeFromParent(true);
 					delete jsclient.payLayerui;
 				}
@@ -77,22 +87,21 @@ var PayLayer = cc.Layer.extend({
                     {
                         if(jsclient.updateCfg && jsclient.updateCfg.weixinBuy)
                         {
-                            this.setString(jsclient.updateCfg.weixinBuy);
+                            // this.setString(jsclient.updateCfg.weixinBuy);
                         }
                     },
                 },
 
-
                 _text:function()
                 {
                     //提审后注意修改
-                    // return "";
+                    return "";
                     // return jsclient.remoteCfg.weixinBuy;
 
-                    if(jsclient.updateCfg && jsclient.updateCfg.weixinBuy)
-                    {
-                        return jsclient.updateCfg.weixinBuy;
-                    }
+                    // if(jsclient.updateCfg && jsclient.updateCfg.weixinBuy)
+                    // {
+                    //     return jsclient.updateCfg.weixinBuy;
+                    // }
 				}
 			},
 			lessMoney:
@@ -100,8 +109,8 @@ var PayLayer = cc.Layer.extend({
 				_visible:function()
                 {
 					//提审关闭
-                    return true;
-					// return false;
+                    // return true;
+					return false;
 				}
 			},
 			text:
@@ -112,8 +121,6 @@ var PayLayer = cc.Layer.extend({
 				}
 			}
 		}
-		
-
     },
     ctor:function ()
     {
@@ -122,21 +129,19 @@ var PayLayer = cc.Layer.extend({
 		ConnectUI2Logic(payLayerui.node,this.jsBind);
         this.addChild(payLayerui.node);
 		jsclient.payLayerui=this;
-		if(jsclient.data.isShop){//shop
+		if(jsclient.data.isShop)
+		{
 			//提审这么写
-			// payLayerText.setString("暂未开放");
-            payLayerText.setString("请联系所在群主或添加以下微信号。");
-		}else{//not shop
-			payLayerText.setString("请联系所在群主或添加以下微信号。");
+			payLayerText.setString("钻石余额不足！");
+            // payLayerText.setString("请联系所在群主或添加以下微信号。");
 		}
-
+		else
+		{
+			// payLayerText.setString("请联系所在群主或添加以下微信号。");
+			payLayerText.setString("钻石余额不足！");
+		}
 
         return true;
     }
    
 });
-
-
-
-
-

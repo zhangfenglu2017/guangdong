@@ -46,7 +46,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4545" Y="0.6875" />
-                    <PreSize X="0.9318" Y="0.1083" />
+                    <PreSize X="0.9318" Y="0.1219" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Normal" Path="createRoomNew/y_guangzhoutuidaohu_normal.png" Plist="" />
                     <PressedFileData Type="Normal" Path="createRoomNew/y_guangzhoutuidaohu_normal.png" Plist="" />
@@ -61,7 +61,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4545" Y="0.5625" />
-                    <PreSize X="0.9318" Y="0.1083" />
+                    <PreSize X="0.9318" Y="0.1219" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Normal" Path="createRoomNew/y_huizhouzhuang_normal.png" Plist="" />
                     <PressedFileData Type="Normal" Path="createRoomNew/y_huizhouzhuang_normal.png" Plist="" />
@@ -76,7 +76,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4545" Y="0.4375" />
-                    <PreSize X="0.9318" Y="0.1083" />
+                    <PreSize X="0.9318" Y="0.1219" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Normal" Path="createRoomNew/y_xianggang_normal.png" Plist="" />
                     <PressedFileData Type="Normal" Path="createRoomNew/y_xianggang_normal.png" Plist="" />
@@ -91,7 +91,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4545" Y="0.3125" />
-                    <PreSize X="0.9318" Y="0.1083" />
+                    <PreSize X="0.9318" Y="0.1219" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Normal" Path="createRoomNew/y_donggua_normal.png" Plist="" />
                     <PressedFileData Type="Normal" Path="createRoomNew/y_donggua_normal.png" Plist="" />
@@ -106,7 +106,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4545" Y="0.1875" />
-                    <PreSize X="0.9318" Y="0.1083" />
+                    <PreSize X="0.9318" Y="0.1219" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Normal" Path="createRoomNew/jp-yeqian_press.png" Plist="" />
                     <PressedFileData Type="Normal" Path="createRoomNew/jp-yeqian_press.png" Plist="" />
@@ -114,14 +114,14 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="ybzhmjtable" ActionTag="1301926382" Tag="542" IconVisible="False" LeftMargin="-2.4997" RightMargin="17.4997" TopMargin="561.0001" BottomMargin="1.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="ybzhmjtable" ActionTag="1301926382" Tag="542" IconVisible="False" LeftMargin="-2.4997" RightMargin="17.4997" TopMargin="561.0000" BottomMargin="1.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="175" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="205.0000" Y="78.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="100.0003" Y="40.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4545" Y="0.0625" />
-                    <PreSize X="0.9318" Y="0.1083" />
+                    <PreSize X="0.9318" Y="0.1219" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Normal" Path="createRoomNew/y_100_1.png" Plist="" />
                     <PressedFileData Type="Normal" Path="createRoomNew/y_100_1.png" Plist="" />
@@ -136,7 +136,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4545" Y="0.8125" />
-                    <PreSize X="0.9318" Y="0.1083" />
+                    <PreSize X="0.9318" Y="0.1219" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Normal" Path="createRoomNew/y_heyuan_2.png" Plist="" />
                     <PressedFileData Type="Normal" Path="createRoomNew/y_heyuan_2.png" Plist="" />
@@ -151,7 +151,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4545" Y="0.9375" />
-                    <PreSize X="0.9318" Y="0.1083" />
+                    <PreSize X="0.9318" Y="0.1219" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Normal" Path="createRoomNew/y_chaoshan_normal.png" Plist="" />
                     <PressedFileData Type="Normal" Path="createRoomNew/y_chaoshan_normal.png" Plist="" />
@@ -199,6 +199,21 @@
               </AbstractNodeData>
               <AbstractNodeData Name="help" ActionTag="-1260575844" Tag="238" IconVisible="False" LeftMargin="400.0000" RightMargin="140.0000" TopMargin="160.0000" BottomMargin="120.0000" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="16" Scale9Height="16" ctype="ImageViewObjectData">
                 <Size X="740.0000" Y="440.0000" />
+                <Children>
+                  <AbstractNodeData Name="ScrollView_1" ActionTag="432619450" Tag="23" IconVisible="False" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
+                    <Size X="740.0000" Y="440.0000" />
+                    <AnchorPoint />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <SingleColor A="255" R="150" G="150" B="255" />
+                    <FirstColor A="255" R="150" G="150" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                </Children>
                 <AnchorPoint />
                 <Position X="400.0000" Y="120.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />

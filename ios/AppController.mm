@@ -1,19 +1,19 @@
 /****************************************************************************
  Copyright (c) 2010-2013 cocos2d-x.org
  Copyright (c) 2013-2014 Chukong Technologies Inc.
-
+ 
  http://www.cocos2d-x.org
-
+ 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  copies of the Software, and to permit persons to whom the Software is
  furnished to do so, subject to the following conditions:
-
+ 
  The above copyright notice and this permission notice shall be included in
  all copies or substantial portions of the Software.
-
+ 
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -35,6 +35,8 @@
 
 #import <Foundation/Foundation.h>
 #import "UserRecord.h"
+#import <YunCeng/YunCeng.h>
+
 
 @implementation AppController
 
@@ -49,34 +51,137 @@ BOOL isRecord = false;
 static NSString* latPos;
 static NSString* lonPos;
 
+//语音时时功能添加
+NSString *strRoomId;//接入应用地方
+NSString *strUserID;//接入应用地方
+NSString *strUserName;//接入应用地方
+//__weak NSObject *p1 = p;
+AVRoom* avRoom;//接入应用地方
 
++(void)initGameVoiceRoom
+{
+    avRoom = [[AVRoom alloc] init];//接入声音应用地方
+    [avRoom retain];
+    [avRoom SetCallback:avRoom callbackQueue:dispatch_get_main_queue()];
+    Byte signkey[] = {0x91,0x93,0xcc,0x66,0x2a,0x1c,0xe,0xc1,
+        0x35,0xec,0x71,0xfb,0x7,0x19,0x4b,0x38,
+        0x15,0xf1,0x43,0xf5,0x7c,0xd2,0xb5,0x9a,
+        0xe3,0xdd,0xdb,0xe0,0xf1,0x74,0x36,0xd};
+    
+    NSData *nsDataAppSignature = [[NSData alloc] initWithBytes:signkey length:32];
+    
+    [avRoom SetLogLevel:AVROOM_LOG_LEVEL_DEBUG];//接入应用地方
+    [avRoom Init:1 AppSignature:nsDataAppSignature];//接入应用地方
+    NSLog(@"initGameVoiceRoom=");
+    
+}
++(void)JoinGameVoiceRoom
+{
+    [self initGameVoiceRoom];
+    
+    NSLog(@"JoinGameVoiceRoom strRoomId =:%@",strRoomId);
+    //    if (nEnv == 1)
+    //    {
+    //        NSString *strIP = [self.mNotifEntity strTestIP];
+    //        NSString *strPort = [self.mNotifEntity strTestPort];
+    //        [avRoom SetTestServer:strIP Port:[strPort intValue] Enable:true];
+    //    }
+    //    else
+    //    {
+    //        [avRoom SetTestServer:@"" Port:0 Enable:false];
+    //    }
+    
+    int nRoomKey = [strRoomId intValue];//接入应用地方
+    RoomUser* roomUser = [RoomUser new];//接入应用地方
+    
+    [roomUser setStrUserID:strUserID];//接入应用地方
+    
+    [roomUser setStrUserName:strUserName];//接入应用地方
+    
+    [avRoom GetInRoom:nRoomKey RoomUser:roomUser]; //接入应用地方
+}
++(void)setVoiceRoomID:(NSString*)roomId
+{
+    strRoomId = roomId;
+    NSLog(@"setVoiceRoomID strRoomId =:%@",strRoomId);
+}
++(void)setVoiceUserName:(NSString*)userName
+{
+    
+    strUserName = userName;
+    
+    
+    NSLog(@"setVoiceUserName strUserName =:%@",strUserName);
+}
++(void)setVoiceUserId:(NSString*)userId
+{
+    strUserID = userId;
+    NSLog(@"setVoiceUserId strUserID =:%@",strUserID);
+}
++(void)voiceStart
+{
+    NSLog(@"JoinGameVoiceRoom uuuu u vioceStart =");
+    //    [avRoom EnableSpeaker:true];
+    [avRoom EnableMic:true];
+    //    [avRoom EnableAux:false];
+    
+}
++(void)voiceStop
+{
+    NSLog(@"JoinGameVoiceRoom uuuu u vioceStop =");
+    //    [avRoom EnableSpeaker:false];
+    [avRoom EnableMic:false];
+    //    [avRoom EnableAux:true];
+    
+}
++(void)leaveRoom
+{
+    NSLog(@"leaverRoom uuuu u leaverRoom =");
+    //    [avRoom EnableSpeaker:true];
+    [avRoom LeaveRoom];
+    //    [avRoom EnableAux:false];
+    
+}
++(void)returnRoom
+{
+    NSLog(@"returnRoom uuuu u returnRoom =");
+    //    [avRoom EnableSpeaker:true];
+    [avRoom ReGetInRoom];
+    //    [avRoom EnableAux:false];
+    
+}
+
+//up yuyin over
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSString *appKey_aliDun = @"gxo_C7B2mlgGYhIKOcpWw+4OKMExNxMk90ENn+KVHUb5D-4SO8sK6Et_8BhkQougeGN9EQJ4GEeWa6k3GGbN5sSoBy3Muto6qtZFERKZ6ygGXtDMtUO6kE0hNYg3+K3F+BF7H3WG9X6qmIM-aprKImmD81rvJeMCXbJGm8_ZMmqHqD8APS8xHMETrYCjclumqjOyIA4fmyQtmm1bOpOa8rRt6KTAiBojRL0wuTA_r7WxqPExm+wqVh4t+my7QggaLvtzmtjs6JbJ6YeXJb8miWLxXlQ2LUyQGnhphbo+1wrQMfFoRAvtuA5uQ";
+    [YunCeng initWithAppKey:appKey_aliDun];
+    
     [self configLocationManager];
     [WXApi registerApp:@"wx073b364e22383a0d"];
     cocos2d::Application *app = cocos2d::Application::getInstance();
     app->initGLContextAttrs();
     cocos2d::GLViewImpl::convertAttrs();
-
+    
     // Override point for customization after application launch.
-
+    
     // Add the view controller's view to the window and display.
     window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     CCEAGLView *eaglView = [CCEAGLView viewWithFrame: [window bounds]
-                                     pixelFormat: (NSString*)cocos2d::GLViewImpl::_pixelFormat
-                                     depthFormat: cocos2d::GLViewImpl::_depthFormat
-                              preserveBackbuffer: NO
-                                      sharegroup: nil
-                                   multiSampling: NO
-                                 numberOfSamples: 0 ];
-
+                                         pixelFormat: (NSString*)cocos2d::GLViewImpl::_pixelFormat
+                                         depthFormat: cocos2d::GLViewImpl::_depthFormat
+                                  preserveBackbuffer: NO
+                                          sharegroup: nil
+                                       multiSampling: NO
+                                     numberOfSamples: 0 ];
+    
     [eaglView setMultipleTouchEnabled:YES];
     
     // Use RootViewController manage CCEAGLView
     viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
     viewController.wantsFullScreenLayout = YES;
     viewController.view = eaglView;
-
+    
     // Set RootViewController to window
     if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
     {
@@ -90,18 +195,18 @@ static NSString* lonPos;
     }
     
     [window makeKeyAndVisible];
-
+    
     [[UIApplication sharedApplication] setStatusBarHidden: YES];
     [UIApplication sharedApplication].idleTimerDisabled=YES;//不自动锁屏
     
-
+    
     // IMPORTANT: Setting the GLView should be done after creating the RootViewController
     cocos2d::GLView *glview = cocos2d::GLViewImpl::createWithEAGLView(eaglView);
     cocos2d::Director::getInstance()->setOpenGLView(glview);
     
     
     [self startSerialLocation];
-   
+    
     [self addNotBackUpiCloud];
     app->run();
     return YES;
@@ -133,34 +238,34 @@ static NSString* lonPos;
     SendAuthResp *aresp = (SendAuthResp *)resp;
     if([resp isKindOfClass:[SendMessageToWXResp class]])
     {
- 
+        
     }else if (aresp.errCode == 0) {
         code = aresp.code;
         NSLog(@"weixincode");
         NSLog(code);
         NSString *url =[NSString stringWithFormat:@"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code",appid,secret,code];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0),^{
-        
-        NSURL *zoneUrl=[NSURL URLWithString:url];
-        
-        NSString *zoneStr = [NSString stringWithContentsOfURL:zoneUrl encoding:NSUTF8StringEncoding error:nil];
-        NSData *data = [zoneStr dataUsingEncoding:NSUTF8StringEncoding];
+            
+            NSURL *zoneUrl=[NSURL URLWithString:url];
+            
+            NSString *zoneStr = [NSString stringWithContentsOfURL:zoneUrl encoding:NSUTF8StringEncoding error:nil];
+            NSData *data = [zoneStr dataUsingEncoding:NSUTF8StringEncoding];
             dispatch_async(dispatch_get_main_queue(), ^{
                 if(data){
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-            self->access_token = [dic objectForKey:@"access_token"];
+                    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                    self->access_token = [dic objectForKey:@"access_token"];
                     NSLog(@"access_token:");
-                   // NSLog(access_token);
-                  
-            self->openid = [dic objectForKey:@"openid"];
-                     NSLog(@"openid:");
-                     //NSLog(openid);
-                     [self getUserInfo];
-            }
+                    // NSLog(access_token);
+                    
+                    self->openid = [dic objectForKey:@"openid"];
+                    NSLog(@"openid:");
+                    //NSLog(openid);
+                    [self getUserInfo];
+                }
             });
         });
         
-       
+        
         
     }else
     {
@@ -169,32 +274,32 @@ static NSString* lonPos;
 }
 -(void)getUserInfo
 {
-   https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code
+https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code
     NSString*url=[NSString stringWithFormat:@"https://api.weixin.qq.com/sns/userinfo?access_token=%@&openid=%@",self->access_token,self->openid];
     NSLog(@"url:");
     NSLog(url);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0),^{
-    NSURL *zoneUrl = [NSURL URLWithString:url];
-    NSString *zoneStr = [NSString stringWithContentsOfURL:zoneUrl encoding:NSUTF8StringEncoding error:nil];
-    NSData *data = [zoneStr dataUsingEncoding:NSUTF8StringEncoding];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if(data){
-            NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-			NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-            NSString*   nickname = [dic objectForKey:@"nickname"];
-            cocos2d::CCFileUtils::getInstance()->writeStringToFile(nickname.UTF8String,
-            cocos2d::CCFileUtils::getInstance()->getWritablePath()+"/nickname.txt");
-			
-            std::string result_c_str= [result cStringUsingEncoding: NSUTF8StringEncoding];
-            std::string event ="WX_USER_LOGIN";
-            std::string funName ="cc.eventManager.dispatchCustomEvent";
-            std::string rStr = funName + "(\"" + event + "\"," + result_c_str + ");";
-             
-
-            ScriptingCore::getInstance()->evalString(rStr.c_str());
-            
-        }
-    });
+        NSURL *zoneUrl = [NSURL URLWithString:url];
+        NSString *zoneStr = [NSString stringWithContentsOfURL:zoneUrl encoding:NSUTF8StringEncoding error:nil];
+        NSData *data = [zoneStr dataUsingEncoding:NSUTF8StringEncoding];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(data){
+                NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                NSString*   nickname = [dic objectForKey:@"nickname"];
+                cocos2d::CCFileUtils::getInstance()->writeStringToFile(nickname.UTF8String,
+                                                                       cocos2d::CCFileUtils::getInstance()->getWritablePath()+"/nickname.txt");
+                
+                std::string result_c_str= [result cStringUsingEncoding: NSUTF8StringEncoding];
+                std::string event ="WX_USER_LOGIN";
+                std::string funName ="cc.eventManager.dispatchCustomEvent";
+                std::string rStr = funName + "(\"" + event + "\"," + result_c_str + ");";
+                
+                
+                ScriptingCore::getInstance()->evalString(rStr.c_str());
+                
+            }
+        });
     });
 }
 
@@ -209,8 +314,8 @@ static NSString* lonPos;
 
 +(void)NativeBattery
 {
-    [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];  
-    float battery =  [[UIDevice currentDevice] batteryLevel]; 
+    [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];
+    float battery =  [[UIDevice currentDevice] batteryLevel];
     int   batteryNum =  floor(battery*100);
     
     std::stringstream ss;
@@ -219,7 +324,7 @@ static NSString* lonPos;
     ss>>result_c_str;
     std::string event ="nativePower";
     std::string funName ="cc.eventManager.dispatchCustomEvent";
-
+    
     std::string rStr = funName + "(\"" + event + "\"," + result_c_str + ");";
     ScriptingCore::getInstance()->evalString(rStr.c_str());
 }
@@ -236,7 +341,7 @@ static NSString* lonPos;
 {
     
     NSLog(@"filepath11:%@",path);
-     WXMediaMessage * message =[WXMediaMessage message];
+    WXMediaMessage * message =[WXMediaMessage message];
     UIImage *image  = [[UIImage alloc]initWithContentsOfFile:path];
     CGSize size= [image size];
     
@@ -246,12 +351,12 @@ static NSString* lonPos;
     CGRect rect = CGRectMake(0.0, 0.0, scaleSize.width, scaleSize.height);
     [image drawInRect:rect];
     UIImage * scaleimage = UIGraphicsGetImageFromCurrentImageContext();
-     [message setThumbImage:scaleimage];
+    [message setThumbImage:scaleimage];
     UIGraphicsEndImageContext();
-
-   /**
-    缩放截屏图片为512
-    */
+    
+    /**
+     缩放截屏图片为512
+     */
     CGSize scaleSize1 = CGSizeMake(400,400 / size.width * size.height);
     UIGraphicsBeginImageContext(scaleSize1);
     CGRect rect1 = CGRectMake(0.0, 0.0, scaleSize1.width, scaleSize1.height);
@@ -271,7 +376,7 @@ static NSString* lonPos;
     req.message = message;
     req.scene = WXSceneSession;
     [WXApi sendReq:req];
-     NSLog(@"filepath12:%@",path);
+    NSLog(@"filepath12:%@",path);
 }
 
 +(void)wxShareUrl:(NSString*)title AndText:(NSString*)text AndUrl:(NSString*)url
@@ -292,6 +397,23 @@ static NSString* lonPos;
     [WXApi sendReq:req];
 }
 
++(void)wxShareUrlTimeline:(NSString*)title AndText:(NSString*)text AndUrl:(NSString*)url
+{
+    
+    NSLog(@"weixinshareurl:%@",url);
+    WXMediaMessage * message = [WXMediaMessage message];
+    message.title = title;
+    message.description = text;
+    [message setThumbImage:[UIImage imageNamed:@"Icon-100.png"]];
+    WXWebpageObject * webpageObject = [WXWebpageObject object];
+    webpageObject.webpageUrl = url;
+    message.mediaObject = webpageObject;
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc]init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneTimeline;    //share to friendsAround
+    [WXApi sendReq:req];
+}
 
 /**
  * 初始化 录音
@@ -312,7 +434,7 @@ static NSString* lonPos;
     NSString* path=[recoder beginRecord:filePath fileName:fileName];
     NSString *homePath=NSHomeDirectory();
     isRecord = true;
-    return  path;   
+    return  path;
 }
 +(void)endRecord:(NSString*)eventName
 {
@@ -627,15 +749,15 @@ static NSString* lonPos;
         
     }
     
-//    const char* filePath = [[URL path] fileSystemRepresentation];
-//        const char* attrName = "com.apple.MobileBackup";
-//    
-//    u_int8_t attrValue = 1;
-//    
-//    int result = setxattr(filePath, attrName, &attrValue, sizeof(attrValue), 0, 0);
+    //    const char* filePath = [[URL path] fileSystemRepresentation];
+    //        const char* attrName = "com.apple.MobileBackup";
+    //
+    //    u_int8_t attrValue = 1;
+    //
+    //    int result = setxattr(filePath, attrName, &attrValue, sizeof(attrValue), 0, 0);
     
     
-//    return result == 0;
+    //    return result == 0;
     return false;
 }
 
@@ -687,7 +809,7 @@ static NSString* lonPos;
     /*
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
-     cocos2d::Director::getInstance()->purgeCachedData();
+    cocos2d::Director::getInstance()->purgeCachedData();
 }
 
 
@@ -698,7 +820,6 @@ static NSString* lonPos;
 - (void)configLocationManager
 {
     [AMapServices sharedServices].apiKey = @"f04f38274fee86941eef35f91bc813d0";
-    
     
     locationManager = [[AMapLocationManager alloc] init];
     
@@ -738,7 +859,7 @@ float longitudePos;
     longitudePos = location.coordinate.longitude;
     
     [self stopSerialLocation];
-
+    
 }
 
 
@@ -777,6 +898,54 @@ float longitudePos;
     return disStr;
 }
 
+//+(const char*)getRemoteIpByAliDun:(char *)group
++(NSString *)getRemoteIpByAliDun:(NSString *)groupname
+{
+    //wxShareTexture:(NSString* )path
+    //char ip[16];
+    //    int ret = YunCeng_GetNextIPByGroupName("test.k2bnkr49tr.aliyungf.com", ip);
+    NSString * ipNstr;
+    //std::string event = [eventName cStringUsingEncoding: NSUTF8StringEncoding];
+    std::string ip ;
+    //NSString *groupname= [NSString stringWithUTF8String:group];
+    
+    NSLog(@"------------   alidun ip = 00 begin");
+    
+    std::string event ="GetRemoteIpByAliDun_Back";
+    std::string funName ="cc.eventManager.dispatchCustomEvent";
+    
+    std::string errorCode="errorCode:";
+    NSLog(@"--- groupName:%@",groupname);
+    
+    try {
+        NSLog(@"------------   alidun ip = 00");
+        ipNstr = [YunCeng getNextIPByGroupName:groupname];
+        if (ipNstr == nil || ipNstr.length == 0) {
+            ipNstr = @"errorCode:null";
+        }
+        ip = [ipNstr cStringUsingEncoding: NSUTF8StringEncoding];
+        NSLog(@"------------   alidun ip = 01");
+        //std::string rStr = funName + "(\"" + event + "\"," + ip + "));";
+        
+        std::string rStr = funName + "(\"" + event + "\", \"" + ip + "\");";
+        
+        NSLog(@"------------   alidun rStr=%s",rStr.c_str());
+        ScriptingCore::getInstance()->evalString(rStr.c_str());
+        
+        //NSLog(@"------------   alidun ip = %s",ip.c_str());
+        
+    } catch (YunCengException *ex) {
+        NSLog(@"------------   alidun exception");
+        std::string  str = [[NSString stringWithFormat:@"%ld", (long)ex.code] cStringUsingEncoding:NSUTF8StringEncoding];
+        std::string rStr = funName + "(\"" + event + "\"," + errorCode+str + ");";
+        ScriptingCore::getInstance()->evalString(rStr.c_str());
+        
+        
+    }
+    
+    
+    return ipNstr;
+}
 
 @end
 

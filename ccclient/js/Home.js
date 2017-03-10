@@ -64,7 +64,7 @@ function homeRunText(node)
 		node.x = startPosX;
 	};
     node.stopAllActions();
-	node.runAction(cc.repeatForever(cc.sequence(cc.moveBy(length/150.0,cc.p(-length,0)),cc.callFunc(callback))));
+	node.runAction(cc.repeatForever(cc.sequence(cc.moveBy(length/100.0,cc.p(-length,0)),cc.callFunc(callback))));
 
     // log("跑马灯 文字时间：" + length/150.0 + "    长度" + length);
 }
@@ -151,6 +151,27 @@ var HomeLayer=cc.Layer.extend(
 					delete jsclient.homeui;
 				}
 			},
+            cfgUpdate:function (changeValue)
+            {
+                //更新提示
+                if(changeValue && !changeValue.isShowed)
+                    this.addChild(new TipsPanel(), 9);
+
+                //重起提示
+                // if (changeValue && changeValue.severRestart)
+                // {
+                //     if(jsclient.errorLayer)
+                //     {
+                //         jsclient.errorLayer.removeFromParent(true);
+                //         jsclient.errorLayer = null;
+                //         jsclient.Scene.addChild(new ErroPrompt(changeValue.severRestart), 1000);
+                //     }
+                //     else
+                //     {
+                //         jsclient.Scene.addChild(new ErroPrompt(changeValue.severRestart), 1000);
+                //     }
+                // }
+            },
 		},
 
         back:
@@ -356,7 +377,33 @@ var HomeLayer=cc.Layer.extend(
 			_layout:[[0.125,0.125],[0.05,0.07],[0,0]],
 			_click:function()
             {
-				jsclient.native.wxShareUrl(jsclient.remoteCfg.wxShareUrl,"星悦•广东麻将","广东正宗麻将，买马、鬼牌特色玩法，足不出户打麻将。还不快快加入，展现你的牌技！戳我下载！");
+                jsclient.uiPara = {
+                    title:"【星悦•广东麻将】",
+                    desc:"【星悦•广东麻将】广东正宗麻将，买马、鬼牌特色玩法，足不出户打麻将。还不快快加入，展现你的牌技！戳我下载！",
+                    //isActivity:false
+                };
+
+                //var jianRongPath = "res/JianRong.cfg";
+
+                //if(jsb.fileUtils.isFileExist(jianRongPath) )
+                //{
+                //    jsclient.native.ShowLogOnJava("新包======================================" );
+                //    jsclient.Scene.addChild(new ShareWXLayer());
+                //}
+                //else
+                //{
+                //    jsclient.native.wxShareUrl(jsclient.remoteCfg.wxShareUrl,"星悦•广东麻将","广东正宗麻将，买马、鬼牌特色玩法，足不出户打麻将。还不快快加入，展现你的牌技！戳我下载！");
+                //    jsclient.native.ShowLogOnJava("老包======================================" );
+                //}
+
+                if("undefined" == typeof (jsb.fileUtils.getXXSecretData))//老包
+                {
+                    jsclient.native.wxShareUrl(jsclient.remoteCfg.wxShareUrl,"星悦•广东麻将","广东正宗麻将，买马、鬼牌特色玩法，足不出户打麻将。还不快快加入，展现你的牌技！戳我下载！");
+                }
+                else{//新包
+                    jsclient.Scene.addChild(new ShareWXLayer());
+                }
+
 			}
 		},
 
@@ -372,6 +419,12 @@ var HomeLayer=cc.Layer.extend(
 		buy:
         {
 			_layout:[[0.125,0.125],[0.35,0.07],[0,0]],
+
+            _run:function ()
+            {
+                this.visible = false;
+            },
+
 			_click:function()
             {
 				jsclient.data.isShop = true;
@@ -739,6 +792,39 @@ var HomeTips = cc.Layer.extend({
     }
 });
 
+
+//版本号提示框
+var VersionsPanel = cc.Layer.extend({
+    jsBind:
+    {
+        block:{_layout:[[1,1],[0.5,0.5],[0,0],true]},
+        back:
+        {
+            _layout:[[0, 0.8],[0.5,0.5],[0,0]],
+
+            close:
+            {
+                _click:function(btn,eT)
+                {
+                    jsclient.versionsPanel.removeFromParent(true);
+                    jsclient.versionsPanel = null;
+                }
+            }
+        }
+    },
+    ctor: function ()
+    {
+        this._super();
+        var versionsui = ccs.load("res/versionsPanel.json");
+        ConnectUI2Logic(versionsui.node, this.jsBind);
+        this.addChild(versionsui.node);
+
+        jsclient.versionsPanel = this;
+
+        return true;
+    }
+});
+
 (function()
 {
     var playerId;
@@ -749,7 +835,8 @@ var HomeTips = cc.Layer.extend({
         {
             jsclient.block();
             var xhr = cc.loader.getXMLHttpRequest();
-            var playUrl="http://"+ip+":800/playlog/"+now.substr(0,10)+"/"+owner+"_"+hid+".json";
+            // var playUrl="http://"+ip+":800/playlog/"+now.substr(0,10)+"/"+owner+"_"+hid+".json";
+            var playUrl="http://"+jsclient.remoteCfg.playBackServer+"/"+ip+"/playlog/"+now.substr(0,10)+"/"+owner+"_"+hid+".json";
             cc.log(playUrl);
             xhr.open("GET", playUrl);
             xhr.onreadystatechange = function () {
@@ -904,7 +991,7 @@ var HomeTips = cc.Layer.extend({
                                         {
                                             if(parseInt(logs[i].tableid) == hId)
                                             {
-                                                printfLogToFile(logs[i].ip,logs[i].owner,logs[i].now,logs[i].logid,pId,hId);
+                                                printfLogToFile(logs[i].url,logs[i].owner,logs[i].now,logs[i].logid,pId,hId);
                                             }
                                         }
                                     }

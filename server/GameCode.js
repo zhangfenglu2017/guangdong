@@ -54,6 +54,62 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         app.FileWork(gameLog, __dirname + "/log.txt", log)
     }
 
+    var http= require("http");
+    var freeGameTypes = [];
+    function getGamefreeData()
+    {
+        setInterval(function () {
+            //if(app.serverId.indexOf("pkroom") != -1)
+            //{
+                http.get("http://sources4.happyplaygame.net/gdmj/gamefree.json", function(res) {
+                    var resData = "";
+                    res.on("data",function(data){
+                        resData += data;
+                    });
+                    res.on("end", function() {
+                        if(resData != "" && resData.length >= 40)
+                        {
+                            GLog("服务器当前时间:" + new Date().Format("yyyy-MM-dd hh:mm:ss"));
+                            var FreeActivityData = JSON.parse(resData);
+                            if(FreeActivityData)
+                            {
+                                // var length = 0;
+                                //freeGameTypes.length = 0;
+                                freeGameTypes.splice(0,freeGameTypes.length);
+
+                                // freeGameTypes = [];
+                                for(var item in   FreeActivityData)
+                                {
+                                    var gameStartTime = new Date(FreeActivityData[item + ""].gameStartTime + "").getTime();
+                                    var gameEndTime = new Date(FreeActivityData[item + ""].gameEndTime + "").getTime();
+                                    var serverNowTime = new Date().getTime();
+                                    //GLog("服务器当前时间:" + new Date().Format("yyyy-MM-dd hh:mm:ss"));
+                                    if(gameStartTime && gameEndTime && gameStartTime <= serverNowTime  && gameEndTime >= serverNowTime )
+                                    {
+                                        for(var i=0;i<FreeActivityData[item + ""].gameType.length; i++)
+                                        {
+                                            freeGameTypes.push(FreeActivityData[item + ""].gameType[i]);
+                                        }
+
+                                    }
+                                    // length ++;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            GLog("获取不到数据！！！");
+                        }
+                    });
+                })
+            //}
+        }, 1000 * 60 * 5 );// * 5
+    }
+
+    getGamefreeData();
+
+
+
     console.error(app.serverId + " reload game code " + gameid);
     var logid = Date.now();
     delete require.cache[require.resolve("./majiang.js")];
@@ -423,6 +479,19 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         }
         return eatFlag;
     }
+
+    // 接入新的语音代码
+    Table.prototype.StartVoice = function(pl,msg,session,next)
+    {
+        next(null,null);
+        this.NotifyAll('MJStartVoice', msg);
+    };
+
+    Table.prototype.StopVoice = function(pl,msg,session,next)
+    {
+        next(null,null);
+        this.NotifyAll('MJStopVoice', msg);
+    };
 
     Table.prototype.initTable = function () {
         var table = this;
@@ -2653,7 +2722,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                                 if (pi.winType == WinType.eatGang) {
                                     if (pj.uid != tData.uids[tData.curPlayer]) continue;
                                     if(pi.mjdesc.indexOf("抢杠胡") == -1) pi.mjdesc.push("抢杠胡");
-                                    baseWin = baseWin * 3;
+                                    baseWin = baseWin * (tData.maxPlayer - 1);
                                     pi.baseWin = 1;
                                     if(tData.maxPlayer == 4 && pj.mjdesc.indexOf("包三家") == -1 && pj.uid == tData.uids[tData.curPlayer]) pj.mjdesc.push("包三家");
                                     if(tData.maxPlayer == 3 && pj.mjdesc.indexOf("包两家") == -1 && pj.uid == tData.uids[tData.curPlayer]) pj.mjdesc.push("包两家");
@@ -2813,7 +2882,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                                 if (pi.winType == WinType.eatGang) {
                                     if (pj.uid != tData.uids[tData.curPlayer]) continue;
                                     if(pi.mjdesc.indexOf("抢杠胡") == -1) pi.mjdesc.push("抢杠胡");
-                                    baseWin = baseWin * 3;
+                                    baseWin = baseWin * (tData.maxPlayer - 1);
                                     pi.baseWin = 1;
                                     if(tData.maxPlayer == 4 && pj.mjdesc.indexOf("包三家") == -1 && pj.uid == tData.uids[tData.curPlayer]) pj.mjdesc.push("包三家");
                                     if(tData.maxPlayer == 3 && pj.mjdesc.indexOf("包两家") == -1 && pj.uid == tData.uids[tData.curPlayer]) pj.mjdesc.push("包两家");
@@ -2848,7 +2917,47 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var owner = tb.players[tData.uids[0]].info;
         if (!byEndRoom && !tData.coinRoomCreate) {
             if (!owner.$inc) {
-                owner.$inc = {money: -tb.createPara.money};
+                if(freeGameTypes.length > 0)
+                {
+                    var ceshi ="";
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        ceshi += freeGameTypes[i] + ",";
+                    }
+                    GLog("免费玩法："+ ceshi );
+                    var isMianFei = false;
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        if(freeGameTypes[i] == 3)
+                        {
+                            isMianFei = true;
+                            break;
+                        }
+                    }
+                    if(isMianFei)
+                    {
+                        GLog("深圳 免费");
+                        owner.$inc = {money: 0};
+                    }
+                    else
+                    {
+                        GLog("深圳 扣费");
+                        owner.$inc = {money: -tb.createPara.money};
+                    }
+                    //if(freeGameTypes.indexOf(3) != -1)//免费
+                    //{
+                    //    GLog("深圳 免费");
+                    //    owner.$inc = {money: 0};
+                    //}else
+                    //{
+                    //    GLog("深圳 扣费");
+                    //    owner.$inc = {money: -tb.createPara.money};
+                    //}
+                }else
+                {
+                    GLog("深圳 扣费1");
+                    owner.$inc = {money: -tb.createPara.money};
+                }
             }
             //后加的
             tb.AllPlayerRun(function(p) {
@@ -2951,18 +3060,63 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                     var desc = "";
                     var huType = majiang.getHuType(pi);
                     var baseWin = 3;
+                    var qiXiaoDui = majiang.can_7_Hu(pi.mjhand,0,false,false); // 9
+                    if(tData.canHu7 && qiXiaoDui)
+                    {
+                        desc = "七小对";
+                        baseWin = 9;
+                    }
                     switch (huType) {
                         case majiang.HUI_ZHOU_HTYPE.JIHU:
-                            desc = "鸡胡";
-                            baseWin = 3;
+                        {
+                            //1.有7对 且不是7对 2.不是7对
+                            if(tData.canHu7 && !qiXiaoDui)
+                            {
+                                desc = "鸡胡";
+                                baseWin = 3;
+                            }
+                            else if(!tData.canHu7){
+                                desc = "鸡胡";
+                                baseWin = 3;
+                            }
+                        }
                             break;
                         case majiang.HUI_ZHOU_HTYPE.QINGYISE:
-                            desc = "清一色";
-                            baseWin = 15;
+                        {
+                            if(tData.canHu7 && qiXiaoDui)
+                            {
+                                desc = "清一色,七小对";
+                                baseWin = 15;
+                            }
+                            if(tData.canHu7 && !qiXiaoDui)
+                            {
+                                desc = "清一色";
+                                baseWin = 15;
+                            }
+                            else if(!tData.canHu7)
+                            {
+                                desc = "清一色";
+                                baseWin = 15;
+                            }
+
+                        }
                             break;
                         case majiang.HUI_ZHOU_HTYPE.ZASE:
-                            desc = "杂色";
-                            baseWin = 6;
+                        {
+                            if(tData.canHu7 && qiXiaoDui)
+                            {
+                                desc = "七小对,杂色";
+                            }
+                            if(tData.canHu7 && !qiXiaoDui)
+                            {
+                                baseWin = 6;
+                                desc = "杂色";
+                            }
+                            else if(!tData.canHu7){
+                                baseWin = 6;
+                                desc = "杂色";
+                            }
+                        }
                             break;
                         case majiang.HUI_ZHOU_HTYPE.DAGE:
                             desc = "大哥";
@@ -2977,8 +3131,10 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             baseWin = 30;
                             break;
                         case majiang.HUI_ZHOU_HTYPE.PENGPENGHU:
+                        {
                             desc = "碰碰胡";
                             baseWin = 9;
+                        }
                             break;
                         case majiang.HUI_ZHOU_HTYPE.ZAYAOJIU:
                             desc = "杂幺九";
@@ -2995,11 +3151,6 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                         case majiang.HUI_ZHOU_HTYPE.QUANYAOJIU:
                             desc = "全幺九";
                             baseWin = 30;
-                    }
-                    if(majiang.can_7_Hu(pi.mjhand,0,false,false))
-                    {
-                        desc = "七小对";
-                        baseWin = 9;
                     }
 
                     pi.mjdesc.push(desc);
@@ -3067,7 +3218,7 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                             if (pj.uid != tData.uids[tData.curPlayer]) continue;
                             //roundWin*=tData.noBigWin?1:3;
                             //pj.mjdesc.push("杠炮");
-                            baseWin = baseWin * 3;
+                            baseWin = baseWin * (tData.maxPlayer - 1);
                             pi.baseWin = 1;//都让这么写
                             if(pi.mjdesc.indexOf("抢杠胡") == -1)pi.mjdesc.push("抢杠胡");
                             if(tData.maxPlayer == 4 && pj.mjdesc.indexOf("包三家") == -1 && pj.uid == tData.uids[tData.curPlayer]) pj.mjdesc.push("包三家");
@@ -3132,7 +3283,47 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var owner = tb.players[tData.uids[0]].info;
         if (!byEndRoom && !tData.coinRoomCreate) {
             if (!owner.$inc) {
-                owner.$inc = {money: -tb.createPara.money};
+                if(freeGameTypes.length > 0)
+                {
+                    var ceshi ="";
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        ceshi += freeGameTypes[i] + ",";
+                    }
+                    GLog("免费玩法："+ ceshi );
+                    var isMianFei = false;
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        if(freeGameTypes[i] == 2)
+                        {
+                            isMianFei = true;
+                            break;
+                        }
+                    }
+                    if(isMianFei)
+                    {
+                        GLog("惠州 免费");
+                        owner.$inc = {money: 0};
+                    }
+                    else
+                    {
+                        GLog("惠州 扣费");
+                        owner.$inc = {money: -tb.createPara.money};
+                    }
+                    //if(freeGameTypes.indexOf(2) != -1)//免费
+                    //{
+                    //    GLog("惠州 免费");
+                    //    owner.$inc = {money: 0};
+                    //}else
+                    //{
+                    //    GLog("惠州 扣费");
+                    //    owner.$inc = {money: -tb.createPara.money};
+                    //}
+                }else
+                {
+                    GLog("惠州 扣费1");
+                    owner.$inc = {money: -tb.createPara.money};
+                }
             }
             //后加的
             tb.AllPlayerRun(function(p) {
@@ -3502,7 +3693,49 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var owner = tb.players[tData.uids[0]].info;
         if (!byEndRoom && !tData.coinRoomCreate) {
             if (!owner.$inc) {
-                owner.$inc = {money: -tb.createPara.money};
+                GLog("freeGameTypes.length========" + freeGameTypes.length);
+                if(freeGameTypes.length > 0)
+                {
+                    var ceshi ="";
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        ceshi += freeGameTypes[i] + ",";
+                    }
+                    GLog("免费玩法："+ ceshi );
+                    var isMianFei = false;
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        if(freeGameTypes[i] == 1)
+                        {
+                            isMianFei = true;
+                            break;
+                        }
+                    }
+                    if(isMianFei)
+                    {
+                        GLog("广州 免费");
+                        owner.$inc = {money: 0};
+                    }
+                    else
+                    {
+                        GLog("广州 扣费");
+                        owner.$inc = {money: -tb.createPara.money};
+                    }
+                    //if(freeGameTypes.indexOf(1) != -1)//免费
+                    //{
+                    //    GLog("广州 免费");
+                    //    owner.$inc = {money: 0};
+                    //}else
+                    //{
+                    //    GLog("广州 扣费");
+                    //    owner.$inc = {money: -tb.createPara.money};
+                    //}
+                }
+                else
+                {
+                    GLog("广州 扣费1");
+                    owner.$inc = {money: -tb.createPara.money};
+                }
             }
             //后加的
             tb.AllPlayerRun(function(p) {
@@ -3829,7 +4062,48 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var owner = tb.players[tData.uids[0]].info;
         if (!byEndRoom && !tData.coinRoomCreate) {
             if (!owner.$inc) {
-                owner.$inc = {money: -tb.createPara.money};
+                if(freeGameTypes.length > 0)
+                {
+                    var ceshi ="";
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        ceshi += freeGameTypes[i] + ",";
+                    }
+                    GLog("免费玩法："+ ceshi );
+                    var isMianFei = false;
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        if(freeGameTypes[i] == 4)
+                        {
+                            isMianFei = true;
+                            break;
+                        }
+                    }
+                    if(isMianFei)
+                    {
+                        GLog("鸡平胡 免费");
+                        owner.$inc = {money: 0};
+                    }
+                    else
+                    {
+                        GLog("鸡平胡 免费");
+                        owner.$inc = {money: -tb.createPara.money};
+                    }
+                    //if(freeGameTypes.indexOf(4) != -1)//免费
+                    //{
+                    //    GLog("鸡平胡 免费");
+                    //    owner.$inc = {money: 0};
+                    //}else
+                    //{
+                    //    GLog("鸡平胡 扣费");
+                    //    owner.$inc = {money: -tb.createPara.money};
+                    //}
+                }
+                else
+                {
+                    GLog("鸡平胡 扣费1");
+                    owner.$inc = {money: -tb.createPara.money};
+                }
             }
             //后加的
             tb.AllPlayerRun(function(p) {
@@ -4228,7 +4502,47 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var owner = tb.players[tData.uids[0]].info;
         if (!byEndRoom && !tData.coinRoomCreate) {
             if (!owner.$inc) {
-                owner.$inc = {money: -tb.createPara.money};
+                if(freeGameTypes.length > 0)
+                {
+                    var ceshi ="";
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        ceshi += freeGameTypes[i] + ",";
+                    }
+                    GLog("免费玩法："+ ceshi );
+                    var isMianFei = false;
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        if(freeGameTypes[i] == 5)
+                        {
+                            isMianFei = true;
+                            break;
+                        }
+                    }
+                    if(isMianFei)
+                    {
+                        GLog("东莞 免费");
+                        owner.$inc = {money: 0};
+                    }
+                    else
+                    {
+                        GLog("东莞 扣费");
+                        owner.$inc = {money: -tb.createPara.money};
+                    }
+                    //if(freeGameTypes.indexOf(5) != -1)//免费
+                    //{
+                    //    GLog("东莞 免费");
+                    //    owner.$inc = {money: 0};
+                    //}else
+                    //{
+                    //    GLog("东莞 扣费");
+                    //    owner.$inc = {money: -tb.createPara.money};
+                    //}
+                }else
+                {
+                    GLog("东莞 扣费1");
+                    owner.$inc = {money: -tb.createPara.money};
+                }
             }
             //后加的
             tb.AllPlayerRun(function(p) {
@@ -4602,7 +4916,47 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var owner = tb.players[tData.uids[0]].info;
         if (!byEndRoom && !tData.coinRoomCreate) {
             if (!owner.$inc) {
-                owner.$inc = {money: -tb.createPara.money};
+                if(freeGameTypes.length > 0)
+                {
+                    var ceshi ="";
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        ceshi += freeGameTypes[i] + ",";
+                    }
+                    GLog("免费玩法："+ ceshi );
+                    var isMianFei = false;
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        if(freeGameTypes[i] == 6)
+                        {
+                            isMianFei = true;
+                            break;
+                        }
+                    }
+                    if(isMianFei)
+                    {
+                        GLog("一百张 免费");
+                        owner.$inc = {money: 0};
+                    }
+                    else
+                    {
+                        GLog("一百张 扣费");
+                        owner.$inc = {money: -tb.createPara.money};
+                    }
+                    //if(freeGameTypes.indexOf(6) != -1)//免费
+                    //{
+                    //    GLog("一百张 免费");
+                    //    owner.$inc = {money: 0};
+                    //}else
+                    //{
+                    //    GLog("一百张 扣费");
+                    //    owner.$inc = {money: -tb.createPara.money};
+                    //}
+                }else
+                {
+                    GLog("一百张 扣费1");
+                    owner.$inc = {money: -tb.createPara.money};
+                }
             }
             //后加的
             tb.AllPlayerRun(function(p) {
@@ -5075,7 +5429,47 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var owner = tb.players[tData.uids[0]].info;
         if (!byEndRoom && !tData.coinRoomCreate) {
             if (!owner.$inc) {
-                //owner.$inc = {money: -tb.createPara.money};
+                if(freeGameTypes.length > 0)
+                {
+                    var ceshi ="";
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        ceshi += freeGameTypes[i] + ",";
+                    }
+                    GLog("免费玩法："+ ceshi );
+                    var isMianFei = false;
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        if(freeGameTypes[i] == 8)
+                        {
+                            isMianFei = true;
+                            break;
+                        }
+                    }
+                    if(isMianFei)
+                    {
+                        GLog("潮汕 免费");
+                        owner.$inc = {money: 0};
+                    }
+                    else
+                    {
+                        GLog("潮汕 扣费");
+                        owner.$inc = {money: -tb.createPara.money};
+                    }
+                    //if(freeGameTypes.indexOf(8) != -1)//免费
+                    //{
+                    //    GLog("潮汕 免费");
+                    //    owner.$inc = {money: 0};
+                    //}else
+                    //{
+                    //    GLog("潮汕 扣费");
+                    //    owner.$inc = {money: -tb.createPara.money};
+                    //}
+                }else
+                {
+                    GLog("潮汕 扣费1");
+                    owner.$inc = {money: -tb.createPara.money};
+                }
             }
             //后加的
             tb.AllPlayerRun(function(p) {
@@ -5496,7 +5890,48 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
         var owner = tb.players[tData.uids[0]].info;
         if (!byEndRoom && !tData.coinRoomCreate) {
             if (!owner.$inc) {
-                //owner.$inc = {money: -tb.createPara.money};
+                if(freeGameTypes.length > 0)
+                {
+                    var ceshi ="";
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        ceshi += freeGameTypes[i] + ",";
+                    }
+                    GLog("免费玩法："+ ceshi );
+                    var isMianFei = false;
+                    for(var i=0;i<freeGameTypes.length;i++)
+                    {
+                        if(freeGameTypes[i] == 7)
+                        {
+                            isMianFei = true;
+                            break;
+                        }
+                    }
+                    if(isMianFei)
+                    {
+                        GLog("河源百搭 免费");
+                        owner.$inc = {money: 0};
+                    }
+                    else
+                    {
+                        GLog("河源百搭 扣费");
+                        owner.$inc = {money: -tb.createPara.money};
+                    }
+                    //if(freeGameTypes.indexOf(7) != -1)//免费
+                    //{
+                    //    GLog("河源百搭 免费");
+                    //    owner.$inc = {money: 0};
+                    //}else
+                    //{
+                    //    GLog("河源百搭 扣费");
+                    //    owner.$inc = {money: -tb.createPara.money};
+                    //}
+                }
+                else
+                {
+                    GLog("河源百搭 扣费1");
+                    owner.$inc = {money: -tb.createPara.money};
+                }
             }
             //后加的
             tb.AllPlayerRun(function(p) {
@@ -6428,43 +6863,83 @@ module.exports = function (app, server, gameid, Player, Table, TableGroup, Table
                 var incKey= "";
                 //游戏类型t1 总局数r4 马数h2 红中鬼g1 无鬼g0 翻鬼g2 风牌f1 f0 胡7对 d0 d1  能吃 c1 c0 能吃胡 p0 p1 节节高 j0 j1 爆炸马b1 惠州不可鸡胡 nj1 惠州马跟底 m1 惠州门清 mq1 惠州马跟底对对胡 md1 河源百搭 大胡 bd1 鸡胡bd0
                 //潮州 可点炮_p1 海底翻倍_hf1
+                //switch (tData.gameType) {
+                //    case GamesType.GANG_DONG:
+                //    {
+                //        incKey = "t1_r" + tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) */ + "_b" + (tData.baozhama ? 1 : 0) + "_s" + tData.maxPlayer;
+                //    }
+                //        break;
+                //    case GamesType.HUI_ZHOU:
+                //        incKey = "t2_r" + tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) */ + "_j" + (tData.jiejieGao ? 1 : 0) + "_s" + tData.maxPlayer + "_nj" + (tData.noCanJiHu ? 1 : 0) + "_m" + (tData.maGenDi ? 1 : 0) + "_md" + (tData.maGenDiDuiDuiHu ? 1 : 0) + "_mq" + (tData.menQingJiaFen ? 1 : 0);
+                //        break;
+                //    case GamesType.SHEN_ZHEN:
+                //    {
+                //        incKey = "t3_r" + tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) */ + "_s" + tData.maxPlayer;
+                //    }
+                //        break;
+                //    case GamesType.JI_PING_HU:
+                //    {
+                //        incKey = "t4_r" + tData.roundAll + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p1" */ + "_s" + tData.maxPlayer; //_p1 默认为点炮的意思
+                //    }
+                //        break;
+                //    case GamesType.DONG_GUAN:
+                //    {
+                //        incKey = "t5_r" + tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p0"*/ + "_s" + tData.maxPlayer + "_m" + (tData.zhongIsMa ? 1 : 0); //_p1 默认为点炮的意思
+                //    }
+                //        break;
+                //    case GamesType.YI_BAI_ZHANG:
+                //    {
+                //        incKey = "t6_r" + tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p0" */ + "_s" + tData.maxPlayer + "_b" + (tData.canBigWin ? 1 : 0); //_p1 默认为点炮的意思
+                //    }
+                //        break;
+                //    case GamesType.HE_YUAN_BAI_DA:
+                //    {
+                //        incKey ="t7_r"+tData.roundAll + "_s"+tData.maxPlayer + "_m" + (tData.maGenDi ? 1 : 0) + "_bd" + (tData.baidadahu ? 1 : 0) ; //
+                //    }
+                //        break;
+                //    case GamesType.CHAO_ZHOU:
+                //    {
+                //        incKey ="t8_r"+tData.roundAll + "_s"+tData.maxPlayer + "_p" + (tData.canDianPao ? 1 : 0) + "_hd" + (tData.haiDiFanBei ? 1 : 0)  + "_m" + (tData.maGenDi ? 1 : 0);
+                //    }
+                //        break;
+                //}
                 switch (tData.gameType) {
                     case GamesType.GANG_DONG:
                     {
-                        incKey = "t1_r" + tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) */ + "_b" + (tData.baozhama ? 1 : 0) + "_s" + tData.maxPlayer;
+                        incKey = "t1_r" + tData.roundAll + "_s"+tData.maxPlayer;
                     }
                         break;
                     case GamesType.HUI_ZHOU:
-                        incKey = "t2_r" + tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) */ + "_j" + (tData.jiejieGao ? 1 : 0) + "_s" + tData.maxPlayer + "_nj" + (tData.noCanJiHu ? 1 : 0) + "_m" + (tData.maGenDi ? 1 : 0) + "_md" + (tData.maGenDiDuiDuiHu ? 1 : 0) + "_mq" + (tData.menQingJiaFen ? 1 : 0);
+                        incKey = "t2_r" + tData.roundAll + "_s"+tData.maxPlayer;
                         break;
                     case GamesType.SHEN_ZHEN:
                     {
-                        incKey = "t3_r" + tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p" + (tData.canEatHu ? 1 : 0) */ + "_s" + tData.maxPlayer;
+                        incKey = "t3_r" + tData.roundAll + "_s"+tData.maxPlayer;
                     }
                         break;
                     case GamesType.JI_PING_HU:
                     {
-                        incKey = "t4_r" + tData.roundAll + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p1" */ + "_s" + tData.maxPlayer; //_p1 默认为点炮的意思
+                        incKey = "t4_r" + tData.roundAll + "_s"+tData.maxPlayer; //_p1 默认为点炮的意思
                     }
                         break;
                     case GamesType.DONG_GUAN:
                     {
-                        incKey = "t5_r" + tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p0"*/ + "_s" + tData.maxPlayer + "_m" + (tData.zhongIsMa ? 1 : 0); //_p1 默认为点炮的意思
+                        incKey = "t5_r" + tData.roundAll  + "_s"+tData.maxPlayer; //_p1 默认为点炮的意思
                     }
                         break;
                     case GamesType.YI_BAI_ZHANG:
                     {
-                        incKey = "t6_r" + tData.roundAll /*+ "_h" + tData.horse*/ + "_g" + guiString /*+ "_f"+(tData.withWind ? 1 : 0) + "_d" + (tData.canHu7 ? 1 : 0)  + "_c" + (tData.canEat ? 1 : 0) + "_p0" */ + "_s" + tData.maxPlayer + "_b" + (tData.canBigWin ? 1 : 0); //_p1 默认为点炮的意思
+                        incKey = "t6_r" + tData.roundAll + "_s"+tData.maxPlayer; //_p1 默认为点炮的意思
                     }
                         break;
                     case GamesType.HE_YUAN_BAI_DA:
                     {
-                        incKey ="t7_r"+tData.roundAll + "_s"+tData.maxPlayer + "_m" + (tData.maGenDi ? 1 : 0) + "_bd" + (tData.baidadahu ? 1 : 0) ; //
+                        incKey ="t7_r"+tData.roundAll + "_s"+tData.maxPlayer ; //
                     }
                         break;
                     case GamesType.CHAO_ZHOU:
                     {
-                        incKey ="t8_r"+tData.roundAll + "_s"+tData.maxPlayer + "_p" + (tData.canDianPao ? 1 : 0) + "_hd" + (tData.haiDiFanBei ? 1 : 0)  + "_m" + (tData.maGenDi ? 1 : 0);
+                        incKey ="t8_r"+tData.roundAll + "_s"+tData.maxPlayer;
                     }
                         break;
                 }

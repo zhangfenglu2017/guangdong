@@ -1,0 +1,37 @@
+{
+  "servers":"gdmj.coolgamebox.com:15010:15019"
+  ,"errorReportServer":"http://139.129.206.54:3000/gdmj"
+  ,"reportGameid":"gdmj"
+  ,"playBackServer":"gdmjhf.happyplaygame.net"
+  ,"updateUrls":[
+    "sources1.happyplaygame.net",
+    "sources2.happyplaygame.net",
+    "sources3.happyplaygame.net",
+    "sources4.happyplaygame.net"
+  ]
+  ,"serversSelect":[600,400]
+  ,"wxShareUrl":"http://gdmj.coolgamebox.com:800/gdmj/HappyPlay/download.html"
+  ,"voiceUrl":"http://114.55.252.83:9109/symj/"
+  ,"guestLogin":false
+  ,"coinRoom":false
+  ,"canEatHu":false
+  ,"hideMoney":false
+  ,"asApp":true
+  ,"weixinBuy":"Kfxj111"
+  ,"help1Url":"http://gdmj.coolgamebox.com:800/gdmj/help1.html"
+  ,"help2Url":"http://gdmj.coolgamebox.com:800/gdmj/help2.html"
+  ,"help3Url":"http://gdmj.coolgamebox.com:800/gdmj/help3.html"
+  ,"help4Url":"http://gdmj.coolgamebox.com:800/gdmj/help4.html"
+  ,"help5Url":"http://gdmj.coolgamebox.com:800/gdmj/help5.html"
+  ,"help6Url":"http://gdmj.coolgamebox.com:800/gdmj/help6.html"
+  ,"help7Url":"http://gdmj.coolgamebox.com:800/gdmj/help7.html"
+  ,"help8Url":"http://gdmj.coolgamebox.com:800/gdmj/help8.html"
+  ,"help9Url":"http://gdmj.coolgamebox.com:800/gdmj/help9.html"
+  ,"legalUrl":"http://gdmj.coolgamebox.com:800/gdmj/legal.html"
+  ,"infoUrl":"http://gdmj.coolgamebox.com:800/gdmj/info.html"
+  ,"noticeUrl":"http://gdmj.coolgamebox.com:800/gdmj/notice.json"
+  ,"homeScroll":"代理咨询请联系微信Kfxj111，文明娱乐，禁止赌博"
+  ,"uptitle":"亲爱的玩家:"
+  ,"upnexttitle":"星悦广东麻将本次更新内容如下:"
+  ,"updesc":"1.修复有多张鬼牌时，可能导致大胡牌型计算错误的漏洞\t\n2.新增部分特效\t\n3.新增钻石消耗显示\t\n4.删除打牌部分动画\t\n"
+}

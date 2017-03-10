@@ -145,11 +145,8 @@ var ArmatureEffect =
                 function endCallback(armature, movementType, aniName)
                 {
                     // 只有不循环的，才帮忙处理
-                    cc.log("=======================3333333333333333333333====================");
-                    cc.log("=======================movementType====================" + movementType);
                     if(movementType == ccs.MovementEventType.complete)
                     {
-                        cc.log("=======================2222222222222222222222222====================");
                         endEffect();
                     }
                 }

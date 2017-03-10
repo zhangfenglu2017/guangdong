@@ -1,6 +1,6 @@
 {
-"packageUrl":       "http://gdmj.coolgamebox.com:800/gdmj/{version}/",
-"remoteManifestUrl":"http://gdmj.coolgamebox.com:800/gdmj/{version}/project.manifest",
+"packageUrl":       "http://sources4.happyplaygame.net:80/gdmj/{version}/",
+"remoteManifestUrl":"http://sources4.happyplaygame.net:80/gdmj/{version}/project.manifest",
 "version":"{version}",
 "engineVersion":"3.0 beta",
 "assets":{

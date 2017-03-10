@@ -1231,13 +1231,20 @@ function newReplayLayer()
             var callbackFUNCROTATION = function ()
             {
                 out.visible = true;
-                out.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)), cc.callFunc(callbackFUNC)));
+                out.zIndex = zoder;
+                out.x = endPoint.x;
+                out.y = endPoint.y;
+                out.scale = oSc;
+                outAction.removeFromParent();
+
+                // out.visible = true;
+                // out.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)), cc.callFunc(callbackFUNC)));
 
             };
-            outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, Midpoint), cc.scaleTo(0.2, 2 * oSc))
+            // outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, Midpoint), cc.scaleTo(0.2, 2 * oSc))
+            outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)),cc.callFunc(callbackFUNCROTATION)
                 //cc.DelayTime(0.4),cc.callFunc(callbackFUNCROTATION),cc.removeSelf()
-                )
-            );
+            ));
 
             function RemovePutCard(onlySelf)
             {
@@ -2054,23 +2061,23 @@ function newReplayLayer()
                 },
 
                 LeaveGame: function () {
-                    jsclient.playui.removeFromParent(true);
-                    delete jsclient.playui;
-                    playMusic("bgMain");
+                    // jsclient.playui.removeFromParent(true);
+                    // delete jsclient.playui;
+                    // playMusic("bgMain");
                 },
                 endRoom: function (msg) {
-                    mylog(JSON.stringify(msg));
-                    if (msg.showEnd)
-                        this.addChild(new EndAllLayer());
-                    else
-                        jsclient.Scene.addChild(new EndRoomLayer());
+                    // mylog(JSON.stringify(msg));
+                    // if (msg.showEnd)
+                    //     this.addChild(new EndAllLayer());
+                    // else
+                    //     jsclient.Scene.addChild(new EndRoomLayer());
                 },
                 roundEnd: function () {
-                    var sData = jsclient.data.sData;
-                    if (sData.tData.roundNum <= 0)
-                        this.addChild(new EndAllLayer());
-
-                    this.addChild(new EndOneLayer());
+                    // var sData = jsclient.data.sData;
+                    // if (sData.tData.roundNum <= 0)
+                    //     this.addChild(new EndAllLayer());
+                    //
+                    // this.addChild(new EndOneLayer());
                 },
                 moveHead: function () {
                     tableStartHeadPlayAction(this);

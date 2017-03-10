@@ -1,0 +1,242 @@
+{
+  "ID": "14faece2-a2b4-4395-ac50-bd5eb803c07c",
+  "Version": "3.10.0.0",
+  "Name": "roomTips",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 134,
+        "Children": [
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 0,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 100.0,
+              "Y": 80.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4348,
+              "Y": 0.4706
+            },
+            "PreSize": {
+              "X": 11.1304,
+              "Y": 8.9412
+            },
+            "LeftMargin": -1180.0,
+            "RightMargin": -1150.0,
+            "TopMargin": -670.0,
+            "BottomMargin": -680.0,
+            "Tag": 415,
+            "ActionTag": 452986286,
+            "Size": {
+              "X": 2560.0,
+              "Y": 1520.0
+            },
+            "Name": "shield",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "set/tipsBox.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 75,
+            "Scale9OriginY": 55,
+            "Scale9Width": 79,
+            "Scale9Height": 59,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 115.0,
+              "Y": 85.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.9957,
+              "Y": 0.9941
+            },
+            "LeftMargin": 0.5,
+            "RightMargin": 0.5,
+            "TopMargin": 0.5,
+            "BottomMargin": 0.5,
+            "Tag": 161,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 20,
+                "LabelText": "跟至对对胡",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 115.0,
+                  "Y": 150.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5022,
+                  "Y": 0.8876
+                },
+                "PreSize": {
+                  "X": 0.8734,
+                  "Y": 0.1183
+                },
+                "LeftMargin": 15.0,
+                "RightMargin": 14.0,
+                "TopMargin": 9.0,
+                "BottomMargin": 140.0,
+                "Tag": 5,
+                "ActionTag": -1132091159,
+                "Size": {
+                  "X": 200.0,
+                  "Y": 20.0
+                },
+                "Name": "table",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 18,
+                "LabelText": "中一个马在底分的基础上加倍。跟至对对胡：跟的底分最多4分（有大胡4分，无大胡2分）。公式：底分+花+[（对对胡+花）×马]",
+                "TouchScaleChangeAble": true,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 114.8585,
+                  "Y": 56.3044
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 108,
+                  "G": 37,
+                  "B": 20
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5016,
+                  "Y": 0.3332
+                },
+                "PreSize": {
+                  "X": 0.8734,
+                  "Y": 0.9467
+                },
+                "LeftMargin": 14.8585,
+                "RightMargin": 14.1415,
+                "TopMargin": 32.6956,
+                "BottomMargin": -23.6956,
+                "Tag": 16,
+                "ActionTag": 446273134,
+                "Size": {
+                  "X": 200.0,
+                  "Y": 160.0
+                },
+                "Name": "content",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": -422875379,
+            "Size": {
+              "X": 229.0,
+              "Y": 169.0
+            },
+            "Name": "back",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 230.0,
+          "Y": 170.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "set/tipsBox.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

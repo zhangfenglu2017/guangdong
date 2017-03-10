@@ -153,8 +153,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 576.0004,
-                      "Y": 58.0002
+                      "X": 560.0026,
+                      "Y": 58.0004
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -163,17 +163,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5102,
+                      "X": 0.496,
                       "Y": 0.0973
                     },
                     "PreSize": {
                       "X": 0.0514,
                       "Y": 0.0805
                     },
-                    "LeftMargin": 547.0004,
-                    "RightMargin": 523.9996,
-                    "TopMargin": 513.9998,
-                    "BottomMargin": 34.0002,
+                    "LeftMargin": 531.0026,
+                    "RightMargin": 539.9974,
+                    "TopMargin": 513.9996,
+                    "BottomMargin": 34.0004,
                     "Tag": 29,
                     "ActionTag": 574562487,
                     "Size": {
@@ -182,6 +182,102 @@
                     },
                     "Name": "scroll",
                     "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "gameEndNew/touming.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 14,
+                    "Scale9OriginY": 14,
+                    "Scale9Width": 16,
+                    "Scale9Height": 16,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 400.0,
+                      "Y": 120.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.3543,
+                      "Y": 0.2013
+                    },
+                    "PreSize": {
+                      "X": 0.6554,
+                      "Y": 0.7383
+                    },
+                    "LeftMargin": 400.0,
+                    "RightMargin": -11.0,
+                    "TopMargin": 36.0,
+                    "BottomMargin": 120.0,
+                    "Tag": 35,
+                    "Children": [
+                      {
+                        "DirectionType": "Vertical",
+                        "ScrollDirectionType": 0,
+                        "ClipAble": true,
+                        "BackColorAlpha": 102,
+                        "SingleColor": {
+                          "R": 150,
+                          "G": 150
+                        },
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 150
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
+                        "TouchEnable": true,
+                        "AnchorPoint": {},
+                        "Position": {
+                          "X": -319.9052,
+                          "Y": -19.1596
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": -0.4323,
+                          "Y": -0.0435
+                        },
+                        "PreSize": {
+                          "X": 1.2973,
+                          "Y": 1.0
+                        },
+                        "LeftMargin": -319.9052,
+                        "RightMargin": 99.9052,
+                        "TopMargin": 19.1596,
+                        "BottomMargin": -19.1596,
+                        "Tag": 36,
+                        "ActionTag": 994252689,
+                        "Size": {
+                          "X": 960.0,
+                          "Y": 440.0
+                        },
+                        "Name": "xieyiScroll",
+                        "ctype": "ListViewObjectData"
+                      }
+                    ],
+                    "ActionTag": 45581935,
+                    "Size": {
+                      "X": 740.0,
+                      "Y": 440.0
+                    },
+                    "Name": "help",
+                    "ctype": "ImageViewObjectData"
                   }
                 ],
                 "ActionTag": -528218928,
@@ -331,6 +427,7 @@
       },
       "UsedResources": [
         "Default/Button_Disable.png",
+        "gameEndNew/touming.png",
         "webview/Arrow.png",
         "webview/bac-3.png",
         "webview/btn-return.png",

@@ -361,6 +361,7 @@
                           "X": 183.0,
                           "Y": 39.0
                         },
+                        "VisibleForFrame": false,
                         "Name": "back16",
                         "ctype": "ImageViewObjectData"
                       },
@@ -715,6 +716,7 @@
                           "X": 60.0,
                           "Y": 60.0
                         },
+                        "VisibleForFrame": false,
                         "Name": "round16",
                         "ctype": "CheckBoxObjectData"
                       }
@@ -3478,7 +3480,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "局数：",
+                    "LabelText": "局数:",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
@@ -4208,6 +4210,81 @@
                         "Tag": 486,
                         "Children": [
                           {
+                            "FontSize": 14,
+                            "ButtonText": "",
+                            "TextColor": {
+                              "R": 65,
+                              "G": 65,
+                              "B": 70
+                            },
+                            "DisabledFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao_press.png",
+                              "Plist": ""
+                            },
+                            "PressedFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao_press.png",
+                              "Plist": ""
+                            },
+                            "NormalFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao.png",
+                              "Plist": ""
+                            },
+                            "Scale9Enable": true,
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 11,
+                            "Scale9Width": 3,
+                            "Scale9Height": 11,
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "TouchEnable": true,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 190.0,
+                              "Y": 30.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 3.1667,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 0.55,
+                              "Y": 0.55
+                            },
+                            "LeftMargin": 173.5,
+                            "RightMargin": -146.5,
+                            "TopMargin": 13.5,
+                            "BottomMargin": 13.5,
+                            "Tag": 738,
+                            "ActionTag": 100069504,
+                            "Size": {
+                              "X": 33.0,
+                              "Y": 33.0
+                            },
+                            "Name": "help",
+                            "ctype": "ButtonObjectData"
+                          },
+                          {
                             "IsCustomSize": true,
                             "FontSize": 30,
                             "LabelText": "马跟底分",
@@ -4226,7 +4303,7 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 60.0,
+                              "X": 50.0,
                               "Y": 30.0
                             },
                             "Scale": {
@@ -4240,15 +4317,15 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 1.0,
+                              "X": 0.8333,
                               "Y": 0.5
                             },
                             "PreSize": {
                               "X": 2.5,
                               "Y": 0.5
                             },
-                            "LeftMargin": 60.0,
-                            "RightMargin": -150.0,
+                            "LeftMargin": 50.0,
+                            "RightMargin": -140.0,
                             "TopMargin": 15.0,
                             "BottomMargin": 15.0,
                             "Tag": 487,
@@ -5182,7 +5259,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "局数：",
+                    "LabelText": "局数:",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
@@ -5356,6 +5433,7 @@
                           "X": 183.0,
                           "Y": 39.0
                         },
+                        "VisibleForFrame": false,
                         "Name": "back16",
                         "ctype": "ImageViewObjectData"
                       },
@@ -5707,6 +5785,7 @@
                           "X": 60.0,
                           "Y": 60.0
                         },
+                        "VisibleForFrame": false,
                         "Name": "round16",
                         "ctype": "CheckBoxObjectData"
                       }
@@ -6599,6 +6678,81 @@
                         "BottomMargin": -77.5,
                         "Tag": 335,
                         "Children": [
+                          {
+                            "FontSize": 14,
+                            "ButtonText": "",
+                            "TextColor": {
+                              "R": 65,
+                              "G": 65,
+                              "B": 70
+                            },
+                            "DisabledFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao_press.png",
+                              "Plist": ""
+                            },
+                            "PressedFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao_press.png",
+                              "Plist": ""
+                            },
+                            "NormalFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao.png",
+                              "Plist": ""
+                            },
+                            "Scale9Enable": true,
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 11,
+                            "Scale9Width": 3,
+                            "Scale9Height": 11,
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "TouchEnable": true,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 190.0,
+                              "Y": 15.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 5.5882,
+                              "Y": 0.4286
+                            },
+                            "PreSize": {
+                              "X": 0.9706,
+                              "Y": 0.9429
+                            },
+                            "LeftMargin": 173.5,
+                            "RightMargin": -172.5,
+                            "TopMargin": 3.5,
+                            "BottomMargin": -1.5,
+                            "Tag": 411,
+                            "ActionTag": 1310885198,
+                            "Size": {
+                              "X": 33.0,
+                              "Y": 33.0
+                            },
+                            "Name": "help",
+                            "ctype": "ButtonObjectData"
+                          },
                           {
                             "IsCustomSize": true,
                             "FontSize": 26,
@@ -8015,7 +8169,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "局数：",
+                    "LabelText": "局数:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -8188,6 +8342,7 @@
                           "X": 183.0,
                           "Y": 39.0
                         },
+                        "VisibleForFrame": false,
                         "Name": "back16",
                         "ctype": "ImageViewObjectData"
                       },
@@ -8542,6 +8697,7 @@
                           "X": 60.0,
                           "Y": 60.0
                         },
+                        "VisibleForFrame": false,
                         "Name": "round16",
                         "ctype": "CheckBoxObjectData"
                       }
@@ -9887,6 +10043,81 @@
                             },
                             "Name": "Text_1",
                             "ctype": "TextObjectData"
+                          },
+                          {
+                            "FontSize": 14,
+                            "ButtonText": "",
+                            "TextColor": {
+                              "R": 65,
+                              "G": 65,
+                              "B": 70
+                            },
+                            "DisabledFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao_press.png",
+                              "Plist": ""
+                            },
+                            "PressedFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao_press.png",
+                              "Plist": ""
+                            },
+                            "NormalFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao.png",
+                              "Plist": ""
+                            },
+                            "Scale9Enable": true,
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 11,
+                            "Scale9Width": 3,
+                            "Scale9Height": 11,
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "TouchEnable": true,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 200.0,
+                              "Y": 15.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 5.8824,
+                              "Y": 0.4286
+                            },
+                            "PreSize": {
+                              "X": 0.9706,
+                              "Y": 0.9429
+                            },
+                            "LeftMargin": 183.5,
+                            "RightMargin": -182.5,
+                            "TopMargin": 3.5,
+                            "BottomMargin": -1.5,
+                            "Tag": 412,
+                            "ActionTag": -1697677791,
+                            "Size": {
+                              "X": 33.0,
+                              "Y": 33.0
+                            },
+                            "Name": "help",
+                            "ctype": "ButtonObjectData"
                           }
                         ],
                         "ActionTag": 84116452,
@@ -11021,7 +11252,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "局数：",
+                    "LabelText": "局数:",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -12439,7 +12670,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "局数：",
+                    "LabelText": "局数:",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
@@ -14786,6 +15017,81 @@
                             },
                             "Name": "Text_1",
                             "ctype": "TextObjectData"
+                          },
+                          {
+                            "FontSize": 14,
+                            "ButtonText": "",
+                            "TextColor": {
+                              "R": 65,
+                              "G": 65,
+                              "B": 70
+                            },
+                            "DisabledFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao_press.png",
+                              "Plist": ""
+                            },
+                            "PressedFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao_press.png",
+                              "Plist": ""
+                            },
+                            "NormalFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao.png",
+                              "Plist": ""
+                            },
+                            "Scale9Enable": true,
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 11,
+                            "Scale9Width": 3,
+                            "Scale9Height": 11,
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "TouchEnable": true,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 210.0,
+                              "Y": 15.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 6.1765,
+                              "Y": 0.4286
+                            },
+                            "PreSize": {
+                              "X": 0.9706,
+                              "Y": 0.9429
+                            },
+                            "LeftMargin": 193.5,
+                            "RightMargin": -192.5,
+                            "TopMargin": 3.5,
+                            "BottomMargin": -1.5,
+                            "Tag": 413,
+                            "ActionTag": -1655199210,
+                            "Size": {
+                              "X": 33.0,
+                              "Y": 33.0
+                            },
+                            "Name": "help",
+                            "ctype": "ButtonObjectData"
                           }
                         ],
                         "ActionTag": -1377406720,
@@ -15472,7 +15778,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 32,
-                    "LabelText": "局数：",
+                    "LabelText": "局数:",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
@@ -17660,6 +17966,81 @@
                             },
                             "Name": "Text_1",
                             "ctype": "TextObjectData"
+                          },
+                          {
+                            "FontSize": 14,
+                            "ButtonText": "",
+                            "TextColor": {
+                              "R": 65,
+                              "G": 65,
+                              "B": 70
+                            },
+                            "DisabledFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao_press.png",
+                              "Plist": ""
+                            },
+                            "PressedFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao_press.png",
+                              "Plist": ""
+                            },
+                            "NormalFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao.png",
+                              "Plist": ""
+                            },
+                            "Scale9Enable": true,
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 11,
+                            "Scale9Width": 3,
+                            "Scale9Height": 11,
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "TouchEnable": true,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 210.0,
+                              "Y": 15.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 6.1765,
+                              "Y": 0.4286
+                            },
+                            "PreSize": {
+                              "X": 0.9706,
+                              "Y": 0.9429
+                            },
+                            "LeftMargin": 193.5,
+                            "RightMargin": -192.5,
+                            "TopMargin": 3.5,
+                            "BottomMargin": -1.5,
+                            "Tag": 414,
+                            "ActionTag": 318292530,
+                            "Size": {
+                              "X": 33.0,
+                              "Y": 33.0
+                            },
+                            "Name": "help",
+                            "ctype": "ButtonObjectData"
                           }
                         ],
                         "ActionTag": 1687201215,
@@ -18823,6 +19204,7 @@
                           "Path": "createRoomNew/qiansediban.png",
                           "Plist": ""
                         },
+                        "Scale9Enable": true,
                         "Scale9OriginX": 60,
                         "Scale9OriginY": 12,
                         "Scale9Width": 38,
@@ -19288,6 +19670,81 @@
                         "Tag": 369,
                         "Children": [
                           {
+                            "FontSize": 14,
+                            "ButtonText": "",
+                            "TextColor": {
+                              "R": 65,
+                              "G": 65,
+                              "B": 70
+                            },
+                            "DisabledFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao_press.png",
+                              "Plist": ""
+                            },
+                            "PressedFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao_press.png",
+                              "Plist": ""
+                            },
+                            "NormalFileData": {
+                              "Type": "Normal",
+                              "Path": "set/wenhao.png",
+                              "Plist": ""
+                            },
+                            "Scale9Enable": true,
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 11,
+                            "Scale9Width": 3,
+                            "Scale9Height": 11,
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "TouchEnable": true,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 190.0,
+                              "Y": 30.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 3.1667,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 0.55,
+                              "Y": 0.55
+                            },
+                            "LeftMargin": 173.5,
+                            "RightMargin": -146.5,
+                            "TopMargin": 13.5,
+                            "BottomMargin": 13.5,
+                            "Tag": 739,
+                            "ActionTag": -391592025,
+                            "Size": {
+                              "X": 33.0,
+                              "Y": 33.0
+                            },
+                            "Name": "help",
+                            "ctype": "ButtonObjectData"
+                          },
+                          {
                             "IsCustomSize": true,
                             "FontSize": 30,
                             "LabelText": "马跟底分",
@@ -19307,7 +19764,7 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 60.0,
+                              "X": 50.0,
                               "Y": 30.0
                             },
                             "Scale": {
@@ -19321,15 +19778,15 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 1.0,
+                              "X": 0.8333,
                               "Y": 0.5
                             },
                             "PreSize": {
                               "X": 2.5,
                               "Y": 0.5
                             },
-                            "LeftMargin": 60.0,
-                            "RightMargin": -150.0,
+                            "LeftMargin": 50.0,
+                            "RightMargin": -140.0,
                             "TopMargin": 15.0,
                             "BottomMargin": 15.0,
                             "Tag": 370,
@@ -21529,7 +21986,8 @@
                           "X": 57.0,
                           "Y": 31.0
                         },
-                        "Name": "mianfei ",
+                        "VisibleForFrame": false,
+                        "Name": "mianfei",
                         "ctype": "ImageViewObjectData"
                       }
                     ],
@@ -21696,7 +22154,8 @@
                           "X": 57.0,
                           "Y": 31.0
                         },
-                        "Name": "mianfei ",
+                        "VisibleForFrame": false,
+                        "Name": "mianfei",
                         "ctype": "ImageViewObjectData"
                       }
                     ],
@@ -21865,7 +22324,7 @@
                           "Y": 31.0
                         },
                         "VisibleForFrame": false,
-                        "Name": "mianfei ",
+                        "Name": "mianfei",
                         "ctype": "ImageViewObjectData"
                       }
                     ],
@@ -22034,7 +22493,7 @@
                           "Y": 31.0
                         },
                         "VisibleForFrame": false,
-                        "Name": "mianfei ",
+                        "Name": "mianfei",
                         "ctype": "ImageViewObjectData"
                       }
                     ],
@@ -22227,7 +22686,9 @@
         "createRoomNew/xgmj_press.png",
         "Default/Button_Disable.png",
         "Default/CheckBoxNode_Disable.png",
-        "dissolveRoomNew/btn_confirm_press.png"
+        "dissolveRoomNew/btn_confirm_press.png",
+        "set/wenhao.png",
+        "set/wenhao_press.png"
       ],
       "ctype": "GameFileData"
     }

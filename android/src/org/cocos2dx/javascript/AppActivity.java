@@ -32,6 +32,8 @@ import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 import org.cocos2dx.lib.Cocos2dxHelper;
 
+import com.aliyun.security.yunceng.android.sdk.YunCeng;
+import com.aliyun.security.yunceng.android.sdk.exception.YunCengException;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
@@ -45,6 +47,7 @@ import com.happyplay.pop.popAlert;
 
 import com.happyplay.gxmj.R;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -68,6 +71,11 @@ import com.happyplay.httpClient.httpClient;
 import com.pocketdigi.utils.FLameUtils;
 import com.tencent.mm.sdk.openapi.*;
 import com.tencent.mm.sdk.modelmsg.*;
+import com.zego.AVRoom;
+import com.zego.AVRoomCallback;
+import com.zego.AuxData;
+import com.zego.RoomUser;
+import com.zego.TextMsg;
 
 import android.util.Log;
 
@@ -86,6 +94,10 @@ import android.widget.Toast;
 public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandler 
 	implements AMapLocationListener
 {
+	
+	//阿里盾
+	public static String appKey_AliDun = "gxo_C7B2mlgGYhIKOcpWw+4OKMExNxMk90ENn+KVHUb5D-4SO8sK6Et_8BhkQougeGN9EQJ4GEeWa6k3GGbN5sSoBy3Muto6qtZFERKZ6ygGXtDMtUO6kE0hNYg3+K3F+BF7H3WG9X6qmIM-aprKImmD81rvJeMCXbJGm8_ZMmqHqD8APS8xHMETrYCjclumqjOyIA4fmyQtmm1bOpOa8rRt6KTAiBojRL0wuTA_r7WxqPExm+wqVh4t+my7QggaLvtzmtjs6JbJ6YeXJb8miWLxXlQ2LUyQGnhphbo+1wrQMfFoRAvtuA5uQ";
+	public static int initAliDunCode=-1;
 	
 	public AMapLocationClientOption mLocationOption = null;
 	public AMapLocationClient mlocationClient = null;
@@ -106,6 +118,8 @@ public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandl
 	static String mp3Path;
 	static boolean isRecording = false;
 	static boolean isStartRecording = false;
+	
+	private static AVRoom avRoom; 
 	//----------------录音------------
 	
 	static boolean canSend = true;
@@ -307,6 +321,35 @@ public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandl
 		api.sendReq(req);
 		Log.i("weixin", "wxShareurl");
 	}
+	public void wxShareWebViewTimeline(String url,String title,String description) 
+	{ 
+
+		// 锟斤拷始锟斤拷锟斤拷url锟斤拷锟斤拷锟斤拷锟�
+		
+		
+		Log.i("weixin", "wxShareutl_Timeline"+url);
+		WXWebpageObject webpage = new WXWebpageObject();
+		webpage.webpageUrl = url;
+		
+		// 锟斤拷WXTextObject锟斤拷锟斤拷锟绞硷拷锟揭伙拷锟絎XMediaMessage锟斤拷锟斤拷
+		WXMediaMessage msg = new WXMediaMessage(webpage);
+		msg.title = title;
+		msg.description = description;
+		// 锟斤拷锟斤拷锟侥憋拷锟斤拷锟酵碉拷锟斤拷息时锟斤拷title锟街段诧拷锟斤拷锟斤拷锟斤拷
+		// msg.title = "Will be ignored";
+		Bitmap thumb = BitmapFactory.decodeResource(getResources(), R.drawable.icon);
+		msg.thumbData = bmpToByteArray(thumb, true);
+		// 锟斤拷锟斤拷一锟斤拷Req
+		SendMessageToWX.Req req = new SendMessageToWX.Req();
+		req.transaction = buildTransaction("webpage"); // transaction锟街讹拷锟斤拷锟斤拷唯一锟斤拷识一锟斤拷锟斤拷锟斤拷
+		req.message = msg;
+		//req.scene = SendMessageToWX.Req.WXSceneSession;// 锟斤拷示锟斤拷锟酵筹拷锟斤拷为锟斤拷锟斤拷圈锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷?锟斤拷锟斤拷圈
+		// req.scene = SendMessageToWX.Req.WXSceneSession;//锟斤拷示锟斤拷锟酵筹拷锟斤拷为锟斤拷锟窖对伙拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟�
+		req.scene = SendMessageToWX.Req.WXSceneTimeline;// 锟斤拷示锟斤拷锟酵筹拷锟斤拷为锟秸藏ｏ拷锟斤拷锟斤拷锟斤拷锟斤拷拥锟轿拷锟斤拷詹锟�
+		// 锟斤拷锟斤拷api锟接口凤拷锟斤拷锟斤拷莸锟轿拷锟� 
+		api.sendReq(req);
+		Log.i("weixin", "wxShareurl_Timeline");
+	}
 	public void wxShareTexture(String path) 
 	{ 
 	   /*
@@ -383,6 +426,13 @@ public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandl
 		if(ccActivity!=null)
 		{
 			ccActivity.wxShareTexture(path);
+		}
+	}
+	public static void StartShareWebViewWxTimeline(String url,String title,String description)
+	{
+		if(ccActivity!=null)
+		{
+			ccActivity.wxShareWebViewTimeline( url, title, description);
 		}
 	}
 /**
@@ -588,6 +638,11 @@ public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandl
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ccActivity=this;
+        
+        //阿里盾初始化
+  		int code = YunCeng.init(appKey_AliDun);
+  		initAliDunCode = code;
+        
 		//http://stackoverflow.com/questions/8325395/avoiding-resuming-app-at-lock-screen
       
 		//getWindow().setFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -617,13 +672,114 @@ public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandl
 //        String sha1 = sHA1(this);
 //        Log.e("gaode", "广东麻将SHA1:" + sha1);
         
+        
+        // 处理声音房间管理
+        final AVRoomCallback mAVRoomCallback = new AVRoomCallback()
+		{
+			public void OnGetInResult(int nResult, int nRoomKey)
+			{
+				
+			}
+			
+			public void OnDisconnected(int nErrorCode)
+			{
+				
+			}
+
+			public void OnSendBroadcastTextMsgResult(int nResult, String strMsg, long nMsgSeq)
+			{
+				
+			}
+			
+			public void OnRoomUsersUpdate(RoomUser[] arrNewUsers, RoomUser[] arrLeftUsers)
+			{
+				
+				
+			}
+			
+			public void OnRoomUserUpdateAll(RoomUser [] arrUsers)
+			{
+				
+			}
+			
+			@SuppressLint("SimpleDateFormat")
+			public void OnReceiveBroadcastTextMsg(TextMsg textMsg)
+			{
+				
+			}
+			
+			public void OnSelfBeginTalking()
+			{
+				
+			}
+			
+			public void OnSelfKeepTalking()
+			{
+				
+			}
+			
+			public void OnSelfEndTalking()
+			{
+				
+			}
+			
+			public void OnOthersBeginTalking(RoomUser roomUser)
+			{
+			
+			}
+			
+			public void OnOthersKeepTalking(RoomUser roomUser)
+			{
+				
+			}
+			
+			public void OnOthersEndTalking(RoomUser roomUser)
+			{
+			
+			}
+			
+			
+			public AuxData OnAuxCallback(int nLenData)
+			{
+               
+				 return null;
+			}
+		    
+		    public void OnRecorderCallback(byte buffer[], int bufLength, int sampleRate, int channels, int bitDepth)
+			{
+				/*Message message = new Message();
+			     Bundle bundle = new Bundle();
+			     bundle.putInt("event", EVENT_RECORD);
+			     bundle.putInt("sampleRate", sampleRate);
+			     bundle.putInt("channels", channels);
+			     bundle.putInt("bitDepth", bitDepth);
+			     message.setData(bundle);
+			     mHandler.sendMessage(message);	*/
+			}
+		};
+ 		avRoom = new AVRoom();
+ 		avRoom.SetCallback(mAVRoomCallback);
+     		
+ 		byte[] signkey = { 
+ 			(byte) 0x41, (byte) 0x50, (byte) 0x9c, (byte) 0xfc,
+			(byte) 0x68, (byte) 0x21, (byte) 0x82, (byte) 0x80, (byte) 0x43,
+			(byte) 0x92, (byte) 0x5e, (byte) 0xbc, (byte) 0x90, (byte) 0x22,
+			(byte) 0xd8, (byte) 0x8f, (byte) 0x36, (byte) 0x7d,
+			(byte) 0x9f, (byte) 0x1d, (byte) 0x10, (byte) 0x5a,
+			(byte) 0xab, (byte) 0xc0, (byte) 0xb8, (byte) 0x2a,
+			(byte) 0x0, (byte) 0x59, (byte) 0x33, (byte) 0xc8,
+			(byte) 0x94, (byte) 0x8a
+		};
+     	
+ 		int appId = 1663975539;
+ 		avRoom.Init(appId, signkey, getApplicationContext()); // appid signkey
+ 		this.getApplicationContext();
+
     }
 	
 	@Override
     public Cocos2dxGLSurfaceView onCreateView() 
 	{
-		
-		
         Cocos2dxGLSurfaceView glSurfaceView = new Cocos2dxGLSurfaceView(this);
         // TestCpp should create stencil buffer
         glSurfaceView.setEGLConfigChooser(5, 6, 5, 0, 16, 8);
@@ -756,4 +912,139 @@ public class AppActivity extends Cocos2dxActivity  //implements IWXAPIEventHandl
 	}
 
 	
+	public static void ShowLogOnJava(String str){
+		Log.i("js log", str);
+	}
+	
+	
+	//通过 阿里盾 获取 IP
+	public static String getRemoteIpByAliDun(String groupName){
+		
+		if(initAliDunCode !=0){
+			int code = YunCeng.init(appKey_AliDun);
+			initAliDunCode = code;
+		}
+		
+		String nextIp = "";
+  		String errorInfo = "errorCode:";
+  		Log.i("Ali Dun", "---- groupName="+groupName);
+  		if (initAliDunCode == 0) {
+  			// 鍒濆鍖栨垚鍔�
+  			try {
+  				nextIp = YunCeng.getNextIpByGroupName(groupName);
+  				errorInfo = "get next ip :" + nextIp;
+  				
+  				if(nextIp == null)
+  				{
+  					nextIp = "errorCode:null";
+  				}
+  				
+  				ccActivity.RunJS("GetRemoteIpByAliDun_Back", nextIp);
+  			} catch (YunCengException ex) {
+  				// 寮傚父鐮�
+  				//get next ip return exception code:  ex.getCode();
+  				errorInfo += ex.getCode();
+  				ccActivity.RunJS("GetRemoteIpByAliDun_Back", errorInfo);
+  			}
+  		} else {
+  			// 鍒濆鍖栧け璐�
+  			//init return exception code: initAliDunCode;
+  			errorInfo += initAliDunCode;
+  			ccActivity.RunJS("GetRemoteIpByAliDun_Back", errorInfo);
+  		}
+  		Log.i("Ali Dun", errorInfo);
+		return nextIp;
+	}
+	
+	public void signalAliDun(){
+		Log.i("Ali Dun", "----signalAliDun() 01----");
+		//ccActivity.RunJS_02("setAliDunSignal", "");
+		
+//		Cocos2dxGLSurfaceView.getInstance().queueEvent(new Runnable() {
+//
+//			@Override
+//			public void run() {
+//				// TODO Auto-generated method stub
+//				String strFunc = "setAliDunSignal()";
+//				Log.i("Ali Dun", "----signalAliDun 01----");
+//				org.cocos2dx.lib.Cocos2dxJavascriptJavaBridge.evalString(strFunc);
+//				Log.i("Ali Dun", "----signalAliDun 02----");
+//			}
+//		});
+	}
+	
+	//获取本地(非线上)apk版本
+	public static String getAndroidApkVersion(){
+		int currentVesionCode = 0;
+		String versionName = "error:";
+		PackageManager pm = ccActivity.getPackageManager();
+		try{
+			PackageInfo info = pm.getPackageInfo(ccActivity.getPackageName(), 0);
+			currentVesionCode = info.versionCode;
+			versionName = info.versionName;
+			Log.i("apk info", "apk_VersionCode="+currentVesionCode);
+			Log.i("apk info", "apk_VersionName="+versionName);
+		} catch(NameNotFoundException e)
+		{
+			
+		}
+		ccActivity.RunJS("getAndroidApkVersion_back", versionName);
+		return versionName;
+	}
+	
+	
+	/**
+	 * 
+	 * @param mStrID
+	 *            玩家id
+	 * @param mStrName
+	 *            玩家昵称
+	 * @param roomid
+	 *            房间id -- tableid 需要js前段调用在游戏玩家到齐开始游戏时
+	 */
+	public static void JoinGameVoiceRoom(final String mStrID,
+			final String mStrName, final String roomid) { // jni
+		Log.i("--avroom", "110 JoinGameVoiceRoom");
+		RoomUser roomUser = new RoomUser();		 
+		roomUser.strID = mStrID;// 玩家id
+		roomUser.strName = mStrName;// 玩家昵称
+		Log.i("--avroom", "110 GetInRoom");
+		
+		avRoom.GetInRoom(Integer.parseInt(roomid), roomUser);
+//		avRoom.EnableMic(false);
+		voiceStop();
+		
+	}
+	
+	/**
+	 * 房间说话
+	 */
+	public static void vioceStart() {
+		Log.i("--vioceStart", "110 vioceStart");
+		avRoom.EnableMic(true);// 开启mac
+	}
+
+	/**
+	 * 房间停止说话
+	 */
+	public static void voiceStop() {
+		Log.i("--voiceStop", "110 voiceStop");
+		avRoom.EnableMic(false);// 开启mac
+	}
+	
+	/**
+	 * 玩家离开房间
+	 */
+	public static void leaveRoom() {
+		Log.i("--leaveRoom", "110 leaveRoom");
+		avRoom.LeaveRoom();
+	}
+
+	/**
+	 * 玩家返回房间
+	 */
+	public static void returnRoom() {
+		Log.i("--returnRoom", "110 returnRoom");
+		avRoom.ReGetInRoom();
+	}
 }

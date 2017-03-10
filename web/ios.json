@@ -1,5 +1,7 @@
 {
   "servers":"114.55.255.22:15010:15011"
+  ,"errorReportServer":"http://139.129.206.54:3000/gdmj"
+  ,"reportGameid":"gdmj"
   ,"serversSelect":[600,400]
   ,"wxShareUrl":"http://download.happyplaygame.net"
   ,"voiceUrl":"http://124.232.153.18:9109/symj/"

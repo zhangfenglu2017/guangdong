@@ -16,6 +16,7 @@ var res =
 	EndAll_json:"res/endAll.json",
 
 	ExtGame_json:"res/ExtGame.json",
+	RoomTips_json:"res/roomTips.json",
 
 
     // PlayMJ_my_png:"res/MaJiangNew/z_mj.png",
@@ -97,7 +98,7 @@ cc.spriteFrameCache.addSpriteFrames(res.PlayMJ_emoji_plist);
 
 // ccs.ArmatureDataManager:getInstance().removeArmatureFileInfo();
 ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Weixindenglu_json);
-ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Guangdongmajiang_json);
+// ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Guangdongmajiang_json);
 // ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Jiaruyouxi_json);
 ccs.ArmatureDataManager.getInstance().addArmatureFileInfo(res.Chuangjianfangjian_json);
 
@@ -127,6 +128,7 @@ var UserInfoLayer;
 var LoginLayer;
 var UpdateLayer;
 var CreateLayer;
+var RoomTipsLayer;
 var ChangeIDLayer;
 var ExportDataLayer;
 
@@ -136,6 +138,7 @@ var Activity_Invite;
 var ActivationCodeLayer;
 var AwardPrompt;
 var ErroPrompt;
+var ShareWXLayer;
 
 var TipsPanel;
 

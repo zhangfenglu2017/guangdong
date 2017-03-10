@@ -33,6 +33,7 @@ var ZJHCode={
    roomFull:39,
    slotNotFound:40,
    roomNotFound:41,
+   zipVersionLow:42,
    
    zjhCfgChange:50,
    zjhDateEnd:51,

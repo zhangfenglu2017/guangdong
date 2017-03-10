@@ -15,17 +15,16 @@
 		loginData.remoteIP=jsclient.remoteIP;
         loginData.geogData = geogData;
 
-        // log("玩家登陆数据：" + JSON.stringify(loginData));
-
 		jsclient.gamenet.request("pkcon.handler.doLogin", loginData,
 		function (rtn) 
 		{
-			cc.log("login "+rtn.result);
 			var unblock=true;
 			if (rtn.result==ZJHCode.Success) 
 			{
 				if(code)
                     sys.localStorage.setItem("loginData", JSON.stringify(loginData));
+
+				log("玩家登陆数据：" + JSON.stringify(rtn));
 
 				sendEvent("loginOK",rtn);
 			}
@@ -74,6 +73,14 @@
 			if(unblock)
                 jsclient.unblock();
 		});
+
+
+		//设置报错log服务器
+		if( "undefined" !=  typeof(jsclient.remoteCfg.errorReportServer ) && "" != jsclient.remoteCfg.errorReportServer )
+		{
+			sys.localStorage.setItem("errorReportServer", jsclient.remoteCfg.errorReportServer);
+			sys.localStorage.setItem("reportGameid", jsclient.remoteCfg.reportGameid);
+		}
 	}
 	function getGuest()
 	{
@@ -134,6 +141,8 @@
 		{
 			WX_USER_LOGIN=JSON.parse(WX_USER_LOGIN);
 			LoginAsWeChat(WX_USER_LOGIN);
+
+			return true;
 		}
 		else 
 		{
@@ -142,6 +151,13 @@
 			{
 				loginData=JSON.parse(loginData);
 				f_login(loginData.mail,loginData.code);
+
+				return true;
+			}
+			else
+			{
+				jsclient.unblock();
+				return false;
 			}
 		}
 	};
@@ -188,7 +204,8 @@
 						}
 						else
                         {
-							if (jsclient.native) jsclient.native.wxLogin();
+							if (jsclient.native)
+								jsclient.native.wxLogin();
 						}
 					}
 				},
@@ -215,6 +232,8 @@
 						this.setCascadeOpacityEnabled(false);
 						this.opacity = 0;
 					}
+
+                    // this.visible = false;
 				}
 			},
 
@@ -225,6 +244,7 @@
 			    _visible:function()
 				{
 					return jsclient.remoteCfg.guestLogin;
+                    // return true;
 				},
 
                 _click:function()
@@ -303,8 +323,19 @@
 			ConnectUI2Logic(loginui.node,this.jsBind);
 	        this.addChild(loginui.node);
 			jsclient.loginui=this;
-	        jsclient.autoLogin();
 
+	        var iRes = jsclient.autoLogin();
+			if(!iRes)
+			{
+				var versionsPanel = new VersionsPanel();
+				var versionsCallBack = function()
+				{
+					versionsPanel.visible = false;
+				};
+
+				jsclient.Scene.addChild(versionsPanel, 99);
+				versionsPanel.runAction(cc.sequence(cc.delayTime(3), cc.callFunc(versionsCallBack)));
+			}
 
             //播放特效
             var weixinAnim = playAnimByJson("weixindenglu", "weixinnanshou");
@@ -312,24 +343,23 @@
             weixinAnim.x = wechatLogin.x;
             weixinAnim.y = wechatLogin.y;
             weixinAnim.scale = wechatLogin.scale;
+            //
+            // var logIconAnim = playAnimByJson("guangdongmajiang", "guangdongmajiang");
+            // this.addChild(logIconAnim);
+            // logIconAnim.x = logIcon.x;
+            // logIconAnim.y = logIcon.y;
+            // logIcon.visible = false;
+            // logIconAnim.scale = logIcon.scale;
 
-            var logIconAnim = playAnimByJson("guangdongmajiang", "guangdongmajiang");
-            this.addChild(logIconAnim);
-            logIconAnim.x = logIcon.x;
-            logIconAnim.y = logIcon.y;
-            logIcon.visible = false;
-            logIconAnim.scale = logIcon.scale;
-
-
-			/*function callBack()
-			{
-				cc.log("========================这是我自己传入的回调函数======================");
-			}
-
-			var effectHandle = getEffectMgrInst().createEffect(this, "res/animate/play/gang.ExportJson", "gang");
-			getEffectMgrInst().setEffectOffXY(effectHandle, logIcon.x, logIcon.y);
-			getEffectMgrInst().setEffectScale(effectHandle, 1);
-			getEffectMgrInst().playEffect(effectHandle, callBack);*/
+			// function callBack()
+			// {
+			// 	cc.log("========================这是我自己传入的回调函数======================");
+			// }
+            //
+			// var effectHandle = getEffectMgrInst().createEffect(this, "res/animate/play/gang.ExportJson", "gang");
+			// getEffectMgrInst().setEffectOffXY(effectHandle, logIcon.x, logIcon.y);
+			// getEffectMgrInst().setEffectScale(effectHandle, 1);
+			// getEffectMgrInst().playEffect(effectHandle, callBack);
 
 			return true;
 	    },

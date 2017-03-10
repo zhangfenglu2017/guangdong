@@ -622,7 +622,41 @@ function showCardTipsEffect(cards, pl)
     cardTipsData = jsclient.majiang.canTingHu(mjhand);
     // log("听牌数据1： " + JSON.stringify(cardTipsData));
 
-    if(gameType == 2 && tData.noCanJiHu)
+
+    if(gameType == 1)
+    {
+        //13幺  不提示
+        for(var i = 0; i < pl.mjhand.length; i++)
+        {
+            var tipsData = cardTipsData[pl.mjhand[i]];
+            if(tipsData == null || tipsData.length <= 0)
+                continue;
+
+            var tempData = [];
+            var clonePl = {};
+            clonePl.mjhand = pl.mjhand;
+            clonePl.mjpeng = pl.mjpeng;
+            clonePl.mjgang0 = pl.mjgang0;
+            clonePl.mjgang1 = pl.mjgang1;
+            clonePl.mjchi = pl.mjchi;
+            var temppl = jsclient.majiang.deepCopy(clonePl);
+            temppl.mjhand.splice(i, 1);
+
+            for(var j = 0, k = 0; j < tipsData.length; j++)
+            {
+                temppl.mjhand.push(tipsData[j]);
+                if(!jsclient.majiang.canHuForShiSanYaoNew(temppl.mjhand))
+                {
+                    tempData[k] = tipsData[j];
+                    k ++;
+                }
+                temppl.mjhand.splice(temppl.mjhand.length-1, 1);
+            }
+
+            cardTipsData[pl.mjhand[i]] = tempData;
+        }
+    }
+    else if(gameType == 2 && tData.noCanJiHu)
     {
         //如果是鸡平胡 并且选择不可鸡胡
         for(var i = 0; i < pl.mjhand.length; i++)
@@ -632,9 +666,20 @@ function showCardTipsEffect(cards, pl)
                 continue;
 
             var tempData = [];
-            var temppl = jsclient.majiang.deepCopy(pl);
-            temppl.mjhand.splice(i, 1);
+            var clonePl = {};
+            clonePl.mjhand = pl.mjhand;
+            clonePl.mjpeng = pl.mjpeng;
+            clonePl.mjgang0 = pl.mjgang0;
+            clonePl.mjgang1 = pl.mjgang1;
+            clonePl.mjchi = pl.mjchi;
+
+            log("克隆源：" + JSON.stringify(clonePl));
             
+            var temppl = jsclient.majiang.deepCopy(clonePl);
+            temppl.mjhand.splice(i, 1);
+
+            log("克隆后：" + JSON.stringify(temppl));
+
             for(var j = 0, k = 0; j < tipsData.length; j++)
             {
                 var huType = jsclient.majiang.prejudgeHuType(temppl, tipsData[j]);
@@ -648,6 +693,8 @@ function showCardTipsEffect(cards, pl)
             }
 
             cardTipsData[pl.mjhand[i]] = tempData;
+
+            log("提示听：" + JSON.stringify(cardTipsData));
         }
     }
 
@@ -2994,22 +3041,28 @@ function resetZhongForPlayer(node, off)
 
 function HandleMJFlower(node, msg, off)
 {
-    var sData = jsclient.data.sData;
-    var tData = sData.tData;
-    var selfIndex = (tData.uids.indexOf(SelfUid()) + off) % 4;
-    if (tData.uids[selfIndex] != msg.uid)
+    // var sData = jsclient.data.sData;
+    // var tData = sData.tData;
+    // var selfIndex = (tData.uids.indexOf(SelfUid()) + off) % 4;
+    // if (tData.uids[selfIndex] != msg.uid)
+    //     return;
+
+    if(!IsCurPlayerTurn(off))
         return;
 
     var pl = getUIPlayer(off);
     if (pl)
     {
-        if (off == 0) {
+        if (off == 0)
+        {
             RemoveBackNode(node, "mjhand", 1, msg.card);
         }
-        else if (off == 1) {
+        else if (off == 1)
+        {
             RemoveBackNode(node, "standPri", 1);
         }
-        else if (off == 2 || off == 3) {
+        else if (off == 2 || off == 3)
+        {
             RemoveFrontNode(node, "standPri", 1);
         }
         //不显示花牌
@@ -3025,23 +3078,30 @@ function HandleMJFlower(node, msg, off)
 
 function HandleMJZhong(node, msg, off)
 {
-    var sData = jsclient.data.sData;
-    var tData = sData.tData;
-    var selfIndex = (tData.uids.indexOf(SelfUid()) + off) % 4;
-    if (tData.uids[selfIndex] != msg.uid)
+    // var sData = jsclient.data.sData;
+    // var tData = sData.tData;
+    // var selfIndex = (tData.uids.indexOf(SelfUid()) + off) % 4;
+    // if (tData.uids[selfIndex] != msg.uid)
+    //     return;
+
+    if(!IsCurPlayerTurn(off))
         return;
 
-    if(tData.zhongIsMa){
+    if(tData.zhongIsMa)
+    {
         var pl = getUIPlayer(off);
         if (pl)
         {
-            if (off == 0) {
+            if (off == 0)
+            {
                 //RemoveBackNode(node, "mjhand", 1, msg.card);
             }
-            else if (off == 1) {
+            else if (off == 1)
+            {
                 RemoveBackNode(node, "standPri", 1);
             }
-            else if (off == 2 || off == 3) {
+            else if (off == 2 || off == 3)
+            {
                 RemoveFrontNode(node, "standPri", 1);
             }
             //不显示花牌
@@ -3063,8 +3123,8 @@ function HandleNewCard(node, msg, off)
 }
 
 function HandleWaitPut(node, msg, off) {
-    var sData = jsclient.data.sData;
-    var tData = sData.tData;
+    // var sData = jsclient.data.sData;
+    // var tData = sData.tData;
     // var uids = tData.uids;
     // var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
 
@@ -3421,6 +3481,14 @@ function RestoreCardLayout(node, off, endonepl)
 
                 tempHand.sort(function(a,b){
 
+                    if(jsclient.data.sData.tData.fanGui)
+                    {
+                        return b == jsclient.data.sData.tData.nextgui;
+                    }
+                });
+
+                tempHand.sort(function(a,b){
+
                     if(jsclient.data.sData.tData.withZhong)
                     {
                         return b == 71;
@@ -3431,6 +3499,7 @@ function RestoreCardLayout(node, off, endonepl)
                         return (b == jsclient.data.sData.tData.gui) || (b >= 111 && b <= 181);
                     }
                 });
+
 
                 newVal = tempHand[tempHand.length - 1];
                 // newVal = Math.max.apply(null, pl.mjhand);
@@ -3892,24 +3961,45 @@ function HandleMJPut(node, msg, off, outNum) {
             shield.runAction(cc.sequence(cc.DelayTime(0.5), cc.callFunc(function(){shield.setVisible(false);})));
         }
 
+        //打牌动画
         var callbackFUNC = function ()
         {
             out.zIndex = zoder;
         };
         var callbackFUNCROTATION = function ()
         {
-            out.visible = true;
-            // out.zIndex = zoder;
-            // out.x = endPoint.x;
-            // out.y = endPoint.y;
-            // out.scale = oSc;
-            // outAction.removeFromParent();
-            out.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, endPoint), cc.scaleTo(0.1, oSc)), cc.callFunc(callbackFUNC)));
+            if(jsclient.data.sData.tData.gameType == 2 && jsclient.majiang.isFlower8(msg.card))
+            {
+                out.visible = true;
+                out.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, endPoint), cc.scaleTo(0.1, oSc)), cc.callFunc(callbackFUNC)));
+                outAction.removeFromParent();
+            }else
+            {
+                out.visible = true;
+                out.zIndex = zoder;
+                out.x = endPoint.x;
+                out.y = endPoint.y;
+                out.scale = oSc;
+                outAction.removeFromParent();
+            }
+
+
+            // out.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, endPoint), cc.scaleTo(0.1, oSc)), cc.callFunc(callbackFUNC)));
         };
-        outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, Midpoint), cc.scaleTo(0.1, 2 * oSc))
-        // outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)),cc.callFunc(callbackFUNCROTATION)
-            //cc.DelayTime(0.4),cc.callFunc(callbackFUNCROTATION),cc.removeSelf()
-        ));
+
+        if(jsclient.data.sData.tData.gameType == 2 && jsclient.majiang.isFlower8(msg.card))
+        {
+            outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, Midpoint), cc.scaleTo(0.1, 2 * oSc))));
+        }else
+        {
+            outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)),cc.callFunc(callbackFUNCROTATION)
+                //cc.DelayTime(0.4),cc.callFunc(callbackFUNCROTATION),cc.removeSelf()
+            ));
+        }
+        // outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.1, Midpoint), cc.scaleTo(0.1, 2 * oSc))
+        //outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)),cc.callFunc(callbackFUNCROTATION)
+        //    //cc.DelayTime(0.4),cc.callFunc(callbackFUNCROTATION),cc.removeSelf()
+        //));
 
         // outAction.x = Midpoint.x;
         // outAction.y = Midpoint.y;
@@ -5073,14 +5163,13 @@ function getTouchListener()
             {
                 return false;
             }
-            console.log("好吧");
             return true;
         },
         onTouchMoved: function (touch, event)
         {
-            console.log("子啊华东呢");
             var target = event.getCurrentTarget();
-            var pos = target.getParent().convertTouchToNodeSpace(touch);   // 世界坐标转换 (子节点相对于父节点的位置)
+            // 世界坐标转换 (子节点相对于父节点的位置)
+            var pos = target.getParent().convertTouchToNodeSpace(touch);
             // 如果触碰起始地点在本区域中
             if (!cc.rectContainsPoint(target.getBoundingBox(), pos))
             {
@@ -5091,7 +5180,6 @@ function getTouchListener()
                 this.status = 0;
                 console.log("松开手指取消发送");
                 getRecordStatusLayer().runToCancelRecord();
-
                 return true;
             }
 
@@ -5103,7 +5191,6 @@ function getTouchListener()
 
             this.status = 1;
             getRecordStatusLayer().runStartRecord();
-
             return true;
         },
         onTouchEnded: function (touch, event)
@@ -5121,6 +5208,34 @@ function getTouchListener()
  * 开始录音
  * */
 function startRecord() {
+
+    jsclient.native.ShowLogOnJava("--开始录音，测试SDK...");
+
+    //语音SDK + 兼容
+    // var path = "res/gameCfg.cfg";
+    // if(jsb.fileUtils.isFileExist(path))
+    // {
+    //     var cfgFile =  jsb.fileUtils.getStringFromFile(path);
+    //     var cfgData = JSON.parse(cfgFile);
+    //     if(cfgData && cfgData["voice"])
+    //     {
+    //         if (jsclient.native.vioceStart() == 1)
+    //         {
+    //             cc.audioEngine.pauseMusic();
+    //             // sendEvent("runStartRecord");
+    //             //通知后台广播其他人我在说话
+    //             jsclient.gamenet.request("pkroom.handler.tableMsg", {
+    //                 cmd: "StartVoice",
+    //                 uid: SelfUid(),
+    //                 type: 3
+    //             });
+    //             runRecordAction();
+    //             return;
+    //         }
+    //     }
+    // }
+
+    jsclient.native.ShowLogOnJava("--开始录音，我是老用户...");
     jsclient.data._JiaheTempTime = new Date();
     cc.audioEngine.pauseMusic();
     jsclient.native.StartRecord(jsb.fileUtils.getWritablePath(), "recordFile" + SelfUid());
@@ -5131,6 +5246,35 @@ function startRecord() {
  * 结束录音
  * */
 function endRecord() {
+
+    jsclient.native.ShowLogOnJava("--结束录音，测试SDK...");
+
+    //语音SDK + 兼容
+    // var path = "res/gameCfg.cfg";
+    // if(jsb.fileUtils.isFileExist(path))
+    // {
+    //     var cfgFile =  jsb.fileUtils.getStringFromFile(path);
+    //     var cfgData = JSON.parse(cfgFile);
+    //     if(cfgData && cfgData["voice"])
+    //     {
+    //         if (jsclient.native.voiceStop() == 1)
+    //         {
+    //             cc.audioEngine.resumeMusic();
+    //             // sendEvent("runShortRecord");
+    //             //通知后台广播其他人我在说话
+    //             jsclient.gamenet.request("pkroom.handler.tableMsg", {
+    //                 cmd: "StopVoice",
+    //                 uid: SelfUid(),
+    //                 type: 3
+    //             });
+    //
+    //             stopRecordAction();
+    //             return;
+    //         }
+    //     }
+    // }
+
+    jsclient.native.ShowLogOnJava("--结束录音，我是老用户...");
     jsclient.data._JiaheTempTime = new Date().getTime() - jsclient.data._JiaheTempTime.getTime();
     jsclient.native.HelloOC(jsclient.data._JiaheTempTime);
     cc.audioEngine.resumeMusic();
@@ -5150,6 +5294,36 @@ function endRecord() {
  * 取消录音
  * */
 function cancelRecord() {
+
+    jsclient.native.ShowLogOnJava("--取消录音，测试SDK...");
+
+    //语音SDK + 兼容
+    // var path = "res/gameCfg.cfg";
+    // if(jsb.fileUtils.isFileExist(path))
+    // {
+    //     var cfgFile =  jsb.fileUtils.getStringFromFile(path);
+    //     var cfgData = JSON.parse(cfgFile);
+    //     if(cfgData && cfgData["voice"])
+    //     {
+    //         if (jsclient.native.voiceStop() == 1)
+    //         {
+    //             cc.audioEngine.resumeMusic();
+    //             // sendEvent("runShortRecord");
+    //             //通知后台广播其他人我在说话
+    //             jsclient.gamenet.request("pkroom.handler.tableMsg", {
+    //                 cmd: "StopVoice",
+    //                 uid: SelfUid(),
+    //                 type: 3
+    //             });
+    //
+    //             cancelRecordAction();
+    //             return;
+    //         }
+    //     }
+    // }
+
+
+    jsclient.native.ShowLogOnJava("--取消录音，我是老用户...");
     jsclient.data._JiaheTempTime = 0;
     cc.audioEngine.resumeMusic();
     jsclient.native.EndRecord("cancelRecord");
@@ -5170,7 +5344,13 @@ function downAndPlayVoice(uid, filePath) {
 var selfArrowbk, playTips, selfCardBk, selfCard, selfCardBk1, selfCard1, selfCard2;
 //听 胡 提示数据
 var cardTipsData = {};
+//播放特效 n秒一次
+var selfWang_bk;
+var effectState = false;
+var effectCount = 0;
 
+//玩家手机本地时间
+var nativeTime;
 var PlayLayer = cc.Layer.extend(
     {
         jsBind:
@@ -5349,6 +5529,20 @@ var PlayLayer = cc.Layer.extend(
                 },
 
                 LeaveGame: function () {
+
+                    //语音SDK + 兼容
+                    // var path = "res/gameCfg.cfg";
+                    // if(jsb.fileUtils.isFileExist(path))
+                    // {
+                    //     var cfgFile =  jsb.fileUtils.getStringFromFile(path);
+                    //     var cfgData = JSON.parse(cfgFile);
+                    //     if(cfgData && cfgData["voice"])
+                    //     {
+                    //         stopRecordAction();
+                    //         jsclient.native.leaveRoom();
+                    //     }
+                    // }
+
                     jsclient.runningHeartbeat = false;
                     jsclient.playui.removeFromParent(true);
                     delete jsclient.playui;
@@ -6002,22 +6196,40 @@ var PlayLayer = cc.Layer.extend(
 
             },
 
-            banner: {
+            banner:
+            {
                 _layout: [[0.878, 1], [0.5, 0.945], [0, 0]],
-                wifi: {
-                    _run: function () {
+                wifi:
+                {
+                    _run: function ()
+                    {
                         updateWIFI(this);
                     }
                 },
 
-                powerBar: {
-                    _run: function () {
-                        cc.log("powerBar_run");
+                powerBar:
+                {
+                    _run: function ()
+                    {
                         updatePower(this);
-                    },
-                    _event: {
-                        nativePower: function (d) {
 
+                        //语音SDK + 兼容
+                        // var path = "res/gameCfg.cfg";
+                        // if(jsb.fileUtils.isFileExist(path))
+                        // {
+                        //     var cfgFile =  jsb.fileUtils.getStringFromFile(path);
+                        //     var cfgData = JSON.parse(cfgFile);
+                        //     if(cfgData && cfgData["voice"])
+                        //     {
+                        //         var data = jsclient.data;
+                        //         jsclient.native.JoinGameVoiceRoom(data.pinfo.uid, data.pinfo.nickname, data.sData.tData.tableid);
+                        //     }
+                        // }
+                    },
+                    _event:
+                    {
+                        nativePower: function (d)
+                        {
                             this.setPercent(Number(d));
                         }
                     }
@@ -6046,7 +6258,14 @@ var PlayLayer = cc.Layer.extend(
                     _click: function () {
                         jsclient.openWeb(2);
                     }
+                },
+
+                timer:{
+                    _run:function(){
+                        nativeTime = this;
+                    }
                 }
+
             },
 
             arrowbk: {
@@ -6300,19 +6519,35 @@ var PlayLayer = cc.Layer.extend(
 
                 _event:
                 {
-                    returnPlayerLayer: function () {
+                    returnPlayerLayer: function ()
+                    {
                         jsclient.playui.visible = true;
+
+                        //语音SDK + 兼容
+                        // var path = "res/gameCfg.cfg";
+                        // if(jsb.fileUtils.isFileExist(path))
+                        // {
+                        //     var cfgFile =  jsb.fileUtils.getStringFromFile(path);
+                        //     var cfgData = JSON.parse(cfgFile);
+                        //     if(cfgData && cfgData["voice"])
+                        //     {
+                        //         jsclient.native.returnRoom();
+                        //     }
+                        // }
                     },
 
-                    initSceneData: function (eD) {
+                    initSceneData: function (eD) 
+                    {
                         this.visible = CheckInviteVisible();
                     },
 
-                    addPlayer: function (eD) {
+                    addPlayer: function (eD) 
+                    {
                         this.visible = CheckInviteVisible();
                     },
 
-                    removePlayer: function (eD) {
+                    removePlayer: function (eD) 
+                    {
                         this.visible = CheckInviteVisible();
                     }
                 }
@@ -7787,8 +8022,6 @@ var PlayLayer = cc.Layer.extend(
                 {
                     initVData();
                     cc.eventManager.addListener(getTouchListener(), this);
-                    //ios隐藏
-                    //if(cc.sys.OS_IOS==cc.sys.os) this.visible=false;
                 },
                 _touch: function (btn, eT)
                 {
@@ -7860,6 +8093,267 @@ var PlayLayer = cc.Layer.extend(
                 }
             },
 
+            wang_bk:
+            {
+                _layout: [[0.25, 0.25], [0.93, 0.1], [0, 0]],
+
+                _run:function()
+                {
+                    this.scaleX = 0;
+                    selfWang_bk = this;
+                },
+
+                csh_bt:
+                {
+                    _click: function ()
+                    {
+                        if(effectState)
+                            return;
+
+                        function callBack()
+                        {
+                            cc.log("========================这是我自己传入的回调函数======================");
+                        }
+
+                        effectState = true;
+
+                        var effectHandle = getEffectMgrInst().createEffect(jsclient.playui, "res/animate/play/caishen.ExportJson", "caishen");
+                        getEffectMgrInst().setEffectOffXY(effectHandle, jsclient.size.width / 2, jsclient.size.height / 2);
+                        getEffectMgrInst().setEffectScale(effectHandle, 1);
+                        getEffectMgrInst().playEffect(effectHandle, callBack);
+                    }
+                },
+
+                qxg_bt:
+                {
+                    _click: function ()
+                    {
+                        if(effectState)
+                            return;
+
+                        function callBack()
+                        {
+                        	cc.log("========================这是我自己传入的回调函数======================");
+                        }
+
+                        effectState = true;
+
+                        var effectHandle = getEffectMgrInst().createEffect(jsclient.playui, "res/animate/play/bagua.ExportJson", "bagua");
+                        getEffectMgrInst().setEffectOffXY(effectHandle, jsclient.size.width / 2, jsclient.size.height / 2);
+                        getEffectMgrInst().setEffectScale(effectHandle, 1);
+                        getEffectMgrInst().playEffect(effectHandle, callBack);
+                    }
+                },
+
+                shx_bt:
+                {
+                    _click: function ()
+                    {
+                        if(effectState)
+                            return;
+
+                        function callBack()
+                        {
+                            cc.log("========================这是我自己传入的回调函数======================");
+                        }
+
+                        effectState = true;
+
+                        var effectHandle = getEffectMgrInst().createEffect(jsclient.playui, "res/animate/play/shangxiang.ExportJson", "shangxiang");
+                        getEffectMgrInst().setEffectOffXY(effectHandle, jsclient.size.width / 2, jsclient.size.height / 2);
+                        getEffectMgrInst().setEffectScale(effectHandle, 1);
+                        getEffectMgrInst().playEffect(effectHandle, callBack);
+                    }
+                },
+
+                xsh_bt:
+                {
+                    _click: function ()
+                    {
+                        if(effectState)
+                            return;
+
+                        function callBack()
+                        {
+                            cc.log("========================这是我自己传入的回调函数======================");
+                        }
+
+                        effectState = true;
+
+                        var effectHandle = getEffectMgrInst().createEffect(jsclient.playui, "res/animate/play/xishou.ExportJson", "xishou");
+                        getEffectMgrInst().setEffectOffXY(effectHandle, jsclient.size.width / 2, jsclient.size.height / 2);
+                        getEffectMgrInst().setEffectScale(effectHandle, 1);
+                        getEffectMgrInst().playEffect(effectHandle, callBack);
+                    }
+                },
+
+
+                zhezhao_1:
+                {
+                    _event:
+                    {
+                        playPrayerEffect:function(count)
+                        {
+                            if(count == "")
+                                this.setVisible(false);
+                            else
+                                this.setVisible(true);
+                        }
+                    },
+
+                    _run:function()
+                    {
+                        this.visible = false;
+                    },
+                },
+
+                zhezhao_2:
+                {
+                    _event:
+                    {
+                        playPrayerEffect:function(count)
+                        {
+                            if(count == "")
+                                this.setVisible(false);
+                            else
+                                this.setVisible(true);
+                        }
+                    },
+
+                    _run:function()
+                    {
+                        this.visible = false;
+                    },
+                },
+
+                zhezhao_3:
+                {
+                    _event:
+                    {
+                        playPrayerEffect:function(count)
+                        {
+                            if(count == "")
+                                this.setVisible(false);
+                            else
+                                this.setVisible(true);
+                        }
+                    },
+
+                    _run:function()
+                    {
+                        this.visible = false;
+                    },
+                },
+
+                zhezhao_4:
+                {
+                    _event:
+                    {
+                        playPrayerEffect:function(count)
+                        {
+                            if(count == "")
+                                this.setVisible(false);
+                            else
+                                this.setVisible(true);
+                        }
+                    },
+
+                    _run:function()
+                    {
+                        this.visible = false;
+                    },
+                },
+
+                miao_1:
+                {
+                    _event:
+                    {
+                        playPrayerEffect:function(count)
+                        {
+                            this.setString(count);
+                        }
+                    },
+
+                    _run:function()
+                    {
+                        this.setString("");
+                    },
+                },
+
+                miao_2:
+                {
+                    _event:
+                    {
+                        playPrayerEffect:function(count)
+                        {
+                            this.setString(count);
+                        }
+                    },
+
+                    _run:function()
+                    {
+                        this.setString("");
+                    },
+                },
+
+                miao_3:
+                {
+                    _event:
+                    {
+                        playPrayerEffect:function(count)
+                        {
+                            this.setString(count);
+                        }
+                    },
+
+                    _run:function()
+                    {
+                        this.setString("");
+                    },
+                },
+
+                miao_4:
+                {
+                    _event:
+                    {
+                        playPrayerEffect:function(count)
+                        {
+                            this.setString(count);
+                        }
+                    },
+
+                    _run:function()
+                    {
+                        this.setString("");
+                    },
+                },
+            },
+
+            wang_btn:
+            {
+                selfState:false,
+
+                _layout: [[0.12, 0.12], [0.933, 0.1], [0, 0]],
+
+                _run:function()
+                {
+                    selfState = false;
+                },
+
+                _click: function ()
+                {
+                    var callbackFUNC = function()
+                    {
+                        selfState = !selfState;
+                    };
+
+                    if(selfState == false)
+                        selfWang_bk.runAction(cc.sequence(cc.spawn(cc.scaleTo(0.1, 1,1)), cc.callFunc(callbackFUNC)));
+                    else
+                        selfWang_bk.runAction(cc.sequence(cc.spawn(cc.scaleTo(0.1, 0,1)), cc.callFunc(callbackFUNC)));
+                }
+            },
+
             shield:
             {
                 _layout: [[1, 1], [0.5, 0.5], [0, 0], true],
@@ -7885,12 +8379,63 @@ var PlayLayer = cc.Layer.extend(
             }), cc.delayTime(7))));
             jsclient.playui = this;
 
-            if( !jsclient.runningHeartbeat )
-            {
-                this.runAction(cc.repeatForever(cc.sequence(cc.callFunc(jsclient.heartbeatGame), cc.DelayTime(5))));
-                jsclient.runningHeartbeat = true;
-            }
+            // if( !jsclient.runningHeartbeat )
+            // {
+            //     this.runAction(cc.repeatForever(cc.sequence(cc.callFunc(jsclient.heartbeatGame), cc.DelayTime(5))));
+            //     jsclient.runningHeartbeat = true;
+            // }
+
+            effectCount = 9;
+            this.schedule(this.initTime,1);
 
             return true;
         },
+
+        initTime:function()
+        {
+            var cur_time = new Date().getTime();
+            var cur_year = new Date(cur_time).getYear();
+            var cur_month = new Date(cur_time).getMonth() + 1;
+            var cur_day =  new Date(cur_time).getDate();
+            var cur_hour =  new Date(cur_time).getHours();
+            var cur_minute = new Date(cur_time).getMinutes();
+            var cur_second = new Date(cur_time).getSeconds();
+            if(cur_month <= 9)
+            {
+                cur_month = "0"+cur_month;
+            }
+            if(cur_day <= 9)
+            {
+                cur_month = "0" + cur_month;
+            }
+            if(cur_hour <= 9)
+            {
+                cur_hour = "0"+cur_hour;
+            }
+            if(cur_minute <= 9)
+            {
+                cur_minute = "0" + cur_minute;
+            }
+            if(cur_second <=9)
+            {
+                cur_second = "0" + cur_second;
+            }
+            var shuju = "2017" + "-" + cur_month + "-" + cur_day + " " + cur_hour + ":" + cur_minute + ":" + cur_second;
+            var shuju =  cur_hour + ":" + cur_minute ;
+
+            if(nativeTime)
+                nativeTime.setString(shuju);
+
+            if(effectState)
+            {
+                effectCount --;
+                sendEvent("playPrayerEffect", effectCount);
+                if(effectCount <= 0)
+                {
+                    effectCount = 9;
+                    effectState = false;
+                    sendEvent("playPrayerEffect", "");
+                }
+            }
+        }
     });

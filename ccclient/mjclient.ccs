@@ -211,12 +211,15 @@
           <Image Name="btn_return_press.png" />
           <Image Name="btn_share_normal.png" />
           <Image Name="btn_share_press.png" />
+          <Image Name="circle.png" />
+          <Image Name="friend.png" />
           <Image Name="line.png" />
           <Image Name="t_dissolution_01.png" />
           <Image Name="t_dissolution_02.png" />
           <Image Name="t_dissolution_03.png" />
           <Image Name="t_dissolution_05.png" />
           <Image Name="t_dissolution_06.png" />
+          <Image Name="t_setting_fenxiang.png" />
         </Folder>
         <Folder Name="gameEndNew">
           <Image Name="bac-3.png" />
@@ -297,6 +300,8 @@
           <Image Name="loading_02.png" />
           <Image Name="loading_image.png" />
           <Image Name="logo_01.png" />
+          <Image Name="logo_01_xingyue.png" />
+          <Image Name="logo_02_xingyue.png" />
           <Image Name="ot-1.png" />
         </Folder>
         <Folder Name="MaJiangNew">
@@ -554,6 +559,15 @@
           <Image Name="4pi.png" />
           <Image Name="6pi.png" />
           <Image Name="8pi.png" />
+          <Image Name="anim_csh1.png" />
+          <Image Name="anim_csh2.png" />
+          <Image Name="anim_effzhezhao.png" />
+          <Image Name="anim_qxg1.png" />
+          <Image Name="anim_qxg2.png" />
+          <Image Name="anim_shx1.png" />
+          <Image Name="anim_shx2.png" />
+          <Image Name="anim_xsh1.png" />
+          <Image Name="anim_xsh2.png" />
           <Image Name="bac_02.png" />
           <Image Name="bac_corner_01.png" />
           <Image Name="bac_corner_02.png" />
@@ -663,6 +677,9 @@
           <Image Name="t_peng.png" />
           <Image Name="t_zhong.png" />
           <Image Name="t-hu.png" />
+          <Image Name="wang.png" />
+          <Image Name="wang_diban.png" />
+          <Image Name="wang2.png" />
           <Image Name="wudahu.png" />
           <Image Name="wufanqihu.png" />
           <Image Name="wuGuiJiaBei.png" />
@@ -692,6 +709,9 @@
           <Image Name="sound.png" />
           <Image Name="t_dissolution_07.png" />
           <Image Name="t_setting.png" />
+          <Image Name="tipsBox.png" />
+          <Image Name="wenhao.png" />
+          <Image Name="wenhao_press.png" />
           <Image Name="window-small.png" />
         </Folder>
         <Folder Name="webview">
@@ -739,13 +759,16 @@
         <Project Name="PopUpMsg.csd" Type="Node" />
         <Project Name="PopUpMsg1.csd" Type="Node" />
         <Project Name="Replay.csd" Type="Layer" />
+        <Project Name="roomTips.csd" Type="Layer" />
         <Project Name="SameIP.csd" Type="Node" />
         <Project Name="setting.csd" Type="Layer" />
+        <Project Name="ShareLayer.csd" Type="Layer" />
         <Project Name="ShowMa.csd" Type="Layer" />
         <Project Name="SkipHu.csd" Type="Node" />
         <Project Name="Update.csd" Type="Layer" />
         <Project Name="UpdatePanel.csd" Type="Layer" />
         <Project Name="UserInfo.csd" Type="Layer" />
+        <Project Name="versionsPanel.csd" Type="Layer" />
         <Project Name="WebView.csd" Type="Node" />
         <Project Name="WebView1.csd" Type="Node" />
         <Project Name="WebView2.csd" Type="Node" />

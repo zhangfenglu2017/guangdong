@@ -13,6 +13,7 @@
 
     "jsList" : [
         "src/pomelo/index.js",
+        "src/pomelo/base64.js",
         "src/gamenet.js",
 		"src/Result.js",
 		"src/resource.js",

@@ -16,15 +16,15 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="loading/bac_01.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="logo" ActionTag="1430267486" Tag="111" IconVisible="False" LeftMargin="233.1802" RightMargin="190.8198" TopMargin="35.0247" BottomMargin="403.9753" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="826" Scale9Height="251" ctype="ImageViewObjectData">
-            <Size X="856.0000" Y="281.0000" />
+          <AbstractNodeData Name="logo" ActionTag="1430267486" Tag="111" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="267.5000" RightMargin="267.5000" TopMargin="54.6000" BottomMargin="371.4000" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="715" Scale9Height="264" ctype="ImageViewObjectData">
+            <Size X="745.0000" Y="294.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="661.1802" Y="544.4753" />
+            <Position X="640.0000" Y="518.4000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5165" Y="0.7562" />
-            <PreSize X="0.6687" Y="0.3903" />
-            <FileData Type="Normal" Path="loading/logo_01.png" Plist="" />
+            <PrePosition X="0.5000" Y="0.7200" />
+            <PreSize X="0.5820" Y="0.4083" />
+            <FileData Type="Normal" Path="loading/logo_01_xingyue.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="barbk" ActionTag="1076741238" Tag="36" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="361.6040" RightMargin="363.3960" TopMargin="532.2160" BottomMargin="135.7840" LeftEage="63" RightEage="63" TopEage="2" BottomEage="2" Scale9OriginX="63" Scale9OriginY="2" Scale9Width="429" Scale9Height="48" ctype="ImageViewObjectData">
             <Size X="555.0000" Y="52.0000" />

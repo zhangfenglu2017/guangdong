@@ -8,6 +8,19 @@
         <Children>
           <AbstractNodeData Name="back" ActionTag="-1453471211" Tag="6" IconVisible="False" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="1250" Scale9Height="690" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
+            <Children>
+              <AbstractNodeData Name="Text_1" ActionTag="1716275576" VisibleForFrame="False" Tag="415" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="307.0000" RightMargin="307.0000" TopMargin="0.3600" BottomMargin="665.6400" IsCustomSize="True" FontSize="18" LabelText="新广出申[2016]2716号  出版号：ISBN 978-7-7979-1352-2  软著登字第1411022号 &#xA;出版单位：北京伯通电子出版社 著作权人：嘉兴乐玩网络科技有限公司" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="666.0000" Y="54.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="640.0000" Y="692.6400" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="0" G="0" B="0" />
+                <PrePosition X="0.5000" Y="0.9620" />
+                <PreSize X="0.5203" Y="0.0750" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -16,15 +29,15 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="loading/bac_01.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="logo" ActionTag="-1046764534" VisibleForFrame="False" Tag="282" IconVisible="False" LeftMargin="233.1800" RightMargin="190.8201" TopMargin="36.0249" BottomMargin="402.9751" LeftEage="282" RightEage="282" TopEage="92" BottomEage="92" Scale9OriginX="282" Scale9OriginY="92" Scale9Width="292" Scale9Height="97" ctype="ImageViewObjectData">
-            <Size X="856.0000" Y="281.0000" />
+          <AbstractNodeData Name="logo" ActionTag="-1046764534" Tag="282" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="267.5000" RightMargin="267.5000" TopMargin="54.6000" BottomMargin="371.4000" LeftEage="282" RightEage="282" TopEage="92" BottomEage="92" Scale9OriginX="282" Scale9OriginY="92" Scale9Width="181" Scale9Height="110" ctype="ImageViewObjectData">
+            <Size X="745.0000" Y="294.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="661.1800" Y="543.4751" />
+            <Position X="640.0000" Y="518.4000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5165" Y="0.7548" />
-            <PreSize X="0.6687" Y="0.3903" />
-            <FileData Type="Normal" Path="loading/logo_01.png" Plist="" />
+            <PrePosition X="0.5000" Y="0.7200" />
+            <PreSize X="0.5820" Y="0.4083" />
+            <FileData Type="Normal" Path="loading/logo_01_xingyue.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="wechatLogin" ActionTag="-36530676" Tag="7" IconVisible="False" LeftMargin="386.2674" RightMargin="624.7326" TopMargin="377.7882" BottomMargin="241.2118" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="239" Scale9Height="79" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="269.0000" Y="101.0000" />

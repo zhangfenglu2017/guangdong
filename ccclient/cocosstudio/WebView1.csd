@@ -12,13 +12,13 @@
               <AbstractNodeData Name="back" ActionTag="-528218928" Tag="11" IconVisible="False" LeftMargin="133.2618" RightMargin="17.7383" TopMargin="91.6090" BottomMargin="32.3910" Scale9Enable="True" LeftEage="30" RightEage="30" TopEage="30" BottomEage="30" Scale9OriginX="30" Scale9OriginY="30" Scale9Width="1069" Scale9Height="536" ctype="ImageViewObjectData">
                 <Size X="1129.0000" Y="596.0000" />
                 <Children>
-                  <AbstractNodeData Name="scroll" ActionTag="574562487" Tag="29" IconVisible="False" LeftMargin="547.0004" RightMargin="523.9996" TopMargin="513.9998" BottomMargin="34.0002" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="28" Scale9Height="26" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="scroll" ActionTag="574562487" Tag="29" IconVisible="False" LeftMargin="531.0026" RightMargin="539.9974" TopMargin="513.9996" BottomMargin="34.0004" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="28" Scale9Height="26" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="58.0000" Y="48.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="576.0004" Y="58.0002" />
+                    <Position X="560.0026" Y="58.0004" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5102" Y="0.0973" />
+                    <PrePosition X="0.4960" Y="0.0973" />
                     <PreSize X="0.0514" Y="0.0805" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
@@ -26,6 +26,31 @@
                     <NormalFileData Type="Normal" Path="webview/Arrow.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="help" ActionTag="45581935" Tag="35" IconVisible="False" LeftMargin="400.0000" RightMargin="-11.0000" TopMargin="36.0000" BottomMargin="120.0000" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="16" Scale9Height="16" ctype="ImageViewObjectData">
+                    <Size X="740.0000" Y="440.0000" />
+                    <Children>
+                      <AbstractNodeData Name="xieyiScroll" ActionTag="994252689" Tag="36" IconVisible="False" LeftMargin="-319.9052" RightMargin="99.9052" TopMargin="19.1596" BottomMargin="-19.1596" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
+                        <Size X="960.0000" Y="440.0000" />
+                        <AnchorPoint />
+                        <Position X="-319.9052" Y="-19.1596" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="-0.4323" Y="-0.0435" />
+                        <PreSize X="1.2973" Y="1.0000" />
+                        <SingleColor A="255" R="150" G="150" B="255" />
+                        <FirstColor A="255" R="150" G="150" B="255" />
+                        <EndColor A="255" R="255" G="255" B="255" />
+                        <ColorVector ScaleY="1.0000" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="400.0000" Y="120.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.3543" Y="0.2013" />
+                    <PreSize X="0.6554" Y="0.7383" />
+                    <FileData Type="Normal" Path="gameEndNew/touming.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

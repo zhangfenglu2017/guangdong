@@ -74,7 +74,7 @@
                     <PreSize X="1.0000" Y="1.0000" />
                     <FileData Type="Normal" Path="home-yli/Diamonds.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="buyMoney" ActionTag="338519986" Tag="228" IconVisible="False" LeftMargin="105.9374" RightMargin="-117.9374" TopMargin="-9.3424" BottomMargin="-6.6576" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="4" Scale9Height="13" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="buyMoney" ActionTag="338519986" VisibleForFrame="False" Tag="228" IconVisible="False" LeftMargin="105.9374" RightMargin="-117.9374" TopMargin="-9.3424" BottomMargin="-6.6576" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="4" Scale9Height="13" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="34.0000" Y="35.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="122.9374" Y="10.8424" />
@@ -148,10 +148,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title" ActionTag="1392491195" Tag="16" IconVisible="False" LeftMargin="473.5000" RightMargin="393.5000" TopMargin="2.0000" BottomMargin="582.0000" LeftEage="102" RightEage="102" TopEage="34" BottomEage="34" Scale9OriginX="102" Scale9OriginY="34" Scale9Width="209" Scale9Height="68" ctype="ImageViewObjectData">
-            <Size X="413.0000" Y="136.0000" />
+          <AbstractNodeData Name="title" ActionTag="1392491195" Tag="16" IconVisible="False" LeftMargin="490.0000" RightMargin="410.0000" TopMargin="-5.0000" BottomMargin="575.0000" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="350" Scale9Height="120" ctype="ImageViewObjectData">
+            <Size X="380.0000" Y="150.0000" />
             <Children>
-              <AbstractNodeData Name="scroll" ActionTag="976010434" Tag="43" IconVisible="False" HorizontalEdge="LeftEdge" LeftMargin="-85.4899" RightMargin="-51.5101" TopMargin="148.3540" BottomMargin="-52.3540" TouchEnable="True" ClipAble="True" BackColorAlpha="93" ColorAngle="90.0000" Scale9Enable="True" LeftEage="193" RightEage="193" TopEage="14" BottomEage="14" Scale9OriginX="193" Scale9OriginY="14" Scale9Width="200" Scale9Height="12" ScrollDirectionType="Horizontal" ctype="ScrollViewObjectData">
+              <AbstractNodeData Name="scroll" ActionTag="976010434" Tag="43" IconVisible="False" HorizontalEdge="LeftEdge" LeftMargin="-85.4899" RightMargin="-84.5101" TopMargin="162.3540" BottomMargin="-52.3540" TouchEnable="True" ClipAble="True" BackColorAlpha="93" ColorAngle="90.0000" Scale9Enable="True" LeftEage="193" RightEage="193" TopEage="14" BottomEage="14" Scale9OriginX="193" Scale9OriginY="14" Scale9Width="200" Scale9Height="12" ScrollDirectionType="Horizontal" ctype="ScrollViewObjectData">
                 <Size X="550.0000" Y="40.0000" />
                 <Children>
                   <AbstractNodeData Name="msg" ActionTag="-1832792330" Tag="44" IconVisible="False" LeftMargin="20.0000" RightMargin="20.0000" TopMargin="7.0000" BottomMargin="7.0000" IsCustomSize="True" FontSize="26" LabelText="代理咨询请联系微信XXXXXX，文明娱乐，禁止赌博" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -170,8 +170,8 @@
                 <Position X="189.5101" Y="-32.3540" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4589" Y="-0.2379" />
-                <PreSize X="1.3317" Y="0.2941" />
+                <PrePosition X="0.4987" Y="-0.2157" />
+                <PreSize X="1.4474" Y="0.2667" />
                 <FileData Type="Normal" Path="home-yli/floor_04.png" Plist="" />
                 <SingleColor A="255" R="255" G="150" B="100" />
                 <FirstColor A="255" R="255" G="150" B="100" />
@@ -179,14 +179,14 @@
                 <ColorVector ScaleY="1.0000" />
                 <InnerNodeSize Width="550" Height="40" />
               </AbstractNodeData>
-              <AbstractNodeData Name="laba" ActionTag="-1983627610" Tag="45" IconVisible="False" LeftMargin="-106.9981" RightMargin="479.9981" TopMargin="144.0000" BottomMargin="-52.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="laba" ActionTag="-1983627610" Tag="45" IconVisible="False" LeftMargin="-106.9981" RightMargin="446.9981" TopMargin="158.0000" BottomMargin="-52.0000" ctype="SpriteObjectData">
                 <Size X="40.0000" Y="44.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-86.9981" Y="-30.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="-0.2106" Y="-0.2206" />
-                <PreSize X="0.0969" Y="0.3235" />
+                <PrePosition X="-0.2289" Y="-0.2000" />
+                <PreSize X="0.1053" Y="0.2933" />
                 <FileData Type="Normal" Path="home-yli/horn.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -196,8 +196,8 @@
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5313" Y="0.9028" />
-            <PreSize X="0.3227" Y="0.1889" />
-            <FileData Type="Normal" Path="home-yli/logo_02.png" Plist="" />
+            <PreSize X="0.2969" Y="0.2083" />
+            <FileData Type="Normal" Path="loading/logo_02_xingyue.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="help" ActionTag="1218524737" Tag="10" IconVisible="False" LeftMargin="1061.0000" RightMargin="143.0000" TopMargin="11.4999" BottomMargin="631.5001" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="76.0000" Y="77.0000" />
