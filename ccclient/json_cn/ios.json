@@ -11,8 +11,8 @@
   ]
   ,"aliGroup":[
     {"gNames":["gdmj1.0dp8h8cmk7.aliyungf.com"], "Times":0},
-    {"gNames":["gdmj2.lppay7wlc9.aliyungf.com"], "Times":5000},
-    {"gNames":["gdmj3.te70p5xg7m.aliyungf.com"], "Times":10000}
+    {"gNames":["gdmj2.lppay7wlc9.aliyungf.com"], "Times":500},
+    {"gNames":["gdmj3.te70p5xg7m.aliyungf.com"], "Times":1000}
   ]
   ,"serversSelect":[600,400]
   ,"wxShareUrl":"http://gdmj.coolgamebox.com:800/gdmj/HappyPlay/download.html"

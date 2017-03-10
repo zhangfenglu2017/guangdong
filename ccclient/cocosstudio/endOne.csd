@@ -9,7 +9,7 @@
           <AbstractNodeData Name="back" ActionTag="755369775" Tag="1595" IconVisible="False" LeftMargin="-1.2801" RightMargin="1.2800" TopMargin="-0.0001" BottomMargin="0.0001" TouchEnable="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="diban" ActionTag="106707589" Tag="455" IconVisible="False" LeftMargin="216.5584" RightMargin="881.4417" TopMargin="10.8437" BottomMargin="667.1563" LeftEage="60" RightEage="60" TopEage="13" BottomEage="13" Scale9OriginX="60" Scale9OriginY="13" Scale9Width="62" Scale9Height="16" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="diban" ActionTag="106707589" Tag="455" IconVisible="False" LeftMargin="216.5584" RightMargin="881.4416" TopMargin="10.8437" BottomMargin="667.1563" LeftEage="60" RightEage="60" TopEage="13" BottomEage="13" Scale9OriginX="60" Scale9OriginY="13" Scale9Width="62" Scale9Height="16" ctype="ImageViewObjectData">
                 <Size X="182.0000" Y="42.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="307.5584" Y="688.1563" />
@@ -646,6 +646,16 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
+                  <AbstractNodeData Name="genZhuang" ActionTag="1498690623" Tag="1073" IconVisible="False" LeftMargin="-36.0000" RightMargin="-36.0000" TopMargin="23.0000" BottomMargin="19.0000" LeftEage="42" RightEage="42" TopEage="20" BottomEage="20" Scale9OriginX="42" Scale9OriginY="20" Scale9Width="59" Scale9Height="23" ctype="ImageViewObjectData">
+                    <Size X="200.0000" Y="82.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="64.0000" Y="60.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.4839" />
+                    <PreSize X="1.5625" Y="0.6613" />
+                    <FileData Type="Normal" Path="play-yli/genZhuang.png" Plist="" />
+                  </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="300.0000" Y="590.0000" />
@@ -838,6 +848,16 @@
                     <PreSize X="0.9375" Y="0.1935" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="genZhuang" ActionTag="515155848" Tag="1072" IconVisible="False" LeftMargin="-36.0000" RightMargin="-36.0000" TopMargin="22.5000" BottomMargin="18.5000" LeftEage="42" RightEage="42" TopEage="20" BottomEage="20" Scale9OriginX="42" Scale9OriginY="20" Scale9Width="59" Scale9Height="23" ctype="ImageViewObjectData">
+                    <Size X="200.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="64.0000" Y="60.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.4839" />
+                    <PreSize X="1.5625" Y="0.6694" />
+                    <FileData Type="Normal" Path="play-yli/genZhuang.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -1032,6 +1052,16 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
+                  <AbstractNodeData Name="genZhuang" ActionTag="1801034348" Tag="1071" IconVisible="False" LeftMargin="-36.0000" RightMargin="-36.0000" TopMargin="23.0000" BottomMargin="19.0000" LeftEage="42" RightEage="42" TopEage="20" BottomEage="20" Scale9OriginX="42" Scale9OriginY="20" Scale9Width="59" Scale9Height="23" ctype="ImageViewObjectData">
+                    <Size X="200.0000" Y="82.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="64.0000" Y="60.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.4839" />
+                    <PreSize X="1.5625" Y="0.6613" />
+                    <FileData Type="Normal" Path="play-yli/genZhuang.png" Plist="" />
+                  </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="300.0000" Y="310.0000" />
@@ -1224,6 +1254,16 @@
                     <PreSize X="0.9375" Y="0.1935" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="genZhuang" ActionTag="-111194696" Tag="1070" IconVisible="False" LeftMargin="-35.9998" RightMargin="-36.0002" TopMargin="23.0000" BottomMargin="19.0000" LeftEage="42" RightEage="42" TopEage="20" BottomEage="20" Scale9OriginX="42" Scale9OriginY="20" Scale9Width="59" Scale9Height="23" ctype="ImageViewObjectData">
+                    <Size X="200.0000" Y="82.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="64.0002" Y="60.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.4839" />
+                    <PreSize X="1.5625" Y="0.6613" />
+                    <FileData Type="Normal" Path="play-yli/genZhuang.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

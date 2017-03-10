@@ -86,7 +86,7 @@
                   "Y": 0.0583
                 },
                 "LeftMargin": 216.5584,
-                "RightMargin": 881.4417,
+                "RightMargin": 881.4416,
                 "TopMargin": 10.8437,
                 "BottomMargin": 667.1563,
                 "Tag": 455,
@@ -2897,6 +2897,51 @@
                     },
                     "Name": "userId",
                     "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/genZhuang.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 42,
+                    "Scale9OriginY": 20,
+                    "Scale9Width": 59,
+                    "Scale9Height": 23,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 64.0,
+                      "Y": 60.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.4839
+                    },
+                    "PreSize": {
+                      "X": 1.5625,
+                      "Y": 0.6613
+                    },
+                    "LeftMargin": -36.0,
+                    "RightMargin": -36.0,
+                    "TopMargin": 23.0,
+                    "BottomMargin": 19.0,
+                    "Tag": 1073,
+                    "ActionTag": 1498690623,
+                    "Size": {
+                      "X": 200.0,
+                      "Y": 82.0
+                    },
+                    "Name": "genZhuang",
+                    "ctype": "ImageViewObjectData"
                   }
                 ],
                 "ActionTag": -618578942,
@@ -3746,6 +3791,51 @@
                     },
                     "Name": "userId",
                     "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/genZhuang.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 42,
+                    "Scale9OriginY": 20,
+                    "Scale9Width": 59,
+                    "Scale9Height": 23,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 64.0,
+                      "Y": 60.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.4839
+                    },
+                    "PreSize": {
+                      "X": 1.5625,
+                      "Y": 0.6694
+                    },
+                    "LeftMargin": -36.0,
+                    "RightMargin": -36.0,
+                    "TopMargin": 22.5,
+                    "BottomMargin": 18.5,
+                    "Tag": 1072,
+                    "ActionTag": 515155848,
+                    "Size": {
+                      "X": 200.0,
+                      "Y": 83.0
+                    },
+                    "Name": "genZhuang",
+                    "ctype": "ImageViewObjectData"
                   }
                 ],
                 "ActionTag": 1386251049,
@@ -4595,6 +4685,51 @@
                     },
                     "Name": "userId",
                     "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/genZhuang.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 42,
+                    "Scale9OriginY": 20,
+                    "Scale9Width": 59,
+                    "Scale9Height": 23,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 64.0,
+                      "Y": 60.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.4839
+                    },
+                    "PreSize": {
+                      "X": 1.5625,
+                      "Y": 0.6613
+                    },
+                    "LeftMargin": -36.0,
+                    "RightMargin": -36.0,
+                    "TopMargin": 23.0,
+                    "BottomMargin": 19.0,
+                    "Tag": 1071,
+                    "ActionTag": 1801034348,
+                    "Size": {
+                      "X": 200.0,
+                      "Y": 82.0
+                    },
+                    "Name": "genZhuang",
+                    "ctype": "ImageViewObjectData"
                   }
                 ],
                 "ActionTag": -1884823687,
@@ -5444,6 +5579,51 @@
                     },
                     "Name": "userId",
                     "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "play-yli/genZhuang.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 42,
+                    "Scale9OriginY": 20,
+                    "Scale9Width": 59,
+                    "Scale9Height": 23,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 64.0002,
+                      "Y": 60.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.4839
+                    },
+                    "PreSize": {
+                      "X": 1.5625,
+                      "Y": 0.6613
+                    },
+                    "LeftMargin": -35.9998,
+                    "RightMargin": -36.0002,
+                    "TopMargin": 23.0,
+                    "BottomMargin": 19.0,
+                    "Tag": 1070,
+                    "ActionTag": -111194696,
+                    "Size": {
+                      "X": 200.0,
+                      "Y": 82.0
+                    },
+                    "Name": "genZhuang",
+                    "ctype": "ImageViewObjectData"
                   }
                 ],
                 "ActionTag": -864628463,
@@ -5596,6 +5776,7 @@
         "MaJiangNew/mj_bg1.png",
         "MaJiangNew/mj_bg2.png",
         "MaJiangNew/mj_bg4.png",
+        "play-yli/genZhuang.png",
         "play-yli/icon_zhuang.png",
         "play-yli/Photo_frame_06.png",
         "play-yli/zhuang_1.png"

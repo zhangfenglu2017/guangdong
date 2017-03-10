@@ -12,28 +12,52 @@ function SetEndOnePlayerUI(node, off)
     node = node.getChildByName("head");
     var uibind =
     {
-        head: {
-            headImg: {
-                _run: function () {
+        head:
+        {
+            headImg:
+            {
+                _run: function ()
+                {
                     this.zIndex = 2;
                 }
             },
-            linkZhuang: {
-                _run: function () {
+            linkZhuang:
+            {
+                _run: function ()
+                {
                     this.zIndex = 10;
                     var path = "res/play-yli/zhuang_" + pl.linkZhuang + ".png";
-                    cc.log("path = " + path);
                     this.loadTexture(path);
                 }
             },
-            baojiuzhang: {
-                _visible: function () {
+            baojiuzhang:
+            {
+                _run:function()
+                {
                     this.zIndex = 100;
+                },
+
+                _visible: function ()
+                {
                     return checkShowBaoJiuZhang(pl);
                 },
             },
-            name: {
-                _text: function () {
+            genZhuang:
+            {
+                _run:function()
+                {
+                    this.zIndex = 100;
+                },
+
+                _visible: function ()
+                {
+                    return checkShowGenZhuang(pl);
+                },
+            },
+            name:
+            {
+                _text: function ()
+                {
                     return unescape(pl.info.nickname || pl.info.name) + "";
                 }
             },
@@ -46,8 +70,10 @@ function SetEndOnePlayerUI(node, off)
                 }
             },
 
-            winType: {
-                _text: function () {
+            winType:
+            {
+                _text: function ()
+                {
                     if(jsclient.data.sData.tData.gameType == 4)
                         return pl.baseWin > 0 ? ( pl.baseWin + "番") : "";
                     //不再提示X1
@@ -128,8 +154,10 @@ function SetEndOnePlayerUI(node, off)
                 }
             },
         },
-        winNum: {
-            _text: function () {
+        winNum:
+        {
+            _text: function ()
+            {
                 var pre = "";
                 if (pl.winone > 0)
                     pre = "+";
@@ -137,8 +165,10 @@ function SetEndOnePlayerUI(node, off)
                 return pre + pl.winone;
             },
 
-            hu: {
-                _run: function () {
+            hu:
+            {
+                _run: function ()
+                {
                     this.visible = (jsclient.majiang.CardCount(pl) == 14 && pl.winType > 0 );
                 }
             }
@@ -391,6 +421,24 @@ function checkShowBaoJiuZhang(pl) {
     return false;
 }
 
+//跟庄显示
+function checkShowGenZhuang(pl){
+    if(jsclient.data.sData.tData.gameType == 1 || jsclient.data.sData.tData.gameType == 10)
+    {
+        if(pl && pl.genZhuang && pl.genZhuang.genZhuangNum >= 1)
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    else{
+        return false;
+    }
+
+}
+
 //判断显示不显示买马  有人赢 才显示
 function checkShowMa()
 {
@@ -519,6 +567,8 @@ var EndOneLayer = cc.Layer.extend(
                             return "潮汕麻将";
                         else if(gameType == 9)
                             return "深圳麻将";
+                        else if(gameType == 10)
+                            return "做牌推倒胡";
                     }
                 }
             },
@@ -924,26 +974,44 @@ var EndOneLayer = cc.Layer.extend(
                 }
             },
 
-            head0: {
-                backbar: {_layout: [[0.85, 1], [0.55, 0.8], [0, 0]]},
+            head0:
+            {
+                backbar:
+                {
+                    _layout: [[0.85, 1], [0.55, 0.8], [0, 0]]
+                },
 
-                head: {
+                head:
+                {
                     _layout: [[0.12, 0.12], [0.2, 0.82], [0, 0]],
-                    zhuang: {_visible: false},
-                    linkZhuang: {_visible: false},
+                    zhuang:
+                    {
+                        _visible: false
+                    },
+                    linkZhuang:
+                    {
+                        _visible: false
+                    },
                     up:
                     {
                         gui:
                         {
                             _visible : false
                         }
+                    },
+                    genZhuang:
+                    {
+                        _visible: false
                     }
                 },
 
-                winNum: {_layout: [[0.05, 0.05], [0.83, 0.8], [0, 0]]},
+                winNum:
+                {
+                    _layout: [[0.05, 0.05], [0.83, 0.8], [0, 0]]
+                },
 
-                _run: function () {
-
+                _run: function ()
+                {
                     if (IsThreeTable())
                     {
                         this.y -= 50;
@@ -968,7 +1036,8 @@ var EndOneLayer = cc.Layer.extend(
                         {
                             _visible : false
                         }
-                    }
+                    },
+                    genZhuang:{_visible: false}
                 },
 
                 winNum: {_layout: [[0.05, 0.05], [0.83, 0.62], [0, 0]]},
@@ -998,7 +1067,8 @@ var EndOneLayer = cc.Layer.extend(
                         {
                             _visible : false
                         }
-                    }
+                    },
+                    genZhuang:{_visible: false}
                 },
 
                 winNum: {_layout: [[0.05, 0.05], [0.83, 0.44], [0, 0]]},
@@ -1029,7 +1099,8 @@ var EndOneLayer = cc.Layer.extend(
                         {
                             _visible : false
                         }
-                    }
+                    },
+                    genZhuang:{_visible: false}
                 },
 
                 winNum: {_layout: [[0.05, 0.05], [0.83, 0.26], [0, 0]]},

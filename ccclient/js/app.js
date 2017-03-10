@@ -401,7 +401,9 @@ jsclient.getCreateRoomCfg = function () {
 jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noBigWin, canHu7,canFan7,
                                 canHuWith258, withZhong, zhongIsMa, horse, baoZhaMa, jjg, fanGui, twogui, fanNum, maxPlayer,
                                 canBigWin, guiJiaMa, guiJiaBei, gui4Hu, gui4huBeiNum, noCanJiHu, canJiHu, maGenDi,maGenDiDuiDuiHu,
-                                menQingJiaFen, baidajihu, baidadahu, haiDiFanBei, canDianPao)
+                                menQingJiaFen, baidajihu, baidadahu, haiDiFanBei, canDianPao,
+                                withBai, genZhuang, hzhsg, gbqb, gbfbNum, hdhfbNum, pphfbNum,
+                                qysfbNum, shsyfbNum, yjfbNum, zysfbNum, qxdfbNum)
 {
     jsclient.block();
     jsclient.gamenet.request("pkplayer.handler.CreateVipTable",
@@ -437,7 +439,23 @@ jsclient.createRoom = function (gameType, round, canEatHu, withWind, canEat, noB
             baidajihu:baidajihu,
             baidadahu:baidadahu,
             haiDiFanBei:haiDiFanBei,
-            canDianPao:canDianPao
+            canDianPao:canDianPao,
+
+            withBai:withBai,//白板鬼牌
+            genZhuang:genZhuang,//跟庄
+            huangZhuangSuanGang:hzhsg,//荒庄算杠
+            gangBaoQuanBao:gbqb,//杠爆全包
+
+            gangBaoFanNum:gbfbNum,//杠爆翻倍
+            haiDiHuFanNum:hdhfbNum,//海底胡翻倍
+            pengPengHuFanNum:pphfbNum,//碰碰胡翻倍
+            qingYiSeFanNum:qysfbNum,//清一色翻倍
+            shiSanYaoFanNum:shsyfbNum,//十三幺翻倍
+            yaoJiuFanNum:yjfbNum,//幺九翻倍
+            ziYiSeFanNum:zysfbNum,  //字一色翻倍
+            qxdfbNum:qxdfbNum   //七小对翻倍
+            
+            
         },
         function (rtn)
         {
@@ -990,11 +1008,21 @@ jsclient.netCallBack =
         }
         if(d.card > 0)
             pl.mjflower.push(d.card);
-        cc.log("HuiZhou：　MJFlower: pl.mjflower.length = " + pl.mjflower.length);
+        cc.log("花牌: pl.mjflower.length = " + pl.mjflower.length);
     }],
     MJFlower1: [0, function (d) {
         jsclient.data.sData.tData.checkRoleFlowerType = d.checkRoleFlowerType;
         jsclient.data.sData.tData.curPlayer = d.curPlayer;
+    }],
+    MJGenZhuang:[0, function (d) {
+        console.log("===============MJGenZhuang="+jsclient.data.sData.tData.gameType);
+        if(jsclient.data.sData.tData.gameType == 1 || jsclient.data.sData.tData.gameType == 10 )
+        {
+            var sData = jsclient.data.sData;
+            var pl = sData.players[d.uid];
+            pl.genZhuang = d.genZhuang;
+        }
+
     }],
     MJZhong: [0, function (d) {
         playEffect("nv/71");
@@ -1007,7 +1035,7 @@ jsclient.netCallBack =
             }
         }
         pl.mjzhong.push(d.card);
-        cc.log("东莞麻将：　红中算马个数: pl.mjzhong.length = " + pl.mjzhong.length);
+        cc.log("红中算马个数: pl.mjzhong.length = " + pl.mjzhong.length);
     }],
     MJPass: [0, function (d) {
         console.log("------------------------------MJPass");
@@ -1067,11 +1095,17 @@ jsclient.netCallBack =
         var sData = jsclient.data.sData;
         sData.tData = d.tData;
 
-        if(sData.tData.gameType == 3 || sData.tData.gameType == 1 ){
+        if(sData.tData.gameType == 3 || sData.tData.gameType == 1 || sData.tData.gameType == 10){
             for (var uid in d.players) {
                 var pl = d.players[uid];
                 sData.players[uid].linkZhuang = pl.linkZhuang;
                 sData.players[uid].linkHu = pl.linkHu;
+            }
+        }
+        if(sData.tData.gameType == 1 || sData.tData.gameType == 10 ){
+            for (var uid in d.players) {
+                var pl = d.players[uid];
+                sData.players[uid].genZhuang = pl.genZhuang;
             }
         }
         if(d.tData.fanGui) {

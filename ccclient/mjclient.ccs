@@ -184,6 +184,8 @@
           <Image Name="y_xianggang_press.png" />
           <Image Name="zjmj.png" />
           <Image Name="zjmj_press.png" />
+          <Image Name="zptdh.png" />
+          <Image Name="zptdh_press.png" />
         </Folder>
         <Folder Name="Default">
           <Image Name="Button_Disable.png" />
@@ -579,6 +581,7 @@
           <Image Name="bac_edge_xia.png" />
           <Image Name="bac_edge_you.png" />
           <Image Name="bac_edge_zuo.png" />
+          <Image Name="bac4.png" />
           <Image Name="baidadahu.png" />
           <Image Name="baidajihu.png" />
           <Image Name="baozhama.png" />
@@ -636,6 +639,7 @@
           <Image Name="floor_08.png" />
           <Image Name="floor_09.png" />
           <Image Name="floor_16.png" />
+          <Image Name="genZhuang.png" />
           <Image Name="guangzhoumajiang.png" />
           <Image Name="haidifanbei.png" />
           <Image Name="huizhoumajiang.png" />
@@ -680,6 +684,18 @@
           <Image Name="t_peng.png" />
           <Image Name="t_zhong.png" />
           <Image Name="t-hu.png" />
+          <Image Name="tsgangbao2.png" />
+          <Image Name="tsgangbaoquanbao.png" />
+          <Image Name="tsgenzhuang.png" />
+          <Image Name="tshaidihu2.png" />
+          <Image Name="tshuangzhuangsuangang.png" />
+          <Image Name="tspengpenghu2.png" />
+          <Image Name="tsqingyise4.png" />
+          <Image Name="tsqixiaodui4.png" />
+          <Image Name="tsquanfeng8.png" />
+          <Image Name="tsshisanyao8.png" />
+          <Image Name="tsyaojiu6.png" />
+          <Image Name="tsziyise8.png" />
           <Image Name="wang.png" />
           <Image Name="wang_diban.png" />
           <Image Name="wang2.png" />
@@ -695,6 +711,7 @@
           <Image Name="Z_zhunbeizhuangt.png" />
           <Image Name="zhongsuanma.png" />
           <Image Name="zhuang_1.png" />
+          <Image Name="zptdh.png" />
         </Folder>
         <Folder Name="set">
           <Image Name="bar_01.png" />

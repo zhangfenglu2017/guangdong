@@ -765,7 +765,8 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 26,
-                    "LabelText": "代理咨询请联系微信XXXXXX，文明娱乐，禁止赌博",
+                    "LabelText": "代理咨询请联系微信ggggg，文明娱乐，禁止赌博 ",
+                    "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -780,7 +781,7 @@
                     "AnchorPoint": {},
                     "Position": {
                       "X": 20.0,
-                      "Y": 7.0
+                      "Y": 7.9999
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -790,21 +791,21 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.0364,
-                      "Y": 0.175
+                      "Y": 0.2
                     },
                     "PreSize": {
-                      "X": 0.9273,
-                      "Y": 0.65
+                      "X": 1.04,
+                      "Y": 0.75
                     },
                     "LeftMargin": 20.0,
-                    "RightMargin": 20.0,
-                    "TopMargin": 7.0,
-                    "BottomMargin": 7.0,
+                    "RightMargin": -42.0,
+                    "TopMargin": 2.0001,
+                    "BottomMargin": 7.9999,
                     "Tag": 44,
                     "ActionTag": -1832792330,
                     "Size": {
-                      "X": 510.0,
-                      "Y": 26.0
+                      "X": 572.0,
+                      "Y": 30.0
                     },
                     "Name": "msg",
                     "ctype": "TextObjectData"

@@ -1,5 +1,5 @@
 {
-  "servers":"120.55.238.78:15010:15039,180.97.162.67:15010:15039,218.11.0.40:15010:15039"
+  "servers":"114.55.255.22:15010:15011"
   ,"errorReportServer":"http://139.129.206.54:3000/gdmj"
   ,"reportGameid":"gdmj"
   ,"playBackServer":"gdmjhf.happyplaygame.net"
@@ -8,11 +8,6 @@
     "sources2.happyplaygame.net",
     "sources3.happyplaygame.net",
     "sources4.happyplaygame.net"
-  ]
-  ,"aliGroup":[
-    {"gNames":["gdmj1.0dp8h8cmk7.aliyungf.com"], "Times":0},
-    {"gNames":["gdmj2.lppay7wlc9.aliyungf.com"], "Times":500},
-    {"gNames":["gdmj3.te70p5xg7m.aliyungf.com"], "Times":1000}
   ]
   ,"serversSelect":[600,400]
   ,"wxShareUrl":"http://gdmj.coolgamebox.com:800/gdmj/HappyPlay/download.html"

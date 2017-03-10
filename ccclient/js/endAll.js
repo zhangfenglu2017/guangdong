@@ -145,6 +145,8 @@ var EndAllLayer = cc.Layer.extend(
                         return "潮汕麻将";
                     else if(gameType == 9)
                         return "深圳麻将";
+                    else if(gameType == 10)
+                        return "做牌推倒胡";
                 }
             }
         },

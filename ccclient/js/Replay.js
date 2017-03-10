@@ -260,47 +260,41 @@ function newReplayLayer()
     {
         var sData = jsclient.data.sData;
         var tData = sData.tData;
-        var uids = tData.uids;
-        var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
-        var pl = getUIPlayer(off);
-        if(pl == null)
+
+        if(!IsCurPlayerTurn(off))
             return;
 
-        RemoveBackNode(node, "mjhand", 1, msg.card);
-        // RestoreCardLayout(node, off);
+        if(tData.gameType != 2)
+            return;
+
+        var pl = getUIPlayer(off);
+        if (pl)
+        {
+            RemoveBackNode(node, "mjhand", 1, msg.card);
+            RestoreCardLayout(node, off);
+            setFlowerText(node, pl);
+            // ShowEatActionAnim(node, ActionType.HUA, off);//将来显示花用
+        }
     }
 
     function HandleMJZhong(node, msg, off)
     {
         var sData = jsclient.data.sData;
         var tData = sData.tData;
-        var selfIndex = (tData.uids.indexOf(SelfUid()) + off) % 4;
-        if (tData.uids[selfIndex] != msg.uid)
+
+        if(!IsCurPlayerTurn(off))
             return;
 
-        if(tData.zhongIsMa){
-            var pl = getUIPlayer(off);
-            if (pl)
-            {
-                RemoveBackNode(node, "mjhand", 1, msg.card);
-                //if (off == 0) {
-                //    RemoveBackNode(node, "mjhand", 1, msg.card);
-                //}
-                //else if (off == 1) {
-                //    RemoveBackNode(node, "standPri", 1);
-                //}
-                //else if (off == 2 || off == 3) {
-                //    RemoveFrontNode(node, "standPri", 1);
-                //}
-                //不显示花牌
-                // if(flowerShowTag != 2)
-                // {
-                // 	AddNewCard(node,"up","flower",msg.card,off);
-                // }
-                //RestoreCardLayout(node, off);
-                //setZhongText(node, pl);
-                //ShowEatActionAnim(node, ActionType.ZHONG, off);//将来显示花用
-            }
+        if(!tData.zhongIsMa)
+            return;
+
+        var pl = getUIPlayer(off);
+        if (pl)
+        {
+            RemoveBackNode(node, "mjhand", 1, msg.card);
+            RestoreCardLayout(node, off);
+            setZhongText(node, pl);
+            // ShowEatActionAnim(node, ActionType.ZHONG, off);//将来显示中用
         }
     }
 
@@ -319,11 +313,8 @@ function newReplayLayer()
         var sData = jsclient.data.sData;
         var tData = sData.tData;
         var uids = tData.uids;
-        /*var selfIndex=uids.indexOf(SelfUid());
-         selfIndex= (tData.curPlayer+4-selfIndex)%4;
-         */
-        var pl = getUIPlayer(off);
 
+        var pl = getUIPlayer(off);
         if(pl == null)
             return;
 
@@ -372,12 +363,14 @@ function newReplayLayer()
         var sData = jsclient.data.sData;
         var tData = sData.tData;
         var uids = tData.uids;
+
         var pl = getUIPlayer(off);
         if(pl == null)
             return;
 
-        var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
-        if (tData.curPlayer == selfIndex)
+        // var selfIndex = (uids.indexOf(SelfUid()) + off) % 4;
+        // if (tData.curPlayer == selfIndex)
+        if (IsCurPlayerTurn(off))
         {
             var fromOff = [];
             var fromBind = GetUIBind(msg.from, fromOff);
@@ -508,7 +501,8 @@ function newReplayLayer()
         return cp;
     }
 
-    function GetUIBind(uidPos, offStore) {
+    function GetUIBind(uidPos, offStore)
+    {
         var sData = jsclient.data.sData;
         var tData = sData.tData;
         var uids = tData.uids;
@@ -517,7 +511,8 @@ function newReplayLayer()
         var uiOff = (uidPos + tData.maxPlayer - selfIndex) % tData.maxPlayer;
 
         //三人麻将需要修正
-        if(IsThreeTable() && uiOff==2){
+        if(IsThreeTable() && uiOff==2)
+        {
             uiOff = 3;
         }
 
@@ -664,6 +659,7 @@ function newReplayLayer()
                 }
             }
         }
+        
         for (var i = 0; i < 4; i++)
         {
             if (msg.gang == 3)
@@ -1188,6 +1184,7 @@ function newReplayLayer()
             {
             }
 
+
             var zoder = out.zIndex;
             out.zIndex = 200;
             out.visible = false;
@@ -1230,7 +1227,7 @@ function newReplayLayer()
                     out.visible = false;
                     out.removeFromParent();
                 }
-                else if(tData.gameType == 5 && tData.zhongIsMa && msg.card == 71)
+                else if((tData.gameType == 1 || tData.gameType == 5) && tData.zhongIsMa && msg.card == 71)
                 {
                     out.visible = false;
                     out.removeFromParent();
@@ -1247,6 +1244,8 @@ function newReplayLayer()
                 outAction.removeFromParent();
 
             };
+
+            cc.log("replay最终位置：" + endPoint.x + "|" + endPoint.y);
             outAction.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, endPoint), cc.scaleTo(0.2, oSc)),cc.callFunc(callbackFUNCROTATION)));
 
             function RemovePutCard(onlySelf)
@@ -2178,7 +2177,7 @@ function newReplayLayer()
                     {
                         _visible: function ()
                         {
-                            return (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui) && (!jsclient.data.sData.tData.twogui);
+                            return (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.withBai || jsclient.data.sData.tData.fanGui) && (!jsclient.data.sData.tData.twogui);
                         },
 
                         card:
@@ -2189,6 +2188,12 @@ function newReplayLayer()
                                 {
                                     log("红中鬼牌。。。。");
                                     this.visible = true;
+                                }
+                                else if(jsclient.data.sData.tData.withBai)
+                                {
+                                    setCardPic(this, 91);
+                                    this.visible = true;
+                                    log("白板鬼牌。。。。");
                                 }
                                 else if(jsclient.data.sData.tData.fanGui)
                                 {
@@ -2269,23 +2274,16 @@ function newReplayLayer()
                     {
                         // _layout: [[0.25, 0.25], [0.065, 0.8], [0, 0]],
 
-                        _event:
+                        _run:function()
                         {
-                            initSceneData: function (eD)
-                            {
-
-                            },
-                        },
-
-                        _run:function(){
                             playTips = this;
 
-                            if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui)
-                                this.y = 450;
+                            if (jsclient.data.sData.tData.withZhong || jsclient.data.sData.tData.fanGui || jsclient.data.sData.tData.withBai)
+                                this.y = 470;
                             else
                                 this.y = 550;
 
-                            var height = 50;
+                            var height = 45;
                             var count = 0;
                             var tipsImg = [];
                             tipsImg[count] = this.getChildByName("tableImage");
@@ -2312,12 +2310,14 @@ function newReplayLayer()
                                 && jsclient.data.sData.tData.gameType != 3
                                 && jsclient.data.sData.tData.gameType != 5
                                 && jsclient.data.sData.tData.gameType != 6
-                                && jsclient.data.sData.tData.gameType != 9)
+                                && jsclient.data.sData.tData.gameType != 8
+                                && jsclient.data.sData.tData.gameType != 9
+                                && jsclient.data.sData.tData.gameType != 10)
                             {
                                 count++;
                                 tipsImg[count] = this.getChildByName("canHu7");
                             }
-                            if (jsclient.data.sData.tData.canFan7)
+                            if (jsclient.data.sData.tData.canFan7 && jsclient.data.sData.tData.gameType != 10)
                             {
                                 count++;
                                 tipsImg[count] = this.getChildByName("canFan7");
@@ -2367,7 +2367,7 @@ function newReplayLayer()
                                 count++;
                                 tipsImg[count] = this.getChildByName("menqingjiafen");
                             }
-                            if(jsclient.data.sData.tData.gameType == 7 && jsclient.data.sData.tData.canJiHu )
+                            if(jsclient.data.sData.tData.canJiHu && jsclient.data.sData.tData.gameType == 7)
                             {
                                 count++;
                                 tipsImg[count] = this.getChildByName("canJiHu");
@@ -2385,7 +2385,9 @@ function newReplayLayer()
                                 count++;
                                 tipsImg[count] = this.getChildByName("guiJiaMa");
                             }
-                            if((jsclient.data.sData.tData.gameType == 5 || jsclient.data.sData.tData.gameType == 6) && (jsclient.data.sData.tData.gui4Hu))
+                            if(jsclient.data.sData.tData.gui4Hu
+                                && (jsclient.data.sData.tData.gameType == 5
+                                || jsclient.data.sData.tData.gameType == 6))
                             {
                                 count++;
                                 tipsImg[count] = this.getChildByName("gui4Hu");
@@ -2404,6 +2406,73 @@ function newReplayLayer()
                             {
                                 count++;
                                 tipsImg[count] = this.getChildByName("candianpao");
+                            }
+
+                            //work 23
+                            if (jsclient.data.sData.tData.genZhuang)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("genzhuang");
+                            }
+
+                            if (jsclient.data.sData.tData.huangZhuangSuanGang)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("huangzhuanggang");
+                            }
+
+                            if (jsclient.data.sData.tData.gangBaoQuanBao)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("gangbaoquanbao");
+                            }
+
+                            if (jsclient.data.sData.tData.gangBaoFanNum != 0 && jsclient.data.sData.tData.gangBaoFanNum != null)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("gangbao2bei");
+                            }
+
+                            if (jsclient.data.sData.tData.haiDiHuFanNum != 0 && jsclient.data.sData.tData.haiDiHuFanNum != null)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("haidihu2bei");
+                            }
+
+                            if (jsclient.data.sData.tData.pengPengHuFanNum != 0 && jsclient.data.sData.tData.pengPengHuFanNum != null)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("pengpenghu2bei");
+                            }
+
+                            if (jsclient.data.sData.tData.qingYiSeFanNum != 0 && jsclient.data.sData.tData.qingYiSeFanNum != null)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("qingyise4bei");
+                            }
+
+                            if (jsclient.data.sData.tData.qxdfbNum != 0 && jsclient.data.sData.tData.qxdfbNum != null)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("qixiaodui4bei");
+                            }
+
+                            if (jsclient.data.sData.tData.shiSanYaoFanNum != 0 && jsclient.data.sData.tData.shiSanYaoFanNum != null)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("shisanyao8bei");
+                            }
+
+                            if (jsclient.data.sData.tData.yaoJiuFanNum != 0 && jsclient.data.sData.tData.yaoJiuFanNum != null)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("yaojiu6bei");
+                            }
+
+                            if (jsclient.data.sData.tData.ziYiSeFanNum != 0 && jsclient.data.sData.tData.ziYiSeFanNum != null)
+                            {
+                                count++;
+                                tipsImg[count] = this.getChildByName("ziyise8bei");
                             }
 
 
@@ -2438,13 +2507,14 @@ function newReplayLayer()
                                 tipsImg[count] = this.getChildByName("maima10");
                             }
 
+
                             var tipsNodeArr = this.getChildren();
                             for(var sprImg in tipsNodeArr)
                             {
                                 tipsNodeArr[sprImg].visible = false;
                             }
 
-                            height = height + count * 40;
+                            height = height + count * 32;
                             this.setContentSize(cc.size(this.getContentSize().width, height));
                             // log("玩法提示框大小：" + height + "  玩法提示个数：" + count);
 
@@ -2452,16 +2522,16 @@ function newReplayLayer()
                             {
                                 var nodeImg = tipsImg[i];
                                 nodeImg.visible = true;
-                                nodeImg.setPositionY(height - 35 * (i + 1));
+                                nodeImg.setPositionY(height - 30 * (i + 1));
                             }
 
                             var buttonOut = this.getChildByName("button_out");
                             buttonOut.visible = false;
-                            buttonOut.y = height - height / 3;
+                            buttonOut.y = height - height / 2.5;
 
                             var buttonIn = this.getChildByName("button_in");
                             buttonIn.visible = true;
-                            buttonIn.y = height - height / 3;
+                            buttonIn.y = height - height / 2.5;
                         },
 
                         button_in:
@@ -2588,6 +2658,17 @@ function newReplayLayer()
                             return false;
                     }
                 },
+
+                zptdhmj: {
+                    _layout: [[0.2, 0.2], [0.5, 0.55], [0, 1.2]],
+                    _visible: function ()
+                    {
+                        if (jsclient.data.sData.tData.gameType == 10)
+                            return true;
+                        else
+                            return false;
+                    }
+                },
             },
             
             banner: {
@@ -2698,93 +2779,128 @@ function newReplayLayer()
                         );
                     }
                 },
-                delroom: {
+                delroom:
+                {
                     _layout: [[0.15, 0.15], [0.51, 0.51], [0.62, 0]],
-                    _click: function () {
+                    _click: function ()
+                    {
                         jsclient.delRoom(true);
                     }
                 },
-                _event: {
-                    reinitSceneData: function (eD) {
+                _event:
+                {
+                    reinitSceneData: function (eD)
+                    {
                         this.visible = CheckInviteVisible();
                     },
-                    addPlayer: function (eD) {
+                    addPlayer: function (eD)
+                    {
                         this.visible = CheckInviteVisible();
-                    }, removePlayer: function (eD) {
+                    },
+                    removePlayer: function (eD)
+                    {
                         this.visible = CheckInviteVisible();
                     }
                 }
             },
 
-            down: {
-
-                head: {
-                    kuang: {
-                        _run: function () {
+            down:
+            {
+                head:
+                {
+                    kuang:
+                    {
+                        _run: function ()
+                        {
                             this.zIndex = 2;
                         }
                     },
 
-                    zhuang: {
-                        _run: function () {
+                    zhuang:
+                    {
+                        _run: function ()
+                        {
                             this.visible = false;
                         },
-                        _event: {
-                            waitPut: function () {
+                        _event:
+                        {
+                            waitPut: function ()
+                            {
                                 showPlayerZhuangLogo(this, 0);
                             },
-                            initSceneData: function () {
-                                if (CheckArrowVisible()) showPlayerZhuangLogo(this, 0);
+                            initSceneData: function ()
+                            {
+                                if (CheckArrowVisible())
+                                    showPlayerZhuangLogo(this, 0);
                             },
-                            mjhand:function () {
+                            mjhand:function ()
+                            {
                                 showPlayerZhuangLogo(this, 0);
                             }
                         }
                     },
-                    linkZhuang: {
-                        _run: function () {
+                    linkZhuang:
+                    {
+                        _run: function ()
+                        {
                             this.visible = false;
                         },
-                        _event: {
-                            waitPut: function () {
+                        _event:
+                        {
+                            waitPut: function ()
+                            {
                                 showPlayerLinkZhuangLogo(this, 0);
                             },
-                            initSceneData: function () {
-                                if (CheckArrowVisible()) showPlayerLinkZhuangLogo(this, 0);
+                            initSceneData: function ()
+                            {
+                                if (CheckArrowVisible())
+                                    showPlayerLinkZhuangLogo(this, 0);
                             },
-                            mjhand:function () {
+                            mjhand:function ()
+                            {
                                 showPlayerZhuangLogo(this, 0);
                             }
                         }
                     },
                     hua: {
-                        _run: function () {
+                        _run: function ()
+                        {
                             this.visible = false;
                         },
                         _event: {
-                            waitPut: function () {
+                            waitPut: function ()
+                            {
                                 showPlayerZhuangLogo(this, 0);
                             },
-                            initSceneData: function () {
-                                if (CheckArrowVisible()) showPlayerZhuangLogo(this, 0);
+                            initSceneData: function ()
+                            {
+                                if (CheckArrowVisible())
+                                    showPlayerZhuangLogo(this, 0);
                             },
-                            mjhand:function () {
+                            mjhand:function ()
+                            {
                                 showPlayerZhuangLogo(this, 0);
                             }
                         }
                     },
-                    zhong: {
-                        _run: function () {
+                    zhong:
+                    {
+                        _run: function ()
+                        {
                             this.visible = false;
                         },
-                        _event: {
-                            waitPut: function () {
+                        _event:
+                        {
+                            waitPut: function ()
+                            {
                                 showPlayerZhuangLogo(this, 0);
                             },
-                            initSceneData: function () {
+                            initSceneData: function ()
+                            {
                                 if (CheckArrowVisible()) showPlayerZhuangLogo(this, 0);
                             },
-                            mjhand:function () {
+                            mjhand:function ()
+                            {
                                 showPlayerZhuangLogo(this, 0);
                             }
                         }
@@ -2805,17 +2921,22 @@ function newReplayLayer()
                     //         }
                     //     }
                     // },
-                    chatbg: {
-                        _run: function () {
+                    chatbg:
+                    {
+                        _run: function ()
+                        {
                             this.getParent().zIndex = 600;
                         },
-                        chattext: {
-                            _event: {
-
-                                MJChat: function (msg) {
-
+                        chattext:
+                        {
+                            _event:
+                            {
+                                MJChat: function (msg)
+                                {
                                     showchat(this, 0, msg);
-                                }, playVoice: function (voicePath) {
+                                },
+                                playVoice: function (voicePath)
+                                {
                                     jsclient.data._tempMessage.msg = voicePath;
                                     showchat(this, 0, jsclient.data._tempMessage);
                                 }

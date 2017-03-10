@@ -154,14 +154,14 @@
               <AbstractNodeData Name="scroll" ActionTag="976010434" Tag="43" IconVisible="False" HorizontalEdge="LeftEdge" LeftMargin="-85.4899" RightMargin="-84.5101" TopMargin="162.3540" BottomMargin="-52.3540" TouchEnable="True" ClipAble="True" BackColorAlpha="93" ColorAngle="90.0000" Scale9Enable="True" LeftEage="193" RightEage="193" TopEage="14" BottomEage="14" Scale9OriginX="193" Scale9OriginY="14" Scale9Width="200" Scale9Height="12" ScrollDirectionType="Horizontal" ctype="ScrollViewObjectData">
                 <Size X="550.0000" Y="40.0000" />
                 <Children>
-                  <AbstractNodeData Name="msg" ActionTag="-1832792330" Tag="44" IconVisible="False" LeftMargin="20.0000" RightMargin="20.0000" TopMargin="7.0000" BottomMargin="7.0000" IsCustomSize="True" FontSize="26" LabelText="代理咨询请联系微信XXXXXX，文明娱乐，禁止赌博" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="510.0000" Y="26.0000" />
+                  <AbstractNodeData Name="msg" ActionTag="-1832792330" Tag="44" IconVisible="False" LeftMargin="20.0000" RightMargin="-42.0000" TopMargin="2.0001" BottomMargin="7.9999" IsCustomSize="True" FontSize="26" LabelText="代理咨询请联系微信ggggg，文明娱乐，禁止赌博 " VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="572.0000" Y="30.0000" />
                     <AnchorPoint />
-                    <Position X="20.0000" Y="7.0000" />
+                    <Position X="20.0000" Y="7.9999" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.0364" Y="0.1750" />
-                    <PreSize X="0.9273" Y="0.6500" />
+                    <PrePosition X="0.0364" Y="0.2000" />
+                    <PreSize X="1.0400" Y="0.7500" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>

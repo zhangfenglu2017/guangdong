@@ -728,6 +728,9 @@ var TipsPanel = cc.Layer.extend({
             {
                 _click:function(btn,eT)
                 {
+                    if(jsclient.tipsPanel == null)
+                        return;
+
                     jsclient.tipsPanel.removeFromParent(true);
                     jsclient.tipsPanel = null;
                 }
@@ -1598,6 +1601,19 @@ var VersionsPanel = cc.Layer.extend({
                         }
                     },
 
+                    zptdhmjtable:
+                    {
+                        _run:function ()
+                        {
+                            tables[10] = this;
+                        },
+
+                        _click:function ()
+                        {
+                            setPanelContentByType(10);
+                        }
+                    },
+
                 },
 
                 help:
@@ -2107,6 +2123,8 @@ var updatelayer_itme_node;
     {
         logMsg = JSON.parse(JSON.stringify(msg));
 
+        // log("-------------------------回放数据-------------------------：" + logMsg);
+
         var arry = [];
         var object = {};
         for (var i = 0; i < logMsg.length; i++)
@@ -2245,7 +2263,6 @@ var updatelayer_itme_node;
                 {
                     sendEvent("QueueNetMsg", arry);
                 }
-
             }
             else if (logMsg[msgCount] == "MJPeng")
             {
@@ -2421,6 +2438,10 @@ var updatelayer_itme_node;
             delay = 1.5;
         }
         else if(logMsg[msgCount] == "MJZhong")
+        {
+            delay = 1.5;
+        }
+        else if(logMsg[msgCount] == "MJFlower")
         {
             delay = 1.5;
         }
